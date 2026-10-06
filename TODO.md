@@ -1,6 +1,6 @@
 # План реализации Channel Protocol
 
-**Редакция 0.1 от 7 октября 2026 года. Статус: план; реализация пока не выполнена.**
+**Редакция 0.2 от 7 октября 2026 года. Статус: план; реализация пока не выполнена.**
 
 [README.md](README.md) объясняет систему и проектные контракты. Этот документ задаёт порядок работы, зависимости, результаты и критерии проверки. Все флажки намеренно пустые: наличие проекта документации не означает готовность кода.
 
@@ -133,6 +133,21 @@ flowchart TD
 - [ ] Создать начальную threat model с assets, adversaries и trust boundaries.
 - [ ] Определить поддерживаемый small-server load profile для будущих performance tests.
 
+### P0: Prior art и выбор основы — ADR-013
+
+- [ ] Прочитать [Prior art в README](README.md#prior-art-и-отличия-почему-не-matrix-xmpp-или-nostr); отделить обязательные требования от предпочтений UI/JSON/языка.
+- [ ] Сделать ограниченные прототипы Matrix, XMPP и Nostr на одинаковых сценариях и записать версии компонентов.
+- [ ] Matrix: custom events для views, account/device/recovery, auth extension и deployment без обязательной federation.
+- [ ] XMPP: MUC/pubsub/discovery profile, auth options и поддерживаемый набор XEP.
+- [ ] Nostr: NIP-01/42/29/53, private membership, moderation, revisions и scoped identities.
+- [ ] Сравнить готовые clients/SDK, свой код, эксплуатацию и долгосрочную поддержку.
+- [ ] Для MLS записать отдельно: стандарт, proposal, implementation и проверенная interoperability; не приравнивать исследования к готовой универсальной поддержке.
+- [ ] Рассмотреть четыре варианта: существующий профиль, adapters клиента, hybrid и новый CHP.
+- [ ] В отчёте различать unsupported, требует extension и не проверено.
+- [ ] Принять ADR-013 до production identity formats этапа 3; при выборе существующей основы переписать contracts и roadmap.
+
+**Gate:** выбирать собственный CHP только при показанном существенном несовместимом требовании либо доказанном преимуществе совокупной стоимости с учётом собственной security/interoperability ответственности. Без доказательств предпочесть существующую основу. Новые экраны сами по себе не требуют нового wire protocol.
+
 ### Результаты
 
 `docs/adr/001-project-scope.md`, `docs/threat-model.md`, release scope, решение о лицензиях. Прототипы secure storage/crypto/media должны иметь отдельный краткий отчёт: что работает на выбранных платформах, что не проверено.
@@ -198,6 +213,8 @@ Fixtures с несовместимой required capability отклоняютс�
 
 **Цель:** две реализации получают одинаковые ключи и ID, не используя самодельную криптографию. **Зависимости:** 2, ADR-003 и ADR-006. **Приоритет:** P0.
 
+Дополнительные gates: ADR-013 выбирает протокольную основу до production identity format; ADR-014 выбирает credential profiles до фиксации grants. Контракты CHP ниже условны до этих решений.
+
 ### Задачи
 
 - [ ] Выбрать проверенные Ed25519/HKDF/JCS libraries для Go и Dart.
@@ -216,11 +233,33 @@ Fixtures с несовместимой required capability отклоняютс�
 
 Go и Dart на одних fixtures выдают byte-identical public keys, IDs и canonical payload. Изменение server_id меняет server root; изменение hostname при том же доверенном server_id — нет. Рабочие ключи создаются независимо и не выводятся из S. На locked vault нельзя получить root operation. Review фиксирует, что profile composition — собственный protocol design и не подменяется ссылкой на RFC.
 
+### P0: Passkeys/WebAuthn и hardware profile — ADR-014
+
+- [ ] Разделить recovery root, login credential, physical device и API session.
+- [ ] Сравнить software Ed25519, hardware-backed native signing, device-bound WebAuthn и synced passkeys.
+- [ ] Проверить native APIs на целевых ОС и поддержку произвольных self-hosted RP; наличие Flutter plugin недостаточно.
+- [ ] Проверить browser-assisted flow: state, одноразовый код, защита callback от перехвата и отсутствие token в deep link.
+- [ ] Исследовать RP/origin binding и domain migration при неизменном server_id.
+- [ ] Выбрать verifier, допустимые COSE algorithms, UV policy и attestation/privacy policy.
+- [ ] Спроектировать typed credential binding и root-authorized registration; assertion не является Ed25519-подписью JCS.
+- [ ] Проверить challenge, authenticator data/clientDataJSON и signCount policy, включая допустимый zero counter.
+- [ ] Проверить synced credential на двух аппаратах: credential revoke отключает все копии, не один device.
+- [ ] Восстановить root по QR на чистом устройстве и зарегистрировать новый credential без старого authenticator.
+- [ ] Проверить потерю provider account; обязательного единственного облачного provider быть не должно.
+- [ ] Зафиксировать software root recovery как alternate authorization path: hardware-only гарантии не распространяются на всю систему автоматически.
+- [ ] Решить, включать ли optional WebAuthn profile в MVP; иначе записать blockers и software protection baseline.
+
+**Результат:** platform matrix, prototype registration/login/revoke/recovery, threat analysis и ADR-014 до фиксации credential contract. Выбор протокольной основы ADR-013 должен предшествовать production identity format; при выборе существующего протокола этот этап адаптируется к его модели.
+
 ## Этап 4. Auth, device grants и отзыв
 
 **Цель:** вход без централизованного логина и управляемые устройства. **Зависимости:** 3, ADR-004. **Приоритет:** P0.
 
 ### Backend
+
+- [ ] Если выбран WebAuthn profile: отдельные creation/assertion options, pending credential, root binding, COSE record и полноценная ceremony verification.
+- [ ] Credential type согласуется capability; assertion не передаётся в Ed25519 signature field.
+- [ ] Для synced credentials определить отзыв всех копий и отдельные границы session/device revoke.
 
 - [ ] Таблицы principals, grants, auth epochs, challenges, sessions и revoked grants.
 - [ ] Grant verification: root hash, signature, server_id, epoch, expiry, scopes.
@@ -638,6 +677,10 @@ Limited device может писать по выданному grant, но не 
 | E18 | Audience пытается publish | SFU permission отказ | M4 |
 | E19 | Private HLS segment URL | Без credentials не читается | M4 |
 | E20 | Unknown view/capability | Безопасная деградация | M1/M5 |
+| E21 | WebAuthn wrong origin/RP/challenge/UV | Отказ без выдачи auth session | До включения profile |
+| E22 | Synced passkey на двух аппаратах, revoke | Обе копии credential теряют доступ | До включения profile |
+| E23 | Clean install + QR + новый authenticator | Тот же principal, новый credential | До включения profile |
+| E24 | Смена domain при том же server_id | Явная credential migration, не тихий reuse | До включения profile |
 
 ### Performance profiles
 
@@ -697,7 +740,9 @@ Limited device может писать по выданному grant, но не 
 Эти задачи можно оформить как первые issues. Порядок соответствует зависимостям; полного production клиента здесь ещё нет.
 
 1. [ ] **ADR о scope и trust model.** Зафиксировать origin, server_id, отсутствие общего master ID в server API и plaintext content MVP.
+   - [ ] **ADR-013:** сравнить Matrix/XMPP/Nostr и обосновать выбор основы до production formats.
 2. [ ] **Toolchain/platform spike.** Минимальный Go/Dart Ed25519/HKDF/JCS round trip и проверка secure storage на двух целевых платформах.
+   - [ ] **ADR-014:** проверить WebAuthn/hardware credentials, self-hosted RP и recovery flow до фиксации grants.
 3. [ ] **Repo/CI scaffold.** Сборка сервера, SDK и клиента, formatter, fixtures validation.
 4. [ ] **Well-known/manifest schema.** Один channel с chat view, unsupported view fixture и trust conflict case.
 5. [ ] **Identity vectors.** Два server_id, один S, независимые device keys, byte-identical outputs в Go/Dart.

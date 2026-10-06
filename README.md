@@ -1,6 +1,6 @@
 # Открытый протокол каналов и социальных realtime-приложений
 
-**Рабочее имя: Channel Protocol (`chp`). Архитектурный проект, редакция 0.1 от 7 октября 2026 года.**
+**Рабочее имя: Channel Protocol (`chp`). Архитектурный проект, редакция 0.2 от 7 октября 2026 года.**
 
 Этот документ описывает, что мы хотим построить, как части системы взаимодействуют и какие ограничения необходимо учитывать. [TODO.md](TODO.md) превращает архитектуру в последовательность проверяемых этапов.
 
@@ -9,6 +9,7 @@
 ## Содержание
 
 1. [Конечная идея](#1-конечная-идея)
+   - [Prior art и отличия](#prior-art-и-отличия-почему-не-matrix-xmpp-или-nostr)
 2. [Термины и границы проекта](#2-термины-и-границы-проекта)
 3. [Пользовательские сценарии](#3-пользовательские-сценарии)
 4. [Архитектура](#4-архитектура)
@@ -17,6 +18,7 @@
 7. [Views, content, sessions и actions](#7-views-content-sessions-и-actions)
 8. [Идентичность и иерархия ключей](#8-идентичность-и-иерархия-ключей)
 9. [Вход и сессии авторизации](#9-вход-и-сессии-авторизации)
+   - [Passkeys / WebAuthn](#95-passkeys--webauthn-как-альтернативный-credential)
 10. [Устройства, отзыв и восстановление](#10-устройства-отзыв-и-восстановление)
 11. [QR recovery card](#11-qr-recovery-card)
 12. [Профили и personas](#12-профили-и-personas)
@@ -70,6 +72,52 @@
 4. Раздельные уровни: протокол приложения, идентичность, хранение, realtime и медиатранспорт.
 5. Простая первая версия: один сервер авторитетен для своих объектов; федерация добавляется отдельно.
 6. Совместимость доказывается тестами, а безопасность — проверками и анализом, а не наличием слова «crypto».
+
+### Prior art и отличия: почему не Matrix, XMPP или Nostr
+
+**Создание нового wire protocol пока не обосновано окончательно.** Наш продукт может оказаться универсальным клиентом и набором профилей поверх существующей системы. Self-hosting, комнаты, события, подписи и расширяемость уже существуют; их наличие не доказывает необходимость CHP. Сравнение ниже — архитектурная оценка, не результаты benchmarks или interoperability tests.
+
+| Система | Что можно использовать | Отличие предлагаемого CHP | Что проверить прототипом |
+|---|---|---|---|
+| Matrix | Федерация, rooms/events, devices, permissions, sync и E2EE | Независимые server-local principals; авторитетный instance без обязательной репликации room state | Manifest/views поверх custom events, вход по ключу и стоимость auth extension |
+| XMPP | Федеративный messaging, service discovery, MUC, pubsub и session negotiation | Обязательный согласованный профиль views/actions | Набор XEP для chat/forum/feed, existing server и минимальный UI |
+| Nostr | User-owned signing keys, relay subscriptions, групповые и live extensions | Server-authoritative объекты, ACL и revisions вместо базовой модели переносимых событий | NIP-29/53, scoped keys, moderation, edits и private content |
+| CHP, если выбран | Manifest/view contracts, scoped identities, единый UX | Пока нет готовых clients, federation, E2EE и доказанной interoperability | Доказать преимущества на тех же сценариях и оценить новую стоимость безопасности |
+
+#### Что уже решено
+
+**Matrix.** Rooms реплицируются между homeservers, данные расширяются собственными event types, user ID имеет форму `@localpart:domain`. Можно исследовать наши views поверх Matrix вместо повторной реализации sync. Homeserver-bound account не означает обязательный центральный оператор или обязательный пароль. [Matrix specification](https://spec.matrix.org/latest/).
+
+Документация E2EE описывает Megolm; Matrix также опубликовал работы и предложения по MLS. Наличие работ не означает «MLS поддерживается всеми Matrix-серверами и клиентами»: проверяем конкретные MSC, implementations и совместимость выбранного stack. [E2EE guide](https://www.matrix.org/docs/matrix-concepts/end-to-end-encryption/), [MLS-направление](https://www.matrix.org/blog/2024/12/25/the-matrix-holiday-special-2024/).
+
+**XMPP.** Core задаёт messaging, presence, authentication и server-to-server связи. Discovery, многопользовательские комнаты, pubsub, Jingle и OMEMO описаны расширениями. Проверяем фактическую комбинацию XEP в выбранных клиентах/серверах; возраст системы и использование XML не являются аргументами против неё. [RFC 6120](https://www.rfc-editor.org/info/rfc6120/), [XEP-0030](https://xmpp.org/extensions/xep-0030.html), [XEP-0045](https://xmpp.org/extensions/xep-0045.html), [XEP-0060](https://xmpp.org/extensions/xep-0060.html), [XEP-0166](https://xmpp.org/extensions/xep-0166.html), [XEP-0384](https://xmpp.org/extensions/xep-0384.html).
+
+**Nostr.** NIP-01 задаёт события с публичным ключом автора и Schnorr-подписью secp256k1; NIP-42 — аутентификацию на relay. User-owned identity здесь уже является основой системы. [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md), [NIP-42](https://github.com/nostr-protocol/nips/blob/master/42.md).
+
+Группы и live-сценарии также есть: NIP-29 описывает relay-based groups, NIP-53 — live activities. Несколько relay не равнозначны репликации room state в Matrix. Один повторно используемый public key облегчает сопоставление активности; отдельные ключи возможны, но тогда переносимость identity и связь аккаунтов требуют явной политики. [NIP-29](https://github.com/nostr-protocol/nips/blob/master/29.md), [NIP-53](https://github.com/nostr-protocol/nips/blob/master/53.md).
+
+#### Что может быть нашим отличием
+
+Гипотеза проекта — сочетание **самостоятельных серверов с локальными правилами**, **идентичностей без автоматически раскрываемого общего root ID** и **обязательных типизированных contracts для нескольких views в одном клиенте**. Отдельные элементы не новы и могут реализовываться существующими расширениями.
+
+Авторитетный instance и отсутствие federation в MVP позволяют начать с локальных транзакций и ACL. Это ограничение области, не доказательство превосходства: Matrix можно использовать без включения federation, XMPP/Nostr тоже допускают локальные сценарии. У CHP пока нет доказанной меньшей сложности, лучшей производительности или более сильной безопасности.
+
+Новый протокол означает собственную обязанность поддерживать auth, sync, compatibility, abuse protection, clients и migrations. Bridge добавляет trust boundary: mapping может менять authorship, ACL и E2EE semantics. Мост не даёт автоматической совместимости.
+
+#### Четыре допустимых решения
+
+1. **Профиль существующего протокола:** views/manifest поверх Matrix, XMPP или Nostr с их identities и согласованными auth extensions.
+2. **Клиент с adapters:** общий UX, отдельные backend semantics; гарантии отображаются по фактическому backend.
+3. **Гибрид:** CHP для discovery/views/media orchestration, существующая система для messaging; явно определить источник истины и identity mapping.
+4. **Новый CHP:** выбрать после доказательства существенных несовместимых требований или непропорциональной стоимости расширений.
+
+#### Gate перед собственной реализацией
+
+До этапа 3 подготовить ADR-013 и ограниченные прототипы Matrix, XMPP и Nostr. Для каждого проверить одинаковый сценарий: self-hosted instance → URL → chat и другая view → private membership → второе устройство → revoke/recovery → media join contract.
+
+Отчёт разделяет: работает без изменений; требует профиля/плагина; требует несовместимого изменения; не проверено. Оценить собственный код, эксплуатацию, поддержку, privacy/recovery, доступность готовых clients и test coverage. Указать конкретные versions, sources и blockers; неизвестность не считать недостатком альтернативы.
+
+**Условие выбора нового протокола:** обязательное требование нельзя разумно реализовать существующим профилем либо совокупная стоимость расширения выше с учётом собственной security/interoperability ответственности. Если преимущества не доказаны, корректируем roadmap в пользу существующей основы. Далее описан кандидат CHP для сравнения, а не окончательно принятое обязательство.
 
 ## 2. Термины и границы проекта
 
@@ -527,6 +575,61 @@ Bearer token можно использовать при краже до expiry/�
 Добавление device grant, изменение auth epoch и миграция ключа требуют root proof. Для них сервер выдаёт отдельный одноразовый challenge с `purpose`, хешем action payload и текущей версией identity state. Подпись root связывает всё действие с challenge. Старая подпись регистрации не может использоваться как подпись отзыва или назначения нового ключа.
 
 Управляющее устройство может требовать локальную биометрию или пароль vault перед использованием root. Это локальная защита, не пароль на сервере.
+
+### 9.5. Passkeys / WebAuthn как альтернативный credential
+
+**WebAuthn нужно исследовать до фиксации device credential format.** Recovery root отвечает за user-owned identity и делегирование, login credential — за повседневный вход. Они могут использовать разные алгоритмы. Не заменяем восстанавливаемый root passkey без отдельной модели recovery.
+
+#### Защита и ограничения
+
+Ed25519 в Dart после чтения secret из secure storage остаётся программным ключом в памяти процесса. Шифрование хранения защищает данные в покое, но не исключает кражу из работающего скомпрометированного приложения.
+
+Passkeys бывают синхронизируемыми и привязанными к устройству. Hardware authenticator может защищать ключ от экспорта в приложение; synced passkey зависит также от credential provider и его recovery. Термин passkey не гарантирует hardware-only хранение. [FIDO Alliance](https://fidoalliance.org/passkeys/).
+
+Credential ограничен RP ID, а assertion имеет authenticator data и client data. Его нельзя проверить как Ed25519-подпись нашего JCS transcript. Нужен полноценный WebAuthn verifier для registration/login; `userVerification: required` — предлагаемая policy prototype. [WebAuthn Level 2](https://www.w3.org/TR/webauthn-2/).
+
+RP ID и origin различаются. WebAuthn определяет UP/UV, backup eligibility/state и signature counter; нулевой counter допустим, подозрительный signCount — сигнал риска, не универсальное доказательство клонирования. Related-origin механизмы не означают разрешение на любой self-hosted origin. [WebAuthn Level 3](https://www.w3.org/TR/webauthn-3/).
+
+| Вариант | Преимущество | Ограничение |
+|---|---|---|
+| Software Ed25519 + vault | Простой native flow и baseline | Secret в памяти приложения |
+| Hardware-backed native signing | Неэкспортируемая операция там, где поддерживается | Разные algorithms/platform APIs; отдельный profile |
+| Device-bound WebAuthn | Origin-scoped вход и возможная аппаратная защита | RP binding, user interaction, потеря authenticator |
+| Synced passkey | Удобный вход с нескольких аппаратов | Credential не равен одному physical device; revoke касается всех копий |
+
+Кража bearer token после входа остаётся риском при любом credential. Hardware key не защищает от всех действий уже авторизованного вредоносного клиента. Если software recovery root может выдать новый credential, он остаётся резервным путём с более слабой защитой; вся система не становится hardware-only.
+
+#### Кандидат гибридной модели
+
+```text
+Recovery seed → server root → подписанная credential binding
+                                    ├─ ed25519.v1 рабочий ключ
+                                    └─ webauthn.v1 credential ID + COSE key + RP ID
+                                                 ↓ assertion
+                                         тот же local principal
+```
+
+Это предложение, не реализованный API. Ed25519 grant/login остаётся baseline до ADR-014. Экспериментальный profile добавляет `credential_type`; COSE key нельзя трактовать как `device_public_key` старой схемы. Алгоритмы root signature и authenticator независимы.
+
+**Регистрация:** сервер выдаёт creation options с одноразовым challenge; verifier проверяет ceremony. Новый credential временно pending. Root-authorized action связывает с principal credential ID, hash канонически сохранённого COSE public key, algorithm, RP ID, scopes, expiry и auth epoch. Pending credential не выдаёт token до проверки binding. Само создание passkey не разрешает присоединиться к произвольному существующему principal.
+
+**Вход:** отдельный assertion challenge связан на сервере с credential/grant/principal и purpose login. Проверить ceremony, epoch и revoke state, затем выдать auth session. Использовать библиотечный verifier и негативные fixtures для challenge, origin, RP, signature и user verification. Attestation policy выбирается явно: по умолчанию не требовать уникальных аппаратных сведений; доказательство класса защиты требует отдельной оценки privacy и compatibility.
+
+**Хранение:** credential record содержит ID, COSE key/algorithm, RP ID, last signCount, backup flags и status; ссылки на root binding и epoch. Разделить credential, physical device и API session. Если synced credential работает на телефоне и ноутбуке, его revoke отключает оба. Отзыв одного аппарата требует независимых credentials либо отдельного проверенного session/device-binding design.
+
+#### Универсальный клиент и произвольные серверы
+
+Каждый instance должен быть собственным RP. Обязательный общий `login.chp.example` создал бы центральную точку входа. Для native client необходимо проверить поддержку произвольных RP на каждой ОС. Credential Manager — отдельный Android API, не Dart signing library. [Android Credential Manager](https://developer.android.com/identity/credential-manager).
+
+В ADR-014 проверить native association/trusted-caller requirements Android/iOS/Windows и browser-assisted ceremony. Browser handoff связывается с исходным запросом через state и одноразовый код; нужны защита callback от перехвата и отсутствие access token в deep link. Наличие Flutter plugin не доказывает совместимость с произвольным сервером.
+
+Смена домена при прежнем server_id не гарантирует работу passkey: RP binding — отдельное ограничение. Кандидат безопасной миграции — подтверждённый новый origin, root proof и регистрация нового credential. Related-origin возможности изучаются отдельно.
+
+#### Recovery и gate
+
+QR восстанавливает S и roots, **не экспортирует и не воспроизводит private WebAuthn credential**. После recovery root регистрирует новый credential и отзывает старый. Recovery synced passkey у provider — независимый путь, не замена карты и backup.
+
+До принятия profile проверить security key, platform authenticator, synced passkey, clean-device QR recovery, credential revoke, потерю provider account, domain migration и два self-hosted RP. Допустимые результаты: optional WebAuthn login; специальный mandatory hardware profile; отложенная поддержка с честным software baseline. Аппаратная защита обещается только для проверенного класса authenticator и платформенной модели.
 
 ## 10. Устройства, отзыв и восстановление
 
@@ -1328,6 +1431,8 @@ Per-server privacy конфликтует с простым global public identi
 | ADR-010 | Root compromise / migration policy | До обещания key rotation |
 | ADR-011 | Encrypted backup и rollback | До backup sync |
 | ADR-012 | E2EE / federation scopes | До соответствующих features |
+| ADR-013 | Prior art: существующий профиль или новый CHP | До этапа 3 и фиксации основы |
+| ADR-014 | Credential profiles: software, hardware и WebAuthn | До фиксации grants и hardware protection claims |
 
 ### 22.2. Общая Definition of Done
 
@@ -1351,4 +1456,4 @@ Feature считается готовой, когда есть schema и кон�
 - [RFC 9420 — Messaging Layer Security](https://www.rfc-editor.org/info/rfc9420/): основа для отдельного исследования encrypted groups.
 - [LiveKit — self-hosted deployment](https://docs.livekit.io/transport/self-hosting/deployment/): сеть и развёртывание кандидата SFU.
 
-**Следующий практический шаг:** пройти этапы 0–2 из [TODO.md](TODO.md), закрепить контракты и получить минимальный воспроизводимый сервер с одним чатовым каналом.
+**Следующий практический шаг:** пройти этапы 0–2 из [TODO.md](TODO.md), сравнить существующие основы через ADR-013, исследовать credential profiles через ADR-014 и затем закрепить контракты выбранной реализации.
