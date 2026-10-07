@@ -54,7 +54,7 @@ Refresh tokens, root key migration, epoch mutation, WebAuthn, session/device lis
 
 `ListEvents` отдаёт до 100 событий `content.created` с opaque cursor (`event-N` в текущей реализации). После переподключения клиент передаёт последний обработанный cursor через `after` и дедуплицирует по cursor. Unknown cursor отклоняется. Миграция версии 1 в 2 создаёт события существующих сообщений, сохраняя server identity.
 
-Сейчас это durable polling/replay API. Server streaming, heartbeat, retention/expired cursor, snapshot watermark, push delivery и отдельный transactional outbox worker ещё не реализованы. Журнал является источником для будущего transport; exactly-once delivery клиенту не обещается.
+На момент принятия ADR-016 был реализован durable polling/replay API. Подписка, heartbeat и lifecycle позже добавлены в [ADR-018](018-event-stream.md). Retention/expired cursor, snapshot watermark и отдельный transactional outbox worker ещё не реализованы; exactly-once delivery клиенту не обещается.
 
 ## Проверки
 

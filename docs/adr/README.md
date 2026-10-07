@@ -5,6 +5,7 @@
 - [ADR-015: gRPC и grpc-gateway](015-api-transport.md).
 - [ADR-016: локальная авторизация и durable events](016-local-auth-events.md).
 - [ADR-017: личная тема и оформление пространства по согласию](017-space-appearance.md).
+- [ADR-018: поток событий, replay и переподключение](018-event-stream.md).
 
 Формат нового документа:
 
