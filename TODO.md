@@ -38,7 +38,7 @@
 - [x] Анализ, тесты интерфейса/подписей и Windows release build.
 - [x] Dart/Go interoperability проверка в CI.
 
-Следующий срез: server-streaming Subscribe, ACL/invites и развитие Flutter-клиента. ADR-013/014 остаются открытыми. Локальный профиль описан в ADR-016; это ещё не полный production identity/auth. Подписанный manifest, key backend, backup/restore drill, refresh, vault/recovery, outbox worker, realtime streaming, `/admin` и полный Docker deployment пока не выполнены.
+Следующий срез: восстановление владельца и связывание браузера с Flutter, затем ACL/invites. Subscribe с replay реализован. ADR-013/014 остаются открытыми. Подписанный manifest, production key backend, backup/restore drill, refresh, QR recovery, outbox и полный Docker deployment ещё не выполнены.
 
 > Roadmap не является календарным обещанием. Оценки времени появятся после технических прототипов и определения состава команды. Один этап может состоять из нескольких PR; каждый PR должен оставлять систему собираемой и проверяемой. Не начинаем федерацию или сложное медиа до проверки основного вертикального среза.
 
@@ -248,7 +248,7 @@ flowchart TD
 
 ### API transport — ADR-015
 
-- [ ] Следовать [ADR-015](docs/adr/015-api-transport.md): `.proto` как источник application/admin contracts, gRPC для native, grpc-gateway HTTP/JSON для web.
+- [ ] Следовать [ADR-015](docs/adr/015-api-transport.md): `.proto` как источник application/space contracts, gRPC для native, grpc-gateway HTTP/JSON для web.
 - [ ] Добавить proto packages, google.api.http mappings и reproducible code generation.
 - [ ] Генерировать SDK/server bindings и OpenAPI; проверять breaking changes и reserve removed field numbers.
 - [ ] Зафиксировать ProtoJSON правила и отличия от иллюстративных моделей README.
@@ -511,9 +511,12 @@ Plain card должна быть проверена также как threat sce
 
 ### P0: Встроенная веб-панель администрирования
 
-- [ ] Поставлять admin frontend вместе с app container; маршрут `/admin`, без обязательного внешнего сервиса.
-- [ ] Setup wizard с одноразовым локально полученным кодом, owner identity enrollment и атомарным закрытием bootstrap.
-- [ ] Административный API и server-admin permissions отдельно от channel ownership.
+Первый срез встроен по /space: названия, включение чата, open/closed регистрация, revision, audit, logout. [Инструкция](admin-web/README.md). Полная панель и готовый app container ещё предстоят.
+
+
+- [ ] Поставлять admin frontend вместе с app container; маршрут `/space`, без обязательного внешнего сервиса.
+- [x] Первый setup wizard: локальный одноразовый код (15 минут), browser owner enrollment и атомарное закрытие bootstrap.
+- [x] Первый AdminService: отдельное root-signed разрешение space.manage и проверка owner на каждом запросе.
 - [ ] Dashboard: health, storage, подключения, ошибки и статус optional media services.
 - [ ] CRUD channels, collections и views с типами контента, порядком, видимостью и join policy.
 - [ ] Настройки публикации, replies, reactions, uploads, quotas и retention.

@@ -34,6 +34,8 @@ jobs:
           node --check client/design/prototype/app.js
           node --check client/design/prototype/theme.js
           node client/design/prototype/theme.test.mjs
+          node --check server/internal/spaceweb/assets/app.mjs
+          node --check server/internal/spaceweb/assets/identity.mjs
       - uses: actions/setup-go@v5
         with:
           go-version-file: server/go.mod
@@ -61,6 +63,9 @@ jobs:
           SPACE_DATABASE_URL: postgres://space:ci-only-password@127.0.0.1:5432/space_test?sslmode=disable
         run: |
           go build -o "$RUNNER_TEMP/space-server" ./cmd/space-server
+          SPACE_SETUP_CODE=$("$RUNNER_TEMP/space-server" -setup-code)
+          echo "::add-mask::$SPACE_SETUP_CODE"
+          export SPACE_SETUP_CODE
           "$RUNNER_TEMP/space-server" -http 127.0.0.1:18080 &
           server_pid=$!
           trap 'kill "$server_pid"; wait "$server_pid" || true' EXIT
@@ -69,5 +74,6 @@ jobs:
             sleep 1
           done
           go run ./cmd/space-demo -origin http://127.0.0.1:18080
+          node tools/admin-interop.mjs
           cd ../client
           dart run tool/interoperability.dart http://127.0.0.1:18080

@@ -16,6 +16,9 @@
     },
     {
       "name": "SyncService"
+    },
+    {
+      "name": "AdminService"
     }
   ],
   "consumes": [
@@ -49,6 +52,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateChallengeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/api/v1/auth/logout": {
+      "post": {
+        "operationId": "AuthService_Logout",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LogoutResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1LogoutRequest"
             }
           }
         ],
@@ -264,6 +299,112 @@
           "ChannelService"
         ]
       }
+    },
+    "/api/v1/space/settings": {
+      "get": {
+        "operationId": "AdminService_GetSettings",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetSettingsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "AdminService"
+        ]
+      },
+      "patch": {
+        "operationId": "AdminService_UpdateSettings",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateSettingsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateSettingsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/space/setup": {
+      "get": {
+        "operationId": "AdminService_GetSetupStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetSetupStatusResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/space/setup/claim": {
+      "post": {
+        "operationId": "AdminService_ClaimOwner",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ClaimOwnerResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ClaimOwnerRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -321,6 +462,22 @@
             "type": "object",
             "$ref": "#/definitions/v1View"
           }
+        }
+      }
+    },
+    "v1ClaimOwnerRequest": {
+      "type": "object",
+      "properties": {
+        "setupCode": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ClaimOwnerResponse": {
+      "type": "object",
+      "properties": {
+        "settings": {
+          "$ref": "#/definitions/v1SpaceSettings"
         }
       }
     },
@@ -388,6 +545,10 @@
         },
         "grantId": {
           "type": "string"
+        },
+        "administrative": {
+          "type": "boolean",
+          "description": "Только регистрация: root явно разрешает space.manage этому устройству."
         }
       }
     },
@@ -441,6 +602,25 @@
             "type": "object",
             "$ref": "#/definitions/v1Channel"
           }
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "settings": {
+          "$ref": "#/definitions/v1SpaceSettings"
+        }
+      }
+    },
+    "v1GetSetupStatusResponse": {
+      "type": "object",
+      "properties": {
+        "initialized": {
+          "type": "boolean"
         }
       }
     },
@@ -474,6 +654,33 @@
         }
       }
     },
+    "v1LogoutRequest": {
+      "type": "object"
+    },
+    "v1LogoutResponse": {
+      "type": "object"
+    },
+    "v1SpaceSettings": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "chatTitle": {
+          "type": "string"
+        },
+        "chatEnabled": {
+          "type": "boolean"
+        },
+        "registrationPolicy": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "v1SubscribeResponse": {
       "type": "object",
       "properties": {
@@ -485,6 +692,35 @@
         },
         "heartbeat": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateSettingsRequest": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "chatTitle": {
+          "type": "string"
+        },
+        "chatEnabled": {
+          "type": "boolean"
+        },
+        "registrationPolicy": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1UpdateSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "settings": {
+          "$ref": "#/definitions/v1SpaceSettings"
         }
       }
     },

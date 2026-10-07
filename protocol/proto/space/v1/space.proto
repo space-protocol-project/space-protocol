@@ -23,6 +23,9 @@ service ContentService {
 }
 
 service AuthService {
+  rpc Logout(LogoutRequest) returns (LogoutResponse) {
+    option (google.api.http) = {post: "/api/v1/auth/logout" body: "*"};
+  }
   rpc CreateChallenge(CreateChallengeRequest) returns (CreateChallengeResponse) {
     option (google.api.http) = {post: "/api/v1/auth/challenges" body: "*"};
   }
@@ -30,6 +33,8 @@ service AuthService {
     option (google.api.http) = {post: "/api/v1/auth/sessions" body: "*"};
   }
 }
+message LogoutRequest {}
+message LogoutResponse {}
 
 service SyncService {
   rpc Subscribe(SubscribeRequest) returns (stream SubscribeResponse) {
@@ -38,6 +43,42 @@ service SyncService {
   rpc ListEvents(ListEventsRequest) returns (ListEventsResponse) {
     option (google.api.http) = {get: "/api/v1/channels/{channel_id}/events"};
   }
+}
+
+service AdminService {
+  rpc GetSetupStatus(GetSetupStatusRequest) returns (GetSetupStatusResponse) {
+    option (google.api.http) = {get: "/api/v1/space/setup"};
+  }
+  rpc ClaimOwner(ClaimOwnerRequest) returns (ClaimOwnerResponse) {
+    option (google.api.http) = {post: "/api/v1/space/setup/claim" body: "*"};
+  }
+  rpc GetSettings(GetSettingsRequest) returns (GetSettingsResponse) {
+    option (google.api.http) = {get: "/api/v1/space/settings"};
+  }
+  rpc UpdateSettings(UpdateSettingsRequest) returns (UpdateSettingsResponse) {
+    option (google.api.http) = {patch: "/api/v1/space/settings" body: "*"};
+  }
+}
+message GetSetupStatusRequest {}
+message GetSetupStatusResponse { bool initialized = 1; }
+message ClaimOwnerRequest { string setup_code = 1; }
+message GetSettingsRequest {}
+message ClaimOwnerResponse { SpaceSettings settings = 1; }
+message GetSettingsResponse { SpaceSettings settings = 1; }
+message UpdateSettingsResponse { SpaceSettings settings = 1; }
+message SpaceSettings {
+  string title = 1;
+  string chat_title = 2;
+  bool chat_enabled = 3;
+  string registration_policy = 4;
+  int64 revision = 5;
+}
+message UpdateSettingsRequest {
+  string title = 1;
+  string chat_title = 2;
+  bool chat_enabled = 3;
+  string registration_policy = 4;
+  int64 expected_revision = 5;
 }
 
 message SubscribeRequest {
@@ -56,6 +97,8 @@ message CreateChallengeRequest {
   bytes root_public_key = 2;
   bytes device_public_key = 3;
   string grant_id = 4;
+  // Только регистрация: root явно разрешает space.manage этому устройству.
+  bool administrative = 5;
 }
 message CreateChallengeResponse {
   string challenge_id = 1;
@@ -91,6 +134,7 @@ message GetManifestResponse {
   string protocol_version = 1;
   string server_id = 2;
   repeated Channel channels = 3;
+  string title = 4;
 }
 message Channel {
   string id = 1;

@@ -10,7 +10,7 @@
 
 Предложение интерфейса для всего приложения: [UI/UX и интерактивный HTML-прототип](client/design/README.md). По умолчанию — Gruvbox; личные цвета и согласованное оформление выбранного сервера описаны в [ADR-017](docs/adr/017-space-appearance.md). Прототип показывает будущие сценарии на демоданных; это не признак готовности соответствующих backend API.
 
-Начальная структура репозитория уже создана: [protocol](protocol/README.md), [server](server/README.md), [client](client/README.md), [admin-web](admin-web/README.md), [sdk](sdk/README.md), [deploy](deploy/README.md) и [docs](docs/README.md). Есть локальный Go-прототип: discovery, manifest, чат через gRPC/grpc-gateway, PostgreSQL, миграции, durable events с Subscribe/replay и первый Ed25519 register/login/revoke профиль. [Запуск и ограничения](server/README.md), [генерация контрактов](protocol/GENERATING.md), [экспериментальный auth/events профиль](docs/adr/016-local-auth-events.md). Полная user-owned identity с vault/recovery, ACL, панель администратора и полный Docker deployment ещё не реализованы. Первый Flutter-клиент для Windows уже создан: [запуск и ограничения](client/README.md). Правила участия описаны в [CONTRIBUTING.md](CONTRIBUTING.md), статус безопасности — в [SECURITY.md](SECURITY.md).
+Начальная структура репозитория уже создана: [protocol](protocol/README.md), [server](server/README.md), [client](client/README.md), [admin-web](admin-web/README.md), [sdk](sdk/README.md), [deploy](deploy/README.md) и [docs](docs/README.md). Есть локальный Go-прототип: discovery, manifest, чат через gRPC/grpc-gateway, PostgreSQL, миграции, durable events с Subscribe/replay и первый Ed25519 register/login/revoke профиль. [Запуск и ограничения](server/README.md), [генерация контрактов](protocol/GENERATING.md), [экспериментальный auth/events профиль](docs/adr/016-local-auth-events.md). Полная user-owned identity с vault/recovery, ACL и полный Docker deployment ещё не реализованы. Первый встроенный срез панели `/space` уже доступен: [настройка владельца и SSH-доступ](admin-web/README.md). Первый Flutter-клиент для Windows уже создан: [запуск и ограничения](client/README.md). Правила участия описаны в [CONTRIBUTING.md](CONTRIBUTING.md), статус безопасности — в [SECURITY.md](SECURITY.md).
 
 1. [Конечная идея](#1-конечная-идея)
    - [Prior art и отличия](#prior-art-и-отличия-почему-не-matrix-xmpp-или-nostr)
@@ -1298,21 +1298,21 @@ volumes:
 
 ### 19.3. Обязательная веб-панель управления
 
-**Каждая self-hosted установка поставляется со встроенным веб-интерфейсом настройки и администрирования.** После запуска Docker владелец открывает `/admin` на своём сервере. Для обычного управления не требуется редактировать JSON/YAML или работать в терминале. Универсальный клиент предназначен для участников, веб-панель — для владельцев и администраторов установки.
+**Каждая self-hosted установка поставляется со встроенным веб-интерфейсом настройки и администрирования.** После запуска Docker владелец открывает `/space` на своём сервере. Для обычного управления не требуется редактировать JSON/YAML или работать в терминале. Универсальный клиент предназначен для участников, веб-панель — для владельцев и администраторов установки.
 
 Панель поставляется вместе с сервером приложения, а не отдельным обязательным облачным сервисом. Инфраструктурные контейнеры DB/TURN/SFU не обязаны иметь собственный UI: их состояние и поддерживаемые настройки агрегирует панель. Установка Docker, DNS, внешний firewall и первичная точка входа остаются инфраструктурными шагами; веб-интерфейс не может настроить недоступное ему оборудование автоматически.
 
 #### Первый запуск
 
 ```text
-Запустить Docker → открыть /admin → ввести одноразовый setup-код
+Запустить Docker → открыть /space → ввести одноразовый setup-код
   → создать или подключить identity владельца
   → выбрать имя сервера и политику регистрации
   → создать канал и выбрать доступные представления
   → проверить настройки → открыть сервер для участников
 ```
 
-Setup-код создаётся при инициализации и доступен локальному владельцу установки через защищённый файл или локальную bootstrap-команду. Он одноразовый, ограничен по времени и не выдаётся посетителю `/admin`. После привязки owner setup закрывается. Первый публичный посетитель не становится администратором. Browser enrollment использует ту же модель identity/root proof; recovery secret не отправляется backend. При использовании существующего клиента возможен отдельный подтверждённый browser pairing flow.
+Setup-код создаётся при инициализации и доступен локальному владельцу установки через защищённый файл или локальную bootstrap-команду. Он одноразовый, ограничен по времени и не выдаётся посетителю `/space`. После привязки owner setup закрывается. Первый публичный посетитель не становится администратором. Browser enrollment использует ту же модель identity/root proof; recovery secret не отправляется backend. При использовании существующего клиента возможен отдельный подтверждённый browser pairing flow.
 
 #### Разделы панели
 
@@ -1343,7 +1343,7 @@ Setup-код создаётся при инициализации и досту�
 
 #### Технические границы и безопасность
 
-Web frontend обращается к административному API, например `/api/admin/v1/channels` и `/api/admin/v1/config/validate`; это отдельный контракт с server-admin permissions. Сервер перепроверяет полномочия каждого запроса. При cookie auth требуются CSRF/Origin checks; admin tokens не помещаются в URL. Используем строгую CSP, безопасный вывод текста, ограниченные сессии и повторное подтверждение чувствительных операций. Код панели имеет доступ к browser identity material, поэтому XSS и supply chain входят в threat model.
+Web frontend обращается к административному API, например `/api/space/v1/channels` и `/api/space/v1/config/validate`; это отдельный контракт с server-admin permissions. Сервер перепроверяет полномочия каждого запроса. При cookie auth требуются CSRF/Origin checks; admin tokens не помещаются в URL. Используем строгую CSP, безопасный вывод текста, ограниченные сессии и повторное подтверждение чувствительных операций. Код панели имеет доступ к browser identity material, поэтому XSS и supply chain входят в threat model.
 
 Runtime settings хранятся в versioned DB configuration. Secrets передаются write-only, маскируются и не попадают в config export/logs. Read-only environment settings имеют явный приоритет и помечаются в UI как управляемые размещением. Панель не получает Docker socket, произвольный shell или права выполнения команд. Настройка backup расписания допустима, но disaster restore недоступного сервера выполняется recovery-инструментом; просмотр статуса в UI не заменяет проверку восстановления.
 
