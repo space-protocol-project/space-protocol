@@ -44,6 +44,16 @@
 
 ## Содержание
 
+### Поток событий — локальный срез
+
+- [x] Server-streaming Subscribe с durable cursor/replay и heartbeat.
+- [x] Stream auth, session/grant expiry и остановка при revoke.
+- [x] Ограничение подписок и времени отправки; gateway frame deadlines.
+- [x] Flutter stream вместо клиентского polling, reconnect/backoff и cancellation guard.
+- [x] Проверки Go/HTTP/Dart, replay/live/revoke и сохранения курсора.
+
+Серверный log пока проверяется раз в 500 ms. Event-driven wakeup, jitter, snapshot watermark, browser/proxy profile, retention и ACL остаются отдельными этапами. См. ADR-018.
+
 ### UI/UX-прототип и оформление — выполнено отдельно от backend
 
 - [x] Адаптивный HTML/JS-прототип: обзор, чат, форум, лента, voice/video/stage/live, identity/settings и панель владельца.

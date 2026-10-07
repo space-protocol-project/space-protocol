@@ -198,6 +198,51 @@
         ]
       }
     },
+    "/api/v1/channels/{channelId}/events/subscribe": {
+      "get": {
+        "operationId": "SyncService_Subscribe",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "$ref": "#/definitions/v1SubscribeResponse"
+                },
+                "error": {
+                  "$ref": "#/definitions/rpcStatus"
+                }
+              },
+              "title": "Stream result of v1SubscribeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SyncService"
+        ]
+      }
+    },
     "/api/v1/manifest": {
       "get": {
         "operationId": "ChannelService_GetManifest",
@@ -426,6 +471,20 @@
         },
         "nextCursor": {
           "type": "string"
+        }
+      }
+    },
+    "v1SubscribeResponse": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "$ref": "#/definitions/v1Event"
+        },
+        "cursor": {
+          "type": "string"
+        },
+        "heartbeat": {
+          "type": "boolean"
         }
       }
     },

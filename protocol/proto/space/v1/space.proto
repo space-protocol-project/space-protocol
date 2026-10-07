@@ -32,9 +32,22 @@ service AuthService {
 }
 
 service SyncService {
+  rpc Subscribe(SubscribeRequest) returns (stream SubscribeResponse) {
+    option (google.api.http) = {get: "/api/v1/channels/{channel_id}/events/subscribe"};
+  }
   rpc ListEvents(ListEventsRequest) returns (ListEventsResponse) {
     option (google.api.http) = {get: "/api/v1/channels/{channel_id}/events"};
   }
+}
+
+message SubscribeRequest {
+  string channel_id = 1;
+  string after = 2;
+}
+message SubscribeResponse {
+  Event event = 1;
+  string cursor = 2;
+  bool heartbeat = 3;
 }
 
 message CreateChallengeRequest {
