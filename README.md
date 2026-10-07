@@ -872,6 +872,12 @@ Content retention отдельно от event retention. Пример начал
 
 ## 14. HTTP API
 
+### Транспортное решение: gRPC + grpc-gateway
+
+Принято направление [ADR-015](docs/adr/015-api-transport.md): API описывается `.proto`, нативный клиент использует gRPC, веб-панель — HTTP/JSON через grpc-gateway. Domain logic и permissions общие. Ниже приведены проектные HTTP mappings и модели; их точный wire format согласуется с `.proto` и ProtoJSON. Ранее предложенный WebSocket теперь возможный fallback для браузерных событий, а не обязательная основа.
+
+Discovery остаётся HTTPS JSON; файлы — HTTP upload/download; media — WebRTC/HLS. gRPC streaming не заменяет durable replay и cursor. Browser streaming через gateway требует проверки framing/flush/reconnect; отдельный SSE/WS adapter выбираем только при необходимости. Signed identity/recovery envelopes сохраняют JCS canonical bytes независимо от транспортной сериализации.
+
 ### 14.1. Основные маршруты
 
 Все пути ниже, кроме well-known, относительно `/api/v1`. Credentials передаются по HTTPS.
@@ -1378,7 +1384,7 @@ Quota limits задают число channels, users, assets, uploads, active se
 | Сервер | Go | Модель транзакций, библиотеки schema/JCS/crypto |
 | База | PostgreSQL | Ordered cursor, migration и backup |
 | Клиент | Flutter / Dart | Secure storage, Ed25519, WebRTC SDK на платформах |
-| API | HTTP JSON + WebSocket | OpenAPI и schema conformance |
+| API | Protobuf + gRPC + grpc-gateway | Общие contracts, HTTP mappings, browser streaming и conformance |
 | Identity | Ed25519, HKDF-SHA-256 | Вектора Go/Dart и strict parsing |
 | Recovery encryption | Argon2id + ChaCha20-Poly1305 | Mobile benchmark и AEAD vectors |
 | Медиа | Self-hosted LiveKit как первый adapter | Deploy, licenses, SDK platforms, permission API |
@@ -1488,6 +1494,7 @@ Per-server privacy конфликтует с простым global public identi
 | ADR-012 | E2EE / federation scopes | До соответствующих features |
 | ADR-013 | Prior art: существующий профиль или новый Space | До этапа 3 и фиксации основы |
 | ADR-014 | Credential profiles: software, hardware и WebAuthn | До фиксации grants и hardware protection claims |
+| ADR-015 | gRPC + grpc-gateway и browser event profile | Направление принято; нужен прототип до API реализации |
 
 ### 22.2. Общая Definition of Done
 

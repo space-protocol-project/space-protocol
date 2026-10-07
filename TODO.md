@@ -181,6 +181,19 @@ flowchart TD
 
 ## Этап 2. Protocol contracts и discovery
 
+### API transport — ADR-015
+
+- [ ] Следовать [ADR-015](docs/adr/015-api-transport.md): `.proto` как источник application/admin contracts, gRPC для native, grpc-gateway HTTP/JSON для web.
+- [ ] Добавить proto packages, google.api.http mappings и reproducible code generation.
+- [ ] Генерировать SDK/server bindings и OpenAPI; проверять breaking changes и reserve removed field numbers.
+- [ ] Зафиксировать ProtoJSON правила и отличия от иллюстративных моделей README.
+- [ ] Верифицировать signed JCS envelopes после обоих transport round trips.
+- [ ] Реализовать prototype CreateContent, admin method и Subscribe с Flutter/browser через Docker HTTPS proxy.
+- [ ] Проверить shared auth/ACL, metadata mapping, statuses/error details, deadlines/cancellation и idempotency.
+- [ ] Проверить gateway stream framing, terminal errors, flush, proxy buffering, reconnect/replay и revocation.
+- [ ] Выбрать browser streaming profile; WS-задачи этапа 7 применять только при подтверждённом fallback, а не создавать второй транспорт автоматически.
+- [ ] Убедиться, что direct in-process gateway registration не обходит auth interceptors.
+
 **Цель:** клиент безопасно распознаёт сервер и его возможности. **Зависимости:** 1, ADR-002.
 
 ### Контракты
