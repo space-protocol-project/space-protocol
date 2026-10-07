@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package space.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "github.com/space-protocol-project/space-protocol/server/gen/space/v1;spacev1";
+
+// Экспериментальный контракт первого локального прототипа.
+service ChannelService {
+  rpc GetManifest(GetManifestRequest) returns (GetManifestResponse) {
+    option (google.api.http) = {get: "/api/v1/manifest"};
+  }
+}
+
+service ContentService {
+  rpc CreateContent(CreateContentRequest) returns (CreateContentResponse) {
+    option (google.api.http) = {post: "/api/v1/channels/{channel_id}/content" body: "*"};
+  }
+  rpc ListContent(ListContentRequest) returns (ListContentResponse) {
+    option (google.api.http) = {get: "/api/v1/channels/{channel_id}/content"};
+  }
+}
+
+message GetManifestRequest {}
+message GetManifestResponse {
+  string protocol_version = 1;
+  string server_id = 2;
+  repeated Channel channels = 3;
+}
+message Channel {
+  string id = 1;
+  string title = 2;
+  repeated View views = 3;
+}
+message View {
+  string id = 1;
+  string type = 2;
+}
+message Content {
+  string id = 1;
+  string channel_id = 2;
+  string text = 3;
+}
+message CreateContentRequest {
+  string channel_id = 1;
+  string text = 2;
+  string idempotency_key = 3;
+}
+message CreateContentResponse { Content content = 1; }
+message ListContentRequest {
+  string channel_id = 1;
+  // Непрозрачный курсор последнего полученного сообщения.
+  string after = 2;
+}
+message ListContentResponse {
+  repeated Content contents = 1;
+  string next_cursor = 2;
+}

@@ -8,7 +8,7 @@
 
 ## Содержание
 
-Начальная структура репозитория уже создана: [protocol](protocol/README.md), [server](server/README.md), [client](client/README.md), [admin-web](admin-web/README.md), [sdk](sdk/README.md), [deploy](deploy/README.md) и [docs](docs/README.md). Это документированный каркас; исполняемый код и рабочий Compose пока отсутствуют. Правила участия описаны в [CONTRIBUTING.md](CONTRIBUTING.md), статус безопасности — в [SECURITY.md](SECURITY.md).
+Начальная структура репозитория уже создана: [protocol](protocol/README.md), [server](server/README.md), [client](client/README.md), [admin-web](admin-web/README.md), [sdk](sdk/README.md), [deploy](deploy/README.md) и [docs](docs/README.md). Есть первый локальный Go-прототип: discovery, manifest, текстовый чат через gRPC и grpc-gateway, идемпотентность и пагинация. [Запуск и ограничения](server/README.md), [генерация контрактов](protocol/GENERATING.md). База, авторизация, поток событий, веб-интерфейс и рабочий Compose ещё не реализованы. Правила участия описаны в [CONTRIBUTING.md](CONTRIBUTING.md), статус безопасности — в [SECURITY.md](SECURITY.md).
 
 1. [Конечная идея](#1-конечная-идея)
    - [Prior art и отличия](#prior-art-и-отличия-почему-не-matrix-xmpp-или-nostr)
