@@ -63,6 +63,60 @@
         ]
       }
     },
+    "/api/v1/auth/devices": {
+      "get": {
+        "operationId": "AuthService_ListDevices",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListDevicesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/api/v1/auth/devices/current/revoke": {
+      "post": {
+        "operationId": "AuthService_RevokeCurrentDevice",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RevokeCurrentDeviceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RevokeCurrentDeviceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
     "/api/v1/auth/logout": {
       "post": {
         "operationId": "AuthService_Logout",
@@ -842,6 +896,14 @@
         "administrative": {
           "type": "boolean",
           "description": "Только регистрация: root явно разрешает space.manage этому устройству."
+        },
+        "recovery": {
+          "type": "boolean",
+          "description": "Root явно делегирует восстановление отдельному ключу."
+        },
+        "recoveryGrantId": {
+          "type": "string",
+          "description": "device.delegate / recovery.device.revoke: действующий recovery grant."
         }
       }
     },
@@ -890,6 +952,37 @@
         },
         "token": {
           "type": "string"
+        }
+      }
+    },
+    "v1DeviceGrant": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "publicKey": {
+          "type": "string",
+          "format": "byte"
+        },
+        "scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "revoked": {
+          "type": "boolean"
+        },
+        "parentGrantId": {
+          "type": "string"
+        },
+        "recovery": {
+          "type": "boolean"
         }
       }
     },
@@ -993,6 +1086,18 @@
         }
       }
     },
+    "v1ListDevicesResponse": {
+      "type": "object",
+      "properties": {
+        "devices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1DeviceGrant"
+          }
+        }
+      }
+    },
     "v1ListEventsResponse": {
       "type": "object",
       "properties": {
@@ -1087,6 +1192,12 @@
           "format": "int64"
         }
       }
+    },
+    "v1RevokeCurrentDeviceRequest": {
+      "type": "object"
+    },
+    "v1RevokeCurrentDeviceResponse": {
+      "type": "object"
     },
     "v1RevokeInviteResponse": {
       "type": "object"
