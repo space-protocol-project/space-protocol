@@ -30,6 +30,17 @@
 - [x] Один interceptor для HTTP/gRPC, actor из сессии; отказ от клиентских metadata для доверенных ролей.
 - [x] Тестовый CLI register → login → message → retry → events → revoke и проверки в CI.
 
+### Приглашения и права пространства — первый срез
+
+- [x] Миграция 4: memberships, приглашения с хешами и идемпотентное принятие.
+- [x] Owner/admin/member/reader; блокировка; отдельный device scope space.manage для управления.
+- [x] Приглашения reader/member: срок до 7 дней, число вступлений, отзыв, лимит активных ссылок.
+- [x] Атомарное вступление при закрытой регистрации с подтверждением root/device keys.
+- [x] Серверные read/write проверки и завершение live Subscribe при блокировке.
+- [x] Панель списков, изменение ролей владельцем, revision conflict, выдача и отзыв ссылок.
+- [x] Flutter: предварительная проверка кода, подключение по приглашению, интерфейс читателя.
+- [ ] ACL отдельных каналов, moderator, pending approvals, leave, QR приглашения и device pairing.
+
 ### Flutter-клиент для Windows — первый срез
 
 - [x] Dart-контракты и нативный gRPC endpoint в discovery.
@@ -38,7 +49,7 @@
 - [x] Анализ, тесты интерфейса/подписей и Windows release build.
 - [x] Dart/Go interoperability проверка в CI.
 
-Следующий срез: восстановление владельца и связывание браузера с Flutter, затем ACL/invites. Subscribe с replay реализован. ADR-013/014 остаются открытыми. Подписанный manifest, production key backend, backup/restore drill, refresh, QR recovery, outbox и полный Docker deployment ещё не выполнены.
+Следующий срез: восстановление владельца и связывание браузера с Flutter, затем ACL отдельных разделов. Роли пространства и приглашения уже реализованы для general chat. Subscribe с replay реализован. ADR-013/014 остаются открытыми. Подписанный manifest, production key backend, backup/restore drill, refresh, QR recovery, outbox и полный Docker deployment ещё не выполнены.
 
 > Roadmap не является календарным обещанием. Оценки времени появятся после технических прототипов и определения состава команды. Один этап может состоять из нескольких PR; каждый PR должен оставлять систему собираемой и проверяемой. Не начинаем федерацию или сложное медиа до проверки основного вертикального среза.
 
