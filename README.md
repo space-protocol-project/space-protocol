@@ -1,6 +1,6 @@
-# Открытый протокол каналов и социальных realtime-приложений
+# Space Protocol — открытый протокол каналов и социальных realtime-приложений
 
-**Рабочее имя: Channel Protocol (`chp`). Архитектурный проект, редакция 0.2 от 7 октября 2026 года.**
+**Рабочее имя: Space Protocol (`space`). Архитектурный проект, редакция 0.3 от 7 октября 2026 года.**
 
 Этот документ описывает, что мы хотим построить, как части системы взаимодействуют и какие ограничения необходимо учитывать. [TODO.md](TODO.md) превращает архитектуру в последовательность проверяемых этапов.
 
@@ -75,14 +75,14 @@
 
 ### Prior art и отличия: почему не Matrix, XMPP или Nostr
 
-**Создание нового wire protocol пока не обосновано окончательно.** Наш продукт может оказаться универсальным клиентом и набором профилей поверх существующей системы. Self-hosting, комнаты, события, подписи и расширяемость уже существуют; их наличие не доказывает необходимость CHP. Сравнение ниже — архитектурная оценка, не результаты benchmarks или interoperability tests.
+**Создание нового wire protocol пока не обосновано окончательно.** Наш продукт может оказаться универсальным клиентом и набором профилей поверх существующей системы. Self-hosting, комнаты, события, подписи и расширяемость уже существуют; их наличие не доказывает необходимость Space. Сравнение ниже — архитектурная оценка, не результаты benchmarks или interoperability tests.
 
-| Система | Что можно использовать | Отличие предлагаемого CHP | Что проверить прототипом |
+| Система | Что можно использовать | Отличие предлагаемого Space | Что проверить прототипом |
 |---|---|---|---|
 | Matrix | Федерация, rooms/events, devices, permissions, sync и E2EE | Независимые server-local principals; авторитетный instance без обязательной репликации room state | Manifest/views поверх custom events, вход по ключу и стоимость auth extension |
 | XMPP | Федеративный messaging, service discovery, MUC, pubsub и session negotiation | Обязательный согласованный профиль views/actions | Набор XEP для chat/forum/feed, existing server и минимальный UI |
 | Nostr | User-owned signing keys, relay subscriptions, групповые и live extensions | Server-authoritative объекты, ACL и revisions вместо базовой модели переносимых событий | NIP-29/53, scoped keys, moderation, edits и private content |
-| CHP, если выбран | Manifest/view contracts, scoped identities, единый UX | Пока нет готовых clients, federation, E2EE и доказанной interoperability | Доказать преимущества на тех же сценариях и оценить новую стоимость безопасности |
+| Space, если выбран | Manifest/view contracts, scoped identities, единый UX | Пока нет готовых clients, federation, E2EE и доказанной interoperability | Доказать преимущества на тех же сценариях и оценить новую стоимость безопасности |
 
 #### Что уже решено
 
@@ -100,7 +100,7 @@
 
 Гипотеза проекта — сочетание **самостоятельных серверов с локальными правилами**, **идентичностей без автоматически раскрываемого общего root ID** и **обязательных типизированных contracts для нескольких views в одном клиенте**. Отдельные элементы не новы и могут реализовываться существующими расширениями.
 
-Авторитетный instance и отсутствие federation в MVP позволяют начать с локальных транзакций и ACL. Это ограничение области, не доказательство превосходства: Matrix можно использовать без включения federation, XMPP/Nostr тоже допускают локальные сценарии. У CHP пока нет доказанной меньшей сложности, лучшей производительности или более сильной безопасности.
+Авторитетный instance и отсутствие federation в MVP позволяют начать с локальных транзакций и ACL. Это ограничение области, не доказательство превосходства: Matrix можно использовать без включения federation, XMPP/Nostr тоже допускают локальные сценарии. У Space пока нет доказанной меньшей сложности, лучшей производительности или более сильной безопасности.
 
 Новый протокол означает собственную обязанность поддерживать auth, sync, compatibility, abuse protection, clients и migrations. Bridge добавляет trust boundary: mapping может менять authorship, ACL и E2EE semantics. Мост не даёт автоматической совместимости.
 
@@ -108,8 +108,8 @@
 
 1. **Профиль существующего протокола:** views/manifest поверх Matrix, XMPP или Nostr с их identities и согласованными auth extensions.
 2. **Клиент с adapters:** общий UX, отдельные backend semantics; гарантии отображаются по фактическому backend.
-3. **Гибрид:** CHP для discovery/views/media orchestration, существующая система для messaging; явно определить источник истины и identity mapping.
-4. **Новый CHP:** выбрать после доказательства существенных несовместимых требований или непропорциональной стоимости расширений.
+3. **Гибрид:** Space для discovery/views/media orchestration, существующая система для messaging; явно определить источник истины и identity mapping.
+4. **Новый Space:** выбрать после доказательства существенных несовместимых требований или непропорциональной стоимости расширений.
 
 #### Gate перед собственной реализацией
 
@@ -117,7 +117,7 @@
 
 Отчёт разделяет: работает без изменений; требует профиля/плагина; требует несовместимого изменения; не проверено. Оценить собственный код, эксплуатацию, поддержку, privacy/recovery, доступность готовых clients и test coverage. Указать конкретные versions, sources и blockers; неизвестность не считать недостатком альтернативы.
 
-**Условие выбора нового протокола:** обязательное требование нельзя разумно реализовать существующим профилем либо совокупная стоимость расширения выше с учётом собственной security/interoperability ответственности. Если преимущества не доказаны, корректируем roadmap в пользу существующей основы. Далее описан кандидат CHP для сравнения, а не окончательно принятое обязательство.
+**Условие выбора нового протокола:** обязательное требование нельзя разумно реализовать существующим профилем либо совокупная стоимость расширения выше с учётом собственной security/interoperability ответственности. Если преимущества не доказаны, корректируем roadmap в пользу существующей основы. Далее описан кандидат Space для сравнения, а не окончательно принятое обязательство.
 
 ## 2. Термины и границы проекта
 
@@ -245,14 +245,14 @@ HTTP / WebSocket                         SFU SDK / HLS player
 В версии 1 сервер размещается на отдельном HTTPS origin. Размещение нескольких независимых instances под разными путями одного origin пока не поддерживаем: это упрощает нормализацию адресов, аудит и разграничение токенов.
 
 ```http
-GET /.well-known/channel-protocol HTTP/1.1
+GET /.well-known/space-protocol HTTP/1.1
 Host: club.example
 Accept: application/json
 ```
 
 ```json
 {
-  "protocol": "chp",
+  "protocol": "space",
   "versions": ["1.0"],
   "server_id": "srv_2b490cd4-7931-4d54-a935-1225ad31f691",
   "canonical_origin": "https://club.example",
@@ -293,7 +293,7 @@ Manifest — описание возможностей, а не исполняе
 
 ```json
 {
-  "protocol": {"name": "chp", "version": "1.0"},
+  "protocol": {"name": "space", "version": "1.0"},
   "server": {
     "id": "srv_2b490cd4-7931-4d54-a935-1225ad31f691",
     "title": "Клуб разработчиков",
@@ -460,7 +460,7 @@ Recovery seed S — 32 байта CSPRNG, только у владельца
 ### 8.2. Точный кандидат derivation profile `identity-kdf-v1`
 
 ```text
-PRK = HKDF-Extract(SHA256(UTF8("chp/identity-kdf/v1")), S)
+PRK = HKDF-Extract(SHA256(UTF8("space/identity-kdf/v1")), S)
 
 master_seed = HKDF-Expand(PRK, JCS({purpose:"master",v:1}), 32)
 server_seed = HKDF-Expand(PRK,
@@ -468,7 +468,7 @@ server_seed = HKDF-Expand(PRK,
 backup_key = HKDF-Expand(PRK, JCS({purpose:"backup-wrap",v:1}), 32)
 
 server_public = Ed25519PublicFromSeed(server_seed)
-principal_id = "u_" + base64url(SHA256(UTF8("chp/principal/v1\u0000") || server_public))
+principal_id = "u_" + base64url(SHA256(UTF8("space/principal/v1\u0000") || server_public))
 ```
 
 `JCS` здесь означает UTF-8 canonical JSON по RFC 8785; запись выше — псевдокод, не JSON. Derivation profile фиксируется вместе с тестовыми векторами до первой реальной идентичности. Его нельзя менять при обновлении клиента без явной миграции. Этим проектным профилем мы соединяем стандартные примитивы; он сам по себе не является готовым стандартом и требует review.
@@ -525,7 +525,7 @@ Server root разрешает конкретному рабочему ключ�
 }
 ```
 
-Подписывается `UTF8("chp/device-grant/v1\u0000") || JCS(payload)`. Сервер сверяет hash публичного root с principal, подпись, server ID, epoch, expiry, revoked status и scopes. При первом обращении principal создаётся только согласно политике регистрации: open, invite или approval. Grant не является приглашением и не делает владельца администратором.
+Подписывается `UTF8("space/device-grant/v1\u0000") || JCS(payload)`. Сервер сверяет hash публичного root с principal, подпись, server ID, epoch, expiry, revoked status и scopes. При первом обращении principal создаётся только согласно политике регистрации: open, invite или approval. Grant не является приглашением и не делает владельца администратором.
 
 Scope grant ограничивает полномочия ключа; фактические права равны пересечению scope, membership и ACL. `content.write` не даёт права писать в закрытый канал.
 
@@ -560,7 +560,7 @@ sequenceDiagram
 }
 ```
 
-Подписывается `UTF8("chp/auth-login/v1\u0000") || JCS(transcript)`. Клиент не подписывает произвольные байты, предложенные сервером: он разбирает и проверяет назначение, origin, principal, grant и срок. Challenge хранится на сервере с TTL 60 секунд и потребляется атомарно даже при двух параллельных запросах. Nonce — 32 байта CSPRNG.
+Подписывается `UTF8("space/auth-login/v1\u0000") || JCS(transcript)`. Клиент не подписывает произвольные байты, предложенные сервером: он разбирает и проверяет назначение, origin, principal, grant и срок. Challenge хранится на сервере с TTL 60 секунд и потребляется атомарно даже при двух параллельных запросах. Nonce — 32 байта CSPRNG.
 
 ### 9.3. Tokens
 
@@ -619,7 +619,7 @@ Recovery seed → server root → подписанная credential binding
 
 #### Универсальный клиент и произвольные серверы
 
-Каждый instance должен быть собственным RP. Обязательный общий `login.chp.example` создал бы центральную точку входа. Для native client необходимо проверить поддержку произвольных RP на каждой ОС. Credential Manager — отдельный Android API, не Dart signing library. [Android Credential Manager](https://developer.android.com/identity/credential-manager).
+Каждый instance должен быть собственным RP. Обязательный общий `login.space.example` создал бы центральную точку входа. Для native client необходимо проверить поддержку произвольных RP на каждой ОС. Credential Manager — отдельный Android API, не Dart signing library. [Android Credential Manager](https://developer.android.com/identity/credential-manager).
 
 В ADR-014 проверить native association/trusted-caller requirements Android/iOS/Windows и browser-assisted ceremony. Browser handoff связывается с исходным запросом через state и одноразовый код; нужны защита callback от перехвата и отсутствие access token в deep link. Наличие Flutter plugin не доказывает совместимость с произвольным сервером.
 
@@ -685,7 +685,7 @@ QR для сопряжения и recovery card — разные форматы 
 
 ### 11.2. Формат открытой карты
 
-На уровне текста QR: `chp-recovery:v1:` + base64url от UTF-8 JCS envelope. Схема URI не должна регистрироваться как автоматически исполняемый вход в identity. Импорт всегда начинается в отдельном локальном экране восстановления.
+На уровне текста QR: `space-recovery:v1:` + base64url от UTF-8 JCS envelope. Схема URI не должна регистрироваться как автоматически исполняемый вход в identity. Импорт всегда начинается в отдельном локальном экране восстановления.
 
 ```json
 {
@@ -699,7 +699,7 @@ QR для сопряжения и recovery card — разные форматы 
 }
 ```
 
-Предлагаем checksum: первые 8 байт SHA-256 от domain prefix `chp/recovery-check/v1\0` и canonical envelope без поля `checksum`. Это обнаружение случайных ошибок, не подпись и не защита от подмены. QR error correction также не является защитой секрета.
+Предлагаем checksum: первые 8 байт SHA-256 от domain prefix `space/recovery-check/v1\0` и canonical envelope без поля `checksum`. Это обнаружение случайных ошибок, не подпись и не защита от подмены. QR error correction также не является защитой секрета.
 
 ### 11.3. Зашифрованная карта
 
@@ -1244,20 +1244,20 @@ Native client предпочтителен для первого релиза id
 
 ### 19.2. Иллюстративный Compose skeleton
 
-Это направление будущего `deploy/compose.yaml`, **не готовый quick start**. Образ `ghcr.io/your-org/chp-server` пока не существует в рамках этих документов. Runtime config, secrets, readiness, миграции, reverse proxy и закреплённые image digests должны появиться в реализации.
+Это направление будущего `deploy/compose.yaml`, **не готовый quick start**. Образ `ghcr.io/your-org/space-server` пока не существует в рамках этих документов. Runtime config, secrets, readiness, миграции, reverse proxy и закреплённые image digests должны появиться в реализации.
 
 ```yaml
 services:
   app:
-    image: ghcr.io/your-org/chp-server:${CHP_VERSION:?set_version}
+    image: ghcr.io/your-org/space-server:${SPACE_VERSION:?set_version}
     restart: unless-stopped
     environment:
-      CHP_PUBLIC_ORIGIN: https://club.example
-      CHP_CONFIG: /run/config/server.yaml
+      SPACE_PUBLIC_ORIGIN: https://club.example
+      SPACE_CONFIG: /run/config/server.yaml
     volumes:
       - ./server.yaml:/run/config/server.yaml:ro
-      - app_state:/var/lib/chp
-      - assets:/var/lib/chp/assets
+      - app_state:/var/lib/space
+      - assets:/var/lib/space/assets
     secrets:
       - db_password
     expose:
@@ -1268,8 +1268,8 @@ services:
     image: postgres:${POSTGRES_VERSION:?set_version}
     restart: unless-stopped
     environment:
-      POSTGRES_DB: chp
-      POSTGRES_USER: chp
+      POSTGRES_DB: space
+      POSTGRES_USER: space
       POSTGRES_PASSWORD_FILE: /run/secrets/db_password
     secrets:
       - db_password
@@ -1286,7 +1286,60 @@ volumes:
 
 Путь данных PostgreSQL зависит от закреплённого major image и должен быть проверен при подготовке runnable deployment. Reverse proxy включается в итоговый Compose отдельно; без него skeleton не публикует сервис наружу. Compose secrets с файловым source не являются внешним secrets manager: исходный файл тоже требует защиты.
 
-### 19.3. Первичная настройка
+### 19.3. Обязательная веб-панель управления
+
+**Каждая self-hosted установка поставляется со встроенным веб-интерфейсом настройки и администрирования.** После запуска Docker владелец открывает `/admin` на своём сервере. Для обычного управления не требуется редактировать JSON/YAML или работать в терминале. Универсальный клиент предназначен для участников, веб-панель — для владельцев и администраторов установки.
+
+Панель поставляется вместе с сервером приложения, а не отдельным обязательным облачным сервисом. Инфраструктурные контейнеры DB/TURN/SFU не обязаны иметь собственный UI: их состояние и поддерживаемые настройки агрегирует панель. Установка Docker, DNS, внешний firewall и первичная точка входа остаются инфраструктурными шагами; веб-интерфейс не может настроить недоступное ему оборудование автоматически.
+
+#### Первый запуск
+
+```text
+Запустить Docker → открыть /admin → ввести одноразовый setup-код
+  → создать или подключить identity владельца
+  → выбрать имя сервера и политику регистрации
+  → создать канал и выбрать доступные представления
+  → проверить настройки → открыть сервер для участников
+```
+
+Setup-код создаётся при инициализации и доступен локальному владельцу установки через защищённый файл или локальную bootstrap-команду. Он одноразовый, ограничен по времени и не выдаётся посетителю `/admin`. После привязки owner setup закрывается. Первый публичный посетитель не становится администратором. Browser enrollment использует ту же модель identity/root proof; recovery secret не отправляется backend. При использовании существующего клиента возможен отдельный подтверждённый browser pairing flow.
+
+#### Разделы панели
+
+| Раздел | Что настраивается |
+|---|---|
+| Обзор | Состояние сервера, место на диске, активные подключения, ошибки служб |
+| Каналы | Создание, название, описание, порядок, публичность и политика вступления |
+| Представления и контент | Chat/forum/feed/live/voice/video/stage; collections, допустимые content types, attachments, reactions, replies и лимиты |
+| Участники и права | Приглашения, approval, роли, доступ к чтению/публикации/медиа и модерация |
+| Медиа | Доступные adapters, проверка подключения, ограничения участников, запись и playback policy |
+| Данные | Retention, квоты, exports, backup jobs и состояние восстановления |
+| Безопасность | Devices владельца, admin sessions, audit, registration policy и trust changes |
+| Настройки установки | Origin, branding, поддерживаемые storage integrations, diagnostics и обновления |
+
+Для каждого канала администратор выбирает views и разрешённые типы объектов. Например: публичная лента только с публикациями редакторов; закрытый форум с replies участников; чат без файлов; голосовая с отключённой камерой; stage, где публиковать аудио могут только speakers. View, collection policy и ACL остаются разными сущностями: добавление экрана форума не меняет автоматически права на существующие сообщения.
+
+Переключатель capability работает только при наличии реализованного и настроенного backend. Панель показывает различие «не установлено», «не настроено», «выключено» и «временно недоступно». Включение HLS не устанавливает transcoder автоматически. Manifest генерируется из актуального состояния и прав; настройка не создаёт возможностей, которых сервер не поддерживает.
+
+#### UX изменения конфигурации
+
+1. Администратор редактирует draft и видит пояснения и зависимости.
+2. Панель валидирует schema, ссылки, ACL и инфраструктурные prerequisites.
+3. Перед сохранением показывает последствия: кто потеряет доступ, что произойдёт с активными комнатами и существующим контентом.
+4. Backend применяет изменения атомарно с `expected_revision`, обновляет manifest и аудит, уведомляет клиентов.
+5. Ошибка оставляет последнюю рабочую конфигурацию; конфликт параллельных изменений требует повторной проверки.
+
+Выключение view скрывает точку входа, но не удаляет её collection. Запрет новых content types не уничтожает старые объекты. Удаление данных — отдельное действие с подтверждением области и последствий. Смена типа существующей collection требует поддерживаемой миграции либо создания новой; нельзя тихо трактовать forum replies как chat messages. Для настроек, требующих перезапуска, панель сообщает это явно и не обещает, что изменение уже действует.
+
+#### Технические границы и безопасность
+
+Web frontend обращается к административному API, например `/api/admin/v1/channels` и `/api/admin/v1/config/validate`; это отдельный контракт с server-admin permissions. Сервер перепроверяет полномочия каждого запроса. При cookie auth требуются CSRF/Origin checks; admin tokens не помещаются в URL. Используем строгую CSP, безопасный вывод текста, ограниченные сессии и повторное подтверждение чувствительных операций. Код панели имеет доступ к browser identity material, поэтому XSS и supply chain входят в threat model.
+
+Runtime settings хранятся в versioned DB configuration. Secrets передаются write-only, маскируются и не попадают в config export/logs. Read-only environment settings имеют явный приоритет и помечаются в UI как управляемые размещением. Панель не получает Docker socket, произвольный shell или права выполнения команд. Настройка backup расписания допустима, но disaster restore недоступного сервера выполняется recovery-инструментом; просмотр статуса в UI не заменяет проверку восстановления.
+
+**В Core MVP обязательны:** setup wizard, обзор состояния, управление каналами/chat views, типами контента и файлами, membership/ACL, приглашениями, квотами и retention. Forum/feed/media controls появляются вместе с соответствующими backend milestones. Responsive layout, клавиатура, понятные validation errors и состояния сохранения обязательны для панели так же, как для универсального клиента.
+
+### 19.4. Первичная настройка
 
 1. Выбрать домен и публичный origin, проверить DNS и HTTPS.
 2. Сгенерировать server identity один раз и сохранить её в persistent state.
@@ -1300,7 +1353,7 @@ volumes:
 
 Нельзя назначать администратора «первому, кто вошёл по публичному URL»: гонку может выиграть посторонний.
 
-### 19.4. Состояние, обновления и резервные копии
+### 19.5. Состояние, обновления и резервные копии
 
 Backup включает DB, assets, server_id, signing keys, config и актуальный revocation journal. Секреты шифруются отдельно и восстанавливаются согласованно. Смена `server_id` после удаления volume создаёт другую установку, поэтому старые server-local identities не совпадут автоматически.
 
@@ -1308,7 +1361,7 @@ Backup включает DB, assets, server_id, signing keys, config и акту�
 
 Перед upgrade: проверить compatibility, сделать backup, запустить migrations, проверить health и smoke tests. Предпочитаем expand/contract migrations. Откат контейнера после необратимой DB migration может не работать; rollback plan должен учитывать schema, а не только image tag.
 
-### 19.5. Observability
+### 19.6. Observability
 
 `/health/live` показывает жизнь процесса; `/health/ready` — готовность DB и критических служб. Недоступность optional SFU отображается как degraded media capability, не обязательно общий downtime. Метрики: request latency, action errors, DB saturation, WS connections, outbox lag, reconnect count, upload backlog, media join failures и relay ratio. Trace/request IDs связывают события без записи секретов.
 
@@ -1431,7 +1484,7 @@ Per-server privacy конфликтует с простым global public identi
 | ADR-010 | Root compromise / migration policy | До обещания key rotation |
 | ADR-011 | Encrypted backup и rollback | До backup sync |
 | ADR-012 | E2EE / federation scopes | До соответствующих features |
-| ADR-013 | Prior art: существующий профиль или новый CHP | До этапа 3 и фиксации основы |
+| ADR-013 | Prior art: существующий профиль или новый Space | До этапа 3 и фиксации основы |
 | ADR-014 | Credential profiles: software, hardware и WebAuthn | До фиксации grants и hardware protection claims |
 
 ### 22.2. Общая Definition of Done

@@ -1,6 +1,6 @@
-# План реализации Channel Protocol
+# План реализации Space Protocol
 
-**Редакция 0.2 от 7 октября 2026 года. Статус: план; реализация пока не выполнена.**
+**Редакция 0.3 от 7 октября 2026 года. Статус: план; реализация пока не выполнена.**
 
 [README.md](README.md) объясняет систему и проектные контракты. Этот документ задаёт порядок работы, зависимости, результаты и критерии проверки. Все флажки намеренно пустые: наличие проекта документации не означает готовность кода.
 
@@ -120,7 +120,7 @@ flowchart TD
 
 ### Задачи
 
-- [ ] Утвердить рабочее имя, namespace `chp`, definition channel/view/content/session/action.
+- [ ] Утвердить рабочее имя, namespace `space`, definition channel/view/content/session/action.
 - [ ] Зафиксировать отсутствие обязательного центрального сервиса.
 - [ ] Зафиксировать одно HTTPS origin на instance для версии 1.
 - [ ] Определить обязательные платформы первого клиента; предложенный старт — Windows и Android, затем расширение по результатам SDK spike.
@@ -142,11 +142,11 @@ flowchart TD
 - [ ] Nostr: NIP-01/42/29/53, private membership, moderation, revisions и scoped identities.
 - [ ] Сравнить готовые clients/SDK, свой код, эксплуатацию и долгосрочную поддержку.
 - [ ] Для MLS записать отдельно: стандарт, proposal, implementation и проверенная interoperability; не приравнивать исследования к готовой универсальной поддержке.
-- [ ] Рассмотреть четыре варианта: существующий профиль, adapters клиента, hybrid и новый CHP.
+- [ ] Рассмотреть четыре варианта: существующий профиль, adapters клиента, hybrid и новый Space.
 - [ ] В отчёте различать unsupported, требует extension и не проверено.
 - [ ] Принять ADR-013 до production identity formats этапа 3; при выборе существующей основы переписать contracts и roadmap.
 
-**Gate:** выбирать собственный CHP только при показанном существенном несовместимом требовании либо доказанном преимуществе совокупной стоимости с учётом собственной security/interoperability ответственности. Без доказательств предпочесть существующую основу. Новые экраны сами по себе не требуют нового wire protocol.
+**Gate:** выбирать собственный Space только при показанном существенном несовместимом требовании либо доказанном преимуществе совокупной стоимости с учётом собственной security/interoperability ответственности. Без доказательств предпочесть существующую основу. Новые экраны сами по себе не требуют нового wire protocol.
 
 ### Результаты
 
@@ -213,7 +213,7 @@ Fixtures с несовместимой required capability отклоняютс�
 
 **Цель:** две реализации получают одинаковые ключи и ID, не используя самодельную криптографию. **Зависимости:** 2, ADR-003 и ADR-006. **Приоритет:** P0.
 
-Дополнительные gates: ADR-013 выбирает протокольную основу до production identity format; ADR-014 выбирает credential profiles до фиксации grants. Контракты CHP ниже условны до этих решений.
+Дополнительные gates: ADR-013 выбирает протокольную основу до production identity format; ADR-014 выбирает credential profiles до фиксации grants. Контракты Space ниже условны до этих решений.
 
 ### Задачи
 
@@ -430,6 +430,29 @@ Plain card должна быть проверена также как threat sce
 ## Этап 10. Core MVP и эксплуатация
 
 **Цель:** другой человек может самостоятельно установить и безопасно использовать первый сервер. **Зависимости:** 1–9.
+
+### P0: Встроенная веб-панель администрирования
+
+- [ ] Поставлять admin frontend вместе с app container; маршрут `/admin`, без обязательного внешнего сервиса.
+- [ ] Setup wizard с одноразовым локально полученным кодом, owner identity enrollment и атомарным закрытием bootstrap.
+- [ ] Административный API и server-admin permissions отдельно от channel ownership.
+- [ ] Dashboard: health, storage, подключения, ошибки и статус optional media services.
+- [ ] CRUD channels, collections и views с типами контента, порядком, видимостью и join policy.
+- [ ] Настройки публикации, replies, reactions, uploads, quotas и retention.
+- [ ] Membership, invitations, approval, roles и moderation UI.
+- [ ] Capability states: не установлено / не настроено / выключено / недоступно; запрет включения без prerequisites.
+- [ ] Draft → validate → impact preview → apply с expected revision и audit.
+- [ ] Единый источник manifest/runtime config; уведомления клиентам при смене доступности и ACL.
+- [ ] Отключение view не удаляет content; изменение collection type требует миграции или новой collection.
+- [ ] Пометки read-only environment overrides и настроек, требующих restart.
+- [ ] Secrets write-only, masked UI, без исходных значений в export и logs.
+- [ ] Admin auth, CSRF/Origin при cookies, CSP, защита renderer и подтверждение чувствительных действий.
+- [ ] Никакого Docker socket, arbitrary shell или backend-получения recovery seed.
+- [ ] Responsive UX, keyboard navigation, validation messages, pending/error states.
+- [ ] Настройки backup jobs и отчёты; disaster restore через recovery tooling отдельно.
+- [ ] Расширять панель forum/feed/media controls одновременно с этапами 11/13/14.
+
+**Приёмка панели:** владелец проходит setup, создаёт публичный чат и приватный канал, ограничивает публикацию/файлы, выдаёт роль и приглашение через браузер без ручной правки конфигурации. Участник видит актуальные views/permissions. Не-администратор получает отказ через прямой API; два конкурентных сохранения не затирают настройки. Выключение view сохраняет историю, unsupported capability не включается, невалидный draft не ломает рабочий сервер.
 
 ### Deployment
 
