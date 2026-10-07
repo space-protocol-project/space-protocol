@@ -30,7 +30,15 @@
 - [x] Один interceptor для HTTP/gRPC, actor из сессии; отказ от клиентских metadata для доверенных ролей.
 - [x] Тестовый CLI register → login → message → retry → events → revoke и проверки в CI.
 
-Следующий срез: server-streaming Subscribe, ACL/invites и веб-клиент. ADR-013/014 остаются открытыми. Локальный профиль описан в ADR-016; это ещё не полный production identity/auth. Подписанный manifest, key backend, backup/restore drill, refresh, vault/recovery, outbox worker, realtime streaming, `/admin` и полный Docker deployment пока не выполнены.
+### Flutter-клиент для Windows — первый срез
+
+- [x] Dart-контракты и нативный gRPC endpoint в discovery.
+- [x] Экран доверия, независимые ключи, системное хранилище и вход.
+- [x] Чат, polling events, дедупликация, повтор отправки и отзыв устройства.
+- [x] Анализ, тесты интерфейса/подписей и Windows release build.
+- [x] Dart/Go interoperability проверка в CI.
+
+Следующий срез: server-streaming Subscribe, ACL/invites и развитие Flutter-клиента. ADR-013/014 остаются открытыми. Локальный профиль описан в ADR-016; это ещё не полный production identity/auth. Подписанный manifest, key backend, backup/restore drill, refresh, vault/recovery, outbox worker, realtime streaming, `/admin` и полный Docker deployment пока не выполнены.
 
 > Roadmap не является календарным обещанием. Оценки времени появятся после технических прототипов и определения состава команды. Один этап может состоять из нескольких PR; каждый PR должен оставлять систему собираемой и проверяемой. Не начинаем федерацию или сложное медиа до проверки основного вертикального среза.
 
