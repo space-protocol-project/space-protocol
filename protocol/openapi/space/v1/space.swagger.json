@@ -10,6 +10,12 @@
     },
     {
       "name": "ContentService"
+    },
+    {
+      "name": "AuthService"
+    },
+    {
+      "name": "SyncService"
     }
   ],
   "consumes": [
@@ -19,6 +25,70 @@
     "application/json"
   ],
   "paths": {
+    "/api/v1/auth/challenges": {
+      "post": {
+        "operationId": "AuthService_CreateChallenge",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateChallengeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateChallengeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/api/v1/auth/sessions": {
+      "post": {
+        "operationId": "AuthService_CompleteChallenge",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CompleteChallengeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CompleteChallengeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
     "/api/v1/channels/{channelId}/content": {
       "get": {
         "operationId": "ContentService_ListContent",
@@ -89,6 +159,42 @@
         ],
         "tags": [
           "ContentService"
+        ]
+      }
+    },
+    "/api/v1/channels/{channelId}/events": {
+      "get": {
+        "operationId": "SyncService_ListEvents",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListEventsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SyncService"
         ]
       }
     },
@@ -173,6 +279,36 @@
         }
       }
     },
+    "v1CompleteChallengeRequest": {
+      "type": "object",
+      "properties": {
+        "challengeId": {
+          "type": "string"
+        },
+        "signature": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1CompleteChallengeResponse": {
+      "type": "object",
+      "properties": {
+        "grantId": {
+          "type": "string"
+        },
+        "principalId": {
+          "type": "string"
+        },
+        "accessToken": {
+          "type": "string"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "v1Content": {
       "type": "object",
       "properties": {
@@ -184,12 +320,62 @@
         },
         "text": {
           "type": "string"
+        },
+        "authorId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateChallengeRequest": {
+      "type": "object",
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "description": "device.register / auth.login / device.revoke."
+        },
+        "rootPublicKey": {
+          "type": "string",
+          "format": "byte"
+        },
+        "devicePublicKey": {
+          "type": "string",
+          "format": "byte"
+        },
+        "grantId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateChallengeResponse": {
+      "type": "object",
+      "properties": {
+        "challengeId": {
+          "type": "string"
+        },
+        "transcript": {
+          "type": "string",
+          "format": "byte",
+          "description": "Клиент проверяет поля и восстанавливает байты по фиксированному профилю."
         }
       }
     },
     "v1CreateContentResponse": {
       "type": "object",
       "properties": {
+        "content": {
+          "$ref": "#/definitions/v1Content"
+        }
+      }
+    },
+    "v1Event": {
+      "type": "object",
+      "properties": {
+        "cursor": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
         "content": {
           "$ref": "#/definitions/v1Content"
         }
@@ -221,6 +407,21 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/v1Content"
+          }
+        },
+        "nextCursor": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ListEventsResponse": {
+      "type": "object",
+      "properties": {
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Event"
           }
         },
         "nextCursor": {

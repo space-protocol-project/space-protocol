@@ -39,3 +39,17 @@ jobs:
       - name: Статический анализ
         working-directory: server
         run: go vet ./...
+      - name: Сквозная проверка входа, событий и отзыва
+        working-directory: server
+        env:
+          SPACE_DATABASE_URL: postgres://space:ci-only-password@127.0.0.1:5432/space_test?sslmode=disable
+        run: |
+          go build -o "$RUNNER_TEMP/space-server" ./cmd/space-server
+          "$RUNNER_TEMP/space-server" -http 127.0.0.1:18080 &
+          server_pid=$!
+          trap 'kill "$server_pid"; wait "$server_pid" || true' EXIT
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:18080/healthz; then break; fi
+            sleep 1
+          done
+          go run ./cmd/space-demo -origin http://127.0.0.1:18080

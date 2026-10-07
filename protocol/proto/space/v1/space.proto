@@ -22,6 +22,57 @@ service ContentService {
   }
 }
 
+service AuthService {
+  rpc CreateChallenge(CreateChallengeRequest) returns (CreateChallengeResponse) {
+    option (google.api.http) = {post: "/api/v1/auth/challenges" body: "*"};
+  }
+  rpc CompleteChallenge(CompleteChallengeRequest) returns (CompleteChallengeResponse) {
+    option (google.api.http) = {post: "/api/v1/auth/sessions" body: "*"};
+  }
+}
+
+service SyncService {
+  rpc ListEvents(ListEventsRequest) returns (ListEventsResponse) {
+    option (google.api.http) = {get: "/api/v1/channels/{channel_id}/events"};
+  }
+}
+
+message CreateChallengeRequest {
+  // device.register / auth.login / device.revoke.
+  string purpose = 1;
+  bytes root_public_key = 2;
+  bytes device_public_key = 3;
+  string grant_id = 4;
+}
+message CreateChallengeResponse {
+  string challenge_id = 1;
+  // Клиент проверяет поля и восстанавливает байты по фиксированному профилю.
+  bytes transcript = 2;
+}
+message CompleteChallengeRequest {
+  string challenge_id = 1;
+  bytes signature = 2;
+}
+message CompleteChallengeResponse {
+  string grant_id = 1;
+  string principal_id = 2;
+  string access_token = 3;
+  int64 expires_at = 4;
+}
+message ListEventsRequest {
+  string channel_id = 1;
+  string after = 2;
+}
+message ListEventsResponse {
+  repeated Event events = 1;
+  string next_cursor = 2;
+}
+message Event {
+  string cursor = 1;
+  string type = 2;
+  Content content = 3;
+}
+
 message GetManifestRequest {}
 message GetManifestResponse {
   string protocol_version = 1;
@@ -41,6 +92,7 @@ message Content {
   string id = 1;
   string channel_id = 2;
   string text = 3;
+  string author_id = 4;
 }
 message CreateContentRequest {
   string channel_id = 1;
