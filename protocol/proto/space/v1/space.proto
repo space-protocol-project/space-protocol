@@ -46,6 +46,21 @@ service SyncService {
 }
 
 service AdminService {
+  rpc ListMembers(ListMembersRequest) returns (ListMembersResponse) {
+    option (google.api.http) = {get: "/api/v1/space/members"};
+  }
+  rpc UpdateMember(UpdateMemberRequest) returns (UpdateMemberResponse) {
+    option (google.api.http) = {patch: "/api/v1/space/members/{principal_id}" body: "*"};
+  }
+  rpc CreateInvite(CreateInviteRequest) returns (CreateInviteResponse) {
+    option (google.api.http) = {post: "/api/v1/space/invites" body: "*"};
+  }
+  rpc ListInvites(ListInvitesRequest) returns (ListInvitesResponse) {
+    option (google.api.http) = {get: "/api/v1/space/invites"};
+  }
+  rpc RevokeInvite(RevokeInviteRequest) returns (RevokeInviteResponse) {
+    option (google.api.http) = {post: "/api/v1/space/invites/{invite_id}/revoke" body: "*"};
+  }
   rpc GetSetupStatus(GetSetupStatusRequest) returns (GetSetupStatusResponse) {
     option (google.api.http) = {get: "/api/v1/space/setup"};
   }
@@ -59,6 +74,52 @@ service AdminService {
     option (google.api.http) = {patch: "/api/v1/space/settings" body: "*"};
   }
 }
+service MembershipService {
+  rpc PreviewInvite(PreviewInviteRequest) returns (PreviewInviteResponse) {
+    option (google.api.http) = {post: "/api/v1/membership/invites/preview" body: "*"};
+  }
+  rpc AcceptInvite(AcceptInviteRequest) returns (AcceptInviteResponse) {
+    option (google.api.http) = {post: "/api/v1/membership/invites/accept" body: "*"};
+  }
+  rpc GetMembership(GetMembershipRequest) returns (GetMembershipResponse) {
+    option (google.api.http) = {get: "/api/v1/membership"};
+  }
+}
+message Member {
+  string principal_id = 1;
+  string role = 2;
+  bool blocked = 3;
+  int64 revision = 4;
+}
+message ListMembersRequest { string after = 1; }
+message ListMembersResponse { repeated Member members = 1; string next_cursor = 2; }
+message UpdateMemberRequest {
+  string principal_id = 1;
+  string role = 2;
+  bool blocked = 3;
+  int64 expected_revision = 4;
+}
+message UpdateMemberResponse { Member member = 1; }
+message Invite {
+  string id = 1;
+  string role = 2;
+  int64 expires_at = 3;
+  int32 max_uses = 4;
+  int32 uses = 5;
+  bool revoked = 6;
+}
+message CreateInviteRequest { string role = 1; int32 ttl_seconds = 2; int32 max_uses = 3; }
+message CreateInviteResponse { Invite invite = 1; string token = 2; }
+message ListInvitesRequest { string after = 1; }
+message ListInvitesResponse { repeated Invite invites = 1; string next_cursor = 2; }
+message RevokeInviteRequest { string invite_id = 1; }
+message RevokeInviteResponse {}
+message PreviewInviteRequest { string token = 1; }
+message PreviewInviteResponse { string role = 1; string server_id = 2; string title = 3; int64 expires_at = 4; }
+message AcceptInviteRequest { string token = 1; }
+message AcceptInviteResponse { Member member = 1; }
+message GetMembershipRequest {}
+message GetMembershipResponse { Member member = 1; }
 message GetSetupStatusRequest {}
 message GetSetupStatusResponse { bool initialized = 1; }
 message ClaimOwnerRequest { string setup_code = 1; }
@@ -108,6 +169,8 @@ message CreateChallengeResponse {
 message CompleteChallengeRequest {
   string challenge_id = 1;
   bytes signature = 2;
+  // Только device.register: вступление атомарно с регистрацией устройства.
+  string invitation_token = 3;
 }
 message CompleteChallengeResponse {
   string grant_id = 1;

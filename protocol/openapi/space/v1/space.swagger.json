@@ -19,6 +19,9 @@
     },
     {
       "name": "AdminService"
+    },
+    {
+      "name": "MembershipService"
     }
   ],
   "consumes": [
@@ -300,6 +303,258 @@
         ]
       }
     },
+    "/api/v1/membership": {
+      "get": {
+        "operationId": "MembershipService_GetMembership",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMembershipResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "MembershipService"
+        ]
+      }
+    },
+    "/api/v1/membership/invites/accept": {
+      "post": {
+        "operationId": "MembershipService_AcceptInvite",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AcceptInviteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AcceptInviteRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MembershipService"
+        ]
+      }
+    },
+    "/api/v1/membership/invites/preview": {
+      "post": {
+        "operationId": "MembershipService_PreviewInvite",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PreviewInviteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1PreviewInviteRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MembershipService"
+        ]
+      }
+    },
+    "/api/v1/space/invites": {
+      "get": {
+        "operationId": "AdminService_ListInvites",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListInvitesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      },
+      "post": {
+        "operationId": "AdminService_CreateInvite",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateInviteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateInviteRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/space/invites/{inviteId}/revoke": {
+      "post": {
+        "operationId": "AdminService_RevokeInvite",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RevokeInviteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "inviteId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminServiceRevokeInviteBody"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/space/members": {
+      "get": {
+        "operationId": "AdminService_ListMembers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListMembersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/space/members/{principalId}": {
+      "patch": {
+        "operationId": "AdminService_UpdateMember",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateMemberResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "principalId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdminServiceUpdateMemberBody"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/space/settings": {
       "get": {
         "operationId": "AdminService_GetSettings",
@@ -408,6 +663,24 @@
     }
   },
   "definitions": {
+    "AdminServiceRevokeInviteBody": {
+      "type": "object"
+    },
+    "AdminServiceUpdateMemberBody": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "blocked": {
+          "type": "boolean"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "ContentServiceCreateContentBody": {
       "type": "object",
       "properties": {
@@ -444,6 +717,22 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1AcceptInviteRequest": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AcceptInviteResponse": {
+      "type": "object",
+      "properties": {
+        "member": {
+          "$ref": "#/definitions/v1Member"
         }
       }
     },
@@ -490,6 +779,10 @@
         "signature": {
           "type": "string",
           "format": "byte"
+        },
+        "invitationToken": {
+          "type": "string",
+          "description": "Только device.register: вступление атомарно с регистрацией устройства."
         }
       }
     },
@@ -573,6 +866,33 @@
         }
       }
     },
+    "v1CreateInviteRequest": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "ttlSeconds": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxUses": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1CreateInviteResponse": {
+      "type": "object",
+      "properties": {
+        "invite": {
+          "$ref": "#/definitions/v1Invite"
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    },
     "v1Event": {
       "type": "object",
       "properties": {
@@ -608,6 +928,14 @@
         }
       }
     },
+    "v1GetMembershipResponse": {
+      "type": "object",
+      "properties": {
+        "member": {
+          "$ref": "#/definitions/v1Member"
+        }
+      }
+    },
     "v1GetSettingsResponse": {
       "type": "object",
       "properties": {
@@ -620,6 +948,32 @@
       "type": "object",
       "properties": {
         "initialized": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Invite": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "maxUses": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "uses": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "revoked": {
           "type": "boolean"
         }
       }
@@ -654,10 +1008,87 @@
         }
       }
     },
+    "v1ListInvitesResponse": {
+      "type": "object",
+      "properties": {
+        "invites": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Invite"
+          }
+        },
+        "nextCursor": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ListMembersResponse": {
+      "type": "object",
+      "properties": {
+        "members": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Member"
+          }
+        },
+        "nextCursor": {
+          "type": "string"
+        }
+      }
+    },
     "v1LogoutRequest": {
       "type": "object"
     },
     "v1LogoutResponse": {
+      "type": "object"
+    },
+    "v1Member": {
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "blocked": {
+          "type": "boolean"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1PreviewInviteRequest": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PreviewInviteResponse": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "serverId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1RevokeInviteResponse": {
       "type": "object"
     },
     "v1SpaceSettings": {
@@ -692,6 +1123,14 @@
         },
         "heartbeat": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateMemberResponse": {
+      "type": "object",
+      "properties": {
+        "member": {
+          "$ref": "#/definitions/v1Member"
         }
       }
     },
