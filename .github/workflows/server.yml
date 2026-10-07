@@ -7,8 +7,28 @@ permissions:
 jobs:
   server:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17.6
+        env:
+          POSTGRES_DB: space_test
+          POSTGRES_USER: space
+          POSTGRES_PASSWORD: ci-only-password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U space -d space_test"
+          --health-interval 3s
+          --health-timeout 3s
+          --health-retries 20
+    env:
+      SPACE_TEST_DATABASE_URL: postgres://space:ci-only-password@127.0.0.1:5432/space_test?sslmode=disable
     steps:
       - uses: actions/checkout@v4
+      - name: Проверка конфигурации локальной базы
+        env:
+          SPACE_POSTGRES_PASSWORD: ci-only-password
+        run: docker compose -f deploy/compose.yaml config --quiet
       - uses: actions/setup-go@v5
         with:
           go-version-file: server/go.mod
