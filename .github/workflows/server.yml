@@ -29,6 +29,11 @@ jobs:
         env:
           SPACE_POSTGRES_PASSWORD: ci-only-password
         run: docker compose -f deploy/compose.yaml config --quiet
+      - name: Проверки UI-прототипа и согласия на оформление
+        run: |
+          node --check client/design/prototype/app.js
+          node --check client/design/prototype/theme.js
+          node client/design/prototype/theme.test.mjs
       - uses: actions/setup-go@v5
         with:
           go-version-file: server/go.mod

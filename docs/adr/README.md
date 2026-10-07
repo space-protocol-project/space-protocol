@@ -1,6 +1,10 @@
 # Архитектурные решения
 
-Решения ещё не приняты. Вначале нужны ADR-013 (Matrix/XMPP/Nostr либо собственная основа) и ADR-014 (software/hardware/WebAuthn credentials).
+Стратегические ADR-013 (Matrix/XMPP/Nostr либо собственная основа) и ADR-014 (software/hardware/WebAuthn credentials) остаются открытыми. Технические прототипы не заменяют эти решения.
+
+- [ADR-015: gRPC и grpc-gateway](015-api-transport.md).
+- [ADR-016: локальная авторизация и durable events](016-local-auth-events.md).
+- [ADR-017: личная тема и оформление пространства по согласию](017-space-appearance.md).
 
 Формат нового документа:
 
