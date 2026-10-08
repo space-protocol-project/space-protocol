@@ -41,6 +41,17 @@
 - [x] Flutter: предварительная проверка кода, подключение по приглашению, интерфейс читателя.
 - [ ] ACL отдельных каналов, moderator, pending approvals, leave, QR приглашения и device pairing.
 
+### Зашифрованные карточки и устройства — первый срез
+
+- [x] Миграция 5: root-authorized recovery grant, дочерние devices и цепочка проверки.
+- [x] Один зашифрованный формат WebCrypto/Dart, AES-256-GCM и ограниченный PBKDF2 профиль.
+- [x] Экспорт root-card Flutter и delegated-card панели; импорт в обоих клиентах.
+- [x] Прежний principal, owner и membership; новый случайный рабочий device key.
+- [x] Рабочее устройство из delegated-card не сохраняет управляющий секрет.
+- [x] Собственный список devices, self revoke, подписанный отзыв других устройств и каскад recovery revoke.
+- [x] Неверный пароль, AEAD, KDF bounds, scope escalation, block, stale challenge и interoperability проверки.
+- [ ] QR/PNG и сканирование; master seed/HKDF; one-time pairing; root rotation; browser/vault restart drill.
+
 ### Flutter-клиент для Windows — первый срез
 
 - [x] Dart-контракты и нативный gRPC endpoint в discovery.
@@ -49,7 +60,7 @@
 - [x] Анализ, тесты интерфейса/подписей и Windows release build.
 - [x] Dart/Go interoperability проверка в CI.
 
-Следующий срез: восстановление владельца и связывание браузера с Flutter, затем ACL отдельных разделов. Роли пространства и приглашения уже реализованы для general chat. Subscribe с replay реализован. ADR-013/014 остаются открытыми. Подписанный manifest, production key backend, backup/restore drill, refresh, QR recovery, outbox и полный Docker deployment ещё не выполнены.
+Следующий срез: QR, one-time pairing и ротация root, затем ACL отдельных разделов. Восстановление прежнего principal/owner через зашифрованный файл и новые device keys уже реализовано. Роли пространства и приглашения уже реализованы для general chat. Subscribe с replay реализован. ADR-013/014 остаются открытыми. Подписанный manifest, production key backend, backup/restore drill, refresh, QR recovery, outbox и полный Docker deployment ещё не выполнены.
 
 > Roadmap не является календарным обещанием. Оценки времени появятся после технических прототипов и определения состава команды. Один этап может состоять из нескольких PR; каждый PR должен оставлять систему собираемой и проверяемой. Не начинаем федерацию или сложное медиа до проверки основного вертикального среза.
 
