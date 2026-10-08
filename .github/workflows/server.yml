@@ -79,9 +79,9 @@ jobs:
           node tools/admin-interop.mjs
           npx --prefix tools playwright install --with-deps chromium
           node tools/browser-restart.mjs
+          node tools/root-rotation-interop.mjs
           cd ../client
           dart run tool/interoperability.dart http://127.0.0.1:18080
-          dart run tool/root_rotation_interoperability.dart http://127.0.0.1:18080
   native-vault:
     name: Нативное хранилище Windows
     runs-on: windows-latest
