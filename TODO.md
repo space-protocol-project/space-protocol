@@ -914,3 +914,5 @@ Limited device может писать по выданному grant, но не 
 - [ ] Crash-safe pending journal в защищённом хранилище.
 - [ ] UI ротации в Flutter и /space, новые карточки.
 - [ ] Полная Go/WebCrypto/Dart interoperability и нативная Windows проверка.
+
+- [x] Нативный Windows secure storage: отдельная release-сборка, три процесса write/reopen/cleanup и изолированный случайный test slot. Добавлен Windows CI-job. Проверка другого Windows-профиля/компьютера остаётся ручной.

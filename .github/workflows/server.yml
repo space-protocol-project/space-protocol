@@ -81,3 +81,21 @@ jobs:
           node tools/browser-restart.mjs
           cd ../client
           dart run tool/interoperability.dart http://127.0.0.1:18080
+  native-vault:
+    name: Нативное хранилище Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.6'
+          channel: stable
+          cache: true
+      - name: Сборка отдельного проверочного приложения
+        working-directory: client
+        run: |
+          flutter pub get
+          flutter build windows --release --target tool/native_vault_drill.dart
+      - name: Перезапуск с настоящим системным vault
+        working-directory: client
+        run: ./tool/native_vault_drill.ps1
