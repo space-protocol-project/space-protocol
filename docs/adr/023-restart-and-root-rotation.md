@@ -134,3 +134,39 @@ Scope нового устройства не может повысить рол�
 Добавлен Go-пакет `server/internal/identityrotation`: фиксированный canonical transcript, проверка ожидаемого principal/epoch/server/origin/target/scopes, challenge до 120 секунд и независимые подписи старого/нового root. Тесты отвергают подмену полей, перепутанные домены, истечение и отсутствие possession нового ключа.
 
 Пакет не подключён к AuthService, не выдаёт сессии и не меняет базу. Consume challenge, история ключей, atomic epoch switch и клиентский журнал ещё не реализованы. Наличие verifier не означает доступную пользователю ротацию.
+
+## Серверный переход — реализован 8 октября 2026 года
+
+Миграция 7 добавляет `principal_roots` и `root_rotations`. ID существующего principal сохраняется. Регистрация ищет root в истории: текущий ключ получает прежний principal, retired root отклоняется. Genesis остаётся `u_hash(root)`, дальнейшие переходы ID не пересчитывают.
+
+Экспериментальные RPC `CreateRootRotation` и `CompleteRootRotation` доступны через gRPC и grpc-gateway:
+
+```json
+{
+  "profile": "root-rotation-v1",
+  "operationId": "ro_BASE64URL_32_RANDOM_BYTES",
+  "expectedAuthEpoch": "1",
+  "newRootPublicKey": "BASE64_32_BYTES",
+  "newDevicePublicKey": "BASE64_32_BYTES"
+}
+```
+
+Это HTTP/ProtoJSON-запрос к `POST /api/v1/auth/root-rotations`. Его входные keys кодируются стандартным base64, а внутри canonical transcript — base64url без padding. Создание требует Bearer-сессию активного не-recovery устройства и текущую эпоху. Рабочее устройство само по себе не может завершить переход: нужны подписи обоих root. Scopes нового grant наследуются от исходного, роль не повышается.
+
+Ответ содержит `challengeId` и `transcript` (bytes в ProtoJSON — base64). Клиент проверяет поля и подписывает canonical transcript в двух разных доменах. Затем вызывает `POST /api/v1/auth/root-rotations/complete`:
+
+```json
+{
+  "challengeId": "rc_BASE64URL_32_RANDOM_BYTES",
+  "oldSignature": "BASE64_64_BYTES",
+  "newSignature": "BASE64_64_BYTES"
+}
+```
+
+Завершение не требует старую Bearer-сессию: после commit она отозвана, а повтор нужен для восстановления потерянного ответа. Авторизация здесь — две проверенные подписи на одноразовом серверном challenge. Повтор того же завершённого proof возвращает прежние principal/epoch/grant даже после истечения challenge; неподписанный запрос не выдаёт receipt. Повтор не создаёт новый grant.
+
+В одной транзакции изменяются current root/auth_epoch, сохраняется история перехода, отзываются прежние grants и сессии, отменяются pending/approved pairings с прежним root и создаётся новый 30-дневный working grant. Старые challenges закрываются проверкой эпохи/активности grant, а не удалением их строк. Прежние recovery keys и их дочерние устройства также закрываются. Membership и author_id не изменяются.
+
+Реализованы интеграционные проверки PostgreSQL: две подписи, ошибочная подпись, параллельный повтор commit, тот же principal/owner, сохранённое авторство сообщения, отказ старым root/session/challenge/recovery, отмена pending pairing, новый вход, регистрация нового root с прежним ID и reopen базы.
+
+**Граница:** серверный API ещё не подключён к пользовательским клиентам. Старые Flutter/WebCrypto проверки выводят principal из root и отвергают proof после ротации. Нельзя вручную вызывать этот API для единственной рабочей идентичности. Следующие задачи — root-history proof для клиентов, recovery envelope v2, защищённый pending journal, интерфейс подтверждения и полная interoperability проверка. Изолированный Go-тест использует собственные ключи и тестовую базу.

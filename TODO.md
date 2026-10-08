@@ -902,3 +902,15 @@ Limited device может писать по выданному grant, но не 
 - [ ] Root rotation с постоянным principal, двойной подписью и crash-safe журналом. [ADR-023](docs/adr/023-restart-and-root-rotation.md) — предложение, API ещё отсутствует.
 
 [Инструкция ручной проверки](docs/RECOVERY-DRILL.md).
+
+
+### Ротация root — серверный срез
+
+- [x] История root и неизменяемый principal; запрет повторной регистрации retired root.
+- [x] Двойная подпись, атомарный epoch switch и выдача нового working grant.
+- [x] Отзыв старых grants/sessions/recovery; отмена pending/approved pairing.
+- [x] Идемпотентный receipt для повторного commit после потери ответа.
+- [ ] Проверка root-history клиентами и recovery envelope v2.
+- [ ] Crash-safe pending journal в защищённом хранилище.
+- [ ] UI ротации в Flutter и /space, новые карточки.
+- [ ] Полная Go/WebCrypto/Dart interoperability и нативная Windows проверка.
