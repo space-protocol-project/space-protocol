@@ -898,7 +898,7 @@ Limited device может писать по выданному grant, но не 
 - [x] Новый процесс Dart: прежние principal, owner и grant после чтения тестовой device-only записи.
 - [x] Полный перезапуск Chromium с настоящим IndexedDB и повторным входом.
 - [x] Пустой браузерный профиль + recovery PNG; неверный пароль без изменения vault; повторный перезапуск восстановленного профиля.
-- [ ] Нативный Windows integration runner для системного защищённого хранилища.
+- [x] Нативный Windows integration runner для системного защищённого хранилища.
 - [ ] Root rotation с постоянным principal, двойной подписью и crash-safe журналом. [ADR-023](docs/adr/023-restart-and-root-rotation.md) — предложение, API ещё отсутствует.
 
 [Инструкция ручной проверки](docs/RECOVERY-DRILL.md).
