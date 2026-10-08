@@ -212,7 +212,7 @@ message AcceptInviteResponse { Member member = 1; }
 message GetMembershipRequest {}
 message GetMembershipResponse { Member member = 1; }
 message GetSetupStatusRequest {}
-message GetSetupStatusResponse { bool initialized = 1; }
+message GetSetupStatusResponse { bool initialized = 1; bool first_login_owner = 2; }
 message ClaimOwnerRequest { string setup_code = 1; }
 message GetSettingsRequest {}
 message ClaimOwnerResponse { SpaceSettings settings = 1; }

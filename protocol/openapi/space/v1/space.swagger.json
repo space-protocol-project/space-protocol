@@ -1732,6 +1732,9 @@
       "properties": {
         "initialized": {
           "type": "boolean"
+        },
+        "firstLoginOwner": {
+          "type": "boolean"
         }
       }
     },

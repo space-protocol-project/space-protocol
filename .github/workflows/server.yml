@@ -91,6 +91,21 @@ jobs:
           node tools/browser-rotation-interop.mjs
           cd ../client
           dart run tool/interoperability.dart http://127.0.0.1:18080
+      - name: Первый владелец без кода из нативного приложения
+        working-directory: server
+        env:
+          SPACE_DATABASE_URL: postgres://space:ci-only-password@127.0.0.1:5432/space_first_owner?sslmode=disable
+        run: |
+          PGPASSWORD=ci-only-password psql -h 127.0.0.1 -U space -d space_test -c 'CREATE DATABASE space_first_owner'
+          "$RUNNER_TEMP/space-server" -http 127.0.0.1:18081 -grpc 127.0.0.1:19091 &
+          bootstrap_pid=$!
+          trap 'kill "$bootstrap_pid"; wait "$bootstrap_pid" || true' EXIT
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:18081/healthz; then break; fi
+            sleep 1
+          done
+          cd ../client
+          dart run tool/first_owner_interoperability.dart http://127.0.0.1:18081
       - name: Снимок интерфейса каналов
         if: always()
         uses: actions/upload-artifact@v4

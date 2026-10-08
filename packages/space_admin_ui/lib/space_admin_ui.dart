@@ -193,7 +193,7 @@ class _AdminPageState extends State<AdminPage> {
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 12),
-                child: Text('Ваш сервер. Ваши правила.'),
+                child: Text('Ваш сервер. Ваши правила. На новом сервере первый успешный вход назначает владельца.'),
               ),
               const Text(
                 'Настройки, каналы и права выбранного сервера. Остальные разделы переносятся постепенно.',
