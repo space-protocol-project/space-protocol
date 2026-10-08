@@ -81,6 +81,7 @@ jobs:
           node tools/browser-restart.mjs
           node tools/camera-interop.mjs
           node tools/root-rotation-interop.mjs
+          node tools/browser-rotation-interop.mjs
           cd ../client
           dart run tool/interoperability.dart http://127.0.0.1:18080
   native-vault:
