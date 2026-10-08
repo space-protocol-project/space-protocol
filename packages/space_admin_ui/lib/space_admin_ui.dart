@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:space_api/space_api.dart';
 
+import 'src/channels_panel.dart';
+export 'src/channels_panel.dart';
+
 typedef IdentityLogin = Future<Map<String, dynamic>> Function({bool create});
 
 class AdminPage extends StatefulWidget {
@@ -193,7 +196,7 @@ class _AdminPageState extends State<AdminPage> {
                 child: Text('Ваш сервер. Ваши правила.'),
               ),
               const Text(
-                'Первый срез управления: настройки сервера. Остальные разделы переносятся постепенно.',
+                'Настройки, каналы и права выбранного сервера. Остальные разделы переносятся постепенно.',
               ),
               const SizedBox(height: 20),
               if (identity == null)
@@ -316,6 +319,15 @@ class _AdminPageState extends State<AdminPage> {
                     ],
                   ),
                 ]),
+              if (settings != null) ...[
+                const SizedBox(height: 20),
+                ChannelsPanel(
+                  key: ValueKey(
+                    "${identity?['serverId']}|${identity?['principalId']}",
+                  ),
+                  call: call,
+                ),
+              ],
               if (identity != null && widget.allowLogout)
                 Padding(
                   padding: const EdgeInsets.only(top: 16),
@@ -337,7 +349,7 @@ class _AdminPageState extends State<AdminPage> {
                 ),
               if (widget.openLegacy != null)
                 const Text(
-                  'Текущая панель: /space — каналы, права, приглашения, устройства и восстановление. Откройте этот адрес на том же сервере.',
+                  'Текущая панель: /space — участники, приглашения, устройства и восстановление. Откройте этот адрес на том же сервере.',
                 ),
             ],
           ),

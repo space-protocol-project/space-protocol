@@ -61,6 +61,8 @@ void main() {
     await tester.runAsync(() async {
       await tester.tap(find.text('Войти с сохранёнными ключами'));
       await Future<void>.delayed(const Duration(milliseconds: 50));
+      await tester.pump();
+      await Future<void>.delayed(const Duration(milliseconds: 50));
     });
     await tester.pumpAndSettle();
     expect(find.text('Настройки пространства · версия 3'), findsOneWidget);
