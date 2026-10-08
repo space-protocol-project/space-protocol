@@ -916,3 +916,14 @@ Limited device может писать по выданному grant, но не 
 - [ ] Полная Go/WebCrypto/Dart interoperability и нативная Windows проверка.
 
 - [x] Нативный Windows secure storage: отдельная release-сборка, три процесса write/reopen/cleanup и изолированный случайный test slot. Добавлен Windows CI-job. Проверка другого Windows-профиля/компьютера остаётся ручной.
+
+### Ротация root — Flutter и восстановление в панели
+
+- [x] Vault v3 и полная проверка root history в Dart/WebCrypto; прежний verified principal и новая эпоха.
+- [x] Отдельный protected journal до commit, проверка записи чтением обратно и повтор receipt.
+- [x] Возобновление после ошибки записи/частичного active slot/ошибки cleanup.
+- [x] Flutter UI начала, завершения и обновления истёкшего запроса.
+- [x] Recovery payload v2, восстановление новой карточки в Flutter и /space.
+- [ ] Собственный journal и UI ротации в /space.
+- [ ] Root history в pairing proof, сопряжение после ротации.
+- [ ] Native Windows crash-injection с реальным прерыванием посреди файловой записи; текущий runner проверяет реальные slots между процессами, ошибки IO моделируются отдельно.
