@@ -1532,3 +1532,7 @@ Feature считается готовой, когда есть schema и кон�
 Проверки перезапуска профиля Chromium и процесса Dart описаны в [RECOVERY-DRILL.md](docs/RECOVERY-DRILL.md). [ADR-023](docs/adr/023-restart-and-root-rotation.md) предлагает переход к постоянному principal при смене root; действующей ротации пока нет.
 
 Flutter поддерживает начало и возобновление ротации root с protected journal. `/space` читает новую recovery-карточку v2 и сохраняет прежние права. [Инструкции и ограничения](docs/APPLICATION-GUIDE.md#смена-корневого-ключа-во-flutter).
+
+## Закрытие текущего этапа
+
+Работают ротация root в Flutter и /space, защищённые журналы и resume, root history в pairing и recovery v2. Сквозные проверки проходят между Dart/WebCrypto/Go. Windows backend использует отдельные DPAPI partitions и atomic replace; реальный process termination внутри encrypted temp write проверен отдельной test-сборкой. Следующий этап — ACL отдельных каналов и управление разделами.
