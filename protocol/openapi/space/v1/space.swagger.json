@@ -149,6 +149,198 @@
         ]
       }
     },
+    "/api/v1/auth/pairings": {
+      "post": {
+        "operationId": "AuthService_CreatePairing",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreatePairingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreatePairingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/api/v1/auth/pairings/cancel": {
+      "post": {
+        "operationId": "AuthService_CancelPairing",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CancelPairingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CancelPairingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/api/v1/auth/pairings/claim": {
+      "post": {
+        "operationId": "AuthService_ClaimPairing",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ClaimPairingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ClaimPairingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/api/v1/auth/pairings/inspect": {
+      "post": {
+        "operationId": "AuthService_InspectPairing",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1InspectPairingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1InspectPairingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/api/v1/auth/pairings/poll": {
+      "post": {
+        "operationId": "AuthService_PollPairing",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PollPairingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1PollPairingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/api/v1/auth/pairings/propose": {
+      "post": {
+        "operationId": "AuthService_ProposePairing",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ProposePairingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ProposePairingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
     "/api/v1/auth/sessions": {
       "post": {
         "operationId": "AuthService_CompleteChallenge",
@@ -790,6 +982,17 @@
         }
       }
     },
+    "v1CancelPairingRequest": {
+      "type": "object",
+      "properties": {
+        "pollToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CancelPairingResponse": {
+      "type": "object"
+    },
     "v1Channel": {
       "type": "object",
       "properties": {
@@ -823,6 +1026,17 @@
           "$ref": "#/definitions/v1SpaceSettings"
         }
       }
+    },
+    "v1ClaimPairingRequest": {
+      "type": "object",
+      "properties": {
+        "pairingId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ClaimPairingResponse": {
+      "type": "object"
     },
     "v1CompleteChallengeRequest": {
       "type": "object",
@@ -904,6 +1118,10 @@
         "recoveryGrantId": {
           "type": "string",
           "description": "device.delegate / recovery.device.revoke: действующий recovery grant."
+        },
+        "pairingId": {
+          "type": "string",
+          "description": "Root-подписанное сопряжение с неизменяемым целевым public key."
         }
       }
     },
@@ -951,6 +1169,35 @@
           "$ref": "#/definitions/v1Invite"
         },
         "token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreatePairingRequest": {
+      "type": "object",
+      "properties": {
+        "publicKey": {
+          "type": "string",
+          "format": "byte"
+        },
+        "deviceName": {
+          "type": "string"
+        },
+        "administrative": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreatePairingResponse": {
+      "type": "object",
+      "properties": {
+        "pairing": {
+          "$ref": "#/definitions/v1Pairing"
+        },
+        "code": {
+          "type": "string"
+        },
+        "pollToken": {
           "type": "string"
         }
       }
@@ -1042,6 +1289,22 @@
       "properties": {
         "initialized": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1InspectPairingRequest": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "v1InspectPairingResponse": {
+      "type": "object",
+      "properties": {
+        "pairing": {
+          "$ref": "#/definitions/v1Pairing"
         }
       }
     },
@@ -1167,6 +1430,70 @@
         }
       }
     },
+    "v1Pairing": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "deviceName": {
+          "type": "string"
+        },
+        "publicKey": {
+          "type": "string",
+          "format": "byte"
+        },
+        "administrative": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "state": {
+          "type": "string"
+        },
+        "proposedRootPublicKey": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1PollPairingRequest": {
+      "type": "object",
+      "properties": {
+        "pollToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PollPairingResponse": {
+      "type": "object",
+      "properties": {
+        "pairing": {
+          "$ref": "#/definitions/v1Pairing"
+        },
+        "grantId": {
+          "type": "string"
+        },
+        "rootPublicKey": {
+          "type": "string",
+          "format": "byte"
+        },
+        "transcript": {
+          "type": "string",
+          "format": "byte"
+        },
+        "signature": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
     "v1PreviewInviteRequest": {
       "type": "object",
       "properties": {
@@ -1192,6 +1519,17 @@
           "format": "int64"
         }
       }
+    },
+    "v1ProposePairingRequest": {
+      "type": "object",
+      "properties": {
+        "pairingId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ProposePairingResponse": {
+      "type": "object"
     },
     "v1RevokeCurrentDeviceRequest": {
       "type": "object"
