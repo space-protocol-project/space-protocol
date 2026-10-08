@@ -59,6 +59,13 @@ jobs:
           flutter pub get
           flutter analyze
           flutter test
+      - name: Общий модуль управления и браузерная сборка
+        working-directory: apps/space_admin
+        run: |
+          flutter pub get
+          flutter analyze
+          flutter test
+          flutter build web --release --base-href /space/flutter/ --no-web-resources-cdn
       - name: Сквозная проверка входа, событий и отзыва
         working-directory: server
         env:
@@ -68,7 +75,7 @@ jobs:
           SPACE_SETUP_CODE=$("$RUNNER_TEMP/space-server" -setup-code)
           echo "::add-mask::$SPACE_SETUP_CODE"
           export SPACE_SETUP_CODE
-          "$RUNNER_TEMP/space-server" -http 127.0.0.1:18080 &
+          SPACE_ADMIN_WEB_DIR="$GITHUB_WORKSPACE/apps/space_admin/build/web" "$RUNNER_TEMP/space-server" -http 127.0.0.1:18080 &
           server_pid=$!
           trap 'kill "$server_pid"; wait "$server_pid" || true' EXIT
           for attempt in $(seq 1 20); do
