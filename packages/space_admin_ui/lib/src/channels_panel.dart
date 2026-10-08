@@ -125,17 +125,26 @@ class _ChannelsPanelState extends State<ChannelsPanel> {
       throw StateError(
         'Адрес: латинские буквы, цифры, _ или -, начиная с буквы',
       );
-    final result = await widget.call(
-      '/api/v1/channels',
-      method: 'POST',
-      body: {
-        'channelId': id,
-        'title': name(newTitle),
-        'position': position(newOrder),
-        'viewType': 'chat',
-        'publicPreview': false,
-      },
-    );
+    late Map<String, dynamic> result;
+    try {
+      result = await widget.call(
+        '/api/v1/channels',
+        method: 'POST',
+        body: {
+          'channelId': id,
+          'title': name(newTitle),
+          'position': position(newOrder),
+          'viewType': 'chat',
+          'publicPreview': false,
+        },
+      );
+    } on SpaceApiError catch (e) {
+      if (e.status == 409)
+        throw StateError(
+          'Канал с таким адресом уже существует. Выберите другой адрес.',
+        );
+      rethrow;
+    }
     if (!mounted) return;
     newId.clear();
     newTitle.clear();
@@ -175,7 +184,8 @@ class _ChannelsPanelState extends State<ChannelsPanel> {
 
   void addRule() {
     if (rules.length >= 100) throw StateError('Лимит: 100 правил');
-    final id = principal ?? manualPrincipal.text.trim();
+    final typed = manualPrincipal.text.trim();
+    final id = typed.isNotEmpty ? typed : principal ?? '';
     if (subject == 'principal' && !RegExp(r'^u_[0-9a-f]{64}$').hasMatch(id))
       throw StateError(
         'Выберите участника или укажите его полный идентификатор',
@@ -195,6 +205,8 @@ class _ChannelsPanelState extends State<ChannelsPanel> {
         'manage': false,
       },
     });
+    principal = null;
+    manualPrincipal.clear();
     status = 'Правило добавлено в форму. Сохраните права для применения.';
   }
 
@@ -446,7 +458,12 @@ class _ChannelsPanelState extends State<ChannelsPanel> {
                       ),
                     ),
                 ],
-                onChanged: busy ? null : (v) => setState(() => principal = v),
+                onChanged: busy
+                    ? null
+                    : (v) => setState(() {
+                        principal = v;
+                        manualPrincipal.clear();
+                      }),
               ),
               if (memberCursor.isNotEmpty)
                 action(
