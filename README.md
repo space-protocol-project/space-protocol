@@ -1535,8 +1535,10 @@ Flutter поддерживает начало и возобновление ро
 
 ## Закрытие текущего этапа
 
-Работают ротация root в Flutter и /space, защищённые журналы и resume, root history в pairing и recovery v2. Сквозные проверки проходят между Dart/WebCrypto/Go. Windows backend использует отдельные DPAPI partitions и atomic replace; реальный process termination внутри encrypted temp write проверен отдельной test-сборкой. Следующий этап — управление каналами в интерфейсах (серверные ACL реализованы в ADR-024).
+Работают ротация root в Flutter и /space, защищённые журналы и resume, root history в pairing и recovery v2. Сквозные проверки проходят между Dart/WebCrypto/Go. Windows backend использует отдельные DPAPI partitions и atomic replace; реальный process termination внутри encrypted temp write проверен отдельной test-сборкой. Каналы, ACL и управление в интерфейсах реализованы в ADR-024. Далее — события изменения списка каналов и forum/feed.
 
 ## Каналы и права доступа: реализованный серверный срез
 
 Постоянный Go-сервер поддерживает несколько chat-каналов, порядок, архивирование, optimistic revision и ролевые/индивидуальные ACL. История, запись, события и открытые подписки проверяют права на сервере. Public preview раскрывает только метаданные; анонимное чтение запрещено. [API, модель и безопасность — ADR-024](docs/adr/024-channels-and-access.md). Управление каналами и ACL в /space и переключение во Flutter реализованы; курсоры и отметки чтения сохраняются отдельно для каждого канала.
+
+Инструкция и снимок интерфейса: [Управление каналами](docs/ADMIN-GUIDE.md#каналы-и-их-права).
