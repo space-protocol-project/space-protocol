@@ -152,6 +152,8 @@ class _AdminPageState extends State<AdminPage> {
   }
 
   Widget card(List<Widget> children) => Card(
+    color: Theme.of(context).colorScheme.surface,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
     child: Padding(
       padding: const EdgeInsets.all(24),
       child: Column(
@@ -201,8 +203,10 @@ class _AdminPageState extends State<AdminPage> {
                     style: TextStyle(fontSize: 20),
                   ),
                   const SizedBox(height: 12),
-                  const Text(
-                    'Используются ключи текущей панели в этом браузере. Перенос и восстановление доступны по ссылке ниже.',
+                  Text(
+                    widget.autoConnect
+                        ? 'Используется идентичность текущего подключения. Дополнительный аккаунт не нужен.'
+                        : 'Используются ключи текущей панели в этом браузере. Перенос и восстановление доступны по ссылке ниже.',
                   ),
                   const SizedBox(height: 16),
                   button('Войти с сохранёнными ключами', () => signIn(false)),
@@ -287,6 +291,7 @@ class _AdminPageState extends State<AdminPage> {
                     ),
                   ),
                   DropdownButtonFormField<String>(
+                    key: ValueKey(policy),
                     initialValue: policy,
                     decoration: const InputDecoration(labelText: 'Регистрация'),
                     items: const [

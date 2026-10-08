@@ -84,7 +84,7 @@ jobs:
           done
           go run ./cmd/space-demo -origin http://127.0.0.1:18080
           npx --prefix tools playwright install --with-deps chromium
-          SPACE_CHANNELS_SCREENSHOT="$RUNNER_TEMP/space-channel-admin.png" node tools/admin-interop.mjs
+          SPACE_CHANNELS_SCREENSHOT="$RUNNER_TEMP/space-channel-admin.png" SPACE_ADMIN_FLUTTER_SCREENSHOT="$RUNNER_TEMP/space-flutter-admin.png" node tools/admin-interop.mjs
           node tools/browser-restart.mjs
           node tools/camera-interop.mjs
           node tools/root-rotation-interop.mjs
@@ -95,7 +95,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: channel-ui-preview
-          path: ${{ runner.temp }}/space-channel-admin.png
+          path: |
+            ${{ runner.temp }}/space-channel-admin.png
+            ${{ runner.temp }}/space-flutter-admin.png
           if-no-files-found: ignore
   native-vault:
     name: Нативное хранилище Windows
