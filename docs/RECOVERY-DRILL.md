@@ -60,3 +60,18 @@ flutter build windows --release --target lib/main.dart
 ```
 
 Тестовая точка входа не включается в обычное приложение. После теста нужно пересобрать `lib/main.dart`; проверочный EXE не следует упаковывать как пользовательскую сборку. Этот сценарий добавлен отдельным Windows-job в CI. Он проверяет реальный плагин и границу процесса на одной ОС-профиле; восстановление в другом Windows-профиле и перенос на другой компьютер остаются отдельными ручными сценариями.
+
+## Аварийное завершение внутри реальной Windows-записи
+
+Проверочный backend — реально используемый Dart/DPAPI. Active и journal хранятся в разных partition-файлах. Запись: encrypted temporary file → flush → MoveFileEx(REPLACE_EXISTING | WRITE_THROUGH). Legacy общий файл мигрируется при чтении. Checkpoint присутствует только при --dart-define=SPACE_VAULT_CRASH_TEST=true и приостанавливает запись после половины encrypted bytes. Runner проверяет exact путь запущенного EXE, завершает только свой процесс и новым процессом читает прежний целый active + отдельный journal.
+
+Повтор:
+
+```powershell
+cd client
+flutter build windows --release --target tool/native_vault_drill.dart --dart-define=SPACE_VAULT_CRASH_TEST=true
+./tool/native_vault_drill.ps1
+flutter build windows --release --target lib/main.dart
+```
+
+Обычный production target собирается без тестового define. Process crash проверен; сбой диска/питания не моделируется. Остаток encrypted temporary file после TerminateProcess не содержит открытый secret; broad cleanup пользовательских каталогов тест не делает.

@@ -935,3 +935,12 @@ Limited device может писать по выданному grant, но не 
 - [x] Windows camera_windows 0.3.0 с BSD-3-Clause и небольшим патчем пути: Temp вместо Pictures/OneDrive.
 - [x] Native JPEG/PNG тесты QR с полями и поворотом; браузерный CI использует синтетическую видеокамеру и настоящее восстановление.
 - [ ] Проверка физической камеры пользователя и печатных карточек при разном освещении.
+
+### Закрытие этапа — оставшиеся пункты 1–4
+
+- [x] UI/journal ротации в /space, atomic IndexedDB activation, потерянный ответ и restart/resume.
+- [x] Root history в pairing response, проверка Dart/WebCrypto и прежний principal после ротации.
+- [x] Сквозные сценарии ротация → restart → recovery v2 → pairing → self revoke и каскад recovery revoke.
+- [x] Windows process termination посреди encrypted temp write в настоящем DPAPI backend; отдельный journal и atomic replace.
+
+Следующий этап: ACL отдельных каналов, управление разделами и дальнейшие client UX.
