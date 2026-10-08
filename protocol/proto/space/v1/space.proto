@@ -103,6 +103,7 @@ message PollPairingResponse {
   bytes parent_transcript = 6;
   bytes parent_signature = 7;
   string parent_grant_id = 8;
+  repeated RootHistoryProof root_history = 9;
 }
 message CancelPairingRequest { string poll_token = 1; }
 message CancelPairingResponse {}
@@ -335,3 +336,4 @@ message CompleteRootRotationResponse {
   bytes old_signature = 5;
   bytes new_signature = 6;
 }
+message RootHistoryProof { bytes transcript = 1; bytes old_signature = 2; bytes new_signature = 3; }

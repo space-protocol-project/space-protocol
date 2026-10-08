@@ -1645,6 +1645,13 @@
         },
         "parentGrantId": {
           "type": "string"
+        },
+        "rootHistory": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1RootHistoryProof"
+          }
         }
       }
     },
@@ -1693,6 +1700,23 @@
     },
     "v1RevokeInviteResponse": {
       "type": "object"
+    },
+    "v1RootHistoryProof": {
+      "type": "object",
+      "properties": {
+        "transcript": {
+          "type": "string",
+          "format": "byte"
+        },
+        "oldSignature": {
+          "type": "string",
+          "format": "byte"
+        },
+        "newSignature": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     },
     "v1SpaceSettings": {
       "type": "object",
