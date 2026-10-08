@@ -79,7 +79,7 @@ principal_id (не меняется)
 }
 ```
 
-Сервер выдаёт одноразовый challenge с canonical transcript. Подписываются все поля: server ID, origin, principal ID, прежний root и epoch, новый root/device, scopes, сроки, nonce, challenge ID и operation ID. Старый и новый root подписывают одни и те же canonical bytes с отдельным доменным префиксом `space/root.rotate/v1`.
+Сервер выдаёт одноразовый challenge с canonical transcript. Подписываются все поля: server ID, origin, principal ID, прежний root и epoch, новый root/device, scopes, сроки, nonce, challenge ID и operation ID. Старый и новый root подписывают одни и те же canonical bytes с разделением ролей подписи: `space/root.rotate/old/v1` и `space/root.rotate/new/v1`, затем NUL и canonical JSON.
 
 Завершение принимает обе подписи. Предлагается требовать также активную сессию исходной идентичности с отдельным правом ротации; device-only и recovery-card не должны неявно получать этот доступ.
 
@@ -127,3 +127,10 @@ Scope нового устройства не может повысить рол�
 ## Порядок следующего среза
 
 Сначала утвердить криптографическую связь stable principal/current root в контракте, затем добавить migration и серверную транзакцию, потом обновить оба клиента и карточки. Кнопка «Сменить root» появится только после проверки восстановления после сбоя. Текущий статус root rotation остаётся «не реализовано».
+
+
+## Проверяемый прототип подписей
+
+Добавлен Go-пакет `server/internal/identityrotation`: фиксированный canonical transcript, проверка ожидаемого principal/epoch/server/origin/target/scopes, challenge до 120 секунд и независимые подписи старого/нового root. Тесты отвергают подмену полей, перепутанные домены, истечение и отсутствие possession нового ключа.
+
+Пакет не подключён к AuthService, не выдаёт сессии и не меняет базу. Consume challenge, история ключей, atomic epoch switch и клиентский журнал ещё не реализованы. Наличие verifier не означает доступную пользователю ротацию.
