@@ -1491,6 +1491,17 @@
         "signature": {
           "type": "string",
           "format": "byte"
+        },
+        "parentTranscript": {
+          "type": "string",
+          "format": "byte"
+        },
+        "parentSignature": {
+          "type": "string",
+          "format": "byte"
+        },
+        "parentGrantId": {
+          "type": "string"
         }
       }
     },

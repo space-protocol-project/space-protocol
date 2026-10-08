@@ -93,6 +93,9 @@ message PollPairingResponse {
   bytes root_public_key = 3;
   bytes transcript = 4;
   bytes signature = 5;
+  bytes parent_transcript = 6;
+  bytes parent_signature = 7;
+  string parent_grant_id = 8;
 }
 message CancelPairingRequest { string poll_token = 1; }
 message CancelPairingResponse {}
