@@ -49,3 +49,9 @@ Cancel с poll token завершает запрос и отзывает уже 
 ## Проверка
 
 PostgreSQL: предварительная proposal, отказ анонимному proposer, подмена target/scopes, четыре competing root completions с одним победителем, чужой claim, идемпотентный claim, одноразовые secrets, cancel до approval, expiry approved, fail-closed cleanup и сохранение claimed grant после deadline. WebCrypto/Dart/Go interoperability: браузер подтверждает Flutter, Flutter подтверждает браузер, коды вычисляются независимо до подписи, root proof проверяется, owner сохраняется, новый working record не содержит управляющих секретов, member не получает управление от administrative flag. Поддельная подпись отвергается.
+
+## Расширение от 8 октября 2026 года
+
+RootOnly дополнен сопряжением через delegated recovery card. PollPairing возвращает root-подписанный parent transcript, parent signature и parent grant ID вместе с child proof. Получатель независимо проверяет обе подписи, привязки origin/server/principal/target/pairing, сроки и ограничение scopes. Нельзя получить space.manage, если его нет у parent; рабочий child не получает identity.recover. Отзыв parent закрывает дочерние devices, включая уже claimed pairing. Исходное рабочее устройство открывает карточку только для управляющей операции, не передавая её новому аппарату.
+
+QR recovery PNG реализован отдельно от QR pairing: импортируется изображение зашифрованной карточки, а код сопряжения пока передаётся текстом. Камера ещё не подключена.

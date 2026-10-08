@@ -39,7 +39,7 @@
 - [x] Серверные read/write проверки и завершение live Subscribe при блокировке.
 - [x] Панель списков, изменение ролей владельцем, revision conflict, выдача и отзыв ссылок.
 - [x] Flutter: предварительная проверка кода, подключение по приглашению, интерфейс читателя.
-- [ ] ACL отдельных каналов, moderator, pending approvals, leave, QR приглашения и device pairing.
+- [ ] ACL отдельных каналов, moderator, pending approvals, leave, QR приглашения.
 
 ### Зашифрованные карточки и устройства — первый срез
 
@@ -50,7 +50,8 @@
 - [x] Рабочее устройство из delegated-card не сохраняет управляющий секрет.
 - [x] Собственный список devices, self revoke, подписанный отзыв других устройств и каскад recovery revoke.
 - [x] Неверный пароль, AEAD, KDF bounds, scope escalation, block, stale challenge и interoperability проверки.
-- [ ] QR/PNG и сканирование; master seed/HKDF; root rotation; browser/vault restart drill.
+- [x] QR/PNG: локальная генерация и импорт изображения, ограничения размера и двусторонняя совместимость Flutter/WebCrypto.
+- [ ] Сканирование камерой; master seed/HKDF; root rotation; browser/vault restart drill.
 
 ### Сопряжение устройств — первый срез
 
@@ -60,7 +61,8 @@
 - [x] Атомарный approval, target-only claim, cancel/expiry и fail-closed cleanup.
 - [x] Flutter и /space: создание запроса и подтверждение исходным root/RootCard.
 - [x] PostgreSQL race tests и двусторонняя совместимость WebCrypto/Dart/Go.
-- [ ] Delegated recovery proof chain, QR pairing, push, browser/vault restart drill.
+- [x] Delegated recovery proof chain: root → recovery key → device, ограничение scopes и каскадный отзыв.
+- [ ] QR pairing, push, browser/vault restart drill.
 
 ### Flutter-клиент для Windows — первый срез
 
@@ -70,7 +72,7 @@
 - [x] Анализ, тесты интерфейса/подписей и Windows release build.
 - [x] Dart/Go interoperability проверка в CI.
 
-Следующий срез: QR, pairing через delegated recovery chain и ротация root, затем ACL отдельных разделов. Восстановление прежнего principal/owner через зашифрованный файл и новые device keys уже реализовано. Роли пространства и приглашения уже реализованы для general chat. Subscribe с replay реализован. ADR-013/014 остаются открытыми. Подписанный manifest, production key backend, backup/restore drill, refresh, QR recovery, outbox и полный Docker deployment ещё не выполнены.
+Следующий срез: ротация root и browser/vault restart drill, затем ACL отдельных разделов. Восстановление прежнего principal/owner через зашифрованный файл и новые device keys уже реализовано. Роли пространства и приглашения уже реализованы для general chat. Subscribe с replay реализован. ADR-013/014 остаются открытыми. Подписанный manifest, production key backend, backup/restore drill, refresh, outbox и полный Docker deployment ещё не выполнены.
 
 > Roadmap не является календарным обещанием. Оценки времени появятся после технических прототипов и определения состава команды. Один этап может состоять из нескольких PR; каждый PR должен оставлять систему собираемой и проверяемой. Не начинаем федерацию или сложное медиа до проверки основного вертикального среза.
 

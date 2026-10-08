@@ -105,3 +105,4 @@ ssh -N -L 127.0.0.1:18080:127.0.0.1:8080 -L 127.0.0.1:9090:127.0.0.1:9090 user@y
 В первом срезе Flutter requester просит chat.read/chat.write, браузерный — также space.manage. Серверные роли не повышаются: участник остаётся участником. Сопряжённый working device не содержит root/recovery private key. Для следующего pairing нужен исходный root/RootCard, а после истечения grant нет автоматической root-регистрации.
 
 Отмена после подписи отзывает незавершённый grant. Если claim не завершён за пять минут, разрешение перестаёт работать даже при уже выданной сессии. После claim действует обычный 30-дневный grant с self/root revoke. [Протокол и проверки](../docs/adr/022-device-pairing.md).
+Пошаговое руководство с иллюстрациями: [ADMIN-GUIDE.md](../docs/ADMIN-GUIDE.md). QR recovery PNG и сопряжение через delegated recovery chain реализованы; камера и root rotation ещё не включены.
