@@ -95,6 +95,8 @@ jobs:
           channel: stable
           cache: true
       - name: Сборка отдельного проверочного приложения
+        env:
+          SPACE_VAULT_CRASH_BUILD: '1'
         working-directory: client
         run: |
           flutter pub get
