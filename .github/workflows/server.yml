@@ -95,12 +95,10 @@ jobs:
           channel: stable
           cache: true
       - name: Сборка отдельного проверочного приложения
-        env:
-          SPACE_VAULT_CRASH_BUILD: '1'
         working-directory: client
         run: |
           flutter pub get
-          flutter build windows --release --target tool/native_vault_drill.dart
+          flutter build windows --release --target tool/native_vault_drill.dart --dart-define=SPACE_VAULT_CRASH_TEST=true
       - name: Перезапуск с настоящим системным vault
         working-directory: client
         run: ./tool/native_vault_drill.ps1
