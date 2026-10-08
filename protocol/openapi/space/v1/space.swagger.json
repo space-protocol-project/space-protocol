@@ -438,6 +438,170 @@
         ]
       }
     },
+    "/api/v1/channels": {
+      "get": {
+        "operationId": "ChannelService_ListChannels",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListChannelsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "includeArchived",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "ChannelService"
+        ]
+      },
+      "post": {
+        "operationId": "ChannelService_CreateChannel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateChannelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateChannelRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ChannelService"
+        ]
+      }
+    },
+    "/api/v1/channels/{channelId}": {
+      "patch": {
+        "operationId": "ChannelService_UpdateChannel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateChannelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ChannelServiceUpdateChannelBody"
+            }
+          }
+        ],
+        "tags": [
+          "ChannelService"
+        ]
+      }
+    },
+    "/api/v1/channels/{channelId}/access": {
+      "get": {
+        "operationId": "ChannelService_GetChannelAccess",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetChannelAccessResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ChannelService"
+        ]
+      },
+      "put": {
+        "operationId": "ChannelService_UpdateChannelAccess",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateChannelAccessResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ChannelServiceUpdateChannelAccessBody"
+            }
+          }
+        ],
+        "tags": [
+          "ChannelService"
+        ]
+      }
+    },
     "/api/v1/channels/{channelId}/content": {
       "get": {
         "operationId": "ContentService_ListContent",
@@ -992,6 +1156,44 @@
         }
       }
     },
+    "ChannelServiceUpdateChannelAccessBody": {
+      "type": "object",
+      "properties": {
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ChannelAccessRule"
+          }
+        }
+      }
+    },
+    "ChannelServiceUpdateChannelBody": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "publicPreview": {
+          "type": "boolean"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "ContentServiceCreateContentBody": {
       "type": "object",
       "properties": {
@@ -1073,8 +1275,58 @@
             "type": "object",
             "$ref": "#/definitions/v1View"
           }
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "permissions": {
+          "$ref": "#/definitions/v1ChannelPermissions"
+        },
+        "publicPreview": {
+          "type": "boolean"
         }
       }
+    },
+    "v1ChannelAccessRule": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "principalId": {
+          "type": "string"
+        },
+        "permissions": {
+          "$ref": "#/definitions/v1ChannelPermissions"
+        }
+      },
+      "description": "Ровно один субъект: role (member/reader) или principal_id."
+    },
+    "v1ChannelPermissions": {
+      "type": "object",
+      "properties": {
+        "visible": {
+          "type": "boolean"
+        },
+        "read": {
+          "type": "boolean"
+        },
+        "write": {
+          "type": "boolean"
+        },
+        "manage": {
+          "type": "boolean"
+        }
+      },
+      "description": "write требует read, read и manage требуют visible."
     },
     "v1ClaimOwnerRequest": {
       "type": "object",
@@ -1246,6 +1498,35 @@
         }
       }
     },
+    "v1CreateChannelRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "viewType": {
+          "type": "string"
+        },
+        "position": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "publicPreview": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreateChannelResponse": {
+      "type": "object",
+      "properties": {
+        "channel": {
+          "$ref": "#/definitions/v1Channel"
+        }
+      }
+    },
     "v1CreateContentResponse": {
       "type": "object",
       "properties": {
@@ -1390,6 +1671,25 @@
         }
       }
     },
+    "v1GetChannelAccessResponse": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ChannelAccessRule"
+          }
+        }
+      }
+    },
     "v1GetManifestResponse": {
       "type": "object",
       "properties": {
@@ -1474,6 +1774,18 @@
         },
         "revoked": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1ListChannelsResponse": {
+      "type": "object",
+      "properties": {
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Channel"
+          }
         }
       }
     },
@@ -1750,6 +2062,33 @@
         },
         "heartbeat": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateChannelAccessResponse": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ChannelAccessRule"
+          }
+        }
+      }
+    },
+    "v1UpdateChannelResponse": {
+      "type": "object",
+      "properties": {
+        "channel": {
+          "$ref": "#/definitions/v1Channel"
         }
       }
     },

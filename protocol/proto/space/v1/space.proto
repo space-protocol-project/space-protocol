@@ -8,6 +8,21 @@ option go_package = "github.com/space-protocol-project/space-protocol/server/gen
 
 // Экспериментальный контракт первого локального прототипа.
 service ChannelService {
+  rpc ListChannels(ListChannelsRequest) returns (ListChannelsResponse) {
+    option (google.api.http) = {get: "/api/v1/channels"};
+  }
+  rpc CreateChannel(CreateChannelRequest) returns (CreateChannelResponse) {
+    option (google.api.http) = {post: "/api/v1/channels" body: "*"};
+  }
+  rpc UpdateChannel(UpdateChannelRequest) returns (UpdateChannelResponse) {
+    option (google.api.http) = {patch: "/api/v1/channels/{channel_id}" body: "*"};
+  }
+  rpc GetChannelAccess(GetChannelAccessRequest) returns (GetChannelAccessResponse) {
+    option (google.api.http) = {get: "/api/v1/channels/{channel_id}/access"};
+  }
+  rpc UpdateChannelAccess(UpdateChannelAccessRequest) returns (UpdateChannelAccessResponse) {
+    option (google.api.http) = {put: "/api/v1/channels/{channel_id}/access" body: "*"};
+  }
   rpc GetManifest(GetManifestRequest) returns (GetManifestResponse) {
     option (google.api.http) = {get: "/api/v1/manifest"};
   }
@@ -285,6 +300,54 @@ message Channel {
   string id = 1;
   string title = 2;
   repeated View views = 3;
+  int32 position = 4;
+  bool archived = 5;
+  int64 revision = 6;
+  ChannelPermissions permissions = 7;
+  bool public_preview = 8;
+}
+// write требует read, read и manage требуют visible.
+message ChannelPermissions {
+  bool visible = 1;
+  bool read = 2;
+  bool write = 3;
+  bool manage = 4;
+}
+// Ровно один субъект: role (member/reader) или principal_id.
+message ChannelAccessRule {
+  string role = 1;
+  string principal_id = 2;
+  ChannelPermissions permissions = 3;
+}
+message ListChannelsRequest { bool include_archived = 1; }
+message ListChannelsResponse { repeated Channel channels = 1; }
+message CreateChannelRequest {
+  string channel_id = 1;
+  string title = 2;
+  string view_type = 3;
+  int32 position = 4;
+  bool public_preview = 5;
+}
+message UpdateChannelRequest {
+  string channel_id = 1;
+  string title = 2;
+  int32 position = 3;
+  bool archived = 4;
+  bool public_preview = 5;
+  int64 expected_revision = 6;
+}
+message CreateChannelResponse { Channel channel = 1; }
+message UpdateChannelResponse { Channel channel = 1; }
+message GetChannelAccessRequest { string channel_id = 1; }
+message UpdateChannelAccessRequest {
+  string channel_id = 1;
+  int64 expected_revision = 2;
+  repeated ChannelAccessRule rules = 3;
+}
+message GetChannelAccessResponse {
+  string channel_id = 1;
+  int64 revision = 2;
+  repeated ChannelAccessRule rules = 3;
 }
 message View {
   string id = 1;
@@ -337,3 +400,9 @@ message CompleteRootRotationResponse {
   bytes new_signature = 6;
 }
 message RootHistoryProof { bytes transcript = 1; bytes old_signature = 2; bytes new_signature = 3; }
+
+message UpdateChannelAccessResponse {
+  string channel_id = 1;
+  int64 revision = 2;
+  repeated ChannelAccessRule rules = 3;
+}
