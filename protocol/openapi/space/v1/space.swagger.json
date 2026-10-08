@@ -341,6 +341,71 @@
         ]
       }
     },
+    "/api/v1/auth/root-rotations": {
+      "post": {
+        "summary": "Экспериментальный API; требует поддержки stable principal у клиента.",
+        "operationId": "AuthService_CreateRootRotation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRootRotationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRootRotationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/api/v1/auth/root-rotations/complete": {
+      "post": {
+        "operationId": "AuthService_CompleteRootRotation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CompleteRootRotationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CompleteRootRotationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
     "/api/v1/auth/sessions": {
       "post": {
         "operationId": "AuthService_CompleteChallenge",
@@ -1072,6 +1137,49 @@
         }
       }
     },
+    "v1CompleteRootRotationRequest": {
+      "type": "object",
+      "properties": {
+        "challengeId": {
+          "type": "string"
+        },
+        "oldSignature": {
+          "type": "string",
+          "format": "byte"
+        },
+        "newSignature": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1CompleteRootRotationResponse": {
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "authEpoch": {
+          "type": "string",
+          "format": "int64"
+        },
+        "grantId": {
+          "type": "string"
+        },
+        "transcript": {
+          "type": "string",
+          "format": "byte"
+        },
+        "oldSignature": {
+          "type": "string",
+          "format": "byte"
+        },
+        "newSignature": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
     "v1Content": {
       "type": "object",
       "properties": {
@@ -1199,6 +1307,41 @@
         },
         "pollToken": {
           "type": "string"
+        }
+      }
+    },
+    "v1CreateRootRotationRequest": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string"
+        },
+        "expectedAuthEpoch": {
+          "type": "string",
+          "format": "int64"
+        },
+        "newRootPublicKey": {
+          "type": "string",
+          "format": "byte"
+        },
+        "newDevicePublicKey": {
+          "type": "string",
+          "format": "byte"
+        },
+        "profile": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateRootRotationResponse": {
+      "type": "object",
+      "properties": {
+        "challengeId": {
+          "type": "string"
+        },
+        "transcript": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },
