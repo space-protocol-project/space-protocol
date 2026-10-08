@@ -1528,3 +1528,5 @@ Feature считается готовой, когда есть schema и кон�
 - [Windows-приложение: подключение, чат, QR и сопряжение](docs/APPLICATION-GUIDE.md).
 
 В локальном экспериментальном профиле реализованы QR-карточки PNG и импорт изображения, а также сопряжение через проверяемую цепочку root → recovery key → device. Root rotation и сканирование камерой остаются в плане.
+
+Проверки перезапуска профиля Chromium и процесса Dart описаны в [RECOVERY-DRILL.md](docs/RECOVERY-DRILL.md). [ADR-023](docs/adr/023-restart-and-root-rotation.md) предлагает переход к постоянному principal при смене root; действующей ротации пока нет.

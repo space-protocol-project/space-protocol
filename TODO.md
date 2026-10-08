@@ -51,7 +51,7 @@
 - [x] Собственный список devices, self revoke, подписанный отзыв других устройств и каскад recovery revoke.
 - [x] Неверный пароль, AEAD, KDF bounds, scope escalation, block, stale challenge и interoperability проверки.
 - [x] QR/PNG: локальная генерация и импорт изображения, ограничения размера и двусторонняя совместимость Flutter/WebCrypto.
-- [ ] Сканирование камерой; master seed/HKDF; root rotation; browser/vault restart drill.
+- [ ] Сканирование камерой; master seed/HKDF; root rotation; нативная проверка Windows secure storage.
 
 ### Сопряжение устройств — первый срез
 
@@ -62,7 +62,7 @@
 - [x] Flutter и /space: создание запроса и подтверждение исходным root/RootCard.
 - [x] PostgreSQL race tests и двусторонняя совместимость WebCrypto/Dart/Go.
 - [x] Delegated recovery proof chain: root → recovery key → device, ограничение scopes и каскадный отзыв.
-- [ ] QR pairing, push, browser/vault restart drill.
+- [ ] QR pairing, push, нативная проверка Windows secure storage.
 
 ### Flutter-клиент для Windows — первый срез
 
@@ -72,7 +72,7 @@
 - [x] Анализ, тесты интерфейса/подписей и Windows release build.
 - [x] Dart/Go interoperability проверка в CI.
 
-Следующий срез: ротация root и browser/vault restart drill, затем ACL отдельных разделов. Восстановление прежнего principal/owner через зашифрованный файл и новые device keys уже реализовано. Роли пространства и приглашения уже реализованы для general chat. Subscribe с replay реализован. ADR-013/014 остаются открытыми. Подписанный manifest, production key backend, backup/restore drill, refresh, outbox и полный Docker deployment ещё не выполнены.
+Следующий срез: stable principal и ротация root, нативная проверка Windows secure storage, затем ACL отдельных разделов. Восстановление прежнего principal/owner через зашифрованный файл и новые device keys уже реализовано. Роли пространства и приглашения уже реализованы для general chat. Subscribe с replay реализован. ADR-013/014 остаются открытыми. Подписанный manifest, production key backend, backup/restore drill, refresh, outbox и полный Docker deployment ещё не выполнены.
 
 > Roadmap не является календарным обещанием. Оценки времени появятся после технических прототипов и определения состава команды. Один этап может состоять из нескольких PR; каждый PR должен оставлять систему собираемой и проверяемой. Не начинаем федерацию или сложное медиа до проверки основного вертикального среза.
 
@@ -891,3 +891,14 @@ Limited device может писать по выданному grant, но не 
 10. [ ] **Recovery proof.** Export настоящей тестовой QR PNG и import на чистой установке; verify same principal/new device key.
 
 **Первый законченный результат:** небольшой сервер и два клиента, которые подключаются по URL, общаются, восстанавливают identity из проверенной карты и корректно отзывают потерянное устройство. После этого расширяем систему, опираясь на работающий фундамент.
+
+
+### Перезапуск и чистое восстановление — автоматическая проверка
+
+- [x] Новый процесс Dart: прежние principal, owner и grant после чтения тестовой device-only записи.
+- [x] Полный перезапуск Chromium с настоящим IndexedDB и повторным входом.
+- [x] Пустой браузерный профиль + recovery PNG; неверный пароль без изменения vault; повторный перезапуск восстановленного профиля.
+- [ ] Нативный Windows integration runner для системного защищённого хранилища.
+- [ ] Root rotation с постоянным principal, двойной подписью и crash-safe журналом. [ADR-023](docs/adr/023-restart-and-root-rotation.md) — предложение, API ещё отсутствует.
+
+[Инструкция ручной проверки](docs/RECOVERY-DRILL.md).
