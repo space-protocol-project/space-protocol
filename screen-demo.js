@@ -19,7 +19,7 @@
   function preload(key) {
     if (!pictures.has(key)) {
       const picture = new Image();
-      picture.src = `assets/screens/${key}.png`;
+      picture.src = `assets/screens/${key}.png?v=20261009-4`;
       const ready = picture.decode ? picture.decode() : new Promise((resolve,reject)=>{if(picture.complete&&picture.naturalWidth)resolve();else{picture.onload=resolve;picture.onerror=reject;}});
       pictures.set(key,ready.then(()=>picture).catch(error=>{pictures.delete(key);throw error;}));
     }
@@ -87,6 +87,25 @@
     document.getElementById('dialog-title').textContent=screens[current].title;
     if(typeof dialog.showModal==='function')dialog.showModal();else window.open(image.src,'_blank','noopener');
   });
-  dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const bounds=dialog.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)dialog.close();});
+  let closing = false, closeTimer;
+  function requestClose() {
+    if (!dialog.open || closing) return;
+    if (reducedMotion.matches) { dialog.close(); return; }
+    closing = true;
+    dialog.classList.add('is-closing');
+    const finish = () => {
+      clearTimeout(closeTimer);
+      dialog.removeEventListener('animationend', onEnd);
+      dialog.close();
+      dialog.classList.remove('is-closing');
+      closing = false;
+    };
+    const onEnd = event => { if (event.target === dialog && event.animationName === 'dialog-exit') finish(); };
+    dialog.addEventListener('animationend', onEnd);
+    closeTimer = setTimeout(finish, 300);
+  }
+  dialog.querySelector('form').addEventListener('submit',event=>{event.preventDefault();requestClose();});
+  dialog.addEventListener('cancel',event=>{event.preventDefault();requestClose();});
+  dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const bounds=dialog.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)requestClose();});
   keys.forEach(key=>{preload(key).catch(()=>{});});
 })();
