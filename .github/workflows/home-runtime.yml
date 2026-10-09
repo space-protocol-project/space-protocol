@@ -1,0 +1,31 @@
+name: Домашний сервер без Docker
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  runtime:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2025, macos-14, ubuntu-22.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: server/go.mod
+          cache-dependency-path: server/go.sum
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Сервер и PostgreSQL, проверка перезапуска
+        run: python packaging/build-home-runtime.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: home-runtime-${{ matrix.os }}
+          path: |
+            dist/Space-home-*.zip
+            dist/*-x64.json
+            dist/*-arm64.json
+          if-no-files-found: error
