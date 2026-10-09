@@ -1,9 +1,16 @@
+export 'src/recovery_dialogs.dart';
+export 'src/recovery_camera_view.dart';
+export 'src/pairing_start_view.dart';
+export 'src/recovery_tools_view.dart';
+
 import 'package:flutter/material.dart';
 import 'package:space_api/space_api.dart';
 
 import 'src/channels_panel.dart';
 import 'src/members_panel.dart';
 import 'src/invites_panel.dart';
+import 'src/devices_panel.dart';
+export 'src/devices_panel.dart';
 export 'src/members_panel.dart';
 export 'src/invites_panel.dart';
 export 'src/channels_panel.dart';
@@ -15,15 +22,18 @@ class AdminPage extends StatefulWidget {
     super.key,
     required this.login,
     required this.gateway,
-    this.openLegacy,
     this.autoConnect = false,
-    this.allowLogout = true,
-    this.allowIdentityCreation = true,
     this.onClose,
+    this.revokeDevice,
+    this.authorizeDevice,
+    this.onDeviceRevoked,
   });
   final IdentityLogin login;
-  final VoidCallback? openLegacy, onClose;
-  final bool autoConnect, allowLogout, allowIdentityCreation;
+  final DeviceRevoke? revokeDevice;
+  final Future<void> Function(String password)? authorizeDevice;
+  final VoidCallback? onDeviceRevoked;
+  final VoidCallback? onClose;
+  final bool autoConnect;
   final SpaceGateway Function(Uri) gateway;
   @override
   State<AdminPage> createState() => _AdminPageState();
@@ -41,7 +51,8 @@ class _AdminPageState extends State<AdminPage> {
 
   SpaceGateway? api;
   Map<String, dynamic>? identity, settings;
-  bool busy = false, consent = false, initialized = true, enabled = true;
+  bool confirming = false;
+  bool busy = false, initialized = true, enabled = true;
   String status = '', policy = 'open';
   final title = TextEditingController(),
       chat = TextEditingController(),
@@ -135,20 +146,6 @@ class _AdminPageState extends State<AdminPage> {
     status = 'Настройки сохранены на сервере.';
   }
 
-  Future<void> logout() async {
-    try {
-      await call('/api/v1/auth/logout', body: {});
-    } catch (e) {
-      if (e is! SpaceApiError || e.status != 401) rethrow;
-    }
-    identity = null;
-    settings = null;
-    code.clear();
-    api?.close();
-    api = null;
-    status = 'Сессия закрыта. Ключи остались в браузере.';
-  }
-
   @override
   void dispose() {
     api?.close();
@@ -186,7 +183,7 @@ class _AdminPageState extends State<AdminPage> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    if (busy) const LinearProgressIndicator(),
+                    if (busy && !confirming) const LinearProgressIndicator(),
                     Text(status, key: const ValueKey('admin-status')),
                   ],
                 ),
@@ -220,41 +217,26 @@ class _AdminPageState extends State<AdminPage> {
                 ),
               ),
               const Text(
-                'Настройки, каналы, участники и приглашения выбранного сервера.',
+                'Настройки, каналы, участники, приглашения и устройства выбранного сервера.',
               ),
               const SizedBox(height: 20),
               if (identity == null)
                 card([
                   const Text(
-                    'Вход по ключу устройства',
+                    'Текущая идентичность устройства',
                     style: TextStyle(fontSize: 20),
                   ),
                   const SizedBox(height: 12),
                   Text(
                     widget.autoConnect
                         ? 'Используется идентичность текущего подключения. Дополнительный аккаунт не нужен.'
-                        : 'Используются ключи текущей панели в этом браузере. Перенос и восстановление доступны по ссылке ниже.',
+                        : 'Используется текущая сессия приложения Space. Для восстановления откройте раздел идентичности.',
                   ),
                   const SizedBox(height: 16),
-                  button('Войти с сохранёнными ключами', () => signIn(false)),
-                  if (widget.allowIdentityCreation)
-                    CheckboxListTile(
-                      contentPadding: EdgeInsets.zero,
-                      value: consent,
-                      onChanged: busy
-                          ? null
-                          : (v) => setState(() => consent = v ?? false),
-                      title: const Text(
-                        'Создать отдельную идентичность в этом браузере. Это не перенос существующего аккаунта.',
-                      ),
-                    ),
-                  if (widget.allowIdentityCreation)
-                    OutlinedButton(
-                      onPressed: busy || !consent
-                          ? null
-                          : () => run(() => signIn(true)),
-                      child: const Text('Создать идентичность и войти'),
-                    ),
+                  button(
+                    'Подключить управление текущим сервером',
+                    () => signIn(false),
+                  ),
                 ]),
               if (identity != null && !initialized)
                 card([
@@ -275,6 +257,12 @@ class _AdminPageState extends State<AdminPage> {
                   ),
                   const SizedBox(height: 16),
                   button('Подтвердить владение', () async {
+                    if (widget.authorizeDevice != null &&
+                        identity!['administrative'] != true) {
+                      throw StateError(
+                        'Сначала явно выдайте разрешение этому устройству в блоке ниже',
+                      );
+                    }
                     final value = code.text;
                     code.clear();
                     await call(
@@ -284,6 +272,62 @@ class _AdminPageState extends State<AdminPage> {
                     initialized = true;
                     identity!['role'] = 'owner';
                     await load();
+                  }),
+                ]),
+              if (identity != null &&
+                  widget.authorizeDevice != null &&
+                  (['owner', 'admin'].contains(identity!['role']) ||
+                      !initialized) &&
+                  identity!['administrative'] != true)
+                card([
+                  const Text(
+                    'Разрешить этому устройству управление сервером',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  const Text(
+                    'Разрешение space.manage подписывается вашим корневым ключом. Оно действует вместе с ролью владельца или администратора.',
+                  ),
+                  button('Выдать разрешение этому устройству', () async {
+                    var password = '';
+                    setState(() => confirming = true);
+                    final accepted = await showDialog<bool>(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: const Text('Разрешить управление сервером?'),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Text(
+                              'Вы явно разрешаете этому устройству менять настройки, каналы и доступ участников.',
+                            ),
+                            if (identity!['hasRootAuthority'] != true)
+                              TextField(
+                                obscureText: true,
+                                onChanged: (v) => password = v,
+                                decoration: const InputDecoration(
+                                  labelText:
+                                      'Пароль корневой карточки JSON/PNG',
+                                ),
+                              ),
+                          ],
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, false),
+                            child: const Text('Отмена'),
+                          ),
+                          FilledButton(
+                            onPressed: () => Navigator.pop(context, true),
+                            child: const Text('Разрешить'),
+                          ),
+                        ],
+                      ),
+                    );
+                    if (mounted) setState(() => confirming = false);
+                    if (accepted != true) return;
+                    await widget.authorizeDevice!(password);
+                    password = '';
+                    await signIn(false);
                   }),
                 ]),
               if (settings != null)
@@ -370,20 +414,26 @@ class _AdminPageState extends State<AdminPage> {
                   origin: identity!['origin'] as String,
                 ),
               ],
-              if (identity != null && widget.allowLogout)
-                Padding(
-                  padding: const EdgeInsets.only(top: 16),
-                  child: button('Выйти', logout),
+              if (identity != null && widget.revokeDevice != null) ...[
+                const SizedBox(height: 20),
+                DevicesPanel(
+                  key: ValueKey(
+                    'devices-${identity?['serverId']}-${identity?['principalId']}',
+                  ),
+                  call: call,
+                  currentGrantId: identity!['grantId'] as String? ?? '',
+                  hasRootAuthority: identity!['hasRootAuthority'] == true,
+                  revoke: widget.revokeDevice!,
+                  onRevoked: () {
+                    setState(() {
+                      identity = null;
+                      settings = null;
+                      status = 'Это устройство отозвано. Восстановите доступ или используйте другое устройство.';
+                    });
+                    widget.onDeviceRevoked?.call();
+                  },
                 ),
-              if (widget.openLegacy != null)
-                TextButton(
-                  onPressed: busy ? null : widget.openLegacy,
-                  child: const Text('Открыть текущую панель /space'),
-                ),
-              if (widget.openLegacy != null)
-                const Text(
-                  'Текущая панель: /space — устройства и восстановление. Откройте этот адрес на том же сервере.',
-                ),
+              ],
             ],
           ),
         ),

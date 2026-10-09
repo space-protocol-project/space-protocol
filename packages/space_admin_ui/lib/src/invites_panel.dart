@@ -20,7 +20,7 @@ class _InvitesPanelState extends State<InvitesPanel> {
   String role = 'member', cursor = '', status = '', token = '', issuedId = '';
   int ttl = 86400;
   String get link =>
-      '${widget.origin}/space#invite=${Uri.encodeQueryComponent(token)}';
+      '${widget.origin}#invite=${Uri.encodeQueryComponent(token)}';
   @override
   void initState() {
     super.initState();

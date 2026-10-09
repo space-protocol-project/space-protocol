@@ -36,8 +36,7 @@ jobs:
           node --check client/design/prototype/app.js
           node --check client/design/prototype/theme.js
           node client/design/prototype/theme.test.mjs
-          node --check server/internal/spaceweb/assets/app.mjs
-          node --check server/internal/spaceweb/assets/identity.mjs
+          node --check server/tools/crypto_reference/identity.mjs
       - uses: actions/setup-go@v5
         with:
           go-version-file: server/go.mod
@@ -59,13 +58,6 @@ jobs:
           flutter pub get
           flutter analyze
           flutter test
-      - name: Общий модуль управления и браузерная сборка
-        working-directory: apps/space_admin
-        run: |
-          flutter pub get
-          flutter analyze
-          flutter test
-          flutter build web --release --base-href /space/flutter/ --no-web-resources-cdn
       - name: Сквозная проверка входа, событий и отзыва
         working-directory: server
         env:
@@ -75,7 +67,7 @@ jobs:
           SPACE_SETUP_CODE=$("$RUNNER_TEMP/space-server" -setup-code)
           echo "::add-mask::$SPACE_SETUP_CODE"
           export SPACE_SETUP_CODE
-          SPACE_ADMIN_WEB_DIR="$GITHUB_WORKSPACE/apps/space_admin/build/web" "$RUNNER_TEMP/space-server" -http 127.0.0.1:18080 &
+          "$RUNNER_TEMP/space-server" -http 127.0.0.1:18080 &
           server_pid=$!
           trap 'kill "$server_pid"; wait "$server_pid" || true' EXIT
           for attempt in $(seq 1 20); do
@@ -83,12 +75,8 @@ jobs:
             sleep 1
           done
           go run ./cmd/space-demo -origin http://127.0.0.1:18080
-          npx --prefix tools playwright install --with-deps chromium
-          SPACE_CHANNELS_SCREENSHOT="$RUNNER_TEMP/space-channel-admin.png" SPACE_ADMIN_FLUTTER_SCREENSHOT="$RUNNER_TEMP/space-flutter-admin.png" node tools/admin-interop.mjs
-          node tools/browser-restart.mjs
-          node tools/camera-interop.mjs
+          node tools/admin-interop.mjs
           node tools/root-rotation-interop.mjs
-          node tools/browser-rotation-interop.mjs
           cd ../client
           dart run tool/interoperability.dart http://127.0.0.1:18080
       - name: Первый владелец без кода из нативного приложения
@@ -106,15 +94,24 @@ jobs:
           done
           cd ../client
           dart run tool/first_owner_interoperability.dart http://127.0.0.1:18081
-      - name: Снимок интерфейса каналов
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: channel-ui-preview
-          path: |
-            ${{ runner.temp }}/space-channel-admin.png
-            ${{ runner.temp }}/space-flutter-admin.png
-          if-no-files-found: ignore
+      - name: Ручное назначение владельца из основного приложения
+        working-directory: server
+        env:
+          SPACE_DATABASE_URL: postgres://space:ci-only-password@127.0.0.1:5432/space_manual_owner?sslmode=disable
+        run: |
+          PGPASSWORD=ci-only-password psql -h 127.0.0.1 -U space -d space_test -c 'CREATE DATABASE space_manual_owner'
+          SPACE_SETUP_CODE=$("$RUNNER_TEMP/space-server" -setup-code)
+          echo "::add-mask::$SPACE_SETUP_CODE"
+          export SPACE_SETUP_CODE
+          "$RUNNER_TEMP/space-server" -http 127.0.0.1:18082 -grpc 127.0.0.1:19092 &
+          bootstrap_pid=$!
+          trap 'kill "$bootstrap_pid"; wait "$bootstrap_pid" || true' EXIT
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:18082/healthz; then break; fi
+            sleep 1
+          done
+          cd ../client
+          dart run tool/manual_owner_interoperability.dart http://127.0.0.1:18082
   native-vault:
     name: Нативное хранилище Windows
     runs-on: windows-latest
