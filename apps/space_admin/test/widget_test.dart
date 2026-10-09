@@ -7,6 +7,22 @@ import 'package:http/testing.dart';
 import 'package:space_api/space_api.dart';
 import 'package:space_admin/main.dart';
 
+class SettingsOnlyGateway extends SpaceGateway {
+  SettingsOnlyGateway(super.origin, {super.client});
+  @override
+  Future<Map<String, dynamic>> call(
+    String path, {
+    String token = '',
+    Map<String, dynamic>? body,
+    String? method,
+  }) async {
+    if (path.endsWith('/settings') || path.endsWith('/setup')) {
+      return super.call(path, token: token, body: body, method: method);
+    }
+    return {'channels': [], 'members': [], 'invites': []};
+  }
+}
+
 void main() {
   testWidgets('Вход, настройки, узкий экран и защита от конфликтующей записи', (
     tester,
@@ -16,7 +32,7 @@ void main() {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
     var writes = 0;
-    final api = SpaceGateway(
+    final api = SettingsOnlyGateway(
       Uri.parse('http://127.0.0.1:8080'),
       client: MockClient((r) async {
         if (r.url.path.endsWith('/setup')) {
@@ -62,7 +78,7 @@ void main() {
       await tester.tap(find.text('Войти с сохранёнными ключами'));
       await Future<void>.delayed(const Duration(milliseconds: 50));
       await tester.pump();
-      await Future<void>.delayed(const Duration(milliseconds: 50));
+      await Future<void>.delayed(const Duration(milliseconds: 100));
     });
     await tester.pumpAndSettle();
     expect(find.text('Настройки пространства · версия 3'), findsOneWidget);

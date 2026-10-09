@@ -900,7 +900,7 @@ Limited device может писать по выданному grant, но не 
 - [x] Полный перезапуск Chromium с настоящим IndexedDB и повторным входом.
 - [x] Пустой браузерный профиль + recovery PNG; неверный пароль без изменения vault; повторный перезапуск восстановленного профиля.
 - [x] Нативный Windows integration runner для системного защищённого хранилища.
-- [ ] Root rotation с постоянным principal, двойной подписью и crash-safe журналом. [ADR-023](docs/adr/023-restart-and-root-rotation.md) — предложение, API ещё отсутствует.
+- [x] Root rotation с постоянным principal, двойной подписью и crash-safe журналом. [ADR-023](docs/adr/023-restart-and-root-rotation.md) — реализованный экспериментальный профиль.
 
 [Инструкция ручной проверки](docs/RECOVERY-DRILL.md).
 
@@ -911,10 +911,10 @@ Limited device может писать по выданному grant, но не 
 - [x] Двойная подпись, атомарный epoch switch и выдача нового working grant.
 - [x] Отзыв старых grants/sessions/recovery; отмена pending/approved pairing.
 - [x] Идемпотентный receipt для повторного commit после потери ответа.
-- [ ] Проверка root-history клиентами и recovery envelope v2.
-- [ ] Crash-safe pending journal в защищённом хранилище.
-- [ ] UI ротации в Flutter и /space, новые карточки.
-- [ ] Полная Go/WebCrypto/Dart interoperability и нативная Windows проверка.
+- [x] Проверка root-history клиентами и recovery envelope v2.
+- [x] Crash-safe pending journal в защищённом хранилище.
+- [x] UI ротации в Flutter и /space, новые карточки.
+- [x] Полная Go/WebCrypto/Dart interoperability и нативная Windows проверка.
 
 - [x] Нативный Windows secure storage: отдельная release-сборка, три процесса write/reopen/cleanup и изолированный случайный test slot. Добавлен Windows CI-job. Проверка другого Windows-профиля/компьютера остаётся ручной.
 
@@ -925,9 +925,9 @@ Limited device может писать по выданному grant, но не 
 - [x] Возобновление после ошибки записи/частичного active slot/ошибки cleanup.
 - [x] Flutter UI начала, завершения и обновления истёкшего запроса.
 - [x] Recovery payload v2, восстановление новой карточки в Flutter и /space.
-- [ ] Собственный journal и UI ротации в /space.
-- [ ] Root history в pairing proof, сопряжение после ротации.
-- [ ] Native Windows crash-injection с реальным прерыванием посреди файловой записи; текущий runner проверяет реальные slots между процессами, ошибки IO моделируются отдельно.
+- [x] Собственный journal и UI ротации в /space.
+- [x] Root history в pairing proof, сопряжение после ротации.
+- [x] Native Windows crash-injection с реальным прерыванием посреди записи зашифрованного временного файла; отдельный журнал и atomic replace.
 
 ### QR-камера — экспериментальный срез
 
@@ -944,7 +944,7 @@ Limited device может писать по выданному grant, но не 
 - [x] Сквозные сценарии ротация → restart → recovery v2 → pairing → self revoke и каскад recovery revoke.
 - [x] Windows process termination посреди encrypted temp write в настоящем DPAPI backend; отдельный journal и atomic replace.
 
-Следующий этап: ACL отдельных каналов, управление разделами и дальнейшие client UX.
+Каналы, ACL и управление разделами реализованы следующими срезами; текущие задачи приведены ниже.
 
 ## Каналы и права — серверный срез, 8 октября 2026
 
@@ -970,7 +970,8 @@ Limited device может писать по выданному grant, но не 
 - [x] Первый экран настроек, role/scope checks и revision conflicts.
 - [x] Экспериментальная web оболочка /space/flutter/ с прежними браузерными ключами.
 - [x] Каналы и ACL в общем Flutter-модуле: создание, порядок, архив, роли/участники и conflicts.
-- [ ] Участники, приглашения, устройства.
+- [x] Участники и приглашения в общем модуле.
+- [ ] Устройства в общем модуле.
 - [ ] Recovery, pairing, камера и rotation в общем модуле.
 - [ ] Выдача административного разрешения native устройству с явным согласием.
 - [ ] Сделать Flutter основной /space после проверки всех сценариев.
@@ -981,3 +982,11 @@ Limited device может писать по выданному grant, но не 
 - [x] Клиент подписывает административное разрешение устройства при bootstrap.
 - [x] Старые owner/manual режимы сохраняются, явные команды переключения.
 - [x] Race/rollback/restart и проверка подписи до назначения.
+
+## Участники и приглашения — общий модуль
+
+- [x] Пагинация и поиск по загруженным участникам.
+- [x] Изменение ролей и блокировка владельцем, confirmation и revision conflicts.
+- [x] Приглашения reader/member, срок и число использований, копирование и отзыв.
+- [x] Секретный код в памяти формы; metadata списка без кода.
+- [x] Общие экраны web/native и проверки UI/HTTP/gRPC.

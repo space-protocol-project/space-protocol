@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:space_api/space_api.dart';
 
 import 'src/channels_panel.dart';
+import 'src/members_panel.dart';
+import 'src/invites_panel.dart';
+export 'src/members_panel.dart';
+export 'src/invites_panel.dart';
 export 'src/channels_panel.dart';
 
 typedef IdentityLogin = Future<Map<String, dynamic>> Function({bool create});
@@ -171,6 +175,24 @@ class _AdminPageState extends State<AdminPage> {
   );
   @override
   Widget build(BuildContext context) => Scaffold(
+    bottomNavigationBar: status.isEmpty && !busy
+        ? null
+        : SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Semantics(
+                container: true,
+                liveRegion: true,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (busy) const LinearProgressIndicator(),
+                    Text(status, key: const ValueKey('admin-status')),
+                  ],
+                ),
+              ),
+            ),
+          ),
     body: SafeArea(
       child: Center(
         child: ConstrainedBox(
@@ -193,10 +215,12 @@ class _AdminPageState extends State<AdminPage> {
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 12),
-                child: Text('Ваш сервер. Ваши правила. На новом сервере первый успешный вход назначает владельца.'),
+                child: Text(
+                  'Ваш сервер. Ваши правила. На новом сервере первый успешный вход назначает владельца.',
+                ),
               ),
               const Text(
-                'Настройки, каналы и права выбранного сервера. Остальные разделы переносятся постепенно.',
+                'Настройки, каналы, участники и приглашения выбранного сервера.',
               ),
               const SizedBox(height: 20),
               if (identity == null)
@@ -328,20 +352,29 @@ class _AdminPageState extends State<AdminPage> {
                   call: call,
                 ),
               ],
+              if (settings != null) ...[
+                const SizedBox(height: 20),
+                MembersPanel(
+                  key: ValueKey(
+                    'members-${identity?['serverId']}-${identity?['principalId']}',
+                  ),
+                  call: call,
+                  owner: identity?['role'] == 'owner',
+                ),
+                const SizedBox(height: 20),
+                InvitesPanel(
+                  key: ValueKey(
+                    'invites-${identity?['serverId']}-${identity?['principalId']}',
+                  ),
+                  call: call,
+                  origin: identity!['origin'] as String,
+                ),
+              ],
               if (identity != null && widget.allowLogout)
                 Padding(
                   padding: const EdgeInsets.only(top: 16),
                   child: button('Выйти', logout),
                 ),
-              if (busy)
-                const Padding(
-                  padding: EdgeInsets.all(16),
-                  child: LinearProgressIndicator(),
-                ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                child: Text(status, key: const ValueKey('admin-status')),
-              ),
               if (widget.openLegacy != null)
                 TextButton(
                   onPressed: busy ? null : widget.openLegacy,
@@ -349,7 +382,7 @@ class _AdminPageState extends State<AdminPage> {
                 ),
               if (widget.openLegacy != null)
                 const Text(
-                  'Текущая панель: /space — участники, приглашения, устройства и восстановление. Откройте этот адрес на том же сервере.',
+                  'Текущая панель: /space — устройства и восстановление. Откройте этот адрес на том же сервере.',
                 ),
             ],
           ),
