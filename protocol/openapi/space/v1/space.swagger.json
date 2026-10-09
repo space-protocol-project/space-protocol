@@ -498,6 +498,45 @@
         ]
       }
     },
+    "/api/v1/channels/watch": {
+      "get": {
+        "operationId": "ChannelService_WatchChannels",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "$ref": "#/definitions/v1WatchChannelsResponse"
+                },
+                "error": {
+                  "$ref": "#/definitions/rpcStatus"
+                }
+              },
+              "title": "Stream result of v1WatchChannelsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "includeArchived",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "ChannelService"
+        ]
+      }
+    },
     "/api/v1/channels/{channelId}": {
       "patch": {
         "operationId": "ChannelService_UpdateChannel",
@@ -2139,6 +2178,30 @@
           "type": "string"
         },
         "type": {
+          "type": "string"
+        }
+      }
+    },
+    "v1WatchChannelsResponse": {
+      "type": "object",
+      "properties": {
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Channel"
+          }
+        },
+        "spaceTitle": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "heartbeat": {
+          "type": "boolean"
+        },
+        "serverId": {
           "type": "string"
         }
       }

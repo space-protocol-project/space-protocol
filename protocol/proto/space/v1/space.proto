@@ -8,6 +8,10 @@ option go_package = "github.com/space-protocol-project/space-protocol/server/gen
 
 // Экспериментальный контракт первого локального прототипа.
 service ChannelService {
+  rpc WatchChannels(WatchChannelsRequest) returns (stream WatchChannelsResponse) {
+    option (google.api.http) = {get: "/api/v1/channels/watch"};
+  }
+
   rpc ListChannels(ListChannelsRequest) returns (ListChannelsResponse) {
     option (google.api.http) = {get: "/api/v1/channels"};
   }
@@ -405,4 +409,14 @@ message UpdateChannelAccessResponse {
   string channel_id = 1;
   int64 revision = 2;
   repeated ChannelAccessRule rules = 3;
+}
+
+// Полный авторизованный каталог; его изменения не используют курсор сообщений.
+message WatchChannelsRequest { bool include_archived = 1; }
+message WatchChannelsResponse {
+  repeated Channel channels = 1;
+  string space_title = 2;
+  string role = 3;
+  bool heartbeat = 4;
+  string server_id = 5;
 }
