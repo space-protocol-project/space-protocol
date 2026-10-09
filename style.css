@@ -15,3 +15,10 @@
 @media(prefers-reduced-motion:reduce){.screen-tabs button,.carousel-arrow,.carousel-pagination span,.screen-toolbar button,.dialog-toolbar button,.screen-description h3,.screen-description p{transition:none}#screen-dialog[open],#screen-dialog[open]::backdrop{animation:none}}
 
 #screen-dialog[open].is-closing{animation:dialog-exit .22s ease-in both;pointer-events:none}#screen-dialog[open].is-closing::backdrop{animation:backdrop-exit .22s ease-in both}@keyframes dialog-exit{from{opacity:1;transform:none}to{opacity:0;transform:translateY(10px) scale(.985)}}@keyframes backdrop-exit{from{opacity:1}to{opacity:0}}@media(prefers-reduced-motion:reduce){#screen-dialog[open].is-closing,#screen-dialog[open].is-closing::backdrop{animation:none}}
+
+/* Локальные шрифты Google Fonts, без внешних запросов */
+@font-face{font-family:'Nunito';src:url('assets/fonts/Nunito-Variable.ttf') format('truetype');font-weight:200 1000;font-style:normal;font-display:swap}
+@font-face{font-family:'Nunito';src:url('assets/fonts/Nunito-Italic-Variable.ttf') format('truetype');font-weight:200 1000;font-style:italic;font-display:swap}
+@font-face{font-family:'Nunito Sans';src:url('assets/fonts/NunitoSans-Variable.ttf') format('truetype');font-weight:200 900;font-style:normal;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url('assets/fonts/JetBrainsMono-Variable.ttf') format('truetype');font-weight:100 800;font-style:normal;font-display:swap}
+body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',sans-serif}em{font-family:'Nunito',sans-serif;font-style:italic}.eyebrow,.section-label,.hero-bottom,.art-caption,.art-index,.number,.phase,.footer-note,#screen-index{font-family:'JetBrains Mono',monospace}.hero h1{letter-spacing:-.045em}.hero h1 span{letter-spacing:-.035em}.brand{letter-spacing:2px}.section-label{letter-spacing:1px}.eyebrow{letter-spacing:1.3px}.hero-bottom{letter-spacing:1px}.screen-tabs button,.screen-toolbar button,.dialog-toolbar button{font-family:'Nunito Sans',sans-serif}

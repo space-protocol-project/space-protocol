@@ -1,0 +1,17 @@
+[
+  {
+    "family": "Nunito",
+    "file": "Nunito-Variable.ttf",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/nunito/Nunito%5Bwght%5D.ttf"
+  },
+  {
+    "family": "Nunito Sans",
+    "file": "NunitoSans-Variable.ttf",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/nunitosans/NunitoSans%5BYTLC%2Copsz%2Cwdth%2Cwght%5D.ttf"
+  },
+  {
+    "family": "JetBrains Mono",
+    "file": "JetBrainsMono-Variable.ttf",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf"
+  }
+]
