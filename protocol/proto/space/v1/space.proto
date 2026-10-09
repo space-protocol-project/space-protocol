@@ -309,6 +309,8 @@ message Channel {
   int64 revision = 6;
   ChannelPermissions permissions = 7;
   bool public_preview = 8;
+  // Только для авторизованного read; иначе 0.
+  int64 latest_message_sequence = 9;
 }
 // write требует read, read и manage требуют visible.
 message ChannelPermissions {
@@ -362,6 +364,7 @@ message Content {
   string channel_id = 2;
   string text = 3;
   string author_id = 4;
+  int64 sequence = 5;
 }
 message CreateContentRequest {
   string channel_id = 1;

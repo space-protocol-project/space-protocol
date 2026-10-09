@@ -1331,6 +1331,11 @@
         },
         "publicPreview": {
           "type": "boolean"
+        },
+        "latestMessageSequence": {
+          "type": "string",
+          "format": "int64",
+          "description": "Только для авторизованного read; иначе 0."
         }
       }
     },
@@ -1485,6 +1490,10 @@
         },
         "authorId": {
           "type": "string"
+        },
+        "sequence": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
