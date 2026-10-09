@@ -1016,7 +1016,9 @@ ConnectRPC пока только исследован: зависимости и
 - [x] Каталог работает без читаемого канала, обновляет роль, имя, порядок, архив и разрешения.
 - [x] Flutter очищает недоступную историю, восстанавливает чтение и отменяет поток/retry при отключении.
 - [x] Контракты Go/Dart/OpenAPI перегенерированы установленными инструментами; buf lint прошёл.
-- [x] Локальные тесты UI/controller, Go-тесты, анализ и сборка проверяются для этого изменения.
-- [ ] Подтвердить новые PostgreSQL и native Dart/Go проверки в GitHub CI.
+- [x] Проверены UI/controller, Go-тесты, анализ, buf lint и Windows release-сборка; CI подтвердил 42 Flutter-теста.
+- [x] Новые PostgreSQL и native Dart/Go проверки прошли в GitHub CI 37997529136.
 
 [ADR-026](docs/adr/026-channel-catalog-stream.md). Временно используется серверная проверка снимков каждые 500 ms; event-driven wakeup остаётся оптимизацией, durable журнал сообщений не меняется.
+
+Подтверждение WatchChannels: [CI 37997529136](https://github.com/space-protocol-project/space-protocol/actions/runs/37997529136), server и Windows vault — success для 2c68aa8126eac0d7f6a45e9cbff4144a6b1666d6. Физическая камера по-прежнему не проверена; локальный Docker не запускался.
