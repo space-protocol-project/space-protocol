@@ -45,7 +45,10 @@ class PairingStartView extends StatelessWidget {
           'На исходном устройстве откройте «Идентичность» → «Подтвердить устройство» в приложении Space. Код действует пять минут.',
         ),
         const SizedBox(height: 10),
-        SelectableText(code),
+        SelectableText(
+          code,
+          style: const TextStyle(fontFamily: 'JetBrains Mono'),
+        ),
         TextButton.icon(
           onPressed: () => Clipboard.setData(ClipboardData(text: code)),
           icon: const Icon(Icons.copy),
@@ -60,7 +63,8 @@ class PairingStartView extends StatelessWidget {
           ),
           SelectableText(
             verification,
-            style: Theme.of(context).textTheme.titleLarge,
+            style: Theme.of(context).textTheme.titleLarge
+                ?.copyWith(fontFamily: 'JetBrains Mono'),
           ),
         ],
         if (signatureVerified) ...[
@@ -68,7 +72,8 @@ class PairingStartView extends StatelessWidget {
           const Text('Root-подпись проверена. Сверьте код на обоих экранах:'),
           SelectableText(
             verification,
-            style: Theme.of(context).textTheme.titleLarge,
+            style: Theme.of(context).textTheme.titleLarge
+                ?.copyWith(fontFamily: 'JetBrains Mono'),
           ),
           FilledButton(
             onPressed: busy ? null : onAccept,

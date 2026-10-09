@@ -1,0 +1,4 @@
+# Локальные изолированные checkout публикации, не подмодули основного проекта.
+space-protocol-promo/
+space-protocol-promo-pages/
+*.tar.gz

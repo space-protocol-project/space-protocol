@@ -171,7 +171,13 @@ class _DevicesPanelState extends State<DevicesPanel> {
                         ? 'Это устройство'
                         : 'Другое устройство',
                   ),
-                  SelectableText('${grant['id']}'),
+                  SelectableText(
+                    '${grant['id']}',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontFamily: 'JetBrains Mono',
+                    ),
+                  ),
                   Text(
                     grant['revoked'] == true
                         ? 'Отозвано'

@@ -134,7 +134,10 @@ class _MembersPanelState extends State<MembersPanel> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SelectableText(id, style: const TextStyle(fontSize: 12)),
+          SelectableText(
+            id,
+            style: const TextStyle(fontSize: 12, fontFamily: 'JetBrains Mono'),
+          ),
           Text(
             '${memberRoleLabel(m['role'] as String)}${m['blocked'] == true ? ' · Доступ заблокирован' : ''}',
           ),

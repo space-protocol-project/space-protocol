@@ -224,7 +224,13 @@ class RecoveryToolsView extends StatelessWidget {
                     : 'Другое устройство',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
-              SelectableText(grant.id, style: const TextStyle(fontSize: 12)),
+              SelectableText(
+                grant.id,
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontFamily: 'JetBrains Mono',
+                ),
+              ),
               Text(
                 grant.revoked
                     ? 'Отозвано'
