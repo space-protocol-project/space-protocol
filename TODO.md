@@ -52,7 +52,8 @@
 - [x] Собственный список devices, self revoke, подписанный отзыв других устройств и каскад recovery revoke.
 - [x] Неверный пароль, AEAD, KDF bounds, scope escalation, block, stale challenge и interoperability проверки.
 - [x] QR/PNG: локальная генерация и импорт изображения, ограничения размера и двусторонняя совместимость Flutter/WebCrypto.
-- [ ] Сканирование камерой; master seed/HKDF; root rotation; нативная проверка Windows secure storage.
+- [x] Сканирование камерой Windows/web, root rotation и нативная проверка Windows secure storage.
+- [ ] Master seed/HKDF.
 
 ### Сопряжение устройств — первый срез
 
@@ -63,7 +64,8 @@
 - [x] Flutter и /space: создание запроса и подтверждение исходным root/RootCard.
 - [x] PostgreSQL race tests и двусторонняя совместимость WebCrypto/Dart/Go.
 - [x] Delegated recovery proof chain: root → recovery key → device, ограничение scopes и каскадный отзыв.
-- [ ] QR pairing, push, нативная проверка Windows secure storage.
+- [ ] QR pairing и push.
+- [x] Нативная проверка Windows secure storage.
 
 ### Flutter-клиент для Windows — первый срез
 
