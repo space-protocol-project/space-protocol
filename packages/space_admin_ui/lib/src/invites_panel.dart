@@ -6,7 +6,13 @@ import 'channels_panel.dart';
 import 'members_panel.dart';
 
 class InvitesPanel extends StatefulWidget {
-  const InvitesPanel({super.key, required this.call, required this.origin});
+  const InvitesPanel({
+    super.key,
+    required this.call,
+    required this.origin,
+    this.tlsFingerprint = '',
+  });
+  final String tlsFingerprint;
   final AdminCall call;
   final String origin;
   @override
@@ -19,8 +25,16 @@ class _InvitesPanelState extends State<InvitesPanel> {
   bool busy = false;
   String role = 'member', cursor = '', status = '', token = '', issuedId = '';
   int ttl = 86400;
-  String get link =>
-      '${widget.origin}#invite=${Uri.encodeQueryComponent(token)}';
+  String get link => Uri.parse(widget.origin)
+      .replace(
+        fragment: Uri(
+          queryParameters: {
+            'invite': token,
+            if (widget.tlsFingerprint.isNotEmpty) 'tls': widget.tlsFingerprint,
+          },
+        ).query,
+      )
+      .toString();
   @override
   void initState() {
     super.initState();

@@ -15,6 +15,7 @@ class SpaceGateway {
   SpaceGateway(this.origin, {http.Client? client})
     : _client = client ?? http.Client();
   final Uri origin;
+  String get tlsFingerprint => '';
   final http.Client _client;
   Future<Map<String, dynamic>> call(
     String path, {

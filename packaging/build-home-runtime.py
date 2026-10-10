@@ -70,11 +70,12 @@ def build():
                             run("install_name_tool", "-change", dependency, "@loader_path/../lib/" + Path(dependency).name, str(path))
                     run("codesign", "--force", "--sign", "-", str(path))
         executable = "space-server.exe" if system == "Windows" else "space-server"
-        run("go", "build", "-trimpath", "-o", str(STAGE / executable), "./cmd/space-server", cwd=ROOT / "server")
+        flags = ["-ldflags=-H=windowsgui"] if system == "Windows" else []
+        run("go", "build", "-trimpath", *flags, "-o", str(STAGE / executable), "./cmd/space-server", cwd=ROOT / "server")
         (STAGE / "SOURCE.txt").write_text("Space Protocol: https://github.com/space-protocol-project/space-protocol\nPostgreSQL 17.11: https://www.postgresql.org/\n", encoding="utf-8")
         # Проверка запуска и сохранения базы выполняется до публикации архива.
         env = dict(os.environ, SPACE_HOME_RUNTIME=str(STAGE))
-        run("go", "test", "./internal/home", "-count=1", cwd=ROOT / "server", env=env)
+        run("go", "test", "./internal/home", "-count=1", "-timeout=3m", cwd=ROOT / "server", env=env)
         filename = f"Space-home-{target}.zip"
         with zipfile.ZipFile(DIST / filename, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
             for path in STAGE.rglob("*"):
