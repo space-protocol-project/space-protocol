@@ -10,4 +10,4 @@ ln -s /Applications "$stage/Applications"
 output="dist/Space-macos-$(uname -m).dmg"
 hdiutil create -volname Space -srcfolder "$stage" -ov -format UDZO "$output"
 hdiutil verify "$output"
-shasum -a 256 "$output" > dist/SHA256SUMS.txt
+(cd dist && shasum -a 256 "$(basename "$output")" > "SHA256SUMS-macos-$(uname -m).txt")

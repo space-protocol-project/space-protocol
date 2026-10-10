@@ -1,7 +1,9 @@
 name: Проверка сервера
 on:
   push:
+    branches: ['**']
   pull_request:
+  workflow_call:
 permissions:
   contents: read
 jobs:
@@ -31,6 +33,7 @@ jobs:
         run: docker compose -f deploy/compose.yaml config --quiet
       - name: Проверки UI-прототипа и согласия на оформление
         run: |
+          python3 packaging/release_notes_test.py
           npm ci --prefix server/tools
           node server/tools/qr.test.mjs
           node --check client/design/prototype/app.js
