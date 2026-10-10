@@ -1,0 +1,13 @@
+name: Проверка контракта OpenAPI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JSON и операции OpenAPI
+        run: python3 .github/scripts/check_protocol.py

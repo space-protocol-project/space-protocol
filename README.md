@@ -6,11 +6,21 @@
 
 > Документ объединяет реализованный экспериментальный прототип и план будущей системы. Текущие возможности перечислены в руководствах сервера и приложения и отмечены в TODO; остальные разделы задают проектные решения. Примеры с `...`, условными ключами и доменами `.example` иллюстративны: они не являются криптографическими тестовыми векторами или готовыми конфигурациями для запуска. До стабильного релиза остаются реализация следующих этапов, проверки совместимости и независимый анализ безопасности.
 
+## Репозитории проекта
+
+| Репозиторий | Назначение |
+| --- | --- |
+| [space-protocol](https://github.com/space-protocol-project/space-protocol) | Контракты `.proto`, OpenAPI, архитектура, общий план и промосайт |
+| [space-server](https://github.com/space-protocol-project/space-server) | Go-сервер, PostgreSQL, домашний runtime, серверные проверки и релизы |
+| [space-app](https://github.com/space-protocol-project/space-app) | Основное Flutter-приложение, общие пакеты управления, установщики и релизы |
+
+Исходники сервера и приложения перенесены в отдельные репозитории. Старые папки с активным кодом здесь удалены; история Git сохранена. Промосайт остаётся по адресу https://space-protocol-project.github.io/space-protocol/.
+
 ## Содержание
 
-Предложение интерфейса для всего приложения: [UI/UX и интерактивный HTML-прототип](client/design/README.md). По умолчанию — Gruvbox; личные цвета и согласованное оформление выбранного сервера описаны в [ADR-017](docs/adr/017-space-appearance.md). Прототип показывает будущие сценарии на демоданных; это не признак готовности соответствующих backend API.
+Предложение интерфейса для всего приложения: [UI/UX и интерактивный HTML-прототип](https://github.com/space-protocol-project/space-app/blob/main/client/design/README.md). По умолчанию — Gruvbox; личные цвета и согласованное оформление выбранного сервера описаны в [ADR-017](docs/adr/017-space-appearance.md). Прототип показывает будущие сценарии на демоданных; это не признак готовности соответствующих backend API.
 
-Начальная структура репозитория уже создана: [protocol](protocol/README.md), [server](server/README.md), [client](client/README.md), [sdk](sdk/README.md), [deploy](deploy/README.md) и [docs](docs/README.md). Есть локальный Go-прототип: discovery, manifest, чат через gRPC/grpc-gateway, PostgreSQL, миграции, durable events с Subscribe/replay и первый Ed25519 register/login/revoke профиль. [Запуск и ограничения](server/README.md), [генерация контрактов](protocol/GENERATING.md), [экспериментальный auth/events профиль](docs/adr/016-local-auth-events.md). Роли пространства, приглашения и первый экспериментальный recovery через зашифрованный файл реализованы; Root-подписанное сопряжение устройств также реализовано ([ADR-022](docs/adr/022-device-pairing.md)). Master seed/HKDF и полный Docker deployment ещё предстоят. QR recovery, pairing через recovery chain и ACL отдельных чат-каналов реализованы экспериментально. [Реализованный recovery-профиль и его ограничения](docs/adr/021-recovery-cards.md). Управление доступно в основном приложении: [настройка владельца и SSH-доступ](docs/ADMIN-GUIDE.md). Общее Flutter-приложение уже создано, CI собирает Windows Setup, macOS DMG и Linux RUN: [запуск и ограничения](client/README.md). Правила участия описаны в [CONTRIBUTING.md](CONTRIBUTING.md), статус безопасности — в [SECURITY.md](SECURITY.md).
+Архитектура и контракты находятся в этом репозитории; реализация вынесена отдельно: [protocol](protocol/README.md), [server](https://github.com/space-protocol-project/space-server/blob/main/README.md), [client](https://github.com/space-protocol-project/space-app/blob/main/client/README.md), [sdk](sdk/README.md), [deploy](https://github.com/space-protocol-project/space-server/blob/main/deploy/README.md) и [docs](docs/README.md). Есть локальный Go-прототип: discovery, manifest, чат через gRPC/grpc-gateway, PostgreSQL, миграции, durable events с Subscribe/replay и первый Ed25519 register/login/revoke профиль. [Запуск и ограничения](https://github.com/space-protocol-project/space-server/blob/main/README.md), [генерация контрактов](protocol/GENERATING.md), [экспериментальный auth/events профиль](docs/adr/016-local-auth-events.md). Роли пространства, приглашения и первый экспериментальный recovery через зашифрованный файл реализованы; Root-подписанное сопряжение устройств также реализовано ([ADR-022](docs/adr/022-device-pairing.md)). Master seed/HKDF и полный Docker deployment ещё предстоят. QR recovery, pairing через recovery chain и ACL отдельных чат-каналов реализованы экспериментально. [Реализованный recovery-профиль и его ограничения](docs/adr/021-recovery-cards.md). Управление доступно в основном приложении: [настройка владельца и SSH-доступ](docs/ADMIN-GUIDE.md). Общее Flutter-приложение уже создано, CI собирает Windows Setup, macOS DMG и Linux RUN: [запуск и ограничения](https://github.com/space-protocol-project/space-app/blob/main/client/README.md). Правила участия описаны в [CONTRIBUTING.md](CONTRIBUTING.md), статус безопасности — в [SECURITY.md](SECURITY.md).
 
 1. [Конечная идея](#1-конечная-идея)
    - [Prior art и отличия](#prior-art-и-отличия-почему-не-matrix-xmpp-или-nostr)
@@ -1561,7 +1571,7 @@ Flutter поддерживает начало и возобновление ро
 
 ## Установщики, языки и домашний сервер
 
-GitHub CI собирает Windows Setup, macOS DMG и Linux RUN с SHA-256: [описание установщиков](packaging/README.md). Проверенные сборки — run 38003061090. macOS/Linux ещё требуют проверки установки и нативных сценариев; подпись Apple и notarization не настроены.
+GitHub CI собирает Windows Setup, macOS DMG и Linux RUN с SHA-256: [описание установщиков](https://github.com/space-protocol-project/space-app/blob/main/packaging/README.md). Проверенные сборки — run 38003061090. macOS/Linux ещё требуют проверки установки и нативных сценариев; подпись Apple и notarization не настроены.
 
 Первый срез локализации: русский, упрощённый китайский и английский с сохранением выбора. Переведены оболочка, обзор, поиск и личные настройки; остальные экраны и ошибки ещё переводятся.
 

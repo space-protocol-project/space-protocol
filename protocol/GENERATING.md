@@ -1,19 +1,28 @@
 # Генерация контрактов
 
-Из корня репозитория. Нужны Go и Buf CLI (проверено с Buf 1.73.0).
+Канонический `.proto` и OpenAPI находятся в `space-protocol`, реализации — в `space-server` и `space-app`. Генераторы уже установлены в среде разработки; при их отсутствии установка требует отдельного согласования.
+
+Проверка контракта из корня этого репозитория:
 
 ```powershell
-go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.6
-go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.5.1
-go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.26.3
-go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.26.3
-$env:PATH += ';' + (Join-Path (go env GOPATH) 'bin')
 buf lint
 buf generate protocol/proto
 ```
 
-Генераторы локальные, версии закреплены командами установки. Runtime gateway совпадает с версией генератора. Внешние `.proto` сохранены в `vendor`, Buf Registry не требуется. Для получения Go-модулей нужен Go proxy или локальный кеш.
+Go-артефакты появятся в игнорируемом `gen/go/`, OpenAPI — в `protocol/openapi/`. Здесь активных исходников сервера и клиента нет.
 
-Результат: `server/gen/space/v1/` и `protocol/openapi/space/v1/space.swagger.json` (OpenAPI 2). Сгенерированные файлы коммитим, вручную не редактируем. Обычный `go test` не требует генераторов. HTTP API использует ProtoJSON (`serverId`, `idempotencyKey`, `nextCursor`); discovery — отдельный JSON-документ.
+С соседними checkout генерация для сервера выполняется из `space-server`:
 
-Контракты экспериментальные; стабильная совместимость и production identity ещё не определены. Правила breaking changes подготовлены в `buf.yaml`, базовой стабильной версии ещё нет.
+```powershell
+buf generate ../space-protocol/protocol/proto --template buf.gen.yaml
+```
+
+Генерация для приложения выполняется из `space-app`:
+
+```powershell
+buf generate ../space-protocol/protocol/proto --template client/buf.gen.yaml
+```
+
+Go package: `github.com/space-protocol-project/space-server/gen/space/v1`. Сгенерированные bindings коммитятся в репозиториях потребителей; обычные тесты не требуют генераторов. Версии: Buf 1.73.0, protoc-gen-go 1.36.6, protoc-gen-go-grpc 1.5.1, grpc-gateway/openapiv2 2.26.3; Dart protoc_plugin закреплён инструментами приложения. Внешние proto находятся в `protocol/vendor`, Buf Registry не требуется.
+
+Контракт экспериментальный. Изменения проверяются через lint, генерацию, тесты сервера и сквозную совместимость с приложением. Стабильная базовая версия для breaking checks ещё не назначена.

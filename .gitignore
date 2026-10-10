@@ -14,3 +14,11 @@ build/
 node_modules/
 coverage/
 *.log
+
+# Локальные кэши после переноса реализаций в отдельные репозитории
+/client/
+/server/
+/packages/
+/packaging/
+/deploy/
+/gen/
