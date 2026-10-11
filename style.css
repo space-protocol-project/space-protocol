@@ -25,3 +25,5 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 
 /* Расширенная галерея: десять экранов без горизонтального переполнения. */
 .screen-tabs{flex-wrap:wrap}.screen-tabs button{flex:0 0 auto;padding:11px 16px}
+
+.roadmap-completed{max-width:900px;line-height:1.7;margin:0 0 32px;color:var(--ink)}.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:650px){.timeline{grid-template-columns:1fr}}
