@@ -1103,9 +1103,13 @@ ConnectRPC выбран пользователем 11 октября 2026 год
 ## Переход на ConnectRPC
 
 - [x] Принято архитектурное решение Connect-Go + Connect-Dart с существующими Protobuf и Buf ([ADR-030](docs/adr/030-connectrpc-adoption.md)).
-- [ ] Закреплённые версии и генерация; прототип manifest/вход/подписка событий.
+- [x] Закреплены Go/генератор 1.19.2 и Dart/генератор 2.0.0; сгенерированы bindings. Экспериментальный флаг -connect-rpc включает gRPC-мост manifest/challenge/subscribe.
+- [x] Приёмка loopback Dart/Go Protobuf/JSON: подписанный вход, heartbeat/событие, отмена, отсутствие token и отзыв активного потока.
+- [ ] Прототип домашнего HTTPS/TLS pinning в Connect-Dart.
 - [ ] Аутентификация, streaming ACL/отзыв, deadlines, лимиты и коды ошибок в новом транспорте.
 - [ ] TLS pinning домашнего сервера, отмена и восстановление потоков; совместимость со старым gRPC-клиентом.
 - [ ] Перенос основного приложения и управления; сквозные CI трёх ОС, отдельный выпуск runtime.
 
 До приёмки сохраняется текущий рабочий транспорт. После перехода — вложения с правами и квотами.
+
+Приёмка первого Connect-среза: 111 тестов Flutter (три штатных пропуска), анализ, Windows release/hot restart; [CI приложения 38174638446](https://github.com/space-protocol-project/space-app/actions/runs/38174638446) успешен на трёх ОС для 1e0fdef. [CI сервера 38174641293](https://github.com/space-protocol-project/space-server/actions/runs/38174641293) подтвердил PostgreSQL, Connect Dart/Go Protobuf/JSON (manifest, подпись login, события, отмена/отзыв), старый gRPC и нативное хранилище Windows для 6e59209. Локальный Docker не запускался.

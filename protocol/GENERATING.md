@@ -26,3 +26,5 @@ buf generate ../space-protocol/protocol/proto --template client/buf.gen.yaml
 Go package: `github.com/space-protocol-project/space-server/gen/space/v1`. Сгенерированные bindings коммитятся в репозиториях потребителей; обычные тесты не требуют генераторов. Версии: Buf 1.73.0, protoc-gen-go 1.36.6, protoc-gen-go-grpc 1.5.1, grpc-gateway/openapiv2 2.26.3; Dart protoc_plugin закреплён инструментами приложения. Внешние proto находятся в `protocol/vendor`, Buf Registry не требуется.
 
 Контракт экспериментальный. Изменения проверяются через lint, генерацию, тесты сервера и сквозную совместимость с приложением. Стабильная базовая версия для breaking checks ещё не назначена.
+
+Connect-прототип: из space-server `buf generate ../space-protocol/protocol/proto --template buf.connect.gen.yaml` (go run закреплённого protoc-gen-connect-go 1.19.2); из space-app `dart pub global activate connectrpc 2.0.0`, затем `buf generate ../space-protocol/protocol/proto --template client/buf.connect.gen.yaml`. Обычная сборка использует закоммиченные артефакты. Runtime Go protobuf — 1.36.9; прежний генератор protobuf остаётся 1.36.6.
