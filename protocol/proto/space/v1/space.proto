@@ -365,6 +365,8 @@ message Content {
   string text = 3;
   string author_id = 4;
   int64 sequence = 5;
+  // Серверное время создания в миллисекундах Unix; 0 означает неизвестное время.
+  int64 created_at_unix_ms = 6;
 }
 message CreateContentRequest {
   string channel_id = 1;

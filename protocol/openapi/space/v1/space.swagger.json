@@ -1494,6 +1494,11 @@
         "sequence": {
           "type": "string",
           "format": "int64"
+        },
+        "createdAtUnixMs": {
+          "type": "string",
+          "format": "int64",
+          "description": "Серверное время создания в миллисекундах Unix; 0 означает неизвестное время."
         }
       }
     },
