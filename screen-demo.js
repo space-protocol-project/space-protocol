@@ -1,10 +1,66 @@
 (() => {
   const screens = {
-    chat: {title:'Общий чат',heading:'Разговор в центре.',text:'Каналы и разделы слева, общение в центре, контекст пространства справа. На снимке показан экран до подключения к серверу.',alt:'Flutter-приложение Space: общий чат и боковая навигация, подключение ещё не выполнено'},
-    settings: {title:'Личные настройки',heading:'Пусть будет удобно вам.',text:'Светлая и тёмная темы, компактный режим и личные палитры. Оформление сохраняется на устройстве и не меняет права доступа.',alt:'Flutter-приложение Space: настройки тёмной темы, компактного режима и палитры'},
-    identity: {title:'Идентичность и восстановление',heading:'Ваши ключи. Ваш доступ.',text:'Состояние устройства, восстановление и ротация ключа находятся на странице идентичности. На снимке показана сборка без активного подключения.',alt:'Flutter-приложение Space: идентичность, восстановление ключей и ротация'},
-    channels: {title:'Управление каналами',heading:'Правила рядом с разговором.',text:'Общие Flutter-формы позволяют настраивать каналы, порядок и архив. Этот снимок сделан в тестовой оболочке общего модуля; сейчас управление встроено в основное приложение.',alt:'Общие Flutter-формы: настройки пространства, список каналов и изменение канала'}
-  };
+  "dashboard": {
+    "title": "Сводка",
+    "heading": "Все пространства — рядом.",
+    "text": "Главная показывает сохранённые серверы, доступные каналы и непрочитанные. Два пространства на снимке используют демонстрационные данные.",
+    "alt": "Flutter-приложение Space: сводка, актуальные виджеты и демонстрационные данные"
+  },
+  "chat": {
+    "title": "Чат",
+    "heading": "Разговор в пузырьках.",
+    "text": "Текущий Flutter-интерфейс: входящие сообщения слева, ваши справа, отдельная вкладка сервера. Содержимое разговора демонстрационное.",
+    "alt": "Flutter-приложение Space: чат, актуальные виджеты и демонстрационные данные"
+  },
+  "settings": {
+    "title": "Настройки",
+    "heading": "Ваше оформление.",
+    "text": "Тема, палитра и язык приложения настраиваются локально. На снимке актуальная форма личных настроек.",
+    "alt": "Flutter-приложение Space: настройки, актуальные виджеты и демонстрационные данные"
+  },
+  "identity": {
+    "title": "Восстановление",
+    "heading": "Доступ под вашей защитой.",
+    "text": "Настоящий диалог шифрования recovery-карточки: пароль остаётся на устройстве и проверяется перед сохранением.",
+    "alt": "Flutter-приложение Space: восстановление, актуальные виджеты и демонстрационные данные"
+  },
+  "channels": {
+    "title": "Каналы",
+    "heading": "Свои каналы и права.",
+    "text": "Текущие общие Flutter-формы: каналы, архив, публичный предпросмотр и редактор ACL. Данные из изолированной проверки.",
+    "alt": "Flutter-приложение Space: каналы, актуальные виджеты и демонстрационные данные"
+  },
+  "members": {
+    "title": "Участники",
+    "heading": "Сообщество и роли.",
+    "text": "Список участников, поиск, роли и блокировка. На снимке демонстрационные идентификаторы и роли.",
+    "alt": "Flutter-приложение Space: участники, актуальные виджеты и демонстрационные данные"
+  },
+  "invites": {
+    "title": "Приглашения",
+    "heading": "Приглашайте своих.",
+    "text": "Роль, срок действия, число использований и отзыв приглашения в общей Flutter-форме. Данные демонстрационные.",
+    "alt": "Flutter-приложение Space: приглашения, актуальные виджеты и демонстрационные данные"
+  },
+  "devices": {
+    "title": "Устройства",
+    "heading": "Доступ каждого устройства.",
+    "text": "Список своей идентичности, разрешения и отзыв устройства или recovery-карточки. Записи на снимке тестовые.",
+    "alt": "Flutter-приложение Space: устройства, актуальные виджеты и демонстрационные данные"
+  },
+  "home": {
+    "title": "Домашний сервер",
+    "heading": "Выйти в эфир из Space.",
+    "text": "Текущая форма домашнего запуска: адрес, управление и включение сервера. Здесь показан тестовый IPv4, реальный сервер при съёмке не запускался.",
+    "alt": "Flutter-приложение Space: домашний сервер, актуальные виджеты и демонстрационные данные"
+  },
+  "pairing": {
+    "title": "Сопряжение",
+    "heading": "Подключить новое устройство.",
+    "text": "Форма независимой сверки кода после проверки root-подписи. Код на снимке демонстрационный и не предоставляет доступа.",
+    "alt": "Flutter-приложение Space: сопряжение, актуальные виджеты и демонстрационные данные"
+  }
+};
   const keys = Object.keys(screens);
   const tabs = [...document.querySelectorAll('[data-screen]')];
   const dots = [...document.querySelectorAll('[data-carousel]')];
@@ -14,12 +70,12 @@
   const dialog = document.getElementById('screen-dialog');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const pictures = new Map();
-  let current = 'chat', requested = 'chat', generation = 0;
+  let current = 'dashboard', requested = 'dashboard', generation = 0;
   let touchStart = null;
   function preload(key) {
     if (!pictures.has(key)) {
       const picture = new Image();
-      picture.src = `assets/screens/${key}.png?v=20261009-fonts`;
+      picture.src = `assets/screens/${key}.png?v=20261011-gallery10`;
       const ready = picture.decode ? picture.decode() : new Promise((resolve,reject)=>{if(picture.complete&&picture.naturalWidth)resolve();else{picture.onload=resolve;picture.onerror=reject;}});
       pictures.set(key,ready.then(()=>picture).catch(error=>{pictures.delete(key);throw error;}));
     }
@@ -54,7 +110,7 @@
       document.getElementById('screen-title').textContent=screens[key].title;
       document.getElementById('screen-heading').textContent=screens[key].heading;
       document.getElementById('screen-text').textContent=screens[key].text;
-      document.getElementById('screen-index').textContent=`0${keys.indexOf(key)+1} / 04`;
+      document.getElementById('screen-index').textContent=`${String(keys.indexOf(key)+1).padStart(2,'0')} / ${String(keys.length).padStart(2,'0')}`;
       animateChange(previous,direction);
     } catch (_) {
       if(token!==generation)return;
