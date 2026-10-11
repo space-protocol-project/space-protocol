@@ -30,3 +30,5 @@
 - [029: время сообщений и подтверждение отправки](029-message-time-and-send-confirmation.md).
 
 - [030: переход на ConnectRPC](030-connectrpc-adoption.md) — Go, Dart, совместимость и порядок проверки.
+
+- [031: иконка пространства](031-server-icons.md).

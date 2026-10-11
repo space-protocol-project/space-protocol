@@ -222,12 +222,18 @@ message GetSettingsRequest {}
 message ClaimOwnerResponse { SpaceSettings settings = 1; }
 message GetSettingsResponse { SpaceSettings settings = 1; }
 message UpdateSettingsResponse { SpaceSettings settings = 1; }
+message ServerIcon {
+  string preset = 1;
+  string media_type = 2;
+  bytes data = 3;
+}
 message SpaceSettings {
   string title = 1;
   string chat_title = 2;
   bool chat_enabled = 3;
   string registration_policy = 4;
   int64 revision = 5;
+  ServerIcon icon = 6;
 }
 message UpdateSettingsRequest {
   string title = 1;
@@ -235,6 +241,7 @@ message UpdateSettingsRequest {
   bool chat_enabled = 3;
   string registration_policy = 4;
   int64 expected_revision = 5;
+  ServerIcon icon = 6;
 }
 
 message SubscribeRequest {
@@ -299,6 +306,7 @@ message GetManifestResponse {
   string server_id = 2;
   repeated Channel channels = 3;
   string title = 4;
+  ServerIcon icon = 5;
 }
 message Channel {
   string id = 1;
@@ -424,4 +432,5 @@ message WatchChannelsResponse {
   string role = 3;
   bool heartbeat = 4;
   string server_id = 5;
+  ServerIcon icon = 6;
 }

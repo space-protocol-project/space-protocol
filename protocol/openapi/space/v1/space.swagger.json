@@ -1761,6 +1761,9 @@
         },
         "title": {
           "type": "string"
+        },
+        "icon": {
+          "$ref": "#/definitions/v1ServerIcon"
         }
       }
     },
@@ -2086,6 +2089,21 @@
         }
       }
     },
+    "v1ServerIcon": {
+      "type": "object",
+      "properties": {
+        "preset": {
+          "type": "string"
+        },
+        "mediaType": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
     "v1SpaceSettings": {
       "type": "object",
       "properties": {
@@ -2104,6 +2122,9 @@
         "revision": {
           "type": "string",
           "format": "int64"
+        },
+        "icon": {
+          "$ref": "#/definitions/v1ServerIcon"
         }
       }
     },
@@ -2174,6 +2195,9 @@
         "expectedRevision": {
           "type": "string",
           "format": "int64"
+        },
+        "icon": {
+          "$ref": "#/definitions/v1ServerIcon"
         }
       }
     },
@@ -2217,6 +2241,9 @@
         },
         "serverId": {
           "type": "string"
+        },
+        "icon": {
+          "$ref": "#/definitions/v1ServerIcon"
         }
       }
     }
