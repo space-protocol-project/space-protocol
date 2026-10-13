@@ -4,6 +4,9 @@
 
 - [Руководство приложения](APPLICATION-GUIDE.md): установка, подключение, чат, выбор языка, recovery и сопряжение.
 - [Управление сервером](ADMIN-GUIDE.md): владелец, настройки, каналы, участники, приглашения и устройства в общем Flutter-приложении.
+- [Скачать последнюю версию](https://github.com/space-protocol-project/space-app/releases/latest): Windows x64, macOS Apple Silicon и Linux x64.
+- [Снимки интерфейса v0.2.2](https://github.com/space-protocol-project/space-app/blob/main/docs/SCREENSHOTS.md): десять экранов с демонстрационными данными.
+- [Обновление приложения](https://github.com/space-protocol-project/space-app/blob/main/docs/APP-UPDATES.md) и [восстановление домашнего сервера](https://github.com/space-protocol-project/space-app/blob/main/docs/HOME-RECOVERY.md).
 - [Установщики](https://github.com/space-protocol-project/space-app/blob/main/packaging/README.md): Windows Setup, macOS DMG, Linux RUN и ограничения платформ.
 - [Проверка восстановления](RECOVERY-DRILL.md): автоматические и ручные сценарии; проверка физической QR-камеры остаётся открытой.
 

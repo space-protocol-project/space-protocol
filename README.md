@@ -16,6 +16,20 @@
 
 Исходники сервера и приложения перенесены в отдельные репозитории. Старые папки с активным кодом здесь удалены; история Git сохранена. Промосайт остаётся по адресу https://space-protocol-project.github.io/space-protocol/.
 
+## Скачать Space
+
+Экспериментальный [выпуск приложения v0.2.2](https://github.com/space-protocol-project/space-app/releases/latest) опубликован 14 октября 2026 года.
+
+| Система | Последняя версия |
+| --- | --- |
+| Windows 10/11 x64 | [Скачать EXE](https://github.com/space-protocol-project/space-app/releases/latest/download/Space-Setup-windows-x64.exe) |
+| macOS Apple Silicon | [Скачать DMG](https://github.com/space-protocol-project/space-app/releases/latest/download/Space-macos-arm64.dmg) |
+| Linux x64 | [Скачать RUN](https://github.com/space-protocol-project/space-app/releases/latest/download/Space-linux-x64.run) |
+
+[Контрольные суммы](https://github.com/space-protocol-project/space-app/releases/latest/download/SHA256SUMS.txt) · [Снимки интерфейса](https://github.com/space-protocol-project/space-app/blob/main/docs/SCREENSHOTS.md) · [Обновление](https://github.com/space-protocol-project/space-app/blob/main/docs/APP-UPDATES.md) · [Восстановление домашнего сервера](https://github.com/space-protocol-project/space-app/blob/main/docs/HOME-RECOVERY.md).
+
+Ссылки всегда ведут на последний публичный выпуск. Домашний runtime v0.2.2 устанавливается из приложения. CI проверил комплекты на трёх ОС и обновление Windows поверх v0.2.1; ручная приёмка на физических системах остаётся открытой. DMG пока без подписи Apple и notarization.
+
 ## Содержание
 
 Предложение интерфейса для всего приложения: [UI/UX и интерактивный HTML-прототип](https://github.com/space-protocol-project/space-app/blob/main/client/design/README.md). По умолчанию — Gruvbox; личные цвета и согласованное оформление выбранного сервера описаны в [ADR-017](docs/adr/017-space-appearance.md). Прототип показывает будущие сценарии на демоданных; это не признак готовности соответствующих backend API.
