@@ -27,3 +27,7 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 .screen-tabs{flex-wrap:wrap}.screen-tabs button{flex:0 0 auto;padding:11px 16px}
 
 .roadmap-completed{max-width:900px;line-height:1.7;margin:0 0 32px;color:var(--ink)}.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:650px){.timeline{grid-template-columns:1fr}}
+
+/* Скачивание последнего публичного выпуска. */
+.download-heading{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;margin-bottom:40px}.download-heading p{max-width:400px}.download-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.download-grid article{border:1px solid var(--inkline);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:18px;min-width:0}.download-grid h3{font-size:28px}.download-grid .button{border:1px solid var(--ink);margin-top:auto;gap:15px;border-radius:10px;min-height:52px}.download-note{margin-top:26px;max-width:930px;font-size:13px}.download-links{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:20px;font-size:13px}.download-links a{border-bottom:1px solid var(--inkline);padding-bottom:4px}.downloads a:focus-visible{outline-color:var(--ink)}
+@media(max-width:900px){.download-heading{grid-template-columns:1fr;gap:20px}.download-grid{grid-template-columns:1fr}.download-grid article{padding:24px}.download-grid .button{width:100%}.header nav{gap:16px}}@media(max-width:650px){.download-heading{margin-bottom:25px}.download-links{flex-direction:column;align-items:flex-start}}

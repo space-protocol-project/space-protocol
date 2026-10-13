@@ -75,7 +75,7 @@
   function preload(key) {
     if (!pictures.has(key)) {
       const picture = new Image();
-      picture.src = `assets/screens/${key}.png?v=20261011-gallery10`;
+      picture.src = `assets/screens/${key}.png?v=20261014-v022`;
       const ready = picture.decode ? picture.decode() : new Promise((resolve,reject)=>{if(picture.complete&&picture.naturalWidth)resolve();else{picture.onload=resolve;picture.onerror=reject;}});
       pictures.set(key,ready.then(()=>picture).catch(error=>{pictures.delete(key);throw error;}));
     }
