@@ -21,6 +21,9 @@ service ChannelService {
   rpc UpdateChannel(UpdateChannelRequest) returns (UpdateChannelResponse) {
     option (google.api.http) = {patch: "/api/v1/channels/{channel_id}" body: "*"};
   }
+  rpc DeleteChannel(DeleteChannelRequest) returns (DeleteChannelResponse) {
+    option (google.api.http) = {delete: "/api/v1/channels/{channel_id}"};
+  }
   rpc GetChannelAccess(GetChannelAccessRequest) returns (GetChannelAccessResponse) {
     option (google.api.http) = {get: "/api/v1/channels/{channel_id}/access"};
   }
@@ -350,6 +353,11 @@ message UpdateChannelRequest {
   bool public_preview = 5;
   int64 expected_revision = 6;
 }
+message DeleteChannelRequest {
+  string channel_id = 1;
+  int64 expected_revision = 2;
+}
+message DeleteChannelResponse {}
 message CreateChannelResponse { Channel channel = 1; }
 message UpdateChannelResponse { Channel channel = 1; }
 message GetChannelAccessRequest { string channel_id = 1; }

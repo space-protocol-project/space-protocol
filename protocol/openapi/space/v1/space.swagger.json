@@ -538,6 +538,41 @@
       }
     },
     "/api/v1/channels/{channelId}": {
+      "delete": {
+        "operationId": "ChannelService_DeleteChannel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteChannelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "expectedRevision",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ChannelService"
+        ]
+      },
       "patch": {
         "operationId": "ChannelService_UpdateChannel",
         "responses": {
@@ -1678,6 +1713,9 @@
           "format": "byte"
         }
       }
+    },
+    "v1DeleteChannelResponse": {
+      "type": "object"
     },
     "v1DeviceGrant": {
       "type": "object",
