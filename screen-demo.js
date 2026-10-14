@@ -146,6 +146,7 @@
   }
   document.getElementById('screen-expand').addEventListener('click',openScreenshot);
   stage.addEventListener('click',()=>{if(Date.now()>=ignoreClickUntil)openScreenshot();});
+  stage.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openScreenshot();}});
   let closing = false, closeTimer;
   function requestClose() {
     if (!dialog.open || closing) return;

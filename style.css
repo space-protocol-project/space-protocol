@@ -33,5 +33,5 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 @media(max-width:900px){.download-heading{grid-template-columns:1fr;gap:20px}.download-grid{grid-template-columns:1fr}.download-grid article{padding:24px}.download-grid .button{width:100%}.header nav{gap:16px}}@media(max-width:650px){.download-heading{margin-bottom:25px}.download-links{flex-direction:column;align-items:flex-start}}
 
 /* Снимок открывается как кнопка, в том числе с клавиатуры. */
-button.screen-stage{display:block;width:100%;padding:0;border:0;border-radius:0;cursor:zoom-in;color:inherit;font:inherit}
-button.screen-stage:focus-visible{outline-offset:-4px}
+.screen-stage[role="button"]{cursor:zoom-in}
+.screen-stage[role="button"]:focus-visible{outline:2px solid var(--paper);outline-offset:-4px}
