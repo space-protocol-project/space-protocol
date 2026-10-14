@@ -72,6 +72,7 @@
   const pictures = new Map();
   let current = 'dashboard', requested = 'dashboard', generation = 0;
   let touchStart = null;
+  let ignoreClickUntil = 0;
   function preload(key) {
     if (!pictures.has(key)) {
       const picture = new Image();
@@ -136,13 +137,15 @@
   document.getElementById('screen-next').addEventListener('click',()=>step(1));
   panel.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();step(event.key==='ArrowRight'?1:-1);}});
   stage.addEventListener('touchstart',event=>{touchStart=event.touches.length===1?{x:event.touches[0].clientX,y:event.touches[0].clientY}:null;},{passive:true});
-  stage.addEventListener('touchend',event=>{if(!touchStart)return;const touch=event.changedTouches[0];const dx=touch.clientX-touchStart.x,dy=touch.clientY-touchStart.y;touchStart=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3)step(dx<0?1:-1);},{passive:true});
+  stage.addEventListener('touchend',event=>{if(!touchStart)return;const touch=event.changedTouches[0];const dx=touch.clientX-touchStart.x,dy=touch.clientY-touchStart.y;touchStart=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3){ignoreClickUntil=Date.now()+500;step(dx<0?1:-1);}},{passive:true});
   stage.addEventListener('touchcancel',()=>{touchStart=null;},{passive:true});
-  document.getElementById('screen-expand').addEventListener('click',()=>{
+  function openScreenshot() {
     const expanded=document.getElementById('dialog-image');expanded.src=image.src;expanded.alt=image.alt;
     document.getElementById('dialog-title').textContent=screens[current].title;
     if(typeof dialog.showModal==='function')dialog.showModal();else window.open(image.src,'_blank','noopener');
-  });
+  }
+  document.getElementById('screen-expand').addEventListener('click',openScreenshot);
+  stage.addEventListener('click',()=>{if(Date.now()>=ignoreClickUntil)openScreenshot();});
   let closing = false, closeTimer;
   function requestClose() {
     if (!dialog.open || closing) return;
