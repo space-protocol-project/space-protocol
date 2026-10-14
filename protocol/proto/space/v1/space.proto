@@ -36,6 +36,12 @@ service ChannelService {
 }
 
 service ContentService {
+  rpc UpdateContent(UpdateContentRequest) returns (UpdateContentResponse) {
+    option (google.api.http) = { patch: "/v1/channels/{channel_id}/contents/{id}" body: "*" };
+  }
+  rpc DeleteContent(DeleteContentRequest) returns (DeleteContentResponse) {
+    option (google.api.http) = { delete: "/v1/channels/{channel_id}/contents/{id}" };
+  }
   rpc CreateContent(CreateContentRequest) returns (CreateContentResponse) {
     option (google.api.http) = {post: "/api/v1/channels/{channel_id}/content" body: "*"};
   }
@@ -383,7 +389,23 @@ message Content {
   int64 sequence = 5;
   // Серверное время создания в миллисекундах Unix; 0 означает неизвестное время.
   int64 created_at_unix_ms = 6;
+  int64 revision = 7;
+  int64 updated_at_unix_ms = 8;
+  bool deleted = 9;
 }
+message UpdateContentRequest {
+  string channel_id = 1;
+  string id = 2;
+  string text = 3;
+  int64 expected_revision = 4;
+}
+message UpdateContentResponse { Content content = 1; }
+message DeleteContentRequest {
+  string channel_id = 1;
+  string id = 2;
+  int64 expected_revision = 3;
+}
+message DeleteContentResponse { Content content = 1; }
 message CreateContentRequest {
   string channel_id = 1;
   string text = 2;

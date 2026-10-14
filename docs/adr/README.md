@@ -32,3 +32,5 @@
 - [030: переход на ConnectRPC](030-connectrpc-adoption.md) — Go, Dart, совместимость и порядок проверки.
 
 - [031: иконка пространства](031-server-icons.md).
+
+- [032: изменение и удаление сообщений автором](032-author-message-changes.md).
