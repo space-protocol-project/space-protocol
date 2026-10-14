@@ -1132,7 +1132,7 @@ Limited device может писать по выданному grant, но не 
 4. Forum/feed, затем voice/video, stage/live и практическое развёртывание.
 5. E2EE и федерация — отдельные поздние программы.
 
-ConnectRPC выбран пользователем 11 октября 2026 года: [ADR-030](docs/adr/030-connectrpc-adoption.md). Следующий этап перед вложениями — прототип Go/Dart с входом, подпиской событий и TLS-отпечатками. Зависимости и новый транспорт ещё не добавлены.
+ConnectRPC выбран пользователем 11 октября 2026 года: [ADR-030](docs/adr/030-connectrpc-adoption.md). Перенос Go/Dart с входом, подпиской событий и TLS-отпечатками реализован и принят в CI; перед вложениями остаётся выпуск совместимой пары приложения/runtime (см. раздел перехода ниже).
 
 Подтверждение приёмки: [GitHub Actions 37988312805](https://github.com/space-protocol-project/space-protocol/actions/runs/37988312805), оба задания success, проверенный коммит b59a9f7fa45a4baa0e48334d6f6217530941fdeb. Локально Docker не запускался.
 
@@ -1176,13 +1176,18 @@ ConnectRPC выбран пользователем 11 октября 2026 год
 ## Переход на ConnectRPC
 
 - [x] Принято архитектурное решение Connect-Go + Connect-Dart с существующими Protobuf и Buf ([ADR-030](docs/adr/030-connectrpc-adoption.md)).
-- [x] Закреплены Go/генератор 1.19.2 и Dart/генератор 2.0.0; сгенерированы bindings. Экспериментальный флаг -connect-rpc включает gRPC-мост manifest/challenge/subscribe.
+- [x] Закреплены Go/генератор 1.19.2 и Dart/генератор 2.0.0; сгенерированы bindings. Connect-мост обслуживает все 37 RPC; маршруты включены по умолчанию, -connect-rpc=false сохраняет прежние транспорты.
 - [x] Приёмка loopback Dart/Go Protobuf/JSON: подписанный вход, heartbeat/событие, отмена, отсутствие token и отзыв активного потока.
-- [ ] Прототип домашнего HTTPS/TLS pinning в Connect-Dart.
-- [ ] Аутентификация, streaming ACL/отзыв, deadlines, лимиты и коды ошибок в новом транспорте.
-- [ ] TLS pinning домашнего сервера, отмена и восстановление потоков; совместимость со старым gRPC-клиентом.
-- [ ] Перенос основного приложения и управления; сквозные CI трёх ОС, отдельный выпуск runtime.
+- [x] Домашний HTTPS/TLS pinning в Connect-Dart: точный отпечаток и срок проверяются при установлении сокета, до отправки RPC; проверены системно доверенный неверный pin и истёкший сертификат.
+- [x] Аутентификация до HTTP-декодирования и общая gRPC-проверка; streaming ACL/отзыв, deadlines, ограничения тела и коды ошибок в новом транспорте.
+- [x] TLS pinning домашнего сервера, отмена и восстановление потоков; совместимость со старым gRPC-клиентом. Домашний сценарий проверяет блокировку уже открытого потока и сохранение сообщений после перезапуска.
+- [x] Перенос основного приложения, управления, recovery и pairing; сквозные проверки кандидата домашнего runtime на Windows/macOS/Linux.
+- [ ] Выпустить новый runtime и закрепить его опубликованные архивы в приложении; выпустить совместимое приложение. До этого установленный v0.2.2 использует gRPC.
 
-До приёмки сохраняется текущий рабочий транспорт. После перехода — вложения с правами и квотами.
+Приёмка 14 октября: [сервер/PostgreSQL/Flutter/vault](https://github.com/space-protocol-project/space-server/actions/runs/38491776726) и [домашний runtime на трёх ОС](https://github.com/space-protocol-project/space-server/actions/runs/38491773715) успешны после исправления согласования gzip. Новый клиент выбирает Connect только по объявлению в discovery; неизвестный endpoint отклоняется, автоматического fallback после ошибок нет.
+
+Сложность новых адаптеров по treesitter_cyclomatic_complexity, inline: Dart CC ≤ 5 / COG ≤ 4; Connect-мост Go CC ≤ 3 / COG ≤ 2, общая авторизация CC 4 / COG 3. [Описание проверок и воспроизведение](https://github.com/space-protocol-project/space-app/blob/main/docs/CONNECTRPC.md). В debug-логе Windows замечена отдельная ошибка accessibility AXTree движка Flutter; ручная платформенная приёмка остаётся открытой.
+
+Прежние gRPC и REST пока сохраняются для совместимости. После выпуска совместимой пары — вложения с правами и квотами.
 
 Приёмка первого Connect-среза: 111 тестов Flutter (три штатных пропуска), анализ, Windows release/hot restart; [CI приложения 38174638446](https://github.com/space-protocol-project/space-app/actions/runs/38174638446) успешен на трёх ОС для 1e0fdef. [CI сервера 38174641293](https://github.com/space-protocol-project/space-server/actions/runs/38174641293) подтвердил PostgreSQL, Connect Dart/Go Protobuf/JSON (manifest, подпись login, события, отмена/отзыв), старый gRPC и нативное хранилище Windows для 6e59209. Локальный Docker не запускался.
