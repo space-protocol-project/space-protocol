@@ -53,7 +53,7 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 @media(max-width:760px){.gallery-desktop{grid-template-columns:1fr}.gallery-mobile{grid-template-columns:1fr;max-width:320px;gap:24px}.gallery-grid figcaption strong{font-size:16px}.gallery-shot{border-radius:10px}}
 @media(prefers-reduced-motion:reduce){.gallery-shot{transition:none}}
 
-.header{gap:20px;flex-wrap:wrap}.header-tools{display:flex;align-items:center;gap:18px}.language-picker{display:flex;align-items:center;gap:6px;font-size:13px}.language-picker select{font:inherit;color:var(--paper);background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 7px;max-width:160px;min-height:40px;cursor:pointer}.language-picker select:focus-visible{outline:2px solid var(--paper);outline-offset:3px}
+.header{gap:20px;flex-wrap:wrap}.header-tools{display:flex;align-items:center;gap:18px}.language-picker{display:flex;align-items:center;gap:6px;font-size:13px}.language-picker select{font:inherit;color:var(--paper);background:transparent;border:0;border-radius:8px;padding:10px 8px;max-width:160px;min-height:40px;cursor:pointer}.language-picker select:focus-visible{outline:2px solid var(--paper);outline-offset:3px}
 @media(max-width:1100px){.header nav{display:none}.header-tools{margin-left:auto}}
 @media(max-width:650px){.header{gap:14px}.header-tools{gap:10px}.language-picker{font-size:12px}.language-picker select{max-width:140px}.header-tools .repo{padding:10px}.header-tools .repo span{margin-left:4px}}
 
