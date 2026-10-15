@@ -50,6 +50,17 @@ service ContentService {
   }
 }
 
+// Файлы передаются ограниченными частями; права проверяются на каждой операции.
+service AssetService {
+  rpc BeginUpload(BeginUploadRequest) returns (BeginUploadResponse);
+  rpc UploadChunk(UploadChunkRequest) returns (UploadChunkResponse);
+  rpc CompleteUpload(CompleteUploadRequest) returns (CompleteUploadResponse);
+  rpc CancelUpload(CancelUploadRequest) returns (CancelUploadResponse);
+  rpc DownloadChunk(DownloadChunkRequest) returns (DownloadChunkResponse);
+  rpc ListMyAssets(ListMyAssetsRequest) returns (ListMyAssetsResponse);
+  rpc ListChannelAssets(ListChannelAssetsRequest) returns (ListChannelAssetsResponse);
+}
+
 service AuthService {
   // Экспериментальный API; требует поддержки stable principal у клиента.
   rpc CreateRootRotation(CreateRootRotationRequest) returns (CreateRootRotationResponse) {
@@ -179,6 +190,7 @@ service AdminService {
   }
 }
 service MembershipService {
+ rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
   rpc PreviewInvite(PreviewInviteRequest) returns (PreviewInviteResponse) {
     option (google.api.http) = {post: "/api/v1/membership/invites/preview" body: "*"};
   }
@@ -189,11 +201,15 @@ service MembershipService {
     option (google.api.http) = {get: "/api/v1/membership"};
   }
 }
+message UpdateProfileRequest { string nickname = 1; }
+message UpdateProfileResponse { Member member = 1; }
 message Member {
   string principal_id = 1;
   string role = 2;
   bool blocked = 3;
   int64 revision = 4;
+  optional int64 storage_limit_bytes = 5;
+  string nickname = 6;
 }
 message ListMembersRequest { string after = 1; }
 message ListMembersResponse { repeated Member members = 1; string next_cursor = 2; }
@@ -202,6 +218,8 @@ message UpdateMemberRequest {
   string role = 2;
   bool blocked = 3;
   int64 expected_revision = 4;
+  optional int64 storage_limit_bytes = 5;
+  bool reset_storage_limit = 6;
 }
 message UpdateMemberResponse { Member member = 1; }
 message Invite {
@@ -243,6 +261,8 @@ message SpaceSettings {
   string registration_policy = 4;
   int64 revision = 5;
   ServerIcon icon = 6;
+  optional int64 storage_limit_bytes = 7;
+  optional int64 member_storage_limit_bytes = 8;
 }
 message UpdateSettingsRequest {
   string title = 1;
@@ -251,6 +271,8 @@ message UpdateSettingsRequest {
   string registration_policy = 4;
   int64 expected_revision = 5;
   ServerIcon icon = 6;
+  optional int64 storage_limit_bytes = 7;
+  optional int64 member_storage_limit_bytes = 8;
 }
 
 message SubscribeRequest {
@@ -392,6 +414,7 @@ message Content {
   int64 revision = 7;
   int64 updated_at_unix_ms = 8;
   bool deleted = 9;
+  repeated Asset attachments = 10;
 }
 message UpdateContentRequest {
   string channel_id = 1;
@@ -410,6 +433,7 @@ message CreateContentRequest {
   string channel_id = 1;
   string text = 2;
   string idempotency_key = 3;
+  repeated string attachment_ids = 4;
 }
 message CreateContentResponse { Content content = 1; }
 message ListContentRequest {
@@ -464,3 +488,37 @@ message WatchChannelsResponse {
   string server_id = 5;
   ServerIcon icon = 6;
 }
+
+message Asset {
+  string id = 1;
+  string channel_id = 2;
+  string author_id = 3;
+  string name = 4;
+  int64 byte_size = 5;
+  bytes sha256 = 6;
+  string media_type = 7;
+  int64 created_at_unix_ms = 8;
+  // Серверная группа хранения: principal_id/YYYY/MM/DD, дата UTC.
+  string storage_group = 9;
+}
+message BeginUploadRequest {
+  string channel_id = 1;
+  string name = 2;
+  int64 byte_size = 3;
+  bytes sha256 = 4;
+  string idempotency_key = 5;
+}
+message BeginUploadResponse { Asset asset = 1; int64 received_bytes = 2; int32 chunk_size = 3; }
+message UploadChunkRequest { string asset_id = 1; int64 offset = 2; bytes data = 3; }
+message UploadChunkResponse { int64 received_bytes = 1; }
+message CompleteUploadRequest { string asset_id = 1; }
+message CompleteUploadResponse { Asset asset = 1; }
+message CancelUploadRequest { string asset_id = 1; }
+message CancelUploadResponse {}
+message DownloadChunkRequest { string asset_id = 1; int64 offset = 2; }
+message DownloadChunkResponse { Asset asset = 1; bytes data = 2; int64 next_offset = 3; }
+message ListMyAssetsRequest { string channel_id = 1; string after = 2; }
+message ListMyAssetsResponse { repeated Asset assets = 1; string next_cursor = 2; }
+
+message ListChannelAssetsRequest { string channel_id = 1; string after = 2; string author_id = 3; }
+message ListChannelAssetsResponse { repeated Asset assets = 1; string next_cursor = 2; map<string, string> authors = 3; }
