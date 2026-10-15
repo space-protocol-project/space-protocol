@@ -11,6 +11,8 @@ test('Выбор по языкам браузера и запасной англ
   assert.equal(browserLanguage(['de', 'en-GB']), 'en');
   assert.equal(browserLanguage(['fr', 'ru']), 'ru');
   assert.equal(browserLanguage([]), 'en');
+  assert.equal(browserLanguage(['en-US', 'zh-CN', 'ru-RU']), 'ru');
+  assert.equal(browserLanguage(['en-US', 'zh-CN']), 'zh');
 });
 
 test('Ручной выбор сохраняется, автоматический удаляет предпочтение', () => {

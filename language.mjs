@@ -1,14 +1,11 @@
 import translations from './translations.mjs';
 
-const supported = ['ru', 'en', 'zh'];
+const supported = ['ru', 'zh', 'en'];
 const storageKey = 'space.site.language';
 
 export function browserLanguage(languages = []) {
-  for (const language of languages) {
-    const base = language.toLowerCase().split(/[-_]/)[0];
-    if (supported.includes(base)) return base;
-  }
-  return 'en';
+  const available = languages.map(language => language.toLowerCase().split(/[-_]/)[0]);
+  return supported.find(language => available.includes(language)) ?? 'en';
 }
 
 export function savedLanguage(storage) {
