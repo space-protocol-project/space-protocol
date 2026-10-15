@@ -2,12 +2,14 @@
   const dialog = document.getElementById('screen-dialog');
   const image = document.getElementById('dialog-image');
   const title = document.getElementById('dialog-title');
+  let activeShot;
 
   function openScreenshot(event) {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     if (typeof dialog.showModal !== 'function') return;
     event.preventDefault();
     const link = event.currentTarget;
+    activeShot = link;
     image.src = link.href;
     image.alt = link.querySelector('img').alt;
     title.textContent = link.dataset.galleryTitle;
@@ -19,6 +21,12 @@
     link.addEventListener('keydown', event => {
       if (event.key === ' ') openScreenshot(event);
     });
+  });
+
+  document.addEventListener('space-language-change', () => {
+    if (!dialog.open || !activeShot) return;
+    image.alt = activeShot.querySelector('img').alt;
+    title.textContent = activeShot.dataset.galleryTitle;
   });
 
   dialog.addEventListener('click', event => {
