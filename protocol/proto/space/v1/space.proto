@@ -116,6 +116,23 @@ message DeviceGrant {
   bool revoked = 5;
   string parent_grant_id = 6;
   bool recovery = 7;
+  int64 auth_epoch = 8;
+  string signature_kind = 9;
+  bytes registration_transcript = 10;
+  bytes signature = 11;
+  bytes parent_transcript = 12;
+  bytes parent_signature = 13;
+  RetentionProof retention_proof = 14;
+  bool retainable = 15;
+}
+message RetentionProof {
+  string grant_id = 1;
+  bytes public_key = 2;
+  repeated string scopes = 3;
+  int64 expires_at = 4;
+  uint32 index = 5;
+  uint32 count = 6;
+  repeated bytes siblings = 7;
 }
 message ListDevicesResponse { repeated DeviceGrant devices = 1; }
 message Pairing {
@@ -306,6 +323,8 @@ message CreateChallengeResponse {
   string challenge_id = 1;
   // Клиент проверяет поля и восстанавливает байты по фиксированному профилю.
   bytes transcript = 2;
+  repeated RootHistoryProof root_history = 3;
+  RetentionProof retention_proof = 4;
 }
 message CompleteChallengeRequest {
   string challenge_id = 1;
@@ -335,6 +354,7 @@ message Event {
 
 message GetManifestRequest {}
 message GetManifestResponse {
+  bool mls_supported = 7;
   bool attachments_enabled = 6;
   string protocol_version = 1;
   string server_id = 2;
@@ -353,6 +373,7 @@ message Channel {
   bool public_preview = 8;
   // Только для авторизованного read; иначе 0.
   int64 latest_message_sequence = 9;
+  bytes mls_group_id = 10;
 }
 // write требует read, read и manage требуют visible.
 message ChannelPermissions {
@@ -375,6 +396,7 @@ message CreateChannelRequest {
   string view_type = 3;
   int32 position = 4;
   bool public_preview = 5;
+  bytes mls_group_id = 6;
 }
 message UpdateChannelRequest {
   string channel_id = 1;
@@ -455,6 +477,8 @@ message CreateRootRotationRequest {
   bytes new_root_public_key = 3;
   bytes new_device_public_key = 4;
   string profile = 5;
+  repeated string retained_grant_ids = 6;
+  bytes retained_devices_hash = 7;
 }
 message CreateRootRotationResponse {
   string challenge_id = 1;
@@ -511,6 +535,7 @@ message BeginUploadRequest {
   int64 byte_size = 3;
   bytes sha256 = 4;
   string idempotency_key = 5;
+  bool encrypted = 6;
 }
 message BeginUploadResponse { Asset asset = 1; int64 received_bytes = 2; int32 chunk_size = 3; }
 message UploadChunkRequest { string asset_id = 1; int64 offset = 2; bytes data = 3; }
@@ -526,3 +551,54 @@ message ListMyAssetsResponse { repeated Asset assets = 1; string next_cursor = 2
 
 message ListChannelAssetsRequest { string channel_id = 1; string after = 2; string author_id = 3; }
 message ListChannelAssetsResponse { repeated Asset assets = 1; string next_cursor = 2; map<string, string> authors = 3; }
+
+// Сервер доставляет непрозрачные MLS-пакеты. Состав проверяется клиентами.
+service MlsService {
+  rpc RegisterMlsDevice(RegisterMlsDeviceRequest) returns (RegisterMlsDeviceResponse);
+  rpc ListMlsDevices(ListMlsDevicesRequest) returns (ListMlsDevicesResponse);
+  rpc GetMlsChannel(GetMlsChannelRequest) returns (GetMlsChannelResponse);
+  rpc PublishMls(PublishMlsRequest) returns (PublishMlsResponse);
+  rpc ListMlsEnvelopes(ListMlsEnvelopesRequest) returns (ListMlsEnvelopesResponse);
+}
+message MlsDevice {
+  string grant_id = 1;
+  string principal_id = 2;
+  bytes binding = 3;
+  bytes key_package = 4;
+}
+message RegisterMlsDeviceRequest { bytes binding = 1; bytes key_package = 2; }
+message RegisterMlsDeviceResponse { MlsDevice device = 1; }
+message ListMlsDevicesRequest { string channel_id = 1; string after = 2; }
+message ListMlsDevicesResponse { repeated MlsDevice devices = 1; string next_cursor = 2; }
+message GetMlsChannelRequest { string channel_id = 1; }
+message GetMlsChannelResponse { bytes group_id = 1; int64 epoch = 2; repeated MlsDevice devices = 3; }
+message PublishMlsRequest {
+  string channel_id = 1;
+  bytes request_id = 2;
+  int64 expected_epoch = 3;
+  string kind = 4;
+  bytes ciphertext = 5;
+  string add_grant_id = 6;
+  string remove_grant_id = 7;
+  bytes welcome = 8;
+  repeated string attachment_ids = 9;
+  string new_manager_grant_id = 10;
+}
+message MlsEnvelope {
+  int64 sequence = 1;
+  bytes request_id = 2;
+  int64 epoch = 3;
+  string kind = 4;
+  bytes ciphertext = 5;
+  string author_grant_id = 6;
+  string author_id = 7;
+  int64 created_at_unix_ms = 8;
+  string added_grant_id = 9;
+  string removed_grant_id = 10;
+  bytes welcome = 11;
+  repeated MlsDevice roster = 12;
+  string new_manager_grant_id = 13;
+}
+message PublishMlsResponse { MlsEnvelope envelope = 1; }
+message ListMlsEnvelopesRequest { string channel_id = 1; int64 after_sequence = 2; }
+message ListMlsEnvelopesResponse { repeated MlsEnvelope envelopes = 1; int64 next_sequence = 2; }
