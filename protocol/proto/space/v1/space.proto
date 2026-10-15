@@ -263,6 +263,7 @@ message SpaceSettings {
   ServerIcon icon = 6;
   optional int64 storage_limit_bytes = 7;
   optional int64 member_storage_limit_bytes = 8;
+  optional bool attachments_enabled = 9;
 }
 message UpdateSettingsRequest {
   string title = 1;
@@ -273,6 +274,7 @@ message UpdateSettingsRequest {
   ServerIcon icon = 6;
   optional int64 storage_limit_bytes = 7;
   optional int64 member_storage_limit_bytes = 8;
+  optional bool attachments_enabled = 9;
 }
 
 message SubscribeRequest {
@@ -333,6 +335,7 @@ message Event {
 
 message GetManifestRequest {}
 message GetManifestResponse {
+  bool attachments_enabled = 6;
   string protocol_version = 1;
   string server_id = 2;
   repeated Channel channels = 3;
@@ -481,6 +484,7 @@ message UpdateChannelAccessResponse {
 // Полный авторизованный каталог; его изменения не используют курсор сообщений.
 message WatchChannelsRequest { bool include_archived = 1; }
 message WatchChannelsResponse {
+  bool attachments_enabled = 7;
   repeated Channel channels = 1;
   string space_title = 2;
   string role = 3;
