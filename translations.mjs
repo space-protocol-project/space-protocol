@@ -219,9 +219,9 @@ export default {
     "en": "A community is more than a list of messages. It is a place you shape together.",
     "zh": "社区不仅是一串消息，更是大家共同营造的地方。"
   },
-  "Space соединяет собственный сервер и общее приложение. Владелец настраивает пространство, участники общаются. Каналы, приглашения и доступ находятся рядом с разговором.": {
-    "en": "Space brings your own server and a shared app together. The owner configures the space; members connect and talk. Channels, invitations, and access controls sit alongside the conversation.",
-    "zh": "Space 将您自己的服务器与统一应用连接起来。所有者配置空间，成员在其中交流。频道、邀请和访问控制与对话紧密相连。"
+  "Space соединяет собственный сервер и общее приложение. Владелец настраивает пространство, участники общаются. Каналы, приглашения и доступ находятся рядом.": {
+    "en": "Space brings your own server and a shared app together. The owner configures the space; members connect and talk. Channels, invitations, and access controls are close at hand.",
+    "zh": "Space 将您自己的服务器与统一应用连接起来。所有者配置空间，成员在其中交流。频道、邀请和访问控制触手可及。"
   },
   "Без отдельной административной панели. С понятными полномочиями и открытым исходным кодом.": {
     "en": "No separate admin dashboard. Clear permissions and open source code.",
