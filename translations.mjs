@@ -706,5 +706,141 @@ export default {
   "СВОЁ МЕСТО. СВОИ ЛЮДИ.": {
     "en": "YOUR PLACE. YOUR PEOPLE.",
     "zh": "自己的空间，熟悉的人。"
+  },
+  "Скопировать": {
+    "en": "Copy",
+    "zh": "复制"
+  },
+  "Скопировано": {
+    "en": "Copied",
+    "zh": "已复制"
+  },
+  "Выделите и скопируйте команду": {
+    "en": "Select and copy the command",
+    "zh": "请选中并复制命令"
+  },
+  "Своё пространство: шаг за шагом": {
+    "en": "Your own space, step by step",
+    "zh": "一步一步，创建自己的空间"
+  },
+  "Выберите, где будет работать сервер. Участники в обоих случаях заходят через Space.": {
+    "en": "Choose where to run the server. In both cases, members use Space to join.",
+    "zh": "选择服务器运行的位置。无论哪种方式，成员都通过 Space 加入。"
+  },
+  "Способ запуска": {
+    "en": "Setup method",
+    "zh": "启动方式"
+  },
+  "Из приложения": {
+    "en": "From the app",
+    "zh": "通过应用"
+  },
+  "На Linux-сервере": {
+    "en": "On a Linux server",
+    "zh": "在 Linux 服务器上"
+  },
+  "Самый короткий путь: компьютер с Windows, macOS или Linux. Команды и отдельная PostgreSQL не нужны.": {
+    "en": "The shortest path: a Windows, macOS, or Linux computer. No commands or separate PostgreSQL installation needed.",
+    "zh": "最简单的方式：使用 Windows、macOS 或 Linux 电脑，无需输入命令或单独安装 PostgreSQL。"
+  },
+  "Установите и откройте Space": {
+    "en": "Install and open Space",
+    "zh": "安装并打开 Space"
+  },
+  "Скачайте приложение для своей системы. На телефоне можно присоединяться и общаться; сервер запускается на компьютере.": {
+    "en": "Download the app for your system. Phones can join and chat; the server runs on a computer.",
+    "zh": "下载适合您系统的应用。手机可以加入并聊天，服务器则在电脑上运行。"
+  },
+  "Откройте «Эфир» слева": {
+    "en": "Open “Broadcast” on the left",
+    "zh": "打开左侧的“广播”"
+  },
+  "Укажите внешний адрес и порт: публичный IP или домен. Для начала оставьте порт 8443. Если вы за роутером, направьте этот TCP-порт на компьютер.": {
+    "en": "Enter an external address and port: a public IP or domain. Start with port 8443. Behind a router, forward this TCP port to the computer.",
+    "zh": "填写外部地址和端口：公网 IP 或域名。初次可使用 8443 端口。如果通过路由器联网，请将此 TCP 端口转发至该电脑。"
+  },
+  "Нажмите «Выйти в эфир»": {
+    "en": "Select “Go live”",
+    "zh": "点击“开始广播”"
+  },
+  "Space скачает runtime, проверит его и запустит сервер с собственной базой. Дождитесь готовности; повторный запуск сохранит данные.": {
+    "en": "Space downloads and verifies the runtime, then starts the server with its own database. Wait until it is ready; restarting preserves your data.",
+    "zh": "Space 会下载并验证运行环境，然后启动服务器和自带的数据库。等待就绪，重新启动会保留数据。"
+  },
+  "Создайте каналы и пригласите своих": {
+    "en": "Create channels and invite your people",
+    "zh": "创建频道，邀请熟悉的人"
+  },
+  "В выбранном пространстве откройте управление: задайте название, создайте каналы и приглашение. Отправьте участнику ссылку или QR.": {
+    "en": "Open administration for the selected space: set a name, create channels, and create an invitation. Send its link or QR code to a member.",
+    "zh": "打开所选空间的管理界面，设置名称、创建频道和邀请，然后把链接或二维码发给成员。"
+  },
+  "Компьютер должен оставаться включённым. Если у провайдера CGNAT, одного проброса порта недостаточно: нужен публичный адрес, туннель или VPS.": {
+    "en": "Keep the computer on. With CGNAT, port forwarding alone is insufficient: you need a public address, a tunnel, or a VPS.",
+    "zh": "电脑需要保持运行。如果运营商使用 CGNAT，仅转发端口还不够，需要公网地址、隧道或 VPS。"
+  },
+  "Выбрать приложение для компьютера": {
+    "en": "Choose the desktop app",
+    "zh": "选择电脑版应用"
+  },
+  "Для Linux x64 с публичным IP. Текущий путь — создать пространство в приложении и перенести его на VPS: владелец, ключи и данные сохранятся.": {
+    "en": "For Linux x64 with a public IP. Create a space in the app, then move it to your VPS: the owner, keys, and data are preserved.",
+    "zh": "适用于具有公网 IP 的 Linux x64 服务器。先在应用中创建空间，再迁移至 VPS；所有者、密钥和数据都会保留。"
+  },
+  "Нужны SSH-доступ под обычным пользователем, curl, unzip и sha256sum. Замените YOUR_SERVER и YOUR_PUBLIC_IP своими значениями. Пример ниже — для runtime v0.3.2.": {
+    "en": "You need SSH access as a regular user, curl, unzip, and sha256sum. Replace YOUR_SERVER and YOUR_PUBLIC_IP with your values. This example uses runtime v0.3.2.",
+    "zh": "需要普通用户的 SSH 访问权限，以及 curl、unzip 和 sha256sum。请将 YOUR_SERVER 和 YOUR_PUBLIC_IP 替换为实际值。以下示例使用运行环境 v0.3.2。"
+  },
+  "Подготовьте архив на компьютере": {
+    "en": "Prepare the archive on your computer",
+    "zh": "在电脑上准备导出文件"
+  },
+  "Создайте пространство по инструкции выше. В «Эфире» задайте внешний порт и порт прослушивания 8443, интерфейс 0.0.0.0. Нажмите «Экспортировать пространство» и сохраните архив как space-export.zip. Сервер остановится; ключ владельца останется в приложении.": {
+    "en": "Create a space using the steps above. In Broadcast, set the external and listening ports to 8443 and the interface to 0.0.0.0. Select Export space and save it as space-export.zip. The server stops; the owner key stays in the app.",
+    "zh": "按上方步骤创建空间。在“广播”中将外部端口和监听端口都设为 8443，接口设为 0.0.0.0。选择“导出空间”，保存为 space-export.zip。服务器会停止，所有者密钥仍留在应用中。"
+  },
+  "На VPS скачайте проверенный runtime": {
+    "en": "Download and verify the runtime on the VPS",
+    "zh": "在 VPS 上下载并验证运行环境"
+  },
+  "Подключитесь по SSH и выполните команды. Проверка SHA-256 должна завершиться успешно до распаковки. PostgreSQL уже входит в комплект; запускать её от root нельзя.": {
+    "en": "Connect over SSH and run these commands. SHA-256 verification must succeed before unpacking. PostgreSQL is included; do not run it as root.",
+    "zh": "通过 SSH 连接后执行以下命令。SHA-256 验证成功后才能解压。PostgreSQL 已包含在内，不能以 root 身份运行。"
+  },
+  "Скопируйте архив на VPS": {
+    "en": "Copy the archive to the VPS",
+    "zh": "把导出文件复制到 VPS"
+  },
+  "В отдельном терминале на компьютере, из папки с архивом. YOUR_SERVER — SSH-адрес вида user@host. Архив содержит данные и ключи сервера: передавайте его только на свой сервер.": {
+    "en": "In a separate terminal on your computer, from the archive folder. YOUR_SERVER is an SSH destination such as user@host. The archive contains server data and keys: send it only to your own server.",
+    "zh": "在电脑上另开终端，进入导出文件所在目录。YOUR_SERVER 是 user@host 形式的 SSH 地址。导出文件包含服务器数据和密钥，请只发送到自己的服务器。"
+  },
+  "Импортируйте пространство": {
+    "en": "Import the space",
+    "zh": "导入空间"
+  },
+  "Снова на VPS, в ~/space. Укажите публичный IP. Каталог home должен быть новым; существующие данные команда не перезаписывает.": {
+    "en": "Back on the VPS, in ~/space. Enter the public IP. The home directory must be new; existing data is not overwritten.",
+    "zh": "回到 VPS 的 ~/space 目录，填写公网 IP。home 目录必须是新的，命令不会覆盖已有数据。"
+  },
+  "Откройте порт и запустите": {
+    "en": "Open the port and start the server",
+    "zh": "开放端口并启动"
+  },
+  "Разрешите входящий TCP 8443 в файрволе VPS и панели провайдера. HTTP 8080, gRPC 9090 и PostgreSQL оставьте локальными. Затем запустите команду.": {
+    "en": "Allow incoming TCP 8443 in the VPS firewall and provider panel. Keep HTTP 8080, gRPC 9090, and PostgreSQL local. Then start the server.",
+    "zh": "在 VPS 防火墙和服务商面板中允许入站 TCP 8443。HTTP 8080、gRPC 9090 和 PostgreSQL 保持仅本机访问。然后执行启动命令。"
+  },
+  "Вернитесь в приложение": {
+    "en": "Return to the app",
+    "zh": "回到应用"
+  },
+  "Подключитесь к https://YOUR_PUBLIC_IP:8443 с прежним TLS-отпечатком, чтобы приложение нашло прежнюю идентичность владельца. Создайте новое приглашение с адресом VPS. В этом примере сервер работает в текущем терминале; Ctrl+C штатно остановит его.": {
+    "en": "Connect to https://YOUR_PUBLIC_IP:8443 with the existing TLS fingerprint so the app finds the owner’s existing identity. Create a new invitation with the VPS address. This example runs in the current terminal; Ctrl+C stops it cleanly.",
+    "zh": "使用原来的 TLS 指纹连接到 https://YOUR_PUBLIC_IP:8443，应用会找到原有的所有者身份。创建包含 VPS 地址的新邀请。此示例中的服务器在当前终端运行，按 Ctrl+C 可正常停止。"
+  },
+  "Подробнее о переносе и восстановлении": {
+    "en": "More about transfer and recovery",
+    "zh": "了解迁移与恢复的详细说明"
   }
 };
