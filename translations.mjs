@@ -43,9 +43,9 @@ export default {
     "en": "Roadmap",
     "zh": "路线图"
   },
-  "Открытый проект · Выпуск v0.2.9": {
-    "en": "Open project · Release v0.2.9",
-    "zh": "开源项目 · v0.2.9 版本"
+  "Открытый проект · Выпуск v0.3.2": {
+    "en": "Open project · Release v0.3.2",
+    "zh": "开源项目 · v0.3.2 版本"
   },
   "СВОЁ": {
     "en": "YOUR OWN",
@@ -115,9 +115,9 @@ export default {
     "en": "DOWNLOAD SPACE",
     "zh": "下载 SPACE"
   },
-  "v0.2.9 · 15 ОКТЯБРЯ 2026": {
-    "en": "v0.2.9 · OCTOBER 15, 2026",
-    "zh": "v0.2.9 · 2026年10月15日"
+  "v0.3.2 · 16 ОКТЯБРЯ 2026": {
+    "en": "v0.3.2 · OCTOBER 16, 2026",
+    "zh": "v0.3.2 · 2026年10月16日"
   },
   "Ваше пространство.": {
     "en": "Your space.",
@@ -263,9 +263,9 @@ export default {
     "en": "The core workflows are already implemented.",
     "zh": "核心流程已实现。"
   },
-  "Экспериментальный v0.2.9 уже доступен.": {
-    "en": "Experimental v0.2.9 is available now.",
-    "zh": "实验性版本 v0.2.9 现已发布。"
+  "Экспериментальный v0.3.2 уже доступен.": {
+    "en": "Experimental v0.3.2 is available now.",
+    "zh": "实验性版本 v0.3.2 现已发布。"
   },
   "Общение по каналам": {
     "en": "Channel conversations",
