@@ -1,4 +1,4 @@
-import translations from './translations.mjs?v=20261016-release033';
+import translations from './translations.mjs?v=20261016-systemd';
 
 const supported = ['ru', 'zh', 'en'];
 const storageKey = 'space.site.language';

@@ -910,5 +910,21 @@ export default {
   "Запуск одной командой, домены, IPv6 и диагностика уже доступны. Дальше — автоматическая настройка доступности и relay.": {
     "en": "One-command setup, domains, IPv6 and diagnostics are available. Next: automatic connectivity setup and relay.",
     "zh": "已支持一条命令启动、域名、IPv6 和诊断。接下来将加入自动网络配置和中继。"
+  },
+  "Нужны Linux x64 с systemd, обычный пользователь (не root), curl, unzip и sha256sum. Приложение и runtime — v0.3.3 или новее.": {
+    "en": "Requires Linux x64 with systemd, a regular user (not root), curl, unzip and sha256sum. Use app and runtime v0.3.3 or later.",
+    "zh": "需要带 systemd 的 Linux x64、普通用户（非 root）、curl、unzip 和 sha256sum。应用与 runtime 均需 v0.3.3 或更新版本。"
+  },
+  "Подключитесь по SSH и вставьте команду. Она скачает runtime, проверит SHA-256 и установит службу systemd с собственной PostgreSQL. Внешний IP определится автоматически.": {
+    "en": "Connect over SSH and paste the command. It downloads the runtime, verifies SHA-256 and installs a systemd service with its own PostgreSQL. The public IP is detected automatically.",
+    "zh": "通过 SSH 连接并粘贴命令。它会下载 runtime、校验 SHA-256，并安装带独立 PostgreSQL 的 systemd 服务。公网 IP 会自动检测。"
+  },
+  "После сообщения о готовности можно закрыть SSH: сервер продолжит работу и запустится после перезагрузки. Статус: systemctl --user status space-server. Остановка: systemctl --user stop space-server. Данные сохраняются.": {
+    "en": "Once ready, you can close SSH: the server keeps running and starts after reboot. Status: systemctl --user status space-server. Stop: systemctl --user stop space-server. Your data is preserved.",
+    "zh": "收到就绪提示后即可关闭 SSH：服务器会继续运行，并在重启后自动启动。查看状态：systemctl --user status space-server。停止：systemctl --user stop space-server。数据会保留。"
+  },
+  "Если установщик попросит включить автозапуск пользователя, выполните sudo loginctl enable-linger \"$USER\" и повторите команду. Прежний запуск в терминале сначала остановите через Ctrl+C.": {
+    "en": "If the installer asks to enable user autostart, run sudo loginctl enable-linger \"$USER\" and repeat the command. Stop any previous foreground server with Ctrl+C first.",
+    "zh": "如果安装程序要求启用用户自动启动，请运行 sudo loginctl enable-linger \"$USER\" 后重试。请先用 Ctrl+C 停止之前在终端中运行的服务器。"
   }
 };
