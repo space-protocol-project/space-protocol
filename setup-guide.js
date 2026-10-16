@@ -48,7 +48,12 @@
   for (const button of reveal.querySelectorAll('[data-copy]')) {
     const labels = [...button.querySelectorAll('span')];
     let timer;
-    function label(index) { labels.forEach((span, i) => { span.hidden = i !== index; }); }
+    function label(index) {
+      labels.forEach((span, i) => { span.hidden = i !== index; });
+      button.classList.toggle('is-copied', index === 1);
+      button.classList.toggle('copy-failed', index === 2);
+    }
+    button.setAttribute('aria-live', 'polite');
     button.addEventListener('click', async () => {
       clearTimeout(timer);
       try {
