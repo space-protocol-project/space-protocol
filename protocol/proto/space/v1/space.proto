@@ -36,6 +36,7 @@ service ChannelService {
 }
 
 service ContentService {
+  rpc SetReaction(SetReactionRequest) returns (SetReactionResponse);
   rpc UpdateContent(UpdateContentRequest) returns (UpdateContentResponse) {
     option (google.api.http) = { patch: "/v1/channels/{channel_id}/contents/{id}" body: "*" };
   }
@@ -440,6 +441,7 @@ message Content {
   int64 updated_at_unix_ms = 8;
   bool deleted = 9;
   repeated Asset attachments = 10;
+  repeated Reaction reactions = 11;
 }
 message UpdateContentRequest {
   string channel_id = 1;
@@ -602,3 +604,17 @@ message MlsEnvelope {
 message PublishMlsResponse { MlsEnvelope envelope = 1; }
 message ListMlsEnvelopesRequest { string channel_id = 1; int64 after_sequence = 2; }
 message ListMlsEnvelopesResponse { repeated MlsEnvelope envelopes = 1; int64 next_sequence = 2; }
+
+// Один участник учитывается один раз, независимо от числа устройств.
+message Reaction {
+  string emoji = 1;
+  repeated string principal_ids = 2;
+}
+message SetReactionRequest {
+  string channel_id = 1;
+  string id = 2;
+  string emoji = 3;
+  bool active = 4;
+  int64 expected_revision = 5;
+}
+message SetReactionResponse { Content content = 1; }

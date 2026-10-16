@@ -12,6 +12,9 @@
       "name": "ContentService"
     },
     {
+      "name": "AssetService"
+    },
+    {
       "name": "AuthService"
     },
     {
@@ -22,6 +25,9 @@
     },
     {
       "name": "MembershipService"
+    },
+    {
+      "name": "MlsService"
     }
   ],
   "consumes": [
@@ -1209,6 +1215,91 @@
           "AdminService"
         ]
       }
+    },
+    "/v1/channels/{channelId}/contents/{id}": {
+      "delete": {
+        "operationId": "ContentService_DeleteContent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteContentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "expectedRevision",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ContentService"
+        ]
+      },
+      "patch": {
+        "operationId": "ContentService_UpdateContent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateContentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ContentServiceUpdateContentBody"
+            }
+          }
+        ],
+        "tags": [
+          "ContentService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -1227,6 +1318,13 @@
         "expectedRevision": {
           "type": "string",
           "format": "int64"
+        },
+        "storageLimitBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "resetStorageLimit": {
+          "type": "boolean"
         }
       }
     },
@@ -1276,6 +1374,24 @@
         },
         "idempotencyKey": {
           "type": "string"
+        },
+        "attachmentIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ContentServiceUpdateContentBody": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
@@ -1323,6 +1439,58 @@
         }
       }
     },
+    "v1Asset": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "channelId": {
+          "type": "string"
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "byteSize": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sha256": {
+          "type": "string",
+          "format": "byte"
+        },
+        "mediaType": {
+          "type": "string"
+        },
+        "createdAtUnixMs": {
+          "type": "string",
+          "format": "int64"
+        },
+        "storageGroup": {
+          "type": "string",
+          "description": "Серверная группа хранения: principal_id/YYYY/MM/DD, дата UTC."
+        }
+      }
+    },
+    "v1BeginUploadResponse": {
+      "type": "object",
+      "properties": {
+        "asset": {
+          "$ref": "#/definitions/v1Asset"
+        },
+        "receivedBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "chunkSize": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "v1CancelPairingRequest": {
       "type": "object",
       "properties": {
@@ -1332,6 +1500,9 @@
       }
     },
     "v1CancelPairingResponse": {
+      "type": "object"
+    },
+    "v1CancelUploadResponse": {
       "type": "object"
     },
     "v1Channel": {
@@ -1371,6 +1542,10 @@
           "type": "string",
           "format": "int64",
           "description": "Только для авторизованного read; иначе 0."
+        },
+        "mlsGroupId": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },
@@ -1511,6 +1686,14 @@
         }
       }
     },
+    "v1CompleteUploadResponse": {
+      "type": "object",
+      "properties": {
+        "asset": {
+          "$ref": "#/definitions/v1Asset"
+        }
+      }
+    },
     "v1Content": {
       "type": "object",
       "properties": {
@@ -1534,6 +1717,31 @@
           "type": "string",
           "format": "int64",
           "description": "Серверное время создания в миллисекундах Unix; 0 означает неизвестное время."
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "updatedAtUnixMs": {
+          "type": "string",
+          "format": "int64"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Asset"
+          }
+        },
+        "reactions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Reaction"
+          }
         }
       }
     },
@@ -1583,6 +1791,16 @@
           "type": "string",
           "format": "byte",
           "description": "Клиент проверяет поля и восстанавливает байты по фиксированному профилю."
+        },
+        "rootHistory": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1RootHistoryProof"
+          }
+        },
+        "retentionProof": {
+          "$ref": "#/definitions/v1RetentionProof"
         }
       }
     },
@@ -1604,6 +1822,10 @@
         },
         "publicPreview": {
           "type": "boolean"
+        },
+        "mlsGroupId": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },
@@ -1699,6 +1921,16 @@
         },
         "profile": {
           "type": "string"
+        },
+        "retainedGrantIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "retainedDevicesHash": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },
@@ -1716,6 +1948,14 @@
     },
     "v1DeleteChannelResponse": {
       "type": "object"
+    },
+    "v1DeleteContentResponse": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "$ref": "#/definitions/v1Content"
+        }
+      }
     },
     "v1DeviceGrant": {
       "type": "object",
@@ -1745,6 +1985,51 @@
         },
         "recovery": {
           "type": "boolean"
+        },
+        "authEpoch": {
+          "type": "string",
+          "format": "int64"
+        },
+        "signatureKind": {
+          "type": "string"
+        },
+        "registrationTranscript": {
+          "type": "string",
+          "format": "byte"
+        },
+        "signature": {
+          "type": "string",
+          "format": "byte"
+        },
+        "parentTranscript": {
+          "type": "string",
+          "format": "byte"
+        },
+        "parentSignature": {
+          "type": "string",
+          "format": "byte"
+        },
+        "retentionProof": {
+          "$ref": "#/definitions/v1RetentionProof"
+        },
+        "retainable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1DownloadChunkResponse": {
+      "type": "object",
+      "properties": {
+        "asset": {
+          "$ref": "#/definitions/v1Asset"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
+        },
+        "nextOffset": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
@@ -1784,6 +2069,12 @@
     "v1GetManifestResponse": {
       "type": "object",
       "properties": {
+        "mlsSupported": {
+          "type": "boolean"
+        },
+        "attachmentsEnabled": {
+          "type": "boolean"
+        },
         "protocolVersion": {
           "type": "string"
         },
@@ -1810,6 +2101,26 @@
       "properties": {
         "member": {
           "$ref": "#/definitions/v1Member"
+        }
+      }
+    },
+    "v1GetMlsChannelResponse": {
+      "type": "object",
+      "properties": {
+        "groupId": {
+          "type": "string",
+          "format": "byte"
+        },
+        "epoch": {
+          "type": "string",
+          "format": "int64"
+        },
+        "devices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1MlsDevice"
+          }
         }
       }
     },
@@ -1871,6 +2182,27 @@
         },
         "revoked": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1ListChannelAssetsResponse": {
+      "type": "object",
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Asset"
+          }
+        },
+        "nextCursor": {
+          "type": "string"
+        },
+        "authors": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       }
     },
@@ -1958,6 +2290,52 @@
         }
       }
     },
+    "v1ListMlsDevicesResponse": {
+      "type": "object",
+      "properties": {
+        "devices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1MlsDevice"
+          }
+        },
+        "nextCursor": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ListMlsEnvelopesResponse": {
+      "type": "object",
+      "properties": {
+        "envelopes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1MlsEnvelope"
+          }
+        },
+        "nextSequence": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ListMyAssetsResponse": {
+      "type": "object",
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Asset"
+          }
+        },
+        "nextCursor": {
+          "type": "string"
+        }
+      }
+    },
     "v1LogoutRequest": {
       "type": "object"
     },
@@ -1979,6 +2357,86 @@
         "revision": {
           "type": "string",
           "format": "int64"
+        },
+        "storageLimitBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      }
+    },
+    "v1MlsDevice": {
+      "type": "object",
+      "properties": {
+        "grantId": {
+          "type": "string"
+        },
+        "principalId": {
+          "type": "string"
+        },
+        "binding": {
+          "type": "string",
+          "format": "byte"
+        },
+        "keyPackage": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1MlsEnvelope": {
+      "type": "object",
+      "properties": {
+        "sequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "requestId": {
+          "type": "string",
+          "format": "byte"
+        },
+        "epoch": {
+          "type": "string",
+          "format": "int64"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "ciphertext": {
+          "type": "string",
+          "format": "byte"
+        },
+        "authorGrantId": {
+          "type": "string"
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "createdAtUnixMs": {
+          "type": "string",
+          "format": "int64"
+        },
+        "addedGrantId": {
+          "type": "string"
+        },
+        "removedGrantId": {
+          "type": "string"
+        },
+        "welcome": {
+          "type": "string",
+          "format": "byte"
+        },
+        "roster": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1MlsDevice"
+          }
+        },
+        "newManagerGrantId": {
+          "type": "string"
         }
       }
     },
@@ -2101,6 +2559,74 @@
     "v1ProposePairingResponse": {
       "type": "object"
     },
+    "v1PublishMlsResponse": {
+      "type": "object",
+      "properties": {
+        "envelope": {
+          "$ref": "#/definitions/v1MlsEnvelope"
+        }
+      }
+    },
+    "v1Reaction": {
+      "type": "object",
+      "properties": {
+        "emoji": {
+          "type": "string"
+        },
+        "principalIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Один участник учитывается один раз, независимо от числа устройств."
+    },
+    "v1RegisterMlsDeviceResponse": {
+      "type": "object",
+      "properties": {
+        "device": {
+          "$ref": "#/definitions/v1MlsDevice"
+        }
+      }
+    },
+    "v1RetentionProof": {
+      "type": "object",
+      "properties": {
+        "grantId": {
+          "type": "string"
+        },
+        "publicKey": {
+          "type": "string",
+          "format": "byte"
+        },
+        "scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "index": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "siblings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "byte"
+          }
+        }
+      }
+    },
     "v1RevokeCurrentDeviceRequest": {
       "type": "object"
     },
@@ -2142,6 +2668,14 @@
         }
       }
     },
+    "v1SetReactionResponse": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "$ref": "#/definitions/v1Content"
+        }
+      }
+    },
     "v1SpaceSettings": {
       "type": "object",
       "properties": {
@@ -2163,6 +2697,17 @@
         },
         "icon": {
           "$ref": "#/definitions/v1ServerIcon"
+        },
+        "storageLimitBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "memberStorageLimitBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "attachmentsEnabled": {
+          "type": "boolean"
         }
       }
     },
@@ -2207,7 +2752,23 @@
         }
       }
     },
+    "v1UpdateContentResponse": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "$ref": "#/definitions/v1Content"
+        }
+      }
+    },
     "v1UpdateMemberResponse": {
+      "type": "object",
+      "properties": {
+        "member": {
+          "$ref": "#/definitions/v1Member"
+        }
+      }
+    },
+    "v1UpdateProfileResponse": {
       "type": "object",
       "properties": {
         "member": {
@@ -2236,6 +2797,17 @@
         },
         "icon": {
           "$ref": "#/definitions/v1ServerIcon"
+        },
+        "storageLimitBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "memberStorageLimitBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "attachmentsEnabled": {
+          "type": "boolean"
         }
       }
     },
@@ -2244,6 +2816,15 @@
       "properties": {
         "settings": {
           "$ref": "#/definitions/v1SpaceSettings"
+        }
+      }
+    },
+    "v1UploadChunkResponse": {
+      "type": "object",
+      "properties": {
+        "receivedBytes": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
@@ -2261,6 +2842,9 @@
     "v1WatchChannelsResponse": {
       "type": "object",
       "properties": {
+        "attachmentsEnabled": {
+          "type": "boolean"
+        },
         "channels": {
           "type": "array",
           "items": {
