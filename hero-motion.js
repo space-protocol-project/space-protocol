@@ -1,4 +1,5 @@
 import {moveOrbit} from './orbit-physics.mjs?v=20261016-vortex';
+import {createSkyScenes} from './hero-scenes.mjs?v=20261016-sky';
 
 (() => {
   const hero = document.querySelector('.hero');
@@ -12,7 +13,12 @@ import {moveOrbit} from './orbit-physics.mjs?v=20261016-vortex';
   const back = backCanvas.getContext('2d');
   if (!back) return;
   backCanvas.className = 'hero-particles hero-particles-back';
-  hero.prepend(backCanvas, canvas);
+  const sceneCanvas = canvas.cloneNode();
+  const scene = sceneCanvas.getContext('2d');
+  if (!scene) return;
+  sceneCanvas.className = 'hero-particles hero-scenes';
+  hero.prepend(backCanvas, sceneCanvas, canvas);
+  const sky = createSkyScenes();
 
   const art = hero.querySelector('.hero-art');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -32,7 +38,7 @@ import {moveOrbit} from './orbit-physics.mjs?v=20261016-vortex';
     width = hero.clientWidth;
     height = hero.clientHeight;
     const ratio = Math.min(devicePixelRatio || 1, 1.5);
-    for (const surface of [canvas, backCanvas]) {
+    for (const surface of [canvas, backCanvas, sceneCanvas]) {
       surface.width = Math.round(width * ratio);
       surface.height = Math.round(height * ratio);
       surface.getContext('2d').setTransform(ratio, 0, 0, ratio, 0, 0);
@@ -122,8 +128,10 @@ import {moveOrbit} from './orbit-physics.mjs?v=20261016-vortex';
   function render(step) {
     context.clearRect(0, 0, width, height);
     back.clearRect(0, 0, width, height);
+    scene.clearRect(0, 0, width, height);
     drawGlow();
     particles.forEach(drawParticle);
+    sky.draw({back, front: scene, orbit, width, height, time, still: reduced.matches});
     orbits.forEach(particle => drawOrbit(particle, step));
   }
 
@@ -148,6 +156,7 @@ import {moveOrbit} from './orbit-physics.mjs?v=20261016-vortex';
     resetPointer();
     context.clearRect(0, 0, width, height);
     back.clearRect(0, 0, width, height);
+    scene.clearRect(0, 0, width, height);
     if (!visible || document.hidden) return;
     if (reduced.matches) {
       render(0);

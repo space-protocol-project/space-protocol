@@ -71,6 +71,7 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 .hero-particles{z-index:2;mix-blend-mode:difference}
 
 .hero-particles-back{z-index:0;mix-blend-mode:normal}
+.hero-scenes{z-index:2;mix-blend-mode:normal}.hero-copy{z-index:3}
 
 .setup-actions{display:flex;justify-content:flex-end;margin-top:32px}.setup-actions>.ink-link{max-width:100%;text-align:left}
 #setup-server>.ink-link{margin-top:32px}
