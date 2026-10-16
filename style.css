@@ -64,3 +64,6 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 .idea-intro{min-width:0}.idea-illustration{margin:28px 0 0}.idea-illustration img{display:block;width:100%;height:auto}
 
 .hero{isolation:isolate;overflow:hidden}.hero-particles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1}.hero-inner,.hero-bottom{position:relative}.hero-art>img{translate:calc(var(--orbit-x,0px)*.35) calc(var(--orbit-y,0px)*.35);transition:translate .7s ease-out}.art-ring{translate:var(--orbit-x,0px) var(--orbit-y,0px);transition:translate .9s ease-out}.art-ring:before{animation:space-orbit 26s ease-in-out infinite alternate}@keyframes space-orbit{from{rotate:-6deg}to{rotate:9deg}}@media(prefers-reduced-motion:reduce){.hero-particles{display:none}.hero-art>img,.art-ring{translate:none;transition:none}.art-ring:before{animation:none}}
+
+.hero-art .art-ring{border:0;translate:none}.hero-art .art-ring:before{display:none}
+@media(prefers-reduced-motion:reduce){.hero-particles{display:block}}
