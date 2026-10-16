@@ -36,6 +36,9 @@ service ChannelService {
 }
 
 service ContentService {
+  // Постоянная очередь использует отдельный RPC: старый runtime отклоняет
+  // его до изменения данных, а не игнорирует неизвестный ключ запроса.
+  rpc ApplyContentMutation(ApplyContentMutationRequest) returns (ApplyContentMutationResponse);
   rpc SetReaction(SetReactionRequest) returns (SetReactionResponse);
   rpc UpdateContent(UpdateContentRequest) returns (UpdateContentResponse) {
     option (google.api.http) = { patch: "/v1/channels/{channel_id}/contents/{id}" body: "*" };
@@ -448,14 +451,24 @@ message UpdateContentRequest {
   string id = 2;
   string text = 3;
   int64 expected_revision = 4;
+  string idempotency_key = 5;
 }
-message UpdateContentResponse { Content content = 1; }
+message UpdateContentResponse {
+  Content content = 1;
+  string idempotency_key = 2;
+  int64 applied_revision = 3;
+}
 message DeleteContentRequest {
   string channel_id = 1;
   string id = 2;
   int64 expected_revision = 3;
+  string idempotency_key = 4;
 }
-message DeleteContentResponse { Content content = 1; }
+message DeleteContentResponse {
+  Content content = 1;
+  string idempotency_key = 2;
+  int64 applied_revision = 3;
+}
 message CreateContentRequest {
   string channel_id = 1;
   string text = 2;
@@ -616,5 +629,24 @@ message SetReactionRequest {
   string emoji = 3;
   bool active = 4;
   int64 expected_revision = 5;
+  string idempotency_key = 6;
 }
-message SetReactionResponse { Content content = 1; }
+message SetReactionResponse {
+  Content content = 1;
+  string idempotency_key = 2;
+  int64 applied_revision = 3;
+}
+
+message ApplyContentMutationRequest {
+  oneof action {
+    UpdateContentRequest update = 1;
+    DeleteContentRequest delete = 2;
+    SetReactionRequest reaction = 3;
+  }
+}
+message ApplyContentMutationResponse {
+  Content content = 1;
+  string idempotency_key = 2;
+  // Версия именно этого действия; content может содержать более новую версию.
+  int64 applied_revision = 3;
+}

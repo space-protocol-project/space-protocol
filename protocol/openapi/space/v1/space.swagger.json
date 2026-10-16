@@ -1252,6 +1252,12 @@
             "required": false,
             "type": "string",
             "format": "int64"
+          },
+          {
+            "name": "idempotencyKey",
+            "in": "query",
+            "required": false,
+            "type": "string"
           }
         ],
         "tags": [
@@ -1392,6 +1398,9 @@
         "expectedRevision": {
           "type": "string",
           "format": "int64"
+        },
+        "idempotencyKey": {
+          "type": "string"
         }
       }
     },
@@ -1436,6 +1445,22 @@
       "properties": {
         "member": {
           "$ref": "#/definitions/v1Member"
+        }
+      }
+    },
+    "v1ApplyContentMutationResponse": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "$ref": "#/definitions/v1Content"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        },
+        "appliedRevision": {
+          "type": "string",
+          "format": "int64",
+          "description": "Версия именно этого действия; content может содержать более новую версию."
         }
       }
     },
@@ -1949,11 +1974,36 @@
     "v1DeleteChannelResponse": {
       "type": "object"
     },
+    "v1DeleteContentRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        }
+      }
+    },
     "v1DeleteContentResponse": {
       "type": "object",
       "properties": {
         "content": {
           "$ref": "#/definitions/v1Content"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        },
+        "appliedRevision": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
@@ -2668,11 +2718,42 @@
         }
       }
     },
+    "v1SetReactionRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        }
+      }
+    },
     "v1SetReactionResponse": {
       "type": "object",
       "properties": {
         "content": {
           "$ref": "#/definitions/v1Content"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        },
+        "appliedRevision": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
@@ -2752,11 +2833,39 @@
         }
       }
     },
+    "v1UpdateContentRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        }
+      }
+    },
     "v1UpdateContentResponse": {
       "type": "object",
       "properties": {
         "content": {
           "$ref": "#/definitions/v1Content"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        },
+        "appliedRevision": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
