@@ -60,3 +60,5 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 @media(max-width:360px){.section h2{font-size:34px;letter-spacing:-1px}}
 
 .language-picker option{background:var(--ink);color:var(--paper)}
+
+.idea-intro{min-width:0}.idea-illustration{margin:28px 0 0}.idea-illustration img{display:block;width:100%;height:auto}
