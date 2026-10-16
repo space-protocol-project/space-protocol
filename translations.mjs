@@ -31,9 +31,9 @@ export default {
     "en": "Roadmap",
     "zh": "路线图"
   },
-  "Открытый проект · Выпуск v0.3.2": {
-    "en": "Open project · Release v0.3.2",
-    "zh": "开源项目 · v0.3.2 版本"
+  "Открытый проект · Выпуск v0.3.3": {
+    "en": "Open project · Release v0.3.3",
+    "zh": "开源项目 · v0.3.3 版本"
   },
   "СВОЁ": {
     "en": "YOUR OWN",
@@ -83,9 +83,9 @@ export default {
     "en": "DOWNLOAD SPACE",
     "zh": "下载 SPACE"
   },
-  "v0.3.2 · 16 ОКТЯБРЯ 2026": {
-    "en": "v0.3.2 · OCTOBER 16, 2026",
-    "zh": "v0.3.2 · 2026年10月16日"
+  "v0.3.3 · 16 ОКТЯБРЯ 2026": {
+    "en": "v0.3.3 · OCTOBER 16, 2026",
+    "zh": "v0.3.3 · 2026年10月16日"
   },
   "Ваше пространство.": {
     "en": "Your space.",
@@ -787,9 +787,9 @@ export default {
     "en": "For Linux x64 with a public IP. Create a space in the app, then move it to your VPS: the owner, keys, and data are preserved.",
     "zh": "适用于具有公网 IP 的 Linux x64 服务器。先在应用中创建空间，再迁移至 VPS；所有者、密钥和数据都会保留。"
   },
-  "Нужны SSH-доступ под обычным пользователем, curl, unzip и sha256sum. Замените YOUR_SERVER и YOUR_PUBLIC_IP своими значениями. Пример ниже — для runtime v0.3.2.": {
-    "en": "You need SSH access as a regular user, curl, unzip, and sha256sum. Replace YOUR_SERVER and YOUR_PUBLIC_IP with your values. This example uses runtime v0.3.2.",
-    "zh": "需要普通用户的 SSH 访问权限，以及 curl、unzip 和 sha256sum。请将 YOUR_SERVER 和 YOUR_PUBLIC_IP 替换为实际值。以下示例使用运行环境 v0.3.2。"
+  "Нужны SSH-доступ под обычным пользователем, curl, unzip и sha256sum. Замените YOUR_SERVER и YOUR_PUBLIC_IP своими значениями. Пример ниже — для runtime v0.3.3.": {
+    "en": "You need SSH access as a regular user, curl, unzip, and sha256sum. Replace YOUR_SERVER and YOUR_PUBLIC_IP with your values. This example uses runtime v0.3.3.",
+    "zh": "需要普通用户的 SSH 访问权限，以及 curl、unzip 和 sha256sum。请将 YOUR_SERVER 和 YOUR_PUBLIC_IP 替换为实际值。以下示例使用运行环境 v0.3.3。"
   },
   "Подготовьте архив на компьютере": {
     "en": "Prepare the archive on your computer",
@@ -842,5 +842,73 @@ export default {
   "Создайте пространство по инструкции выше. В «Эфире» остановите сервер. Задайте внешний порт 8443; в «На этом компьютере» выберите порт 8443 и «IPv4», затем «Сохранить адреса». Экспортируйте пространство как space-export.zip. Ключ владельца останется в приложении.": {
     "en": "Create a space using the steps above. Stop the server in Broadcast. Set the external port to 8443; under On this computer, select port 8443 and IPv4, then Save addresses. Export the space as space-export.zip. The owner key stays in the app.",
     "zh": "按上方步骤创建空间。在“广播”中停止服务器，将外部端口设为 8443；在“在此电脑上”中选择端口 8443 和 IPv4，然后保存地址。将空间导出为 space-export.zip。所有者密钥仍留在应用中。"
+  },
+  "Свое пространство на Linux-сервере — одной командой. Создавать его на компьютере заранее не нужно.": {
+    "en": "Your own space on a Linux server, with one command. No need to create it on your computer first.",
+    "zh": "一条命令即可在 Linux 服务器上创建自己的空间，无需先在电脑上创建。"
+  },
+  "Нужны Linux x64, обычный пользователь (не root), curl, unzip и sha256sum. Приложение и runtime — v0.3.3 или новее.": {
+    "en": "Requires Linux x64, a regular user (not root), curl, unzip and sha256sum. Use app and runtime v0.3.3 or later.",
+    "zh": "需要 Linux x64、普通用户（非 root）、curl、unzip 和 sha256sum。应用与 runtime 均需 v0.3.3 或更新版本。"
+  },
+  "Откройте порт сервера": {
+    "en": "Open the server port",
+    "zh": "开放服务器端口"
+  },
+  "Разрешите входящий TCP 8443 в файрволе и панели провайдера. Нужен публично доступный IP или домен; за CGNAT потребуется туннель или VPS.": {
+    "en": "Allow incoming TCP 8443 in the firewall and your hosting provider settings. You need a publicly reachable IP or domain; behind CGNAT, use a tunnel or VPS.",
+    "zh": "在防火墙和服务商面板中允许入站 TCP 8443。需要可公开访问的 IP 或域名；处于 CGNAT 后方时需使用隧道或 VPS。"
+  },
+  "Запустите одну команду": {
+    "en": "Run one command",
+    "zh": "运行一条命令"
+  },
+  "Подключитесь по SSH и вставьте команду. Она скачает runtime, проверит SHA-256 и запустит сервер с собственной PostgreSQL. Внешний IP определится автоматически.": {
+    "en": "Connect over SSH and paste the command. It downloads the runtime, verifies SHA-256 and starts the server with its own PostgreSQL. The public IP is detected automatically.",
+    "zh": "通过 SSH 连接并粘贴命令。它会下载 runtime、校验 SHA-256，并启动带有独立 PostgreSQL 的服务器。公网 IP 会自动检测。"
+  },
+  "Войдите с компьютера или телефона": {
+    "en": "Join from your computer or phone",
+    "zh": "从电脑或手机进入"
+  },
+  "В терминале появится одноразовая ссылка настройки. В Space откройте подключение, вставьте ссылку и подтвердите вход. Первый вошедший по ней станет владельцем. Ссылка действует 15 минут — не публикуйте её.": {
+    "en": "The terminal shows a one-time setup link. In Space, open the connection screen, paste the link and confirm. The first person to join through it becomes the owner. The link expires in 15 minutes: keep it private.",
+    "zh": "终端会显示一次性设置链接。在 Space 中打开连接界面，粘贴链接并确认。第一个通过此链接进入的人将成为所有者。链接 15 分钟后失效，请勿公开。"
+  },
+  "Пригласите людей и назначьте администраторов": {
+    "en": "Invite people and appoint administrators",
+    "zh": "邀请成员并设置管理员"
+  },
+  "Создайте приглашение в управлении пространством. В разделе участников владелец может назначить роль «Администратор» нескольким людям. Они смогут управлять пространством из приложения, в том числе на Android.": {
+    "en": "Create an invitation in space management. In the members section, the owner can assign the Administrator role to multiple people. They can manage the space from the app, including Android.",
+    "zh": "在空间管理中创建邀请。所有者可以在成员列表中将多人设为管理员。他们可以通过应用管理空间，包括 Android 应用。"
+  },
+  "Нужен свой домен или другой порт?": {
+    "en": "Need your own domain or a different port?",
+    "zh": "需要自己的域名或其他端口？"
+  },
+  "Укажите адрес явно. В этом примере откройте TCP 9443; DNS домена должен указывать на сервер.": {
+    "en": "Set the address explicitly. For this example, allow TCP 9443 and point the domain DNS to your server.",
+    "zh": "请明确指定地址。本例需开放 TCP 9443，并将域名 DNS 指向服务器。"
+  },
+  "Сервер работает в текущем терминале. Ctrl+C штатно остановит его. Повторный запуск команды сохранит пространство, владельца и данные. Для новой ссылки до первого входа перезапустите сервер.": {
+    "en": "The server runs in the current terminal. Ctrl+C stops it cleanly. Running the command again preserves your space, owner and data. Restart before the first sign-in to get a fresh setup link.",
+    "zh": "服务器在当前终端中运行，Ctrl+C 可正常停止。再次运行命令会保留空间、所有者和数据。首次登录前可通过重启获取新设置链接。"
+  },
+  "Подробная инструкция запуска сервера": {
+    "en": "Full server setup guide",
+    "zh": "服务器启动完整指南"
+  },
+  "Свои люди. Свой сервер.": {
+    "en": "Your people. Your server.",
+    "zh": "自己的人，自己的服务器。"
+  },
+  "Создайте пространство в «Эфире» на компьютере или запустите сервер одной командой на VPS. Подключайтесь с компьютера или телефона.": {
+    "en": "Create a space in Broadcast on your computer, or start the server on a VPS with one command. Join from your computer or phone.",
+    "zh": "在电脑的“广播”中创建空间，或用一条命令在 VPS 上启动服务器。从电脑或手机连接。"
+  },
+  "Запуск одной командой, домены, IPv6 и диагностика уже доступны. Дальше — автоматическая настройка доступности и relay.": {
+    "en": "One-command setup, domains, IPv6 and diagnostics are available. Next: automatic connectivity setup and relay.",
+    "zh": "已支持一条命令启动、域名、IPv6 和诊断。接下来将加入自动网络配置和中继。"
   }
 };
