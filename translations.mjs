@@ -795,10 +795,6 @@ export default {
     "en": "Prepare the archive on your computer",
     "zh": "在电脑上准备导出文件"
   },
-  "Создайте пространство по инструкции выше. В «Эфире» задайте внешний порт и порт прослушивания 8443, интерфейс 0.0.0.0. Нажмите «Экспортировать пространство» и сохраните архив как space-export.zip. Сервер остановится; ключ владельца останется в приложении.": {
-    "en": "Create a space using the steps above. In Broadcast, set the external and listening ports to 8443 and the interface to 0.0.0.0. Select Export space and save it as space-export.zip. The server stops; the owner key stays in the app.",
-    "zh": "按上方步骤创建空间。在“广播”中将外部端口和监听端口都设为 8443，接口设为 0.0.0.0。选择“导出空间”，保存为 space-export.zip。服务器会停止，所有者密钥仍留在应用中。"
-  },
   "На VPS скачайте проверенный runtime": {
     "en": "Download and verify the runtime on the VPS",
     "zh": "在 VPS 上下载并验证运行环境"
@@ -842,5 +838,9 @@ export default {
   "Подробнее о переносе и восстановлении": {
     "en": "More about transfer and recovery",
     "zh": "了解迁移与恢复的详细说明"
+  },
+  "Создайте пространство по инструкции выше. В «Эфире» остановите сервер. Задайте внешний порт 8443; в «На этом компьютере» выберите порт 8443 и «IPv4», затем «Сохранить адреса». Экспортируйте пространство как space-export.zip. Ключ владельца останется в приложении.": {
+    "en": "Create a space using the steps above. Stop the server in Broadcast. Set the external port to 8443; under On this computer, select port 8443 and IPv4, then Save addresses. Export the space as space-export.zip. The owner key stays in the app.",
+    "zh": "按上方步骤创建空间。在“广播”中停止服务器，将外部端口设为 8443；在“在此电脑上”中选择端口 8443 和 IPv4，然后保存地址。将空间导出为 space-export.zip。所有者密钥仍留在应用中。"
   }
 };
