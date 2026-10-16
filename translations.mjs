@@ -3,10 +3,6 @@ export default {
     "en": "Space Protocol — your own space",
     "zh": "Space Protocol — 自己的空间"
   },
-  "Открытый проект для сообществ: собственный сервер, ключи идентичности и одно приложение для общения и управления. Space Protocol находится в разработке.": {
-    "en": "An open project for communities: your own server, identity keys, and one app for conversation and administration. Space Protocol is in development.",
-    "zh": "面向社区的开源项目：自己的服务器、身份密钥，以及集交流和管理于一体的应用。Space Protocol 正在开发中。"
-  },
   "Место для людей. Правила — ваши. Открытый проект независимых сообществ.": {
     "en": "A place for people. Your rules. An open project for independent communities.",
     "zh": "为人们而建的地方。规则由您决定。面向独立社区的开源项目。"
@@ -23,17 +19,9 @@ export default {
     "en": "Main navigation",
     "zh": "主导航"
   },
-  "Идея": {
-    "en": "Idea",
-    "zh": "理念"
-  },
   "Возможности": {
     "en": "Features",
     "zh": "功能"
-  },
-  "Приложение": {
-    "en": "App",
-    "zh": "应用"
   },
   "Скачать": {
     "en": "Download",
@@ -55,10 +43,6 @@ export default {
     "en": "SPACE.",
     "zh": "空间。"
   },
-  "Для разговоров, идей и людей.": {
-    "en": "For conversations, ideas, and people.",
-    "zh": "为交流、创意和人们而建。"
-  },
   "На своём сервере. По своим правилам.": {
     "en": "On your server. By your rules.",
     "zh": "在自己的服务器上，遵循自己的规则。"
@@ -66,18 +50,6 @@ export default {
   "Скачать Space": {
     "en": "Download Space",
     "zh": "下载 Space"
-  },
-  "Познакомиться": {
-    "en": "Discover Space",
-    "zh": "了解 Space"
-  },
-  "Space Protocol — протокол и приложение": {
-    "en": "Space Protocol — a protocol and app",
-    "zh": "Space Protocol — 协议与应用"
-  },
-  "для независимых сообществ.": {
-    "en": "for independent communities.",
-    "zh": "服务于独立社区。"
   },
   "Знак Space: переплетённое пламя и искра": {
     "en": "Space emblem: an intertwined flame and spark",
@@ -126,10 +98,6 @@ export default {
   "На ваших устройствах.": {
     "en": "On your devices.",
     "zh": "在您的设备上。"
-  },
-  "Выберите свою систему. Кнопки всегда скачивают последнюю опубликованную версию.": {
-    "en": "Choose your system. These buttons always download the latest published version.",
-    "zh": "选择您的系统。按钮始终下载最新发布的版本。"
   },
   "Установщик EXE": {
     "en": "EXE installer",
@@ -199,14 +167,6 @@ export default {
     "en": "Getting started ↗",
     "zh": "入门指南 ↗"
   },
-  "01 / ИДЕЯ": {
-    "en": "01 / THE IDEA",
-    "zh": "01 / 理念"
-  },
-  "НЕЗАВИСИМОСТЬ В ОСНОВЕ": {
-    "en": "INDEPENDENCE AT THE CORE",
-    "zh": "独立自主，始终如一"
-  },
   "Место для людей.": {
     "en": "A place for people.",
     "zh": "为人们而建的地方。"
@@ -214,98 +174,6 @@ export default {
   "Правила — ваши.": {
     "en": "Your rules.",
     "zh": "规则由您决定。"
-  },
-  "Сообщество — это больше, чем список сообщений. Это место, которое вы обустраиваете вместе.": {
-    "en": "A community is more than a list of messages. It is a place you shape together.",
-    "zh": "社区不仅是一串消息，更是大家共同营造的地方。"
-  },
-  "Space соединяет собственный сервер и общее приложение. Владелец настраивает пространство, участники общаются. Каналы, приглашения и доступ находятся рядом.": {
-    "en": "Space brings your own server and a shared app together. The owner configures the space; members connect and talk. Channels, invitations, and access controls are close at hand.",
-    "zh": "Space 将您自己的服务器与统一应用连接起来。所有者配置空间，成员在其中交流。频道、邀请和访问控制触手可及。"
-  },
-  "Без отдельной административной панели. С понятными полномочиями и открытым исходным кодом.": {
-    "en": "No separate admin dashboard. Clear permissions and open source code.",
-    "zh": "无需独立管理面板。权限清晰，源代码开放。"
-  },
-  "Читать о проекте": {
-    "en": "Read about the project",
-    "zh": "了解项目详情"
-  },
-  "Не готовая платформа с обещаниями.": {
-    "en": "Not a finished platform full of promises.",
-    "zh": "这并非一个承诺满满的成品平台。"
-  },
-  "Открытый проект, который мы строим шаг за шагом.": {
-    "en": "An open project we build step by step.",
-    "zh": "而是我们一步步共同建设的开源项目。"
-  },
-  "02 / ЧТО УЖЕ ЕСТЬ": {
-    "en": "02 / AVAILABLE NOW",
-    "zh": "02 / 现有功能"
-  },
-  "РАБОЧИЙ ПРОТОТИП": {
-    "en": "WORKING PROTOTYPE",
-    "zh": "可运行的原型"
-  },
-  "От разговора": {
-    "en": "From conversation",
-    "zh": "从交流"
-  },
-  "до": {
-    "en": " to ",
-    "zh": "到"
-  },
-  "управления.": {
-    "en": "administration.",
-    "zh": "管理。"
-  },
-  "Основные сценарии уже реализованы.": {
-    "en": "The core workflows are already implemented.",
-    "zh": "核心流程已实现。"
-  },
-  "Экспериментальный v0.3.2 уже доступен.": {
-    "en": "Experimental v0.3.2 is available now.",
-    "zh": "实验性版本 v0.3.2 现已发布。"
-  },
-  "Общение по каналам": {
-    "en": "Channel conversations",
-    "zh": "频道交流"
-  },
-  "Несколько чат-каналов, история и поток событий. Раздельные права чтения и отправки.": {
-    "en": "Multiple chat channels, history, and a live event stream. Separate read and send permissions.",
-    "zh": "多个聊天频道、历史记录和实时事件流。阅读和发送权限分别控制。"
-  },
-  "Доступ под контролем": {
-    "en": "Access under control",
-    "zh": "访问尽在掌握"
-  },
-  "Роли, индивидуальные правила, приглашения со сроком и числом использований, блокировка участников.": {
-    "en": "Roles, individual rules, invitations with expiry dates and use limits, and member blocking.",
-    "zh": "角色、个人权限规则、带有效期和使用次数限制的邀请，以及成员封禁。"
-  },
-  "Ключи и устройства": {
-    "en": "Keys and devices",
-    "zh": "密钥与设备"
-  },
-  "Вход по ключу устройства, отзыв доступа, зашифрованные карточки восстановления и сопряжение.": {
-    "en": "Sign in with a device key, revoke access, use encrypted recovery cards, and pair devices.",
-    "zh": "使用设备密钥登录、撤销访问权限、使用加密恢复卡，以及配对设备。"
-  },
-  "Одно приложение Space": {
-    "en": "One Space app",
-    "zh": "一个 Space 应用"
-  },
-  "Flutter-клиент для Windows, macOS, Linux и Android. Общение, настройки сервера и управление сообществом в одном интерфейсе.": {
-    "en": "A Flutter client for Windows, macOS, Linux, and Android. Conversations, server settings, and community administration in one interface.",
-    "zh": "基于 Flutter 的客户端，支持 Windows、macOS、Linux 和 Android。在同一界面中交流、设置服务器和管理社区。"
-  },
-  "Ключи защищают идентичность и вход. Сквозное шифрование сообщений — отдельный будущий этап.": {
-    "en": "Keys protect identity and sign-in. End-to-end message encryption is a separate future step.",
-    "zh": "密钥用于保护身份与登录。消息端到端加密属于独立的后续阶段。"
-  },
-  "03 / ПРИЛОЖЕНИЕ В ДЕТАЛЯХ": {
-    "en": "03 / A CLOSER LOOK",
-    "zh": "03 / 应用详情"
   },
   "Одно окно.": {
     "en": "One window.",
@@ -455,149 +323,9 @@ export default {
     "en": "Close ✕",
     "zh": "关闭 ✕"
   },
-  "04 / КАК ЭТО УСТРОЕНО": {
-    "en": "04 / HOW IT WORKS",
-    "zh": "04 / 工作原理"
-  },
-  "ПРОСТАЯ ОСНОВА": {
-    "en": "A SIMPLE FOUNDATION",
-    "zh": "简单的基础"
-  },
-  "Ваш сервер.": {
-    "en": "Your server.",
-    "zh": "您的服务器。"
-  },
-  "Общее пространство.": {
-    "en": "A shared space.",
-    "zh": "共同的空间。"
-  },
-  "Участники": {
-    "en": "Members",
-    "zh": "成员"
-  },
-  "Общаются в Space": {
-    "en": "Talk in Space",
-    "zh": "在 Space 中交流"
-  },
-  "Ваш сервер": {
-    "en": "Your server",
-    "zh": "您的服务器"
-  },
-  "Владелец": {
-    "en": "Owner",
-    "zh": "所有者"
-  },
-  "Управляет в Space": {
-    "en": "Manage in Space",
-    "zh": "在 Space 中管理"
-  },
-  "Контракты открыты.": {
-    "en": "Open contracts.",
-    "zh": "开放的协议契约。"
-  },
-  "Protobuf описывает API. gRPC и HTTP связывают приложение с сервером.": {
-    "en": "Protobuf defines the API. gRPC and HTTP connect the app to the server.",
-    "zh": "Protobuf 定义 API。gRPC 和 HTTP 连接应用与服务器。"
-  },
-  "Полномочия проверяет сервер.": {
-    "en": "The server enforces permissions.",
-    "zh": "服务器执行权限检查。"
-  },
-  "Роль пользователя и разрешения устройства действуют вместе.": {
-    "en": "User roles and device permissions work together.",
-    "zh": "用户角色和设备权限共同生效。"
-  },
-  "Секреты остаются у вас.": {
-    "en": "Your secrets stay with you.",
-    "zh": "秘密由您保管。"
-  },
-  "Карточка восстановления шифруется локально и открывается по паролю.": {
-    "en": "Recovery cards are encrypted locally and opened with a password.",
-    "zh": "恢复卡在本地加密，并使用密码打开。"
-  },
-  "05 / ДАЛЬШЕ": {
-    "en": "05 / WHAT IS NEXT",
-    "zh": "05 / 下一步"
-  },
   "ПОЛНЫЙ ПЛАН ↗": {
     "en": "FULL ROADMAP ↗",
     "zh": "完整路线图 ↗"
-  },
-  "Растём": {
-    "en": "Growing",
-    "zh": "循序"
-  },
-  "последовательно.": {
-    "en": "step by step.",
-    "zh": "渐进。"
-  },
-  "Управление, общая сводка и домашний запуск уже работают.": {
-    "en": "Administration, a shared overview, and home hosting already work.",
-    "zh": "管理、统一概览和家庭部署已可使用。"
-  },
-  "Следующие этапы — по текущему TODO.": {
-    "en": "The next steps follow the current TODO.",
-    "zh": "后续步骤以当前 TODO 为准。"
-  },
-  "Уже в приложении: управление сервером, отдельные вкладки пространств, dashboard, автоматическое обновление каналов и прав, непрочитанные сообщения, уведомления о доступности серверов и домашний запуск. Установщики Windows, macOS и Linux опубликованы. В Windows доступны загрузка проверенного обновления, установка и перезапуск; домашний сервер сохраняет данные при обновлении и восстановлении.": {
-    "en": "Already in the app: server administration, separate space tabs, a dashboard, automatic channel and permission updates, unread messages, server availability notifications, and home hosting. Windows, macOS, and Linux installers are published. Windows supports verified update downloads, installation, and restart; the home server preserves data through updates and recovery.",
-    "zh": "应用已包含服务器管理、独立空间标签页、概览、频道与权限自动更新、未读消息、服务器可用性通知和家庭部署。Windows、macOS 和 Linux 安装程序已发布。Windows 支持经校验的更新下载、安装和重启；家庭服务器在更新和恢复时保留数据。"
-  },
-  "БЛИЖАЙШИЙ ЭТАП": {
-    "en": "NEXT UP",
-    "zh": "近期目标"
-  },
-  "Завершить чат": {
-    "en": "Complete the chat",
-    "zh": "完善聊天"
-  },
-  "Вложения с проверкой доступа, перевод оставшихся ошибок и проверки установленного приложения. Восстановление через физическую QR-камеру ещё требует ручной проверки.": {
-    "en": "Attachments with access checks, translation of remaining errors, and installed-app testing. Recovery through a physical QR camera still needs manual testing.",
-    "zh": "实现带访问检查的附件、翻译剩余错误信息，并验证已安装的应用。通过实体相机扫描二维码进行恢复仍需手动验证。"
-  },
-  "ПАРАЛЛЕЛЬНО": {
-    "en": "IN PARALLEL",
-    "zh": "同步推进"
-  },
-  "Домашний сервер и боты": {
-    "en": "Home server and bots",
-    "zh": "家庭服务器与机器人"
-  },
-  "Обновление runtime, резервные копии и восстановление уже проверены в CI на трёх ОС. Далее — ручная проверка на физических системах. Создание ботов с собственными токенами, ограниченными разрешениями и журналом действий.": {
-    "en": "Runtime updates, backups, and recovery already pass CI on three operating systems. Next comes manual testing on physical systems. Bots will have their own tokens, limited permissions, and an activity log.",
-    "zh": "运行时更新、备份和恢复已通过三个操作系统上的 CI。下一步是在实体系统上手动验证。机器人将使用独立令牌、受限权限和操作日志。"
-  },
-  "СЛЕДОМ": {
-    "en": "THEN",
-    "zh": "随后"
-  },
-  "Форум и лента": {
-    "en": "Forum and feed",
-    "zh": "论坛与动态"
-  },
-  "Темы, ответы, публикации, реакции и модерация в том же приложении.": {
-    "en": "Topics, replies, posts, reactions, and moderation in the same app.",
-    "zh": "在同一应用中提供主题、回复、帖子、回应和内容管理。"
-  },
-  "ДАЛЬШЕ": {
-    "en": "LATER",
-    "zh": "后续阶段"
-  },
-  "Голос и видео": {
-    "en": "Voice and video",
-    "zh": "语音与视频"
-  },
-  "Комнаты для встреч, затем stage и прямые трансляции. Возможности будут добавляться после проверки основной инфраструктуры.": {
-    "en": "Rooms for meetings, then stages and live streams. These features will follow validation of the core infrastructure.",
-    "zh": "先提供会议房间，再支持舞台和直播。这些功能将在核心基础设施验证后逐步加入。"
-  },
-  "E2EE и федерация — отдельные поздние программы.": {
-    "en": "E2EE and federation are separate, later programs.",
-    "zh": "端到端加密和联邦互通属于独立的后续计划。"
-  },
-  "План описывает направление, а не обещанные сроки.": {
-    "en": "The roadmap gives direction, not promised deadlines.",
-    "zh": "路线图表达方向，不承诺完成日期。"
   },
   "ПРОЕКТ ОТКРЫТ": {
     "en": "THE PROJECT IS OPEN",
@@ -614,18 +342,6 @@ export default {
   "пространство.": {
     "en": "space.",
     "zh": "留出空间。"
-  },
-  "Изучайте исходники, обсуждайте решения,": {
-    "en": "Explore the source, discuss decisions,",
-    "zh": "探索源代码，讨论设计决策，"
-  },
-  "помогайте проверять и развивать Space.": {
-    "en": "help test and develop Space.",
-    "zh": "帮助测试和发展 Space。"
-  },
-  "Присоединиться на GitHub": {
-    "en": "Join us on GitHub",
-    "zh": "在 GitHub 上参与"
   },
   "Своё пространство. Общая искра.": {
     "en": "Your own space. A shared spark.",
@@ -650,5 +366,345 @@ export default {
   "Автоматически": {
     "en": "Automatic",
     "zh": "自动"
+  },
+  "Чаты, файлы и свои люди.": {
+    "en": "Chats, files, and your people.",
+    "zh": "聊天、文件，还有熟悉的人。"
+  },
+  "Для друзей, команд и сообществ.": {
+    "en": "For friends, teams, and communities.",
+    "zh": "为朋友、团队和社区而建。"
+  },
+  "Создайте своё место или войдите по приглашению.": {
+    "en": "Create a place of your own or join by invitation.",
+    "zh": "创建自己的空间，或通过邀请加入。"
+  },
+  "Как это работает": {
+    "en": "How it works",
+    "zh": "如何使用"
+  },
+  "Для кого": {
+    "en": "Who it is for",
+    "zh": "适合谁"
+  },
+  "Как начать": {
+    "en": "Get started",
+    "zh": "开始使用"
+  },
+  "01 / ДЛЯ КОГО": {
+    "en": "01 / WHO IT IS FOR",
+    "zh": "01 / 适合谁"
+  },
+  "ВАШ КРУГ. ВАШ РИТМ.": {
+    "en": "YOUR PEOPLE. YOUR PACE.",
+    "zh": "熟悉的人，自己的节奏。"
+  },
+  "Соберите своих. Обсуждайте важное. Держите нужное под рукой.": {
+    "en": "Bring your people together. Talk things through. Keep what matters close.",
+    "zh": "把熟悉的人聚在一起，聊重要的事，让需要的内容随手可得。"
+  },
+  "Space — приложение для общения на вашем сервере. Разделите разговоры по каналам, делитесь файлами и решайте, кого пригласить.": {
+    "en": "Space is a chat app on your own server. Give each conversation a channel, share files, and decide who to invite.",
+    "zh": "Space 是运行在您自己服务器上的聊天应用。按频道组织话题，分享文件，自主决定邀请谁。"
+  },
+  "Один человек создаёт пространство. Остальные входят по ссылке или QR и пользуются обычным чатом.": {
+    "en": "One person creates the space. Everyone else joins by link or QR code and starts chatting.",
+    "zh": "由一人创建空间，其他人通过链接或二维码加入，即可开始聊天。"
+  },
+  "Начать с приглашения или своего сервера": {
+    "en": "Join a space or create your own",
+    "zh": "加入空间，或创建自己的空间"
+  },
+  "ВЕЧЕР ВМЕСТЕ": {
+    "en": "AN EVENING TOGETHER",
+    "zh": "相聚的夜晚"
+  },
+  "ДЛЯ ДРУЗЕЙ": {
+    "en": "FOR FRIENDS",
+    "zh": "朋友之间"
+  },
+  "Больше поводов быть рядом.": {
+    "en": "More reasons to stay close.",
+    "zh": "多一点相聚的理由。"
+  },
+  "Договоритесь о встрече, поделитесь находкой. Для планов и разговоров — свои каналы.": {
+    "en": "Plan a get-together or share a discovery. Give plans and conversations their own channels.",
+    "zh": "约一次见面，分享一个发现。计划和闲聊，各有自己的频道。"
+  },
+  "НЕБОЛЬШОЙ ПРОЕКТ": {
+    "en": "A SMALL PROJECT",
+    "zh": "一个小项目"
+  },
+  "Эскиз.pdf": {
+    "en": "Sketch.pdf",
+    "zh": "草图.pdf"
+  },
+  "Вот новый вариант. Что думаете?": {
+    "en": "Here is the new version. Thoughts?",
+    "zh": "这是新版本，大家觉得怎么样？"
+  },
+  "ДЛЯ КОМАНДЫ": {
+    "en": "FOR YOUR TEAM",
+    "zh": "团队协作"
+  },
+  "От идеи — к общему делу.": {
+    "en": "Turn an idea into a shared project.",
+    "zh": "让创意变成共同的项目。"
+  },
+  "Обсудите эскиз, отправьте файл, сохраните важный ответ в избранное. Всё остаётся в контексте.": {
+    "en": "Discuss a sketch, send a file, save a useful reply to favorites. Keep the conversation in context.",
+    "zh": "讨论草图，发送文件，收藏有用的回复。交流始终有据可循。"
+  },
+  "КЛУБ ПО ИНТЕРЕСАМ": {
+    "en": "A SHARED INTEREST",
+    "zh": "共同的兴趣"
+  },
+  "Приглашение · 3 входа": {
+    "en": "Invitation · 3 uses",
+    "zh": "邀请 · 可用 3 次"
+  },
+  "ДЛЯ СООБЩЕСТВА": {
+    "en": "FOR YOUR COMMUNITY",
+    "zh": "兴趣社区"
+  },
+  "Свой круг, понятные правила.": {
+    "en": "Your circle, clear ground rules.",
+    "zh": "自己的圈子，清楚的规则。"
+  },
+  "Приглашайте участников, назначайте роли и открывайте каналы тем, кому они нужны.": {
+    "en": "Invite members, assign roles, and open channels to the people who need them.",
+    "zh": "邀请成员、分配角色，让需要的人进入对应频道。"
+  },
+  "Примеры показывают возможные сценарии, а не реальные переписки.": {
+    "en": "These examples illustrate possible uses, not real conversations.",
+    "zh": "以上为使用场景示例，并非真实聊天记录。"
+  },
+  "02 / ЧТО МОЖНО ДЕЛАТЬ": {
+    "en": "02 / WHAT YOU CAN DO",
+    "zh": "02 / 可以做什么"
+  },
+  "Общаться проще.": {
+    "en": "Make room for conversation.",
+    "zh": "让交流更轻松。"
+  },
+  "Нужное — рядом.": {
+    "en": "Keep the essentials close.",
+    "zh": "所需内容，就在身边。"
+  },
+  "Меньше искать. Легче договариваться.": {
+    "en": "Less searching. More getting things done together.",
+    "zh": "少一点查找，多一点默契。"
+  },
+  "Разговоры по темам": {
+    "en": "Conversations by topic",
+    "zh": "按话题交流"
+  },
+  "Каналы помогают не смешивать планы, вопросы и объявления. Поиск и избранное возвращают к важному.": {
+    "en": "Keep plans, questions, and announcements in separate channels. Find what matters with search and favorites.",
+    "zh": "用不同频道区分计划、问题和通知，通过搜索和收藏找回重要内容。"
+  },
+  "Файлы рядом с обсуждением": {
+    "en": "Files beside the conversation",
+    "zh": "文件与讨论在一起"
+  },
+  "Перетащите файл в чат или нажмите «+». Найдите вложения по дате и автору, когда они снова понадобятся.": {
+    "en": "Drop a file into chat or tap “+”. Find attachments by date and author when you need them again.",
+    "zh": "把文件拖进聊天，或点击“+”。需要时可按日期和作者查找附件。"
+  },
+  "Вы решаете, кто внутри": {
+    "en": "You decide who gets in",
+    "zh": "由您决定谁能加入"
+  },
+  "Приглашения со сроком и числом входов, роли и права на каналы. Участник выбирает своё имя в пространстве.": {
+    "en": "Set invitation expiry and use limits, roles, and channel permissions. Members choose their name in each space.",
+    "zh": "设置邀请的有效期和使用次数，分配角色及频道权限。成员可为每个空间选择自己的名字。"
+  },
+  "Закрытые разговоры": {
+    "en": "Private conversations",
+    "zh": "私密交流"
+  },
+  "В закрытых MLS-каналах сообщения и файлы шифруются на устройствах участников. Обычные каналы остаются открытыми для сервера.": {
+    "en": "In private MLS channels, messages and files are encrypted on members’ devices. Regular channels remain readable by the server.",
+    "zh": "私密 MLS 频道中的消息和文件在成员设备上加密。普通频道的内容仍可被服务器读取。"
+  },
+  "С компьютера и телефона": {
+    "en": "On desktop and phone",
+    "zh": "电脑与手机都能用"
+  },
+  "Windows, macOS, Linux и Android. Несколько пространств в одном приложении; тема, язык и масштаб — под вас.": {
+    "en": "Windows, macOS, Linux, and Android. Multiple spaces in one app, with your choice of theme, language, and interface scale.",
+    "zh": "支持 Windows、macOS、Linux 和 Android。一个应用管理多个空间，可调整主题、语言和界面缩放。"
+  },
+  "Вложения доступны, если их разрешил администратор. E2EE экспериментальное, независимый аудит ещё не проведён.": {
+    "en": "Attachments depend on the administrator’s settings. E2EE is experimental and has not yet had an independent audit.",
+    "zh": "附件功能取决于管理员设置。端到端加密仍处于实验阶段，尚未接受独立审计。"
+  },
+  "03 / КАК НАЧАТЬ": {
+    "en": "03 / GET STARTED",
+    "zh": "03 / 开始使用"
+  },
+  "ВЫБЕРИТЕ СВОЙ ПУТЬ": {
+    "en": "CHOOSE YOUR WAY IN",
+    "zh": "选择您的开始方式"
+  },
+  "Вас уже ждут?": {
+    "en": "Already invited?",
+    "zh": "已经有人在等您？"
+  },
+  "Просто присоединитесь.": {
+    "en": "Come on in.",
+    "zh": "那就加入吧。"
+  },
+  "Скачайте Space": {
+    "en": "Download Space",
+    "zh": "下载 Space"
+  },
+  "Установите приложение на компьютер или Android.": {
+    "en": "Install the app on your computer or Android device.",
+    "zh": "在电脑或 Android 设备上安装应用。"
+  },
+  "Откройте приглашение": {
+    "en": "Open your invitation",
+    "zh": "打开邀请"
+  },
+  "Вставьте ссылку или отсканируйте QR от владельца пространства.": {
+    "en": "Paste a link or scan the QR code from the space owner.",
+    "zh": "粘贴空间所有者提供的链接，或扫描二维码。"
+  },
+  "Представьтесь и напишите": {
+    "en": "Say hello",
+    "zh": "介绍自己，开始交流"
+  },
+  "Укажите имя, если хотите, выберите канал и отправьте первое сообщение.": {
+    "en": "Add a name if you like, choose a channel, and send your first message.",
+    "zh": "可填写自己的名字，选择频道，然后发送第一条消息。"
+  },
+  "ХОТИТЕ СОЗДАТЬ СВОЁ?": {
+    "en": "WANT A SPACE OF YOUR OWN?",
+    "zh": "想创建自己的空间？"
+  },
+  "Один компьютер. Свой круг людей.": {
+    "en": "One computer. Your own circle.",
+    "zh": "一台电脑，一个自己的圈子。"
+  },
+  "На компьютере откройте «Эфир», задайте адрес и запустите сервер. Создайте каналы и отправьте приглашения. Управление — в том же приложении.": {
+    "en": "On your computer, open “Broadcast”, set an address, and start the server. Create channels and send invitations. Manage everything in the same app.",
+    "zh": "在电脑上打开“广播”，设置地址并启动服务器。创建频道，发送邀请，一切都在同一个应用中管理。"
+  },
+  "Сервер должен оставаться включённым. Для подключения через интернет нужен доступный адрес и порт; за CGNAT может понадобиться туннель или VPS.": {
+    "en": "Keep the server running. Internet access requires a reachable address and port; CGNAT may require a tunnel or VPS.",
+    "zh": "服务器需要持续运行。通过互联网连接需要可访问的地址和端口；处于 CGNAT 后方时，可能需要隧道或 VPS。"
+  },
+  "Инструкция по запуску": {
+    "en": "Setup guide",
+    "zh": "启动指南"
+  },
+  "Ваш компьютер": {
+    "en": "Your computer",
+    "zh": "您的电脑"
+  },
+  "Друзья входят по приглашению": {
+    "en": "Friends join by invitation",
+    "zh": "朋友通过邀请加入"
+  },
+  "Попробуйте маленький сценарий.": {
+    "en": "Start with something small.",
+    "zh": "从一个小场景开始。"
+  },
+  "Пригласите одного человека. Создайте канал для общей идеи, отправьте файл и добавьте ответ в избранное. Посмотрите, удобно ли вам так общаться.": {
+    "en": "Invite one person. Create a channel for a shared idea, send a file, and save a reply to favorites. See how it feels to talk this way.",
+    "zh": "先邀请一个人，为共同的想法创建频道，发送文件，再收藏一条回复。亲自体验这种交流方式是否顺手。"
+  },
+  "Скачать и попробовать": {
+    "en": "Download and try it",
+    "zh": "下载并体验"
+  },
+  "05 / ЧТО ДАЛЬШЕ": {
+    "en": "05 / WHAT IS NEXT",
+    "zh": "05 / 接下来的计划"
+  },
+  "Уже можно пробовать.": {
+    "en": "Ready to try.",
+    "zh": "现在就可以体验。"
+  },
+  "Есть куда расти.": {
+    "en": "Room to grow.",
+    "zh": "仍有成长空间。"
+  },
+  "Space развивается открыто. Вот ближайшие направления.": {
+    "en": "Space grows in the open. Here is where it is heading.",
+    "zh": "Space 以开放方式持续发展，以下是接下来的方向。"
+  },
+  "СЕЙЧАС": {
+    "en": "NOW",
+    "zh": "当前"
+  },
+  "Проще выйти в интернет": {
+    "en": "Easier to reach online",
+    "zh": "更轻松地通过互联网连接"
+  },
+  "Домены, IPv6 и запасные адреса уже поддерживаются. Дальше — диагностика подключения, настройка доступности и relay.": {
+    "en": "Domains, IPv6, and fallback addresses are supported. Next: connection diagnostics, easier connectivity, and relays.",
+    "zh": "已支持域名、IPv6 和备用地址。接下来将完善连接诊断、网络可达性设置和中继。"
+  },
+  "ДАЛЕЕ": {
+    "en": "NEXT",
+    "zh": "接下来"
+  },
+  "Больше способов общаться": {
+    "en": "More ways to connect",
+    "zh": "更多交流方式"
+  },
+  "В плане — боты, темы форума и лента. Затем голос и видео.": {
+    "en": "Bots, forum topics, and a feed are on the roadmap. Voice and video come later.",
+    "zh": "计划加入机器人、论坛主题和动态，之后再扩展语音与视频。"
+  },
+  "ПОСТОЯННО": {
+    "en": "ONGOING",
+    "zh": "持续推进"
+  },
+  "Надёжнее каждый день": {
+    "en": "More reliable over time",
+    "zh": "持续提高可靠性"
+  },
+  "Проверки обновлений и восстановления, развитие защиты закрытых каналов и испытания на настоящих устройствах.": {
+    "en": "Update and recovery checks, stronger private-channel protection, and tests on real devices.",
+    "zh": "验证更新与恢复流程，完善私密频道保护，并在真实设备上持续测试。"
+  },
+  "Экспериментальный проект с открытым исходным кодом. План показывает направление, без обещаний сроков.": {
+    "en": "An experimental open-source project. The roadmap shows direction, not promised dates.",
+    "zh": "这是一个实验性的开源项目。路线图展示发展方向，不承诺具体日期。"
+  },
+  "04 / ПОСМОТРИТЕ ВНУТРИ": {
+    "en": "04 / TAKE A LOOK INSIDE",
+    "zh": "04 / 看看应用内部"
+  },
+  "Выберите устройство и попробуйте с одним человеком. Здесь всегда последняя опубликованная версия.": {
+    "en": "Choose your device and try it with one person. These links always point to the latest release.",
+    "zh": "选择您的设备，先和一个人一起体验。这里始终提供最新发布版本。"
+  },
+  "Начните с одного разговора.": {
+    "en": "Start with one conversation.",
+    "zh": "从一次对话开始。"
+  },
+  "А если захотите — помогите сделать Space лучше.": {
+    "en": "And if you like, help make Space better.",
+    "zh": "如果愿意，也欢迎一起让 Space 变得更好。"
+  },
+  "Space — чаты, файлы и закрытые каналы на своём сервере. Для друзей, команд и сообществ. Присоединитесь по приглашению или создайте своё пространство.": {
+    "en": "Space: chats, files, and private channels on your own server. For friends, teams, and communities. Join by invitation or create your own space.",
+    "zh": "Space：运行在自己服务器上的聊天、文件和私密频道。为朋友、团队和社区而建。通过邀请加入，或创建自己的空间。"
+  },
+  "# общий": {
+    "en": "# general",
+    "zh": "# 闲聊"
+  },
+  "# планы-на-выходные": {
+    "en": "# weekend-plans",
+    "zh": "# 周末计划"
+  },
+  "# находки": {
+    "en": "# good-finds",
+    "zh": "# 有趣发现"
   }
 };
