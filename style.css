@@ -73,6 +73,7 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 .hero-particles-back{z-index:0;mix-blend-mode:normal}
 
 .setup-actions{display:flex;justify-content:flex-end;margin-top:32px}.setup-actions>.ink-link{max-width:100%;text-align:left}
+#setup-server>.ink-link{margin-top:32px}
 
 .setup-toggle{font:inherit;font-size:13px;background:none;color:inherit;border:0;border-bottom:1px solid currentColor;text-align:left;cursor:pointer}.setup-toggle>span{display:inline-block;transition:transform .25s ease}.setup-toggle[aria-expanded="true"]>span{transform:rotate(45deg)}.setup-toggle:focus-visible,.setup-guide button:focus-visible{outline:2px solid currentColor;outline-offset:5px}
 .setup-reveal{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s ease,margin-top .38s ease;margin-top:0}.setup-reveal.is-open{grid-template-rows:1fr;margin-top:24px}.setup-reveal[hidden],.setup-guide [hidden]{display:none}.setup-clip{min-height:0;overflow:hidden}.setup-guide{padding:32px;border:1px solid var(--inkline);border-radius:22px;background:rgba(255,255,255,.16)}.setup-heading{display:flex;align-items:flex-start;gap:18px}.setup-heading h3{font-size:27px;line-height:1.2;letter-spacing:-.5px;margin-bottom:12px}.setup-heading p,.setup-intro{font-size:15px;max-width:750px}.setup-symbol{font-size:38px;line-height:1}
