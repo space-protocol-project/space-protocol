@@ -55,10 +55,6 @@ export default {
     "en": "Space emblem: an intertwined flame and spark",
     "zh": "Space 标志：交织的火焰与火花"
   },
-  "СВЯЗЬ НАЧИНАЕТСЯ С ИСКРЫ": {
-    "en": "CONNECTION STARTS WITH A SPARK",
-    "zh": "连接始于一颗火花"
-  },
   "СОЗДАЁМ В ОТКРЫТУЮ": {
     "en": "BUILDING IN THE OPEN",
     "zh": "开放协作，共同构建"
@@ -706,5 +702,9 @@ export default {
   "# находки": {
     "en": "# good-finds",
     "zh": "# 有趣发现"
+  },
+  "СВОЁ МЕСТО. СВОИ ЛЮДИ.": {
+    "en": "YOUR PLACE. YOUR PEOPLE.",
+    "zh": "自己的空间，熟悉的人。"
   }
 };
