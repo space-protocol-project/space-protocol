@@ -6,7 +6,11 @@
   if (!context) return;
   canvas.className = 'hero-particles';
   canvas.setAttribute('aria-hidden', 'true');
-  hero.prepend(canvas);
+  const backCanvas = canvas.cloneNode();
+  const back = backCanvas.getContext('2d');
+  if (!back) return;
+  backCanvas.className = 'hero-particles hero-particles-back';
+  hero.prepend(backCanvas, canvas);
 
   const art = hero.querySelector('.hero-art');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -26,9 +30,11 @@
     width = hero.clientWidth;
     height = hero.clientHeight;
     const ratio = Math.min(devicePixelRatio || 1, 1.5);
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    for (const surface of [canvas, backCanvas]) {
+      surface.width = Math.round(width * ratio);
+      surface.height = Math.round(height * ratio);
+      surface.getContext('2d').setTransform(ratio, 0, 0, ratio, 0, 0);
+    }
     const count = width < 650 ? 45 : 110;
     particles = Array.from({length: count}, () => ({
       x: Math.random(), y: Math.random(), phase: Math.random() * Math.PI * 2,
@@ -57,25 +63,25 @@
     const distance = Math.hypot(dx, dy);
     const near = pointer.active ? Math.max(0, 1 - distance / 150) : 0;
     const push = near * 24 / Math.max(distance, 1);
-    context.fillStyle = `rgba(233,216,163,${.13 + near * .55})`;
-    context.beginPath();
-    context.arc(x + dx * push, y + dy * push, particle.radius + near, 0, Math.PI * 2);
-    context.fill();
+    back.fillStyle = `rgba(233,216,163,${.13 + near * .55})`;
+    back.beginPath();
+    back.arc(x + dx * push, y + dy * push, particle.radius + near, 0, Math.PI * 2);
+    back.fill();
     if (near <= 0) return;
-    context.strokeStyle = `rgba(233,216,163,${near * .13})`;
-    context.beginPath();
-    context.moveTo(x + dx * push, y + dy * push);
-    context.lineTo(pointer.x, pointer.y);
-    context.stroke();
+    back.strokeStyle = `rgba(233,216,163,${near * .13})`;
+    back.beginPath();
+    back.moveTo(x + dx * push, y + dy * push);
+    back.lineTo(pointer.x, pointer.y);
+    back.stroke();
   }
 
   function drawGlow() {
     if (!pointer.active) return;
-    const glow = context.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, 230);
+    const glow = back.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, 230);
     glow.addColorStop(0, 'rgba(214,188,119,.065)');
     glow.addColorStop(1, 'rgba(214,188,119,0)');
-    context.fillStyle = glow;
-    context.fillRect(0, 0, width, height);
+    back.fillStyle = glow;
+    back.fillRect(0, 0, width, height);
   }
 
   function orbitTarget(particle) {
@@ -86,7 +92,7 @@
     const y = Math.sin(angle) * radiusY;
     const tilt = particle.ring ? -.42 : -.16;
     return {x: orbit.x + x * Math.cos(tilt) - y * Math.sin(tilt),
-      y: orbit.y + x * Math.sin(tilt) + y * Math.cos(tilt)};
+      y: orbit.y + x * Math.sin(tilt) + y * Math.cos(tilt), front: y >= 0};
   }
 
   function moveOrbit(particle, target, step) {
@@ -106,15 +112,17 @@
     const target = orbitTarget(particle);
     moveOrbit(particle, target, step);
     const energy = Math.min(Math.hypot(particle.vx, particle.vy) / 5, 1);
-    context.fillStyle = `rgba(233,216,163,${particle.alpha + energy * .25})`;
-    context.beginPath();
-    context.arc(target.x + particle.x, target.y + particle.y,
+    const surface = target.front ? context : back;
+    surface.fillStyle = `rgba(233,216,163,${particle.alpha + energy * .25})`;
+    surface.beginPath();
+    surface.arc(target.x + particle.x, target.y + particle.y,
       particle.radius + energy * .45, 0, Math.PI * 2);
-    context.fill();
+    surface.fill();
   }
 
   function render(step) {
     context.clearRect(0, 0, width, height);
+    back.clearRect(0, 0, width, height);
     drawGlow();
     particles.forEach(drawParticle);
     orbits.forEach(particle => drawOrbit(particle, step));
@@ -140,6 +148,7 @@
     frame = 0;
     resetPointer();
     context.clearRect(0, 0, width, height);
+    back.clearRect(0, 0, width, height);
     if (!visible || document.hidden) return;
     if (reduced.matches) {
       render(0);
