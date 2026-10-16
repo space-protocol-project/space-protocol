@@ -1,3 +1,5 @@
+import {moveOrbit} from './orbit-physics.mjs?v=20261016-vortex';
+
 (() => {
   const hero = document.querySelector('.hero');
   if (!hero) return;
@@ -95,24 +97,21 @@
       y: orbit.y + x * Math.sin(tilt) + y * Math.cos(tilt), front: y >= 0};
   }
 
-  function moveOrbit(particle, target, step) {
-    const dx = target.x + particle.x - pointer.x;
-    const dy = target.y + particle.y - pointer.y;
-    const distance = Math.max(Math.hypot(dx, dy), 1);
-    const near = pointer.active ? Math.max(0, 1 - distance / 115) : 0;
-    const force = near * near * 3.5;
-    const damping = Math.pow(.88, step);
-    particle.vx = (particle.vx + (dx / distance * force - particle.x * .022) * step) * damping;
-    particle.vy = (particle.vy + (dy / distance * force - particle.y * .022) * step) * damping;
-    particle.x += particle.vx * step;
-    particle.y += particle.vy * step;
-  }
-
   function drawOrbit(particle, step) {
     const target = orbitTarget(particle);
-    moveOrbit(particle, target, step);
+    const previousX = target.x + particle.x;
+    const previousY = target.y + particle.y;
+    moveOrbit(particle, target, pointer, step);
     const energy = Math.min(Math.hypot(particle.vx, particle.vy) / 5, 1);
     const surface = target.front ? context : back;
+    if (energy > .15) {
+      surface.strokeStyle = `rgba(233,216,163,${energy * .3})`;
+      surface.lineWidth = particle.radius;
+      surface.beginPath();
+      surface.moveTo(previousX - particle.vx * 2, previousY - particle.vy * 2);
+      surface.lineTo(target.x + particle.x, target.y + particle.y);
+      surface.stroke();
+    }
     surface.fillStyle = `rgba(233,216,163,${particle.alpha + energy * .25})`;
     surface.beginPath();
     surface.arc(target.x + particle.x, target.y + particle.y,
