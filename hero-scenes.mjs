@@ -1,5 +1,11 @@
 const TAU = Math.PI * 2;
 const palette = {light: '#eee5ce', gold: '#d6bc77', panel: '#5b6251', edge: '#b8b19f', dark: '#191b1a'};
+const worldColors = {
+  ochre: ['#eed49b', '#c49c5b', '#685039'],
+  moon: ['#f1d6a0', '#bd9361', '#65503b'],
+  terracotta: ['#e3ac78', '#b56847', '#593b30'],
+  olive: ['#c3c39b', '#868b62', '#414d3a'],
+};
 const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
 const fade = (age, life) => Math.min(1, age / .8, (life - age) / .8);
 
@@ -55,11 +61,9 @@ function satellite(ctx, scale, angle, telescope) {
   circle(ctx, 1, 3, 1.3, '#dbc17e');
 }
 
-function planet(ctx, radius, moon = false, terracotta = false) {
+function planet(ctx, radius, theme = 'ochre') {
   const gradient = ctx.createLinearGradient(-radius, -radius, radius, radius);
-  const colors = terracotta ? ['#e3ac78', '#b56847', '#593b30']
-    : moon ? ['#f1d6a0', '#bd9361', '#65503b'] : ['#eed49b', '#c49c5b', '#685039'];
-  colors.forEach((color, index) => gradient.addColorStop(index / 2, color));
+  worldColors[theme].forEach((color, index) => gradient.addColorStop(index / 2, color));
   circle(ctx, 0, 0, radius, gradient);
   ctx.save(); ctx.beginPath(); ctx.arc(0, 0, radius, 0, TAU); ctx.clip();
   for (const [x, y, r] of [[-.28, -.35, .21], [.37, .2, .17], [-.31, .38, .12], [.19, -.55, .1]]) {
@@ -141,14 +145,21 @@ export function createSkyScenes(random = Math.random) {
     planet(surface, radius);
     const moonAngle = time * .18 + .6;
     surface.translate(Math.cos(moonAngle) * radius * 2.1, Math.sin(moonAngle) * radius * .75);
-    planet(surface, radius * .24, true); surface.restore();
+    planet(surface, radius * .24, 'moon'); surface.restore();
     const companion = pointOnOrbit(3.65 - time * .06, orbit, .58, .48);
     const companionSurface = companion.front ? front : back;
     companionSurface.save();
     companionSurface.translate(companion.x, companion.y);
     companionSurface.globalAlpha = .78;
-    planet(companionSurface, compact ? 9 : 15, false, true);
+    planet(companionSurface, compact ? 9 : 15, 'terracotta');
     companionSurface.restore();
+    const olive = pointOnOrbit(4.8 + time * .038, orbit, .48, .6);
+    const oliveSurface = olive.front ? front : back;
+    oliveSurface.save();
+    oliveSurface.translate(olive.x, olive.y);
+    oliveSurface.globalAlpha = .85;
+    planet(oliveSurface, compact ? 10 : 18, 'olive');
+    oliveSurface.restore();
   }
 
   function drawMachine(back, front, orbit, time, compact) {
