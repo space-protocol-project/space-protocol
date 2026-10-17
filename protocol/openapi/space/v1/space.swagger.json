@@ -755,6 +755,43 @@
         ]
       }
     },
+    "/api/v1/channels/{channelId}/content/history": {
+      "get": {
+        "operationId": "ContentService_GetHistoryPage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetHistoryPageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "beforeSequence",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ContentService"
+        ]
+      }
+    },
     "/api/v1/channels/{channelId}/content/search": {
       "get": {
         "operationId": "ContentService_SearchContent",
@@ -2170,6 +2207,27 @@
             "type": "object",
             "$ref": "#/definitions/v1ChannelAccessRule"
           }
+        }
+      }
+    },
+    "v1GetHistoryPageResponse": {
+      "type": "object",
+      "properties": {
+        "contents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Content"
+          },
+          "description": "Не более 100 записей, по возрастанию sequence, включая tombstone."
+        },
+        "nextBeforeSequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "eventCursor": {
+          "type": "string",
+          "description": "Курсор событий, согласованный со страницей в одной транзакции."
         }
       }
     },
