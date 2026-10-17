@@ -68,6 +68,17 @@ import {createSkyScenes} from './hero-scenes.mjs?v=20261017-shared-vortex';
     if (reduced.matches && visible) render(0);
   }
 
+  function drawStarHalo(x, y, radius, brightness) {
+    const halo = back.createRadialGradient(x, y, 0, x, y, radius);
+    halo.addColorStop(0, `rgba(244,225,170,${brightness * .36})`);
+    halo.addColorStop(.3, `rgba(233,216,163,${brightness * .13})`);
+    halo.addColorStop(1, 'rgba(233,216,163,0)');
+    back.fillStyle = halo;
+    back.beginPath();
+    back.arc(x, y, radius, 0, Math.PI * 2);
+    back.fill();
+  }
+
   function drawParticle(particle) {
     const x = particle.x * width + Math.sin(time * .25 + particle.phase) * 18;
     const y = ((particle.y * height - time * particle.speed) % height + height) % height;
@@ -78,14 +89,19 @@ import {createSkyScenes} from './hero-scenes.mjs?v=20261017-shared-vortex';
     const push = near * 24 / Math.max(distance, 1);
     const shimmer = reduced.matches ? 1 :
       1 + Math.sin(time * particle.twinkleSpeed + particle.twinklePhase) * particle.twinkle;
-    back.fillStyle = `rgba(233,216,163,${Math.min(.9, particle.alpha * shimmer + near * .45)})`;
+    const brightness = Math.min(.9, particle.alpha * shimmer + near * .45);
+    if (particle.alpha > .32) {
+      drawStarHalo(x + dx * push, y + dy * push,
+        (4 + particle.radius * 2) * (.85 + shimmer * .15), brightness);
+    }
+    back.fillStyle = `rgba(233,216,163,${brightness})`;
     back.beginPath();
     back.arc(x + dx * push, y + dy * push, particle.radius + near, 0, Math.PI * 2);
     back.fill();
     if (near <= 0) return;
     back.save();
     back.setLineDash([3, 5]);
-    back.strokeStyle = `rgba(233,216,163,${near * .13})`;
+    back.strokeStyle = `rgba(233,216,163,${near * .28})`;
     back.beginPath();
     back.moveTo(x + dx * push, y + dy * push);
     back.lineTo(pointer.x, pointer.y);
