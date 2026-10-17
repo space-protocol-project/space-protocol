@@ -43,10 +43,12 @@ import {createSkyScenes} from './hero-scenes.mjs?v=20261017-shared-vortex';
       surface.height = Math.round(height * ratio);
       surface.getContext('2d').setTransform(ratio, 0, 0, ratio, 0, 0);
     }
-    const count = width < 650 ? 45 : 110;
+    const count = width < 650 ? 110 : 290;
     particles = Array.from({length: count}, () => ({
       x: Math.random(), y: Math.random(), phase: Math.random() * Math.PI * 2,
-      speed: 2 + Math.random() * 5, radius: .7 + Math.random() * 1.2,
+      speed: 2 + Math.random() * 5,
+      radius: .4 + Math.pow(Math.random(), 2) * 1.9,
+      alpha: .055 + Math.pow(Math.random(), 2) * .4,
     }));
     const bounds = art.getBoundingClientRect();
     const parent = hero.getBoundingClientRect();
@@ -71,7 +73,7 @@ import {createSkyScenes} from './hero-scenes.mjs?v=20261017-shared-vortex';
     const distance = Math.hypot(dx, dy);
     const near = pointer.active ? Math.max(0, 1 - distance / 150) : 0;
     const push = near * 24 / Math.max(distance, 1);
-    back.fillStyle = `rgba(233,216,163,${.13 + near * .55})`;
+    back.fillStyle = `rgba(233,216,163,${Math.min(.9, particle.alpha + near * .45)})`;
     back.beginPath();
     back.arc(x + dx * push, y + dy * push, particle.radius + near, 0, Math.PI * 2);
     back.fill();
