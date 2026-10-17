@@ -3,6 +3,30 @@
   const image = document.getElementById('dialog-image');
   const title = document.getElementById('dialog-title');
   let activeShot;
+  let closeTimer;
+
+  function finishClosing() {
+    clearTimeout(closeTimer);
+    dialog.close();
+    dialog.classList.remove('is-closing');
+  }
+
+  function closeScreenshot(event) {
+    event.preventDefault();
+    if (!dialog.open || dialog.classList.contains('is-closing')) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      finishClosing();
+      return;
+    }
+    dialog.classList.add('is-closing');
+    closeTimer = setTimeout(finishClosing, 300);
+  }
+
+  dialog.querySelector('form').addEventListener('submit', closeScreenshot);
+  dialog.addEventListener('cancel', closeScreenshot);
+  dialog.addEventListener('animationend', event => {
+    if (event.target === dialog && event.animationName === 'dialog-exit') finishClosing();
+  });
 
   function openScreenshot(event) {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
@@ -34,6 +58,6 @@
     const bounds = dialog.getBoundingClientRect();
     const outside = event.clientX < bounds.left || event.clientX > bounds.right ||
       event.clientY < bounds.top || event.clientY > bounds.bottom;
-    if (outside) dialog.close();
+    if (outside) closeScreenshot(event);
   });
 })();
