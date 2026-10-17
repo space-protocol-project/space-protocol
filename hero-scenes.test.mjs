@@ -59,8 +59,9 @@ test('Планета реагирует только рядом с курсор�
   const differences = moved.map((call, i) => Math.hypot(call[1] - normal[i][1], call[2] - normal[i][2]));
   assert.ok(differences.some(distance => distance > 1));
   assert.ok(differences.every(distance => distance <= 24));
+  assert.ok(moved.some((call, i) => call[2] - normal[i][2] > 1), 'Объект закручивается вместе с точками');
   let actual, expected;
-  for (let i = 1; i <= 90; i++) {
+  for (let i = 1; i <= 180; i++) {
     actual = draw(interactive, i / 30, {active: false});
     expected = draw(baseline, i / 30);
   }

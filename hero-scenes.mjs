@@ -1,3 +1,5 @@
+import {moveOrbit} from './orbit-physics.mjs?v=20261016-vortex';
+
 const TAU = Math.PI * 2;
 const palette = {light: '#eee5ce', gold: '#d6bc77', panel: '#5b6251', edge: '#b8b19f', dark: '#191b1a'};
 const worldColors = {
@@ -117,19 +119,13 @@ export function createSkyScenes(random = Math.random) {
   const reactions = new Map();
   let previousTime;
 
-  function react(position, key, pointer, delta, strength = 24) {
-    const state = reactions.get(key) ?? {x: 0, y: 0, tilt: 0};
+  function react(position, key, pointer, delta) {
+    const state = reactions.get(key) ?? {x: 0, y: 0, vx: 0, vy: 0, tilt: 0};
     reactions.set(key, state);
-    const dx = position.x - (pointer?.x ?? 0);
-    const dy = position.y - (pointer?.y ?? 0);
-    const distance = Math.hypot(dx, dy);
-    const near = pointer?.active ? Math.max(0, 1 - distance / 125) : 0;
+    moveOrbit(state, position, pointer?.active ? pointer : {x: 0, y: 0, active: false}, delta * 60);
     const blend = 1 - Math.exp(-delta * 7);
-    const push = near * near * strength / Math.max(distance, 1);
-    state.x += (dx * push - state.x) * blend;
-    state.y += (dy * push - state.y) * blend;
-    state.tilt += (clamp(-dx / 125, -.45, .45) * near - state.tilt) * blend;
-    if (!delta) Object.assign(state, {x: 0, y: 0, tilt: 0});
+    state.tilt += (clamp(state.vx * .06, -.5, .5) - state.tilt) * blend;
+    if (!delta) Object.assign(state, {x: 0, y: 0, vx: 0, vy: 0, tilt: 0});
     return {...position, x: position.x + state.x, y: position.y + state.y, tilt: state.tilt};
   }
   let nextMeteor = 4 + random() * 4;
@@ -173,7 +169,7 @@ export function createSkyScenes(random = Math.random) {
     planet(companionSurface, compact ? 9 : 15, 'terracotta');
     companionSurface.restore();
     const olive = react(pointOnOrbit(4.8 + time * .038, orbit, .48, .6),
-      'olive', pointer, delta, 18);
+      'olive', pointer, delta);
     const oliveSurface = olive.front ? front : back;
     oliveSurface.save();
     oliveSurface.translate(olive.x, olive.y);
@@ -187,7 +183,7 @@ export function createSkyScenes(random = Math.random) {
     const age = time % 58 - 2;
     if (age < 0 || age > 29) return;
     const angle = -.8 + age * .17;
-    const position = react(pointOnOrbit(angle, orbit, .53, .38), 'satellite', pointer, delta, 12);
+    const position = react(pointOnOrbit(angle, orbit, .53, .38), 'satellite', pointer, delta);
     const surface = position.front ? front : back;
     surface.save(); surface.globalAlpha = fade(age, 29) * .8;
     surface.translate(position.x, position.y);
