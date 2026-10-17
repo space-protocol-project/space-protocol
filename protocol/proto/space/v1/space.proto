@@ -358,6 +358,8 @@ message Event {
 
 message GetManifestRequest {}
 message GetManifestResponse {
+  // Только ответы обычных каналов. MLS-ответы согласуются отдельно.
+  bool ordinary_replies_supported = 8;
   bool mls_supported = 7;
   bool attachments_enabled = 6;
   string protocol_version = 1;
@@ -445,6 +447,10 @@ message Content {
   bool deleted = 9;
   repeated Asset attachments = 10;
   repeated Reaction reactions = 11;
+  // Ответ только на сообщение того же обычного канала; без копии текста.
+  string reply_to_id = 12;
+  // Актуальные имена видимых авторов и участников реакций; идентификаторы не меняются.
+  map<string, string> participant_names = 13;
 }
 message UpdateContentRequest {
   string channel_id = 1;
@@ -474,6 +480,7 @@ message CreateContentRequest {
   string text = 2;
   string idempotency_key = 3;
   repeated string attachment_ids = 4;
+  string reply_to_id = 5;
 }
 message CreateContentResponse { Content content = 1; }
 message ListContentRequest {
