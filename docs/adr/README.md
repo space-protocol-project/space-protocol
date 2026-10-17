@@ -46,3 +46,5 @@
 - [ADR-040: поиск сообщений](040-message-search.md).
 
 - [ADR-041: постраничная история](041-chat-history-pages.md).
+
+- [ADR-042: индекс подстрок](042-substring-search-index.md).
