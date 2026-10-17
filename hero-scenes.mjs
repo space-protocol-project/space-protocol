@@ -55,16 +55,16 @@ function satellite(ctx, scale, angle, telescope) {
   circle(ctx, 1, 3, 1.3, '#dbc17e');
 }
 
-function planet(ctx, radius, moon = false) {
+function planet(ctx, radius, moon = false, terracotta = false) {
   const gradient = ctx.createLinearGradient(-radius, -radius, radius, radius);
-  gradient.addColorStop(0, moon ? '#b3ad95' : '#b5a477');
-  gradient.addColorStop(.45, moon ? '#787a66' : '#6f725c');
-  gradient.addColorStop(1, '#252c26');
+  const colors = terracotta ? ['#e3ac78', '#b56847', '#593b30']
+    : moon ? ['#f1d6a0', '#bd9361', '#65503b'] : ['#eed49b', '#c49c5b', '#685039'];
+  colors.forEach((color, index) => gradient.addColorStop(index / 2, color));
   circle(ctx, 0, 0, radius, gradient);
   ctx.save(); ctx.beginPath(); ctx.arc(0, 0, radius, 0, TAU); ctx.clip();
   for (const [x, y, r] of [[-.28, -.35, .21], [.37, .2, .17], [-.31, .38, .12], [.19, -.55, .1]]) {
-    circle(ctx, x * radius, y * radius, radius * r, 'rgba(25,27,26,.3)');
-    ctx.strokeStyle = 'rgba(238,229,206,.12)'; ctx.lineWidth = .7;
+    circle(ctx, x * radius, y * radius, radius * r, 'rgba(83,48,29,.24)');
+    ctx.strokeStyle = 'rgba(255,225,176,.22)'; ctx.lineWidth = .7;
     ctx.beginPath(); ctx.arc(x * radius, y * radius, radius * r, Math.PI, TAU); ctx.stroke();
   }
   ctx.restore();
@@ -137,11 +137,18 @@ export function createSkyScenes(random = Math.random) {
     const position = pointOnOrbit(1.1 + time * .012, orbit, .61, .52);
     const radius = compact ? 13 : 22;
     const surface = position.front ? front : back;
-    surface.save(); surface.translate(position.x, position.y); surface.globalAlpha = .72;
+    surface.save(); surface.translate(position.x, position.y); surface.globalAlpha = .9;
     planet(surface, radius);
     const moonAngle = time * .18 + .6;
     surface.translate(Math.cos(moonAngle) * radius * 2.1, Math.sin(moonAngle) * radius * .75);
     planet(surface, radius * .24, true); surface.restore();
+    const companion = pointOnOrbit(3.65 - time * .009, orbit, .58, .48);
+    const companionSurface = companion.front ? front : back;
+    companionSurface.save();
+    companionSurface.translate(companion.x, companion.y);
+    companionSurface.globalAlpha = .78;
+    planet(companionSurface, compact ? 9 : 15, false, true);
+    companionSurface.restore();
   }
 
   function drawMachine(back, front, orbit, time, compact) {
