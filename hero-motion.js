@@ -49,6 +49,9 @@ import {createSkyScenes} from './hero-scenes.mjs?v=20261017-shared-vortex';
       speed: 2 + Math.random() * 5,
       radius: .4 + Math.pow(Math.random(), 2) * 1.9,
       alpha: .055 + Math.pow(Math.random(), 2) * .4,
+      twinkle: Math.random() < .45 ? .25 + Math.random() * .35 : 0,
+      twinkleSpeed: .4 + Math.random() * .9,
+      twinklePhase: Math.random() * Math.PI * 2,
     }));
     const bounds = art.getBoundingClientRect();
     const parent = hero.getBoundingClientRect();
@@ -73,16 +76,21 @@ import {createSkyScenes} from './hero-scenes.mjs?v=20261017-shared-vortex';
     const distance = Math.hypot(dx, dy);
     const near = pointer.active ? Math.max(0, 1 - distance / 150) : 0;
     const push = near * 24 / Math.max(distance, 1);
-    back.fillStyle = `rgba(233,216,163,${Math.min(.9, particle.alpha + near * .45)})`;
+    const shimmer = reduced.matches ? 1 :
+      1 + Math.sin(time * particle.twinkleSpeed + particle.twinklePhase) * particle.twinkle;
+    back.fillStyle = `rgba(233,216,163,${Math.min(.9, particle.alpha * shimmer + near * .45)})`;
     back.beginPath();
     back.arc(x + dx * push, y + dy * push, particle.radius + near, 0, Math.PI * 2);
     back.fill();
     if (near <= 0) return;
+    back.save();
+    back.setLineDash([3, 5]);
     back.strokeStyle = `rgba(233,216,163,${near * .13})`;
     back.beginPath();
     back.moveTo(x + dx * push, y + dy * push);
     back.lineTo(pointer.x, pointer.y);
     back.stroke();
+    back.restore();
   }
 
   function drawGlow() {
