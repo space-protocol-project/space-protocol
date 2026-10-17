@@ -114,6 +114,24 @@ function streak(ctx, x, y, angle, length, opacity, comet, age) {
 
 export function createSkyScenes(random = Math.random) {
   const events = [];
+  const reactions = new Map();
+  let previousTime;
+
+  function react(position, key, pointer, delta, strength = 24) {
+    const state = reactions.get(key) ?? {x: 0, y: 0, tilt: 0};
+    reactions.set(key, state);
+    const dx = position.x - (pointer?.x ?? 0);
+    const dy = position.y - (pointer?.y ?? 0);
+    const distance = Math.hypot(dx, dy);
+    const near = pointer?.active ? Math.max(0, 1 - distance / 125) : 0;
+    const blend = 1 - Math.exp(-delta * 7);
+    const push = near * near * strength / Math.max(distance, 1);
+    state.x += (dx * push - state.x) * blend;
+    state.y += (dy * push - state.y) * blend;
+    state.tilt += (clamp(-dx / 125, -.45, .45) * near - state.tilt) * blend;
+    if (!delta) Object.assign(state, {x: 0, y: 0, tilt: 0});
+    return {...position, x: position.x + state.x, y: position.y + state.y, tilt: state.tilt};
+  }
   let nextMeteor = 4 + random() * 4;
   let nextComet = 19 + random() * 8;
   let nextAsteroid = 28 + random() * 10;
@@ -137,7 +155,7 @@ export function createSkyScenes(random = Math.random) {
     }
   }
 
-  function drawWorld(back, front, orbit, time, compact) {
+  function drawWorld(back, front, orbit, time, compact, pointer, delta) {
     const position = pointOnOrbit(1.1 + time * .012, orbit, .61, .52);
     const radius = compact ? 13 : 22;
     const surface = position.front ? front : back;
@@ -146,14 +164,16 @@ export function createSkyScenes(random = Math.random) {
     const moonAngle = time * .18 + .6;
     surface.translate(Math.cos(moonAngle) * radius * 2.1, Math.sin(moonAngle) * radius * .75);
     planet(surface, radius * .24, 'moon'); surface.restore();
-    const companion = pointOnOrbit(3.65 - time * .06, orbit, .58, .48);
+    const companion = react(pointOnOrbit(3.65 - time * .06, orbit, .58, .48),
+      'terracotta', pointer, delta);
     const companionSurface = companion.front ? front : back;
     companionSurface.save();
     companionSurface.translate(companion.x, companion.y);
     companionSurface.globalAlpha = .78;
     planet(companionSurface, compact ? 9 : 15, 'terracotta');
     companionSurface.restore();
-    const olive = pointOnOrbit(4.8 + time * .038, orbit, .48, .6);
+    const olive = react(pointOnOrbit(4.8 + time * .038, orbit, .48, .6),
+      'olive', pointer, delta, 18);
     const oliveSurface = olive.front ? front : back;
     oliveSurface.save();
     oliveSurface.translate(olive.x, olive.y);
@@ -162,16 +182,16 @@ export function createSkyScenes(random = Math.random) {
     oliveSurface.restore();
   }
 
-  function drawMachine(back, front, orbit, time, compact) {
+  function drawMachine(back, front, orbit, time, compact, pointer, delta) {
     const cycle = Math.floor(time / 58);
     const age = time % 58 - 2;
     if (age < 0 || age > 29) return;
     const angle = -.8 + age * .17;
-    const position = pointOnOrbit(angle, orbit, .53, .38);
+    const position = react(pointOnOrbit(angle, orbit, .53, .38), 'satellite', pointer, delta, 12);
     const surface = position.front ? front : back;
     surface.save(); surface.globalAlpha = fade(age, 29) * .8;
     surface.translate(position.x, position.y);
-    satellite(surface, compact ? .43 : .64, Math.sin(angle) * .25 - .3, cycle % 2 === 1);
+    satellite(surface, compact ? .43 : .64, Math.sin(angle) * .25 - .3 + position.tilt, cycle % 2 === 1);
     surface.restore();
   }
 
@@ -196,13 +216,15 @@ export function createSkyScenes(random = Math.random) {
   }
 
   return {
-    draw({back, front, orbit, width, height, time, still = false}) {
+    draw({back, front, orbit, width, height, time, still = false, pointer}) {
       if (orbit.width < 1) return;
       const compact = width < 650;
-      drawWorld(back, front, orbit, still ? 0 : time, compact);
+      const delta = still ? 0 : clamp(time - (previousTime ?? time - 1 / 30), 0, .05);
+      previousTime = time;
+      drawWorld(back, front, orbit, still ? 0 : time, compact, still ? undefined : pointer, delta);
       if (still) return;
       schedule(time, compact);
-      drawMachine(back, front, orbit, time, compact);
+      drawMachine(back, front, orbit, time, compact, pointer, delta);
       events.forEach(event => drawEvent(back, front, event, orbit, width, height, time, compact));
     },
   };

@@ -41,3 +41,29 @@ test('При уменьшенном движении сцена не меняе�
   };
   assert.equal(draw(0), draw(100000));
 });
+
+test('Планета реагирует только рядом с курсором и возвращается на орбиту', () => {
+  const orbit = {x: 900, y: 400, width: 500, height: 500};
+  const baseline = createSkyScenes(() => .5), interactive = createSkyScenes(() => .5);
+  const draw = (sky, time, pointer) => {
+    const back = surface(), front = surface();
+    sky.draw({back: back.context, front: front.context, orbit, width: 1400, height: 800, time, pointer});
+    return [...back.calls, ...front.calls].filter(call => call[0] === 'translate');
+  };
+  const angle = 3.65, tilt = -.37;
+  const x = Math.cos(angle) * 500 * .58, y = Math.sin(angle) * 500 * .48;
+  const pointer = {active: true, x: 900 + x * Math.cos(tilt) - y * Math.sin(tilt) - 20,
+    y: 400 + x * Math.sin(tilt) + y * Math.cos(tilt)};
+  const normal = draw(baseline, 0);
+  const moved = draw(interactive, 0, pointer);
+  const differences = moved.map((call, i) => Math.hypot(call[1] - normal[i][1], call[2] - normal[i][2]));
+  assert.ok(differences.some(distance => distance > 1));
+  assert.ok(differences.every(distance => distance <= 24));
+  let actual, expected;
+  for (let i = 1; i <= 90; i++) {
+    actual = draw(interactive, i / 30, {active: false});
+    expected = draw(baseline, i / 30);
+  }
+  actual.forEach((call, i) => assert.ok(Math.hypot(call[1] - expected[i][1], call[2] - expected[i][2]) < .001));
+  assert.deepEqual(draw(createSkyScenes(), 0, {active: true, x: -1000, y: -1000}), normal);
+});

@@ -1,5 +1,5 @@
 import {moveOrbit} from './orbit-physics.mjs?v=20261016-vortex';
-import {createSkyScenes} from './hero-scenes.mjs?v=20261017-moon';
+import {createSkyScenes} from './hero-scenes.mjs?v=20261017-cursor-worlds';
 
 (() => {
   const hero = document.querySelector('.hero');
@@ -131,7 +131,7 @@ import {createSkyScenes} from './hero-scenes.mjs?v=20261017-moon';
     scene.clearRect(0, 0, width, height);
     drawGlow();
     particles.forEach(drawParticle);
-    sky.draw({back, front: scene, orbit, width, height, time, still: reduced.matches});
+    sky.draw({back, front: scene, orbit, width, height, time, still: reduced.matches, pointer});
     orbits.forEach(particle => drawOrbit(particle, step));
   }
 
