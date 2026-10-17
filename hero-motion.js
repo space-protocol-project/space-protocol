@@ -1,5 +1,5 @@
 import {moveOrbit} from './orbit-physics.mjs?v=20261016-vortex';
-import {createSkyScenes} from './hero-scenes.mjs?v=20261017-olive';
+import {createSkyScenes} from './hero-scenes.mjs?v=20261017-moon';
 
 (() => {
   const hero = document.querySelector('.hero');

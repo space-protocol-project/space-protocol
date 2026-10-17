@@ -2,7 +2,7 @@ const TAU = Math.PI * 2;
 const palette = {light: '#eee5ce', gold: '#d6bc77', panel: '#5b6251', edge: '#b8b19f', dark: '#191b1a'};
 const worldColors = {
   ochre: ['#eed49b', '#c49c5b', '#685039'],
-  moon: ['#f1d6a0', '#bd9361', '#65503b'],
+  moon: ['#f0eee1', '#aeb9ad', '#66776c'],
   terracotta: ['#e3ac78', '#b56847', '#593b30'],
   olive: ['#c3c39b', '#868b62', '#414d3a'],
 };
