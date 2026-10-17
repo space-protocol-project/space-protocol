@@ -8,6 +8,27 @@
   let closeTimer;
   let switching = false;
   let queuedDirection = 0;
+  let swipeStart;
+  const stage = dialog.querySelector('.dialog-stage');
+
+  stage.addEventListener('touchstart', event => {
+    swipeStart = undefined;
+    if (event.touches.length !== 1 || event.target.closest('button')) return;
+    const touch = event.touches[0];
+    swipeStart = {x: touch.clientX, y: touch.clientY, time: performance.now()};
+  }, {passive: true});
+  stage.addEventListener('touchcancel', () => { swipeStart = undefined; }, {passive: true});
+  stage.addEventListener('touchend', event => {
+    const start = swipeStart;
+    swipeStart = undefined;
+    if (!start || event.touches.length || event.changedTouches.length !== 1) return;
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - start.x;
+    const dy = touch.clientY - start.y;
+    if (performance.now() - start.time > 1000 || Math.abs(dx) < 48) return;
+    if (Math.abs(dx) < Math.abs(dy) * 1.4) return;
+    switchScreenshot(dx < 0 ? 1 : -1);
+  }, {passive: true});
 
   function updateCaption() {
     image.alt = activeShot.querySelector('img').alt;
@@ -62,6 +83,7 @@
   function finishClosing() {
     clearTimeout(closeTimer);
     queuedDirection = 0;
+    swipeStart = undefined;
     dialog.close();
     image.getAnimations().forEach(animation => animation.cancel());
     dialog.classList.remove('is-closing');
