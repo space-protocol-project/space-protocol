@@ -36,6 +36,9 @@ service ChannelService {
 }
 
 service ContentService {
+  rpc SearchContent(SearchContentRequest) returns (SearchContentResponse) {
+    option (google.api.http) = {get: "/api/v1/channels/{channel_id}/content/search"};
+  }
   // Постоянная очередь использует отдельный RPC: старый runtime отклоняет
   // его до изменения данных, а не игнорирует неизвестный ключ запроса.
   rpc ApplyContentMutation(ApplyContentMutationRequest) returns (ApplyContentMutationResponse);
@@ -656,4 +659,16 @@ message ApplyContentMutationResponse {
   string idempotency_key = 2;
   // Версия именно этого действия; content может содержать более новую версию.
   int64 applied_revision = 3;
+}
+
+// Буквальный поиск подстроки без учёта регистра в одном обычном канале.
+// Запрос: 2–128 символов, максимум 512 байт. Страница: не более 50 записей.
+message SearchContentRequest {
+  string channel_id = 1;
+  string query = 2;
+  int64 before_sequence = 3;
+}
+message SearchContentResponse {
+  repeated Content contents = 1;
+  int64 next_before_sequence = 2;
 }

@@ -755,6 +755,49 @@
         ]
       }
     },
+    "/api/v1/channels/{channelId}/content/search": {
+      "get": {
+        "operationId": "ContentService_SearchContent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SearchContentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "beforeSequence",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ContentService"
+        ]
+      }
+    },
     "/api/v1/channels/{channelId}/events": {
       "get": {
         "operationId": "SyncService_ListEvents",
@@ -2718,6 +2761,22 @@
         "newSignature": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "v1SearchContentResponse": {
+      "type": "object",
+      "properties": {
+        "contents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Content"
+          }
+        },
+        "nextBeforeSequence": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
