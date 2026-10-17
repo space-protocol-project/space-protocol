@@ -142,7 +142,7 @@ export function createSkyScenes(random = Math.random) {
     const moonAngle = time * .18 + .6;
     surface.translate(Math.cos(moonAngle) * radius * 2.1, Math.sin(moonAngle) * radius * .75);
     planet(surface, radius * .24, true); surface.restore();
-    const companion = pointOnOrbit(3.65 - time * .009, orbit, .58, .48);
+    const companion = pointOnOrbit(3.65 - time * .06, orbit, .58, .48);
     const companionSurface = companion.front ? front : back;
     companionSurface.save();
     companionSurface.translate(companion.x, companion.y);
