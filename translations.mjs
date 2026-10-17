@@ -1,4 +1,6 @@
 export default {
+  "Предыдущий снимок": {"en": "Previous screenshot", "zh": "上一张截图"},
+  "Следующий снимок": {"en": "Next screenshot", "zh": "下一张截图"},
   "Space Protocol — своё пространство": {
     "en": "Space Protocol — your own space",
     "zh": "Space Protocol — 自己的空间"

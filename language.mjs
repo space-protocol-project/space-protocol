@@ -1,4 +1,4 @@
-import translations from './translations.mjs?v=20261017-push';
+import translations from './translations.mjs?v=20261017-gallery-arrows';
 
 const supported = ['ru', 'zh', 'en'];
 const storageKey = 'space.site.language';

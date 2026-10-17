@@ -2,12 +2,68 @@
   const dialog = document.getElementById('screen-dialog');
   const image = document.getElementById('dialog-image');
   const title = document.getElementById('dialog-title');
+  const shots = [...document.querySelectorAll('.gallery-shot')];
+  const counter = document.getElementById('dialog-counter');
   let activeShot;
   let closeTimer;
+  let switching = false;
+  let queuedDirection = 0;
+
+  function updateCaption() {
+    image.alt = activeShot.querySelector('img').alt;
+    title.textContent = activeShot.dataset.galleryTitle;
+    counter.textContent = `${shots.indexOf(activeShot) + 1} / ${shots.length}`;
+  }
+
+  async function switchScreenshot(direction) {
+    if (!dialog.open || dialog.classList.contains('is-closing')) return;
+    if (switching) {
+      queuedDirection = direction;
+      return;
+    }
+    switching = true;
+    const next = shots[(shots.indexOf(activeShot) + direction + shots.length) % shots.length];
+    const preload = new Image();
+    preload.src = next.href;
+    try {
+      await preload.decode();
+      if (!dialog.open || dialog.classList.contains('is-closing')) return;
+      const duration = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 140;
+      await image.animate([{opacity: 1, transform: 'translateX(0)'},
+        {opacity: 0, transform: `translateX(${-direction * 18}px)`}],
+      {duration, easing: 'ease-in', fill: 'forwards'}).finished;
+      if (!dialog.open || dialog.classList.contains('is-closing')) return;
+      activeShot = next;
+      image.src = next.href;
+      updateCaption();
+      await image.animate([{opacity: 0, transform: `translateX(${direction * 18}px)`},
+        {opacity: 1, transform: 'translateX(0)'}],
+      {duration: duration ? 180 : 0, easing: 'ease-out', fill: 'forwards'}).finished;
+    } catch {
+      // При ошибке загрузки сохраняем текущий снимок.
+    } finally {
+      image.getAnimations().forEach(animation => animation.cancel());
+      switching = false;
+      const pending = queuedDirection;
+      queuedDirection = 0;
+      if (pending) switchScreenshot(pending);
+    }
+  }
+
+  dialog.querySelector('.dialog-previous').addEventListener('click', () => switchScreenshot(-1));
+  dialog.querySelector('.dialog-next').addEventListener('click', () => switchScreenshot(1));
+  dialog.addEventListener('keydown', event => {
+    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    switchScreenshot(event.key === 'ArrowLeft' ? -1 : 1);
+  });
 
   function finishClosing() {
     clearTimeout(closeTimer);
+    queuedDirection = 0;
     dialog.close();
+    image.getAnimations().forEach(animation => animation.cancel());
     dialog.classList.remove('is-closing');
   }
 
@@ -35,12 +91,11 @@
     const link = event.currentTarget;
     activeShot = link;
     image.src = link.href;
-    image.alt = link.querySelector('img').alt;
-    title.textContent = link.dataset.galleryTitle;
+    updateCaption();
     dialog.showModal();
   }
 
-  document.querySelectorAll('.gallery-shot').forEach(link => {
+  shots.forEach(link => {
     link.addEventListener('click', openScreenshot);
     link.addEventListener('keydown', event => {
       if (event.key === ' ') openScreenshot(event);
@@ -49,8 +104,7 @@
 
   document.addEventListener('space-language-change', () => {
     if (!dialog.open || !activeShot) return;
-    image.alt = activeShot.querySelector('img').alt;
-    title.textContent = activeShot.dataset.galleryTitle;
+    updateCaption();
   });
 
   dialog.addEventListener('click', event => {

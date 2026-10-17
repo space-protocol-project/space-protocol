@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#191b1a">
 <meta property="og:title" content="Space Protocol — своё пространство"><meta property="og:description" content="Место для людей. Правила — ваши. Открытый проект независимых сообществ."><meta property="og:type" content="website">
 <link rel="preload" href="assets/fonts/NunitoSans-Variable.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="assets/fonts/Nunito-Variable.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="icon" href="assets/space-icon.png"><link rel="stylesheet" href="style.css?v=20261017-push">
+<link rel="icon" href="assets/space-icon.png"><link rel="stylesheet" href="style.css?v=20261017-gallery-arrows">
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержанию</a>
@@ -48,7 +48,7 @@
 <figure><a class="gallery-shot" href="assets/screens/mobile-connection.png" data-gallery-title="На телефоне · Подключение" aria-haspopup="dialog" aria-label="Открыть крупнее: подключение — на телефоне"><img src="assets/screens/mobile-connection.png" alt="Space — подключение, на телефоне" loading="lazy"></a><figcaption><strong>Подключение</strong><p>Вход по ссылке или QR с камеры и из галереи.</p></figcaption></figure>
 </div></section>
 <p class="screen-provenance">Снимки получены из Release-сборок Space на Windows и Android. Показаны настоящие экраны приложения с демонстрационными данными. Личные сообщения, ключи и приглашения не публикуются. Нажмите на снимок, чтобы рассмотреть детали.</p>
-<dialog id="screen-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><strong id="dialog-title">Space</strong><form method="dialog"><button type="submit" aria-label="Закрыть снимок">Закрыть ✕</button></form></div><img id="dialog-image" alt=""></dialog>
+<dialog id="screen-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><strong id="dialog-title" aria-live="polite">Space</strong><span id="dialog-counter"></span><form method="dialog"><button type="submit" aria-label="Закрыть снимок">Закрыть ✕</button></form></div><div class="dialog-stage"><img id="dialog-image" alt=""><button class="dialog-arrow dialog-previous" type="button" aria-label="Предыдущий снимок">&#8592;</button><button class="dialog-arrow dialog-next" type="button" aria-label="Следующий снимок">&#8594;</button></div></dialog>
 </section>
 
 <section class="downloads light section" id="download" aria-labelledby="download-title">
@@ -70,6 +70,6 @@
 <script type="module" src="hero-motion.js?v=20261017-moon"></script>
 <script src="setup-guide.js?v=20261016-copy5" defer></script>
 <script type="module" src="command-highlight.mjs?v=20261016-release033"></script>
-<script src="screen-demo.js?v=20261017-smooth-close" defer></script>
-<script type="module" src="language.mjs?v=20261017-push"></script>
+<script src="screen-demo.js?v=20261017-gallery-arrows" defer></script>
+<script type="module" src="language.mjs?v=20261017-gallery-arrows"></script>
 </body></html>
