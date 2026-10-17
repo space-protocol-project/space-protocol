@@ -103,3 +103,6 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 .setup-actions{justify-content:flex-start}
 /* Палитра Gruvbox Dark: morhetz/gruvbox. */
 .setup-command{--ink:#282828;--paper:#ebdbb2;background:var(--ink);color:var(--paper)}.setup-command .shell-command{color:#b8bb26}.setup-command .shell-option{color:#fabd2f}.setup-command .shell-string{color:#b8bb26}.setup-command .shell-variable,.setup-command .shell-number{color:#d3869b}.setup-command .shell-address{color:#8ec07c}.setup-command .shell-operator{color:#fe8019}.setup-command .shell-comment{color:#a89984;font-style:italic}.copy-command:hover{background:var(--ink);color:#fabd2f}
+
+.setup-notifications{margin-top:36px;padding-top:28px;border-top:1px solid var(--inkline)}
+.setup-notifications>h3{font-size:24px;margin-bottom:12px}

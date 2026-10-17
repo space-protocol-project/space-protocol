@@ -926,5 +926,61 @@ export default {
   "Если установщик попросит включить автозапуск пользователя, выполните sudo loginctl enable-linger \"$USER\" и повторите команду. Прежний запуск в терминале сначала остановите через Ctrl+C.": {
     "en": "If the installer asks to enable user autostart, run sudo loginctl enable-linger \"$USER\" and repeat the command. Stop any previous foreground server with Ctrl+C first.",
     "zh": "如果安装程序要求启用用户自动启动，请运行 sudo loginctl enable-linger \"$USER\" 后重试。请先用 Ctrl+C 停止之前在终端中运行的服务器。"
+  },
+  "Открытый проект · Выпуск v0.4.2": {
+    "en": "Open project · Release v0.4.2",
+    "zh": "开源项目 · v0.4.2 版本"
+  },
+  "v0.4.2 · 17 ОКТЯБРЯ 2026": {
+    "en": "v0.4.2 · OCTOBER 17, 2026",
+    "zh": "v0.4.2 · 2026年10月17日"
+  },
+  "Нужны SSH-доступ под обычным пользователем, curl, unzip и sha256sum. Замените YOUR_SERVER и YOUR_PUBLIC_IP своими значениями. Пример ниже — для runtime v0.4.2.": {
+    "en": "You need SSH access as a regular user, curl, unzip, and sha256sum. Replace YOUR_SERVER and YOUR_PUBLIC_IP with your values. This example uses runtime v0.4.2.",
+    "zh": "需要普通用户的 SSH 访问权限，以及 curl、unzip 和 sha256sum。请将 YOUR_SERVER 和 YOUR_PUBLIC_IP 替换为实际值。以下示例使用运行环境 v0.4.2。"
+  },
+  "Нужны Linux x64, обычный пользователь (не root), curl, unzip и sha256sum. Приложение и runtime — v0.4.2 или новее.": {
+    "en": "Requires Linux x64, a regular user (not root), curl, unzip and sha256sum. Use app and runtime v0.4.2 or later.",
+    "zh": "需要 Linux x64、普通用户（非 root）、curl、unzip 和 sha256sum。应用与 runtime 均需 v0.4.2 或更新版本。"
+  },
+  "Нужны Linux x64 с systemd, обычный пользователь (не root), curl, unzip и sha256sum. Приложение и runtime — v0.4.2 или новее.": {
+    "en": "Requires Linux x64 with systemd, a regular user (not root), curl, unzip and sha256sum. Use app and runtime v0.4.2 or later.",
+    "zh": "需要带 systemd 的 Linux x64、普通用户（非 root）、curl、unzip 和 sha256sum。应用与 runtime 均需 v0.4.2 或更新版本。"
+  },
+  "Уведомления без Firebase": {
+    "en": "Notifications without Firebase",
+    "zh": "无需 Firebase 的通知"
+  },
+  "Для Android достаточно вашего runtime v0.4.2 со схемой 22. Отдельный сервер уведомлений и дополнительный порт не нужны.": {
+    "en": "Android uses your own runtime v0.4.2 with schema 22. No separate notification server or additional port is needed.",
+    "zh": "Android 使用您自己的 runtime v0.4.2（数据库版本 22），无需额外的通知服务器或端口。"
+  },
+  "Подключитесь к пространству": {
+    "en": "Connect to a space",
+    "zh": "连接到空间"
+  },
+  "Добавьте приглашение в Space и подтвердите ключ пространства. Для обновления существующего сервера сначала установите runtime v0.4.2.": {
+    "en": "Add an invitation in Space and confirm the space key. To update an existing server, install runtime v0.4.2 first.",
+    "zh": "在 Space 中添加邀请并确认空间密钥。更新现有服务器时，请先安装 runtime v0.4.2。"
+  },
+  "Включите уведомления": {
+    "en": "Enable notifications",
+    "zh": "启用通知"
+  },
+  "В настройках Space выберите режим уведомлений и выдайте разрешение Android. Приложение подключит пространства автоматически; появится постоянная карточка «Подключение к пространствам».": {
+    "en": "Choose a notification mode in Space settings and grant Android permission. Spaces connect automatically; an ongoing “Connecting to spaces” notification appears.",
+    "zh": "在 Space 设置中选择通知模式并授予 Android 权限。空间将自动连接，系统会显示持续的“连接到空间”通知。"
+  },
+  "Откройте нужное сообщение одним нажатием": {
+    "en": "Open the message with one tap",
+    "zh": "轻点即可打开消息"
+  },
+  "В фоне показывается только «Новое сообщение», без текста, имён и файлов. Нажатие ведёт к доступному сообщению обычного или закрытого MLS-канала.": {
+    "en": "Background notifications show only “New message”, without text, names or files. Tap to open an accessible message in an ordinary or private MLS channel.",
+    "zh": "后台通知仅显示“新消息”，不含正文、姓名或文件。轻点即可打开普通频道或私密 MLS 频道中有权访问的消息。"
+  },
+  "Сервер должен быть включён и доступен телефону. Разрешите фоновую работу Space в настройках батареи: режим сна и ограничения Android могут задерживать доставку. После принудительной остановки откройте Space снова. Фоновая доставка Android пока требует ручной приёмки.": {
+    "en": "The server must stay on and reachable from your phone. Allow Space to run in the background in battery settings: sleep and Android restrictions may delay delivery. Reopen Space after force-stop. Android background delivery still requires manual acceptance testing.",
+    "zh": "服务器必须保持运行且手机能够访问。请在电池设置中允许 Space 在后台运行：休眠和 Android 限制可能延迟通知。强行停止后请重新打开 Space。Android 后台通知仍需手动验收。"
   }
 };
