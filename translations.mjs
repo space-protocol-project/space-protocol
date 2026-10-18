@@ -1,19 +1,19 @@
 export default {
-  "Перед обновлением сохраните резервную копию пространства и отдельно ключи устройств MLS. Сначала установите приложение v0.7.0, затем обновите runtime через «Эфир».": {"en": "Before updating, save a space backup and separately back up MLS device keys. Install app v0.7.0 first, then update the runtime through Broadcast.", "zh": "更新前，请备份空间并单独保存 MLS 设备密钥。先安装应用 v0.7.0，再通过“广播”更新 runtime。"},
-  "Голосовые комнаты · v0.7.0": {"en": "Voice rooms · v0.7.0", "zh": "语音房间 · v0.7.0"},
-  "Два человека, один разговор": {"en": "Two people, one conversation", "zh": "两个人，一场对话"},
-  "Установите приложение и runtime v0.7.0 со схемой 23. Владелец или администратор создаёт комнату в разделе «Комнаты». Второй участник входит туда же с компьютера.": {"en": "Install app and runtime v0.7.0 with schema 23. The owner or administrator creates a room under Rooms. The second participant joins the same room from a computer.", "zh": "安装采用数据库版本 23 的应用和 runtime v0.7.0。所有者或管理员在“房间”中创建语音房间，另一位参与者从电脑加入同一房间。"},
+  "Перед обновлением сохраните резервную копию пространства и отдельно ключи устройств MLS. Сначала установите приложение v0.7.1, затем обновите runtime через «Эфир».": {"en": "Before updating, save a space backup and separately back up MLS device keys. Install app v0.7.1 first, then update the runtime through Broadcast.", "zh": "更新前，请备份空间并单独保存 MLS 设备密钥。先安装应用 v0.7.1，再通过“广播”更新 runtime。"},
+  "Голосовые комнаты · v0.7.1": {"en": "Voice rooms · v0.7.1", "zh": "语音房间 · v0.7.1"},
+  "До восьми участников в комнате": {"en": "Up to eight participants in a room", "zh": "每个房间最多八位参与者"},
+  "Установите приложение и runtime v0.7.1 со схемой 23. Владелец или администратор создаёт комнату в разделе «Комнаты». Остальные участники входят туда же с компьютера. В комнате могут говорить до восьми человек.": {"en": "Install app and runtime v0.7.1 with schema 23. The owner or administrator creates a room under Rooms. Other participants join the same room from their computers. Up to eight people can talk in a room.", "zh": "安装采用数据库版本 23 的应用和 runtime v0.7.1。所有者或管理员在“房间”中创建语音房间，其他参与者从各自电脑加入同一房间，最多八人可以同时交流。"},
   "Микрофон при входе выключен. В комнате видны участники; доступны микрофон, отключение входящего звука и выход. Голос работает на Windows, macOS и Linux.": {"en": "The microphone is off on entry. See participants and control your microphone, incoming audio, or leave. Voice is available on Windows, macOS and Linux.", "zh": "进入时麦克风默认关闭。房间显示参与者，可控制麦克风、关闭接收音频或退出。语音支持 Windows、macOS 和 Linux。"},
   "Если участники за разными роутерами": {"en": "When participants use different routers", "zh": "参与者使用不同路由器时"},
   "Для сложного NAT/CGNAT настройте собственный публичный TURN, например coturn на VPS. Автоматический проброс HTTPS-порта не заменяет TURN. Адрес API пространства тоже должен быть доступен участникам.": {"en": "For restrictive NAT/CGNAT, configure your own public TURN server, such as coturn on a VPS. Automatic HTTPS port forwarding does not replace TURN. Participants must also be able to reach the space API.", "zh": "对于严格的 NAT/CGNAT，请配置自己的公共 TURN 服务器，例如 VPS 上的 coturn。自动 HTTPS 端口映射不能代替 TURN，参与者也必须能够访问空间 API。"},
   "Задайте переменные на компьютере runtime до запуска Space или в EnvironmentFile службы systemd. Секрет в файле должен совпадать с секретом coturn; клиентам он не передаётся. Для обязательного маршрута через TURN задайте SPACE_VOICE_RELAY_ONLY=true.": {"en": "Set these variables on the runtime computer before launching Space, or in the systemd service EnvironmentFile. The secret file must match the coturn secret; it is never sent to clients. Set SPACE_VOICE_RELAY_ONLY=true to require TURN.", "zh": "启动 Space 前在 runtime 电脑上设置环境变量，或写入 systemd 服务的 EnvironmentFile。文件中的密钥必须与 coturn 一致，且不会发送给客户端。设置 SPACE_VOICE_RELAY_ONLY=true 可强制使用 TURN。"},
   "Откройте на TURN-сервере UDP/TCP 3478 и UDP-диапазон ретрансляции из его конфигурации. Для turns: нужен доверенный TLS-сертификат и TCP 5349. После изменения настроек перезапустите runtime и заново войдите в комнату.": {"en": "On the TURN server, open UDP/TCP 3478 and its configured UDP relay range. A turns: URL requires a trusted TLS certificate and TCP 5349. Restart the runtime and rejoin the room after changing settings.", "zh": "在 TURN 服务器上开放 UDP/TCP 3478 和配置的 UDP 中继端口范围。turns: 需要受信任的 TLS 证书和 TCP 5349。更改设置后，请重启 runtime 并重新加入房间。"},
   "Пошаговая настройка coturn и защита сервера": {"en": "Step-by-step coturn setup and server protection", "zh": "coturn 配置步骤与服务器防护"},
-  "Звук проходит через runtime и доступен серверу; это не MLS/E2EE. Запись не ведётся. Проверены два Windows-клиента через TURN UDP и TCP в изолированном стенде; проверка через настоящий интернет ещё не выполнена.": {"en": "Audio passes through the runtime and is accessible to the server; this is not MLS/E2EE. No recording is made. Two Windows clients were tested over TURN UDP and TCP in an isolated setup; a real internet test is still pending.", "zh": "音频经过 runtime，服务器可访问音频，不属于 MLS/E2EE。不进行录音。已在隔离环境中通过 TURN UDP 和 TCP 验证两个 Windows 客户端，真实互联网测试尚未完成。"},
-  "Нужны Linux x64 с systemd, обычный пользователь (не root), curl, unzip и sha256sum. Приложение и runtime — v0.7.0 со схемой 23.": {"en": "Requires Linux x64 with systemd, a regular user (not root), curl, unzip and sha256sum. Use app and runtime v0.7.0 with schema 23.", "zh": "需要带 systemd 的 Linux x64、普通用户（非 root）、curl、unzip 和 sha256sum。请使用数据库版本 23 的应用与 runtime v0.7.0。"},
-  "В runtime v0.7.0 со схемой 23 уведомления Android работают без Firebase. Отдельный сервер уведомлений и дополнительный порт не нужны.": {"en": "Runtime v0.7.0 with schema 23 provides Android notifications without Firebase. No separate notification server or additional port is needed.", "zh": "runtime v0.7.0（数据库版本 23）提供无需 Firebase 的 Android 通知，不需要额外通知服务器或端口。"},
-  "Добавьте приглашение в Space и подтвердите ключ пространства. Для обновления существующего сервера сначала установите приложение v0.7.0, затем runtime v0.7.0.": {"en": "Add an invitation in Space and confirm the space key. To update an existing server, install app v0.7.0 first, then runtime v0.7.0.", "zh": "在 Space 中添加邀请并确认空间密钥。更新已有服务器时，先安装应用 v0.7.0，再更新 runtime v0.7.0。"},
-  "В v0.7.0 доступны голосовые комнаты для двоих на компьютере. Дальше — больше участников, восстановление соединения, видео и демонстрация экрана.": {"en": "v0.7.0 offers desktop voice rooms for two. Next: more participants, reconnection, video and screen sharing.", "zh": "v0.7.0 提供双人桌面语音房间。下一步：更多参与者、连接恢复、视频与屏幕共享。"},
+  "Звук проходит через runtime и доступен серверу; это не MLS/E2EE. Запись не ведётся. Автоматический стенд восьми WebRTC-клиентов проверен напрямую и через TURN UDP/TCP. Разговор восьми людей через настоящий интернет ещё не проверен.": {"en": "Audio passes through the runtime and is accessible to the server; this is not MLS/E2EE. No recording is made. An automated eight-client WebRTC setup passed direct and TURN UDP/TCP tests. A real eight-person conversation over the internet is still pending.", "zh": "音频经过 runtime，服务器可访问音频，不属于 MLS/E2EE。不进行录音。八个 WebRTC 客户端的自动测试已通过直接连接及 TURN UDP/TCP 验证，八人真实互联网通话尚未测试。"},
+  "Нужны Linux x64 с systemd, обычный пользователь (не root), curl, unzip и sha256sum. Приложение и runtime — v0.7.1 со схемой 23.": {"en": "Requires Linux x64 with systemd, a regular user (not root), curl, unzip and sha256sum. Use app and runtime v0.7.1 with schema 23.", "zh": "需要带 systemd 的 Linux x64、普通用户（非 root）、curl、unzip 和 sha256sum。请使用数据库版本 23 的应用与 runtime v0.7.1。"},
+  "В runtime v0.7.1 со схемой 23 уведомления Android работают без Firebase. Отдельный сервер уведомлений и дополнительный порт не нужны.": {"en": "Runtime v0.7.1 with schema 23 provides Android notifications without Firebase. No separate notification server or additional port is needed.", "zh": "runtime v0.7.1（数据库版本 23）提供无需 Firebase 的 Android 通知，不需要额外通知服务器或端口。"},
+  "Добавьте приглашение в Space и подтвердите ключ пространства. Для обновления существующего сервера сначала установите приложение v0.7.1, затем runtime v0.7.1.": {"en": "Add an invitation in Space and confirm the space key. To update an existing server, install app v0.7.1 first, then runtime v0.7.1.", "zh": "在 Space 中添加邀请并确认空间密钥。更新已有服务器时，先安装应用 v0.7.1，再更新 runtime v0.7.1。"},
+  "В v0.7.1 доступны голосовые комнаты до восьми участников на компьютере. Дальше — восстановление соединения, выбор устройств, видео и демонстрация экрана.": {"en": "v0.7.1 offers desktop voice rooms for up to eight participants. Next: reconnection, device selection, video and screen sharing.", "zh": "v0.7.1 提供最多八人的桌面语音房间。下一步：连接恢复、设备选择、视频与屏幕共享。"},
 
   "Следующий приоритет — голосовые комнаты: участники, микрофон и быстрый вход. Затем видео и демонстрация экрана.": {"en": "Next priority: voice rooms with participants, microphone controls and quick joining. Video and screen sharing follow.", "zh": "下一优先事项是语音房间：参与者、麦克风控制和快速加入。之后是视频与屏幕共享。"},
   "В v0.6.0 в «Эфире» доступны размеры данных, безопасная очистка и резервные копии по расписанию. Расписание и автоматическая очистка включаются отдельно; runtime должен работать. Серверная копия не содержит ключи устройств MLS.": {"en": "In v0.6.0, Broadcast offers storage sizes, safe cleanup and scheduled backups. Scheduling and automatic cleanup are enabled separately; the runtime must be running. Server backups do not contain MLS device keys.", "zh": "v0.6.0 的“广播”提供数据大小、安全清理和定时备份。定时备份与自动清理需要分别启用；运行时必须保持运行。服务器备份不包含 MLS 设备密钥。"},
@@ -956,41 +956,41 @@ export default {
     "en": "If the installer asks to enable user autostart, run sudo loginctl enable-linger \"$USER\" and repeat the command. Stop any previous foreground server with Ctrl+C first.",
     "zh": "如果安装程序要求启用用户自动启动，请运行 sudo loginctl enable-linger \"$USER\" 后重试。请先用 Ctrl+C 停止之前在终端中运行的服务器。"
   },
-  "Открытый проект · Выпуск v0.7.0": {
-    "en": "Open project · Release v0.7.0",
-    "zh": "开源项目 · v0.7.0 版本"
+  "Открытый проект · Выпуск v0.7.1": {
+    "en": "Open project · Release v0.7.1",
+    "zh": "开源项目 · v0.7.1 版本"
   },
-  "v0.7.0 · 18 ОКТЯБРЯ 2026": {
-    "en": "v0.7.0 · OCTOBER 18, 2026",
-    "zh": "v0.7.0 · 2026年10月18日"
+  "v0.7.1 · 19 ОКТЯБРЯ 2026": {
+    "en": "v0.7.1 · OCTOBER 19, 2026",
+    "zh": "v0.7.1 · 2026年10月19日"
   },
-  "Нужны SSH-доступ под обычным пользователем, curl, unzip и sha256sum. Замените YOUR_SERVER и YOUR_PUBLIC_IP своими значениями. Пример ниже — для runtime v0.7.0.": {
-    "en": "You need SSH access as a regular user, curl, unzip, and sha256sum. Replace YOUR_SERVER and YOUR_PUBLIC_IP with your values. This example uses runtime v0.7.0.",
-    "zh": "需要普通用户的 SSH 访问权限，以及 curl、unzip 和 sha256sum。请将 YOUR_SERVER 和 YOUR_PUBLIC_IP 替换为实际值。以下示例使用运行环境 v0.7.0。"
+  "Нужны SSH-доступ под обычным пользователем, curl, unzip и sha256sum. Замените YOUR_SERVER и YOUR_PUBLIC_IP своими значениями. Пример ниже — для runtime v0.7.1.": {
+    "en": "You need SSH access as a regular user, curl, unzip, and sha256sum. Replace YOUR_SERVER and YOUR_PUBLIC_IP with your values. This example uses runtime v0.7.1.",
+    "zh": "需要普通用户的 SSH 访问权限，以及 curl、unzip 和 sha256sum。请将 YOUR_SERVER 和 YOUR_PUBLIC_IP 替换为实际值。以下示例使用运行环境 v0.7.1。"
   },
-  "Нужны Linux x64, обычный пользователь (не root), curl, unzip и sha256sum. Приложение и runtime — v0.7.0 или новее.": {
-    "en": "Requires Linux x64, a regular user (not root), curl, unzip and sha256sum. Use app and runtime v0.7.0 or later.",
-    "zh": "需要 Linux x64、普通用户（非 root）、curl、unzip 和 sha256sum。应用与 runtime 均需 v0.7.0 或更新版本。"
+  "Нужны Linux x64, обычный пользователь (не root), curl, unzip и sha256sum. Приложение и runtime — v0.7.1 или новее.": {
+    "en": "Requires Linux x64, a regular user (not root), curl, unzip and sha256sum. Use app and runtime v0.7.1 or later.",
+    "zh": "需要 Linux x64、普通用户（非 root）、curl、unzip 和 sha256sum。应用与 runtime 均需 v0.7.1 或更新版本。"
   },
-  "Нужны Linux x64 с systemd, обычный пользователь (не root), curl, unzip и sha256sum. Приложение и runtime — v0.7.0 или новее.": {
-    "en": "Requires Linux x64 with systemd, a regular user (not root), curl, unzip and sha256sum. Use app and runtime v0.7.0 or later.",
-    "zh": "需要带 systemd 的 Linux x64、普通用户（非 root）、curl、unzip 和 sha256sum。应用与 runtime 均需 v0.7.0 或更新版本。"
+  "Нужны Linux x64 с systemd, обычный пользователь (не root), curl, unzip и sha256sum. Приложение и runtime — v0.7.1 или новее.": {
+    "en": "Requires Linux x64 with systemd, a regular user (not root), curl, unzip and sha256sum. Use app and runtime v0.7.1 or later.",
+    "zh": "需要带 systemd 的 Linux x64、普通用户（非 root）、curl、unzip 和 sha256sum。应用与 runtime 均需 v0.7.1 或更新版本。"
   },
   "Уведомления без Firebase": {
     "en": "Notifications without Firebase",
     "zh": "无需 Firebase 的通知"
   },
-  "Для Android достаточно вашего runtime v0.7.0 со схемой 23. Отдельный сервер уведомлений и дополнительный порт не нужны.": {
-    "en": "Android uses your own runtime v0.7.0 with schema 23. No separate notification server or additional port is needed.",
-    "zh": "Android 使用您自己的 runtime v0.7.0（数据库版本 23），无需额外的通知服务器或端口。"
+  "Для Android достаточно вашего runtime v0.7.1 со схемой 23. Отдельный сервер уведомлений и дополнительный порт не нужны.": {
+    "en": "Android uses your own runtime v0.7.1 with schema 23. No separate notification server or additional port is needed.",
+    "zh": "Android 使用您自己的 runtime v0.7.1（数据库版本 23），无需额外的通知服务器或端口。"
   },
   "Подключитесь к пространству": {
     "en": "Connect to a space",
     "zh": "连接到空间"
   },
-  "Добавьте приглашение в Space и подтвердите ключ пространства. Для обновления существующего сервера сначала установите runtime v0.7.0.": {
-    "en": "Add an invitation in Space and confirm the space key. To update an existing server, install runtime v0.7.0 first.",
-    "zh": "在 Space 中添加邀请并确认空间密钥。更新现有服务器时，请先安装 runtime v0.7.0。"
+  "Добавьте приглашение в Space и подтвердите ключ пространства. Для обновления существующего сервера сначала установите runtime v0.7.1.": {
+    "en": "Add an invitation in Space and confirm the space key. To update an existing server, install runtime v0.7.1 first.",
+    "zh": "在 Space 中添加邀请并确认空间密钥。更新现有服务器时，请先安装 runtime v0.7.1。"
   },
   "Включите уведомления": {
     "en": "Enable notifications",
