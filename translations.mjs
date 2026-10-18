@@ -929,13 +929,13 @@ export default {
     "en": "If the installer asks to enable user autostart, run sudo loginctl enable-linger \"$USER\" and repeat the command. Stop any previous foreground server with Ctrl+C first.",
     "zh": "如果安装程序要求启用用户自动启动，请运行 sudo loginctl enable-linger \"$USER\" 后重试。请先用 Ctrl+C 停止之前在终端中运行的服务器。"
   },
-  "Открытый проект · Выпуск v0.4.2": {
-    "en": "Open project · Release v0.4.2",
-    "zh": "开源项目 · v0.4.2 版本"
+  "Открытый проект · Выпуск v0.4.3": {
+    "en": "Open project · Release v0.4.3",
+    "zh": "开源项目 · v0.4.3 版本"
   },
-  "v0.4.2 · 17 ОКТЯБРЯ 2026": {
-    "en": "v0.4.2 · OCTOBER 17, 2026",
-    "zh": "v0.4.2 · 2026年10月17日"
+  "v0.4.3 · 18 ОКТЯБРЯ 2026": {
+    "en": "v0.4.3 · OCTOBER 18, 2026",
+    "zh": "v0.4.3 · 2026年10月18日"
   },
   "Нужны SSH-доступ под обычным пользователем, curl, unzip и sha256sum. Замените YOUR_SERVER и YOUR_PUBLIC_IP своими значениями. Пример ниже — для runtime v0.4.2.": {
     "en": "You need SSH access as a regular user, curl, unzip, and sha256sum. Replace YOUR_SERVER and YOUR_PUBLIC_IP with your values. This example uses runtime v0.4.2.",
