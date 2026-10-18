@@ -6,6 +6,7 @@ option go_package = "github.com/space-protocol-project/space-server/gen/space/v1
 
 // Голос передаётся WebRTC, через RPC проходит только управление и SDP.
 service VoiceService {
+  rpc GetVoiceConfiguration(GetVoiceConfigurationRequest) returns (GetVoiceConfigurationResponse);
   rpc JoinVoiceRoom(JoinVoiceRoomRequest) returns (JoinVoiceRoomResponse);
   rpc UpdateVoiceRoom(UpdateVoiceRoomRequest) returns (UpdateVoiceRoomResponse);
   rpc LeaveVoiceRoom(LeaveVoiceRoomRequest) returns (LeaveVoiceRoomResponse);
@@ -48,3 +49,17 @@ message LeaveVoiceRoomRequest {
 message LeaveVoiceRoomResponse {}
 message GetVoiceRoomRequest { string channel_id = 1; }
 message GetVoiceRoomResponse { VoiceRoomState state = 1; }
+
+// Выдаётся только после проверки доступа к комнате. Общий TURN-секрет
+// остаётся на runtime; клиент получает временный пароль без идентификатора личности.
+message VoiceIceServer {
+  repeated string urls = 1;
+  string username = 2;
+  string credential = 3;
+}
+message GetVoiceConfigurationRequest { string channel_id = 1; }
+message GetVoiceConfigurationResponse {
+  repeated VoiceIceServer ice_servers = 1;
+  bool relay_only = 2;
+  int64 expires_at_unix = 3;
+}
