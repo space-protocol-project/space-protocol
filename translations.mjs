@@ -984,5 +984,129 @@ export default {
   "Сервер должен быть включён и доступен телефону. Разрешите фоновую работу Space в настройках батареи: режим сна и ограничения Android могут задерживать доставку. После принудительной остановки откройте Space снова. Фоновая доставка Android пока требует ручной приёмки.": {
     "en": "The server must stay on and reachable from your phone. Allow Space to run in the background in battery settings: sleep and Android restrictions may delay delivery. Reopen Space after force-stop. Android background delivery still requires manual acceptance testing.",
     "zh": "服务器必须保持运行且手机能够访问。请在电池设置中允许 Space 在后台运行：休眠和 Android 限制可能延迟通知。强行停止后请重新打开 Space。Android 后台通知仍需手动验收。"
+  },
+  "Ближе друг к другу.": {
+    "en": "Closer to each other.",
+    "zh": "彼此更亲近。"
+  },
+  "Проще каждый день.": {
+    "en": "Easier every day.",
+    "zh": "每天更轻松。"
+  },
+  "Каждой теме — свой разговор": {
+    "en": "A conversation for every topic",
+    "zh": "每个话题，都有专属对话"
+  },
+  "Планы, идеи и важное — на своих местах.": {
+    "en": "Plans, ideas and important things, each in its place.",
+    "zh": "计划、灵感和重要事项，各有其位。"
+  },
+  "Подробнее": {
+    "en": "More details",
+    "zh": "了解更多"
+  },
+  "Разделяйте разговоры по каналам. Поиск и избранное помогут вернуться к важному.": {
+    "en": "Organize conversations into channels. Search and favorites bring you back to what matters.",
+    "zh": "用频道区分不同讨论，通过搜索和收藏找回重要内容。"
+  },
+  "# планы": {
+    "en": "# plans",
+    "zh": "# 计划"
+  },
+  "# идеи": {
+    "en": "# ideas",
+    "zh": "# 灵感"
+  },
+  "важное": {
+    "en": "important",
+    "zh": "重要内容"
+  },
+  "В субботу встречаемся?": {
+    "en": "Shall we meet on Saturday?",
+    "zh": "周六见面吗？"
+  },
+  "Аня · 12:40": {
+    "en": "Anna · 12:40",
+    "zh": "安娜 · 12:40"
+  },
+  "Да, я с вами!": {
+    "en": "Yes, count me in!",
+    "zh": "好呀，算我一个！"
+  },
+  "Наш маршрут.pdf": {
+    "en": "Our route.pdf",
+    "zh": "我们的路线.pdf"
+  },
+  "Всё для поездки · 2 МБ": {
+    "en": "Ready for the trip · 2 MB",
+    "zh": "出行资料 · 2 MB"
+  },
+  "Файлы — прямо в разговоре": {
+    "en": "Files, right in the conversation",
+    "zh": "文件，就在对话中"
+  },
+  "Отправили. Обсудили. Нашли снова.": {
+    "en": "Share it. Discuss it. Find it again.",
+    "zh": "发送、讨论，随时找回。"
+  },
+  "Перетащите файл в чат. Вложения можно найти по дате и автору, если администратор разрешил их отправку.": {
+    "en": "Drag a file into the chat. Find attachments by date or author when uploads are allowed by an administrator.",
+    "zh": "将文件拖入聊天。在管理员允许发送附件时，可按日期或作者查找附件。"
+  },
+  "А": {
+    "en": "A",
+    "zh": "安"
+  },
+  "М": {
+    "en": "M",
+    "zh": "马"
+  },
+  "Д": {
+    "en": "D",
+    "zh": "迪"
+  },
+  "Ваш круг. Ваши правила.": {
+    "en": "Your circle. Your rules.",
+    "zh": "您的圈子，您的规则。"
+  },
+  "Приглашайте людей и выбирайте их права.": {
+    "en": "Invite people and choose their permissions.",
+    "zh": "邀请伙伴，设置权限。"
+  },
+  "Настройте срок приглашения, роли и доступ к каналам. Администраторов может быть несколько. Участник выбирает своё имя в пространстве.": {
+    "en": "Set invitation expiry, roles and channel access. You can have multiple administrators. Each member chooses their name in the space.",
+    "zh": "设置邀请有效期、角色和频道访问权限。可以有多位管理员，成员可自行选择空间内的显示名称。"
+  },
+  "Только для нашей группы": {
+    "en": "Just for our group",
+    "zh": "仅限我们的小组"
+  },
+  "Закрытый канал": {
+    "en": "Private channel",
+    "zh": "私密频道"
+  },
+  "Есть о чём поговорить лично": {
+    "en": "Some things are just for your group",
+    "zh": "有些话，只想和自己人说"
+  },
+  "Закрытые каналы с шифрованием на устройствах.": {
+    "en": "Private channels with encryption on your devices.",
+    "zh": "私密频道，内容在设备上加密。"
+  },
+  "О приватности": {
+    "en": "About privacy",
+    "zh": "关于隐私"
+  },
+  "Рядом, с любого экрана": {
+    "en": "Stay close, on your screen",
+    "zh": "换个屏幕，依然相伴"
+  },
+  "Компьютер или Android — выбирайте сами.": {
+    "en": "Desktop or Android, your choice.",
+    "zh": "电脑或 Android，随您选择。"
+  },
+  "Платформы": {
+    "en": "Platforms",
+    "zh": "支持平台"
   }
 };

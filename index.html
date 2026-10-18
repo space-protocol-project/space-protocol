@@ -9,7 +9,8 @@
 <meta name="theme-color" content="#191b1a">
 <meta property="og:title" content="Space Protocol — своё пространство"><meta property="og:description" content="Место для людей. Правила — ваши. Открытый проект независимых сообществ."><meta property="og:type" content="website">
 <link rel="preload" href="assets/fonts/NunitoSans-Variable.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="assets/fonts/Nunito-Variable.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="icon" href="assets/space-icon.png"><link rel="stylesheet" href="style.css?v=20261017-step-motion">
+<link rel="icon" href="assets/space-icon.png"><link rel="stylesheet" href="style.css?v=20261018-features">
+<link rel="stylesheet" href="features.css?v=20261018-mini-scenes">
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержанию</a>
@@ -27,7 +28,46 @@
 <article class="scenario"><div class="scenario-art files-art" aria-hidden="true"><span class="mini-label">НЕБОЛЬШОЙ ПРОЕКТ</span><div class="mini-file"><span class="file-symbol">↗</span><span>Эскиз.pdf</span><span>PDF</span></div><div class="mini-bubble">Вот новый вариант. Что думаете?</div></div><p class="scenario-kicker">ДЛЯ КОМАНДЫ</p><h3>От идеи — к общему делу.</h3><p>Обсудите эскиз, отправьте файл, сохраните важный ответ в избранное. Всё остаётся в контексте.</p></article>
 <article class="scenario"><div class="scenario-art access-art" aria-hidden="true"><span class="mini-label">КЛУБ ПО ИНТЕРЕСАМ</span><div class="mini-people"><span>✦</span><span>◎</span><span>✧</span><span>+</span></div><div class="mini-invite">Приглашение · 3 входа <span>↗</span></div></div><p class="scenario-kicker">ДЛЯ СООБЩЕСТВА</p><h3>Свой круг, понятные правила.</h3><p>Приглашайте участников, назначайте роли и открывайте каналы тем, кому они нужны.</p></article>
 </div><p class="example-note">Примеры показывают возможные сценарии, а не реальные переписки.</p></section>
-<section class="inside dark section" id="inside" aria-labelledby="features-title"><div class="section-label"><span>02 / ЧТО МОЖНО ДЕЛАТЬ</span><span>v0.4.2</span></div><div class="inside-heading"><h2 id="features-title">Общаться проще.<br><em>Нужное — рядом.</em></h2><p>Меньше искать. Легче договариваться.</p></div><div class="feature-list"><article><span class="number">01</span><h3>Разговоры по темам</h3><p>Каналы помогают не смешивать планы, вопросы и объявления. Поиск и избранное возвращают к важному.</p><span class="feature-sign" aria-hidden="true">↗</span></article><article><span class="number">02</span><h3>Файлы рядом с обсуждением</h3><p>Перетащите файл в чат или нажмите «+». Найдите вложения по дате и автору, когда они снова понадобятся.</p><span class="feature-sign" aria-hidden="true">↗</span></article><article><span class="number">03</span><h3>Вы решаете, кто внутри</h3><p>Приглашения со сроком и числом входов, роли и права на каналы. Участник выбирает своё имя в пространстве.</p><span class="feature-sign" aria-hidden="true">↗</span></article><article><span class="number">04</span><h3>Закрытые разговоры</h3><p>В закрытых MLS-каналах сообщения и файлы шифруются на устройствах участников. Обычные каналы остаются открытыми для сервера.</p><span class="feature-sign" aria-hidden="true">↗</span></article><article><span class="number">05</span><h3>С компьютера и телефона</h3><p>Windows, macOS, Linux и Android. Несколько пространств в одном приложении; тема, язык и масштаб — под вас.</p><span class="feature-sign" aria-hidden="true">↗</span></article></div><p class="section-note">Вложения доступны, если их разрешил администратор. E2EE экспериментальное, независимый аудит ещё не проведён.</p></section>
+<section class="inside dark section" id="inside" aria-labelledby="features-title">
+<div class="section-label"><span>02 / ЧТО МОЖНО ДЕЛАТЬ</span><span>v0.4.2</span></div>
+<div class="inside-heading"><h2 id="features-title">Ближе друг к другу.<br><em>Проще каждый день.</em></h2></div>
+<div class="feature-grid">
+<article class="feature-card feature-card--conversation">
+  <div><span class="feature-number" aria-hidden="true">01</span><h3>Каждой теме — свой разговор</h3><p>Планы, идеи и важное — на своих местах.</p>
+    <details class="feature-details"><summary>Подробнее</summary><p>Разделяйте разговоры по каналам. Поиск и избранное помогут вернуться к важному.</p></details>
+  </div>
+  <div class="feature-scene feature-chat-scene" aria-hidden="true">
+    <div class="feature-topics"><span># планы</span><span># идеи</span><span><svg viewBox="0 0 24 24" focusable="false"><path d="m12 3 2.8 5.7 6.3.9-4.5 4.4 1.1 6.2-5.7-3-5.7 3 1.1-6.2L3.2 9.6l6.2-.9Z"/></svg>важное</span></div>
+    <div class="feature-bubble"><span>В субботу встречаемся?</span><small>Аня · 12:40</small></div>
+    <div class="feature-bubble feature-bubble--own"><span>Да, я с вами!</span><span class="feature-reaction">♥ 3</span></div>
+  </div>
+</article>
+<article class="feature-card">
+  <div class="feature-scene feature-file-scene" aria-hidden="true">
+    <div class="feature-attachment"><svg viewBox="0 0 24 24" focusable="false"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M14 3v6h6M8 15l3-3 5 5H8Z"/><circle cx="9" cy="9" r="1"/></svg><div><span>Наш маршрут.pdf</span><small>Всё для поездки · 2 МБ</small></div><svg viewBox="0 0 24 24" focusable="false"><path d="M12 4v15m-5-5 5 5 5-5"/></svg></div>
+    <div class="feature-line"></div><div class="feature-line feature-line--short"></div>
+  </div>
+  <span class="feature-number" aria-hidden="true">02</span><h3>Файлы — прямо в разговоре</h3><p>Отправили. Обсудили. Нашли снова.</p>
+  <details class="feature-details"><summary>Подробнее</summary><p>Перетащите файл в чат. Вложения можно найти по дате и автору, если администратор разрешил их отправку.</p></details>
+</article>
+<article class="feature-card feature-card--compact">
+  <div class="feature-scene feature-people-scene" aria-hidden="true"><span class="feature-avatar">А</span><span class="feature-avatar feature-avatar--olive">М</span><span class="feature-avatar feature-avatar--stone">Д</span><span class="feature-avatar feature-avatar--invite"><svg viewBox="0 0 24 24" focusable="false"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2m3-13v6m-3-3h6"/></svg></span></div>
+  <span class="feature-number" aria-hidden="true">03</span><h3>Ваш круг. Ваши правила.</h3><p>Приглашайте людей и выбирайте их права.</p>
+  <details class="feature-details"><summary>Подробнее</summary><p>Настройте срок приглашения, роли и доступ к каналам. Администраторов может быть несколько. Участник выбирает своё имя в пространстве.</p></details>
+</article>
+<article class="feature-card feature-card--compact">
+  <div class="feature-scene feature-private-scene" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></svg><div class="feature-secret">Только для нашей группы</div><span class="feature-seal">Закрытый канал</span></div>
+  <span class="feature-number" aria-hidden="true">04</span><h3>Есть о чём поговорить лично</h3><p>Закрытые каналы с шифрованием на устройствах.</p>
+  <details class="feature-details"><summary>О приватности</summary><p>В закрытых MLS-каналах сообщения и файлы шифруются на устройствах участников. Обычные каналы остаются открытыми для сервера.</p></details>
+</article>
+<article class="feature-card feature-card--compact">
+  <div class="feature-scene feature-devices-scene" aria-hidden="true"><div class="feature-monitor"><svg viewBox="0 0 24 24" focusable="false"><path d="M21 11a9 9 0 0 1-9 9H5l-3 2v-7a9 9 0 1 1 19-4Z"/></svg><div class="feature-line"></div><div class="feature-line feature-line--short"></div></div><div class="feature-mobile"><svg viewBox="0 0 24 24" focusable="false"><path d="M21 11a9 9 0 0 1-9 9H5l-3 2v-7a9 9 0 1 1 19-4Z"/></svg><span></span><span></span></div></div>
+  <span class="feature-number" aria-hidden="true">05</span><h3>Рядом, с любого экрана</h3><p>Компьютер или Android — выбирайте сами.</p>
+  <details class="feature-details"><summary>Платформы</summary><p>Windows, macOS, Linux и Android. Несколько пространств в одном приложении; тема, язык и масштаб — под вас.</p></details>
+</article>
+</div>
+<p class="section-note">Вложения доступны, если их разрешил администратор. E2EE экспериментальное, независимый аудит ещё не проведён.</p>
+</section>
 
 <section class="how light section" id="how" aria-labelledby="start-title"><div class="section-label"><span>03 / КАК НАЧАТЬ</span><span>ВЫБЕРИТЕ СВОЙ ПУТЬ</span></div><h2 id="start-title">Вас уже ждут?<br><em>Просто присоединитесь.</em></h2><ol class="start-steps"><li><span class="step-number" aria-hidden="true"><span>01</span><svg class="step-icon" viewBox="0 0 24 24" focusable="false"><path class="step-download-arrow" d="M12 3v12m-4-4 4 4 4-4"/><path d="M4 16v4h16v-4"/></svg></span><h3>Скачайте Space</h3><p>Установите приложение на компьютер или Android.</p></li><li><span class="step-number" aria-hidden="true"><span>02</span><svg class="step-icon" viewBox="0 0 24 24" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path class="step-envelope-flap" d="m3 6 9 7 9-7"/></svg></span><h3>Откройте приглашение</h3><p>Вставьте ссылку или отсканируйте QR от владельца пространства.</p></li><li><span class="step-number" aria-hidden="true"><span>03</span><svg class="step-icon" viewBox="0 0 24 24" focusable="false"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-7a8 8 0 1 1 18-3Z"/><path class="step-message-line" d="M7 9h8"/><path class="step-message-line step-message-line-last" d="M7 13h5"/></svg></span><h3>Представьтесь и напишите</h3><p>Укажите имя, если хотите, выберите канал и отправьте первое сообщение.</p></li></ol><div class="host-path"><div><p class="scenario-kicker">ХОТИТЕ СОЗДАТЬ СВОЁ?</p><h3>Свои люди. Свой сервер.</h3><p>Создайте пространство в «Эфире» на компьютере или запустите сервер одной командой на VPS. Подключайтесь с компьютера или телефона.</p><p class="host-note">Сервер должен оставаться включённым. Для подключения через интернет нужен доступный адрес и порт; за CGNAT может понадобиться туннель или VPS.</p><button type="button" class="ink-link setup-toggle" aria-expanded="false" aria-controls="setup-guide">Инструкция по запуску <span aria-hidden="true">+</span></button></div><div class="host-diagram" aria-hidden="true"><div class="host-node">◎ <span>Ваш компьютер</span></div><span class="host-wire">↕</span><div class="host-members"><span>✦</span><span>◎</span><span>✧</span></div><p>Друзья входят по приглашению</p></div></div><div class="setup-reveal" id="setup-guide" hidden inert><div class="setup-clip"><section class="setup-guide" aria-labelledby="setup-title">
 <div class="setup-heading"><span class="setup-symbol" aria-hidden="true">✦</span><div><h3 id="setup-title">Своё пространство: шаг за шагом</h3><p>Выберите, где будет работать сервер. Участники в обоих случаях заходят через Space.</p></div></div>
@@ -71,5 +111,5 @@
 <script src="setup-guide.js?v=20261016-copy5" defer></script>
 <script type="module" src="command-highlight.mjs?v=20261016-release033"></script>
 <script src="screen-demo.js?v=20261017-gallery-swipe" defer></script>
-<script type="module" src="language.mjs?v=20261017-gallery-arrows"></script>
+<script type="module" src="language.mjs?v=20261018-features"></script>
 </body></html>
