@@ -1,4 +1,4 @@
-import translations from './translations.mjs?v=20261018-release050';
+import translations from './translations.mjs?v=20261018-storage';
 
 const supported = ['ru', 'zh', 'en'];
 const storageKey = 'space.site.language';
