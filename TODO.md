@@ -4,7 +4,9 @@
 
 ## Milestone релизов
 
-Опубликована совместимая пара **приложение v0.6.0 + runtime v0.6.0**, схема 22. Продолжается приёмка этапа v0.6; следующий функциональный приоритет — голосовые комнаты. Номера milestone ниже задают целевые этапы: отдельные функции последующих этапов могут попасть в выпуск раньше их полной приёмки. Наличие функции в выпуске не закрывает оставшиеся ручные проверки milestone.
+Опубликована совместимая пара **приложение v0.7.0 + runtime v0.7.0**, схема 23: голосовые комнаты для двух настольных участников и настройка STUN/TURN. Следующий приоритет — проверка голоса между внешними сетями, восстановление соединения и больше участников. Приёмка оставшихся сценариев v0.6 продолжается. Номера milestone ниже задают целевые этапы: отдельные функции последующих этапов могут попасть в выпуск раньше их полной приёмки. Наличие функции в выпуске не закрывает оставшиеся ручные проверки milestone.
+
+18 октября: [приложение v0.7.0](https://github.com/space-protocol-project/space-app/releases/tag/v0.7.0) и [runtime v0.7.0](https://github.com/space-protocol-project/space-server/releases/tag/v0.7.0) опубликованы со схемой 23. [Релизный CI приложения](https://github.com/space-protocol-project/space-app/actions/runs/39147760153), [CI runtime](https://github.com/space-protocol-project/space-server/actions/runs/39146749513), [установка опубликованного runtime на трёх ОС](https://github.com/space-protocol-project/space-app/actions/runs/39147762194) и [Linux-установщик](https://github.com/space-protocol-project/space-server/actions/runs/39147765649) успешны. Контрольные суммы обоих комплектов сверены с метаданными GitHub. Нативно проверены два Windows-клиента с принудительным TURN UDP и TCP в изолированном стенде; приёмка настоящего интернета и публичного TURN остаётся открытой. Голос не является MLS/E2EE; Android-устройства и эмулятор не использовались. Выпуск голосового среза не означает приёмку milestone «Сообщества».
 
 18 октября: [приложение v0.6.0](https://github.com/space-protocol-project/space-app/releases/tag/v0.6.0) и [runtime v0.6.0](https://github.com/space-protocol-project/space-server/releases/tag/v0.6.0) опубликованы со схемой 22. [CI приложения](https://github.com/space-protocol-project/space-app/actions/runs/39136518112), [CI runtime](https://github.com/space-protocol-project/space-server/actions/runs/39135644334), [хранение на трёх ОС](https://github.com/space-protocol-project/space-app/actions/runs/39135626625) и [установка опубликованного runtime](https://github.com/space-protocol-project/space-app/actions/runs/39136518147) успешны. Контрольные суммы всех файлов обоих релизов сверены с метаданными GitHub. Расписание и автоматическая очистка включаются отдельно и по умолчанию выключены. Ручные проверки, отложенные пользователем, остаются открытыми.
 
@@ -143,7 +145,7 @@
 
 ### Голосовые комнаты — следующий приоритет
 
-По решению пользователя от 18 октября после выпуска v0.6.0 основной приоритет — голосовые комнаты по привычному сценарию Discord. [Первый срез и порядок реализации](docs/adr/044-voice-rooms.md). Локально подключены голосовые каналы схемы 23, авторизованная пересылка WebRTC/Opus для двух настольных клиентов, список участников, микрофон, отключение входящего звука и выход. Выпуск v0.6.0 остаётся на схеме 22. Настраиваемые STUN/TURN и relay-only реализованы следующим срезом; проверка реального внешнего подключения, несколько участников и ручная оценка разговора остаются следующими задачами; подробные границы — в ADR-044.
+По решению пользователя от 18 октября после выпуска v0.6.0 основной приоритет — голосовые комнаты по привычному сценарию Discord. [Первый срез и порядок реализации](docs/adr/044-voice-rooms.md). В совместимой паре v0.7.0 выпущены голосовые каналы схемы 23, авторизованная пересылка WebRTC/Opus для двух настольных клиентов, список участников, микрофон, отключение входящего звука и выход. Выпуск v0.6.0 остаётся на схеме 22. Настраиваемые STUN/TURN и relay-only включены в v0.7.0; проверка реального внешнего подключения, несколько участников и ручная оценка разговора остаются следующими задачами; подробные границы — в ADR-044.
 
 ### v0.6 — резервные копии и самостоятельное пространство
 
@@ -960,7 +962,7 @@ Limited device может писать по выданному grant, но не 
 - [ ] Join permissions и короткоживущие room-scoped credentials.
 - [ ] SFU API secrets остаются backend-only.
 - [ ] SFU events/webhooks: verify authenticity, dedup, reconcile delayed/out-of-order events.
-- [ ] Time-limited TURN credentials и documented port/firewall mapping.
+- [x] Временные TURN credentials без идентификаторов пользователя и документированные порты/межсетевой экран: v0.7.0, `space-server/deploy/turn/README.md`. Внешняя приёмка остаётся открытой.
 - [ ] Server-side remove participant и revoke publish permissions.
 - [ ] Cleanup abandoned sessions и reconciliation после restart.
 - [ ] Graceful media degradation при недоступном SFU.
