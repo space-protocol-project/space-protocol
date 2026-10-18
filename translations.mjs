@@ -1,9 +1,11 @@
 export default {
+  "Следующий приоритет — голосовые комнаты: участники, микрофон и быстрый вход. Затем видео и демонстрация экрана.": {"en": "Next priority: voice rooms with participants, microphone controls and quick joining. Video and screen sharing follow.", "zh": "下一优先事项是语音房间：参与者、麦克风控制和快速加入。之后是视频与屏幕共享。"},
+  "В v0.6.0 в «Эфире» доступны размеры данных, безопасная очистка и резервные копии по расписанию. Расписание и автоматическая очистка включаются отдельно; runtime должен работать. Серверная копия не содержит ключи устройств MLS.": {"en": "In v0.6.0, Broadcast offers storage sizes, safe cleanup and scheduled backups. Scheduling and automatic cleanup are enabled separately; the runtime must be running. Server backups do not contain MLS device keys.", "zh": "v0.6.0 的“广播”提供数据大小、安全清理和定时备份。定时备份与自动清理需要分别启用；运行时必须保持运行。服务器备份不包含 MLS 设备密钥。"},
   "Сколько места нужно?": {"en": "How much disk space do I need?", "zh": "需要多少磁盘空间？"},
   "От 2 ГБ свободно · лучше 5 ГБ": {"en": "At least 2 GB free · 5 GB recommended", "zh": "至少 2 GB 可用空间 · 建议 5 GB"},
   "Для нового небольшого пространства на компьютере, без будущих вложений. Это ориентир с запасом для обновлений и копий, а не ограничение размера.": {"en": "For a new small space on your computer, excluding future attachments. This estimate includes room for updates and backups; it is not a size limit.", "zh": "适用于电脑上新建的小型空间，不包含日后的附件。这是为更新和备份预留空间的估算，并非容量上限。"},
   "Из чего складывается размер": {"en": "What takes up space", "zh": "空间用在哪里"},
-  "Windows, v0.5.0: runtime с PostgreSQL — около 196 МиБ, приложение — около 50 МиБ. Дополнительно нужны база, временные файлы, предыдущая версия и резервные копии.": {"en": "Windows, v0.5.0: the runtime including PostgreSQL uses about 196 MiB; the installed app about 50 MiB. The database, temporary files, previous version and backups need additional space.", "zh": "Windows v0.5.0：包含 PostgreSQL 的运行时约 196 MiB，已安装应用约 50 MiB。数据库、临时文件、上一版本和备份还需要额外空间。"},
+  "Windows, v0.6.0: runtime с PostgreSQL — около 196 МиБ, приложение — около 50 МиБ. Дополнительно нужны база, временные файлы, предыдущая версия и резервные копии.": {"en": "Windows, v0.6.0: the runtime including PostgreSQL uses about 196 MiB; the installed app about 50 MiB. The database, temporary files, previous version and backups need additional space.", "zh": "Windows v0.6.0：包含 PostgreSQL 的运行时约 196 MiB，已安装应用约 50 MiB。数据库、临时文件、上一版本和备份还需要额外空间。"},
   "Фотографии, видео и другие файлы увеличивают объём. Если хранить три полные копии, данные и копии могут занимать примерно в четыре раза больше самих данных; для создания новой копии и восстановления нужен дополнительный запас.": {"en": "Photos, videos and other files increase storage use. With three full backups, data and backups can use roughly four times the data size; creating another backup and restoring require extra room.", "zh": "照片、视频及其他文件会增加占用。保留三份完整备份时，数据加备份可能约为数据本身的四倍；创建新备份和恢复还需额外空间。"},
   "Пример: 1 ГБ данных + три копии до 1 ГБ = до 4 ГБ, ещё без приложения, runtime и рабочего запаса. Для такого пространства разумно выделить от 8 ГБ. Сжатие может уменьшить копии, но лучше на него не рассчитывать.": {"en": "Example: 1 GB of data + three backups of up to 1 GB = up to 4 GB, excluding the app, runtime and working space. Allow at least 8 GB for this example. Compression may reduce backups, but do not rely on it.", "zh": "示例：1 GB 数据加三份各不超过 1 GB 的备份，共约 4 GB，尚未计入应用、运行时和工作空间。此情况建议预留至少 8 GB。压缩可能缩小备份，但不应依赖这一点。"},
   "Оценка для Windows; размеры macOS и Linux отличаются. Свободное место нужно на дисках, где хранятся пространство, временные файлы и копии. Само по себе место на диске не обеспечивает доступ из интернета.": {"en": "This estimate is for Windows; macOS and Linux sizes differ. Free space is needed on the drives holding your space, temporary files and backups. Disk space alone does not make the server reachable from the internet.", "zh": "此估算针对 Windows；macOS 和 Linux 的大小不同。存放空间数据、临时文件和备份的磁盘均需留有空间。仅有磁盘空间并不能保证从互联网访问服务器。"},
@@ -938,13 +940,13 @@ export default {
     "en": "If the installer asks to enable user autostart, run sudo loginctl enable-linger \"$USER\" and repeat the command. Stop any previous foreground server with Ctrl+C first.",
     "zh": "如果安装程序要求启用用户自动启动，请运行 sudo loginctl enable-linger \"$USER\" 后重试。请先用 Ctrl+C 停止之前在终端中运行的服务器。"
   },
-  "Открытый проект · Выпуск v0.5.0": {
-    "en": "Open project · Release v0.5.0",
-    "zh": "开源项目 · v0.5.0 版本"
+  "Открытый проект · Выпуск v0.6.0": {
+    "en": "Open project · Release v0.6.0",
+    "zh": "开源项目 · v0.6.0 版本"
   },
-  "v0.5.0 · 18 ОКТЯБРЯ 2026": {
-    "en": "v0.5.0 · OCTOBER 18, 2026",
-    "zh": "v0.5.0 · 2026年10月18日"
+  "v0.6.0 · 18 ОКТЯБРЯ 2026": {
+    "en": "v0.6.0 · OCTOBER 18, 2026",
+    "zh": "v0.6.0 · 2026年10月18日"
   },
   "Нужны SSH-доступ под обычным пользователем, curl, unzip и sha256sum. Замените YOUR_SERVER и YOUR_PUBLIC_IP своими значениями. Пример ниже — для runtime v0.4.2.": {
     "en": "You need SSH access as a regular user, curl, unzip, and sha256sum. Replace YOUR_SERVER and YOUR_PUBLIC_IP with your values. This example uses runtime v0.4.2.",
