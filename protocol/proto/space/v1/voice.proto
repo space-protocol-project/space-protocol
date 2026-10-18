@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package space.v1;
+
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// Голос передаётся WebRTC, через RPC проходит только управление и SDP.
+service VoiceService {
+  rpc JoinVoiceRoom(JoinVoiceRoomRequest) returns (JoinVoiceRoomResponse);
+  rpc UpdateVoiceRoom(UpdateVoiceRoomRequest) returns (UpdateVoiceRoomResponse);
+  rpc LeaveVoiceRoom(LeaveVoiceRoomRequest) returns (LeaveVoiceRoomResponse);
+  rpc GetVoiceRoom(GetVoiceRoomRequest) returns (GetVoiceRoomResponse);
+}
+
+message VoiceParticipant {
+  string session_id = 1;
+  string principal_id = 2;
+  string device_id = 3;
+  string nickname = 4;
+  bool muted = 5;
+  bool deafened = 6;
+}
+message VoiceRoomState {
+  repeated VoiceParticipant participants = 1;
+  bool can_publish = 2;
+  int32 capacity = 3;
+}
+message JoinVoiceRoomRequest {
+  string channel_id = 1;
+  string offer_sdp = 2;
+}
+message JoinVoiceRoomResponse {
+  string session_id = 1;
+  string answer_sdp = 2;
+  VoiceRoomState state = 3;
+}
+message UpdateVoiceRoomRequest {
+  string channel_id = 1;
+  string session_id = 2;
+  bool muted = 3;
+  bool deafened = 4;
+}
+message UpdateVoiceRoomResponse { VoiceRoomState state = 1; }
+message LeaveVoiceRoomRequest {
+  string channel_id = 1;
+  string session_id = 2;
+}
+message LeaveVoiceRoomResponse {}
+message GetVoiceRoomRequest { string channel_id = 1; }
+message GetVoiceRoomResponse { VoiceRoomState state = 1; }
