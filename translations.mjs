@@ -1,4 +1,5 @@
 export default {
+  "Перед обновлением сохраните резервную копию пространства и отдельно ключи устройств MLS. Сначала установите приложение v0.7.0, затем обновите runtime через «Эфир».": {"en": "Before updating, save a space backup and separately back up MLS device keys. Install app v0.7.0 first, then update the runtime through Broadcast.", "zh": "更新前，请备份空间并单独保存 MLS 设备密钥。先安装应用 v0.7.0，再通过“广播”更新 runtime。"},
   "Голосовые комнаты · v0.7.0": {"en": "Voice rooms · v0.7.0", "zh": "语音房间 · v0.7.0"},
   "Два человека, один разговор": {"en": "Two people, one conversation", "zh": "两个人，一场对话"},
   "Установите приложение и runtime v0.7.0 со схемой 23. Владелец или администратор создаёт комнату в разделе «Комнаты». Второй участник входит туда же с компьютера.": {"en": "Install app and runtime v0.7.0 with schema 23. The owner or administrator creates a room under Rooms. The second participant joins the same room from a computer.", "zh": "安装采用数据库版本 23 的应用和 runtime v0.7.0。所有者或管理员在“房间”中创建语音房间，另一位参与者从电脑加入同一房间。"},
