@@ -20,10 +20,16 @@
     }
   }
   toggle.addEventListener('click', () => expand(toggle.getAttribute('aria-expanded') !== 'true'));
-  if (location.hash === '#setup-guide') expand(true);
-  window.addEventListener('hashchange', () => {
-    if (location.hash === '#setup-guide') expand(true);
-  });
+  function openLinkedSection() {
+    const target = document.getElementById(location.hash.slice(1));
+    if (!target || (target !== reveal && !reveal.contains(target))) return;
+    expand(true);
+    for (let node = target; node && node !== reveal; node = node.parentElement) {
+      if (node.tagName === 'DETAILS') node.open = true;
+    }
+  }
+  openLinkedSection();
+  window.addEventListener('hashchange', openLinkedSection);
 
   const tabs = [...reveal.querySelectorAll('[role="tab"]')];
   function activate(selected) {
