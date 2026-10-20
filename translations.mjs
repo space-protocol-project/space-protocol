@@ -1135,5 +1135,59 @@ export default {
   "Платформы": {
     "en": "Platforms",
     "zh": "支持平台"
+  },
+
+  "Голосовые комнаты": {
+    "en": "Voice rooms",
+    "zh": "语音房间"
+  },
+  "Предпросмотр следующей версии для компьютера. На снимках — настоящие виджеты приложения с демонстрационными участниками, а не запись реального разговора. Эти изменения ещё не вошли в опубликованный выпуск.": {
+    "en": "Preview of the next desktop version. These are real app widgets with demo participants, not a recording of an actual conversation. These changes are not yet in a published release.",
+    "zh": "下一桌面版本的预览。截图展示真实应用组件和演示参与者，并非真实对话的录制。这些改动尚未包含在已发布版本中。"
+  },
+  "Голосовая комната — широкое окно · предпросмотр": {
+    "en": "Voice room — wide window · preview",
+    "zh": "语音房间 — 宽窗口 · 预览"
+  },
+  "Открыть снимок голосовой комнаты в широком окне": {
+    "en": "Open the voice room screenshot in a wide window",
+    "zh": "打开宽窗口语音房间截图"
+  },
+  "Предпросмотр голосовой комнаты Space: четыре участника, Алиса и Борис выделены рамками речи, внизу панель звонка": {
+    "en": "Space voice room preview: four participants, Alice and Boris have speaking rings, with call controls below",
+    "zh": "Space 语音房间预览：四位参与者，Alice 和 Boris 的头像显示说话边框，下方是通话控制栏"
+  },
+  "Видно, кто говорит": {
+    "en": "See who is speaking",
+    "zh": "看见谁在说话"
+  },
+  "Участники собраны в комнате. Рамка вокруг аватара показывает речевую активность; микрофон, звук и выход доступны в панели звонка.": {
+    "en": "Participants appear together in the room. A ring around an avatar shows speech activity; microphone, audio and leave controls are in the call bar.",
+    "zh": "参与者集中显示在房间中。头像边框表示语音活动；通话栏提供麦克风、声音和离开按钮。"
+  },
+  "Голосовая комната — узкое окно компьютера · предпросмотр": {
+    "en": "Voice room — narrow desktop window · preview",
+    "zh": "语音房间 — 桌面窄窗口 · 预览"
+  },
+  "Открыть снимок голосовой комнаты в узком окне компьютера": {
+    "en": "Open the voice room screenshot in a narrow desktop window",
+    "zh": "打开桌面窄窗口语音房间截图"
+  },
+  "Та же голосовая комната Space в узком окне компьютера: участники расположены в два ряда": {
+    "en": "The same Space voice room in a narrow desktop window: participants arranged in two rows",
+    "zh": "同一个 Space 语音房间在桌面窄窗口中显示：参与者分为两行"
+  },
+  "В небольшом окне": {
+    "en": "In a smaller window",
+    "zh": "在较小的窗口中"
+  },
+  "Список участников перестраивается по ширине. Это узкое окно настольного приложения; голос на Android пока недоступен.": {
+    "en": "Participants rearrange to fit the width. This is a narrow desktop app window; voice is not yet available on Android.",
+    "zh": "参与者列表随窗口宽度调整布局。这是桌面应用的窄窗口；Android 暂不支持语音。"
+  },
+  "Основные снимки получены из Release-сборок Space на Windows и Android. Предпросмотр голосовых комнат снят отдельно тестовым рендерингом и помечен выше. Показаны настоящие экраны приложения с демонстрационными данными. Личные сообщения, ключи и приглашения не публикуются. Нажмите на снимок, чтобы рассмотреть детали.": {
+    "en": "The main screenshots come from Space Release builds on Windows and Android. The voice room preview was rendered separately in tests and is marked above. They show real app screens with demo data. Private messages, keys, and invitations are not published. Select an image to see the details.",
+    "zh": "主要截图来自 Windows 和 Android 的 Space Release 构建。语音房间预览由测试单独渲染，并已在上方注明。截图展示真实应用界面和演示数据。不会发布私人消息、密钥或邀请。点击图片查看细节。"
   }
+
 };

@@ -1,4 +1,4 @@
-import translations from './translations.mjs?v=20261019-release071';
+import translations from './translations.mjs?v=20261020-voice-gallery';
 
 const supported = ['ru', 'zh', 'en'];
 const storageKey = 'space.site.language';
