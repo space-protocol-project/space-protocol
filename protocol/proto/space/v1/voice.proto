@@ -20,6 +20,8 @@ message VoiceParticipant {
   string nickname = 4;
   bool muted = 5;
   bool deafened = 6;
+  // Стабильное место участника в комнате (0..7), не состояние микрофона.
+  optional uint32 audio_slot = 7;
 }
 message VoiceRoomState {
   repeated VoiceParticipant participants = 1;
