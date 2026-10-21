@@ -1,4 +1,10 @@
 export default {
+"Комната в приложении": {"en": "Room in the app", "zh": "应用中的房间"},
+"Полный интерфейс приложения: навигация по пространству, участники комнаты и панель разговора.": {"en": "The full app interface: space navigation, room participants and call controls.", "zh": "完整应用界面：空间导航、房间参与者及通话控件。"},
+"Голосовая комната · Навигация и участники": {"en": "Voice room · Navigation and participants", "zh": "语音房间 · 导航和参与者"},
+"Открыть снимок голосовой комнаты с навигацией": {"en": "Open the voice room screenshot with navigation", "zh": "打开包含导航的语音房间截图"},
+"Полный интерфейс Space на компьютере: навигация, голосовая комната и управление звонком": {"en": "The full Space desktop interface: navigation, voice room and call controls", "zh": "完整 Space 桌面界面：导航、语音房间及通话控件"},
+
 "На Android · v0.7.10": {"en": "On Android · v0.7.10", "zh": "Android · v0.7.10"},
 "Голосовые комнаты доступны на Android начиная с v0.7.10. Снимки сделаны на Honor PCT-L29 из тестовой сборки с полным интерфейсом и демонстрационными участниками.": {"en": "Voice rooms are available on Android starting with v0.7.10. Screenshots were captured on Honor PCT-L29 using a test build with the full interface and demo participants.", "zh": "从 v0.7.10 起，Android 支持语音房间。截图使用测试版本在 Honor PCT-L29 上拍摄，展示完整界面及演示参与者。"},
 
