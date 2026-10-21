@@ -1188,6 +1188,35 @@ export default {
   "Основные снимки получены из Release-сборок Space на Windows и Android. Предпросмотр голосовых комнат снят отдельно тестовым рендерингом и помечен выше. Показаны настоящие экраны приложения с демонстрационными данными. Личные сообщения, ключи и приглашения не публикуются. Нажмите на снимок, чтобы рассмотреть детали.": {
     "en": "The main screenshots come from Space Release builds on Windows and Android. The voice room preview was rendered separately in tests and is marked above. They show real app screens with demo data. Private messages, keys, and invitations are not published. Select an image to see the details.",
     "zh": "主要截图来自 Windows 和 Android 的 Space Release 构建。语音房间预览由测试单独渲染，并已在上方注明。截图展示真实应用界面和演示数据。不会发布私人消息、密钥或邀请。点击图片查看细节。"
-  }
+  },
 
+  "Полный интерфейс Space v0.7.9 на компьютере: пространства, навигация, участники и панель звонка. Участники и речевая активность показаны на демонстрационных данных.": {
+    "en": "Full Space v0.7.9 desktop interface: spaces, navigation, participants and call controls. Participants and speaking activity use demo data.",
+    "zh": "Space v0.7.9 完整桌面界面：空间、导航、参与者和通话控制。参与者及语音活动使用演示数据。"
+  },
+  "Голосовая комната · Полный интерфейс приложения": {
+    "en": "Voice room · Full app interface",
+    "zh": "语音房间 · 完整应用界面"
+  },
+  "Полное окно Space: панель пространств, боковое меню, голосовая комната с четырьмя участниками и панель звонка": {
+    "en": "Full Space window: spaces rail, sidebar, voice room with four participants and call controls",
+    "zh": "Space 完整窗口：空间栏、侧边导航、四人语音房间和通话控制"
+  },
+  "Голосовая комната · Компактное окно приложения": {
+    "en": "Voice room · Compact app window",
+    "zh": "语音房间 · 紧凑应用窗口"
+  },
+  "Полный интерфейс Space в компактном окне компьютера: навигация, голосовая комната и управление звонком": {
+    "en": "Full Space interface in a compact desktop window: navigation, voice room and call controls",
+    "zh": "Space 紧凑桌面窗口的完整界面：导航、语音房间和通话控制"
+  },
+  "Даже в компактном окне видны навигация, участники и управление звонком. Это настольное приложение; голос на Android пока недоступен.": {
+    "en": "Navigation, participants and call controls remain visible in a compact window. This is the desktop app; voice is not yet available on Android.",
+    "zh": "紧凑窗口中仍可看到导航、参与者和通话控制。这是桌面应用；Android 暂不支持语音。"
+  },
+  "Основные снимки получены из Release-сборок Space на Windows и Android. Голосовые комнаты сняты целиком с настоящей оболочкой приложения тестовым рендерингом. На всех снимках — демонстрационные данные; личные сообщения, ключи и приглашения не публикуются. Нажмите на снимок, чтобы рассмотреть детали.": {
+    "en": "The main screenshots come from Space Release builds on Windows and Android. Voice rooms show the full real app shell through test rendering. All screenshots use demo data; private messages, keys and invitations are not published. Select an image to see the details.",
+    "zh": "主要截图来自 Windows 和 Android 的 Space Release 构建。语音房间通过测试渲染展示完整的真实应用界面。所有截图均使用演示数据，不会发布私人消息、密钥或邀请。点击图片查看细节。"
+  },
+"Основные снимки получены из Release-сборок Space на Windows и Android. Голосовые комнаты сняты из запущенной Windows-сборки с полным интерфейсом приложения. На всех снимках — демонстрационные данные; личные сообщения, ключи и приглашения не публикуются. Нажмите на снимок, чтобы рассмотреть детали.": {"en": "The main screenshots come from Space Release builds on Windows and Android. Voice rooms were captured from a running Windows build with the full app interface. All screenshots use demo data; private messages, keys and invitations are not published. Select an image to see the details.", "zh": "主要截图来自 Windows 和 Android 的 Space Release 构建。语音房间截图来自正在运行的 Windows 构建，展示完整应用界面。所有截图均使用演示数据，不会发布私人消息、密钥或邀请。点击图片查看细节。"}
 };

@@ -49,9 +49,8 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 .gallery-grid figcaption strong{font-size:18px}
 .gallery-grid figcaption p{margin:8px 0 0;line-height:1.6;opacity:.7}
 .gallery-mobile{max-width:1000px;margin-inline:auto;gap:36px}
-.gallery-voice{grid-template-columns:minmax(0,2fr) minmax(240px,1fr);align-items:start}
-.gallery-voice .gallery-compact{width:100%;max-width:300px;justify-self:center}
-@media(max-width:760px){.gallery-voice{grid-template-columns:1fr}.gallery-voice .gallery-compact{max-width:320px}}
+.gallery-voice{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+@media(max-width:760px){.gallery-voice{grid-template-columns:1fr}}
 #dialog-image{display:block;max-height:80vh;max-width:100%;width:auto;height:auto;margin:auto;object-fit:contain}
 @media(max-width:760px){.gallery-desktop{grid-template-columns:1fr}.gallery-mobile{grid-template-columns:1fr;max-width:320px;gap:24px}.gallery-grid figcaption strong{font-size:16px}.gallery-shot{border-radius:10px}}
 @media(prefers-reduced-motion:reduce){.gallery-shot{transition:none}}
