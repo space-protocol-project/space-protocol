@@ -1,4 +1,18 @@
 export default {
+  "На Android · предпросмотр": {"en": "On Android · preview", "zh": "Android · 预览"},
+  "Снято на Honor PCT-L29 из тестовой Android-сборки. Полный интерфейс приложения, демонстрационные участники. Эти изменения ещё не вошли в опубликованный выпуск.": {"en": "Captured on Honor PCT-L29 using a test Android build. Full application interface with demo participants. These changes are not yet in the published release.", "zh": "使用测试 Android 版本在 Honor PCT-L29 上拍摄。完整应用界面及演示参与者。这些更改尚未包含在已发布版本中。"},
+  "Название комнаты во всю ширину": {"en": "Full-width room title", "zh": "全宽房间名称"},
+  "Название занимает отдельную строку и переносится при необходимости. Кнопка входа расположена ниже.": {"en": "The title uses its own full-width row and wraps when needed. The join button sits below.", "zh": "名称独占一行，必要时自动换行。加入按钮位于下方。"},
+  "Чаты и комнаты в мобильном меню": {"en": "Chats and rooms in the mobile menu", "zh": "移动菜单中的聊天和房间"},
+  "Между группами чатов и комнат оставлен отступ. Из меню можно открыть страницу комнаты.": {"en": "Spacing separates chat and room groups. Open a room page from the menu.", "zh": "聊天和房间分组之间留有间距。可从菜单打开房间页面。"},
+  "Голосовая комната на Android": {"en": "Voice room on Android", "zh": "Android 语音房间"},
+  "Мобильное меню комнат": {"en": "Mobile room navigation", "zh": "移动房间导航"},
+  "Открыть снимок голосовой комнаты на Android": {"en": "Open Android voice room screenshot", "zh": "打开 Android 语音房间截图"},
+  "Открыть снимок мобильного меню комнат": {"en": "Open mobile room navigation screenshot", "zh": "打开移动房间导航截图"},
+  "Полный интерфейс Android с названием комнаты во всю ширину и участниками": {"en": "Full Android interface with a full-width room title and participants", "zh": "完整 Android 界面，包含全宽房间名称及参与者"},
+  "Полное мобильное меню Space с отступом между чатами и комнатами": {"en": "Full Space mobile menu with spacing between chats and rooms", "zh": "完整 Space 移动菜单，聊天与房间之间留有间距"},
+  "Даже в компактном окне видны навигация, участники и управление звонком. Это настольное приложение.": {"en": "Navigation, participants and call controls remain visible in a compact desktop window.", "zh": "即使在紧凑的桌面窗口中，导航、参与者及通话控件仍清晰可见。"},
+
   "Перед обновлением сохраните резервную копию пространства и отдельно ключи устройств MLS. Сначала установите приложение v0.7.1, затем обновите runtime через «Эфир».": {"en": "Before updating, save a space backup and separately back up MLS device keys. Install app v0.7.1 first, then update the runtime through Broadcast.", "zh": "更新前，请备份空间并单独保存 MLS 设备密钥。先安装应用 v0.7.1，再通过“广播”更新 runtime。"},
   "Голосовые комнаты · v0.7.1": {"en": "Voice rooms · v0.7.1", "zh": "语音房间 · v0.7.1"},
   "До восьми участников в комнате": {"en": "Up to eight participants in a room", "zh": "每个房间最多八位参与者"},
