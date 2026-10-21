@@ -1,4 +1,7 @@
 export default {
+"На Android · v0.7.10": {"en": "On Android · v0.7.10", "zh": "Android · v0.7.10"},
+"Голосовые комнаты доступны на Android начиная с v0.7.10. Снимки сделаны на Honor PCT-L29 из тестовой сборки с полным интерфейсом и демонстрационными участниками.": {"en": "Voice rooms are available on Android starting with v0.7.10. Screenshots were captured on Honor PCT-L29 using a test build with the full interface and demo participants.", "zh": "从 v0.7.10 起，Android 支持语音房间。截图使用测试版本在 Honor PCT-L29 上拍摄，展示完整界面及演示参与者。"},
+
   "На Android · предпросмотр": {"en": "On Android · preview", "zh": "Android · 预览"},
   "Снято на Honor PCT-L29 из тестовой Android-сборки. Полный интерфейс приложения, демонстрационные участники. Эти изменения ещё не вошли в опубликованный выпуск.": {"en": "Captured on Honor PCT-L29 using a test Android build. Full application interface with demo participants. These changes are not yet in the published release.", "zh": "使用测试 Android 版本在 Honor PCT-L29 上拍摄。完整应用界面及演示参与者。这些更改尚未包含在已发布版本中。"},
   "Название комнаты во всю ширину": {"en": "Full-width room title", "zh": "全宽房间名称"},
