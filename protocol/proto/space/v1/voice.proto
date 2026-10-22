@@ -20,7 +20,7 @@ message VoiceParticipant {
   string nickname = 4;
   bool muted = 5;
   bool deafened = 6;
-  // Стабильное место участника в комнате (0..7), не состояние микрофона.
+  // Стабильное место участника в комнате (0..31), не состояние микрофона.
   optional uint32 audio_slot = 7;
 }
 message VoiceRoomState {
@@ -64,4 +64,6 @@ message GetVoiceConfigurationResponse {
   repeated VoiceIceServer ice_servers = 1;
   bool relay_only = 2;
   int64 expires_at_unix = 3;
+  // Число участников, для которого клиент готовит аудиопотоки; 0 означает 8.
+  int32 media_capacity = 4;
 }

@@ -1449,6 +1449,11 @@
         "expectedRevision": {
           "type": "string",
           "format": "int64"
+        },
+        "voiceCapacity": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 оставляет прежний лимит. Допустимо 2..32."
         }
       }
     },
@@ -1654,6 +1659,10 @@
         "mlsGroupId": {
           "type": "string",
           "format": "byte"
+        },
+        "voiceCapacity": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -1945,6 +1954,11 @@
         "mlsGroupId": {
           "type": "string",
           "format": "byte"
+        },
+        "voiceCapacity": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 сохраняет значение по умолчанию: 8. Только для voice_room."
         }
       }
     },

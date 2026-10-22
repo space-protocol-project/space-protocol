@@ -386,6 +386,7 @@ message Channel {
   // Только для авторизованного read; иначе 0.
   int64 latest_message_sequence = 9;
   bytes mls_group_id = 10;
+  int32 voice_capacity = 11;
 }
 // write требует read, read и manage требуют visible.
 message ChannelPermissions {
@@ -409,6 +410,8 @@ message CreateChannelRequest {
   int32 position = 4;
   bool public_preview = 5;
   bytes mls_group_id = 6;
+  // 0 сохраняет значение по умолчанию: 8. Только для voice_room.
+  int32 voice_capacity = 7;
 }
 message UpdateChannelRequest {
   string channel_id = 1;
@@ -417,6 +420,8 @@ message UpdateChannelRequest {
   bool archived = 4;
   bool public_preview = 5;
   int64 expected_revision = 6;
+  // 0 оставляет прежний лимит. Допустимо 2..32.
+  int32 voice_capacity = 7;
 }
 message DeleteChannelRequest {
   string channel_id = 1;
