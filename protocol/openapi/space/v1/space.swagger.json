@@ -2248,6 +2248,13 @@
     "v1GetManifestResponse": {
       "type": "object",
       "properties": {
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Поддерживаемые расширения, например core.forum.v1."
+        },
         "ordinaryRepliesSupported": {
           "type": "boolean",
           "description": "Только ответы обычных каналов. MLS-ответы согласуются отдельно."

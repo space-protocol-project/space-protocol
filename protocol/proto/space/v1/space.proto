@@ -364,6 +364,8 @@ message Event {
 
 message GetManifestRequest {}
 message GetManifestResponse {
+  // Поддерживаемые расширения, например core.forum.v1.
+  repeated string capabilities = 9;
   // Только ответы обычных каналов. MLS-ответы согласуются отдельно.
   bool ordinary_replies_supported = 8;
   bool mls_supported = 7;

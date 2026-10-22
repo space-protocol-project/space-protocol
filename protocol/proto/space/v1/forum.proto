@@ -1,0 +1,51 @@
+syntax = "proto3";
+package space.v1;
+import "space/v1/space.proto";
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// core.forum.v1: отдельные открытые форумные разделы с ACL канала.
+service ForumService {
+  rpc ListForumThreads(ListForumThreadsRequest) returns (ListForumThreadsResponse);
+  rpc GetForumThread(GetForumThreadRequest) returns (GetForumThreadResponse);
+  rpc CreateForumThread(CreateForumThreadRequest) returns (CreateForumThreadResponse);
+  rpc ReplyForumThread(ReplyForumThreadRequest) returns (ReplyForumThreadResponse);
+  rpc CloseForumThread(CloseForumThreadRequest) returns (CloseForumThreadResponse);
+}
+message ForumThread {
+  repeated Asset attachments = 12;
+  string id = 1;
+  string channel_id = 2;
+  string author_id = 3;
+  string author_name = 4;
+  string title = 5;
+  string text = 6;
+  int64 created_at_unix = 7;
+  int64 sequence = 8;
+  int64 revision = 9;
+  bool closed = 10;
+  int64 reply_count = 11;
+}
+message ForumReply {
+  repeated Asset attachments = 8;
+  string id = 1;
+  string thread_id = 2;
+  string author_id = 3;
+  string author_name = 4;
+  string text = 5;
+  int64 created_at_unix = 6;
+  int64 sequence = 7;
+}
+// Курсоры — sequence последней записи; 0 начинает чтение, limit 1..50 (0 = 50).
+message ListForumThreadsRequest { string channel_id = 1; int64 after_sequence = 2; int32 limit = 3; }
+message ListForumThreadsResponse { repeated ForumThread threads = 1; int64 next_sequence = 2; }
+message GetForumThreadRequest { string channel_id = 1; string thread_id = 2; int64 after_sequence = 3; int32 limit = 4; }
+message GetForumThreadResponse { ForumThread thread = 1; repeated ForumReply replies = 2; int64 next_sequence = 3; }
+// Заголовок 1..320 байт UTF-8, текст до 8192, ключ 1..128; автор берётся из сессии.
+// Пустой текст разрешён только с вложением. До пяти файлов; core.forum.attachments.v1.
+message CreateForumThreadRequest { string channel_id = 1; string title = 2; string text = 3; string idempotency_key = 4; repeated string attachment_ids = 5; }
+message CreateForumThreadResponse { ForumThread thread = 1; }
+message ReplyForumThreadRequest { string channel_id = 1; string thread_id = 2; string text = 3; string idempotency_key = 4; repeated string attachment_ids = 5; }
+message ReplyForumThreadResponse { ForumReply reply = 1; ForumThread thread = 2; }
+// Требует manage и read; право автора само по себе не разрешает закрытие.
+message CloseForumThreadRequest { string channel_id = 1; string thread_id = 2; int64 expected_revision = 3; }
+message CloseForumThreadResponse { ForumThread thread = 1; }
