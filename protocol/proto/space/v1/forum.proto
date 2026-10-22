@@ -9,9 +9,16 @@ service ForumService {
   rpc GetForumThread(GetForumThreadRequest) returns (GetForumThreadResponse);
   rpc CreateForumThread(CreateForumThreadRequest) returns (CreateForumThreadResponse);
   rpc ReplyForumThread(ReplyForumThreadRequest) returns (ReplyForumThreadResponse);
+  rpc SetForumThreadPinned(SetForumThreadPinnedRequest) returns (SetForumThreadPinnedResponse);
+  rpc MarkForumThreadRead(MarkForumThreadReadRequest) returns (MarkForumThreadReadResponse);
   rpc CloseForumThread(CloseForumThreadRequest) returns (CloseForumThreadResponse);
 }
 message ForumThread {
+  bool pinned = 13;
+  bool read_state_supported = 14;
+  bool seen = 15;
+  int64 read_sequence = 16;
+  int64 unread_count = 17;
   repeated Asset attachments = 12;
   string id = 1;
   string channel_id = 2;
@@ -36,8 +43,8 @@ message ForumReply {
   int64 sequence = 7;
 }
 // Курсоры — sequence последней записи; 0 начинает чтение, limit 1..50 (0 = 50).
-message ListForumThreadsRequest { string channel_id = 1; int64 after_sequence = 2; int32 limit = 3; }
-message ListForumThreadsResponse { repeated ForumThread threads = 1; int64 next_sequence = 2; }
+message ListForumThreadsRequest { string channel_id = 1; int64 after_sequence = 2; int32 limit = 3; bool pinned_first = 4; bool after_pinned = 5; }
+message ListForumThreadsResponse { repeated ForumThread threads = 1; int64 next_sequence = 2; bool next_pinned = 3; }
 message GetForumThreadRequest { string channel_id = 1; string thread_id = 2; int64 after_sequence = 3; int32 limit = 4; }
 message GetForumThreadResponse { ForumThread thread = 1; repeated ForumReply replies = 2; int64 next_sequence = 3; }
 // Заголовок 1..320 байт UTF-8, текст до 8192, ключ 1..128; автор берётся из сессии.
@@ -49,3 +56,10 @@ message ReplyForumThreadResponse { ForumReply reply = 1; ForumThread thread = 2;
 // Требует manage и read; право автора само по себе не разрешает закрытие.
 message CloseForumThreadRequest { string channel_id = 1; string thread_id = 2; int64 expected_revision = 3; }
 message CloseForumThreadResponse { ForumThread thread = 1; }
+
+// core.forum.navigation.v1. Закрепление требует read/manage и scope space.manage.
+message SetForumThreadPinnedRequest { string channel_id = 1; string thread_id = 2; bool pinned = 3; int64 expected_revision = 4; }
+message SetForumThreadPinnedResponse { ForumThread thread = 1; }
+// Курсор чтения относится к principal сессии, монотонный; 0 отмечает первое сообщение.
+message MarkForumThreadReadRequest { string channel_id = 1; string thread_id = 2; int64 through_sequence = 3; }
+message MarkForumThreadReadResponse { ForumThread thread = 1; }
