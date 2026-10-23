@@ -12,8 +12,12 @@ service ForumService {
   rpc SetForumThreadPinned(SetForumThreadPinnedRequest) returns (SetForumThreadPinnedResponse);
   rpc MarkForumThreadRead(MarkForumThreadReadRequest) returns (MarkForumThreadReadResponse);
   rpc CloseForumThread(CloseForumThreadRequest) returns (CloseForumThreadResponse);
+  rpc ModerateForumThread(ModerateForumThreadRequest) returns (ModerateForumThreadResponse);
+  rpc ModerateForumReply(ModerateForumReplyRequest) returns (ModerateForumReplyResponse);
+  rpc ListForumModeration(ListForumModerationRequest) returns (ListForumModerationResponse);
 }
 message ForumThread {
+  bool hidden = 18;
   bool pinned = 13;
   bool read_state_supported = 14;
   bool seen = 15;
@@ -33,6 +37,8 @@ message ForumThread {
   int64 reply_count = 11;
 }
 message ForumReply {
+  bool hidden = 9;
+  int64 revision = 10;
   repeated Asset attachments = 8;
   string id = 1;
   string thread_id = 2;
@@ -63,3 +69,15 @@ message SetForumThreadPinnedResponse { ForumThread thread = 1; }
 // Курсор чтения относится к principal сессии, монотонный; 0 отмечает первое сообщение.
 message MarkForumThreadReadRequest { string channel_id = 1; string thread_id = 2; int64 through_sequence = 3; }
 message MarkForumThreadReadResponse { ForumThread thread = 1; }
+
+// core.forum.moderation.v1. Все операции требуют read/manage и scope space.manage.
+// Причина 1..1024 байт UTF-8 обязательна; скрытое содержимое не возвращается даже автору.
+message ModerateForumThreadRequest { string channel_id = 1; string thread_id = 2; string action = 3; string reason = 4; int64 expected_revision = 5; }
+message ModerateForumThreadResponse { ForumThread thread = 1; }
+// action темы: reopen, hide, restore. Ответы сохраняют последовательность при скрытии.
+message ModerateForumReplyRequest { string channel_id = 1; string thread_id = 2; string reply_id = 3; bool hidden = 4; string reason = 5; int64 expected_revision = 6; }
+message ModerateForumReplyResponse { ForumReply reply = 1; ForumThread thread = 2; }
+// Журнал виден только модератору. Курсор id последней записи, 0 начинает чтение.
+message ListForumModerationRequest { string channel_id = 1; string thread_id = 2; int64 after_id = 3; int32 limit = 4; }
+message ForumModerationEvent { int64 id = 1; string thread_id = 2; string reply_id = 3; string action = 4; string reason = 5; string actor_id = 6; int64 revision = 7; int64 created_at_unix = 8; }
+message ListForumModerationResponse { repeated ForumModerationEvent events = 1; int64 next_id = 2; }
