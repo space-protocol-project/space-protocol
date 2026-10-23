@@ -5,6 +5,9 @@ option go_package = "github.com/space-protocol-project/space-server/gen/space/v1
 
 // core.forum.v1: отдельные открытые форумные разделы с ACL канала.
 service ForumService {
+  rpc ReportForumContent(ReportForumContentRequest) returns (ReportForumContentResponse);
+  rpc ListForumReports(ListForumReportsRequest) returns (ListForumReportsResponse);
+  rpc ResolveForumReport(ResolveForumReportRequest) returns (ResolveForumReportResponse);
   rpc ListForumThreads(ListForumThreadsRequest) returns (ListForumThreadsResponse);
   rpc GetForumThread(GetForumThreadRequest) returns (GetForumThreadResponse);
   rpc CreateForumThread(CreateForumThreadRequest) returns (CreateForumThreadResponse);
@@ -79,5 +82,46 @@ message ModerateForumReplyRequest { string channel_id = 1; string thread_id = 2;
 message ModerateForumReplyResponse { ForumReply reply = 1; ForumThread thread = 2; }
 // Журнал виден только модератору. Курсор id последней записи, 0 начинает чтение.
 message ListForumModerationRequest { string channel_id = 1; string thread_id = 2; int64 after_id = 3; int32 limit = 4; }
-message ForumModerationEvent { int64 id = 1; string thread_id = 2; string reply_id = 3; string action = 4; string reason = 5; string actor_id = 6; int64 revision = 7; int64 created_at_unix = 8; }
+message ForumModerationEvent {
+  int64 report_id = 9; int64 id = 1; string thread_id = 2; string reply_id = 3; string action = 4; string reason = 5; string actor_id = 6; int64 revision = 7; int64 created_at_unix = 8; }
 message ListForumModerationResponse { repeated ForumModerationEvent events = 1; int64 next_id = 2; }
+
+
+// core.forum.reports.v1: сведения о заявителе не возвращаются клиентам.
+message ForumReport {
+  string thread_title = 10;
+  int64 id = 1;
+  string thread_id = 2;
+  string reply_id = 3;
+  string reason = 4;
+  string decision = 5;
+  string decision_reason = 6;
+  string moderator_id = 7;
+  int64 created_at_unix = 8;
+  int64 resolved_at_unix = 9;
+}
+message ReportForumContentRequest {
+  string channel_id = 1;
+  string thread_id = 2;
+  string reply_id = 3;
+  string reason = 4;
+}
+message ReportForumContentResponse {}
+message ListForumReportsRequest {
+  string channel_id = 1;
+  int64 after_id = 2;
+  int32 limit = 3;
+  bool resolved = 4;
+}
+message ListForumReportsResponse {
+  repeated ForumReport reports = 1;
+  int64 next_id = 2;
+}
+message ResolveForumReportRequest {
+  string channel_id = 1;
+  int64 report_id = 2;
+  string decision = 3; // dismiss или hide.
+  string reason = 4;
+  int64 expected_revision = 5; // Ревизия темы или ответа для hide.
+}
+message ResolveForumReportResponse { ForumReport report = 1; }

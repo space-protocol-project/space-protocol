@@ -18,7 +18,7 @@
 
 ## Скачать Space
 
-Доступен экспериментальный [выпуск приложения v0.7.15](https://github.com/space-protocol-project/space-app/releases/tag/v0.7.15). Совместимый [runtime v0.7.12](https://github.com/space-protocol-project/space-server/releases/tag/v0.7.12) использует схему 29: повторное открытие, скрытие и восстановление тем и ответов с причиной и аудитом, защита скрытых файлов. В клиенте обновлены навигация и анимации. [Полное приложение на широком и узком экране](https://github.com/space-protocol-project/space-app/blob/main/docs/screenshots/forum-navigation-app/README.md).
+Совместимая пара: [приложение v0.7.16](https://github.com/space-protocol-project/space-app/releases/tag/v0.7.16) и [runtime v0.7.13](https://github.com/space-protocol-project/space-server/releases/tag/v0.7.13), схема 30. Жалобы на темы и ответы, очередь модерации и решения с причиной и аудитом; серверные права, защита скрытых файлов и прежняя модерация сохранены. Данные заявителя не возвращаются модераторам. [Полное приложение на широком и узком экране](https://github.com/space-protocol-project/space-app/blob/main/docs/screenshots/forum-reports-app/README.md). Результаты публикации фиксируются в [TODO](TODO.md).
 
 | Система | Последняя версия |
 | --- | --- |
