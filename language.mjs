@@ -1,4 +1,4 @@
-import translations from './translations.mjs?v=20261023-forum-moderation';
+import translations from './translations.mjs?v=20261023-forum-reports';
 
 const supported = ['ru', 'zh', 'en'];
 const storageKey = 'space.site.language';
