@@ -4,6 +4,40 @@
   const title = document.getElementById('dialog-title');
   const shots = [...document.querySelectorAll('.gallery-shot')];
   const counter = document.getElementById('dialog-counter');
+  const themes = document.getElementById('screenshot-theme');
+  const screenshotCount = document.getElementById('screenshot-count');
+  const groups = [...document.querySelectorAll('.gallery-group')];
+  const themeKey = 'space.site.screenshotTheme';
+  let theme = 'dark';
+  try {
+    if (localStorage.getItem(themeKey) === 'light') theme = 'light';
+  } catch { /* Выбор доступен без сохранения. */ }
+
+  function visibleShots() {
+    return shots.filter(shot => !shot.closest('figure').hidden);
+  }
+
+  function applyTheme() {
+    for (const shot of shots) {
+      const source = shot.dataset[`${theme}Src`] ??
+        (shot.dataset.screenshotTheme === theme ? shot.getAttribute('href') : null);
+      shot.closest('figure').hidden = !source;
+      if (source) {
+        shot.href = source;
+        shot.querySelector('img').src = source;
+      }
+    }
+    for (const group of groups) {
+      group.hidden = [...group.querySelectorAll('figure')].every(figure => figure.hidden);
+    }
+    screenshotCount.textContent = visibleShots().length;
+    if (dialog.open) {
+      const visible = visibleShots();
+      if (!visible.includes(activeShot)) activeShot = visible[0];
+      image.src = activeShot.href;
+      updateCaption();
+    }
+  }
   let activeShot;
   let closeTimer;
   let switching = false;
@@ -33,7 +67,8 @@
   function updateCaption() {
     image.alt = activeShot.querySelector('img').alt;
     title.textContent = activeShot.dataset.galleryTitle;
-    counter.textContent = `${shots.indexOf(activeShot) + 1} / ${shots.length}`;
+    const visible = visibleShots();
+    counter.textContent = `${visible.indexOf(activeShot) + 1} / ${visible.length}`;
   }
 
   async function switchScreenshot(direction) {
@@ -43,7 +78,8 @@
       return;
     }
     switching = true;
-    const next = shots[(shots.indexOf(activeShot) + direction + shots.length) % shots.length];
+    const visible = visibleShots();
+    const next = visible[(visible.indexOf(activeShot) + direction + visible.length) % visible.length];
     const preload = new Image();
     preload.src = next.href;
     try {
@@ -116,6 +152,16 @@
     updateCaption();
     dialog.showModal();
   }
+
+  themes.querySelector(`input[value="${theme}"]`).checked = true;
+  applyTheme();
+  themes.hidden = false;
+  themes.addEventListener('change', event => {
+    if (!['dark', 'light'].includes(event.target.value)) return;
+    theme = event.target.value;
+    try { localStorage.setItem(themeKey, theme); } catch { /* Без сохранения. */ }
+    applyTheme();
+  });
 
   shots.forEach(link => {
     link.addEventListener('click', openScreenshot);

@@ -1,4 +1,4 @@
-import translations from './translations.mjs?v=20261023-forum-reports';
+import translations from './translations.mjs?v=20261024-screenshot-themes';
 
 const supported = ['ru', 'zh', 'en'];
 const storageKey = 'space.site.language';

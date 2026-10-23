@@ -129,3 +129,14 @@ body{font-family:'Nunito Sans',sans-serif}h1,h2,h3,.brand{font-family:'Nunito',s
 
 .gallery-voice-mobile{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px;margin:24px auto;gap:32px;align-items:start}
 @media(max-width:760px){.gallery-voice-mobile{grid-template-columns:1fr;max-width:320px;gap:24px}}
+
+/* Тема скриншотов не меняет оформление самой страницы. */
+.screenshot-themes{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-width:0;width:fit-content;margin:28px 0 12px;padding:8px;border:1px solid #ffffff24;border-radius:16px}
+.screenshot-themes legend{padding:0 8px;font-size:14px}
+.screenshot-themes label{display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 16px;border-radius:10px;cursor:pointer}
+.screenshot-themes input{accent-color:currentColor;margin:0}
+.screenshot-themes label:has(:checked){background:var(--paper,#eadbb4);color:#202120}
+.screenshot-themes label:has(:focus-visible){outline:2px solid var(--paper,#eadbb4);outline-offset:3px}
+.screenshot-themes[hidden],.gallery-group[hidden],.gallery-grid figure[hidden]{display:none}
+
+.screenshot-count{font-size:14px;opacity:.75;margin:12px 0 0}
