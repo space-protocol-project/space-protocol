@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package space.v1;
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// core.community.search.v1: только выбранный открытый forum/feed раздел.
+service CommunitySearchService {
+  rpc SearchCommunityContent(SearchCommunityContentRequest) returns (SearchCommunityContentResponse);
+}
+
+enum CommunitySearchKind {
+  COMMUNITY_SEARCH_KIND_UNSPECIFIED = 0;
+  COMMUNITY_SEARCH_KIND_FORUM_THREAD = 1;
+  COMMUNITY_SEARCH_KIND_FORUM_REPLY = 2;
+  COMMUNITY_SEARCH_KIND_FEED_POST = 3;
+  COMMUNITY_SEARCH_KIND_FEED_COMMENT = 4;
+}
+
+message SearchCommunityContentRequest {
+  string channel_id = 1;
+  // Буквальная подстрока, 1..256 байт UTF-8 после удаления внешних пробелов.
+  string query = 2;
+  // Непрозрачная страница связана с разделом, запросом и principal.
+  string page_token = 3;
+  int32 limit = 4; // 0 = 20, иначе 1..50.
+}
+
+message CommunitySearchResult {
+  CommunitySearchKind kind = 1;
+  string id = 2;
+  // ID темы/публикации; для корневого результата совпадает с id.
+  string parent_id = 3;
+  string title = 4;
+  // Обычный текст до 240 Unicode code points; не HTML/Markdown.
+  string snippet = 5;
+  string author_id = 6;
+  string author_name = 7;
+  int64 created_at_unix = 8;
+  // Порядок ответа/комментария для перехода непосредственно к результату.
+  int64 sequence = 9;
+}
+
+message SearchCommunityContentResponse {
+  repeated CommunitySearchResult results = 1;
+  string next_page_token = 2;
+}

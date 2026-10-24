@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package space.v1;
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+import "space/v1/community_search.proto";
+
+// core.community.overview.v1: персональная сводка одного доступного раздела.
+service CommunityOverviewService {
+  rpc GetCommunityOverview(GetCommunityOverviewRequest) returns (GetCommunityOverviewResponse);
+}
+
+message GetCommunityOverviewRequest {
+  string channel_id = 1;
+  int32 limit = 2; // 0 = 6, максимум 20 в каждом списке.
+}
+
+message CommunityOverviewEntry {
+  CommunitySearchResult content = 1;
+  int64 unread_count = 2;
+  bool read_state_supported = 3;
+  // Видимые непрочитанные ответы других участников автору темы.
+  int64 unread_replies_to_you = 4;
+  int64 first_unread_reply_sequence = 5;
+}
+
+message GetCommunityOverviewResponse {
+  repeated CommunityOverviewEntry recent = 1;
+  repeated CommunityOverviewEntry replies_to_you = 2;
+  int64 pending_reports = 3;
+  bool can_moderate = 4;
+}

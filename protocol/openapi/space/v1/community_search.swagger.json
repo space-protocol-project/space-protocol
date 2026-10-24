@@ -1,0 +1,112 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "space/v1/community_search.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "CommunitySearchService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CommunitySearchKind": {
+      "type": "string",
+      "enum": [
+        "COMMUNITY_SEARCH_KIND_UNSPECIFIED",
+        "COMMUNITY_SEARCH_KIND_FORUM_THREAD",
+        "COMMUNITY_SEARCH_KIND_FORUM_REPLY",
+        "COMMUNITY_SEARCH_KIND_FEED_POST",
+        "COMMUNITY_SEARCH_KIND_FEED_COMMENT"
+      ],
+      "default": "COMMUNITY_SEARCH_KIND_UNSPECIFIED"
+    },
+    "v1CommunitySearchResult": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "$ref": "#/definitions/v1CommunitySearchKind"
+        },
+        "id": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "string",
+          "description": "ID темы/публикации; для корневого результата совпадает с id."
+        },
+        "title": {
+          "type": "string"
+        },
+        "snippet": {
+          "type": "string",
+          "description": "Обычный текст до 240 Unicode code points; не HTML/Markdown."
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "authorName": {
+          "type": "string"
+        },
+        "createdAtUnix": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sequence": {
+          "type": "string",
+          "format": "int64",
+          "description": "Порядок ответа/комментария для перехода непосредственно к результату."
+        }
+      }
+    },
+    "v1SearchCommunityContentResponse": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunitySearchResult"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
