@@ -1,0 +1,221 @@
+syntax = "proto3";
+
+package space.v1;
+
+import "space/v1/space.proto";
+
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// core.feed.v1: экспериментальная лента публикаций по ADR-046.
+service FeedService {
+  rpc ListFeedPosts(ListFeedPostsRequest) returns (ListFeedPostsResponse);
+  rpc GetFeedPost(GetFeedPostRequest) returns (GetFeedPostResponse);
+  rpc CreateFeedPost(CreateFeedPostRequest) returns (CreateFeedPostResponse);
+  rpc CommentFeedPost(CommentFeedPostRequest) returns (CommentFeedPostResponse);
+  rpc GetFeedAccess(GetFeedAccessRequest) returns (GetFeedAccessResponse);
+  rpc UpdateFeedAccess(UpdateFeedAccessRequest) returns (UpdateFeedAccessResponse);
+  rpc ModerateFeedPost(ModerateFeedPostRequest) returns (ModerateFeedPostResponse);
+  rpc ModerateFeedComment(ModerateFeedCommentRequest) returns (ModerateFeedCommentResponse);
+  rpc ListFeedModeration(ListFeedModerationRequest) returns (ListFeedModerationResponse);
+  rpc ReportFeedContent(ReportFeedContentRequest) returns (ReportFeedContentResponse);
+  rpc ListFeedReports(ListFeedReportsRequest) returns (ListFeedReportsResponse);
+  rpc ResolveFeedReport(ResolveFeedReportRequest) returns (ResolveFeedReportResponse);
+}
+
+// Собственные эффективные права; read/manage берутся из ACL канала.
+message FeedPermissions {
+  bool publish = 1;
+  bool comment = 2;
+}
+
+message FeedPost {
+  string id = 1;
+  string channel_id = 2;
+  string author_id = 3;
+  string author_name = 4;
+  string text = 5;
+  int64 created_at_unix = 6;
+  int64 sequence = 7;
+  int64 revision = 8;
+  int64 comment_count = 9;
+  repeated Asset attachments = 10;
+  // Скрытая запись не содержит автора, текста, файлов и числа комментариев.
+  bool hidden = 11;
+}
+
+message FeedComment {
+  string id = 1;
+  string post_id = 2;
+  string author_id = 3;
+  string author_name = 4;
+  string text = 5;
+  int64 created_at_unix = 6;
+  int64 sequence = 7;
+  int64 revision = 8;
+  repeated Asset attachments = 9;
+  bool hidden = 10;
+}
+
+// sequence DESC; before=0 начинает список, next=0 означает конец.
+message ListFeedPostsRequest {
+  string channel_id = 1;
+  int64 before_sequence = 2;
+  int32 limit = 3; // 0 = 50, иначе 1..50.
+}
+message ListFeedPostsResponse {
+  repeated FeedPost posts = 1;
+  int64 next_before_sequence = 2;
+  FeedPermissions permissions = 3;
+}
+
+// Комментарии sequence ASC; скрытый родитель не возвращает комментарии.
+message GetFeedPostRequest {
+  string channel_id = 1;
+  string post_id = 2;
+  int64 after_sequence = 3;
+  int32 limit = 4;
+}
+message GetFeedPostResponse {
+  FeedPost post = 1;
+  repeated FeedComment comments = 2;
+  int64 next_sequence = 3;
+  FeedPermissions permissions = 4;
+}
+
+// Текст до 8192 байт UTF-8; пустой только с файлом. До пяти файлов.
+// Ключ 1..128 байт, автор берётся из сессии; правила повтора — ADR-046.
+message CreateFeedPostRequest {
+  string channel_id = 1;
+  string text = 2;
+  string idempotency_key = 3;
+  repeated string attachment_ids = 4;
+}
+message CreateFeedPostResponse {
+  FeedPost post = 1;
+}
+message CommentFeedPostRequest {
+  string channel_id = 1;
+  string post_id = 2;
+  string text = 3;
+  string idempotency_key = 4;
+  repeated string attachment_ids = 5;
+}
+message CommentFeedPostResponse {
+  FeedComment comment = 1;
+  FeedPost post = 2;
+}
+
+// Ровно один субъект: role=member/reader либо principal_id.
+// Индивидуальное правило заменяет правило роли; отсутствие = запрет.
+message FeedAccessRule {
+  string role = 1;
+  string principal_id = 2;
+  FeedPermissions permissions = 3;
+}
+// Получение и изменение правил требует read/manage и space.manage.
+message GetFeedAccessRequest {
+  string channel_id = 1;
+}
+message GetFeedAccessResponse {
+  string channel_id = 1;
+  int64 revision = 2; // Общая revision канала, включает изменения ACL.
+  repeated FeedAccessRule rules = 3;
+}
+message UpdateFeedAccessRequest {
+  string channel_id = 1;
+  int64 expected_revision = 2;
+  repeated FeedAccessRule rules = 3; // Полная замена; пустой список запрещает оба действия.
+}
+message UpdateFeedAccessResponse {
+  string channel_id = 1;
+  int64 revision = 2;
+  repeated FeedAccessRule rules = 3;
+}
+
+// Обе операции требуют read/manage, space.manage, причину 1..1024 байт.
+message ModerateFeedPostRequest {
+  string channel_id = 1;
+  string post_id = 2;
+  bool hidden = 3;
+  string reason = 4;
+  int64 expected_revision = 5;
+}
+message ModerateFeedPostResponse {
+  FeedPost post = 1;
+}
+message ModerateFeedCommentRequest {
+  string channel_id = 1;
+  string post_id = 2;
+  string comment_id = 3;
+  bool hidden = 4;
+  string reason = 5;
+  int64 expected_revision = 6;
+}
+message ModerateFeedCommentResponse {
+  FeedComment comment = 1;
+  FeedPost post = 2;
+}
+
+// Журнал доступен только модератору; курсор id ASC, 0 начинает чтение.
+message ListFeedModerationRequest {
+  string channel_id = 1;
+  string post_id = 2;
+  int64 after_id = 3;
+  int32 limit = 4;
+}
+message FeedModerationEvent {
+  int64 id = 1;
+  string post_id = 2;
+  string comment_id = 3;
+  string action = 4;
+  string reason = 5;
+  string actor_id = 6;
+  int64 revision = 7;
+  int64 created_at_unix = 8;
+  int64 report_id = 9;
+}
+message ListFeedModerationResponse {
+  repeated FeedModerationEvent events = 1;
+  int64 next_id = 2;
+}
+
+// Не содержит заявителя или копий исходного текста/файлов.
+message FeedReport {
+  int64 id = 1;
+  string post_id = 2;
+  string comment_id = 3;
+  string reason = 4;
+  string decision = 5;
+  string decision_reason = 6;
+  string moderator_id = 7;
+  int64 created_at_unix = 8;
+  int64 resolved_at_unix = 9;
+}
+// Доступно читателю; comment_id пусто для жалобы на публикацию.
+message ReportFeedContentRequest {
+  string channel_id = 1;
+  string post_id = 2;
+  string comment_id = 3;
+  string reason = 4;
+}
+message ReportFeedContentResponse {}
+message ListFeedReportsRequest {
+  string channel_id = 1;
+  int64 after_id = 2;
+  int32 limit = 3;
+  bool resolved = 4;
+}
+message ListFeedReportsResponse {
+  repeated FeedReport reports = 1;
+  int64 next_id = 2;
+}
+message ResolveFeedReportRequest {
+  string channel_id = 1;
+  int64 report_id = 2;
+  string decision = 3; // dismiss или hide.
+  string reason = 4;
+  int64 expected_revision = 5; // Для hide — текущая revision объекта.
+}
+message ResolveFeedReportResponse {
+  FeedReport report = 1;
+}
