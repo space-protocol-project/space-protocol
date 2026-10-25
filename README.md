@@ -1,6 +1,6 @@
 # Space Protocol — открытый протокол каналов и социальных realtime-приложений
 
-**Рабочее имя: Space Protocol (`space`). Архитектура и реализованный экспериментальный прототип; документация обновлена 23 октября 2026 года.**
+**Рабочее имя: Space Protocol (`space`). Архитектура и реализованный экспериментальный прототип; документация обновлена 25 октября 2026 года.**
 
 Этот документ описывает, что мы хотим построить, как части системы взаимодействуют и какие ограничения необходимо учитывать. [TODO.md](TODO.md) превращает архитектуру в последовательность проверяемых этапов.
 
@@ -18,7 +18,7 @@
 
 ## Скачать Space
 
-Опубликована совместимая пара: [приложение v0.7.16](https://github.com/space-protocol-project/space-app/releases/tag/v0.7.16) и [runtime v0.7.13](https://github.com/space-protocol-project/space-server/releases/tag/v0.7.13), схема 30. Жалобы на темы и ответы, очередь модерации и решения с причиной и аудитом; серверные права, защита скрытых файлов и прежняя модерация сохранены. Данные заявителя не возвращаются модераторам. [Полное приложение на широком и узком экране](https://github.com/space-protocol-project/space-app/blob/main/docs/screenshots/forum-reports-app/README.md). Результаты публикации фиксируются в [TODO](TODO.md).
+Опубликована совместимая пара: [приложение v0.7.23](https://github.com/space-protocol-project/space-app/releases/tag/v0.7.23) и [runtime v0.7.18](https://github.com/space-protocol-project/space-server/releases/tag/v0.7.18), схема 35. Выбранные упоминания по ID в форуме, ленте и обычных чатах, персональные упоминания и ответы в сводке, автоматическая тема и переход к обзору по кнопке пространства. [Проверки совместимого выпуска](https://github.com/space-protocol-project/space-app/blob/main/docs/MENTIONS-RELEASE.md), [следующий срез уведомлений](https://github.com/space-protocol-project/space-app/blob/main/docs/COMMUNITY-NOTIFICATIONS.md). Результаты и открытые критерии фиксируются в [TODO](TODO.md).
 
 | Система | Последняя версия |
 | --- | --- |
@@ -28,7 +28,7 @@
 
 [Контрольные суммы](https://github.com/space-protocol-project/space-app/releases/latest/download/SHA256SUMS.txt) · [Снимки интерфейса](https://github.com/space-protocol-project/space-app/blob/main/docs/SCREENSHOTS.md) · [Обновление](https://github.com/space-protocol-project/space-app/blob/main/docs/APP-UPDATES.md) · [Восстановление домашнего сервера](https://github.com/space-protocol-project/space-app/blob/main/docs/HOME-RECOVERY.md).
 
-Ссылки всегда ведут на последний публичный выпуск. Домашний runtime v0.2.2 устанавливается из приложения. CI проверил комплекты на трёх ОС и обновление Windows поверх v0.2.1; ручная приёмка на физических системах остаётся открытой. DMG пока без подписи Apple и notarization.
+Ссылки всегда ведут на последний публичный выпуск. Домашний runtime v0.7.18 устанавливается из приложения v0.7.23. CI проверил комплекты на трёх ОС и обновление Windows поверх v0.2.1; ручная приёмка на физических системах остаётся открытой. DMG пока без подписи Apple и notarization.
 
 ## Содержание
 
