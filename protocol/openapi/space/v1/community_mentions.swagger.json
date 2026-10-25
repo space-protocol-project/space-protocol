@@ -15,7 +15,72 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/space.v1.CommunityMentionService/ListMentionCandidates": {
+      "post": {
+        "operationId": "CommunityMentionService_ListMentionCandidates",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListMentionCandidatesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListMentionCandidatesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CommunityMentionService"
+        ]
+      }
+    },
+    "/space.v1.CommunityMentionService/MarkCommunityMentionsRead": {
+      "post": {
+        "operationId": "CommunityMentionService_MarkCommunityMentionsRead",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1MarkCommunityMentionsReadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1MarkCommunityMentionsReadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CommunityMentionService"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -67,6 +132,22 @@
       ],
       "default": "COMMUNITY_SEARCH_KIND_UNSPECIFIED"
     },
+    "v1ListMentionCandidatesRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "string",
+          "description": "Пусто для новой темы/публикации; иначе ID темы/публикации."
+        },
+        "query": {
+          "type": "string",
+          "description": "До 128 байт UTF-8; пусто — первые доступные участники."
+        }
+      }
+    },
     "v1ListMentionCandidatesResponse": {
       "type": "object",
       "properties": {
@@ -77,6 +158,22 @@
             "$ref": "#/definitions/v1MentionCandidate"
           },
           "description": "Максимум 20; только имеющие доступ."
+        }
+      }
+    },
+    "v1MarkCommunityMentionsReadRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "contents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityContentReference"
+          },
+          "description": "Не больше 50 видимых объектов."
         }
       }
     },

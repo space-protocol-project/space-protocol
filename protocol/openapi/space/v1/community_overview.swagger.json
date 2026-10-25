@@ -15,7 +15,40 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/space.v1.CommunityOverviewService/GetCommunityOverview": {
+      "post": {
+        "operationId": "CommunityOverviewService_GetCommunityOverview",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCommunityOverviewResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCommunityOverviewRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CommunityOverviewService"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -114,6 +147,19 @@
           "type": "string",
           "format": "int64",
           "description": "Порядок ответа/комментария для перехода непосредственно к результату."
+        }
+      }
+    },
+    "v1GetCommunityOverviewRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 = 6, максимум 20 в каждом списке."
         }
       }
     },

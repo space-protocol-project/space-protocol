@@ -1296,6 +1296,551 @@
         ]
       }
     },
+    "/space.v1.AssetService/BeginUpload": {
+      "post": {
+        "operationId": "AssetService_BeginUpload",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BeginUploadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BeginUploadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AssetService"
+        ]
+      }
+    },
+    "/space.v1.AssetService/CancelUpload": {
+      "post": {
+        "operationId": "AssetService_CancelUpload",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CancelUploadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CancelUploadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AssetService"
+        ]
+      }
+    },
+    "/space.v1.AssetService/CompleteUpload": {
+      "post": {
+        "operationId": "AssetService_CompleteUpload",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CompleteUploadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CompleteUploadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AssetService"
+        ]
+      }
+    },
+    "/space.v1.AssetService/DownloadChunk": {
+      "post": {
+        "operationId": "AssetService_DownloadChunk",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DownloadChunkResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DownloadChunkRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AssetService"
+        ]
+      }
+    },
+    "/space.v1.AssetService/ListChannelAssets": {
+      "post": {
+        "operationId": "AssetService_ListChannelAssets",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListChannelAssetsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListChannelAssetsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AssetService"
+        ]
+      }
+    },
+    "/space.v1.AssetService/ListMyAssets": {
+      "post": {
+        "operationId": "AssetService_ListMyAssets",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListMyAssetsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListMyAssetsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AssetService"
+        ]
+      }
+    },
+    "/space.v1.AssetService/UploadChunk": {
+      "post": {
+        "operationId": "AssetService_UploadChunk",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UploadChunkResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UploadChunkRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AssetService"
+        ]
+      }
+    },
+    "/space.v1.ContentService/ApplyContentMutation": {
+      "post": {
+        "summary": "Постоянная очередь использует отдельный RPC: старый runtime отклоняет\r\nего до изменения данных, а не игнорирует неизвестный ключ запроса.",
+        "operationId": "ContentService_ApplyContentMutation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ApplyContentMutationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ApplyContentMutationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ContentService"
+        ]
+      }
+    },
+    "/space.v1.ContentService/SetReaction": {
+      "post": {
+        "operationId": "ContentService_SetReaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetReactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetReactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ContentService"
+        ]
+      }
+    },
+    "/space.v1.MembershipService/GetParticipantProfile": {
+      "post": {
+        "operationId": "MembershipService_GetParticipantProfile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetParticipantProfileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetParticipantProfileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MembershipService"
+        ]
+      }
+    },
+    "/space.v1.MembershipService/ListParticipantProfiles": {
+      "post": {
+        "operationId": "MembershipService_ListParticipantProfiles",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListParticipantProfilesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListParticipantProfilesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MembershipService"
+        ]
+      }
+    },
+    "/space.v1.MembershipService/UpdateParticipantProfile": {
+      "post": {
+        "operationId": "MembershipService_UpdateParticipantProfile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateParticipantProfileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateParticipantProfileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MembershipService"
+        ]
+      }
+    },
+    "/space.v1.MlsService/GetMlsChannel": {
+      "post": {
+        "operationId": "MlsService_GetMlsChannel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetMlsChannelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetMlsChannelRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MlsService"
+        ]
+      }
+    },
+    "/space.v1.MlsService/ListMlsDevices": {
+      "post": {
+        "operationId": "MlsService_ListMlsDevices",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListMlsDevicesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListMlsDevicesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MlsService"
+        ]
+      }
+    },
+    "/space.v1.MlsService/ListMlsEnvelopes": {
+      "post": {
+        "operationId": "MlsService_ListMlsEnvelopes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListMlsEnvelopesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListMlsEnvelopesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MlsService"
+        ]
+      }
+    },
+    "/space.v1.MlsService/PublishMls": {
+      "post": {
+        "operationId": "MlsService_PublishMls",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PublishMlsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1PublishMlsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MlsService"
+        ]
+      }
+    },
+    "/space.v1.MlsService/RegisterMlsDevice": {
+      "post": {
+        "operationId": "MlsService_RegisterMlsDevice",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RegisterMlsDeviceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RegisterMlsDeviceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MlsService"
+        ]
+      }
+    },
     "/v1/channels/{channelId}/contents/{id}": {
       "delete": {
         "operationId": "ContentService_DeleteContent",
@@ -1550,6 +2095,20 @@
         }
       }
     },
+    "v1ApplyContentMutationRequest": {
+      "type": "object",
+      "properties": {
+        "update": {
+          "$ref": "#/definitions/v1UpdateContentRequest"
+        },
+        "delete": {
+          "$ref": "#/definitions/v1DeleteContentRequest"
+        },
+        "reaction": {
+          "$ref": "#/definitions/v1SetReactionRequest"
+        }
+      }
+    },
     "v1ApplyContentMutationResponse": {
       "type": "object",
       "properties": {
@@ -1602,6 +2161,31 @@
         }
       }
     },
+    "v1BeginUploadRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "byteSize": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sha256": {
+          "type": "string",
+          "format": "byte"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        },
+        "encrypted": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1BeginUploadResponse": {
       "type": "object",
       "properties": {
@@ -1628,6 +2212,14 @@
     },
     "v1CancelPairingResponse": {
       "type": "object"
+    },
+    "v1CancelUploadRequest": {
+      "type": "object",
+      "properties": {
+        "assetId": {
+          "type": "string"
+        }
+      }
     },
     "v1CancelUploadResponse": {
       "type": "object"
@@ -1835,6 +2427,14 @@
         "newSignature": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "v1CompleteUploadRequest": {
+      "type": "object",
+      "properties": {
+        "assetId": {
+          "type": "string"
         }
       }
     },
@@ -2217,6 +2817,18 @@
         }
       }
     },
+    "v1DownloadChunkRequest": {
+      "type": "object",
+      "properties": {
+        "assetId": {
+          "type": "string"
+        },
+        "offset": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "v1DownloadChunkResponse": {
       "type": "object",
       "properties": {
@@ -2336,6 +2948,14 @@
         }
       }
     },
+    "v1GetMlsChannelRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        }
+      }
+    },
     "v1GetMlsChannelResponse": {
       "type": "object",
       "properties": {
@@ -2355,6 +2975,9 @@
           }
         }
       }
+    },
+    "v1GetParticipantProfileRequest": {
+      "type": "object"
     },
     "v1GetParticipantProfileResponse": {
       "type": "object",
@@ -2422,6 +3045,20 @@
         },
         "revoked": {
           "type": "boolean"
+        }
+      }
+    },
+    "v1ListChannelAssetsRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "after": {
+          "type": "string"
+        },
+        "authorId": {
+          "type": "string"
         }
       }
     },
@@ -2530,6 +3167,17 @@
         }
       }
     },
+    "v1ListMlsDevicesRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "after": {
+          "type": "string"
+        }
+      }
+    },
     "v1ListMlsDevicesResponse": {
       "type": "object",
       "properties": {
@@ -2542,6 +3190,18 @@
         },
         "nextCursor": {
           "type": "string"
+        }
+      }
+    },
+    "v1ListMlsEnvelopesRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "afterSequence": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
@@ -2561,6 +3221,17 @@
         }
       }
     },
+    "v1ListMyAssetsRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "after": {
+          "type": "string"
+        }
+      }
+    },
     "v1ListMyAssetsResponse": {
       "type": "object",
       "properties": {
@@ -2573,6 +3244,20 @@
         },
         "nextCursor": {
           "type": "string"
+        }
+      }
+    },
+    "v1ListParticipantProfilesRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "principalIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -2834,6 +3519,48 @@
     "v1ProposePairingResponse": {
       "type": "object"
     },
+    "v1PublishMlsRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string",
+          "format": "byte"
+        },
+        "expectedEpoch": {
+          "type": "string",
+          "format": "int64"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "ciphertext": {
+          "type": "string",
+          "format": "byte"
+        },
+        "addGrantId": {
+          "type": "string"
+        },
+        "removeGrantId": {
+          "type": "string"
+        },
+        "welcome": {
+          "type": "string",
+          "format": "byte"
+        },
+        "attachmentIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "newManagerGrantId": {
+          "type": "string"
+        }
+      }
+    },
     "v1PublishMlsResponse": {
       "type": "object",
       "properties": {
@@ -2856,6 +3583,19 @@
         }
       },
       "description": "Один участник учитывается один раз, независимо от числа устройств."
+    },
+    "v1RegisterMlsDeviceRequest": {
+      "type": "object",
+      "properties": {
+        "binding": {
+          "type": "string",
+          "format": "byte"
+        },
+        "keyPackage": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     },
     "v1RegisterMlsDeviceResponse": {
       "type": "object",
@@ -3125,6 +3865,25 @@
         }
       }
     },
+    "v1UpdateParticipantProfileRequest": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "avatarPng": {
+          "type": "string",
+          "format": "byte"
+        },
+        "removeAvatar": {
+          "type": "boolean"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "v1UpdateParticipantProfileResponse": {
       "type": "object",
       "properties": {
@@ -3173,6 +3932,22 @@
       "properties": {
         "settings": {
           "$ref": "#/definitions/v1SpaceSettings"
+        }
+      }
+    },
+    "v1UploadChunkRequest": {
+      "type": "object",
+      "properties": {
+        "assetId": {
+          "type": "string"
+        },
+        "offset": {
+          "type": "string",
+          "format": "int64"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },

@@ -1,0 +1,261 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "space/v1/personal_notifications.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "PersonalNotificationService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/space.v1.PersonalNotificationService/ListPersonalNotifications": {
+      "post": {
+        "operationId": "PersonalNotificationService_ListPersonalNotifications",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListPersonalNotificationsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListPersonalNotificationsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "PersonalNotificationService"
+        ]
+      }
+    },
+    "/space.v1.PersonalNotificationService/MarkPersonalNotificationsRead": {
+      "post": {
+        "operationId": "PersonalNotificationService_MarkPersonalNotificationsRead",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1MarkPersonalNotificationsReadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1MarkPersonalNotificationsReadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "PersonalNotificationService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1ListPersonalNotificationsRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "afterSequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "throughSequence": {
+          "type": "string",
+          "format": "int64",
+          "description": "0 — зафиксировать текущую верхнюю границу."
+        },
+        "unreadOnly": {
+          "type": "boolean"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 = 50, иначе 1..50."
+        },
+        "baselineOnly": {
+          "type": "boolean",
+          "description": "Только начальная граница доставки; оба курсора должны быть 0."
+        }
+      }
+    },
+    "v1ListPersonalNotificationsResponse": {
+      "type": "object",
+      "properties": {
+        "notifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1PersonalNotification"
+          }
+        },
+        "nextSequence": {
+          "type": "string",
+          "format": "int64",
+          "description": "through_sequence на последней странице, включая скрытые промежутки."
+        },
+        "throughSequence": {
+          "type": "string",
+          "format": "int64",
+          "description": "Передать вместе с next_sequence на следующую страницу."
+        },
+        "hasMore": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1MarkPersonalNotificationsReadRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "1..50 ID, все должны быть доступны текущей личности."
+        },
+        "chatContentIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Альтернатива ids для реально видимых сообщений обычного чата. Только\nвыбранные упоминания текущего получателя; оба списка вместе запрещены."
+        }
+      }
+    },
+    "v1MarkPersonalNotificationsReadResponse": {
+      "type": "object"
+    },
+    "v1NotificationTargetKind": {
+      "type": "string",
+      "enum": [
+        "NOTIFICATION_TARGET_KIND_UNSPECIFIED",
+        "NOTIFICATION_TARGET_KIND_FORUM_THREAD",
+        "NOTIFICATION_TARGET_KIND_FORUM_REPLY",
+        "NOTIFICATION_TARGET_KIND_FEED_POST",
+        "NOTIFICATION_TARGET_KIND_FEED_COMMENT",
+        "NOTIFICATION_TARGET_KIND_CHAT_MESSAGE"
+      ],
+      "default": "NOTIFICATION_TARGET_KIND_UNSPECIFIED"
+    },
+    "v1PersonalNotification": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": "string",
+          "format": "int64",
+          "description": "Порядок фиксации для пары раздел/получатель."
+        },
+        "channelId": {
+          "type": "string"
+        },
+        "targetKind": {
+          "$ref": "#/definitions/v1NotificationTargetKind"
+        },
+        "contentId": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "targetSequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "authorName": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "snippet": {
+          "type": "string",
+          "description": "До 240 Unicode code points, обычный текст."
+        },
+        "reasons": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Биты: 1 — выбранное упоминание, 2 — ответ автору темы/публикации."
+        },
+        "unreadReasons": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Подмножество reasons; просмотр не равен доставке."
+        },
+        "createdAtUnix": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

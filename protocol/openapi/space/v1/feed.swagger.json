@@ -15,7 +15,432 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/space.v1.FeedService/CommentFeedPost": {
+      "post": {
+        "operationId": "FeedService_CommentFeedPost",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CommentFeedPostResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CommentFeedPostRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/CreateFeedPost": {
+      "post": {
+        "operationId": "FeedService_CreateFeedPost",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateFeedPostResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Текст до 8192 байт UTF-8; пустой только с файлом. До пяти файлов.\nКлюч 1..128 байт, автор берётся из сессии; правила повтора — ADR-046.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateFeedPostRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/GetFeedAccess": {
+      "post": {
+        "operationId": "FeedService_GetFeedAccess",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetFeedAccessResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Получение и изменение правил требует read/manage и space.manage.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetFeedAccessRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/GetFeedPost": {
+      "post": {
+        "operationId": "FeedService_GetFeedPost",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetFeedPostResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Комментарии sequence ASC; скрытый родитель не возвращает комментарии.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetFeedPostRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/ListFeedModeration": {
+      "post": {
+        "operationId": "FeedService_ListFeedModeration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListFeedModerationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Журнал доступен только модератору; курсор id ASC, 0 начинает чтение.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListFeedModerationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/ListFeedPosts": {
+      "post": {
+        "operationId": "FeedService_ListFeedPosts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListFeedPostsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "sequence DESC; before=0 начинает список, next=0 означает конец.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListFeedPostsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/ListFeedReports": {
+      "post": {
+        "operationId": "FeedService_ListFeedReports",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListFeedReportsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListFeedReportsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/MarkFeedPostRead": {
+      "post": {
+        "summary": "core.feed.read.v1: персональная монотонная отметка, общая для устройств.",
+        "operationId": "FeedService_MarkFeedPostRead",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1MarkFeedPostReadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1MarkFeedPostReadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/ModerateFeedComment": {
+      "post": {
+        "operationId": "FeedService_ModerateFeedComment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ModerateFeedCommentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ModerateFeedCommentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/ModerateFeedPost": {
+      "post": {
+        "operationId": "FeedService_ModerateFeedPost",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ModerateFeedPostResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Обе операции требуют read/manage, space.manage, причину 1..1024 байт.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ModerateFeedPostRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/ReportFeedContent": {
+      "post": {
+        "operationId": "FeedService_ReportFeedContent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ReportFeedContentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Доступно читателю; comment_id пусто для жалобы на публикацию.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ReportFeedContentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/ResolveFeedReport": {
+      "post": {
+        "operationId": "FeedService_ResolveFeedReport",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ResolveFeedReportResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ResolveFeedReportRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    },
+    "/space.v1.FeedService/UpdateFeedAccess": {
+      "post": {
+        "operationId": "FeedService_UpdateFeedAccess",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateFeedAccessResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateFeedAccessRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FeedService"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -81,6 +506,36 @@
         }
       }
     },
+    "v1CommentFeedPostRequest": {
+      "type": "object",
+      "properties": {
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
+        },
+        "channelId": {
+          "type": "string"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        },
+        "attachmentIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "v1CommentFeedPostResponse": {
       "type": "object",
       "properties": {
@@ -112,6 +567,34 @@
         }
       },
       "description": "core.community.mentions.v1. Диапазоны измеряются в UTF-16 code units.\nНе больше десяти непересекающихся диапазонов в порядке start."
+    },
+    "v1CreateFeedPostRequest": {
+      "type": "object",
+      "properties": {
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
+        },
+        "channelId": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        },
+        "attachmentIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Текст до 8192 байт UTF-8; пустой только с файлом. До пяти файлов.\nКлюч 1..128 байт, автор берётся из сессии; правила повтора — ADR-046."
     },
     "v1CreateFeedPostResponse": {
       "type": "object",
@@ -338,6 +821,15 @@
       },
       "description": "Не содержит заявителя или копий исходного текста/файлов."
     },
+    "v1GetFeedAccessRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        }
+      },
+      "description": "Получение и изменение правил требует read/manage и space.manage."
+    },
     "v1GetFeedAccessResponse": {
       "type": "object",
       "properties": {
@@ -357,6 +849,26 @@
           }
         }
       }
+    },
+    "v1GetFeedPostRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "afterSequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "description": "Комментарии sequence ASC; скрытый родитель не возвращает комментарии."
     },
     "v1GetFeedPostResponse": {
       "type": "object",
@@ -380,6 +892,26 @@
         }
       }
     },
+    "v1ListFeedModerationRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "afterId": {
+          "type": "string",
+          "format": "int64"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "description": "Журнал доступен только модератору; курсор id ASC, 0 начинает чтение."
+    },
     "v1ListFeedModerationResponse": {
       "type": "object",
       "properties": {
@@ -395,6 +927,24 @@
           "format": "int64"
         }
       }
+    },
+    "v1ListFeedPostsRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "beforeSequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 = 50, иначе 1..50."
+        }
+      },
+      "description": "sequence DESC; before=0 начинает список, next=0 означает конец."
     },
     "v1ListFeedPostsResponse": {
       "type": "object",
@@ -415,6 +965,25 @@
         }
       }
     },
+    "v1ListFeedReportsRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "afterId": {
+          "type": "string",
+          "format": "int64"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "resolved": {
+          "type": "boolean"
+        }
+      }
+    },
     "v1ListFeedReportsResponse": {
       "type": "object",
       "properties": {
@@ -431,11 +1000,51 @@
         }
       }
     },
+    "v1MarkFeedPostReadRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "throughSequence": {
+          "type": "string",
+          "format": "int64",
+          "description": "0 подтверждает публикацию; положительное значение — комментарии до курсора.\nНе больше последнего видимого комментария либо уже сохранённого курсора."
+        }
+      }
+    },
     "v1MarkFeedPostReadResponse": {
       "type": "object",
       "properties": {
         "post": {
           "$ref": "#/definitions/v1FeedPost"
+        }
+      }
+    },
+    "v1ModerateFeedCommentRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "commentId": {
+          "type": "string"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
@@ -450,6 +1059,28 @@
         }
       }
     },
+    "v1ModerateFeedPostRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "description": "Обе операции требуют read/manage, space.manage, причину 1..1024 байт."
+    },
     "v1ModerateFeedPostResponse": {
       "type": "object",
       "properties": {
@@ -458,14 +1089,76 @@
         }
       }
     },
+    "v1ReportFeedContentRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "commentId": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "description": "Доступно читателю; comment_id пусто для жалобы на публикацию."
+    },
     "v1ReportFeedContentResponse": {
       "type": "object"
+    },
+    "v1ResolveFeedReportRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "reportId": {
+          "type": "string",
+          "format": "int64"
+        },
+        "decision": {
+          "type": "string",
+          "description": "dismiss или hide."
+        },
+        "reason": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64",
+          "description": "Для hide — текущая revision объекта."
+        }
+      }
     },
     "v1ResolveFeedReportResponse": {
       "type": "object",
       "properties": {
         "report": {
           "$ref": "#/definitions/v1FeedReport"
+        }
+      }
+    },
+    "v1UpdateFeedAccessRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FeedAccessRule"
+          },
+          "description": "Полная замена; пустой список запрещает оба действия."
         }
       }
     },

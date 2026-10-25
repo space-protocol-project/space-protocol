@@ -1,0 +1,387 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "space/v1/voice.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "VoiceService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/space.v1.VoiceService/GetVoiceConfiguration": {
+      "post": {
+        "operationId": "VoiceService_GetVoiceConfiguration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetVoiceConfigurationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetVoiceConfigurationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "VoiceService"
+        ]
+      }
+    },
+    "/space.v1.VoiceService/GetVoiceRoom": {
+      "post": {
+        "operationId": "VoiceService_GetVoiceRoom",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetVoiceRoomResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetVoiceRoomRequest"
+            }
+          }
+        ],
+        "tags": [
+          "VoiceService"
+        ]
+      }
+    },
+    "/space.v1.VoiceService/JoinVoiceRoom": {
+      "post": {
+        "operationId": "VoiceService_JoinVoiceRoom",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1JoinVoiceRoomResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1JoinVoiceRoomRequest"
+            }
+          }
+        ],
+        "tags": [
+          "VoiceService"
+        ]
+      }
+    },
+    "/space.v1.VoiceService/LeaveVoiceRoom": {
+      "post": {
+        "operationId": "VoiceService_LeaveVoiceRoom",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LeaveVoiceRoomResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1LeaveVoiceRoomRequest"
+            }
+          }
+        ],
+        "tags": [
+          "VoiceService"
+        ]
+      }
+    },
+    "/space.v1.VoiceService/UpdateVoiceRoom": {
+      "post": {
+        "operationId": "VoiceService_UpdateVoiceRoom",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateVoiceRoomResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateVoiceRoomRequest"
+            }
+          }
+        ],
+        "tags": [
+          "VoiceService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1GetVoiceConfigurationRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetVoiceConfigurationResponse": {
+      "type": "object",
+      "properties": {
+        "iceServers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1VoiceIceServer"
+          }
+        },
+        "relayOnly": {
+          "type": "boolean"
+        },
+        "expiresAtUnix": {
+          "type": "string",
+          "format": "int64"
+        },
+        "mediaCapacity": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Число участников, для которого клиент готовит аудиопотоки; 0 означает 8."
+        }
+      }
+    },
+    "v1GetVoiceRoomRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetVoiceRoomResponse": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/v1VoiceRoomState"
+        }
+      }
+    },
+    "v1JoinVoiceRoomRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "offerSdp": {
+          "type": "string"
+        }
+      }
+    },
+    "v1JoinVoiceRoomResponse": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string"
+        },
+        "answerSdp": {
+          "type": "string"
+        },
+        "state": {
+          "$ref": "#/definitions/v1VoiceRoomState"
+        }
+      }
+    },
+    "v1LeaveVoiceRoomRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "sessionId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LeaveVoiceRoomResponse": {
+      "type": "object"
+    },
+    "v1UpdateVoiceRoomRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "sessionId": {
+          "type": "string"
+        },
+        "muted": {
+          "type": "boolean"
+        },
+        "deafened": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UpdateVoiceRoomResponse": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/v1VoiceRoomState"
+        }
+      }
+    },
+    "v1VoiceIceServer": {
+      "type": "object",
+      "properties": {
+        "urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "username": {
+          "type": "string"
+        },
+        "credential": {
+          "type": "string"
+        }
+      },
+      "description": "Выдаётся только после проверки доступа к комнате. Общий TURN-секрет\nостаётся на runtime; клиент получает временный пароль без идентификатора личности."
+    },
+    "v1VoiceParticipant": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string"
+        },
+        "principalId": {
+          "type": "string"
+        },
+        "deviceId": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "muted": {
+          "type": "boolean"
+        },
+        "deafened": {
+          "type": "boolean"
+        },
+        "audioSlot": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Стабильное место участника в комнате (0..31), не состояние микрофона."
+        }
+      }
+    },
+    "v1VoiceRoomState": {
+      "type": "object",
+      "properties": {
+        "participants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1VoiceParticipant"
+          }
+        },
+        "canPublish": {
+          "type": "boolean"
+        },
+        "capacity": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  }
+}

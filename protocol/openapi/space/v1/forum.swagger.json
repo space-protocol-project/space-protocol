@@ -15,7 +15,432 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/space.v1.ForumService/CloseForumThread": {
+      "post": {
+        "operationId": "ForumService_CloseForumThread",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CloseForumThreadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Требует manage и read; право автора само по себе не разрешает закрытие.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CloseForumThreadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/CreateForumThread": {
+      "post": {
+        "operationId": "ForumService_CreateForumThread",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateForumThreadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Заголовок 1..320 байт UTF-8, текст до 8192, ключ 1..128; автор берётся из сессии.\r\nПустой текст разрешён только с вложением. До пяти файлов; core.forum.attachments.v1.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateForumThreadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/GetForumThread": {
+      "post": {
+        "operationId": "ForumService_GetForumThread",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetForumThreadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetForumThreadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/ListForumModeration": {
+      "post": {
+        "operationId": "ForumService_ListForumModeration",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListForumModerationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Журнал виден только модератору. Курсор id последней записи, 0 начинает чтение.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListForumModerationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/ListForumReports": {
+      "post": {
+        "operationId": "ForumService_ListForumReports",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListForumReportsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListForumReportsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/ListForumThreads": {
+      "post": {
+        "operationId": "ForumService_ListForumThreads",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListForumThreadsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Курсоры — sequence последней записи; 0 начинает чтение, limit 1..50 (0 = 50).",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListForumThreadsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/MarkForumThreadRead": {
+      "post": {
+        "operationId": "ForumService_MarkForumThreadRead",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1MarkForumThreadReadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Курсор чтения относится к principal сессии, монотонный; 0 отмечает первое сообщение.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1MarkForumThreadReadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/ModerateForumReply": {
+      "post": {
+        "operationId": "ForumService_ModerateForumReply",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ModerateForumReplyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "action темы: reopen, hide, restore. Ответы сохраняют последовательность при скрытии.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ModerateForumReplyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/ModerateForumThread": {
+      "post": {
+        "operationId": "ForumService_ModerateForumThread",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ModerateForumThreadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "core.forum.moderation.v1. Все операции требуют read/manage и scope space.manage.\r\nПричина 1..1024 байт UTF-8 обязательна; скрытое содержимое не возвращается даже автору.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ModerateForumThreadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/ReplyForumThread": {
+      "post": {
+        "operationId": "ForumService_ReplyForumThread",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ReplyForumThreadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ReplyForumThreadRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/ReportForumContent": {
+      "post": {
+        "operationId": "ForumService_ReportForumContent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ReportForumContentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ReportForumContentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/ResolveForumReport": {
+      "post": {
+        "operationId": "ForumService_ResolveForumReport",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ResolveForumReportResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ResolveForumReportRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    },
+    "/space.v1.ForumService/SetForumThreadPinned": {
+      "post": {
+        "operationId": "ForumService_SetForumThreadPinned",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetForumThreadPinnedResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "core.forum.navigation.v1. Закрепление требует read/manage и scope space.manage.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetForumThreadPinnedRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ForumService"
+        ]
+      }
+    }
+  },
   "definitions": {
     "protobufAny": {
       "type": "object",
@@ -81,6 +506,22 @@
         }
       }
     },
+    "v1CloseForumThreadRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "description": "Требует manage и read; право автора само по себе не разрешает закрытие."
+    },
     "v1CloseForumThreadResponse": {
       "type": "object",
       "properties": {
@@ -109,6 +550,37 @@
         }
       },
       "description": "core.community.mentions.v1. Диапазоны измеряются в UTF-16 code units.\nНе больше десяти непересекающихся диапазонов в порядке start."
+    },
+    "v1CreateForumThreadRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        },
+        "attachmentIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
+        }
+      },
+      "description": "Заголовок 1..320 байт UTF-8, текст до 8192, ключ 1..128; автор берётся из сессии.\r\nПустой текст разрешён только с вложением. До пяти файлов; core.forum.attachments.v1."
     },
     "v1CreateForumThreadResponse": {
       "type": "object",
@@ -318,6 +790,25 @@
         }
       }
     },
+    "v1GetForumThreadRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "afterSequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "v1GetForumThreadResponse": {
       "type": "object",
       "properties": {
@@ -337,6 +828,26 @@
         }
       }
     },
+    "v1ListForumModerationRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "afterId": {
+          "type": "string",
+          "format": "int64"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "description": "Журнал виден только модератору. Курсор id последней записи, 0 начинает чтение."
+    },
     "v1ListForumModerationResponse": {
       "type": "object",
       "properties": {
@@ -350,6 +861,25 @@
         "nextId": {
           "type": "string",
           "format": "int64"
+        }
+      }
+    },
+    "v1ListForumReportsRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "afterId": {
+          "type": "string",
+          "format": "int64"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "resolved": {
+          "type": "boolean"
         }
       }
     },
@@ -368,6 +898,29 @@
           "format": "int64"
         }
       }
+    },
+    "v1ListForumThreadsRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "afterSequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pinnedFirst": {
+          "type": "boolean"
+        },
+        "afterPinned": {
+          "type": "boolean"
+        }
+      },
+      "description": "Курсоры — sequence последней записи; 0 начинает чтение, limit 1..50 (0 = 50)."
     },
     "v1ListForumThreadsResponse": {
       "type": "object",
@@ -388,6 +941,22 @@
         }
       }
     },
+    "v1MarkForumThreadReadRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "throughSequence": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "description": "Курсор чтения относится к principal сессии, монотонный; 0 отмечает первое сообщение."
+    },
     "v1MarkForumThreadReadResponse": {
       "type": "object",
       "properties": {
@@ -395,6 +964,31 @@
           "$ref": "#/definitions/v1ForumThread"
         }
       }
+    },
+    "v1ModerateForumReplyRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "replyId": {
+          "type": "string"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "description": "action темы: reopen, hide, restore. Ответы сохраняют последовательность при скрытии."
     },
     "v1ModerateForumReplyResponse": {
       "type": "object",
@@ -407,11 +1001,63 @@
         }
       }
     },
+    "v1ModerateForumThreadRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "description": "core.forum.moderation.v1. Все операции требуют read/manage и scope space.manage.\r\nПричина 1..1024 байт UTF-8 обязательна; скрытое содержимое не возвращается даже автору."
+    },
     "v1ModerateForumThreadResponse": {
       "type": "object",
       "properties": {
         "thread": {
           "$ref": "#/definitions/v1ForumThread"
+        }
+      }
+    },
+    "v1ReplyForumThreadRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "idempotencyKey": {
+          "type": "string"
+        },
+        "attachmentIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
         }
       }
     },
@@ -426,8 +1072,49 @@
         }
       }
     },
+    "v1ReportForumContentRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "replyId": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
     "v1ReportForumContentResponse": {
       "type": "object"
+    },
+    "v1ResolveForumReportRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "reportId": {
+          "type": "string",
+          "format": "int64"
+        },
+        "decision": {
+          "type": "string",
+          "description": "dismiss или hide."
+        },
+        "reason": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64",
+          "description": "Ревизия темы или ответа для hide."
+        }
+      }
     },
     "v1ResolveForumReportResponse": {
       "type": "object",
@@ -436,6 +1123,25 @@
           "$ref": "#/definitions/v1ForumReport"
         }
       }
+    },
+    "v1SetForumThreadPinnedRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "pinned": {
+          "type": "boolean"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "description": "core.forum.navigation.v1. Закрепление требует read/manage и scope space.manage."
     },
     "v1SetForumThreadPinnedResponse": {
       "type": "object",

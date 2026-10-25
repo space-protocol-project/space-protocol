@@ -39,3 +39,7 @@ UpdateParticipantProfile и ListParticipantProfiles. Собственный пр
 PostgreSQL/Connect, ревизии/конкуренция, scope/отзыв/ban/ACL, изображения,
 перезапуск и миграция, несколько устройств, поздние ответы и узкий экран.
 Android на устройстве и эмуляторе не запускается.
+
+OpenAPI генерируется с `generate_unbound_methods=true`: RPC имеют явные POST-пути
+`/space.v1.MembershipService/GetParticipantProfile`, `UpdateParticipantProfile`
+и `ListParticipantProfiles`. Прежний UpdateProfile в описании отсутствует.
