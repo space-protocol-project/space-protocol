@@ -2356,6 +2356,14 @@
         }
       }
     },
+    "v1GetParticipantProfileResponse": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "$ref": "#/definitions/v1ParticipantProfile"
+        }
+      }
+    },
     "v1GetSettingsResponse": {
       "type": "object",
       "properties": {
@@ -2568,6 +2576,18 @@
         }
       }
     },
+    "v1ListParticipantProfilesResponse": {
+      "type": "object",
+      "properties": {
+        "profiles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ParticipantProfile"
+          }
+        }
+      }
+    },
     "v1LogoutRequest": {
       "type": "object"
     },
@@ -2596,6 +2616,10 @@
         },
         "nickname": {
           "type": "string"
+        },
+        "avatarPng": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },
@@ -2702,6 +2726,25 @@
         "proposedRootPublicKey": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "v1ParticipantProfile": {
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "avatarPng": {
+          "type": "string",
+          "format": "byte"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
@@ -3082,11 +3125,11 @@
         }
       }
     },
-    "v1UpdateProfileResponse": {
+    "v1UpdateParticipantProfileResponse": {
       "type": "object",
       "properties": {
-        "member": {
-          "$ref": "#/definitions/v1Member"
+        "profile": {
+          "$ref": "#/definitions/v1ParticipantProfile"
         }
       }
     },

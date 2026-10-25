@@ -218,7 +218,9 @@ service AdminService {
   }
 }
 service MembershipService {
- rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
+ rpc GetParticipantProfile(GetParticipantProfileRequest) returns (GetParticipantProfileResponse);
+ rpc UpdateParticipantProfile(UpdateParticipantProfileRequest) returns (UpdateParticipantProfileResponse);
+ rpc ListParticipantProfiles(ListParticipantProfilesRequest) returns (ListParticipantProfilesResponse);
   rpc PreviewInvite(PreviewInviteRequest) returns (PreviewInviteResponse) {
     option (google.api.http) = {post: "/api/v1/membership/invites/preview" body: "*"};
   }
@@ -229,8 +231,26 @@ service MembershipService {
     option (google.api.http) = {get: "/api/v1/membership"};
   }
 }
-message UpdateProfileRequest { string nickname = 1; }
-message UpdateProfileResponse { Member member = 1; }
+message ParticipantProfile {
+  string principal_id = 1;
+  string display_name = 2;
+  bytes avatar_png = 3;
+  int64 revision = 4;
+}
+message GetParticipantProfileRequest {}
+message GetParticipantProfileResponse { ParticipantProfile profile = 1; }
+message UpdateParticipantProfileRequest {
+  string display_name = 1;
+  optional bytes avatar_png = 2;
+  bool remove_avatar = 3;
+  int64 expected_revision = 4;
+}
+message UpdateParticipantProfileResponse { ParticipantProfile profile = 1; }
+message ListParticipantProfilesRequest {
+  string channel_id = 1;
+  repeated string principal_ids = 2;
+}
+message ListParticipantProfilesResponse { repeated ParticipantProfile profiles = 1; }
 message Member {
   string principal_id = 1;
   string role = 2;
@@ -238,6 +258,7 @@ message Member {
   int64 revision = 4;
   optional int64 storage_limit_bytes = 5;
   string nickname = 6;
+  bytes avatar_png = 7;
 }
 message ListMembersRequest { string after = 1; }
 message ListMembersResponse { repeated Member members = 1; string next_cursor = 2; }
