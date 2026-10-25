@@ -1,0 +1,60 @@
+syntax = "proto3";
+package space.v1;
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// core.personal.notifications.v1: только записи текущей личности в выбранном разделе.
+service PersonalNotificationService {
+  rpc ListPersonalNotifications(ListPersonalNotificationsRequest) returns (ListPersonalNotificationsResponse);
+  rpc MarkPersonalNotificationsRead(MarkPersonalNotificationsReadRequest) returns (MarkPersonalNotificationsReadResponse);
+}
+
+enum NotificationTargetKind {
+  NOTIFICATION_TARGET_KIND_UNSPECIFIED = 0;
+  NOTIFICATION_TARGET_KIND_FORUM_THREAD = 1;
+  NOTIFICATION_TARGET_KIND_FORUM_REPLY = 2;
+  NOTIFICATION_TARGET_KIND_FEED_POST = 3;
+  NOTIFICATION_TARGET_KIND_FEED_COMMENT = 4;
+  NOTIFICATION_TARGET_KIND_CHAT_MESSAGE = 5;
+}
+
+message PersonalNotification {
+  string id = 1;
+  int64 sequence = 2; // Порядок фиксации для пары раздел/получатель.
+  string channel_id = 3;
+  NotificationTargetKind target_kind = 4;
+  string content_id = 5;
+  string parent_id = 6;
+  int64 target_sequence = 7;
+  string author_id = 8;
+  string author_name = 9;
+  string title = 10;
+  string snippet = 11; // До 240 Unicode code points, обычный текст.
+  int32 reasons = 12; // Биты: 1 — выбранное упоминание, 2 — ответ автору темы/публикации.
+  int32 unread_reasons = 13; // Подмножество reasons; просмотр не равен доставке.
+  int64 created_at_unix = 14;
+}
+
+message ListPersonalNotificationsRequest {
+  string channel_id = 1;
+  int64 after_sequence = 2;
+  int64 through_sequence = 3; // 0 — зафиксировать текущую верхнюю границу.
+  bool unread_only = 4;
+  int32 limit = 5; // 0 = 50, иначе 1..50.
+  bool baseline_only = 6; // Только начальная граница доставки; оба курсора должны быть 0.
+}
+
+message ListPersonalNotificationsResponse {
+  repeated PersonalNotification notifications = 1;
+  int64 next_sequence = 2; // through_sequence на последней странице, включая скрытые промежутки.
+  int64 through_sequence = 3; // Передать вместе с next_sequence на следующую страницу.
+  bool has_more = 4;
+}
+
+message MarkPersonalNotificationsReadRequest {
+  string channel_id = 1;
+  repeated string ids = 2; // 1..50 ID, все должны быть доступны текущей личности.
+  // Альтернатива ids для реально видимых сообщений обычного чата. Только
+  // выбранные упоминания текущего получателя; оба списка вместе запрещены.
+  repeated string chat_content_ids = 3;
+}
+message MarkPersonalNotificationsReadResponse {}
