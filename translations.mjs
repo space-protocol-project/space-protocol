@@ -1,4 +1,14 @@
 export default {
+"Основные экраны светлой и тёмной темы обновлены 26 октября 2026 года: настоящие Flutter-виджеты из текущего кода Space, включая «Сводку», на широком и узком экранах. Узкий вариант получен в тестовом окружении и не является снимком физического телефона. Снимки форума и голосовых комнат сохранены из работающих Windows- и Android-сборок. На всех снимках — демонстрационные данные; личные сообщения, ключи и приглашения не публикуются. Нажмите на снимок, чтобы рассмотреть детали.":{"en": "The main light and dark screens were updated on October 26, 2026: real Flutter widgets from the current Space source, including the dashboard, at wide and narrow widths. Narrow captures use a test environment rather than a physical phone. Forum and voice-room captures are retained from running Windows and Android builds. All captures use demo data; personal messages, keys and invitations are not published. Select an image to see the details.", "zh": "主要浅色和深色界面于 2026 年 10 月 26 日更新：展示 Space 当前代码的真实 Flutter 组件，包括总览的宽屏和窄屏布局。窄屏截图来自测试环境，并非实体手机。论坛和语音房间截图保留自运行中的 Windows 和 Android 版本。所有截图均使用演示数据，不公开私人消息、密钥或邀请。点击图片可查看细节。"},
+"Сводка":{"en": "Dashboard", "zh": "总览"},
+"Непрочитанное и новое в сообществах.":{"en": "Unread messages and community updates.", "zh": "未读消息与社区动态。"},
+"На компьютере · Сводка":{"en": "Desktop · Dashboard", "zh": "桌面 · 总览"},
+"Открыть крупнее: сводка — на компьютере":{"en": "Enlarge: dashboard — desktop", "zh": "放大：总览 · 桌面"},
+"Space — сводка, на компьютере":{"en": "Space — dashboard, desktop", "zh": "Space — 总览，桌面"},
+"На телефоне · Сводка":{"en": "Mobile · Dashboard", "zh": "移动端 · 总览"},
+"Открыть крупнее: сводка — на телефоне":{"en": "Enlarge: dashboard — mobile", "zh": "放大：总览 · 移动端"},
+"Space — сводка, на телефоне":{"en": "Space — dashboard, mobile", "zh": "Space — 总览，移动端"},
+
 "Снимков":{"en":"Screenshots","zh":"截图数"},
 "Клиент v0.7.18 и runtime v0.7.14: сворачиваемое меню на любых экранах, сохранение черновиков и обновлённая навигация. Схема 30, обновление базы не требуется.":{"en": "App v0.7.18 and runtime v0.7.14: collapsible navigation at every screen size, preserved drafts and updated layouts. Schema 30; no database update is required.", "zh": "应用 v0.7.18 与 runtime v0.7.14：所有屏幕尺寸均支持折叠菜单，保留草稿并更新导航布局。数据库版本 30，无需更新数据库。"},
 
