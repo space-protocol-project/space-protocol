@@ -20,6 +20,8 @@ service FeedService {
   rpc ReportFeedContent(ReportFeedContentRequest) returns (ReportFeedContentResponse);
   rpc ListFeedReports(ListFeedReportsRequest) returns (ListFeedReportsResponse);
   rpc ResolveFeedReport(ResolveFeedReportRequest) returns (ResolveFeedReportResponse);
+  // core.feed.read.v1: персональная монотонная отметка, общая для устройств.
+  rpc MarkFeedPostRead(MarkFeedPostReadRequest) returns (MarkFeedPostReadResponse);
 }
 
 // Собственные эффективные права; read/manage берутся из ACL канала.
@@ -41,6 +43,22 @@ message FeedPost {
   repeated Asset attachments = 10;
   // Скрытая запись не содержит автора, текста, файлов и числа комментариев.
   bool hidden = 11;
+  bool read_state_supported = 12;
+  bool seen = 13;
+  int64 read_sequence = 14;
+  // Невидимая ещё публикация плюс видимые комментарии после read_sequence.
+  int64 unread_count = 15;
+}
+
+message MarkFeedPostReadRequest {
+  string channel_id = 1;
+  string post_id = 2;
+  // 0 подтверждает публикацию; положительное значение — комментарии до курсора.
+  // Не больше последнего видимого комментария либо уже сохранённого курсора.
+  int64 through_sequence = 3;
+}
+message MarkFeedPostReadResponse {
+  FeedPost post = 1;
 }
 
 message FeedComment {
