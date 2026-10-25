@@ -1,6 +1,7 @@
 syntax = "proto3";
 package space.v1;
 import "space/v1/space.proto";
+import "space/v1/community_mentions.proto";
 option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
 
 // core.forum.v1: отдельные открытые форумные разделы с ACL канала.
@@ -20,6 +21,7 @@ service ForumService {
   rpc ListForumModeration(ListForumModerationRequest) returns (ListForumModerationResponse);
 }
 message ForumThread {
+  repeated CommunityMention mentions = 19;
   bool hidden = 18;
   bool pinned = 13;
   bool read_state_supported = 14;
@@ -40,6 +42,7 @@ message ForumThread {
   int64 reply_count = 11;
 }
 message ForumReply {
+  repeated CommunityMention mentions = 11;
   bool hidden = 9;
   int64 revision = 10;
   repeated Asset attachments = 8;
@@ -58,9 +61,9 @@ message GetForumThreadRequest { string channel_id = 1; string thread_id = 2; int
 message GetForumThreadResponse { ForumThread thread = 1; repeated ForumReply replies = 2; int64 next_sequence = 3; }
 // Заголовок 1..320 байт UTF-8, текст до 8192, ключ 1..128; автор берётся из сессии.
 // Пустой текст разрешён только с вложением. До пяти файлов; core.forum.attachments.v1.
-message CreateForumThreadRequest { string channel_id = 1; string title = 2; string text = 3; string idempotency_key = 4; repeated string attachment_ids = 5; }
+message CreateForumThreadRequest { string channel_id = 1; string title = 2; string text = 3; string idempotency_key = 4; repeated string attachment_ids = 5; repeated CommunityMention mentions = 6; }
 message CreateForumThreadResponse { ForumThread thread = 1; }
-message ReplyForumThreadRequest { string channel_id = 1; string thread_id = 2; string text = 3; string idempotency_key = 4; repeated string attachment_ids = 5; }
+message ReplyForumThreadRequest { string channel_id = 1; string thread_id = 2; string text = 3; string idempotency_key = 4; repeated string attachment_ids = 5; repeated CommunityMention mentions = 6; }
 message ReplyForumThreadResponse { ForumReply reply = 1; ForumThread thread = 2; }
 // Требует manage и read; право автора само по себе не разрешает закрытие.
 message CloseForumThreadRequest { string channel_id = 1; string thread_id = 2; int64 expected_revision = 3; }

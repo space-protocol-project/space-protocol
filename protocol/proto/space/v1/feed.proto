@@ -3,6 +3,7 @@ syntax = "proto3";
 package space.v1;
 
 import "space/v1/space.proto";
+import "space/v1/community_mentions.proto";
 
 option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
 
@@ -31,6 +32,7 @@ message FeedPermissions {
 }
 
 message FeedPost {
+  repeated CommunityMention mentions = 16;
   string id = 1;
   string channel_id = 2;
   string author_id = 3;
@@ -62,6 +64,7 @@ message MarkFeedPostReadResponse {
 }
 
 message FeedComment {
+  repeated CommunityMention mentions = 11;
   string id = 1;
   string post_id = 2;
   string author_id = 3;
@@ -103,6 +106,7 @@ message GetFeedPostResponse {
 // Текст до 8192 байт UTF-8; пустой только с файлом. До пяти файлов.
 // Ключ 1..128 байт, автор берётся из сессии; правила повтора — ADR-046.
 message CreateFeedPostRequest {
+  repeated CommunityMention mentions = 5;
   string channel_id = 1;
   string text = 2;
   string idempotency_key = 3;
@@ -112,6 +116,7 @@ message CreateFeedPostResponse {
   FeedPost post = 1;
 }
 message CommentFeedPostRequest {
+  repeated CommunityMention mentions = 6;
   string channel_id = 1;
   string post_id = 2;
   string text = 3;

@@ -1474,6 +1474,13 @@
         },
         "replyToId": {
           "type": "string"
+        },
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
         }
       }
     },
@@ -1489,6 +1496,13 @@
         },
         "idempotencyKey": {
           "type": "string"
+        },
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
         }
       }
     },
@@ -1726,6 +1740,27 @@
     "v1ClaimPairingResponse": {
       "type": "object"
     },
+    "v1CommunityMention": {
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "start": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "length": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Включая @; фрагмент равен @display_name."
+        }
+      },
+      "description": "core.community.mentions.v1. Диапазоны измеряются в UTF-16 code units.\nНе больше десяти непересекающихся диапазонов в порядке start."
+    },
     "v1CompleteChallengeRequest": {
       "type": "object",
       "properties": {
@@ -1870,6 +1905,13 @@
             "type": "string"
           },
           "description": "Актуальные имена видимых авторов и участников реакций; идентификаторы не меняются."
+        },
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
         }
       }
     },
@@ -3007,6 +3049,13 @@
         },
         "idempotencyKey": {
           "type": "string"
+        },
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
         }
       }
     },

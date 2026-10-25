@@ -92,6 +92,27 @@
         }
       }
     },
+    "v1CommunityMention": {
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "start": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "length": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Включая @; фрагмент равен @display_name."
+        }
+      },
+      "description": "core.community.mentions.v1. Диапазоны измеряются в UTF-16 code units.\nНе больше десяти непересекающихся диапазонов в порядке start."
+    },
     "v1CreateFeedPostResponse": {
       "type": "object",
       "properties": {
@@ -118,6 +139,13 @@
     "v1FeedComment": {
       "type": "object",
       "properties": {
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
+        },
         "id": {
           "type": "string"
         },
@@ -208,6 +236,13 @@
     "v1FeedPost": {
       "type": "object",
       "properties": {
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
+        },
         "id": {
           "type": "string"
         },

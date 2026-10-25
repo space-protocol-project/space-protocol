@@ -3,6 +3,7 @@ syntax = "proto3";
 package space.v1;
 
 import "google/api/annotations.proto";
+import "space/v1/community_mentions.proto";
 
 option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
 
@@ -464,6 +465,7 @@ message Content {
   string reply_to_id = 12;
   // Актуальные имена видимых авторов и участников реакций; идентификаторы не меняются.
   map<string, string> participant_names = 13;
+  repeated CommunityMention mentions = 14;
 }
 message UpdateContentRequest {
   string channel_id = 1;
@@ -471,6 +473,7 @@ message UpdateContentRequest {
   string text = 3;
   int64 expected_revision = 4;
   string idempotency_key = 5;
+  repeated CommunityMention mentions = 6;
 }
 message UpdateContentResponse {
   Content content = 1;
@@ -494,6 +497,7 @@ message CreateContentRequest {
   string idempotency_key = 3;
   repeated string attachment_ids = 4;
   string reply_to_id = 5;
+  repeated CommunityMention mentions = 6;
 }
 message CreateContentResponse { Content content = 1; }
 message ListContentRequest {

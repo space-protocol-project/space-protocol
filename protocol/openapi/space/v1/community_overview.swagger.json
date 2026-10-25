@@ -120,6 +120,14 @@
     "v1GetCommunityOverviewResponse": {
       "type": "object",
       "properties": {
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityOverviewEntry"
+          },
+          "description": "Непросмотренные упоминания текущего principal; не включает скрытые объекты."
+        },
         "recent": {
           "type": "array",
           "items": {

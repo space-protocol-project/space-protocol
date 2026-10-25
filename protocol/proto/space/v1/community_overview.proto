@@ -25,6 +25,8 @@ message CommunityOverviewEntry {
 }
 
 message GetCommunityOverviewResponse {
+  // Непросмотренные упоминания текущего principal; не включает скрытые объекты.
+  repeated CommunityOverviewEntry mentions = 5;
   repeated CommunityOverviewEntry recent = 1;
   repeated CommunityOverviewEntry replies_to_you = 2;
   int64 pending_reports = 3;

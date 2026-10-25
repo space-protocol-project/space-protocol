@@ -1,0 +1,40 @@
+syntax = "proto3";
+package space.v1;
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+import "space/v1/community_search.proto";
+
+// core.community.mentions.v1. Диапазоны измеряются в UTF-16 code units.
+// Не больше десяти непересекающихся диапазонов в порядке start.
+message CommunityMention {
+  string principal_id = 1;
+  string display_name = 2;
+  int32 start = 3;
+  int32 length = 4; // Включая @; фрагмент равен @display_name.
+}
+
+service CommunityMentionService {
+  rpc ListMentionCandidates(ListMentionCandidatesRequest) returns (ListMentionCandidatesResponse);
+  rpc MarkCommunityMentionsRead(MarkCommunityMentionsReadRequest) returns (MarkCommunityMentionsReadResponse);
+}
+message ListMentionCandidatesRequest {
+  string channel_id = 1;
+  string parent_id = 2; // Пусто для новой темы/публикации; иначе ID темы/публикации.
+  string query = 3; // До 128 байт UTF-8; пусто — первые доступные участники.
+}
+message MentionCandidate {
+  string principal_id = 1;
+  string display_name = 2;
+}
+message ListMentionCandidatesResponse {
+  repeated MentionCandidate candidates = 1; // Максимум 20; только имеющие доступ.
+}
+message CommunityContentReference {
+  CommunitySearchKind kind = 1;
+  string id = 2;
+}
+message MarkCommunityMentionsReadRequest {
+  string channel_id = 1;
+  repeated CommunityContentReference contents = 2; // Не больше 50 видимых объектов.
+}
+message MarkCommunityMentionsReadResponse {}

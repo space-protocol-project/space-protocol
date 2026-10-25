@@ -1,0 +1,449 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "space/v1/forum.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "ForumService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Asset": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "channelId": {
+          "type": "string"
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "byteSize": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sha256": {
+          "type": "string",
+          "format": "byte"
+        },
+        "mediaType": {
+          "type": "string"
+        },
+        "createdAtUnixMs": {
+          "type": "string",
+          "format": "int64"
+        },
+        "storageGroup": {
+          "type": "string",
+          "description": "Серверная группа хранения: principal_id/YYYY/MM/DD, дата UTC."
+        }
+      }
+    },
+    "v1CloseForumThreadResponse": {
+      "type": "object",
+      "properties": {
+        "thread": {
+          "$ref": "#/definitions/v1ForumThread"
+        }
+      }
+    },
+    "v1CommunityMention": {
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "start": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "length": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Включая @; фрагмент равен @display_name."
+        }
+      },
+      "description": "core.community.mentions.v1. Диапазоны измеряются в UTF-16 code units.\nНе больше десяти непересекающихся диапазонов в порядке start."
+    },
+    "v1CreateForumThreadResponse": {
+      "type": "object",
+      "properties": {
+        "thread": {
+          "$ref": "#/definitions/v1ForumThread"
+        }
+      }
+    },
+    "v1ForumModerationEvent": {
+      "type": "object",
+      "properties": {
+        "reportId": {
+          "type": "string",
+          "format": "int64"
+        },
+        "id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "replyId": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "actorId": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "createdAtUnix": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ForumReply": {
+      "type": "object",
+      "properties": {
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Asset"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "authorName": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "createdAtUnix": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sequence": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ForumReport": {
+      "type": "object",
+      "properties": {
+        "threadTitle": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "replyId": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "decision": {
+          "type": "string"
+        },
+        "decisionReason": {
+          "type": "string"
+        },
+        "moderatorId": {
+          "type": "string"
+        },
+        "createdAtUnix": {
+          "type": "string",
+          "format": "int64"
+        },
+        "resolvedAtUnix": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "description": "core.forum.reports.v1: сведения о заявителе не возвращаются клиентам."
+    },
+    "v1ForumThread": {
+      "type": "object",
+      "properties": {
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "pinned": {
+          "type": "boolean"
+        },
+        "readStateSupported": {
+          "type": "boolean"
+        },
+        "seen": {
+          "type": "boolean"
+        },
+        "readSequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "unreadCount": {
+          "type": "string",
+          "format": "int64"
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Asset"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "channelId": {
+          "type": "string"
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "authorName": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "createdAtUnix": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "closed": {
+          "type": "boolean"
+        },
+        "replyCount": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetForumThreadResponse": {
+      "type": "object",
+      "properties": {
+        "thread": {
+          "$ref": "#/definitions/v1ForumThread"
+        },
+        "replies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ForumReply"
+          }
+        },
+        "nextSequence": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ListForumModerationResponse": {
+      "type": "object",
+      "properties": {
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ForumModerationEvent"
+          }
+        },
+        "nextId": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ListForumReportsResponse": {
+      "type": "object",
+      "properties": {
+        "reports": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ForumReport"
+          }
+        },
+        "nextId": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ListForumThreadsResponse": {
+      "type": "object",
+      "properties": {
+        "threads": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ForumThread"
+          }
+        },
+        "nextSequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "nextPinned": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1MarkForumThreadReadResponse": {
+      "type": "object",
+      "properties": {
+        "thread": {
+          "$ref": "#/definitions/v1ForumThread"
+        }
+      }
+    },
+    "v1ModerateForumReplyResponse": {
+      "type": "object",
+      "properties": {
+        "reply": {
+          "$ref": "#/definitions/v1ForumReply"
+        },
+        "thread": {
+          "$ref": "#/definitions/v1ForumThread"
+        }
+      }
+    },
+    "v1ModerateForumThreadResponse": {
+      "type": "object",
+      "properties": {
+        "thread": {
+          "$ref": "#/definitions/v1ForumThread"
+        }
+      }
+    },
+    "v1ReplyForumThreadResponse": {
+      "type": "object",
+      "properties": {
+        "reply": {
+          "$ref": "#/definitions/v1ForumReply"
+        },
+        "thread": {
+          "$ref": "#/definitions/v1ForumThread"
+        }
+      }
+    },
+    "v1ReportForumContentResponse": {
+      "type": "object"
+    },
+    "v1ResolveForumReportResponse": {
+      "type": "object",
+      "properties": {
+        "report": {
+          "$ref": "#/definitions/v1ForumReport"
+        }
+      }
+    },
+    "v1SetForumThreadPinnedResponse": {
+      "type": "object",
+      "properties": {
+        "thread": {
+          "$ref": "#/definitions/v1ForumThread"
+        }
+      }
+    }
+  }
+}
