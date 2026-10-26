@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package space.v1;
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// core.space.search.v1: общий поиск по доступным обычным чатам, форуму и ленте.
+service SpaceSearchService {
+  rpc SearchSpace(SearchSpaceRequest) returns (SearchSpaceResponse);
+}
+
+enum SpaceSearchKind {
+  SPACE_SEARCH_KIND_UNSPECIFIED = 0;
+  SPACE_SEARCH_KIND_CHAT_MESSAGE = 1;
+  SPACE_SEARCH_KIND_FORUM_THREAD = 2;
+  SPACE_SEARCH_KIND_FORUM_REPLY = 3;
+  SPACE_SEARCH_KIND_FEED_POST = 4;
+  SPACE_SEARCH_KIND_FEED_COMMENT = 5;
+}
+
+message SearchSpaceRequest {
+  // Буквальная подстрока, 1..256 байт UTF-8 после trim.
+  string query = 1;
+  // Курсор привязан к запросу и личности, но не предоставляет прав доступа.
+  string page_token = 2;
+  int32 limit = 3; // 0 = 20, иначе 1..50.
+}
+
+message SpaceSearchResult {
+  string channel_id = 1;
+  string channel_title = 2;
+  SpaceSearchKind kind = 3;
+  string id = 4;
+  // Для сообщения/темы/публикации совпадает с id; иначе тема/публикация родителя.
+  string parent_id = 5;
+  string title = 6;
+  // Обычный текст до 240 Unicode code points, без файлов и полного содержимого.
+  string snippet = 7;
+  string author_id = 8;
+  string author_name = 9;
+  int64 created_at_unix_ms = 10;
+  int64 sequence = 11;
+}
+
+message SearchSpaceResponse {
+  repeated SpaceSearchResult results = 1;
+  string next_page_token = 2;
+}
