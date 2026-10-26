@@ -32,6 +32,11 @@ message FeedPermissions {
 }
 
 message FeedPost {
+  // core.feed.social.v1: репост только в том же разделе, без копии оригинала.
+  string repost_of = 17;
+  // Заполняется заново при чтении. Отсутствует для скрытого оригинала.
+  // Не содержит следующего quoted_post: глубина ограничена одним оригиналом.
+  FeedPost quoted_post = 18;
   repeated CommunityMention mentions = 16;
   string id = 1;
   string channel_id = 2;
@@ -64,6 +69,8 @@ message MarkFeedPostReadResponse {
 }
 
 message FeedComment {
+  string reply_to_comment_id = 12;
+  int64 reply_to_sequence = 13;
   repeated CommunityMention mentions = 11;
   string id = 1;
   string post_id = 2;
@@ -106,6 +113,8 @@ message GetFeedPostResponse {
 // Текст до 8192 байт UTF-8; пустой только с файлом. До пяти файлов.
 // Ключ 1..128 байт, автор берётся из сессии; правила повтора — ADR-046.
 message CreateFeedPostRequest {
+  // Пустой текст допустим для репоста без вложений.
+  string repost_of = 6;
   repeated CommunityMention mentions = 5;
   string channel_id = 1;
   string text = 2;
@@ -116,6 +125,8 @@ message CreateFeedPostResponse {
   FeedPost post = 1;
 }
 message CommentFeedPostRequest {
+  // Только видимый более ранний комментарий той же публикации.
+  string reply_to_comment_id = 7;
   repeated CommunityMention mentions = 6;
   string channel_id = 1;
   string post_id = 2;
