@@ -1,0 +1,50 @@
+syntax = "proto3";
+package space.v1;
+
+import "space/v1/community_mentions.proto";
+import "space/v1/community_search.proto";
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// core.community.favorites.v1: личное избранное участника, общее для его устройств.
+service CommunityFavoriteService {
+  rpc GetCommunityFavoriteStates(GetCommunityFavoriteStatesRequest) returns (GetCommunityFavoriteStatesResponse);
+  rpc ListCommunityFavorites(ListCommunityFavoritesRequest) returns (ListCommunityFavoritesResponse);
+  rpc SetCommunityFavorite(SetCommunityFavoriteRequest) returns (SetCommunityFavoriteResponse);
+}
+message CommunityFavoriteState {
+  CommunityContentReference content = 1;
+  bool saved = 2;
+  int64 revision = 3; // Отдельная ревизия участника и объекта, начальная 0.
+}
+message GetCommunityFavoriteStatesRequest {
+  string channel_id = 1;
+  repeated CommunityContentReference contents = 2; // 1..50 уникальных объектов.
+}
+message GetCommunityFavoriteStatesResponse {
+  repeated CommunityFavoriteState states = 1; // Скрытые объекты и родители пропускаются.
+}
+message ListCommunityFavoritesRequest {
+  string channel_id = 1;
+  string page_token = 2; // Привязан к разделу и principal; ACL проверяется заново.
+  int32 limit = 3; // 0 = 20, иначе 1..50.
+}
+message CommunityFavorite {
+  CommunitySearchResult result = 1; // Только актуальное видимое содержимое.
+  int64 saved_at_unix_micros = 2;
+}
+message ListCommunityFavoritesResponse {
+  repeated CommunityFavorite favorites = 1; // Сначала недавно сохранённые.
+  string next_page_token = 2;
+}
+message SetCommunityFavoriteRequest {
+  string channel_id = 1;
+  CommunityContentReference content = 2;
+  bool saved = 3; // Установить состояние, не переключать.
+  int64 expected_revision = 4;
+  string idempotency_key = 5; // 1..128 байт; principal + раздел, хранится 14 дней.
+}
+message SetCommunityFavoriteResponse {
+  CommunityFavoriteState state = 1; // Текущее состояние, включая повторы.
+  string idempotency_key = 2;
+  int64 applied_revision = 3; // Ревизия первоначального применения.
+}

@@ -1,0 +1,336 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "space/v1/community_favorites.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "CommunityFavoriteService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/space.v1.CommunityFavoriteService/GetCommunityFavoriteStates": {
+      "post": {
+        "operationId": "CommunityFavoriteService_GetCommunityFavoriteStates",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetCommunityFavoriteStatesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetCommunityFavoriteStatesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CommunityFavoriteService"
+        ]
+      }
+    },
+    "/space.v1.CommunityFavoriteService/ListCommunityFavorites": {
+      "post": {
+        "operationId": "CommunityFavoriteService_ListCommunityFavorites",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListCommunityFavoritesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListCommunityFavoritesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CommunityFavoriteService"
+        ]
+      }
+    },
+    "/space.v1.CommunityFavoriteService/SetCommunityFavorite": {
+      "post": {
+        "operationId": "CommunityFavoriteService_SetCommunityFavorite",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetCommunityFavoriteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetCommunityFavoriteRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CommunityFavoriteService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CommunityContentReference": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "$ref": "#/definitions/v1CommunitySearchKind"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CommunityFavorite": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1CommunitySearchResult",
+          "description": "Только актуальное видимое содержимое."
+        },
+        "savedAtUnixMicros": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1CommunityFavoriteState": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "$ref": "#/definitions/v1CommunityContentReference"
+        },
+        "saved": {
+          "type": "boolean"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64",
+          "description": "Отдельная ревизия участника и объекта, начальная 0."
+        }
+      }
+    },
+    "v1CommunitySearchKind": {
+      "type": "string",
+      "enum": [
+        "COMMUNITY_SEARCH_KIND_UNSPECIFIED",
+        "COMMUNITY_SEARCH_KIND_FORUM_THREAD",
+        "COMMUNITY_SEARCH_KIND_FORUM_REPLY",
+        "COMMUNITY_SEARCH_KIND_FEED_POST",
+        "COMMUNITY_SEARCH_KIND_FEED_COMMENT"
+      ],
+      "default": "COMMUNITY_SEARCH_KIND_UNSPECIFIED"
+    },
+    "v1CommunitySearchResult": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "$ref": "#/definitions/v1CommunitySearchKind"
+        },
+        "id": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "string",
+          "description": "ID темы/публикации; для корневого результата совпадает с id."
+        },
+        "title": {
+          "type": "string"
+        },
+        "snippet": {
+          "type": "string",
+          "description": "Обычный текст до 240 Unicode code points; не HTML/Markdown."
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "authorName": {
+          "type": "string"
+        },
+        "createdAtUnix": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sequence": {
+          "type": "string",
+          "format": "int64",
+          "description": "Порядок ответа/комментария для перехода непосредственно к результату."
+        }
+      }
+    },
+    "v1GetCommunityFavoriteStatesRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "contents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityContentReference"
+          },
+          "description": "1..50 уникальных объектов."
+        }
+      }
+    },
+    "v1GetCommunityFavoriteStatesResponse": {
+      "type": "object",
+      "properties": {
+        "states": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityFavoriteState"
+          },
+          "description": "Скрытые объекты и родители пропускаются."
+        }
+      }
+    },
+    "v1ListCommunityFavoritesRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "pageToken": {
+          "type": "string",
+          "description": "Привязан к разделу и principal; ACL проверяется заново."
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 = 20, иначе 1..50."
+        }
+      }
+    },
+    "v1ListCommunityFavoritesResponse": {
+      "type": "object",
+      "properties": {
+        "favorites": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityFavorite"
+          },
+          "description": "Сначала недавно сохранённые."
+        },
+        "nextPageToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SetCommunityFavoriteRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "content": {
+          "$ref": "#/definitions/v1CommunityContentReference"
+        },
+        "saved": {
+          "type": "boolean",
+          "description": "Установить состояние, не переключать."
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "idempotencyKey": {
+          "type": "string",
+          "description": "1..128 байт; principal + раздел, хранится 14 дней."
+        }
+      }
+    },
+    "v1SetCommunityFavoriteResponse": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/v1CommunityFavoriteState",
+          "description": "Текущее состояние, включая повторы."
+        },
+        "idempotencyKey": {
+          "type": "string"
+        },
+        "appliedRevision": {
+          "type": "string",
+          "format": "int64",
+          "description": "Ревизия первоначального применения."
+        }
+      }
+    }
+  }
+}
