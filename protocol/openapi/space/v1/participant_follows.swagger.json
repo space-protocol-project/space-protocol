@@ -1,0 +1,478 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "space/v1/participant_follows.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "ParticipantFollowService",
+      "description": "core.participant.follows.v1: личные подписки и лента внутри пространства."
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/space.v1.ParticipantFollowService/GetParticipantFollowStates": {
+      "post": {
+        "operationId": "ParticipantFollowService_GetParticipantFollowStates",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetParticipantFollowStatesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetParticipantFollowStatesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ParticipantFollowService"
+        ]
+      }
+    },
+    "/space.v1.ParticipantFollowService/ListFollowingParticipants": {
+      "post": {
+        "operationId": "ParticipantFollowService_ListFollowingParticipants",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListFollowingParticipantsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListFollowingParticipantsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ParticipantFollowService"
+        ]
+      }
+    },
+    "/space.v1.ParticipantFollowService/ListPersonalFeed": {
+      "post": {
+        "operationId": "ParticipantFollowService_ListPersonalFeed",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListPersonalFeedResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListPersonalFeedRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ParticipantFollowService"
+        ]
+      }
+    },
+    "/space.v1.ParticipantFollowService/SetParticipantFollow": {
+      "post": {
+        "operationId": "ParticipantFollowService_SetParticipantFollow",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SetParticipantFollowResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SetParticipantFollowRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ParticipantFollowService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Asset": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "channelId": {
+          "type": "string"
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "byteSize": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sha256": {
+          "type": "string",
+          "format": "byte"
+        },
+        "mediaType": {
+          "type": "string"
+        },
+        "createdAtUnixMs": {
+          "type": "string",
+          "format": "int64"
+        },
+        "storageGroup": {
+          "type": "string",
+          "description": "Серверная группа хранения: principal_id/YYYY/MM/DD, дата UTC."
+        }
+      }
+    },
+    "v1CommunityMention": {
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "start": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "length": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Включая @; фрагмент равен @display_name."
+        }
+      },
+      "description": "core.community.mentions.v1. Диапазоны измеряются в UTF-16 code units.\nНе больше десяти непересекающихся диапазонов в порядке start."
+    },
+    "v1FeedPost": {
+      "type": "object",
+      "properties": {
+        "repostOf": {
+          "type": "string",
+          "description": "core.feed.social.v1: репост только в том же разделе, без копии оригинала."
+        },
+        "quotedPost": {
+          "$ref": "#/definitions/v1FeedPost",
+          "description": "Заполняется заново при чтении. Отсутствует для скрытого оригинала.\nНе содержит следующего quoted_post: глубина ограничена одним оригиналом."
+        },
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1CommunityMention"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "channelId": {
+          "type": "string"
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "authorName": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "createdAtUnix": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "commentCount": {
+          "type": "string",
+          "format": "int64"
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Asset"
+          }
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "Скрытая запись не содержит автора, текста, файлов и числа комментариев."
+        },
+        "readStateSupported": {
+          "type": "boolean"
+        },
+        "seen": {
+          "type": "boolean"
+        },
+        "readSequence": {
+          "type": "string",
+          "format": "int64"
+        },
+        "unreadCount": {
+          "type": "string",
+          "format": "int64",
+          "description": "Невидимая ещё публикация плюс видимые комментарии после read_sequence."
+        }
+      }
+    },
+    "v1FollowingParticipant": {
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Пусто, если участник недоступен."
+        },
+        "available": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetParticipantFollowStatesRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "principalIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "1..50 уникальных авторов видимого содержимого."
+        }
+      }
+    },
+    "v1GetParticipantFollowStatesResponse": {
+      "type": "object",
+      "properties": {
+        "states": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ParticipantFollowState"
+          }
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64",
+          "description": "Общая ревизия личного списка, начальная 0."
+        }
+      }
+    },
+    "v1ListFollowingParticipantsRequest": {
+      "type": "object",
+      "properties": {
+        "pageToken": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0=20, максимум 50."
+        }
+      }
+    },
+    "v1ListFollowingParticipantsResponse": {
+      "type": "object",
+      "properties": {
+        "participants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FollowingParticipant"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ListPersonalFeedRequest": {
+      "type": "object",
+      "properties": {
+        "pageToken": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0=20, максимум 50."
+        }
+      }
+    },
+    "v1ListPersonalFeedResponse": {
+      "type": "object",
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1PersonalFeedEntry"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ParticipantFollowState": {
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "following": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1PersonalFeedEntry": {
+      "type": "object",
+      "properties": {
+        "channelTitle": {
+          "type": "string"
+        },
+        "post": {
+          "$ref": "#/definitions/v1FeedPost"
+        }
+      }
+    },
+    "v1SetParticipantFollowRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string",
+          "description": "Контекст для подписки; для отмены может быть пустым."
+        },
+        "principalId": {
+          "type": "string"
+        },
+        "following": {
+          "type": "boolean",
+          "description": "Установить, а не переключить."
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1SetParticipantFollowResponse": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/v1ParticipantFollowState"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}
