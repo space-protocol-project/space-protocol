@@ -1,0 +1,170 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "space/v1/space_search.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "SpaceSearchService",
+      "description": "core.space.search.v1: общий поиск по доступным обычным чатам, форуму и ленте."
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/space.v1.SpaceSearchService/SearchSpace": {
+      "post": {
+        "operationId": "SpaceSearchService_SearchSpace",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SearchSpaceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SearchSpaceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SpaceSearchService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1SearchSpaceRequest": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Буквальная подстрока, 1..256 байт UTF-8 после trim."
+        },
+        "pageToken": {
+          "type": "string",
+          "description": "Курсор привязан к запросу и личности, но не предоставляет прав доступа."
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 = 20, иначе 1..50."
+        }
+      }
+    },
+    "v1SearchSpaceResponse": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SpaceSearchResult"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SpaceSearchKind": {
+      "type": "string",
+      "enum": [
+        "SPACE_SEARCH_KIND_UNSPECIFIED",
+        "SPACE_SEARCH_KIND_CHAT_MESSAGE",
+        "SPACE_SEARCH_KIND_FORUM_THREAD",
+        "SPACE_SEARCH_KIND_FORUM_REPLY",
+        "SPACE_SEARCH_KIND_FEED_POST",
+        "SPACE_SEARCH_KIND_FEED_COMMENT"
+      ],
+      "default": "SPACE_SEARCH_KIND_UNSPECIFIED"
+    },
+    "v1SpaceSearchResult": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "channelTitle": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/v1SpaceSearchKind"
+        },
+        "id": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "string",
+          "description": "Для сообщения/темы/публикации совпадает с id; иначе тема/публикация родителя."
+        },
+        "title": {
+          "type": "string"
+        },
+        "snippet": {
+          "type": "string",
+          "description": "Обычный текст до 240 Unicode code points, без файлов и полного содержимого."
+        },
+        "authorId": {
+          "type": "string"
+        },
+        "authorName": {
+          "type": "string"
+        },
+        "createdAtUnixMs": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sequence": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}
