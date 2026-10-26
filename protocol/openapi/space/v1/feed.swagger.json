@@ -6,7 +6,8 @@
   },
   "tags": [
     {
-      "name": "FeedService"
+      "name": "FeedService",
+      "description": "core.feed.v1: экспериментальная лента публикаций по ADR-046."
     }
   ],
   "consumes": [
@@ -449,7 +450,7 @@
           "type": "string"
         }
       },
-      "additionalProperties": {}
+      "additionalProperties": true
     },
     "rpcStatus": {
       "type": "object",
@@ -509,6 +510,10 @@
     "v1CommentFeedPostRequest": {
       "type": "object",
       "properties": {
+        "replyToCommentId": {
+          "type": "string",
+          "description": "Только видимый более ранний комментарий той же публикации."
+        },
         "mentions": {
           "type": "array",
           "items": {
@@ -571,6 +576,10 @@
     "v1CreateFeedPostRequest": {
       "type": "object",
       "properties": {
+        "repostOf": {
+          "type": "string",
+          "description": "Пустой текст допустим для репоста без вложений."
+        },
         "mentions": {
           "type": "array",
           "items": {
@@ -622,6 +631,13 @@
     "v1FeedComment": {
       "type": "object",
       "properties": {
+        "replyToCommentId": {
+          "type": "string"
+        },
+        "replyToSequence": {
+          "type": "string",
+          "format": "int64"
+        },
         "mentions": {
           "type": "array",
           "items": {
@@ -719,6 +735,14 @@
     "v1FeedPost": {
       "type": "object",
       "properties": {
+        "repostOf": {
+          "type": "string",
+          "description": "core.feed.social.v1: репост только в том же разделе, без копии оригинала."
+        },
+        "quotedPost": {
+          "$ref": "#/definitions/v1FeedPost",
+          "description": "Заполняется заново при чтении. Отсутствует для скрытого оригинала.\nНе содержит следующего quoted_post: глубина ограничена одним оригиналом."
+        },
         "mentions": {
           "type": "array",
           "items": {
