@@ -1,0 +1,42 @@
+syntax = "proto3";
+package space.v1;
+
+import "space/v1/community_mentions.proto";
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// core.community.reactions.v1: только forum/feed, без списка чужих principal ID.
+service CommunityReactionService {
+  rpc ListCommunityReactions(ListCommunityReactionsRequest) returns (ListCommunityReactionsResponse);
+  rpc SetCommunityReaction(SetCommunityReactionRequest) returns (SetCommunityReactionResponse);
+}
+message CommunityReaction {
+  string emoji = 1;
+  int64 count = 2;
+  bool selected = 3;
+}
+message CommunityReactionState {
+  CommunityContentReference content = 1;
+  int64 revision = 2; // Независима от текста, комментариев и отметок чтения.
+  repeated CommunityReaction reactions = 3; // До 32 вариантов, порядок по emoji.
+  bool can_react = 4;
+}
+message ListCommunityReactionsRequest {
+  string channel_id = 1;
+  repeated CommunityContentReference contents = 2; // 1..50 уникальных объектов.
+}
+message ListCommunityReactionsResponse {
+  repeated CommunityReactionState states = 1; // Недоступные/скрытые объекты пропускаются.
+}
+message SetCommunityReactionRequest {
+  string channel_id = 1;
+  CommunityContentReference content = 2;
+  string emoji = 3;
+  bool active = 4; // Установить состояние, не переключать.
+  int64 expected_revision = 5; // Для новой записи 0.
+  string idempotency_key = 6; // 1..128 байт, относится к principal и каналу.
+}
+message SetCommunityReactionResponse {
+  CommunityReactionState state = 1; // Актуальное состояние, в том числе при повторе.
+  string idempotency_key = 2;
+  int64 applied_revision = 3;
+}
