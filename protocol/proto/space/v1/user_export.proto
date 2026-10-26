@@ -1,0 +1,42 @@
+syntax = "proto3";
+package space.v1;
+
+import "space/v1/space_search.proto";
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// core.user.export.v1: собственное доступное содержимое, без ключей и токенов.
+service UserExportService {
+  rpc ExportUserContent(ExportUserContentRequest) returns (ExportUserContentResponse);
+}
+message ExportUserContentRequest {
+  string channel_id = 1; // Пусто — все доступные обычные chat/forum/feed-разделы.
+  int64 created_after_unix_ms = 2; // Включительно, 0 — без нижней границы.
+  int64 created_before_unix_ms = 3; // Исключительно, 0 — без верхней границы.
+}
+message UserExportAttachment {
+  string id = 1;
+  string name = 2;
+  string mime_type = 3;
+  int64 byte_size = 4;
+  bytes sha256 = 5;
+}
+message UserExportEntry {
+  SpaceSearchKind kind = 1;
+  string id = 2;
+  string channel_id = 3;
+  string channel_title = 4;
+  string parent_id = 5;
+  string title = 6;
+  string text = 7;
+  int64 created_at_unix_ms = 8;
+  int64 revision = 9;
+  repeated UserExportAttachment attachments = 10;
+  string repost_of = 11; // Ссылка без копирования чужого оригинала.
+}
+message ExportUserContentResponse {
+  uint32 format_version = 1; // Версия JSON-формата space.user-content, сейчас 1.
+  string server_id = 2;
+  string principal_id = 3;
+  int64 generated_at_unix_ms = 4;
+  repeated UserExportEntry entries = 5;
+}
