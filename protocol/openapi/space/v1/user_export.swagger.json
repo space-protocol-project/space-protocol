@@ -1,0 +1,208 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "space/v1/user_export.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "UserExportService",
+      "description": "core.user.export.v1: собственное доступное содержимое, без ключей и токенов."
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/space.v1.UserExportService/ExportUserContent": {
+      "post": {
+        "operationId": "UserExportService_ExportUserContent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ExportUserContentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ExportUserContentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserExportService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1ExportUserContentRequest": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string",
+          "description": "Пусто — все доступные обычные chat/forum/feed-разделы."
+        },
+        "createdAfterUnixMs": {
+          "type": "string",
+          "format": "int64",
+          "description": "Включительно, 0 — без нижней границы."
+        },
+        "createdBeforeUnixMs": {
+          "type": "string",
+          "format": "int64",
+          "description": "Исключительно, 0 — без верхней границы."
+        }
+      }
+    },
+    "v1ExportUserContentResponse": {
+      "type": "object",
+      "properties": {
+        "formatVersion": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Версия JSON-формата space.user-content, сейчас 1."
+        },
+        "serverId": {
+          "type": "string"
+        },
+        "principalId": {
+          "type": "string"
+        },
+        "generatedAtUnixMs": {
+          "type": "string",
+          "format": "int64"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserExportEntry"
+          }
+        }
+      }
+    },
+    "v1SpaceSearchKind": {
+      "type": "string",
+      "enum": [
+        "SPACE_SEARCH_KIND_UNSPECIFIED",
+        "SPACE_SEARCH_KIND_CHAT_MESSAGE",
+        "SPACE_SEARCH_KIND_FORUM_THREAD",
+        "SPACE_SEARCH_KIND_FORUM_REPLY",
+        "SPACE_SEARCH_KIND_FEED_POST",
+        "SPACE_SEARCH_KIND_FEED_COMMENT"
+      ],
+      "default": "SPACE_SEARCH_KIND_UNSPECIFIED"
+    },
+    "v1UserExportAttachment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "byteSize": {
+          "type": "string",
+          "format": "int64"
+        },
+        "sha256": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1UserExportEntry": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "$ref": "#/definitions/v1SpaceSearchKind"
+        },
+        "id": {
+          "type": "string"
+        },
+        "channelId": {
+          "type": "string"
+        },
+        "channelTitle": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "createdAtUnixMs": {
+          "type": "string",
+          "format": "int64"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserExportAttachment"
+          }
+        },
+        "repostOf": {
+          "type": "string",
+          "description": "Ссылка без копирования чужого оригинала."
+        }
+      }
+    }
+  }
+}
