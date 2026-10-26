@@ -1,0 +1,63 @@
+syntax = "proto3";
+package space.v1;
+
+import "space/v1/feed.proto";
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// core.participant.follows.v1: личные подписки и лента внутри пространства.
+service ParticipantFollowService {
+  rpc GetParticipantFollowStates(GetParticipantFollowStatesRequest) returns (GetParticipantFollowStatesResponse);
+  rpc SetParticipantFollow(SetParticipantFollowRequest) returns (SetParticipantFollowResponse);
+  rpc ListFollowingParticipants(ListFollowingParticipantsRequest) returns (ListFollowingParticipantsResponse);
+  rpc ListPersonalFeed(ListPersonalFeedRequest) returns (ListPersonalFeedResponse);
+}
+
+message ParticipantFollowState {
+  string principal_id = 1;
+  bool following = 2;
+}
+message GetParticipantFollowStatesRequest {
+  string channel_id = 1;
+  repeated string principal_ids = 2; // 1..50 уникальных авторов видимого содержимого.
+}
+message GetParticipantFollowStatesResponse {
+  repeated ParticipantFollowState states = 1;
+  int64 revision = 2; // Общая ревизия личного списка, начальная 0.
+}
+message SetParticipantFollowRequest {
+  string channel_id = 1; // Контекст для подписки; для отмены может быть пустым.
+  string principal_id = 2;
+  bool following = 3; // Установить, а не переключить.
+  int64 expected_revision = 4;
+}
+message SetParticipantFollowResponse {
+  ParticipantFollowState state = 1;
+  int64 revision = 2;
+}
+message ListFollowingParticipantsRequest {
+  string page_token = 1;
+  int32 limit = 2; // 0=20, максимум 50.
+}
+message FollowingParticipant {
+  string principal_id = 1;
+  string display_name = 2; // Пусто, если участник недоступен.
+  bool available = 3;
+}
+message ListFollowingParticipantsResponse {
+  repeated FollowingParticipant participants = 1;
+  string next_page_token = 2;
+  int64 revision = 3;
+}
+message ListPersonalFeedRequest {
+  string page_token = 1;
+  int32 limit = 2; // 0=20, максимум 50.
+}
+message PersonalFeedEntry {
+  string channel_title = 1;
+  FeedPost post = 2;
+}
+message ListPersonalFeedResponse {
+  repeated PersonalFeedEntry entries = 1;
+  string next_page_token = 2;
+  int64 revision = 3;
+}
