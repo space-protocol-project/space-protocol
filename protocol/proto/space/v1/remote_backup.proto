@@ -5,6 +5,7 @@ option go_package = "github.com/space-protocol-project/space-server/gen/space/v1
 // Раздельные развёртывания: непрозрачное хранилище и свидетель версии.
 service RemoteBackupService {
   rpc CreateBackupSlot(CreateBackupSlotRequest) returns (CreateBackupSlotResponse);
+  rpc RevokeBackupSlot(RevokeBackupSlotRequest) returns (RevokeBackupSlotResponse);
   rpc PutBackup(PutBackupRequest) returns (PutBackupResponse);
   rpc GetBackup(GetBackupRequest) returns (GetBackupResponse);
   rpc AdvanceBackupWitness(AdvanceBackupWitnessRequest) returns (AdvanceBackupWitnessResponse);
@@ -18,6 +19,8 @@ message BackupHead {
   string archive_digest = 5;
 }
 message CreateBackupSlotResponse { BackupHead head = 1; }
+message RevokeBackupSlotRequest { string id = 1; }
+message RevokeBackupSlotResponse {}
 message PutBackupResponse { BackupHead head = 1; }
 message AdvanceBackupWitnessResponse { BackupHead head = 1; }
 message CreateBackupSlotRequest {
