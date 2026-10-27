@@ -55,3 +55,25 @@ PostgreSQL: предварительная proposal, отказ анонимно
 RootOnly дополнен сопряжением через delegated recovery card. PollPairing возвращает root-подписанный parent transcript, parent signature и parent grant ID вместе с child proof. Получатель независимо проверяет обе подписи, привязки origin/server/principal/target/pairing, сроки и ограничение scopes. Нельзя получить space.manage, если его нет у parent; рабочий child не получает identity.recover. Отзыв parent закрывает дочерние devices, включая уже claimed pairing. Исходное рабочее устройство открывает карточку только для управляющей операции, не передавая её новому аппарату.
 
 QR recovery PNG реализован отдельно от QR pairing: импортируется изображение зашифрованной карточки, а код сопряжения пока передаётся текстом. Камера ещё не подключена.
+
+## Расширение режимов от 27 октября 2026 года
+
+Контракт текущей реализации: [полномочия и выбор пространств](https://github.com/space-protocol-project/space-app/blob/main/docs/PAIRING-MODES.md).
+Pairing и CreateChallenge фиксируют `full_management`; схема 42 сохраняет его
+неизменяемым вместе с целевым ключом и `administrative`. Полный запрос требует
+`administrative=true`; root подписывает точные scopes
+`chat.read,chat.write,space.manage,device.manage`. Срок — 30 суток.
+`device.manage` не является `identity.recover` и не передаёт root/private seed.
+Он позволяет выдавать только рабочие дочерние grants и отзывать рабочие grants
+той же личности. Полный режим и recovery-card может выдавать только root.
+Рабочий управляющий не отзывает recovery-card и не меняет root.
+Членство и ACL не повышаются от административного scope.
+
+SAS использует `space/pair-check/v2\0SERVER_ID\0PAIR_ID\0manage|chat\0full|limited\0`
+перед двумя публичными ключами. QR `space-pairing:v2:` содержит обязательный
+булев `full` дополнительно к прежним публичным полям. Старый QR не принимается
+новым профилем. Новое полномочие проверяется до подписи и после получения;
+несовместимый ответ сервера отклоняется, автоматического отката режима нет.
+Каждое пространство создаёт свой независимый запрос и ключ; общий секрет
+между серверами не вводится. Encrypted relay и audited DH остаются отдельной
+работой, а не результатом этого расширения.
