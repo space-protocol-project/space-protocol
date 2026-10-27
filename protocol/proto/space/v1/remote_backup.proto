@@ -14,7 +14,9 @@ service RemoteBackupService {
 message BackupHead {
   string id = 1;
   int64 revision = 2;
+  // SHA-256 цепочки ciphertext; отпечаток открытого манифеста не раскрывается.
   string digest = 3;
+  // Предыдущий digest цепочки либо пустая строка у первой версии.
   string parent = 4;
   string archive_digest = 5;
 }
