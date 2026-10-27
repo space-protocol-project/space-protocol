@@ -1,0 +1,402 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "space/v1/remote_backup.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "RemoteBackupService",
+      "description": "core.directory.backup.v1: независимые хранилище и свидетель версии."
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/space.v1.RemoteBackupService/AdvanceBackupWitness": {
+      "post": {
+        "operationId": "RemoteBackupService_AdvanceBackupWitness",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1AdvanceBackupWitnessResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1AdvanceBackupWitnessRequest"
+            }
+          }
+        ],
+        "tags": [
+          "RemoteBackupService"
+        ]
+      }
+    },
+    "/space.v1.RemoteBackupService/CreateBackupSlot": {
+      "post": {
+        "operationId": "RemoteBackupService_CreateBackupSlot",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateBackupSlotResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateBackupSlotRequest"
+            }
+          }
+        ],
+        "tags": [
+          "RemoteBackupService"
+        ]
+      }
+    },
+    "/space.v1.RemoteBackupService/GetBackup": {
+      "post": {
+        "operationId": "RemoteBackupService_GetBackup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetBackupResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetBackupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "RemoteBackupService"
+        ]
+      }
+    },
+    "/space.v1.RemoteBackupService/PutBackup": {
+      "post": {
+        "operationId": "RemoteBackupService_PutBackup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PutBackupResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1PutBackupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "RemoteBackupService"
+        ]
+      }
+    },
+    "/space.v1.RemoteBackupService/ReadBackupWitness": {
+      "post": {
+        "operationId": "RemoteBackupService_ReadBackupWitness",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ReadBackupWitnessResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ReadBackupWitnessRequest"
+            }
+          }
+        ],
+        "tags": [
+          "RemoteBackupService"
+        ]
+      }
+    },
+    "/space.v1.RemoteBackupService/RevokeBackupSlot": {
+      "post": {
+        "operationId": "RemoteBackupService_RevokeBackupSlot",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RevokeBackupSlotResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RevokeBackupSlotRequest"
+            }
+          }
+        ],
+        "tags": [
+          "RemoteBackupService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AdvanceBackupWitnessRequest": {
+      "type": "object",
+      "properties": {
+        "head": {
+          "$ref": "#/definitions/v1BackupHead"
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1AdvanceBackupWitnessResponse": {
+      "type": "object",
+      "properties": {
+        "head": {
+          "$ref": "#/definitions/v1BackupHead"
+        }
+      }
+    },
+    "v1BackupHead": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "digest": {
+          "type": "string",
+          "description": "SHA-256 цепочки ciphertext; отпечаток открытого манифеста не раскрывается."
+        },
+        "parent": {
+          "type": "string",
+          "description": "Предыдущий digest цепочки либо пустая строка у первой версии."
+        },
+        "archiveDigest": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateBackupSlotRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "readHash": {
+          "type": "string",
+          "format": "byte"
+        },
+        "writeHash": {
+          "type": "string",
+          "format": "byte"
+        },
+        "witness": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreateBackupSlotResponse": {
+      "type": "object",
+      "properties": {
+        "head": {
+          "$ref": "#/definitions/v1BackupHead"
+        }
+      }
+    },
+    "v1GetBackupRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1GetBackupResponse": {
+      "type": "object",
+      "properties": {
+        "head": {
+          "$ref": "#/definitions/v1BackupHead"
+        },
+        "archive": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1PutBackupRequest": {
+      "type": "object",
+      "properties": {
+        "head": {
+          "$ref": "#/definitions/v1BackupHead"
+        },
+        "token": {
+          "type": "string"
+        },
+        "archive": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1PutBackupResponse": {
+      "type": "object",
+      "properties": {
+        "head": {
+          "$ref": "#/definitions/v1BackupHead"
+        }
+      }
+    },
+    "v1ReadBackupWitnessRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "challenge": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ReadBackupWitnessResponse": {
+      "type": "object",
+      "properties": {
+        "head": {
+          "$ref": "#/definitions/v1BackupHead"
+        },
+        "challenge": {
+          "type": "string"
+        },
+        "signature": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "v1RevokeBackupSlotRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RevokeBackupSlotResponse": {
+      "type": "object"
+    }
+  }
+}
