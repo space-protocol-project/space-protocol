@@ -2,14 +2,13 @@ syntax = "proto3";
 package space.v1;
 option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
 
-// core.directory.backup.v1: независимые хранилище и свидетель версии.
+// core.directory.backup.v1: зашифрованные копии на сервере пространства.
 service RemoteBackupService {
   rpc CreateBackupSlot(CreateBackupSlotRequest) returns (CreateBackupSlotResponse);
   rpc RevokeBackupSlot(RevokeBackupSlotRequest) returns (RevokeBackupSlotResponse);
   rpc PutBackup(PutBackupRequest) returns (PutBackupResponse);
   rpc GetBackup(GetBackupRequest) returns (GetBackupResponse);
-  rpc AdvanceBackupWitness(AdvanceBackupWitnessRequest) returns (AdvanceBackupWitnessResponse);
-  rpc ReadBackupWitness(ReadBackupWitnessRequest) returns (ReadBackupWitnessResponse);
+  rpc ReadBackupHead(ReadBackupHeadRequest) returns (ReadBackupHeadResponse);
 }
 message BackupHead {
   string id = 1;
@@ -24,12 +23,10 @@ message CreateBackupSlotResponse { BackupHead head = 1; }
 message RevokeBackupSlotRequest { string id = 1; }
 message RevokeBackupSlotResponse {}
 message PutBackupResponse { BackupHead head = 1; }
-message AdvanceBackupWitnessResponse { BackupHead head = 1; }
 message CreateBackupSlotRequest {
   string id = 1;
   bytes read_hash = 2;
   bytes write_hash = 3;
-  bool witness = 4;
 }
 message PutBackupRequest {
   BackupHead head = 1;
@@ -38,6 +35,5 @@ message PutBackupRequest {
 }
 message GetBackupRequest { string id = 1; string token = 2; int64 revision = 3; }
 message GetBackupResponse { BackupHead head = 1; bytes archive = 2; }
-message AdvanceBackupWitnessRequest { BackupHead head = 1; string token = 2; }
-message ReadBackupWitnessRequest { string id = 1; string token = 2; string challenge = 3; }
-message ReadBackupWitnessResponse { BackupHead head = 1; string challenge = 2; bytes signature = 3; }
+message ReadBackupHeadRequest { string id = 1; string token = 2; string challenge = 3; }
+message ReadBackupHeadResponse { BackupHead head = 1; string challenge = 2; bytes signature = 3; }
