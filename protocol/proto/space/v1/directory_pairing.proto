@@ -1,0 +1,44 @@
+syntax = "proto3";
+package space.v1;
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// Непрозрачный relay; эти методы не выдают grants и не читают каталог.
+service DirectoryPairingService {
+  rpc CreateDirectoryTransfer(CreateDirectoryTransferRequest) returns (CreateDirectoryTransferResponse);
+  rpc OpenDirectoryTransfer(OpenDirectoryTransferRequest) returns (OpenDirectoryTransferResponse);
+  rpc WriteDirectoryFrame(WriteDirectoryFrameRequest) returns (WriteDirectoryFrameResponse);
+  rpc ReadDirectoryFrame(ReadDirectoryFrameRequest) returns (ReadDirectoryFrameResponse);
+  rpc CloseDirectoryTransfer(CloseDirectoryTransferRequest) returns (CloseDirectoryTransferResponse);
+}
+message CreateDirectoryTransferRequest { string profile = 1; }
+message CreateDirectoryTransferResponse {
+  string id = 1;
+  string owner_token = 2;
+  string code = 3;
+  int64 created_at = 4;
+  int64 expires_at = 5;
+}
+message OpenDirectoryTransferRequest { string code = 1; }
+message OpenDirectoryTransferResponse {
+  string id = 1;
+  string peer_token = 2;
+  int64 created_at = 3;
+  int64 expires_at = 4;
+}
+message WriteDirectoryFrameRequest {
+  string id = 1;
+  string token = 2;
+  uint32 sequence = 3;
+  bytes data = 4;
+  bool final_record = 5;
+}
+message WriteDirectoryFrameResponse {}
+message ReadDirectoryFrameRequest { string id = 1; string token = 2; uint32 sequence = 3; }
+message ReadDirectoryFrameResponse {
+  bool available = 1;
+  bytes data = 2;
+  bool final_record = 3;
+  int64 expires_at = 4;
+}
+message CloseDirectoryTransferRequest { string id = 1; string token = 2; }
+message CloseDirectoryTransferResponse {}
