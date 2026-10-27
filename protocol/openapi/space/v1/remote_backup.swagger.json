@@ -7,7 +7,7 @@
   "tags": [
     {
       "name": "RemoteBackupService",
-      "description": "core.directory.backup.v1: независимые хранилище и свидетель версии."
+      "description": "core.directory.backup.v1: зашифрованные копии на сервере пространства."
     }
   ],
   "consumes": [
@@ -17,38 +17,6 @@
     "application/json"
   ],
   "paths": {
-    "/space.v1.RemoteBackupService/AdvanceBackupWitness": {
-      "post": {
-        "operationId": "RemoteBackupService_AdvanceBackupWitness",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AdvanceBackupWitnessResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AdvanceBackupWitnessRequest"
-            }
-          }
-        ],
-        "tags": [
-          "RemoteBackupService"
-        ]
-      }
-    },
     "/space.v1.RemoteBackupService/CreateBackupSlot": {
       "post": {
         "operationId": "RemoteBackupService_CreateBackupSlot",
@@ -145,14 +113,14 @@
         ]
       }
     },
-    "/space.v1.RemoteBackupService/ReadBackupWitness": {
+    "/space.v1.RemoteBackupService/ReadBackupHead": {
       "post": {
-        "operationId": "RemoteBackupService_ReadBackupWitness",
+        "operationId": "RemoteBackupService_ReadBackupHead",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1ReadBackupWitnessResponse"
+              "$ref": "#/definitions/v1ReadBackupHeadResponse"
             }
           },
           "default": {
@@ -168,7 +136,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1ReadBackupWitnessRequest"
+              "$ref": "#/definitions/v1ReadBackupHeadRequest"
             }
           }
         ],
@@ -239,25 +207,6 @@
         }
       }
     },
-    "v1AdvanceBackupWitnessRequest": {
-      "type": "object",
-      "properties": {
-        "head": {
-          "$ref": "#/definitions/v1BackupHead"
-        },
-        "token": {
-          "type": "string"
-        }
-      }
-    },
-    "v1AdvanceBackupWitnessResponse": {
-      "type": "object",
-      "properties": {
-        "head": {
-          "$ref": "#/definitions/v1BackupHead"
-        }
-      }
-    },
     "v1BackupHead": {
       "type": "object",
       "properties": {
@@ -294,9 +243,6 @@
         "writeHash": {
           "type": "string",
           "format": "byte"
-        },
-        "witness": {
-          "type": "boolean"
         }
       }
     },
@@ -358,7 +304,7 @@
         }
       }
     },
-    "v1ReadBackupWitnessRequest": {
+    "v1ReadBackupHeadRequest": {
       "type": "object",
       "properties": {
         "id": {
@@ -372,7 +318,7 @@
         }
       }
     },
-    "v1ReadBackupWitnessResponse": {
+    "v1ReadBackupHeadResponse": {
       "type": "object",
       "properties": {
         "head": {
