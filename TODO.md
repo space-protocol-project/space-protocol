@@ -3,7 +3,7 @@
 Начало работы разрешено пользователем 27 октября 2026 года. Версия разработки
 приложения — `0.8.0-dev.1+60`; последний опубликованный выпуск остаётся
 v0.7.29+59 / runtime v0.7.23, схема 41. Новый релиз и миграции не выполняются.
-[Инвентаризация исходников и план](https://github.com/space-protocol-project/space-app/blob/codex/milestone-0-8-pairing/docs/PAIRING-BACKUPS-080.md).
+[Инвентаризация исходников и план](https://github.com/space-protocol-project/space-app/blob/main/docs/PAIRING-BACKUPS-080.md).
 
 - [x] Сверить реализованное сопряжение, recovery-карточки, набор пространств, AEAD-архив переноса и операционные копии с критериями этапа 12.
 - [x] Первый срез: локальный срок временного ключа, очистка собственного буфера до сетевой отмены, отдельная рабочая копия, идемпотентное закрытие и отсечение позднего ответа. [Анализ, COG и 21 целевой тест](https://github.com/space-protocol-project/space-app/actions/runs/40418620803), [полный серверный CI](https://github.com/space-protocol-project/space-server/actions/runs/40418622244): 1046 Flutter-тестов / 42 штатных пропуска, Go с гонками, настоящий Connect/PostgreSQL и перезапуск — успешны.
