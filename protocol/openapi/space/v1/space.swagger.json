@@ -6,13 +6,15 @@
   },
   "tags": [
     {
-      "name": "ChannelService"
+      "name": "ChannelService",
+      "description": "Экспериментальный контракт первого локального прототипа."
     },
     {
       "name": "ContentService"
     },
     {
-      "name": "AssetService"
+      "name": "AssetService",
+      "description": "Файлы передаются ограниченными частями; права проверяются на каждой операции."
     },
     {
       "name": "AuthService"
@@ -27,7 +29,8 @@
       "name": "MembershipService"
     },
     {
-      "name": "MlsService"
+      "name": "MlsService",
+      "description": "Сервер доставляет непрозрачные MLS-пакеты. Состав проверяется клиентами."
     }
   ],
   "consumes": [
@@ -1522,7 +1525,7 @@
     },
     "/space.v1.ContentService/ApplyContentMutation": {
       "post": {
-        "summary": "Постоянная очередь использует отдельный RPC: старый runtime отклоняет\r\nего до изменения данных, а не игнорирует неизвестный ключ запроса.",
+        "summary": "Постоянная очередь использует отдельный RPC: старый runtime отклоняет\nего до изменения данных, а не игнорирует неизвестный ключ запроса.",
         "operationId": "ContentService_ApplyContentMutation",
         "responses": {
           "200": {
@@ -2058,7 +2061,7 @@
           "type": "string"
         }
       },
-      "additionalProperties": {}
+      "additionalProperties": true
     },
     "rpcStatus": {
       "type": "object",
@@ -2548,6 +2551,10 @@
         "pairingId": {
           "type": "string",
           "description": "Root-подписанное сопряжение с неизменяемым целевым public key."
+        },
+        "fullManagement": {
+          "type": "boolean",
+          "description": "Только root-подписанный pairing: управление устройствами без root-секрета."
         }
       }
     },
@@ -2658,6 +2665,9 @@
           "type": "string"
         },
         "administrative": {
+          "type": "boolean"
+        },
+        "fullManagement": {
           "type": "boolean"
         }
       }
@@ -3411,6 +3421,9 @@
         "proposedRootPublicKey": {
           "type": "string",
           "format": "byte"
+        },
+        "fullManagement": {
+          "type": "boolean"
         }
       }
     },
