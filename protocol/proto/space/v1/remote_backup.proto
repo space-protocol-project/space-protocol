@@ -1,0 +1,35 @@
+syntax = "proto3";
+package space.v1;
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// Раздельные развёртывания: непрозрачное хранилище и свидетель версии.
+service RemoteBackupService {
+  rpc CreateBackupSlot(CreateBackupSlotRequest) returns (BackupHead);
+  rpc PutBackup(PutBackupRequest) returns (BackupHead);
+  rpc GetBackup(GetBackupRequest) returns (GetBackupResponse);
+  rpc AdvanceBackupWitness(AdvanceBackupWitnessRequest) returns (BackupHead);
+  rpc ReadBackupWitness(ReadBackupWitnessRequest) returns (ReadBackupWitnessResponse);
+}
+message BackupHead {
+  string id = 1;
+  int64 revision = 2;
+  string digest = 3;
+  string parent = 4;
+  string archive_digest = 5;
+}
+message CreateBackupSlotRequest {
+  string id = 1;
+  bytes read_hash = 2;
+  bytes write_hash = 3;
+  bool witness = 4;
+}
+message PutBackupRequest {
+  BackupHead head = 1;
+  string token = 2;
+  bytes archive = 3;
+}
+message GetBackupRequest { string id = 1; string token = 2; int64 revision = 3; }
+message GetBackupResponse { BackupHead head = 1; bytes archive = 2; }
+message AdvanceBackupWitnessRequest { BackupHead head = 1; string token = 2; }
+message ReadBackupWitnessRequest { string id = 1; string token = 2; string challenge = 3; }
+message ReadBackupWitnessResponse { BackupHead head = 1; string challenge = 2; bytes signature = 3; }
