@@ -1558,6 +1558,7 @@ Plain card должна быть проверена также как threat sce
 
 - [ ] Выбрать audited handshake implementation и фиксированный profile.
 - [x] Запрос сопряжения одного пространства: ID, пять минут, отдельные code/poll token и одноразовые proposal/approval/claim; ADR-022. Новое устройство создаёт рабочий Ed25519 key, это не ephemeral DH handshake.
+- [x] Экраны запроса и подтверждения одного пространства на Cubit/Freezed: отмена, смена контекста, срок и отсечение поздних ответов. Публичный QR проверяет выбранный сервер, ключ устройства, права и срок; считывание не подписывает запрос и не подключает устройство автоматически. [Описание и результаты CI](https://github.com/space-protocol-project/space-app/blob/main/docs/PAIRING-BACKUPS-080.md). Физическая приёмка камеры/Android остаётся открытой.
 - [ ] Ephemeral key и профиль handshake для зашифрованной передачи каталога.
 - [x] Код проверки на двух экранах и обязательная сверка до подписи root/delegated recovery; независимая проверка transcript и подписей получателем, ADR-022.
 - [ ] Encrypted relay либо local transport; relay не видит vault.

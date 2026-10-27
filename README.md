@@ -18,7 +18,7 @@
 
 ## Скачать Space
 
-Последняя опубликованная совместимая пара: [приложение v0.7.29+59](https://github.com/space-protocol-project/space-app/releases/tag/v0.7.29) и [runtime v0.7.23](https://github.com/space-protocol-project/space-server/releases/tag/v0.7.23), схема 41, голосовой профиль 3. Подписки, персональная лента, ограниченный Markdown и экспорт собственного содержимого в JSON. [Проверки выпуска и публичных файлов](https://github.com/space-protocol-project/space-app/blob/main/docs/MARKDOWN-EXPORT-RELEASE.md). Открыта подготовка `0.8.0-dev.1+60`: [инвентаризация сопряжения и резервных копий](https://github.com/space-protocol-project/space-app/blob/main/docs/PAIRING-BACKUPS-080.md); новый выпуск пока не публикуется. Результаты и открытые критерии фиксируются в [TODO](TODO.md).
+Последняя опубликованная совместимая пара: [приложение v0.7.29+59](https://github.com/space-protocol-project/space-app/releases/tag/v0.7.29) и [runtime v0.7.23](https://github.com/space-protocol-project/space-server/releases/tag/v0.7.23), схема 41, голосовой профиль 3. Подписки, персональная лента, ограниченный Markdown и экспорт собственного содержимого в JSON. [Проверки выпуска и публичных файлов](https://github.com/space-protocol-project/space-app/blob/main/docs/MARKDOWN-EXPORT-RELEASE.md). Открыта подготовка `0.8.0-dev.1+60`: [инвентаризация, экраны сопряжения на Cubit/Freezed и публичный QR](https://github.com/space-protocol-project/space-app/blob/main/docs/PAIRING-BACKUPS-080.md); новый выпуск пока не публикуется. Результаты и открытые критерии фиксируются в [TODO](TODO.md).
 
 | Система | Последняя версия |
 | --- | --- |
