@@ -155,8 +155,9 @@ message Pairing {
   int64 expires_at = 6;
   string state = 7;
   bytes proposed_root_public_key = 8;
+  bool full_management = 9;
 }
-message CreatePairingRequest { bytes public_key = 1; string device_name = 2; bool administrative = 3; }
+message CreatePairingRequest { bytes public_key = 1; string device_name = 2; bool administrative = 3; bool full_management = 4; }
 message CreatePairingResponse { Pairing pairing = 1; string code = 2; string poll_token = 3; }
 message InspectPairingRequest { string code = 1; }
 message InspectPairingResponse { Pairing pairing = 1; }
@@ -350,6 +351,8 @@ message CreateChallengeRequest {
   string recovery_grant_id = 7;
   // Root-подписанное сопряжение с неизменяемым целевым public key.
   string pairing_id = 8;
+  // Только root-подписанный pairing: управление устройствами без root-секрета.
+  bool full_management = 9;
 }
 message CreateChallengeResponse {
   string challenge_id = 1;
