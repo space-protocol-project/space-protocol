@@ -2,7 +2,7 @@ syntax = "proto3";
 package space.v1;
 option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
 
-// Раздельные развёртывания: непрозрачное хранилище и свидетель версии.
+// core.directory.backup.v1: независимые хранилище и свидетель версии.
 service RemoteBackupService {
   rpc CreateBackupSlot(CreateBackupSlotRequest) returns (CreateBackupSlotResponse);
   rpc RevokeBackupSlot(RevokeBackupSlotRequest) returns (RevokeBackupSlotResponse);
