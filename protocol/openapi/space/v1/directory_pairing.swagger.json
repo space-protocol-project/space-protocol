@@ -1,0 +1,341 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "space/v1/directory_pairing.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "DirectoryPairingService",
+      "description": "Непрозрачный relay; эти методы не выдают grants и не читают каталог."
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/space.v1.DirectoryPairingService/CloseDirectoryTransfer": {
+      "post": {
+        "operationId": "DirectoryPairingService_CloseDirectoryTransfer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CloseDirectoryTransferResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CloseDirectoryTransferRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DirectoryPairingService"
+        ]
+      }
+    },
+    "/space.v1.DirectoryPairingService/CreateDirectoryTransfer": {
+      "post": {
+        "operationId": "DirectoryPairingService_CreateDirectoryTransfer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateDirectoryTransferResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateDirectoryTransferRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DirectoryPairingService"
+        ]
+      }
+    },
+    "/space.v1.DirectoryPairingService/OpenDirectoryTransfer": {
+      "post": {
+        "operationId": "DirectoryPairingService_OpenDirectoryTransfer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1OpenDirectoryTransferResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1OpenDirectoryTransferRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DirectoryPairingService"
+        ]
+      }
+    },
+    "/space.v1.DirectoryPairingService/ReadDirectoryFrame": {
+      "post": {
+        "operationId": "DirectoryPairingService_ReadDirectoryFrame",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ReadDirectoryFrameResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ReadDirectoryFrameRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DirectoryPairingService"
+        ]
+      }
+    },
+    "/space.v1.DirectoryPairingService/WriteDirectoryFrame": {
+      "post": {
+        "operationId": "DirectoryPairingService_WriteDirectoryFrame",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1WriteDirectoryFrameResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1WriteDirectoryFrameRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DirectoryPairingService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CloseDirectoryTransferRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CloseDirectoryTransferResponse": {
+      "type": "object"
+    },
+    "v1CreateDirectoryTransferRequest": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateDirectoryTransferResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ownerToken": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1OpenDirectoryTransferRequest": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "v1OpenDirectoryTransferResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "peerToken": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ReadDirectoryFrameRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "v1ReadDirectoryFrameResponse": {
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
+        },
+        "finalRecord": {
+          "type": "boolean"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1WriteDirectoryFrameRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
+        },
+        "finalRecord": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1WriteDirectoryFrameResponse": {
+      "type": "object"
+    }
+  }
+}
