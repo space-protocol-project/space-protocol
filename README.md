@@ -1,6 +1,6 @@
 # Space Protocol — открытый протокол каналов и социальных realtime-приложений
 
-**Рабочее имя: Space Protocol (`space`). Архитектура и реализованный экспериментальный прототип; документация обновлена 25 октября 2026 года.**
+**Рабочее имя: Space Protocol (`space`). Архитектура и реализованный экспериментальный прототип; документация обновлена 29 октября 2026 года.**
 
 Этот документ описывает, что мы хотим построить, как части системы взаимодействуют и какие ограничения необходимо учитывать. [TODO.md](TODO.md) превращает архитектуру в последовательность проверяемых этапов.
 
@@ -18,7 +18,7 @@
 
 ## Скачать Space
 
-Последняя опубликованная совместимая пара: [приложение v0.7.29+59](https://github.com/space-protocol-project/space-app/releases/tag/v0.7.29) и [runtime v0.7.23](https://github.com/space-protocol-project/space-server/releases/tag/v0.7.23), схема 41, голосовой профиль 3. Подписки, персональная лента, ограниченный Markdown и экспорт собственного содержимого в JSON. [Проверки выпуска и публичных файлов](https://github.com/space-protocol-project/space-app/blob/main/docs/MARKDOWN-EXPORT-RELEASE.md). Открыта подготовка `0.8.0-dev.1+60`: [инвентаризация, экраны сопряжения на Cubit/Freezed и публичный QR](https://github.com/space-protocol-project/space-app/blob/main/docs/PAIRING-BACKUPS-080.md); новый выпуск пока не публикуется. Результаты и открытые критерии фиксируются в [TODO](TODO.md).
+Опубликованы [приложение v0.8.0+60](https://github.com/space-protocol-project/space-app/releases/tag/v0.8.0) и [сервер/runtime v0.8.0](https://github.com/space-protocol-project/space-server/releases/tag/v0.8.0), схема 46, голосовой профиль 3. Реализованы полный/ограниченный режимы сопряжения, зашифрованная передача каталога, копии на одном сервере пространства с подтверждённым хранением, слияние настроек и перенос обработки голоса, потоковые архивы Android. [Обзор и границы проверок](https://github.com/space-protocol-project/space-app/blob/main/docs/PAIRING-BACKUPS-080.md), [чистая установка Windows и CI](https://github.com/space-protocol-project/space-app/actions/runs/40785025482). Опубликованный клиент закрепляет runtime v0.7.25; самостоятельный сервер v0.8.0 совместим с ним. Открытые межплатформенные критерии сохраняются в [TODO](TODO.md).
 
 | Система | Последняя версия |
 | --- | --- |

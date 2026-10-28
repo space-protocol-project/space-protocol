@@ -2,8 +2,9 @@
 
 Приложение v0.8.0+60 опубликовано с runtime v0.7.25, схема 46.
 [Релизный CI](https://github.com/space-protocol-project/space-app/actions/runs/40769298048)
-успешен. Готовится выпуск сервера/runtime v0.8.0 с той же схемой и API;
-опубликованное приложение сохраняет закреплённый runtime v0.7.25.
+успешен. [Сервер/runtime v0.8.0](https://github.com/space-protocol-project/space-server/releases/tag/v0.8.0) опубликован с той же схемой и API;
+[его CI](https://github.com/space-protocol-project/space-server/actions/runs/40787489975) успешен. Опубликованное приложение сохраняет встроенное
+закрепление runtime v0.7.25; самостоятельный сервер v0.8.0 с ним совместим.
 [Обзор реализации и границ](https://github.com/space-protocol-project/space-app/blob/main/docs/PAIRING-BACKUPS-080.md).
 
 - [x] Сопряжение: срок временного ключа, очистка, Cubit/Freezed, полный и ограниченный режимы, серверные проверки и отзыв.
