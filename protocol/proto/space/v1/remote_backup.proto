@@ -22,7 +22,7 @@ message BackupHead {
 message CreateBackupSlotResponse { BackupHead head = 1; }
 message RevokeBackupSlotRequest { string id = 1; }
 message RevokeBackupSlotResponse {}
-message PutBackupResponse { BackupHead head = 1; }
+message PutBackupResponse { BackupHead head = 1; bool confirmed = 2; }
 message CreateBackupSlotRequest {
   string id = 1;
   bytes read_hash = 2;
@@ -32,6 +32,8 @@ message PutBackupRequest {
   BackupHead head = 1;
   string token = 2;
   bytes archive = 3;
+  // Подтверждение отправляется только после повторного чтения и проверки.
+  bool confirm = 4;
 }
 message GetBackupRequest { string id = 1; string token = 2; int64 revision = 3; }
 message GetBackupResponse { BackupHead head = 1; bytes archive = 2; }

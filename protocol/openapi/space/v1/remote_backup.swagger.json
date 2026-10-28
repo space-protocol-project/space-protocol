@@ -6,8 +6,7 @@
   },
   "tags": [
     {
-      "name": "RemoteBackupService",
-      "description": "core.directory.backup.v1: зашифрованные копии на сервере пространства."
+      "name": "RemoteBackupService"
     }
   ],
   "consumes": [
@@ -186,7 +185,7 @@
           "type": "string"
         }
       },
-      "additionalProperties": true
+      "additionalProperties": {}
     },
     "rpcStatus": {
       "type": "object",
@@ -293,6 +292,10 @@
         "archive": {
           "type": "string",
           "format": "byte"
+        },
+        "confirm": {
+          "type": "boolean",
+          "description": "Подтверждение отправляется только после повторного чтения и проверки."
         }
       }
     },
@@ -301,6 +304,9 @@
       "properties": {
         "head": {
           "$ref": "#/definitions/v1BackupHead"
+        },
+        "confirmed": {
+          "type": "boolean"
         }
       }
     },
