@@ -1,0 +1,160 @@
+{
+  "source_run": "https://github.com/space-protocol-project/space-app/actions/runs/40950377199",
+  "whole_project_max": 14,
+  "prototype_entries": [
+    {
+      "path": "client/lib/src/extensions_p1/actions.dart",
+      "line": 27,
+      "name": "invoke",
+      "cyclomatic": 7,
+      "cognitive": 6
+    },
+    {
+      "path": "client/lib/src/extensions_p1/document.dart",
+      "line": 20,
+      "name": "text",
+      "cyclomatic": 2,
+      "cognitive": 1
+    },
+    {
+      "path": "client/lib/src/extensions_p1/document.dart",
+      "line": 23,
+      "name": "parse",
+      "cyclomatic": 2,
+      "cognitive": 1
+    },
+    {
+      "path": "client/lib/src/extensions_p1/document.dart",
+      "line": 33,
+      "name": "_strings",
+      "cyclomatic": 5,
+      "cognitive": 6
+    },
+    {
+      "path": "client/lib/src/extensions_p1/document.dart",
+      "line": 53,
+      "name": "object",
+      "cyclomatic": 3,
+      "cognitive": 2
+    },
+    {
+      "path": "client/lib/src/extensions_p1/document.dart",
+      "line": 61,
+      "name": "identifier",
+      "cyclomatic": 3,
+      "cognitive": 2
+    },
+    {
+      "path": "client/lib/src/extensions_p1/document.dart",
+      "line": 69,
+      "name": "label",
+      "cyclomatic": 4,
+      "cognitive": 3
+    },
+    {
+      "path": "client/lib/src/extensions_p1/document.dart",
+      "line": 83,
+      "name": "list",
+      "cyclomatic": 4,
+      "cognitive": 3
+    },
+    {
+      "path": "client/lib/src/extensions_p1/document.dart",
+      "line": 90,
+      "name": "node",
+      "cyclomatic": 5,
+      "cognitive": 4
+    },
+    {
+      "path": "client/lib/src/extensions_p1/document.dart",
+      "line": 110,
+      "name": "fallback",
+      "cyclomatic": 3,
+      "cognitive": 2
+    },
+    {
+      "path": "client/lib/src/extensions_p1/document.dart",
+      "line": 118,
+      "name": "known",
+      "cyclomatic": 9,
+      "cognitive": 6
+    },
+    {
+      "path": "client/lib/src/extensions_p1/strict_json.dart",
+      "line": 4,
+      "name": "extensionJson",
+      "cyclomatic": 4,
+      "cognitive": 3
+    },
+    {
+      "path": "client/lib/src/extensions_p1/strict_json.dart",
+      "line": 21,
+      "name": "space",
+      "cyclomatic": 3,
+      "cognitive": 2
+    },
+    {
+      "path": "client/lib/src/extensions_p1/strict_json.dart",
+      "line": 27,
+      "name": "take",
+      "cyclomatic": 3,
+      "cognitive": 2
+    },
+    {
+      "path": "client/lib/src/extensions_p1/strict_json.dart",
+      "line": 34,
+      "name": "need",
+      "cyclomatic": 2,
+      "cognitive": 1
+    },
+    {
+      "path": "client/lib/src/extensions_p1/strict_json.dart",
+      "line": 38,
+      "name": "string",
+      "cyclomatic": 4,
+      "cognitive": 5
+    },
+    {
+      "path": "client/lib/src/extensions_p1/strict_json.dart",
+      "line": 52,
+      "name": "value",
+      "cyclomatic": 6,
+      "cognitive": 3
+    },
+    {
+      "path": "client/lib/src/extensions_p1/strict_json.dart",
+      "line": 71,
+      "name": "scalar",
+      "cyclomatic": 6,
+      "cognitive": 5
+    },
+    {
+      "path": "client/lib/src/extensions_p1/strict_json.dart",
+      "line": 83,
+      "name": "object",
+      "cyclomatic": 4,
+      "cognitive": 4
+    },
+    {
+      "path": "client/lib/src/extensions_p1/strict_json.dart",
+      "line": 95,
+      "name": "array",
+      "cyclomatic": 3,
+      "cognitive": 2
+    },
+    {
+      "path": "client/lib/ui/extensions_p1.dart",
+      "line": 22,
+      "name": "build",
+      "cyclomatic": 3,
+      "cognitive": 4
+    },
+    {
+      "path": "client/lib/ui/extensions_p1.dart",
+      "line": 47,
+      "name": "_node",
+      "cyclomatic": 7,
+      "cognitive": 5
+    }
+  ]
+}
