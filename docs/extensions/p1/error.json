@@ -1,0 +1,5 @@
+{
+  "code": "quota",
+  "message_key": "extensions.quota",
+  "retryable": true
+}

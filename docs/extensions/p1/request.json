@@ -1,0 +1,14 @@
+{
+  "abi": "space_plugin_p1",
+  "kind": "query",
+  "name": "recent",
+  "payload": {},
+  "context": {
+    "space_id": "space_test",
+    "instance_id": "instance_test",
+    "principal_id": "user_test",
+    "device_id": "device_test",
+    "access_revision": "1",
+    "deadline_unix_ms": "1793300000000"
+  }
+}

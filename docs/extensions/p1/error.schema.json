@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "code": {
+      "enum": [
+        "invalid_input",
+        "unsupported",
+        "denied",
+        "quota",
+        "deadline",
+        "trap",
+        "unavailable"
+      ]
+    },
+    "message_key": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_.-]{0,63}$"
+    },
+    "retryable": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "code",
+    "message_key",
+    "retryable"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "abi": {
+      "const": "space_plugin_p1"
+    },
+    "kind": {
+      "enum": [
+        "command",
+        "query",
+        "contribution",
+        "lifecycle"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_.-]{0,63}$"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "space_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "instance_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "principal_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "device_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "access_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$"
+        },
+        "deadline_unix_ms": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{0,19}$"
+        }
+      },
+      "required": [
+        "space_id",
+        "instance_id",
+        "principal_id",
+        "device_id",
+        "access_revision",
+        "deadline_unix_ms"
+      ]
+    }
+  },
+  "required": [
+    "abi",
+    "kind",
+    "name",
+    "payload",
+    "context"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,19 @@
+name: P1 extension contract schemas
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - run: python -m pip install jsonschema==4.26.0
+      - run: python tools/check_extension_p1.py | tee p1-contracts.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p1-contracts
+          path: p1-contracts.txt

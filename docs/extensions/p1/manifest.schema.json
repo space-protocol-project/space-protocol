@@ -1,0 +1,98 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "manifest_version": {
+      "const": 1
+    },
+    "plugin_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_-]*)+$",
+      "maxLength": 128
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "maxLength": 32
+    },
+    "host_api": {
+      "const": "space.plugin.p1"
+    },
+    "wasm_abi": {
+      "const": "space_plugin_p1"
+    },
+    "ui_api": {
+      "const": "space.ui.p1"
+    },
+    "entrypoint": {
+      "const": "server.wasm"
+    },
+    "data_schema": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647
+    },
+    "permissions": {
+      "type": "array",
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "storage.own",
+          "events.own"
+        ]
+      }
+    },
+    "required_components": {
+      "type": "array",
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "section.v1",
+          "text.v1",
+          "button.v1"
+        ]
+      }
+    },
+    "commands": {
+      "type": "object",
+      "maxProperties": 32,
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_.-]{0,63}$"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^schemas/[a-z][a-z0-9_-]{0,63}\\.json$"
+      }
+    },
+    "queries": {
+      "type": "object",
+      "maxProperties": 32,
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_.-]{0,63}$"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^schemas/[a-z][a-z0-9_-]{0,63}\\.json$"
+      }
+    }
+  },
+  "required": [
+    "manifest_version",
+    "plugin_id",
+    "version",
+    "host_api",
+    "wasm_abi",
+    "ui_api",
+    "entrypoint",
+    "data_schema",
+    "permissions",
+    "required_components",
+    "commands",
+    "queries"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
