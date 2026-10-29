@@ -1,10 +1,9 @@
 ## v0.8.0 — сопряжение и зашифрованные резервные копии
 
-Приложение v0.8.0+60 опубликовано с runtime v0.7.25, схема 46.
-[Релизный CI](https://github.com/space-protocol-project/space-app/actions/runs/40769298048)
+Приложение [v0.8.1+61](https://github.com/space-protocol-project/space-app/releases/tag/v0.8.1) опубликовано с закреплённым runtime v0.8.0, схема 46.
+[Релизный CI](https://github.com/space-protocol-project/space-app/actions/runs/40791498361)
 успешен. [Сервер/runtime v0.8.0](https://github.com/space-protocol-project/space-server/releases/tag/v0.8.0) опубликован с той же схемой и API;
-[его CI](https://github.com/space-protocol-project/space-server/actions/runs/40787489975) успешен. Опубликованное приложение сохраняет встроенное
-закрепление runtime v0.7.25; самостоятельный сервер v0.8.0 с ним совместим.
+[его CI](https://github.com/space-protocol-project/space-server/actions/runs/40787489975) успешен. [CI клиента v0.8.1](https://github.com/space-protocol-project/space-app/actions/runs/40791498361) и [проверка публичной пары](https://github.com/space-protocol-project/space-app/actions/runs/40870483924) также успешны: четыре установщика, подпись Android, versionCode 61 и точное совпадение встроенного каталога с runtime v0.8.0. Обновление установленного сервера подтверждается владельцем.
 [Обзор реализации и границ](https://github.com/space-protocol-project/space-app/blob/main/docs/PAIRING-BACKUPS-080.md).
 
 - [x] Сопряжение: срок временного ключа, очистка, Cubit/Freezed, полный и ограниченный режимы, серверные проверки и отзыв.
