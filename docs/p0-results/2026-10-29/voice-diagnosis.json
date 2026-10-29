@@ -1,0 +1,68 @@
+{
+  "signaling_failure": {
+    "run": 40937891572,
+    "app": "9b99d4993122815454fc2bf58ec6e7e7b5c89bfe",
+    "server": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "errors": {
+      "A.stdout.log": "gRPC Error (code: 8, codeName: RESOURCE_EXHAUSTED, message: read first 16384 bytes of message: exceeded 16384 byte http.MaxBytesReader limit, details: null, rawResponse: null, trailers: {})",
+      "B.stdout.log": "gRPC Error (code: 8, codeName: RESOURCE_EXHAUSTED, message: read first 16384 bytes of message: exceeded 16384 byte http.MaxBytesReader limit, details: null, rawResponse: null, trailers: {})"
+    }
+  },
+  "windows_after_fix": {
+    "run": 40939120210,
+    "server": "2e87fccbc7e994a801fa622ae66a548741ec9d9d",
+    "status": "connection succeeds; no audio packets; not a B07 pass",
+    "timelines": {
+      "A-timeline.json": [
+        {
+          "phase": "idle",
+          "milliseconds": 299
+        },
+        {
+          "phase": "joining",
+          "milliseconds": 299
+        },
+        {
+          "phase": "connected",
+          "milliseconds": 753
+        }
+      ],
+      "B-timeline.json": [
+        {
+          "phase": "idle",
+          "milliseconds": 176
+        },
+        {
+          "phase": "joining",
+          "milliseconds": 176
+        },
+        {
+          "phase": "connected",
+          "milliseconds": 570
+        }
+      ]
+    },
+    "failures": {
+      "A-failure": "Bad state: Нет двустороннего аудио: {sent: 0, received: 0, samples: 0}\n#0      waitForAudio (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:177)\n<asynchronous suspension>\n#1      scenario (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:301)\n<asynchronous suspension>\n#2      main (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:436)\n<asynchronous suspension>\n",
+      "B-failure": "Bad state: Нет двустороннего аудио: {sent: 0, received: 0, samples: 0}\n#0      waitForAudio (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:177)\n<asynchronous suspension>\n#1      scenario (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:301)\n<asynchronous suspension>\n#2      main (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:436)\n<asynchronous suspension>\n"
+    }
+  },
+  "linux_transport_only": {
+    "run": 40940501070,
+    "status": "workflow passed but inspection found zero received totalAudioEnergy; non-silent PCM requires a new run"
+  },
+  "linux_pcm_probe_type_error": {
+    "run": 40942595933,
+    "status": "non-silent initial PCM confirmed in raw metrics; probe failed on native Map<dynamic,dynamic> cast before recovery",
+    "energy": {
+      "A-initial-metrics.json": [
+        0.06792409302241757,
+        0.41310367141766896
+      ],
+      "B-initial-metrics.json": [
+        0.06948548970890064,
+        0.41278528048037705
+      ]
+    }
+  }
+}

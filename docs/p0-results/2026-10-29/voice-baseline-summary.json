@@ -1,0 +1,226 @@
+[
+  {
+    "round": 0,
+    "role": "A",
+    "join_ms": 374,
+    "reconnect_ms": 1505,
+    "initial": {
+      "samples": 50,
+      "received_delta": 509,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 0.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 43.45776031434184,
+      "audio_energy_delta": 0.34494496205643266
+    },
+    "recovered": {
+      "samples": 50,
+      "received_delta": 508,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 0.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 27.390438247011954,
+      "audio_energy_delta": 0.3454430622151859
+    }
+  },
+  {
+    "round": 0,
+    "role": "B",
+    "join_ms": 351,
+    "reconnect_ms": 1521,
+    "initial": {
+      "samples": 50,
+      "received_delta": 508,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 0.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 39.842829076620816,
+      "audio_energy_delta": 0.3452000110156095
+    },
+    "recovered": {
+      "samples": 50,
+      "received_delta": 506,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 0.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 28.180000000000003,
+      "audio_energy_delta": 0.34205415489993823
+    }
+  },
+  {
+    "round": 1,
+    "role": "A",
+    "join_ms": 373,
+    "reconnect_ms": 1506,
+    "initial": {
+      "samples": 50,
+      "received_delta": 508,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 0.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 28.864541832669328,
+      "audio_energy_delta": 0.3421464925542348
+    },
+    "recovered": {
+      "samples": 50,
+      "received_delta": 508,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 1.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 29.482071713147405,
+      "audio_energy_delta": 0.3430118704707577
+    }
+  },
+  {
+    "round": 1,
+    "role": "B",
+    "join_ms": 342,
+    "reconnect_ms": 1519,
+    "initial": {
+      "samples": 50,
+      "received_delta": 508,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 0.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 28.04780876494024,
+      "audio_energy_delta": 0.3421488562554975
+    },
+    "recovered": {
+      "samples": 50,
+      "received_delta": 507,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 1.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 32.734530938123754,
+      "audio_energy_delta": 0.3419903857819028
+    }
+  },
+  {
+    "round": 2,
+    "role": "A",
+    "join_ms": 374,
+    "reconnect_ms": 1514,
+    "initial": {
+      "samples": 50,
+      "received_delta": 507,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 0.0,
+      "jitter_p95_ms": 2.0,
+      "mean_jitter_buffer_ms": 29.92047713717694,
+      "audio_energy_delta": 0.34126384456274206
+    },
+    "recovered": {
+      "samples": 50,
+      "received_delta": 509,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 1.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 27.689243027888445,
+      "audio_energy_delta": 0.34571568520499796
+    }
+  },
+  {
+    "round": 2,
+    "role": "B",
+    "join_ms": 341,
+    "reconnect_ms": 1513,
+    "initial": {
+      "samples": 50,
+      "received_delta": 506,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 0.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 24.960000000000004,
+      "audio_energy_delta": 0.3395678509577278
+    },
+    "recovered": {
+      "samples": 50,
+      "received_delta": 509,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 0.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 31.19284294234593,
+      "audio_energy_delta": 0.34534818014407676
+    }
+  },
+  {
+    "round": 3,
+    "role": "A",
+    "join_ms": 374,
+    "reconnect_ms": 1524,
+    "initial": {
+      "samples": 50,
+      "received_delta": 507,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 1.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 29.681274900398407,
+      "audio_energy_delta": 0.34092686631920016
+    },
+    "recovered": {
+      "samples": 50,
+      "received_delta": 512,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 1.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 32.633663366336634,
+      "audio_energy_delta": 0.34504926900737243
+    }
+  },
+  {
+    "round": 3,
+    "role": "B",
+    "join_ms": 351,
+    "reconnect_ms": 1512,
+    "initial": {
+      "samples": 50,
+      "received_delta": 506,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 1.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 30.38,
+      "audio_energy_delta": 0.33990852658197973
+    },
+    "recovered": {
+      "samples": 50,
+      "received_delta": 509,
+      "lost_delta": 0,
+      "loss_percent": 0.0,
+      "rtt_p50_ms": 0.0,
+      "rtt_p95_ms": 1.0,
+      "jitter_p95_ms": 1.0,
+      "mean_jitter_buffer_ms": 28.56573705179283,
+      "audio_energy_delta": 0.346149964991906
+    }
+  }
+]
