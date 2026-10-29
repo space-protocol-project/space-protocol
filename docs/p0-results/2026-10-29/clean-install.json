@@ -1,0 +1,35 @@
+{
+  "phases": [
+    {
+      "phase": "source",
+      "success": true,
+      "pid": 3140
+    },
+    {
+      "phase": "source-check",
+      "success": true,
+      "pid": 9960
+    },
+    {
+      "phase": "restore",
+      "success": true,
+      "pid": 7032
+    },
+    {
+      "phase": "verify",
+      "success": true,
+      "pid": 7996
+    },
+    {
+      "phase": "verify-again",
+      "success": true,
+      "pid": 8844
+    }
+  ],
+  "success": true,
+  "runtime": "v0.8.0",
+  "empty_password": true,
+  "backend": "Windows DPAPI",
+  "source_deleted": true,
+  "cross_volume": true
+}

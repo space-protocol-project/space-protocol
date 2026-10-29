@@ -1,0 +1,290 @@
+[
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "favorites",
+    "sample_count": 31,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_FAVORITES_INTEROP_OK: четыре типа, приватность, два устройства, повторы, ревизии, перезапуск, история, ACL, чтение без comment и скрытый родитель"
+    ],
+    "peak_runtime_rss_kib": 34284,
+    "peak_dart_client_rss_kib": 353900
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "feed_social",
+    "sample_count": 30,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_FEED_SOCIAL_INTEROP_OK: ответы, репосты, цитаты, повторы, права, скрытие и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33564,
+    "peak_dart_client_rss_kib": 354876
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "participant_follows",
+    "sample_count": 30,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_PARTICIPANT_FOLLOWS_INTEROP_OK: Connect, личные подписки, ACL, отписка, ревизии и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33656,
+    "peak_dart_client_rss_kib": 408772
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "reactions",
+    "sample_count": 1684,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_REACTIONS_INTEROP_OK: четыре типа, два устройства, повторы, ревизии, перезапуск, история, ACL, comment и скрытый родитель"
+    ],
+    "peak_runtime_rss_kib": 34724,
+    "peak_dart_client_rss_kib": 361304
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "space_search",
+    "sample_count": 31,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_SPACE_SEARCH_INTEROP_OK: пять типов, страницы, приватность, Unicode, история, чтение, отзыв ACL, скрытый родитель и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 34788,
+    "peak_dart_client_rss_kib": 364824
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "user_export",
+    "sample_count": 30,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_USER_EXPORT_INTEROP_OK: собственные объекты, JSON, ACL, выбор раздела и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33536,
+    "peak_dart_client_rss_kib": 408668
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "favorites",
+    "sample_count": 28,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_FAVORITES_INTEROP_OK: четыре типа, приватность, два устройства, повторы, ревизии, перезапуск, история, ACL, чтение без comment и скрытый родитель"
+    ],
+    "peak_runtime_rss_kib": 34140,
+    "peak_dart_client_rss_kib": 363740
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "feed_social",
+    "sample_count": 28,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_FEED_SOCIAL_INTEROP_OK: ответы, репосты, цитаты, повторы, права, скрытие и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33228,
+    "peak_dart_client_rss_kib": 350400
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "participant_follows",
+    "sample_count": 28,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_PARTICIPANT_FOLLOWS_INTEROP_OK: Connect, личные подписки, ACL, отписка, ревизии и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33132,
+    "peak_dart_client_rss_kib": 380852
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "reactions",
+    "sample_count": 1634,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_REACTIONS_INTEROP_OK: четыре типа, два устройства, повторы, ревизии, перезапуск, история, ACL, comment и скрытый родитель"
+    ],
+    "peak_runtime_rss_kib": 33464,
+    "peak_dart_client_rss_kib": 387144
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "space_search",
+    "sample_count": 30,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_SPACE_SEARCH_INTEROP_OK: пять типов, страницы, приватность, Unicode, история, чтение, отзыв ACL, скрытый родитель и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 34040,
+    "peak_dart_client_rss_kib": 364924
+  },
+  {
+    "app_sha": "35b0a9e73666f9d91d650a5b23e75da1441539bf",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "user_export",
+    "sample_count": 27,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_USER_EXPORT_INTEROP_OK: собственные объекты, JSON, ACL, выбор раздела и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 32648,
+    "peak_dart_client_rss_kib": 408580
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "favorites",
+    "sample_count": 35,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_FAVORITES_INTEROP_OK: четыре типа, приватность, два устройства, повторы, ревизии, перезапуск, история, ACL, чтение без comment и скрытый родитель"
+    ],
+    "peak_runtime_rss_kib": 35016,
+    "peak_dart_client_rss_kib": 385560
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "feed_social",
+    "sample_count": 33,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_FEED_SOCIAL_INTEROP_OK: ответы, репосты, цитаты, повторы, права, скрытие и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33860,
+    "peak_dart_client_rss_kib": 409240
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "participant_follows",
+    "sample_count": 31,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_PARTICIPANT_FOLLOWS_INTEROP_OK: Connect, личные подписки, ACL, отписка, ревизии и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33856,
+    "peak_dart_client_rss_kib": 354564
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "reactions",
+    "sample_count": 1662,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_REACTIONS_INTEROP_OK: четыре типа, два устройства, повторы, ревизии, перезапуск, история, ACL, comment и скрытый родитель"
+    ],
+    "peak_runtime_rss_kib": 34028,
+    "peak_dart_client_rss_kib": 389028
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "space_search",
+    "sample_count": 34,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_SPACE_SEARCH_INTEROP_OK: пять типов, страницы, приватность, Unicode, история, чтение, отзыв ACL, скрытый родитель и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 34968,
+    "peak_dart_client_rss_kib": 384984
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+    "scenario": "user_export",
+    "sample_count": 32,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_USER_EXPORT_INTEROP_OK: собственные объекты, JSON, ACL, выбор раздела и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33560,
+    "peak_dart_client_rss_kib": 367596
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "favorites",
+    "sample_count": 32,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_FAVORITES_INTEROP_OK: четыре типа, приватность, два устройства, повторы, ревизии, перезапуск, история, ACL, чтение без comment и скрытый родитель"
+    ],
+    "peak_runtime_rss_kib": 33920,
+    "peak_dart_client_rss_kib": 395568
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "feed_social",
+    "sample_count": 30,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_FEED_SOCIAL_INTEROP_OK: ответы, репосты, цитаты, повторы, права, скрытие и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33328,
+    "peak_dart_client_rss_kib": 353724
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "participant_follows",
+    "sample_count": 30,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_PARTICIPANT_FOLLOWS_INTEROP_OK: Connect, личные подписки, ACL, отписка, ревизии и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33024,
+    "peak_dart_client_rss_kib": 341080
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "reactions",
+    "sample_count": 1667,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_REACTIONS_INTEROP_OK: четыре типа, два устройства, повторы, ревизии, перезапуск, история, ACL, comment и скрытый родитель"
+    ],
+    "peak_runtime_rss_kib": 34056,
+    "peak_dart_client_rss_kib": 378296
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "space_search",
+    "sample_count": 31,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_SPACE_SEARCH_INTEROP_OK: пять типов, страницы, приватность, Unicode, история, чтение, отзыв ACL, скрытый родитель и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 33996,
+    "peak_dart_client_rss_kib": 355416
+  },
+  {
+    "app_sha": "e6e022e38e4d28aa61cbb1fb213b103c1838db74",
+    "server_sha": "27e71ed83d98dd62134ba999b7637b11a7c14175",
+    "scenario": "user_export",
+    "sample_count": 30,
+    "exit_code": 0,
+    "success_markers": [
+      "COMMUNITY_USER_EXPORT_INTEROP_OK: собственные объекты, JSON, ACL, выбор раздела и перезапуск"
+    ],
+    "peak_runtime_rss_kib": 32800,
+    "peak_dart_client_rss_kib": 354140
+  }
+]

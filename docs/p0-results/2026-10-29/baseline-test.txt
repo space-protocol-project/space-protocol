@@ -1,0 +1,8 @@
+=== RUN   TestPluginBaseline
+=== RUN   TestPluginBaseline/1000
+=== RUN   TestPluginBaseline/10000
+--- PASS: TestPluginBaseline (293.98s)
+    --- PASS: TestPluginBaseline/1000 (187.91s)
+    --- PASS: TestPluginBaseline/10000 (106.07s)
+PASS
+ok  	github.com/space-protocol-project/space-server/internal/postgres	293.998s

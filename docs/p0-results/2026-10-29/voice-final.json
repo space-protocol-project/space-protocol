@@ -1,0 +1,16 @@
+{
+  "run_url": "https://github.com/space-protocol-project/space-app/actions/runs/40932122834",
+  "app_harness_sha": "12e5dc9346df20226da5429f3031c1728ecdcca5",
+  "server_sha": "78303322c4d99475fafcc6c03cca84aa58462764",
+  "conclusion": "failure",
+  "diagnostics": {
+    "A-candidate-types": "relay",
+    "A-failure": "Bad state: Истекло ожидание проверки\n#0      waitUntil (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:97)\n<asynchronous suspension>\n#1      scenario (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:199)\n<asynchronous suspension>\n#2      main (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:358)\n<asynchronous suspension>\n",
+    "A-offer-ms": "154",
+    "A.json": "{\"success\":false,\"error\":\"Bad state: Истекло ожидание проверки\",\"stack\":\"#0      waitUntil (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:97)\\n<asynchronous suspension>\\n#1      scenario (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:199)\\n<asynchronous suspension>\\n#2      main (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:358)\\n<asynchronous suspension>\\n\",\"pid\":6968}",
+    "B-candidate-types": "relay",
+    "B-offer-ms": "157",
+    "turn.stderr.log": ""
+  },
+  "scope": "Оба клиента получили relay-кандидаты; ожидание connected завершилось тайм-аутом. Аудио и recovery не подтверждены."
+}

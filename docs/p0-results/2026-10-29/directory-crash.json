@@ -1,0 +1,80 @@
+[
+  {
+    "case": "handshake",
+    "result": "passed"
+  },
+  {
+    "case": "handshake/fresh-retry",
+    "result": "passed"
+  },
+  {
+    "case": "partial-receiver",
+    "result": "passed"
+  },
+  {
+    "case": "partial-receiver/fresh-retry",
+    "result": "passed"
+  },
+  {
+    "case": "preview",
+    "result": "passed"
+  },
+  {
+    "case": "preview/fresh-retry",
+    "result": "passed"
+  },
+  {
+    "case": "journal-before-settings-0",
+    "result": "passed"
+  },
+  {
+    "case": "journal-before-settings-0/fresh-retry",
+    "result": "passed"
+  },
+  {
+    "case": "journal-written-settings-0",
+    "result": "passed"
+  },
+  {
+    "case": "journal-written-settings-1",
+    "result": "passed"
+  },
+  {
+    "case": "settings-written-settings-1",
+    "result": "passed"
+  },
+  {
+    "case": "origin-written-settings-0",
+    "result": "passed"
+  },
+  {
+    "case": "origin-written-settings-1",
+    "result": "passed"
+  },
+  {
+    "case": "journal-cleared-settings-0",
+    "result": "passed"
+  },
+  {
+    "case": "journal-cleared-settings-1",
+    "result": "passed"
+  },
+  {
+    "case": "encrypted-journal-settings-0",
+    "result": "passed"
+  },
+  {
+    "case": "encrypted-journal-settings-0/fresh-retry",
+    "result": "passed"
+  },
+  {
+    "case": "source-timeout",
+    "real_deadline_seconds": 300,
+    "elapsed_after_kill_seconds": 297.34,
+    "result": "passed"
+  },
+  {
+    "case": "source-timeout/fresh-retry",
+    "result": "passed"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "run": "https://github.com/space-protocol-project/space-app/actions/runs/40928781212",
+  "conclusion": "failure",
+  "diagnostics": {
+    "A-candidate-types": "",
+    "A-failure": "Bad state: Bad state: TURN не выдал relay-кандидат; проверьте сетевой интерфейс и доступность ретранслятора\n#0      scenario (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:205)\n<asynchronous suspension>\n#1      main (file:///D:/a/space-app/space-app/space-app/client/tool/voice_desktop_probe.dart:358)\n<asynchronous suspension>\n",
+    "A-offer-ms": "2141",
+    "turn.stderr.log": "Время тестового TURN истекло\n"
+  },
+  "cause": "TURN fixture lifetime expired during Flutter build",
+  "fix_commit": "12e5dc9",
+  "retry_run": "https://github.com/space-protocol-project/space-app/actions/runs/40932122834",
+  "flutter_build_seconds": 870.9,
+  "turn_fixture_ttl_seconds": 600
+}
