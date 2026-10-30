@@ -1,0 +1,42 @@
+[
+  {
+    "scenario": "launcher-ready-and-stop",
+    "result": "pass",
+    "stop_state": "failed",
+    "stop_result": "signal"
+  },
+  {
+    "scenario": "before-host",
+    "result": "pass",
+    "old_processes": 1,
+    "cleanup_ms": 0.121,
+    "ready_ms": 1069.745,
+    "restarts": 1,
+    "healthy_wasm": true
+  },
+  {
+    "scenario": "before-ready",
+    "result": "pass",
+    "old_processes": 1,
+    "cleanup_ms": 0.1,
+    "ready_ms": 1209.977,
+    "restarts": 1,
+    "healthy_wasm": true
+  },
+  {
+    "scenario": "running",
+    "result": "pass",
+    "old_processes": 3,
+    "cleanup_ms": 20.235,
+    "ready_ms": 1188.27,
+    "restarts": 1,
+    "healthy_wasm": true
+  },
+  {
+    "scenario": "invalid-worker-restart-limit",
+    "result": "pass",
+    "restarts": 5,
+    "ready": false,
+    "terminal_result": "exit-code"
+  }
+]
