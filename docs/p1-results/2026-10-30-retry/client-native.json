@@ -1,0 +1,1 @@
+{"query_command_query_after_restart": "passed", "hot_restart": "passed", "transport": "HTTP to isolated WASM worker"}

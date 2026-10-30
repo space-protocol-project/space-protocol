@@ -1,0 +1,30 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-10-30T18:04:34Z",
+  "headSha": "9ac6851b7ffa201b231f46dc33ef5baba7f3b82a",
+  "jobs": [
+    {
+      "completedAt": "2026-10-30T18:12:53Z",
+      "conclusion": "success",
+      "databaseId": 124227182535,
+      "name": "demo",
+      "startedAt": "2026-10-30T18:04:38Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/space-protocol-project/space-app/actions/runs/41103708097/job/124227182535"
+    },
+    {
+      "completedAt": "2026-10-30T18:05:17Z",
+      "conclusion": "success",
+      "databaseId": 124227183491,
+      "name": "complexity / cognitive",
+      "startedAt": "2026-10-30T18:04:39Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/space-protocol-project/space-app/actions/runs/41103708097/job/124227183491"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-10-30T18:13:12Z",
+  "url": "https://github.com/space-protocol-project/space-app/actions/runs/41103708097"
+}

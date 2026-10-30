@@ -1,0 +1,7 @@
+manifest: valid fixture, unknown field and missing required fields checked
+ui: valid fixture, unknown field and missing required fields checked
+request: valid fixture, unknown field and missing required fields checked
+error: valid fixture, unknown field and missing required fields checked
+retry: valid fixture, unknown field and missing required fields checked
+unknown mandatory component and unsafe entrypoints rejected
+retry: 40 uniquely named shared scenarios
