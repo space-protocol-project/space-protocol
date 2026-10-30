@@ -1,0 +1,45 @@
+{
+  "core.jsonl": {
+    "pass": 523,
+    "skip": 11,
+    "fail": 0
+  },
+  "crash.jsonl": {
+    "pass": 40,
+    "skip": 0,
+    "fail": 0
+  },
+  "isolated.jsonl": {
+    "pass": 43,
+    "skip": 0,
+    "fail": 0
+  },
+  "locks.jsonl": {
+    "pass": 90,
+    "skip": 0,
+    "fail": 0
+  },
+  "mutations.jsonl": {
+    "pass": 24,
+    "skip": 1,
+    "fail": 0
+  },
+  "outbox.jsonl": {
+    "pass": 60,
+    "skip": 0,
+    "fail": 0
+  },
+  "outbox_scenarios": {
+    "TestExtensionP1OutboxAckExpiryWhileLocked": 10,
+    "TestExtensionP1OutboxBindingIsolation": 10,
+    "TestExtensionP1OutboxConcurrentStores": 10,
+    "TestExtensionP1OutboxHandlerFailureAndCancellation": 10,
+    "TestExtensionP1OutboxLeaseOrderAndAck": 10,
+    "TestExtensionP1OutboxRestartAndIdempotentReceiver": 10
+  },
+  "race.jsonl": {
+    "pass": 523,
+    "skip": 11,
+    "fail": 0
+  }
+}
