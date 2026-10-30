@@ -1,0 +1,17 @@
+{
+  "macos-14": {
+    "pass": 15,
+    "skip": 0,
+    "fail": 0
+  },
+  "ubuntu-22.04": {
+    "pass": 15,
+    "skip": 0,
+    "fail": 0
+  },
+  "windows-2025": {
+    "pass": 15,
+    "skip": 0,
+    "fail": 0
+  }
+}

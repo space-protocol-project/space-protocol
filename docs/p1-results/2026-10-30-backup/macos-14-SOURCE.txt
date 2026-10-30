@@ -1,0 +1,2 @@
+Space Protocol: https://github.com/space-protocol-project/space-server
+PostgreSQL 17.11: https://www.postgresql.org/

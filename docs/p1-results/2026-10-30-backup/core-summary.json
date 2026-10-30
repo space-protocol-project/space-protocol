@@ -1,0 +1,42 @@
+{
+  "backup-validation.jsonl": {
+    "pass": 27,
+    "skip": 0,
+    "fail": 0
+  },
+  "core.jsonl": {
+    "pass": 532,
+    "skip": 12,
+    "fail": 0
+  },
+  "crash.jsonl": {
+    "pass": 40,
+    "skip": 0,
+    "fail": 0
+  },
+  "isolated.jsonl": {
+    "pass": 52,
+    "skip": 0,
+    "fail": 0
+  },
+  "locks.jsonl": {
+    "pass": 90,
+    "skip": 0,
+    "fail": 0
+  },
+  "mutations.jsonl": {
+    "pass": 24,
+    "skip": 1,
+    "fail": 0
+  },
+  "outbox.jsonl": {
+    "pass": 60,
+    "skip": 0,
+    "fail": 0
+  },
+  "race.jsonl": {
+    "pass": 532,
+    "skip": 12,
+    "fail": 0
+  }
+}
