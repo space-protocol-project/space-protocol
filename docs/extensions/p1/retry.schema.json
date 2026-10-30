@@ -1,0 +1,103 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "space.retry.p1"
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "attempt": {
+                "type": "integer"
+              },
+              "elapsed_ms": {
+                "type": "integer"
+              },
+              "remaining_ms": {
+                "type": "integer"
+              },
+              "window_known": {
+                "type": "boolean"
+              },
+              "same_request": {
+                "type": "boolean"
+              },
+              "cancelled": {
+                "type": "boolean"
+              },
+              "previous_unknown": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "code",
+              "attempt",
+              "elapsed_ms",
+              "remaining_ms",
+              "window_known",
+              "same_request",
+              "cancelled",
+              "previous_unknown"
+            ]
+          },
+          "expected": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "action": {
+                "enum": [
+                  "stop",
+                  "confirmed",
+                  "reauthenticate",
+                  "retry_same_request"
+                ]
+              },
+              "unknown": {
+                "type": "boolean"
+              },
+              "delay_ms": {
+                "enum": [
+                  0,
+                  250,
+                  500,
+                  1000
+                ]
+              }
+            },
+            "required": [
+              "action",
+              "unknown",
+              "delay_ms"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "input",
+          "expected"
+        ]
+      }
+    }
+  },
+  "required": [
+    "version",
+    "cases"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -5,7 +5,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 root = Path(__file__).resolve().parents[1] / 'docs/extensions/p1'
-for name in ('manifest','ui','request','error'):
+for name in ('manifest','ui','request','error','retry'):
     schema=json.loads((root/f'{name}.schema.json').read_text(encoding='utf-8'))
     Draft202012Validator.check_schema(schema)
     validator=Draft202012Validator(schema)
@@ -27,3 +27,7 @@ for entrypoint in ('../server.wasm','/server.wasm','https://example.com/server.w
     manifest['entrypoint']=entrypoint
     assert not validator.is_valid(manifest)
 print('unknown mandatory component and unsafe entrypoints rejected')
+
+retry=json.loads((root/'retry.json').read_text(encoding='utf-8'))
+assert len({case['name'] for case in retry['cases']})==len(retry['cases'])
+print(f"retry: {len(retry['cases'])} uniquely named shared scenarios")
