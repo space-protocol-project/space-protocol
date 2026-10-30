@@ -1,0 +1,37 @@
+{
+  "core.jsonl": {
+    "pass": 517,
+    "skip": 11,
+    "fail": 0
+  },
+  "crash.jsonl": {
+    "pass": 40,
+    "skip": 0,
+    "fail": 0
+  },
+  "crash_scenarios": {
+    "before_commit": 10,
+    "after_commit": 10,
+    "lost_response": 10
+  },
+  "isolated.jsonl": {
+    "pass": 37,
+    "skip": 0,
+    "fail": 0
+  },
+  "locks.jsonl": {
+    "pass": 90,
+    "skip": 0,
+    "fail": 0
+  },
+  "mutations.jsonl": {
+    "pass": 24,
+    "skip": 1,
+    "fail": 0
+  },
+  "race.jsonl": {
+    "pass": 517,
+    "skip": 11,
+    "fail": 0
+  }
+}
