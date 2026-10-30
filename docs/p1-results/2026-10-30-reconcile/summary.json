@@ -1,0 +1,23 @@
+{
+  "runs": {
+    "generation": {
+      "url": "https://github.com/space-protocol-project/space-app/actions/runs/41105998854",
+      "headSha": "75e8b23292772ac1debff3fa2ff822b595896feb"
+    },
+    "server": {
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/41106913007",
+      "headSha": "c8e8c8a7f8658fa4452a287c1a09ad61ed2d58dc"
+    },
+    "client": {
+      "url": "https://github.com/space-protocol-project/space-app/actions/runs/41106497445",
+      "headSha": "bb8fb41ff4ed1c3976ce105116f3112560690809"
+    }
+  },
+  "protocolRef": "5cdd66bc0c137147f8d3b68f02c95240a6417d35",
+  "generatedFiles": 10,
+  "reconcileTests": 5,
+  "reconcileRepeatedPass": 25,
+  "databasePass": 25,
+  "flutterTests": 51,
+  "maxDartCOG": 14
+}

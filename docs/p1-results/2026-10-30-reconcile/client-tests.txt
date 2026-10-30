@@ -1,0 +1,93 @@
+Resolving dependencies...
+Downloading packages...
+  built_collection 5.1.2 (6.0.0 available)
+! camera_android_camerax 0.7.6 from path vendor/camera_android_camerax (overridden)
+! camera_avfoundation 0.10.3+1 from path vendor/camera_avfoundation (overridden)
+! camera_platform_interface 2.15.0 from path vendor/camera_platform_interface (overridden)
+! cross_file 0.4.0 (overridden)
+  crypto 3.0.7 (3.0.8 available)
+! file_selector_android 0.5.2+11 from path vendor/file_selector_android (overridden)
+! file_selector_ios 0.5.3+7 from path vendor/file_selector_ios (overridden)
+! file_selector_linux 0.9.4+1 from path vendor/file_selector_linux (overridden)
+! file_selector_macos 0.9.5+2 from path vendor/file_selector_macos (overridden)
+! file_selector_platform_interface 2.7.0 from path vendor/file_selector_platform_interface (overridden)
+! file_selector_web 0.9.5 from path vendor/file_selector_web (overridden)
+! file_selector_windows 0.9.3+6 from path vendor/file_selector_windows (overridden)
+! flutter_secure_storage_windows 4.2.2 from path vendor/flutter_secure_storage_windows (overridden)
+! flutter_webrtc 1.6.2+hotfix.4 from path vendor/flutter_webrtc (overridden)
+! flutter_zxing 3.1.0 from path vendor/flutter_zxing (overridden)
+  http2 2.3.1 (3.1.0 available)
+! image_picker_android 0.8.13+25 from path vendor/image_picker_android (overridden)
+! image_picker_for_web 3.1.1 from path vendor/image_picker_for_web (overridden)
+! image_picker_ios 0.8.13+13 from path vendor/image_picker_ios (overridden)
+! image_picker_linux 0.2.2 from path vendor/image_picker_linux (overridden)
+! image_picker_macos 0.2.2+1 from path vendor/image_picker_macos (overridden)
+! image_picker_platform_interface 2.11.2 from path vendor/image_picker_platform_interface (overridden)
+! image_picker_windows 0.2.2 from path vendor/image_picker_windows (overridden)
+  jni 1.1.0 (1.1.1 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+! screen_retriever 0.3.0 (overridden)
+  shared_preferences_android 2.5.3 (2.5.4 available)
+  shared_preferences_foundation 2.6.0 (2.6.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_graphics_compiler 1.3.2 (1.3.3 available)
+  vector_math 2.4.3 (2.4.4 available)
+! window_manager 0.5.2 from path vendor/window_manager (overridden)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+11 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /home/runner/work/space-app/space-app/client/test/extensions_p1_test.dart
+00:00 +0: /home/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Строгий JSON не теряет дубликаты, хвост и бюджет
+00:00 +1: /home/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Версии, неизвестные поля и команды отклоняются
+00:00 +2: /home/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Необязательный неизвестный компонент имеет проверяемый fallback
+00:00 +3: /home/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Лимит узлов и семантика Unicode текста
+00:00 +4: /home/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Локализация, источник, семантика и клавиатура
+00:00 +5: /home/runner/work/space-app/space-app/client/test/extensions_p1_live_test.dart: Настоящий dispatcher и WASM обновляют элемент Обзора
+00:00 +6: /home/runner/work/space-app/space-app/client/test/extensions_p1_live_test.dart: Настоящий dispatcher и WASM обновляют элемент Обзора
+00:00 +7: /home/runner/work/space-app/space-app/client/test/extensions_p1_live_test.dart: Настоящий dispatcher и WASM обновляют элемент Обзора
+00:01 +8: /home/runner/work/space-app/space-app/client/test/extensions_p1_live_test.dart: Отказ команды не выдаёт детали и позволяет повторить query
+00:01 +9: /home/runner/work/space-app/space-app/client/test/extensions_p1_live_test.dart: (tearDownAll)
+00:01 +9: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: Версия и полнота общего набора
+00:01 +10: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: confirmed
+00:01 +11: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: confirmed_after_unknown
+00:01 +12: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: confirmed_after_cancel
+00:01 +13: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: ambiguous_Unknown
+00:01 +14: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: ambiguous_Internal
+00:01 +15: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: ambiguous_Unavailable
+00:01 +16: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: ambiguous_DeadlineExceeded
+00:01 +17: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: ambiguous_TransportLost
+00:01 +18: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_InvalidArgument
+00:01 +19: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_NotFound
+00:01 +20: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_AlreadyExists
+00:01 +21: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_PermissionDenied
+00:01 +22: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_ResourceExhausted
+00:01 +23: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_FailedPrecondition
+00:01 +24: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_Aborted
+00:01 +25: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_OutOfRange
+00:01 +26: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_Unimplemented
+00:01 +27: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_DataLoss
+00:01 +28: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: auth
+00:01 +29: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: auth_after_unknown
+00:01 +30: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: denied_after_unknown
+00:01 +31: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: cancel_rpc
+00:01 +32: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: cancel_local
+00:01 +33: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: cancel_auth
+00:01 +34: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: missing_window
+00:01 +35: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: changed_request
+00:01 +36: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: mismatched_success
+00:01 +37: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: second_attempt
+00:01 +38: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: third_attempt
+00:01 +39: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: last_attempt
+00:01 +40: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: budget_boundary
+00:01 +41: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: budget_exceeded
+00:01 +42: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: window_boundary
+00:01 +43: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: window_exhausted
+00:01 +44: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: future_code
+00:01 +45: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: attempt_zero
+00:01 +46: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: attempt_overflow
+00:01 +47: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: negative_elapsed
+00:01 +48: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: negative_remaining
+00:01 +49: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: large_elapsed
+00:01 +50: /home/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: Отказ доступа после потери ответа не доказывает откат
+00:01 +51: All tests passed!

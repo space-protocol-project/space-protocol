@@ -1,0 +1,28 @@
+{
+  "conclusion": "success",
+  "headSha": "c8e8c8a7f8658fa4452a287c1a09ad61ed2d58dc",
+  "jobs": [
+    {
+      "completedAt": "2026-10-30T18:37:13Z",
+      "conclusion": "success",
+      "databaseId": 124239040569,
+      "name": "core",
+      "startedAt": "2026-10-30T18:26:15Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/41106913007/job/124239040569"
+    },
+    {
+      "completedAt": "2026-10-30T18:27:34Z",
+      "conclusion": "success",
+      "databaseId": 124239040769,
+      "name": "database-faults",
+      "startedAt": "2026-10-30T18:26:14Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/41106913007/job/124239040769"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/space-protocol-project/space-server/actions/runs/41106913007"
+}

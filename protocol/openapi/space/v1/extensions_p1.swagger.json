@@ -80,6 +80,39 @@
           "ExtensionP1Service"
         ]
       }
+    },
+    "/space.v1.ExtensionP1Service/ReconcileExtensionCommand": {
+      "post": {
+        "operationId": "ExtensionP1Service_ReconcileExtensionCommand",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ReconcileExtensionCommandResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Проверяет точный исходный запрос, не исполняя команду и не вызывая WASM.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ReconcileExtensionCommandRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ExtensionP1Service"
+        ]
+      }
     }
   },
   "definitions": {
@@ -165,6 +198,16 @@
       ],
       "default": "EXTENSION_COMMAND_EFFECT_UNSPECIFIED"
     },
+    "v1ExtensionCommandOutcome": {
+      "type": "string",
+      "enum": [
+        "EXTENSION_COMMAND_OUTCOME_UNSPECIFIED",
+        "EXTENSION_COMMAND_OUTCOME_UNKNOWN",
+        "EXTENSION_COMMAND_OUTCOME_CONFIRMED"
+      ],
+      "default": "EXTENSION_COMMAND_OUTCOME_UNSPECIFIED",
+      "description": " - EXTENSION_COMMAND_OUTCOME_UNKNOWN: Квитанция отсутствует; это НЕ доказательство отсутствия эффекта."
+    },
     "v1QueryExtensionRequest": {
       "type": "object",
       "properties": {
@@ -190,6 +233,35 @@
         },
         "uiApi": {
           "type": "string"
+        }
+      }
+    },
+    "v1ReconcileExtensionCommandRequest": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "$ref": "#/definitions/v1ExecuteExtensionCommandRequest"
+        }
+      },
+      "description": "Проверяет точный исходный запрос, не исполняя команду и не вызывая WASM."
+    },
+    "v1ReconcileExtensionCommandResponse": {
+      "type": "object",
+      "properties": {
+        "outcome": {
+          "$ref": "#/definitions/v1ExtensionCommandOutcome"
+        },
+        "receipt": {
+          "$ref": "#/definitions/v1ExecuteExtensionCommandResponse",
+          "description": "Только для CONFIRMED; выдача требует текущих прав исполнения команды."
+        },
+        "retryWindowKnown": {
+          "type": "boolean",
+          "description": "P1 пока возвращает false/0: срок хранения и tombstone ещё не реализованы.\nUNKNOWN никогда не разрешает повторную отправку сам по себе."
+        },
+        "retryWindowRemainingMs": {
+          "type": "string",
+          "format": "uint64"
         }
       }
     }
