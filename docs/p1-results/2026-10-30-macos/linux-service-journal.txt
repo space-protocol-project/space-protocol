@@ -1,0 +1,72 @@
+Oct 30 06:10:34 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:34 runnervm48cm3 systemd[1]: Started space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:34 runnervm48cm3 systemd[1]: Stopping space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:34 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=killed, status=9/KILL
+Oct 30 06:10:34 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'signal'.
+Oct 30 06:10:34 runnervm48cm3 systemd[1]: Stopped space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:36 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:36 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=killed, status=9/KILL
+Oct 30 06:10:36 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'signal'.
+Oct 30 06:10:36 runnervm48cm3 systemd[1]: Failed to start space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:37 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Scheduled restart job, restart counter is at 1.
+Oct 30 06:10:37 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:37 runnervm48cm3 systemd[1]: Started space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:37 runnervm48cm3 systemd[1]: Stopping space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:37 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=killed, status=9/KILL
+Oct 30 06:10:37 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'signal'.
+Oct 30 06:10:37 runnervm48cm3 systemd[1]: Stopped space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:39 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:39 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=killed, status=9/KILL
+Oct 30 06:10:39 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'signal'.
+Oct 30 06:10:39 runnervm48cm3 systemd[1]: Failed to start space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:40 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Scheduled restart job, restart counter is at 1.
+Oct 30 06:10:40 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:40 runnervm48cm3 systemd[1]: Started space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:40 runnervm48cm3 systemd[1]: Stopping space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:40 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=killed, status=9/KILL
+Oct 30 06:10:40 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'signal'.
+Oct 30 06:10:40 runnervm48cm3 systemd[1]: Stopped space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:41 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:41 runnervm48cm3 systemd[1]: Started space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:42 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=killed, status=9/KILL
+Oct 30 06:10:42 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'signal'.
+Oct 30 06:10:43 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Scheduled restart job, restart counter is at 1.
+Oct 30 06:10:43 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:43 runnervm48cm3 systemd[1]: Started space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:43 runnervm48cm3 systemd[1]: Stopping space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:43 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=killed, status=9/KILL
+Oct 30 06:10:43 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'signal'.
+Oct 30 06:10:43 runnervm48cm3 systemd[1]: Stopped space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:44 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:44 runnervm48cm3 p1-supervisor[3031]: 2026/10/30 06:10:44 extension process isolation unavailable
+Oct 30 06:10:44 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=exited, status=1/FAILURE
+Oct 30 06:10:44 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'exit-code'.
+Oct 30 06:10:44 runnervm48cm3 systemd[1]: Failed to start space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:45 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Scheduled restart job, restart counter is at 1.
+Oct 30 06:10:45 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:45 runnervm48cm3 p1-supervisor[3077]: 2026/10/30 06:10:45 extension process isolation unavailable
+Oct 30 06:10:45 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=exited, status=1/FAILURE
+Oct 30 06:10:45 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'exit-code'.
+Oct 30 06:10:45 runnervm48cm3 systemd[1]: Failed to start space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:46 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Scheduled restart job, restart counter is at 2.
+Oct 30 06:10:46 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:46 runnervm48cm3 p1-supervisor[3146]: 2026/10/30 06:10:46 extension process isolation unavailable
+Oct 30 06:10:46 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=exited, status=1/FAILURE
+Oct 30 06:10:46 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'exit-code'.
+Oct 30 06:10:46 runnervm48cm3 systemd[1]: Failed to start space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:47 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Scheduled restart job, restart counter is at 3.
+Oct 30 06:10:47 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:47 runnervm48cm3 p1-supervisor[3195]: 2026/10/30 06:10:47 extension process isolation unavailable
+Oct 30 06:10:47 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=exited, status=1/FAILURE
+Oct 30 06:10:47 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'exit-code'.
+Oct 30 06:10:47 runnervm48cm3 systemd[1]: Failed to start space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:48 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Scheduled restart job, restart counter is at 4.
+Oct 30 06:10:48 runnervm48cm3 systemd[1]: Starting space-p1-supervisor.service - Space P1 experimental extension supervisor...
+Oct 30 06:10:48 runnervm48cm3 p1-supervisor[3242]: 2026/10/30 06:10:48 extension process isolation unavailable
+Oct 30 06:10:48 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Main process exited, code=exited, status=1/FAILURE
+Oct 30 06:10:48 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'exit-code'.
+Oct 30 06:10:48 runnervm48cm3 systemd[1]: Failed to start space-p1-supervisor.service - Space P1 experimental extension supervisor.
+Oct 30 06:10:49 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Scheduled restart job, restart counter is at 5.
+Oct 30 06:10:49 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Start request repeated too quickly.
+Oct 30 06:10:49 runnervm48cm3 systemd[1]: space-p1-supervisor.service: Failed with result 'exit-code'.
+Oct 30 06:10:49 runnervm48cm3 systemd[1]: Failed to start space-p1-supervisor.service - Space P1 experimental extension supervisor.

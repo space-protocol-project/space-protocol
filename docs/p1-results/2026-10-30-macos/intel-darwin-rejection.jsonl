@@ -1,0 +1,8 @@
+{"Time":"2026-10-30T06:11:58.546531Z","Action":"start","Package":"github.com/space-protocol-project/space-server/experiments/extensions"}
+{"Time":"2026-10-30T06:11:58.575502Z","Action":"run","Package":"github.com/space-protocol-project/space-server/experiments/extensions","Test":"TestDarwinIsolationRejectsValidPaths"}
+{"Time":"2026-10-30T06:11:58.575733Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions","Test":"TestDarwinIsolationRejectsValidPaths","Output":"=== RUN   TestDarwinIsolationRejectsValidPaths\n","OutputType":"frame"}
+{"Time":"2026-10-30T06:11:58.576474Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions","Test":"TestDarwinIsolationRejectsValidPaths","Output":"--- PASS: TestDarwinIsolationRejectsValidPaths (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-10-30T06:11:58.57653Z","Action":"pass","Package":"github.com/space-protocol-project/space-server/experiments/extensions","Test":"TestDarwinIsolationRejectsValidPaths","Elapsed":0}
+{"Time":"2026-10-30T06:11:58.576597Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-10-30T06:11:59.692891Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions","Output":"ok  \tgithub.com/space-protocol-project/space-server/experiments/extensions\t1.145s\n"}
+{"Time":"2026-10-30T06:11:59.693066Z","Action":"pass","Package":"github.com/space-protocol-project/space-server/experiments/extensions","Elapsed":1.146}

@@ -1,0 +1,223 @@
+{
+  "platform": "macOS-15.8.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "samples": [
+    {
+      "mode": "as",
+      "rss_alias_as": true,
+      "sample": {
+        "set_errno": 22,
+        "mmap_errno": 0,
+        "task_error": 0,
+        "requested_limit": 67108864,
+        "baseline_virtual": 420447207424,
+        "baseline_resident": 1163264,
+        "limit": 0,
+        "allocated": 0,
+        "resident": 0,
+        "limit_installed": false
+      },
+      "limit_mode": "64",
+      "observed_exceeds_limit": false
+    },
+    {
+      "mode": "as",
+      "rss_alias_as": true,
+      "sample": {
+        "set_errno": 22,
+        "mmap_errno": 0,
+        "task_error": 0,
+        "requested_limit": 268435456,
+        "baseline_virtual": 420447207424,
+        "baseline_resident": 1163264,
+        "limit": 0,
+        "allocated": 0,
+        "resident": 0,
+        "limit_installed": false
+      },
+      "limit_mode": "256",
+      "observed_exceeds_limit": false
+    },
+    {
+      "mode": "as",
+      "rss_alias_as": true,
+      "sample": {
+        "set_errno": 22,
+        "mmap_errno": 0,
+        "task_error": 0,
+        "requested_limit": 536870912,
+        "baseline_virtual": 420447207424,
+        "baseline_resident": 1163264,
+        "limit": 0,
+        "allocated": 0,
+        "resident": 0,
+        "limit_installed": false
+      },
+      "limit_mode": "512",
+      "observed_exceeds_limit": false
+    },
+    {
+      "mode": "as",
+      "rss_alias_as": true,
+      "sample": {
+        "set_errno": 0,
+        "mmap_errno": 12,
+        "task_error": 0,
+        "requested_limit": 420514316288,
+        "baseline_virtual": 420447207424,
+        "baseline_resident": 1163264,
+        "limit": 420514316288,
+        "allocated": 0,
+        "resident": 0,
+        "limit_installed": true
+      },
+      "limit_mode": "baseline",
+      "observed_exceeds_limit": false
+    },
+    {
+      "mode": "data",
+      "rss_alias_as": true,
+      "sample": {
+        "set_errno": 22,
+        "mmap_errno": 0,
+        "task_error": 0,
+        "requested_limit": 67108864,
+        "baseline_virtual": 420447207424,
+        "baseline_resident": 1163264,
+        "limit": 0,
+        "allocated": 0,
+        "resident": 0,
+        "limit_installed": false
+      },
+      "limit_mode": "64",
+      "observed_exceeds_limit": false
+    },
+    {
+      "mode": "data",
+      "rss_alias_as": true,
+      "sample": {
+        "set_errno": 22,
+        "mmap_errno": 0,
+        "task_error": 0,
+        "requested_limit": 268435456,
+        "baseline_virtual": 420447207424,
+        "baseline_resident": 1163264,
+        "limit": 0,
+        "allocated": 0,
+        "resident": 0,
+        "limit_installed": false
+      },
+      "limit_mode": "256",
+      "observed_exceeds_limit": false
+    },
+    {
+      "mode": "data",
+      "rss_alias_as": true,
+      "sample": {
+        "set_errno": 22,
+        "mmap_errno": 0,
+        "task_error": 0,
+        "requested_limit": 536870912,
+        "baseline_virtual": 420447207424,
+        "baseline_resident": 1163264,
+        "limit": 0,
+        "allocated": 0,
+        "resident": 0,
+        "limit_installed": false
+      },
+      "limit_mode": "512",
+      "observed_exceeds_limit": false
+    },
+    {
+      "mode": "data",
+      "rss_alias_as": true,
+      "sample": {
+        "set_errno": 0,
+        "mmap_errno": 12,
+        "task_error": 0,
+        "requested_limit": 420514316288,
+        "baseline_virtual": 420447207424,
+        "baseline_resident": 1163264,
+        "limit": 420514316288,
+        "allocated": 0,
+        "resident": 0,
+        "limit_installed": true
+      },
+      "limit_mode": "baseline",
+      "observed_exceeds_limit": false
+    },
+    {
+      "mode": "aggregate",
+      "children": [
+        {
+          "set_errno": 22,
+          "mmap_errno": 0,
+          "task_error": 0,
+          "requested_limit": 67108864,
+          "baseline_virtual": 420456644608,
+          "baseline_resident": 950272,
+          "limit": 0,
+          "allocated": 0,
+          "resident": 0,
+          "limit_installed": false
+        },
+        {
+          "set_errno": 22,
+          "mmap_errno": 0,
+          "task_error": 0,
+          "requested_limit": 67108864,
+          "baseline_virtual": 420456644608,
+          "baseline_resident": 950272,
+          "limit": 0,
+          "allocated": 0,
+          "resident": 0,
+          "limit_installed": false
+        }
+      ],
+      "resident_sum": 0,
+      "limit_mode": "64",
+      "both_children_allocated": false,
+      "resident_sum_exceeds_64mib": false
+    },
+    {
+      "mode": "aggregate",
+      "children": [
+        {
+          "set_errno": 0,
+          "mmap_errno": 0,
+          "task_error": 0,
+          "requested_limit": 420523753472,
+          "baseline_virtual": 420456644608,
+          "baseline_resident": 950272,
+          "limit": 420523753472,
+          "allocated": 50331648,
+          "resident": 51298304,
+          "limit_installed": true
+        },
+        {
+          "set_errno": 0,
+          "mmap_errno": 0,
+          "task_error": 0,
+          "requested_limit": 420523753472,
+          "baseline_virtual": 420456644608,
+          "baseline_resident": 950272,
+          "limit": 420523753472,
+          "allocated": 50331648,
+          "resident": 51298304,
+          "limit_installed": true
+        }
+      ],
+      "resident_sum": 102596608,
+      "limit_mode": "baseline",
+      "both_children_allocated": true,
+      "resident_sum_exceeds_64mib": true
+    }
+  ],
+  "virtualization": {
+    "maximum_guest_memory": 7516192768,
+    "minimum_guest_memory": 4194304,
+    "os": "Version 15.8.2 (Build 24H232)",
+    "supported": false
+  },
+  "macos_process_host_enabled": false
+}
