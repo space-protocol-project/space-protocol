@@ -4,7 +4,7 @@
 
 Продолжение от 30 октября: [изоляция компилятора и общие квоты памяти Linux](SPACE-PLUGINS-P1-ISOLATION.md), затем [Job Objects на Windows](SPACE-PLUGINS-P1-WINDOWS.md). Добавлен [строгий внутренний протокол worker](SPACE-PLUGINS-P1-WORKER.md). Реализовано [восстановление Linux после аварии supervisor](SPACE-PLUGINS-P1-RECOVERY.md). Проверен [жизненный цикл экспериментальной Linux-службы](SPACE-PLUGINS-P1-SERVICE.md) и добавлено [создание Windows worker сразу в Job Objects](SPACE-PLUGINS-P1-WINDOWS-LAUNCH.md). Для macOS выполнено [исследование квот памяти и доступности виртуализации](SPACE-PLUGINS-P1-MACOS.md). Проверен [Linux guest на Intel macOS с квотами cgroup](SPACE-PLUGINS-P1-MACOS-VM.md); аварии launcher/VMM и два холодных повтора проверены в CI, общий жёсткий бюджет VMM ещё открыт. Ниже сохранена исходная проверка ABI от 29 октября; новый ProcessHost запускает этот код только внутри отдельного worker.
 
-Добавлен [единый внутренний Runtime и сквозной демонстрационный путь](SPACE-PLUGINS-P1-DEMO.md): dispatcher, настоящий WASM и Flutter. Это отдельный экспериментальный API; стабильный ABI, настоящий ACL ядра и рабочая интеграция остаются открытыми.
+Добавлен [единый внутренний Runtime и сквозной демонстрационный путь](SPACE-PLUGINS-P1-DEMO.md): dispatcher, настоящий WASM и Flutter. Это отдельный экспериментальный API. [Следующий срез подключает настоящие сессии и ACL ядра](SPACE-PLUGINS-P1-CORE.md), добавляет protobuf и контракт мутаций; стабильный ABI и включение в рабочее приложение остаются открытыми.
 
 ## 1. Результат проверки контрактов
 
