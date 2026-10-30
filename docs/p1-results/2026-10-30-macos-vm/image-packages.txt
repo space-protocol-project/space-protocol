@@ -1,0 +1,2 @@
+busybox-static	1:1.36.1-6ubuntu3.1
+linux-image-generic	6.8.0-147.147

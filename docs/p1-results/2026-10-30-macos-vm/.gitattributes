@@ -1,0 +1,5 @@
+*.json -text
+*.txt -text
+*.jsonl -text
+image-SHA256SUMS -text
+guest-console.txt whitespace=cr-at-eol

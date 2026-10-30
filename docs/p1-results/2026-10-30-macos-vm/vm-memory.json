@@ -1,0 +1,147 @@
+{
+  "guest_ram_bytes": 1073741824,
+  "launcher_samples": [
+    {
+      "seconds": 0.016,
+      "launcher_rss_kib": 248
+    },
+    {
+      "seconds": 1.407,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 2.498,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 3.79,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 4.979,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 6.12,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 7.298,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 8.337,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 9.569,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 10.863,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 12.113,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 13.279,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 14.323,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 15.49,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 16.684,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 17.725,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 18.769,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 19.815,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 20.971,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 22.01,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 23.159,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 24.312,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 25.488,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 26.588,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 27.726,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 28.841,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 29.987,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 31.089,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 32.233,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 33.339,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 34.349,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 35.474,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 36.57,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 37.587,
+      "launcher_rss_kib": 3484
+    },
+    {
+      "seconds": 38.732,
+      "launcher_rss_kib": 3484
+    }
+  ],
+  "exit_code": 0,
+  "aggregate_vmm_budget_verified": false
+}

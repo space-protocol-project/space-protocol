@@ -1,0 +1,46 @@
+=== RUN   TestIsolationCompileAndRecover
+    process_linux_test.go:59: worker_memory=268435456 total_memory=536870912 stats={Active:0 ReservedBytes:0 CurrentBytes:1548288 PeakBytes:4018176 OOMKills:0 CPUUsec:941362 Throttled:2 OSProcesses:0}
+--- PASS: TestIsolationCompileAndRecover (1.16s)
+=== RUN   TestIsolationPressure
+=== RUN   TestIsolationPressure/memory
+    process_linux_test.go:104: mode=memory elapsed=116.036136ms stats={Active:0 ReservedBytes:0 CurrentBytes:786432 PeakBytes:268451840 OOMKills:2 CPUUsec:113572 Throttled:0 OSProcesses:0}
+=== RUN   TestIsolationPressure/hang
+    process_linux_test.go:104: mode=hang elapsed=2.0072636s stats={Active:0 ReservedBytes:0 CurrentBytes:225280 PeakBytes:1863680 OOMKills:0 CPUUsec:2149 Throttled:0 OSProcesses:0}
+=== RUN   TestIsolationPressure/cpu
+    process_linux_test.go:104: mode=cpu elapsed=2.024406332s stats={Active:0 ReservedBytes:0 CurrentBytes:299008 PeakBytes:1835008 OOMKills:0 CPUUsec:2038412 Throttled:20 OSProcesses:0}
+=== RUN   TestIsolationPressure/child
+    process_linux_test.go:104: mode=child elapsed=2.006886425s stats={Active:0 ReservedBytes:0 CurrentBytes:589824 PeakBytes:2375680 OOMKills:0 CPUUsec:3996 Throttled:0 OSProcesses:0}
+=== RUN   TestIsolationPressure/output
+    process_linux_test.go:104: mode=output elapsed=6.666409ms stats={Active:0 ReservedBytes:0 CurrentBytes:614400 PeakBytes:1466368 OOMKills:0 CPUUsec:2423 Throttled:0 OSProcesses:0}
+=== RUN   TestIsolationPressure/crash
+    process_linux_test.go:104: mode=crash elapsed=7.973601ms stats={Active:0 ReservedBytes:0 CurrentBytes:630784 PeakBytes:1835008 OOMKills:0 CPUUsec:1689 Throttled:0 OSProcesses:0}
+--- PASS: TestIsolationPressure (6.17s)
+    --- PASS: TestIsolationPressure/memory (0.12s)
+    --- PASS: TestIsolationPressure/hang (2.01s)
+    --- PASS: TestIsolationPressure/cpu (2.03s)
+    --- PASS: TestIsolationPressure/child (2.01s)
+    --- PASS: TestIsolationPressure/output (0.01s)
+    --- PASS: TestIsolationPressure/crash (0.01s)
+=== RUN   TestIsolationSharedQuota
+    process_linux_test.go:128: two_running_workers stats={Active:2 ReservedBytes:536870912 CurrentBytes:2883584 PeakBytes:2883584 OOMKills:0 CPUUsec:2273 Throttled:0 OSProcesses:0}
+--- PASS: TestIsolationSharedQuota (0.00s)
+=== RUN   TestIsolationRejectBeforeLaunch
+--- PASS: TestIsolationRejectBeforeLaunch (0.00s)
+=== RUN   TestIsolationKernelWorkerLimit
+    process_linux_test.go:219: worker_fault_injection limit=268435456 stats={Active:0 ReservedBytes:0 CurrentBytes:933888 PeakBytes:268451840 OOMKills:2 CPUUsec:120323 Throttled:0 OSProcesses:0}
+--- PASS: TestIsolationKernelWorkerLimit (0.12s)
+=== RUN   TestIsolationKernelAggregateLimit
+    process_linux_test.go:248: aggregate_fault_injection limit=268435456 stats={Active:0 ReservedBytes:0 CurrentBytes:1126400 PeakBytes:268435456 OOMKills:3 CPUUsec:129401 Throttled:0 OSProcesses:0}
+--- PASS: TestIsolationKernelAggregateLimit (0.07s)
+=== RUN   TestIsolationIdentityAndEnvironment
+    process_linux_test.go:259: {"uid":65534,"environment":2,"secret":""}
+--- PASS: TestIsolationIdentityAndEnvironment (0.00s)
+=== RUN   TestIsolationSupervisorHelper
+    recovery_linux_test.go:21: Вспомогательный процесс аварийного теста
+--- SKIP: TestIsolationSupervisorHelper (0.00s)
+=== RUN   TestIsolationSupervisorRecovery
+    recovery_linux_test.go:76: supervisor_killed=true orphan_populated=true old_group_removed=true healthy=true recovery=4.897023ms
+--- PASS: TestIsolationSupervisorRecovery (0.03s)
+=== RUN   TestIsolationRecoveryScope
+--- PASS: TestIsolationRecoveryScope (0.01s)
+PASS
