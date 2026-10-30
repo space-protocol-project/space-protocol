@@ -1,0 +1,80 @@
+{
+  "run": "https://github.com/space-protocol-project/space-server/actions/runs/41094677716",
+  "headSha": "cce720d5ecda70ab5d7616aac0e7b5117fb7f075",
+  "counts": {
+    "access-races.jsonl": {
+      "pass": 65
+    },
+    "backup-validation.jsonl": {
+      "pass": 27
+    },
+    "core.jsonl": {
+      "pass": 547,
+      "skip": 14
+    },
+    "crash.jsonl": {
+      "pass": 40
+    },
+    "isolated.jsonl": {
+      "pass": 71
+    },
+    "locks.jsonl": {
+      "pass": 110
+    },
+    "mutations.jsonl": {
+      "pass": 39,
+      "skip": 2
+    },
+    "outbox.jsonl": {
+      "pass": 60
+    },
+    "race.jsonl": {
+      "pass": 547,
+      "skip": 14
+    },
+    "worker-crash.jsonl": {
+      "pass": 20
+    },
+    "faults.jsonl": {
+      "pass": 25
+    }
+  },
+  "scenarios": {
+    "TestExtensionDatabaseFaults/before_commit": 5,
+    "TestExtensionDatabaseFaults/after_commit": 5,
+    "TestExtensionDatabaseFaults/database_restart": 5,
+    "TestExtensionDatabaseFaults/committed_restart": 5,
+    "TestExtensionDatabaseFaults": 5
+  },
+  "recoveryAttempts": {
+    "TestExtensionDatabaseFaults/before_commit": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "TestExtensionDatabaseFaults/after_commit": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "TestExtensionDatabaseFaults/database_restart": [
+      1,
+      2,
+      2,
+      2,
+      2
+    ],
+    "TestExtensionDatabaseFaults/committed_restart": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "postgresAutomaticRecoveries": 10
+}
