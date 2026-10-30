@@ -1,0 +1,2812 @@
+{
+  "guest_ram_bytes": 1073741824,
+  "guest_pressure_bytes": 268435456,
+  "aggregate_hard_limit_verified": false,
+  "measurement_scope": "launcher plus discovered Virtualization.VirtualMachine services; non-atomic process sums, excludes unattributed kernel memory",
+  "cases": [
+    {
+      "name": "baseline",
+      "target": null,
+      "samples": [
+        {
+          "seconds": 0.215,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3440640,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            }
+          ],
+          "resident_sum_bytes": 3440640,
+          "footprint_sum_bytes": 1228800
+        },
+        {
+          "seconds": 1.54,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 55205888,
+              "footprint_bytes": 42745856,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 58740736,
+          "footprint_sum_bytes": 43974656
+        },
+        {
+          "seconds": 2.809,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 99618816,
+              "footprint_bytes": 80158720,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 103153664,
+          "footprint_sum_bytes": 81387520
+        },
+        {
+          "seconds": 4.056,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 145960960,
+              "footprint_bytes": 126443520,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 149495808,
+          "footprint_sum_bytes": 127672320
+        },
+        {
+          "seconds": 5.27,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 157954048,
+              "footprint_bytes": 138358784,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161488896,
+          "footprint_sum_bytes": 139587584
+        },
+        {
+          "seconds": 6.432,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 157900800,
+              "footprint_bytes": 138305536,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161435648,
+          "footprint_sum_bytes": 139534336
+        },
+        {
+          "seconds": 7.654,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 157900800,
+              "footprint_bytes": 138305536,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161435648,
+          "footprint_sum_bytes": 139534336
+        },
+        {
+          "seconds": 8.986,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 157900800,
+              "footprint_bytes": 138305536,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161435648,
+          "footprint_sum_bytes": 139534336
+        },
+        {
+          "seconds": 10.259,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 180436992,
+              "footprint_bytes": 153210880,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 183971840,
+          "footprint_sum_bytes": 154439680
+        },
+        {
+          "seconds": 11.494,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 200933376,
+              "footprint_bytes": 167002112,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 204468224,
+          "footprint_sum_bytes": 168230912
+        },
+        {
+          "seconds": 12.786,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 201048064,
+              "footprint_bytes": 167084032,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 204582912,
+          "footprint_sum_bytes": 168312832
+        },
+        {
+          "seconds": 14.077,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 207720448,
+              "footprint_bytes": 173752320,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 211255296,
+          "footprint_sum_bytes": 174981120
+        },
+        {
+          "seconds": 15.419,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 239804416,
+              "footprint_bytes": 205950976,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 243339264,
+          "footprint_sum_bytes": 207179776
+        },
+        {
+          "seconds": 16.637,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 244555776,
+              "footprint_bytes": 210685952,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 248090624,
+          "footprint_sum_bytes": 211914752
+        },
+        {
+          "seconds": 17.753,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 244555776,
+              "footprint_bytes": 210685952,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 248090624,
+          "footprint_sum_bytes": 211914752
+        },
+        {
+          "seconds": 18.981,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 244555776,
+              "footprint_bytes": 210685952,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 248090624,
+          "footprint_sum_bytes": 211914752
+        },
+        {
+          "seconds": 20.231,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 244559872,
+              "footprint_bytes": 210690048,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 248094720,
+          "footprint_sum_bytes": 211918848
+        },
+        {
+          "seconds": 21.33,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 244559872,
+              "footprint_bytes": 210690048,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 248094720,
+          "footprint_sum_bytes": 211918848
+        },
+        {
+          "seconds": 22.471,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 249176064,
+              "footprint_bytes": 215306240,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 252710912,
+          "footprint_sum_bytes": 216535040
+        },
+        {
+          "seconds": 23.788,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 286613504,
+              "footprint_bytes": 252743680,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 290148352,
+          "footprint_sum_bytes": 253972480
+        },
+        {
+          "seconds": 24.986,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 317480960,
+              "footprint_bytes": 283611136,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 321015808,
+          "footprint_sum_bytes": 284839936
+        },
+        {
+          "seconds": 26.274,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 348229632,
+              "footprint_bytes": 314359808,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 351764480,
+          "footprint_sum_bytes": 315588608
+        },
+        {
+          "seconds": 27.604,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 380579840,
+              "footprint_bytes": 346710016,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 384114688,
+          "footprint_sum_bytes": 347938816
+        },
+        {
+          "seconds": 28.881,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 412078080,
+              "footprint_bytes": 378212352,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 415612928,
+          "footprint_sum_bytes": 379441152
+        },
+        {
+          "seconds": 30.061,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 442372096,
+              "footprint_bytes": 408498176,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 445906944,
+          "footprint_sum_bytes": 409726976
+        },
+        {
+          "seconds": 31.201,
+          "processes": [
+            {
+              "pid": 8170,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1228800,
+              "start_abstime": 837738589030,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8181,
+              "errno": 0,
+              "resident_bytes": 448102400,
+              "footprint_bytes": 414228480,
+              "start_abstime": 837960909621,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 451637248,
+          "footprint_sum_bytes": 415457280
+        },
+        {
+          "seconds": 32.28,
+          "processes": [],
+          "resident_sum_bytes": 0,
+          "footprint_sum_bytes": 0
+        }
+      ],
+      "launcher_pid": 8170,
+      "cleanup_seconds": 0.059,
+      "exit_code": 0,
+      "success": true,
+      "elapsed_seconds": 35.407
+    },
+    {
+      "name": "kill-launcher",
+      "target": "launcher",
+      "samples": [
+        {
+          "seconds": 0.098,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3465216,
+              "footprint_bytes": 1150976,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            }
+          ],
+          "resident_sum_bytes": 3465216,
+          "footprint_sum_bytes": 1150976
+        },
+        {
+          "seconds": 1.451,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 84025344,
+              "footprint_bytes": 64565248,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 87535616,
+          "footprint_sum_bytes": 65761280
+        },
+        {
+          "seconds": 2.721,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 132792320,
+              "footprint_bytes": 113332224,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 136302592,
+          "footprint_sum_bytes": 114528256
+        },
+        {
+          "seconds": 4.065,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 157769728,
+              "footprint_bytes": 138174464,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161280000,
+          "footprint_sum_bytes": 139370496
+        },
+        {
+          "seconds": 5.334,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 157769728,
+              "footprint_bytes": 138174464,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161280000,
+          "footprint_sum_bytes": 139370496
+        },
+        {
+          "seconds": 6.546,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 157708288,
+              "footprint_bytes": 138113024,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161218560,
+          "footprint_sum_bytes": 139309056
+        },
+        {
+          "seconds": 7.701,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 157708288,
+              "footprint_bytes": 138113024,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161218560,
+          "footprint_sum_bytes": 139309056
+        },
+        {
+          "seconds": 8.903,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 169136128,
+              "footprint_bytes": 146710528,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 172646400,
+          "footprint_sum_bytes": 147906560
+        },
+        {
+          "seconds": 10.136,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 196120576,
+              "footprint_bytes": 162201600,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 199630848,
+          "footprint_sum_bytes": 163397632
+        },
+        {
+          "seconds": 11.437,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 223444992,
+              "footprint_bytes": 189521920,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 226955264,
+          "footprint_sum_bytes": 190717952
+        },
+        {
+          "seconds": 12.642,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 256462848,
+              "footprint_bytes": 222539776,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 259973120,
+          "footprint_sum_bytes": 223735808
+        },
+        {
+          "seconds": 13.957,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 294252544,
+              "footprint_bytes": 260329472,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 297762816,
+          "footprint_sum_bytes": 261525504
+        },
+        {
+          "seconds": 15.252,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 332263424,
+              "footprint_bytes": 298340352,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 335773696,
+          "footprint_sum_bytes": 299536384
+        },
+        {
+          "seconds": 16.527,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 367173632,
+              "footprint_bytes": 333250560,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 370683904,
+          "footprint_sum_bytes": 334446592
+        },
+        {
+          "seconds": 17.716,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 400199680,
+              "footprint_bytes": 366276608,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 403709952,
+          "footprint_sum_bytes": 367472640
+        },
+        {
+          "seconds": 18.964,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 433848320,
+              "footprint_bytes": 399925248,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 437358592,
+          "footprint_sum_bytes": 401121280
+        },
+        {
+          "seconds": 20.222,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 437125120,
+              "footprint_bytes": 403202048,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 440635392,
+          "footprint_sum_bytes": 404398080
+        },
+        {
+          "seconds": 21.458,
+          "processes": [
+            {
+              "pid": 8669,
+              "errno": 0,
+              "resident_bytes": 3510272,
+              "footprint_bytes": 1196032,
+              "start_abstime": 873201692936,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 8671,
+              "errno": 0,
+              "resident_bytes": 437125120,
+              "footprint_bytes": 403202048,
+              "start_abstime": 873222966472,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 440635392,
+          "footprint_sum_bytes": 404398080
+        },
+        {
+          "seconds": 22.311,
+          "processes": [],
+          "resident_sum_bytes": 0,
+          "footprint_sum_bytes": 0
+        }
+      ],
+      "launcher_pid": 8669,
+      "victim": {
+        "pid": 8669,
+        "errno": 0,
+        "resident_bytes": 3510272,
+        "footprint_bytes": 1196032,
+        "start_abstime": 873201692936
+      },
+      "services_at_kill": {
+        "8671": {
+          "ppid": 1,
+          "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+        }
+      },
+      "heartbeat_before_kill": 3,
+      "cleanup_seconds": 0.761,
+      "exit_code": -9,
+      "success": true,
+      "elapsed_seconds": 25.33
+    },
+    {
+      "name": "restart-after-launcher",
+      "target": null,
+      "samples": [
+        {
+          "seconds": 0.105,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3440640,
+              "footprint_bytes": 1134592,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            }
+          ],
+          "resident_sum_bytes": 3440640,
+          "footprint_sum_bytes": 1134592
+        },
+        {
+          "seconds": 1.405,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 84414464,
+              "footprint_bytes": 64958464,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 87912448,
+          "footprint_sum_bytes": 66150400
+        },
+        {
+          "seconds": 2.628,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 132505600,
+              "footprint_bytes": 113045504,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 136003584,
+          "footprint_sum_bytes": 114237440
+        },
+        {
+          "seconds": 3.876,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 157782016,
+              "footprint_bytes": 138186752,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161280000,
+          "footprint_sum_bytes": 139378688
+        },
+        {
+          "seconds": 5.134,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 157929472,
+              "footprint_bytes": 138334208,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161427456,
+          "footprint_sum_bytes": 139526144
+        },
+        {
+          "seconds": 6.392,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 157855744,
+              "footprint_bytes": 138260480,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161353728,
+          "footprint_sum_bytes": 139452416
+        },
+        {
+          "seconds": 7.575,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 157855744,
+              "footprint_bytes": 138260480,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161353728,
+          "footprint_sum_bytes": 139452416
+        },
+        {
+          "seconds": 8.872,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 173301760,
+              "footprint_bytes": 149327872,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 176799744,
+          "footprint_sum_bytes": 150519808
+        },
+        {
+          "seconds": 10.232,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 203300864,
+              "footprint_bytes": 169394176,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 206798848,
+          "footprint_sum_bytes": 170586112
+        },
+        {
+          "seconds": 11.497,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 204824576,
+              "footprint_bytes": 170897408,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 208322560,
+          "footprint_sum_bytes": 172089344
+        },
+        {
+          "seconds": 12.725,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 204996608,
+              "footprint_bytes": 171065344,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 208494592,
+          "footprint_sum_bytes": 172257280
+        },
+        {
+          "seconds": 13.99,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 229339136,
+              "footprint_bytes": 195403776,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 232837120,
+          "footprint_sum_bytes": 196595712
+        },
+        {
+          "seconds": 15.21,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 256135168,
+              "footprint_bytes": 222199808,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 259633152,
+          "footprint_sum_bytes": 223391744
+        },
+        {
+          "seconds": 16.321,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 256135168,
+              "footprint_bytes": 222199808,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 259633152,
+          "footprint_sum_bytes": 223391744
+        },
+        {
+          "seconds": 17.464,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 256135168,
+              "footprint_bytes": 222199808,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 259633152,
+          "footprint_sum_bytes": 223391744
+        },
+        {
+          "seconds": 18.73,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 256135168,
+              "footprint_bytes": 222199808,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 259633152,
+          "footprint_sum_bytes": 223391744
+        },
+        {
+          "seconds": 19.909,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 256204800,
+              "footprint_bytes": 222257152,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 259702784,
+          "footprint_sum_bytes": 223449088
+        },
+        {
+          "seconds": 21.23,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 256217088,
+              "footprint_bytes": 222265344,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 259715072,
+          "footprint_sum_bytes": 223457280
+        },
+        {
+          "seconds": 22.545,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 276262912,
+              "footprint_bytes": 242298880,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 279760896,
+          "footprint_sum_bytes": 243490816
+        },
+        {
+          "seconds": 23.756,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 306589696,
+              "footprint_bytes": 272625664,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 310087680,
+          "footprint_sum_bytes": 273817600
+        },
+        {
+          "seconds": 25.052,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 334274560,
+              "footprint_bytes": 300314624,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 337772544,
+          "footprint_sum_bytes": 301506560
+        },
+        {
+          "seconds": 26.262,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 364498944,
+              "footprint_bytes": 330534912,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 367996928,
+          "footprint_sum_bytes": 331726848
+        },
+        {
+          "seconds": 27.506,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 396496896,
+              "footprint_bytes": 362536960,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 399994880,
+          "footprint_sum_bytes": 363728896
+        },
+        {
+          "seconds": 28.709,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 425324544,
+              "footprint_bytes": 391360512,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 428822528,
+          "footprint_sum_bytes": 392552448
+        },
+        {
+          "seconds": 29.989,
+          "processes": [
+            {
+              "pid": 9204,
+              "errno": 0,
+              "resident_bytes": 3497984,
+              "footprint_bytes": 1191936,
+              "start_abstime": 898584100334,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9206,
+              "errno": 0,
+              "resident_bytes": 446758912,
+              "footprint_bytes": 412794880,
+              "start_abstime": 898609477195,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 450256896,
+          "footprint_sum_bytes": 413986816
+        },
+        {
+          "seconds": 31.722,
+          "processes": [],
+          "resident_sum_bytes": 0,
+          "footprint_sum_bytes": 0
+        }
+      ],
+      "launcher_pid": 9204,
+      "cleanup_seconds": 0.565,
+      "exit_code": 0,
+      "success": true,
+      "elapsed_seconds": 34.848
+    },
+    {
+      "name": "kill-vmm",
+      "target": "service",
+      "samples": [
+        {
+          "seconds": 0.094,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3534848,
+              "footprint_bytes": 1261568,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            }
+          ],
+          "resident_sum_bytes": 3534848,
+          "footprint_sum_bytes": 1261568
+        },
+        {
+          "seconds": 1.379,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 84668416,
+              "footprint_bytes": 65208320,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 88252416,
+          "footprint_sum_bytes": 66519040
+        },
+        {
+          "seconds": 2.631,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 135262208,
+              "footprint_bytes": 115806208,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 138846208,
+          "footprint_sum_bytes": 117116928
+        },
+        {
+          "seconds": 3.776,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 157700096,
+              "footprint_bytes": 138104832,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161284096,
+          "footprint_sum_bytes": 139415552
+        },
+        {
+          "seconds": 5.009,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 157700096,
+              "footprint_bytes": 138104832,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161284096,
+          "footprint_sum_bytes": 139415552
+        },
+        {
+          "seconds": 6.162,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 157646848,
+              "footprint_bytes": 138051584,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161230848,
+          "footprint_sum_bytes": 139362304
+        },
+        {
+          "seconds": 7.449,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 157646848,
+              "footprint_bytes": 138051584,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161230848,
+          "footprint_sum_bytes": 139362304
+        },
+        {
+          "seconds": 8.748,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 183595008,
+              "footprint_bytes": 154947584,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 187179008,
+          "footprint_sum_bytes": 156258304
+        },
+        {
+          "seconds": 10.036,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 203345920,
+              "footprint_bytes": 169418752,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 206929920,
+          "footprint_sum_bytes": 170729472
+        },
+        {
+          "seconds": 11.227,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 235859968,
+              "footprint_bytes": 201936896,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 239443968,
+          "footprint_sum_bytes": 203247616
+        },
+        {
+          "seconds": 12.52,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 271826944,
+              "footprint_bytes": 237899776,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 275410944,
+          "footprint_sum_bytes": 239210496
+        },
+        {
+          "seconds": 13.682,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 306253824,
+              "footprint_bytes": 272326656,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 309837824,
+          "footprint_sum_bytes": 273637376
+        },
+        {
+          "seconds": 14.876,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 340652032,
+              "footprint_bytes": 306724864,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 344236032,
+          "footprint_sum_bytes": 308035584
+        },
+        {
+          "seconds": 16.131,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 374521856,
+              "footprint_bytes": 340594688,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 378105856,
+          "footprint_sum_bytes": 341905408
+        },
+        {
+          "seconds": 17.299,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 407478272,
+              "footprint_bytes": 373551104,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 411062272,
+          "footprint_sum_bytes": 374861824
+        },
+        {
+          "seconds": 18.576,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 445288448,
+              "footprint_bytes": 411361280,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 448872448,
+          "footprint_sum_bytes": 412672000
+        },
+        {
+          "seconds": 19.71,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 456245248,
+              "footprint_bytes": 422318080,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 459829248,
+          "footprint_sum_bytes": 423628800
+        },
+        {
+          "seconds": 20.947,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 456245248,
+              "footprint_bytes": 422318080,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 459829248,
+          "footprint_sum_bytes": 423628800
+        },
+        {
+          "seconds": 22.164,
+          "processes": [
+            {
+              "pid": 9717,
+              "errno": 0,
+              "resident_bytes": 3584000,
+              "footprint_bytes": 1310720,
+              "start_abstime": 933477961754,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 9719,
+              "errno": 0,
+              "resident_bytes": 456245248,
+              "footprint_bytes": 422318080,
+              "start_abstime": 933502176280,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 459829248,
+          "footprint_sum_bytes": 423628800
+        },
+        {
+          "seconds": 23.057,
+          "processes": [],
+          "resident_sum_bytes": 0,
+          "footprint_sum_bytes": 0
+        }
+      ],
+      "launcher_pid": 9717,
+      "victim": {
+        "pid": 9719,
+        "errno": 0,
+        "resident_bytes": 456245248,
+        "footprint_bytes": 422318080,
+        "start_abstime": 933502176280
+      },
+      "services_at_kill": {
+        "9719": {
+          "ppid": 1,
+          "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+        }
+      },
+      "heartbeat_before_kill": 4,
+      "cleanup_seconds": 0.812,
+      "exit_code": 2,
+      "success": true,
+      "elapsed_seconds": 26.207
+    },
+    {
+      "name": "restart-after-vmm",
+      "target": null,
+      "samples": [
+        {
+          "seconds": 0.099,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3428352,
+              "footprint_bytes": 1130496,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            }
+          ],
+          "resident_sum_bytes": 3428352,
+          "footprint_sum_bytes": 1130496
+        },
+        {
+          "seconds": 1.372,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 86007808,
+              "footprint_bytes": 66547712,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 89530368,
+          "footprint_sum_bytes": 67772416
+        },
+        {
+          "seconds": 2.605,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 136736768,
+              "footprint_bytes": 117276672,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 140259328,
+          "footprint_sum_bytes": 118501376
+        },
+        {
+          "seconds": 3.847,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 157728768,
+              "footprint_bytes": 138133504,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161251328,
+          "footprint_sum_bytes": 139358208
+        },
+        {
+          "seconds": 4.994,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 157761536,
+              "footprint_bytes": 138166272,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161284096,
+          "footprint_sum_bytes": 139390976
+        },
+        {
+          "seconds": 6.24,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 157728768,
+              "footprint_bytes": 138133504,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161251328,
+          "footprint_sum_bytes": 139358208
+        },
+        {
+          "seconds": 7.426,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 157728768,
+              "footprint_bytes": 138133504,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 161251328,
+          "footprint_sum_bytes": 139358208
+        },
+        {
+          "seconds": 8.673,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 172568576,
+              "footprint_bytes": 148459520,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 176091136,
+          "footprint_sum_bytes": 149684224
+        },
+        {
+          "seconds": 9.909,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 197824512,
+              "footprint_bytes": 163913728,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 201347072,
+          "footprint_sum_bytes": 165138432
+        },
+        {
+          "seconds": 11.089,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 199262208,
+              "footprint_bytes": 165343232,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 202784768,
+          "footprint_sum_bytes": 166567936
+        },
+        {
+          "seconds": 12.346,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 199548928,
+              "footprint_bytes": 165629952,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 203071488,
+          "footprint_sum_bytes": 166854656
+        },
+        {
+          "seconds": 13.511,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 217272320,
+              "footprint_bytes": 183357440,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 220794880,
+          "footprint_sum_bytes": 184582144
+        },
+        {
+          "seconds": 14.717,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 244043776,
+              "footprint_bytes": 210124800,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 247566336,
+          "footprint_sum_bytes": 211349504
+        },
+        {
+          "seconds": 15.948,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 244326400,
+              "footprint_bytes": 210403328,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 247848960,
+          "footprint_sum_bytes": 211628032
+        },
+        {
+          "seconds": 17.092,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 244326400,
+              "footprint_bytes": 210403328,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 247848960,
+          "footprint_sum_bytes": 211628032
+        },
+        {
+          "seconds": 18.26,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 244326400,
+              "footprint_bytes": 210403328,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 247848960,
+          "footprint_sum_bytes": 211628032
+        },
+        {
+          "seconds": 19.441,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 244359168,
+              "footprint_bytes": 210436096,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 247881728,
+          "footprint_sum_bytes": 211660800
+        },
+        {
+          "seconds": 20.604,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 244359168,
+              "footprint_bytes": 210436096,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 247881728,
+          "footprint_sum_bytes": 211660800
+        },
+        {
+          "seconds": 21.86,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 254042112,
+              "footprint_bytes": 220119040,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 257564672,
+          "footprint_sum_bytes": 221343744
+        },
+        {
+          "seconds": 23.118,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 283860992,
+              "footprint_bytes": 249937920,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 287383552,
+          "footprint_sum_bytes": 251162624
+        },
+        {
+          "seconds": 24.32,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 311709696,
+              "footprint_bytes": 277786624,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 315232256,
+          "footprint_sum_bytes": 279011328
+        },
+        {
+          "seconds": 25.629,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 340320256,
+              "footprint_bytes": 306397184,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 343842816,
+          "footprint_sum_bytes": 307621888
+        },
+        {
+          "seconds": 26.882,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 363769856,
+              "footprint_bytes": 329846784,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 367292416,
+          "footprint_sum_bytes": 331071488
+        },
+        {
+          "seconds": 28.109,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 394399744,
+              "footprint_bytes": 360476672,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 397922304,
+          "footprint_sum_bytes": 361701376
+        },
+        {
+          "seconds": 29.296,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 422952960,
+              "footprint_bytes": 389029888,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 426475520,
+          "footprint_sum_bytes": 390254592
+        },
+        {
+          "seconds": 30.543,
+          "processes": [
+            {
+              "pid": 10167,
+              "errno": 0,
+              "resident_bytes": 3522560,
+              "footprint_bytes": 1224704,
+              "start_abstime": 959738557400,
+              "command": "guest-launcher"
+            },
+            {
+              "pid": 10169,
+              "errno": 0,
+              "resident_bytes": 439730176,
+              "footprint_bytes": 405803008,
+              "start_abstime": 959761299589,
+              "ppid": 1,
+              "command": "/System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine"
+            }
+          ],
+          "resident_sum_bytes": 443252736,
+          "footprint_sum_bytes": 407027712
+        },
+        {
+          "seconds": 32.337,
+          "processes": [],
+          "resident_sum_bytes": 0,
+          "footprint_sum_bytes": 0
+        }
+      ],
+      "launcher_pid": 10167,
+      "cleanup_seconds": 0.763,
+      "exit_code": 0,
+      "success": true,
+      "elapsed_seconds": 35.403
+    }
+  ]
+}
