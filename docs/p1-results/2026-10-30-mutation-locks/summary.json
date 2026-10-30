@@ -1,0 +1,44 @@
+{
+  "core.jsonl": {
+    "pass": 512,
+    "skip": 11,
+    "fail": 0
+  },
+  "isolated.jsonl": {
+    "pass": 32,
+    "skip": 0,
+    "fail": 0
+  },
+  "locks.jsonl": {
+    "pass": 90,
+    "skip": 0,
+    "fail": 0
+  },
+  "unrelated_logout_ms": {
+    "samples": [
+      4.241,
+      2.244,
+      2.335,
+      2.446,
+      3.851,
+      2.24,
+      2.359,
+      2.563,
+      2.431,
+      2.311
+    ],
+    "min": 2.24,
+    "median": 2.395,
+    "max": 4.241
+  },
+  "mutations.jsonl": {
+    "pass": 20,
+    "skip": 1,
+    "fail": 0
+  },
+  "race.jsonl": {
+    "pass": 512,
+    "skip": 11,
+    "fail": 0
+  }
+}
