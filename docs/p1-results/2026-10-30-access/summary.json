@@ -1,0 +1,66 @@
+{
+  "run": "https://github.com/space-protocol-project/space-server/actions/runs/41087660206",
+  "headSha": "09e78138217745e26405ca6f51dfdf66df3409ad",
+  "counts": {
+    "access-races.jsonl": {
+      "pass": 65
+    },
+    "backup-validation.jsonl": {
+      "pass": 27
+    },
+    "core.jsonl": {
+      "pass": 547,
+      "skip": 12
+    },
+    "crash.jsonl": {
+      "pass": 40
+    },
+    "isolated.jsonl": {
+      "pass": 67
+    },
+    "locks.jsonl": {
+      "pass": 110
+    },
+    "mutations.jsonl": {
+      "pass": 39,
+      "skip": 1
+    },
+    "outbox.jsonl": {
+      "pass": 60
+    },
+    "race.jsonl": {
+      "pass": 547,
+      "skip": 12
+    }
+  },
+  "scenarios": {
+    "access-races.jsonl": {
+      "TestExtensionP1MutationAccessBeforeCommit/acl": 5,
+      "TestExtensionP1MutationAccessBeforeCommit/membership": 5,
+      "TestExtensionP1MutationAccessBeforeCommit/owner": 5,
+      "TestExtensionP1MutationAccessBeforeCommit": 5,
+      "TestExtensionP1MutationAccessAfterCommit/acl": 5,
+      "TestExtensionP1MutationAccessAfterCommit/membership": 5,
+      "TestExtensionP1MutationAccessAfterCommit/owner": 5,
+      "TestExtensionP1MutationAccessAfterCommit": 5,
+      "TestExtensionP1MutationExpiryAtCommit/session": 5,
+      "TestExtensionP1MutationExpiryAtCommit/grant": 5,
+      "TestExtensionP1MutationExpiryAtCommit/parent": 5,
+      "TestExtensionP1MutationExpiryAtCommit/pairing": 5,
+      "TestExtensionP1MutationExpiryAtCommit": 5
+    },
+    "locks.jsonl": {
+      "TestExtensionP1MutationAuthorityBeforeCommit/parent": 10,
+      "TestExtensionP1MutationAuthorityBeforeCommit/pairing": 10,
+      "TestExtensionP1MutationAuthorityBeforeCommit/rotation": 10,
+      "TestExtensionP1MutationAuthorityBeforeCommit/claimed_parent": 10,
+      "TestExtensionP1MutationAuthorityBeforeCommit": 10,
+      "TestExtensionP1MutationAuthorityAfterCommit/parent": 10,
+      "TestExtensionP1MutationAuthorityAfterCommit/pairing": 10,
+      "TestExtensionP1MutationAuthorityAfterCommit/rotation": 10,
+      "TestExtensionP1MutationAuthorityAfterCommit/claimed_parent": 10,
+      "TestExtensionP1MutationAuthorityAfterCommit": 10,
+      "TestExtensionP1MutationCommitOrdersLogout": 10
+    }
+  }
+}

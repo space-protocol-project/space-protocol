@@ -1,0 +1,117 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-10-30T16:11:53Z",
+  "headSha": "09e78138217745e26405ca6f51dfdf66df3409ad",
+  "jobs": [
+    {
+      "completedAt": "2026-10-30T16:20:59Z",
+      "conclusion": "success",
+      "databaseId": 124172972256,
+      "name": "core",
+      "startedAt": "2026-10-30T16:11:57Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-30T16:12:00Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-30T16:11:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:12:14Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "startedAt": "2026-10-30T16:12:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:12:15Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-10-30T16:12:14Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:12:28Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 4,
+          "startedAt": "2026-10-30T16:12:15Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:20:18Z",
+          "conclusion": "success",
+          "name": "Зависимости, анализ и проверки ядра",
+          "number": 5,
+          "startedAt": "2026-10-30T16:12:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:20:28Z",
+          "conclusion": "success",
+          "name": "Сборка настоящего WASM и worker",
+          "number": 6,
+          "startedAt": "2026-10-30T16:20:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:20:52Z",
+          "conclusion": "success",
+          "name": "Настоящие сессии, ACL, RPC и изолированный WASM",
+          "number": 7,
+          "startedAt": "2026-10-30T16:20:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:20:54Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 8,
+          "startedAt": "2026-10-30T16:20:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:20:54Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 14,
+          "startedAt": "2026-10-30T16:20:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:20:54Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 15,
+          "startedAt": "2026-10-30T16:20:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:20:55Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 16,
+          "startedAt": "2026-10-30T16:20:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T16:20:55Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-10-30T16:20:55Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/41087660206/job/124172972256"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-10-30T16:20:59Z",
+  "url": "https://github.com/space-protocol-project/space-server/actions/runs/41087660206"
+}
