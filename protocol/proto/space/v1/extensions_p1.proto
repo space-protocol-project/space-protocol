@@ -6,6 +6,7 @@ option go_package = "github.com/space-protocol-project/space-server/gen/space/v1
 service ExtensionP1Service {
   rpc QueryExtension(QueryExtensionRequest) returns (QueryExtensionResponse);
   rpc ExecuteExtensionCommand(ExecuteExtensionCommandRequest) returns (ExecuteExtensionCommandResponse);
+  rpc ReconcileExtensionCommand(ReconcileExtensionCommandRequest) returns (ReconcileExtensionCommandResponse);
 }
 
 message QueryExtensionRequest {
@@ -37,6 +38,26 @@ message ExecuteExtensionCommandResponse {
   ExtensionCommandEffect effect = 2;
   uint64 state_revision = 3;
   bool replayed = 4;
+}
+
+// Проверяет точный исходный запрос, не исполняя команду и не вызывая WASM.
+message ReconcileExtensionCommandRequest {
+  ExecuteExtensionCommandRequest command = 1;
+}
+enum ExtensionCommandOutcome {
+  EXTENSION_COMMAND_OUTCOME_UNSPECIFIED = 0;
+  // Квитанция отсутствует; это НЕ доказательство отсутствия эффекта.
+  EXTENSION_COMMAND_OUTCOME_UNKNOWN = 1;
+  EXTENSION_COMMAND_OUTCOME_CONFIRMED = 2;
+}
+message ReconcileExtensionCommandResponse {
+  ExtensionCommandOutcome outcome = 1;
+  // Только для CONFIRMED; выдача требует текущих прав исполнения команды.
+  ExecuteExtensionCommandResponse receipt = 2;
+  // P1 пока возвращает false/0: срок хранения и tombstone ещё не реализованы.
+  // UNKNOWN никогда не разрешает повторную отправку сам по себе.
+  bool retry_window_known = 3;
+  uint64 retry_window_remaining_ms = 4;
 }
 
 // Недоверенное предложение WASM, не SQL и не разрешение записи.
