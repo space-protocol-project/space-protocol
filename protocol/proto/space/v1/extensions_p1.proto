@@ -1,0 +1,59 @@
+syntax = "proto3";
+package space.v1;
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+// Эксперимент P1. Отдельная регистрация, без публичной capability v1.
+service ExtensionP1Service {
+  rpc QueryExtension(QueryExtensionRequest) returns (QueryExtensionResponse);
+  rpc ExecuteExtensionCommand(ExecuteExtensionCommandRequest) returns (ExecuteExtensionCommandResponse);
+}
+
+message QueryExtensionRequest {
+  string instance_id = 1;
+  string query = 2;
+  bytes payload_json = 3; // UTF-8 JSON, не больше 16 КиБ; context задаёт только ядро.
+}
+message QueryExtensionResponse {
+  bytes document_json = 1;
+  string ui_api = 2;
+}
+
+enum ExtensionCommandEffect {
+  EXTENSION_COMMAND_EFFECT_UNSPECIFIED = 0;
+  EXTENSION_COMMAND_EFFECT_NONE = 1;
+  EXTENSION_COMMAND_EFFECT_MUTATION = 2;
+}
+message ExecuteExtensionCommandRequest {
+  string instance_id = 1;
+  string command = 2;
+  bytes payload_json = 3;
+  // Должен совпадать с доверенным описанием команды. Клиент не выдаёт полномочия.
+  ExtensionCommandEffect effect = 4;
+  string idempotency_key = 5;
+  uint64 expected_state_revision = 6;
+}
+message ExecuteExtensionCommandResponse {
+  bytes document_json = 1;
+  ExtensionCommandEffect effect = 2;
+  uint64 state_revision = 3;
+  bool replayed = 4;
+}
+
+// Недоверенное предложение WASM, не SQL и не разрешение записи.
+// Приёмка требует новой проверки сессии/ACL внутри транзакции записи.
+message ExtensionMutationPlan {
+  uint64 expected_state_revision = 1;
+  repeated ExtensionMutationOperation operations = 2;
+  repeated ExtensionMutationEvent events = 3;
+}
+message ExtensionMutationOperation {
+  string key = 1;
+  oneof change {
+    bytes put_json = 2;
+    bool delete = 3; // Только true; отсутствие change запрещено.
+  }
+}
+message ExtensionMutationEvent {
+  string type = 1;
+  bytes payload_json = 2;
+}
