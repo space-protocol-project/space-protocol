@@ -1,0 +1,22 @@
+{
+  "core.jsonl": {
+    "pass": 504,
+    "skip": 11,
+    "fail": 0
+  },
+  "isolated.jsonl": {
+    "pass": 24,
+    "skip": 0,
+    "fail": 0
+  },
+  "mutations.jsonl": {
+    "pass": 12,
+    "skip": 1,
+    "fail": 0
+  },
+  "race.jsonl": {
+    "pass": 504,
+    "skip": 11,
+    "fail": 0
+  }
+}
