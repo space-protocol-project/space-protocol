@@ -1,0 +1,45 @@
+{
+  "run": "https://github.com/space-protocol-project/space-server/actions/runs/41089847861",
+  "headSha": "9a19acd964135a94f1591bf2f2604ebc2252a7a6",
+  "counts": {
+    "access-races.jsonl": {
+      "pass": 65
+    },
+    "backup-validation.jsonl": {
+      "pass": 27
+    },
+    "core.jsonl": {
+      "pass": 547,
+      "skip": 13
+    },
+    "crash.jsonl": {
+      "pass": 40
+    },
+    "isolated.jsonl": {
+      "pass": 71
+    },
+    "locks.jsonl": {
+      "pass": 110
+    },
+    "mutations.jsonl": {
+      "pass": 39,
+      "skip": 2
+    },
+    "outbox.jsonl": {
+      "pass": 60
+    },
+    "race.jsonl": {
+      "pass": 547,
+      "skip": 13
+    },
+    "worker-crash.jsonl": {
+      "pass": 20
+    }
+  },
+  "scenarios": {
+    "TestExtensionP1MutationWorkerCrashRecovery/during_worker": 5,
+    "TestExtensionP1MutationWorkerCrashRecovery/before_commit": 5,
+    "TestExtensionP1MutationWorkerCrashRecovery/after_commit": 5,
+    "TestExtensionP1MutationWorkerCrashRecovery": 5
+  }
+}
