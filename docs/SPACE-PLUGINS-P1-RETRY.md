@@ -12,9 +12,10 @@
 | --- | --- |
 | Проверенный OK на ту же команду | confirmed, unknown=false, включая ответ после локальной отмены: отмена не откатывает уже подтверждённую запись |
 | Unknown, Internal, Unavailable, DeadlineExceeded, потеря транспорта TransportLost | unknown=true; ограниченный повтор неизменного запроса, только если выполнены условия ниже |
+| DataLoss | stop, unknown=true; повреждение данных не доказывает откат, автоматического повтора нет |
 | Canceled или локальная отмена | stop; Canceled считается неоднозначным; текущая неопределённость сохраняется, автоматического возобновления нет |
 | Unauthenticated | reauthenticate; это действие оболочки, не автоматический вход и не отправка команды; предыдущая неопределённость сохраняется |
-| InvalidArgument, NotFound, AlreadyExists, PermissionDenied, ResourceExhausted, FailedPrecondition, Aborted, OutOfRange, Unimplemented, DataLoss | stop; предыдущая неопределённость сохраняется; конфликт ревизии не исправляется автоматически новой ревизией или ключом |
+| InvalidArgument, NotFound, AlreadyExists, PermissionDenied, ResourceExhausted, FailedPrecondition, Aborted, OutOfRange, Unimplemented | stop; предыдущая неопределённость сохраняется; конфликт ревизии не исправляется автоматически новой ревизией или ключом |
 | Неизвестный код, некорректные локальные параметры или изменившаяся привязка запроса | stop, unknown=true |
 
 Коды gRPC передаются политике нормализованными именами; TransportLost — локальное наблюдение транспорта. Строка message и прежний экспериментальный retryable из UI error-схемы не управляют повтором. Политика не разбирает сообщения SQL, не раскрывает внутренние ошибки и не меняет серверное отображение ошибок.
