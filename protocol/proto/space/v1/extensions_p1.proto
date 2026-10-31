@@ -7,6 +7,16 @@ service ExtensionP1Service {
   rpc QueryExtension(QueryExtensionRequest) returns (QueryExtensionResponse);
   rpc ExecuteExtensionCommand(ExecuteExtensionCommandRequest) returns (ExecuteExtensionCommandResponse);
   rpc ReconcileExtensionCommand(ReconcileExtensionCommandRequest) returns (ReconcileExtensionCommandResponse);
+  rpc GetExtensionMutationContext(GetExtensionMutationContextRequest) returns (GetExtensionMutationContextResponse);
+}
+
+// Доверенный контекст получают до первой отправки и сохраняют вместе с командой.
+message GetExtensionMutationContextRequest {
+  string instance_id = 1;
+}
+message GetExtensionMutationContextResponse {
+  // 32 строчных шестнадцатеричных символа; меняется при restore, но не restart.
+  string history_id = 1;
 }
 
 message QueryExtensionRequest {
@@ -32,6 +42,9 @@ message ExecuteExtensionCommandRequest {
   ExtensionCommandEffect effect = 4;
   string idempotency_key = 5;
   uint64 expected_state_revision = 6;
+  // Обязателен для исполнения MUTATION. При повторе менять запрещено.
+  // Для сверки старой квитанции сохраняется исходное значение, включая пустое v1/v2.
+  string history_id = 7;
 }
 message ExecuteExtensionCommandResponse {
   bytes document_json = 1;
