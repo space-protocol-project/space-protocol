@@ -1,0 +1,1 @@
+exit=0 stdout=b'{"abi":"space_plugin_p1","kind":"query","name":"overview","payload":{},"context":{"space_id":"space_demo"}}' stderr=b''

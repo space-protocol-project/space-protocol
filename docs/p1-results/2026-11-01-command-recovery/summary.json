@@ -1,0 +1,11 @@
+{
+  "app_sha": "26daad3bdbb049dbbf95f62f4b4636198d0bdca5",
+  "server_sha": "23327afa05c281b36963775e05fcc755c4e80249",
+  "go_pass_results": 4,
+  "sigkill_confirmed": 3,
+  "cold_native_reads": 9,
+  "unit_tests": 55,
+  "demo_tests": 64,
+  "max_cognitive": 14,
+  "cubit_max_cognitive": 10
+}
