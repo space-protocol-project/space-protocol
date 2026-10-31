@@ -1,0 +1,23 @@
+{
+  "runs": {
+    "server": {
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/41196474675",
+      "headSha": "2e270e8c57d53b1176f0fd11d231562e7e98d5ac"
+    },
+    "backup": {
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/41196473937",
+      "headSha": "2e270e8c57d53b1176f0fd11d231562e7e98d5ac"
+    },
+    "client": {
+      "url": "https://github.com/space-protocol-project/space-app/actions/runs/41196116962",
+      "headSha": "49028b681728f9093ed00ca06fc9658c23df3f53"
+    }
+  },
+  "retentionRepeatedPass": 15,
+  "backupPassPerOS": 21,
+  "backupVariantsPerOS": 4,
+  "backupRepeatsPerOS": 3,
+  "databasePass": 25,
+  "clientTests": 51,
+  "maxDartCOG": 14
+}

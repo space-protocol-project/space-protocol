@@ -257,7 +257,7 @@
         },
         "retryWindowKnown": {
           "type": "boolean",
-          "description": "P1 пока возвращает false/0: срок хранения и tombstone ещё не реализованы.\nUNKNOWN никогда не разрешает повторную отправку сам по себе."
+          "description": "P1 пока возвращает false/0: гарантированное окно до первой отправки ещё не реализовано.\nUNKNOWN никогда не разрешает повторную отправку сам по себе."
         },
         "retryWindowRemainingMs": {
           "type": "string",

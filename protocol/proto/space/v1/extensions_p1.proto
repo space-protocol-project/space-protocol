@@ -54,7 +54,7 @@ message ReconcileExtensionCommandResponse {
   ExtensionCommandOutcome outcome = 1;
   // Только для CONFIRMED; выдача требует текущих прав исполнения команды.
   ExecuteExtensionCommandResponse receipt = 2;
-  // P1 пока возвращает false/0: срок хранения и tombstone ещё не реализованы.
+  // P1 пока возвращает false/0: гарантированное окно до первой отправки ещё не реализовано.
   // UNKNOWN никогда не разрешает повторную отправку сам по себе.
   bool retry_window_known = 3;
   uint64 retry_window_remaining_ms = 4;
