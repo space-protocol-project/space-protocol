@@ -13,10 +13,17 @@ service ExtensionP1Service {
 // Доверенный контекст получают до первой отправки и сохраняют вместе с командой.
 message GetExtensionMutationContextRequest {
   string instance_id = 1;
+  // Только перед новой командой; повтор не запрашивает новое разрешение.
+  bool request_retry_window = 2;
 }
 message GetExtensionMutationContextResponse {
   // 32 строчных шестнадцатеричных символа; меняется при restore, но не restart.
   string history_id = 1;
+  // Короткое разрешение, привязанное к principal, экземпляру и истории.
+  // Недействительно после перезапуска исполнителя. Не сохранять как новое окно при resume.
+  string retry_lease_id = 2;
+  // 30000 мс от выдачи; клиент отсчитывает от начала RPC монотонными часами.
+  uint64 retry_window_remaining_ms = 3;
 }
 
 message QueryExtensionRequest {
@@ -45,6 +52,8 @@ message ExecuteExtensionCommandRequest {
   // Обязателен для исполнения MUTATION. При повторе менять запрещено.
   // Для сверки старой квитанции сохраняется исходное значение, включая пустое v1/v2.
   string history_id = 7;
+  // Неизменная часть команды/digest. Пустое значение не разрешает автоматический повтор.
+  string retry_lease_id = 8;
 }
 message ExecuteExtensionCommandResponse {
   bytes document_json = 1;
