@@ -1,0 +1,45 @@
+[{"event":"daemon.connected","params":{"version":"0.6.1","pid":10500}}]
+[{"event":"app.start","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","deviceId":"linux","directory":"/home/runner/work/space-app/space-app/client","supportsRestart":true,"launchMode":"run","mode":"debug"}}]
+Launching test/probes/extension_demo_probe.dart on Linux in debug mode...
+[{"event":"app.progress","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","id":"0","progressId":null,"message":"Building Linux application...","finished":false}}]
+download: https://github.com/webrtc-sdk/libwebrtc/releases/download/libwebrtc.m150.7871.04/libwebrtc-linux-x64-release.zip
+CMake Warning at flutter/ephemeral/.plugin_symlinks/flutter_webrtc/linux/CMakeLists.txt:88 (message):
+  flutter_webrtc: libpulse NOT found -- Linux system-audio loopback capture
+  disabled (getDisplayMedia({audio:true}) yields no audio track).  Install
+  the libpulse dev package to enable it.
+
+
+[{"event":"app.progress","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","id":"0","progressId":null,"finished":true}}]
+✓ Built build/linux/x64/debug/bundle/space_client
+
+(org.spaceprotocol.space_client:13901): dbind-WARNING **: 12:07:57.226: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+
+(org.spaceprotocol.space_client:13901): Atk-CRITICAL **: 12:07:57.504: atk_socket_embed: assertion 'plug_id != NULL' failed
+
+(org.spaceprotocol.space_client:13901): GLib-GObject-CRITICAL **: 12:07:57.753: ../../../gobject/gsignal.c:2427: signal 'pre-engine-restart' is invalid for instance '0x556b0b8193d0' of type 'FlEngine'
+[{"event":"app.debugPort","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","port":42723,"wsUri":"ws://127.0.0.1:42723/Nsac1mYOTvE=/ws","baseUri":"file:///tmp/clientHKTTMC/client/"}}]
+[{"event":"app.devTools","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","uri":"http://127.0.0.1:42723/Nsac1mYOTvE=/devtools/?uri=ws://127.0.0.1:42723/Nsac1mYOTvE=/ws"}}]
+[{"event":"app.dtd","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","uri":"ws://127.0.0.1:43411/sdupu-O2Pz0="}}]
+[{"event":"app.progress","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","id":"1","progressId":"devFS.update","message":"Syncing files to device Linux...","finished":false}}]
+COMMUNITY_UI_READY
+[{"id":1,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"event":"app.progress","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","id":"1","progressId":"devFS.update","finished":true}}]
+[{"event":"app.started","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b"}}]
+[{"id":2,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":3,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":4,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"event":"app.progress","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","id":"2","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[{"event":"app.progress","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","id":"3","progressId":"devFS.update","message":"Syncing files to device Linux...","finished":false}}]
+[{"event":"app.progress","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","id":"3","progressId":"devFS.update","finished":true}}]
+[{"event":"app.progress","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b","id":"2","progressId":"hot.restart","finished":true}}]
+Restarted application in 1,360ms.
+[{"id":5,"result":{"code":0,"message":""}}]
+COMMUNITY_UI_READY
+[{"id":6,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":7,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":8,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":9,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+Application finished.
+[{"event":"app.stop","params":{"appId":"816b9481-338b-42c3-8d78-e2f5a9dfc14b"}}]

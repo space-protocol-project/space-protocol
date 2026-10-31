@@ -49,6 +49,39 @@
         ]
       }
     },
+    "/space.v1.ExtensionP1Service/GetExtensionMutationContext": {
+      "post": {
+        "operationId": "ExtensionP1Service_GetExtensionMutationContext",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetExtensionMutationContextResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Доверенный контекст получают до первой отправки и сохраняют вместе с командой.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetExtensionMutationContextRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ExtensionP1Service"
+        ]
+      }
+    },
     "/space.v1.ExtensionP1Service/QueryExtension": {
       "post": {
         "operationId": "ExtensionP1Service_QueryExtension",
@@ -167,6 +200,10 @@
         "expectedStateRevision": {
           "type": "string",
           "format": "uint64"
+        },
+        "historyId": {
+          "type": "string",
+          "description": "Обязателен для исполнения MUTATION. При повторе менять запрещено.\nДля сверки старой квитанции сохраняется исходное значение, включая пустое v1/v2."
         }
       }
     },
@@ -207,6 +244,24 @@
       ],
       "default": "EXTENSION_COMMAND_OUTCOME_UNSPECIFIED",
       "description": " - EXTENSION_COMMAND_OUTCOME_UNKNOWN: Квитанция отсутствует; это НЕ доказательство отсутствия эффекта."
+    },
+    "v1GetExtensionMutationContextRequest": {
+      "type": "object",
+      "properties": {
+        "instanceId": {
+          "type": "string"
+        }
+      },
+      "description": "Доверенный контекст получают до первой отправки и сохраняют вместе с командой."
+    },
+    "v1GetExtensionMutationContextResponse": {
+      "type": "object",
+      "properties": {
+        "historyId": {
+          "type": "string",
+          "description": "32 строчных шестнадцатеричных символа; меняется при restore, но не restart."
+        }
+      }
     },
     "v1QueryExtensionRequest": {
       "type": "object",
