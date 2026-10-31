@@ -1,0 +1,139 @@
+{
+  "conclusion": "success",
+  "headSha": "e590604c2f3df5146954b5e1960c37bd37e0ddc5",
+  "jobs": [
+    {
+      "completedAt": "2026-10-31T21:24:28Z",
+      "conclusion": "success",
+      "databaseId": 124661618714,
+      "name": "generate",
+      "startedAt": "2026-10-31T21:23:20Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-31T21:23:23Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-31T21:23:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:23:26Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-31T21:23:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:23:27Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-10-31T21:23:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:23:28Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 4,
+          "startedAt": "2026-10-31T21:23:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:23:44Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 5,
+          "startedAt": "2026-10-31T21:23:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:24:07Z",
+          "conclusion": "success",
+          "name": "Run subosito/flutter-action@v2",
+          "number": 6,
+          "startedAt": "2026-10-31T21:23:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:24:19Z",
+          "conclusion": "success",
+          "name": "Закреплённые генераторы проекта",
+          "number": 7,
+          "startedAt": "2026-10-31T21:24:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:24:21Z",
+          "conclusion": "success",
+          "name": "Проверка контракта и генерация только нового RPC",
+          "number": 8,
+          "startedAt": "2026-10-31T21:24:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:24:23Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 9,
+          "startedAt": "2026-10-31T21:24:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:24:23Z",
+          "conclusion": "success",
+          "name": "Post Run subosito/flutter-action@v2",
+          "number": 14,
+          "startedAt": "2026-10-31T21:24:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:24:23Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 15,
+          "startedAt": "2026-10-31T21:24:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:24:24Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "startedAt": "2026-10-31T21:24:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:24:24Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 17,
+          "startedAt": "2026-10-31T21:24:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:24:24Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 18,
+          "startedAt": "2026-10-31T21:24:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:24:24Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 19,
+          "startedAt": "2026-10-31T21:24:24Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-app/actions/runs/41243352414/job/124661618714"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/space-protocol-project/space-app/actions/runs/41243352414"
+}

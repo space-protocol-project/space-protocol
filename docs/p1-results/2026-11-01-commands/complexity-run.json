@@ -1,0 +1,107 @@
+{
+  "conclusion": "success",
+  "headSha": "b45f3f0973ad713481cd1358d83e0e75a970d2a5",
+  "jobs": [
+    {
+      "completedAt": "2026-10-31T21:33:03Z",
+      "conclusion": "success",
+      "databaseId": 124663688848,
+      "name": "cognitive",
+      "startedAt": "2026-10-31T21:32:21Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-31T21:32:23Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-31T21:32:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:32:26Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-31T21:32:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:32:26Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "startedAt": "2026-10-31T21:32:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:32:27Z",
+          "conclusion": "success",
+          "name": "Закреплённый Neovim 0.11.5",
+          "number": 4,
+          "startedAt": "2026-10-31T21:32:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:32:29Z",
+          "conclusion": "success",
+          "name": "Закреплённые исходники анализатора и парсера",
+          "number": 5,
+          "startedAt": "2026-10-31T21:32:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:32:53Z",
+          "conclusion": "success",
+          "name": "Проверка самого профиля и защиты от неполного разбора",
+          "number": 6,
+          "startedAt": "2026-10-31T21:32:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:33:00Z",
+          "conclusion": "success",
+          "name": "Максимум COG 15 во всём рукописном Dart",
+          "number": 7,
+          "startedAt": "2026-10-31T21:32:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:33:01Z",
+          "conclusion": "success",
+          "name": "Отчёт сложности",
+          "number": 8,
+          "startedAt": "2026-10-31T21:33:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:33:02Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 15,
+          "startedAt": "2026-10-31T21:33:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:33:02Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "startedAt": "2026-10-31T21:33:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:33:02Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-10-31T21:33:02Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-app/actions/runs/41244052299/job/124663688848"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/space-protocol-project/space-app/actions/runs/41244052299"
+}

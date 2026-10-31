@@ -1,0 +1,37 @@
+{
+  "http_checks": [
+    {
+      "case": "missing-grant",
+      "status": 403,
+      "code": "permission_denied"
+    },
+    {
+      "case": "read-only",
+      "status": 403,
+      "code": "permission_denied"
+    },
+    {
+      "case": "version",
+      "status": 409,
+      "code": "unsupported_version"
+    },
+    {
+      "case": "context-spoof",
+      "status": 400,
+      "code": "invalid_request"
+    },
+    {
+      "case": "unknown-instance",
+      "status": 403,
+      "code": "permission_denied"
+    },
+    {
+      "case": "worker-loop",
+      "status": 502,
+      "code": "extension_failed"
+    }
+  ],
+  "healthy_after_fault": true,
+  "flutter_widgets": "passed",
+  "native_restart": "passed"
+}

@@ -1,0 +1,139 @@
+{
+  "conclusion": "success",
+  "headSha": "b45f3f0973ad713481cd1358d83e0e75a970d2a5",
+  "jobs": [
+    {
+      "completedAt": "2026-10-31T21:39:49Z",
+      "conclusion": "success",
+      "databaseId": 124663693964,
+      "name": "commands",
+      "startedAt": "2026-10-31T21:32:22Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-31T21:32:25Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-31T21:32:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:32:41Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "startedAt": "2026-10-31T21:32:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:32:43Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-10-31T21:32:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:32:44Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 4,
+          "startedAt": "2026-10-31T21:32:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:32:58Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 5,
+          "startedAt": "2026-10-31T21:32:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:33:23Z",
+          "conclusion": "success",
+          "name": "Run subosito/flutter-action@v2",
+          "number": 6,
+          "startedAt": "2026-10-31T21:32:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:34:15Z",
+          "conclusion": "success",
+          "name": "Подготовка клиента",
+          "number": 7,
+          "startedAt": "2026-10-31T21:33:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:39:42Z",
+          "conclusion": "success",
+          "name": "Потеря ответа после настоящего commit и повтор той же команды",
+          "number": 8,
+          "startedAt": "2026-10-31T21:34:15Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:39:44Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 9,
+          "startedAt": "2026-10-31T21:39:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:39:44Z",
+          "conclusion": "success",
+          "name": "Post Run subosito/flutter-action@v2",
+          "number": 14,
+          "startedAt": "2026-10-31T21:39:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:39:45Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 15,
+          "startedAt": "2026-10-31T21:39:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:39:45Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "startedAt": "2026-10-31T21:39:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:39:45Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 17,
+          "startedAt": "2026-10-31T21:39:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:39:46Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 18,
+          "startedAt": "2026-10-31T21:39:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-31T21:39:46Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 19,
+          "startedAt": "2026-10-31T21:39:46Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-app/actions/runs/41244052975/job/124663693964"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/space-protocol-project/space-app/actions/runs/41244052975"
+}
