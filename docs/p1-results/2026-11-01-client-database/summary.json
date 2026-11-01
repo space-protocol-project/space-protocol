@@ -1,0 +1,14 @@
+{
+  "app_sha": "59ab3c35b6266a67e0717ef91d22ca9796e3500a",
+  "server_sha": "5e6115a375ff3b86db128a86403ac2d21fc8d238",
+  "go_pass_results": 21,
+  "scenario_passes": 15,
+  "combined_database_scenarios": 6,
+  "client_sigkill_confirmed": 15,
+  "cold_native_reads": 33,
+  "database_sigkill_confirmed": 6,
+  "database_recovery_log_entries": 6,
+  "first_cold_reconcile_successes": 6,
+  "unit_tests": 55,
+  "max_cognitive": 14
+}

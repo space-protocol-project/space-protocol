@@ -1,0 +1,186 @@
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.utf8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default "max_connections" ... 100
+selecting default "shared_buffers" ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+
+Success. You can now start the database server using:
+initdb: warning: enabling "trust" authentication for local connections
+initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+
+    pg_ctl -D /var/lib/postgresql/data -l logfile start
+
+waiting for server to start....2026-11-01 12:48:11.710 UTC [48] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-11-01 12:48:11.711 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-01 12:48:11.714 UTC [51] LOG:  database system was shut down at 2026-11-01 12:48:11 UTC
+2026-11-01 12:48:11.718 UTC [48] LOG:  database system is ready to accept connections
+ done
+server started
+CREATE DATABASE
+
+
+/usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+
+2026-11-01 12:48:11.897 UTC [48] LOG:  received fast shutdown request
+waiting for server to shut down....2026-11-01 12:48:11.898 UTC [48] LOG:  aborting any active transactions
+2026-11-01 12:48:11.900 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+2026-11-01 12:48:11.901 UTC [49] LOG:  shutting down
+2026-11-01 12:48:11.901 UTC [49] LOG:  checkpoint starting: shutdown immediate
+2026-11-01 12:48:11.917 UTC [49] LOG:  checkpoint complete: wrote 925 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.014 s, sync=0.002 s, total=0.017 s; sync files=301, longest=0.001 s, average=0.001 s; distance=4256 kB, estimate=4256 kB; lsn=0/19179A8, redo lsn=0/19179A8
+2026-11-01 12:48:11.925 UTC [48] LOG:  database system is shut down
+ done
+server stopped
+
+PostgreSQL init process complete; ready for start up.
+
+2026-11-01 12:48:12.018 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-11-01 12:48:12.018 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-01 12:48:12.018 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-11-01 12:48:12.019 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-01 12:48:12.022 UTC [64] LOG:  database system was shut down at 2026-11-01 12:48:11 UTC
+2026-11-01 12:48:12.026 UTC [1] LOG:  database system is ready to accept connections
+2026-11-01 12:53:12.121 UTC [62] LOG:  checkpoint starting: time
+2026-11-01 12:53:16.542 UTC [62] LOG:  checkpoint complete: wrote 47 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.415 s, sync=0.002 s, total=4.421 s; sync files=12, longest=0.001 s, average=0.001 s; distance=278 kB, estimate=278 kB; lsn=0/195D378, redo lsn=0/195D2E8
+2026-11-01 13:02:09.994 UTC [2241] LOG:  unexpected EOF on client connection with an open transaction
+2026-11-01 13:02:10.058 UTC [2240] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:02:10.058 UTC [2239] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:02:10.059 UTC [2250] FATAL:  terminating connection due to unexpected postmaster exit
+
+PostgreSQL Database directory appears to contain a database; Skipping initialization
+
+2026-11-01 13:02:10.781 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-11-01 13:02:10.781 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-01 13:02:10.781 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-11-01 13:02:10.782 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-01 13:02:10.786 UTC [29] LOG:  database system was interrupted; last known up at 2026-11-01 12:53:16 UTC
+2026-11-01 13:02:10.814 UTC [29] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-11-01 13:02:10.817 UTC [29] LOG:  redo starts at 0/195D2E8
+2026-11-01 13:02:10.833 UTC [30] FATAL:  the database system is not yet accepting connections
+2026-11-01 13:02:10.833 UTC [30] DETAIL:  Consistent recovery state has not been yet reached.
+2026-11-01 13:02:10.927 UTC [29] LOG:  invalid record length at 0/243FBB8: expected at least 24, got 0
+2026-11-01 13:02:10.927 UTC [29] LOG:  redo done at 0/243FB90 system usage: CPU: user: 0.04 s, system: 0.06 s, elapsed: 0.11 s
+2026-11-01 13:02:10.930 UTC [27] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-11-01 13:02:10.935 UTC [31] FATAL:  the database system is not yet accepting connections
+2026-11-01 13:02:10.935 UTC [31] DETAIL:  Consistent recovery state has not been yet reached.
+2026-11-01 13:02:10.941 UTC [27] LOG:  checkpoint complete: wrote 1014 buffers (6.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.009 s, sync=0.002 s, total=0.012 s; sync files=377, longest=0.001 s, average=0.001 s; distance=11146 kB, estimate=11146 kB; lsn=0/243FBB8, redo lsn=0/243FBB8
+2026-11-01 13:02:10.945 UTC [1] LOG:  database system is ready to accept connections
+2026-11-01 13:02:14.789 UTC [50] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:02:14.789 UTC [40] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:02:14.789 UTC [39] FATAL:  terminating connection due to unexpected postmaster exit
+
+PostgreSQL Database directory appears to contain a database; Skipping initialization
+
+2026-11-01 13:02:15.116 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-11-01 13:02:15.117 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-01 13:02:15.117 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-11-01 13:02:15.118 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-01 13:02:15.121 UTC [29] LOG:  database system was interrupted; last known up at 2026-11-01 13:02:10 UTC
+2026-11-01 13:02:15.145 UTC [29] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-11-01 13:02:15.147 UTC [29] LOG:  redo starts at 0/243FC30
+2026-11-01 13:02:15.173 UTC [30] FATAL:  the database system is not yet accepting connections
+2026-11-01 13:02:15.173 UTC [30] DETAIL:  Consistent recovery state has not been yet reached.
+2026-11-01 13:02:15.182 UTC [29] LOG:  invalid record length at 0/293AE60: expected at least 24, got 0
+2026-11-01 13:02:15.182 UTC [29] LOG:  redo done at 0/293AE38 system usage: CPU: user: 0.02 s, system: 0.01 s, elapsed: 0.03 s
+2026-11-01 13:02:15.185 UTC [27] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-11-01 13:02:15.197 UTC [27] LOG:  checkpoint complete: wrote 723 buffers (4.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.002 s, total=0.013 s; sync files=367, longest=0.001 s, average=0.001 s; distance=5100 kB, estimate=5100 kB; lsn=0/293AE60, redo lsn=0/293AE60
+2026-11-01 13:02:15.201 UTC [1] LOG:  database system is ready to accept connections
+2026-11-01 13:02:38.150 UTC [97] LOG:  unexpected EOF on client connection with an open transaction
+2026-11-01 13:02:38.217 UTC [95] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:02:38.217 UTC [105] FATAL:  terminating connection due to unexpected postmaster exit
+
+PostgreSQL Database directory appears to contain a database; Skipping initialization
+
+2026-11-01 13:02:38.552 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-11-01 13:02:38.553 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-01 13:02:38.553 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-11-01 13:02:38.554 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-01 13:02:38.557 UTC [29] LOG:  database system was interrupted; last known up at 2026-11-01 13:02:15 UTC
+2026-11-01 13:02:38.587 UTC [29] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-11-01 13:02:38.590 UTC [29] LOG:  redo starts at 0/293AED8
+2026-11-01 13:02:38.602 UTC [30] FATAL:  the database system is not yet accepting connections
+2026-11-01 13:02:38.602 UTC [30] DETAIL:  Consistent recovery state has not been yet reached.
+2026-11-01 13:02:38.704 UTC [31] FATAL:  the database system is not yet accepting connections
+2026-11-01 13:02:38.704 UTC [31] DETAIL:  Consistent recovery state has not been yet reached.
+2026-11-01 13:02:38.713 UTC [29] LOG:  invalid record length at 0/3626740: expected at least 24, got 0
+2026-11-01 13:02:38.713 UTC [29] LOG:  redo done at 0/3626718 system usage: CPU: user: 0.05 s, system: 0.06 s, elapsed: 0.12 s
+2026-11-01 13:02:38.718 UTC [27] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-11-01 13:02:38.730 UTC [27] LOG:  checkpoint complete: wrote 1168 buffers (7.1%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.009 s, sync=0.002 s, total=0.013 s; sync files=369, longest=0.001 s, average=0.001 s; distance=13230 kB, estimate=13230 kB; lsn=0/3626740, redo lsn=0/3626740
+2026-11-01 13:02:38.734 UTC [1] LOG:  database system is ready to accept connections
+2026-11-01 13:02:42.559 UTC [40] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:02:42.559 UTC [50] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:02:42.560 UTC [39] FATAL:  terminating connection due to unexpected postmaster exit
+
+PostgreSQL Database directory appears to contain a database; Skipping initialization
+
+2026-11-01 13:02:42.885 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-11-01 13:02:42.885 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-01 13:02:42.885 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-11-01 13:02:42.886 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-01 13:02:42.889 UTC [29] LOG:  database system was interrupted; last known up at 2026-11-01 13:02:38 UTC
+2026-11-01 13:02:42.910 UTC [29] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-11-01 13:02:42.913 UTC [29] LOG:  redo starts at 0/36267B8
+2026-11-01 13:02:42.938 UTC [30] FATAL:  the database system is not yet accepting connections
+2026-11-01 13:02:42.938 UTC [30] DETAIL:  Consistent recovery state has not been yet reached.
+2026-11-01 13:02:42.946 UTC [29] LOG:  invalid record length at 0/3B1A850: expected at least 24, got 0
+2026-11-01 13:02:42.946 UTC [29] LOG:  redo done at 0/3B1A828 system usage: CPU: user: 0.01 s, system: 0.01 s, elapsed: 0.03 s
+2026-11-01 13:02:42.948 UTC [27] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-11-01 13:02:42.959 UTC [27] LOG:  checkpoint complete: wrote 751 buffers (4.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.002 s, total=0.012 s; sync files=367, longest=0.001 s, average=0.001 s; distance=5072 kB, estimate=5072 kB; lsn=0/3B1A850, redo lsn=0/3B1A850
+2026-11-01 13:02:42.963 UTC [1] LOG:  database system is ready to accept connections
+2026-11-01 13:03:05.700 UTC [99] LOG:  unexpected EOF on client connection with an open transaction
+2026-11-01 13:03:05.765 UTC [108] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:03:05.765 UTC [98] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:03:05.766 UTC [97] FATAL:  terminating connection due to unexpected postmaster exit
+
+PostgreSQL Database directory appears to contain a database; Skipping initialization
+
+2026-11-01 13:03:06.106 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-11-01 13:03:06.107 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-01 13:03:06.107 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-11-01 13:03:06.107 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-01 13:03:06.112 UTC [29] LOG:  database system was interrupted; last known up at 2026-11-01 13:02:42 UTC
+2026-11-01 13:03:06.144 UTC [29] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-11-01 13:03:06.146 UTC [29] LOG:  redo starts at 0/3B1A8C8
+2026-11-01 13:03:06.157 UTC [30] FATAL:  the database system is not yet accepting connections
+2026-11-01 13:03:06.157 UTC [30] DETAIL:  Consistent recovery state has not been yet reached.
+2026-11-01 13:03:06.260 UTC [31] FATAL:  the database system is not yet accepting connections
+2026-11-01 13:03:06.260 UTC [31] DETAIL:  Consistent recovery state has not been yet reached.
+2026-11-01 13:03:06.268 UTC [29] LOG:  invalid record length at 0/48C0750: expected at least 24, got 0
+2026-11-01 13:03:06.268 UTC [29] LOG:  redo done at 0/48C0728 system usage: CPU: user: 0.04 s, system: 0.07 s, elapsed: 0.12 s
+2026-11-01 13:03:06.271 UTC [27] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-11-01 13:03:06.283 UTC [27] LOG:  checkpoint complete: wrote 1229 buffers (7.5%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.010 s, sync=0.002 s, total=0.013 s; sync files=368, longest=0.001 s, average=0.001 s; distance=13975 kB, estimate=13975 kB; lsn=0/48C0750, redo lsn=0/48C0750
+2026-11-01 13:03:06.287 UTC [1] LOG:  database system is ready to accept connections
+2026-11-01 13:03:10.103 UTC [49] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:03:10.103 UTC [39] FATAL:  terminating connection due to unexpected postmaster exit
+2026-11-01 13:03:10.103 UTC [40] FATAL:  terminating connection due to unexpected postmaster exit
+
+PostgreSQL Database directory appears to contain a database; Skipping initialization
+
+2026-11-01 13:03:10.427 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-11-01 13:03:10.427 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-01 13:03:10.427 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-11-01 13:03:10.428 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-01 13:03:10.431 UTC [29] LOG:  database system was interrupted; last known up at 2026-11-01 13:03:06 UTC
+2026-11-01 13:03:10.453 UTC [29] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-11-01 13:03:10.455 UTC [29] LOG:  redo starts at 0/48C07C8
+2026-11-01 13:03:10.483 UTC [30] FATAL:  the database system is not yet accepting connections
+2026-11-01 13:03:10.483 UTC [30] DETAIL:  Consistent recovery state has not been yet reached.
+2026-11-01 13:03:10.489 UTC [29] LOG:  invalid record length at 0/4DEDD28: expected at least 24, got 0
+2026-11-01 13:03:10.489 UTC [29] LOG:  redo done at 0/4DEDD00 system usage: CPU: user: 0.02 s, system: 0.01 s, elapsed: 0.03 s
+2026-11-01 13:03:10.493 UTC [27] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-11-01 13:03:10.504 UTC [27] LOG:  checkpoint complete: wrote 793 buffers (4.8%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.002 s, total=0.012 s; sync files=368, longest=0.001 s, average=0.001 s; distance=5301 kB, estimate=5301 kB; lsn=0/4DEDD28, redo lsn=0/4DEDD28
+2026-11-01 13:03:10.507 UTC [1] LOG:  database system is ready to accept connections
