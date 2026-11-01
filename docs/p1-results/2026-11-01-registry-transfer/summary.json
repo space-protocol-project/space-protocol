@@ -1,0 +1,236 @@
+{
+  "server_sha": "50e53d8362009e26f5cdc36fe7cb9b18bfcab441",
+  "transfer_results": {
+    "linux/export": {
+      "pass": 3
+    },
+    "linux/import": {
+      "pass": 15
+    },
+    "windows/export": {
+      "pass": 3
+    },
+    "windows/import": {
+      "pass": 15
+    },
+    "darwin/export": {
+      "pass": 3
+    },
+    "darwin/import": {
+      "pass": 15
+    }
+  },
+  "core_results": {
+    "access-races": {
+      "pass": 65
+    },
+    "backup-validation": {
+      "pass": 39
+    },
+    "core": {
+      "pass": 651,
+      "skip": 20
+    },
+    "crash": {
+      "pass": 40
+    },
+    "history": {
+      "pass": 30
+    },
+    "isolated": {
+      "pass": 134
+    },
+    "lifecycle-coordinator": {
+      "pass": 1200
+    },
+    "lifecycle": {
+      "pass": 200,
+      "skip": 5
+    },
+    "locks": {
+      "pass": 110
+    },
+    "mutations": {
+      "pass": 39,
+      "skip": 2
+    },
+    "outbox": {
+      "pass": 60
+    },
+    "race": {
+      "pass": 651,
+      "skip": 20
+    },
+    "reconcile": {
+      "pass": 25
+    },
+    "retention": {
+      "pass": 15
+    },
+    "retry-lease": {
+      "pass": 20
+    },
+    "retry": {
+      "pass": 42
+    },
+    "worker-crash": {
+      "pass": 20
+    },
+    "faults": {
+      "pass": 25
+    }
+  },
+  "skips": {
+    "core": [
+      "TestBundledPostgresPreservesIdentityAndData",
+      "TestExtensionDatabaseFaults",
+      "TestExtensionP1BackupRoundTrip",
+      "TestExtensionP1LifecycleRealWASM",
+      "TestExtensionP1MutationRealWASM",
+      "TestExtensionP1MutationWorkerCrashRecovery",
+      "TestExtensionP1OldBackupRestore",
+      "TestExtensionP1RealIsolatedWASM",
+      "TestExtensionP1RegistryArchiveRejectsInvalid",
+      "TestExtensionP1RegistryArchiveRoundTrip",
+      "TestExtensionP1RegistryTransferExport",
+      "TestExtensionP1RegistryTransferImport",
+      "TestPluginBaseline",
+      "TestPortableRestoreFailureDoesNotPublish",
+      "TestPortableSpaceRoundTrip",
+      "TestPrivateInterfaceTURN",
+      "TestScheduledLiveBackupRestoresDatabase",
+      "TestStoppedDatabaseBackupAndRestore",
+      "TestWitnessNamespaceHelper",
+      "TestWitnessNetworkNamespaces"
+    ],
+    "lifecycle": [
+      "TestExtensionP1LifecycleRealWASM"
+    ],
+    "mutations": [
+      "TestExtensionP1MutationRealWASM",
+      "TestExtensionP1MutationWorkerCrashRecovery"
+    ],
+    "race": [
+      "TestBundledPostgresPreservesIdentityAndData",
+      "TestExtensionDatabaseFaults",
+      "TestExtensionP1BackupRoundTrip",
+      "TestExtensionP1LifecycleRealWASM",
+      "TestExtensionP1MutationRealWASM",
+      "TestExtensionP1MutationWorkerCrashRecovery",
+      "TestExtensionP1OldBackupRestore",
+      "TestExtensionP1RealIsolatedWASM",
+      "TestExtensionP1RegistryArchiveRejectsInvalid",
+      "TestExtensionP1RegistryArchiveRoundTrip",
+      "TestExtensionP1RegistryTransferExport",
+      "TestExtensionP1RegistryTransferImport",
+      "TestPluginBaseline",
+      "TestPortableRestoreFailureDoesNotPublish",
+      "TestPortableSpaceRoundTrip",
+      "TestPrivateInterfaceTURN",
+      "TestScheduledLiveBackupRestoresDatabase",
+      "TestStoppedDatabaseBackupAndRestore",
+      "TestWitnessNamespaceHelper",
+      "TestWitnessNetworkNamespaces"
+    ]
+  },
+  "directions": {
+    "windows_to_linux/full": {
+      "source_arch": "amd64",
+      "target_arch": "amd64",
+      "archive_sha256": "60f62591f037bac3421699565cf20f87c006329db85c4961c48d949d6ed7122d",
+      "repeats": 3
+    },
+    "windows_to_linux/retired": {
+      "source_arch": "amd64",
+      "target_arch": "amd64",
+      "archive_sha256": "d0dcf4b5a7052e5ea8a10c105186b91ba2e22f4b802c569002b54fcaf2f541af",
+      "repeats": 3
+    },
+    "darwin_to_linux/full": {
+      "source_arch": "arm64",
+      "target_arch": "amd64",
+      "archive_sha256": "4559cfa95826e57f44aa5b88fa20032b0992e9f45d87d3aa70fb85b6bd279f65",
+      "repeats": 3
+    },
+    "darwin_to_linux/retired": {
+      "source_arch": "arm64",
+      "target_arch": "amd64",
+      "archive_sha256": "0c012c991245accb90ce0d17bc776354c9d148e4b98f4d7612505539dc26acfb",
+      "repeats": 3
+    },
+    "linux_to_windows/full": {
+      "source_arch": "amd64",
+      "target_arch": "amd64",
+      "archive_sha256": "8eacd38560414e8cab588c353e522a4f7146e9c8b3a8daf4023117d25140bb93",
+      "repeats": 3
+    },
+    "linux_to_windows/retired": {
+      "source_arch": "amd64",
+      "target_arch": "amd64",
+      "archive_sha256": "f72c23afc7e272d261ba65d1c15749bccad8560c969183371e5029ea2aeb90a3",
+      "repeats": 3
+    },
+    "darwin_to_windows/full": {
+      "source_arch": "arm64",
+      "target_arch": "amd64",
+      "archive_sha256": "4559cfa95826e57f44aa5b88fa20032b0992e9f45d87d3aa70fb85b6bd279f65",
+      "repeats": 3
+    },
+    "darwin_to_windows/retired": {
+      "source_arch": "arm64",
+      "target_arch": "amd64",
+      "archive_sha256": "0c012c991245accb90ce0d17bc776354c9d148e4b98f4d7612505539dc26acfb",
+      "repeats": 3
+    },
+    "linux_to_darwin/full": {
+      "source_arch": "amd64",
+      "target_arch": "arm64",
+      "archive_sha256": "8eacd38560414e8cab588c353e522a4f7146e9c8b3a8daf4023117d25140bb93",
+      "repeats": 3
+    },
+    "linux_to_darwin/retired": {
+      "source_arch": "amd64",
+      "target_arch": "arm64",
+      "archive_sha256": "f72c23afc7e272d261ba65d1c15749bccad8560c969183371e5029ea2aeb90a3",
+      "repeats": 3
+    },
+    "windows_to_darwin/full": {
+      "source_arch": "amd64",
+      "target_arch": "arm64",
+      "archive_sha256": "60f62591f037bac3421699565cf20f87c006329db85c4961c48d949d6ed7122d",
+      "repeats": 3
+    },
+    "windows_to_darwin/retired": {
+      "source_arch": "amd64",
+      "target_arch": "arm64",
+      "archive_sha256": "d0dcf4b5a7052e5ea8a10c105186b91ba2e22f4b802c569002b54fcaf2f541af",
+      "repeats": 3
+    }
+  },
+  "transfer_run": "https://github.com/space-protocol-project/space-server/actions/runs/41327335523",
+  "core_run": "https://github.com/space-protocol-project/space-server/actions/runs/41327338847",
+  "import_leaf_scenarios": 36,
+  "export_archive_hashes": {
+    "linux/full": "8eacd38560414e8cab588c353e522a4f7146e9c8b3a8daf4023117d25140bb93",
+    "linux/retired": "f72c23afc7e272d261ba65d1c15749bccad8560c969183371e5029ea2aeb90a3",
+    "windows/full": "60f62591f037bac3421699565cf20f87c006329db85c4961c48d949d6ed7122d",
+    "windows/retired": "d0dcf4b5a7052e5ea8a10c105186b91ba2e22f4b802c569002b54fcaf2f541af",
+    "darwin/full": "4559cfa95826e57f44aa5b88fa20032b0992e9f45d87d3aa70fb85b6bd279f65",
+    "darwin/retired": "0c012c991245accb90ce0d17bc776354c9d148e4b98f4d7612505539dc26acfb"
+  },
+  "core_dependency_files_match_git_bytes": true,
+  "preliminary_run": "https://github.com/space-protocol-project/space-server/actions/runs/41326394070",
+  "preliminary_import_results": {
+    "darwin": {
+      "pass": 6,
+      "fail": 9
+    },
+    "linux": {
+      "fail": 9,
+      "pass": 6
+    },
+    "windows": {
+      "pass": 15
+    }
+  }
+}
