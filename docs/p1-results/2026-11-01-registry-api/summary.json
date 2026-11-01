@@ -1,0 +1,150 @@
+{
+  "server_sha": "92acf49a78304910f3b23e5af0e72fc8c303bfce",
+  "app_sha": "7206559ffca6c3c7cc6f87018cc9435eff8b3044",
+  "protocol_contract_sha": "824d5f9a4961a23eb745fd9d4b81e61f22689fef",
+  "core_results": {
+    "access-races": {
+      "pass": 65
+    },
+    "backup-validation": {
+      "pass": 39
+    },
+    "core": {
+      "pass": 723,
+      "skip": 20
+    },
+    "crash": {
+      "pass": 40
+    },
+    "history": {
+      "pass": 30
+    },
+    "isolated": {
+      "pass": 206
+    },
+    "lifecycle-coordinator": {
+      "pass": 1200
+    },
+    "lifecycle": {
+      "pass": 200,
+      "skip": 5
+    },
+    "locks": {
+      "pass": 110
+    },
+    "mutations": {
+      "pass": 39,
+      "skip": 2
+    },
+    "outbox": {
+      "pass": 60
+    },
+    "race": {
+      "pass": 723,
+      "skip": 20
+    },
+    "reconcile": {
+      "pass": 25
+    },
+    "registry-api": {
+      "pass": 360
+    },
+    "retention": {
+      "pass": 15
+    },
+    "retry-lease": {
+      "pass": 20
+    },
+    "retry": {
+      "pass": 42
+    },
+    "worker-crash": {
+      "pass": 20
+    },
+    "faults": {
+      "pass": 25
+    }
+  },
+  "skips": {
+    "core": [
+      "TestBundledPostgresPreservesIdentityAndData",
+      "TestExtensionDatabaseFaults",
+      "TestExtensionP1BackupRoundTrip",
+      "TestExtensionP1LifecycleRealWASM",
+      "TestExtensionP1MutationRealWASM",
+      "TestExtensionP1MutationWorkerCrashRecovery",
+      "TestExtensionP1OldBackupRestore",
+      "TestExtensionP1RealIsolatedWASM",
+      "TestExtensionP1RegistryArchiveRejectsInvalid",
+      "TestExtensionP1RegistryArchiveRoundTrip",
+      "TestExtensionP1RegistryTransferExport",
+      "TestExtensionP1RegistryTransferImport",
+      "TestPluginBaseline",
+      "TestPortableRestoreFailureDoesNotPublish",
+      "TestPortableSpaceRoundTrip",
+      "TestPrivateInterfaceTURN",
+      "TestScheduledLiveBackupRestoresDatabase",
+      "TestStoppedDatabaseBackupAndRestore",
+      "TestWitnessNamespaceHelper",
+      "TestWitnessNetworkNamespaces"
+    ],
+    "lifecycle": [
+      "TestExtensionP1LifecycleRealWASM"
+    ],
+    "mutations": [
+      "TestExtensionP1MutationRealWASM",
+      "TestExtensionP1MutationWorkerCrashRecovery"
+    ],
+    "race": [
+      "TestBundledPostgresPreservesIdentityAndData",
+      "TestExtensionDatabaseFaults",
+      "TestExtensionP1BackupRoundTrip",
+      "TestExtensionP1LifecycleRealWASM",
+      "TestExtensionP1MutationRealWASM",
+      "TestExtensionP1MutationWorkerCrashRecovery",
+      "TestExtensionP1OldBackupRestore",
+      "TestExtensionP1RealIsolatedWASM",
+      "TestExtensionP1RegistryArchiveRejectsInvalid",
+      "TestExtensionP1RegistryArchiveRoundTrip",
+      "TestExtensionP1RegistryTransferExport",
+      "TestExtensionP1RegistryTransferImport",
+      "TestPluginBaseline",
+      "TestPortableRestoreFailureDoesNotPublish",
+      "TestPortableSpaceRoundTrip",
+      "TestPrivateInterfaceTURN",
+      "TestScheduledLiveBackupRestoresDatabase",
+      "TestStoppedDatabaseBackupAndRestore",
+      "TestWitnessNamespaceHelper",
+      "TestWitnessNetworkNamespaces"
+    ]
+  },
+  "generation_run": "https://github.com/space-protocol-project/space-app/actions/runs/41329358201",
+  "core_run": "https://github.com/space-protocol-project/space-server/actions/runs/41330722204",
+  "client_run": "https://github.com/space-protocol-project/space-app/actions/runs/41329736992",
+  "preliminary_run": "https://github.com/space-protocol-project/space-server/actions/runs/41329699311",
+  "registry_api_results_with_parents": 360,
+  "registry_api_leaf_results": 300,
+  "core_dependency_files_match_git_bytes": true,
+  "generated_files_match_ci_artifact": {
+    "space-server/gen/space/v1/extensions_p1.pb.go": "54ab1d6af7ffd059b596c68923dd37bfad79ade3bedfe1f816d656d67853ccb9",
+    "space-server/gen/space/v1/extensions_p1_grpc.pb.go": "e0ba25856f35ba57790027bf6dab82fd053e7c9734c25da152df454dd52adc07",
+    "space-server/gen/space/v1/spacev1connect/extensions_p1.connect.go": "af0eae4b52e8ad8763324ca1996be80ae3d92a8f6320fa31ce4284a6170fbc52",
+    "space-app/client/lib/src/generated/space/v1/extensions_p1.connect.client.dart": "f8ec66fac68ad8c63743dc9c9cffa8e2c2ff32e6e72af5da7b7e6885e64540ad",
+    "space-app/client/lib/src/generated/space/v1/extensions_p1.connect.spec.dart": "6d99f45763f21bdf3456bf3f8977e23ccc9cd0b8e040c917676df02ec31d5c7b",
+    "space-app/client/lib/src/generated/space/v1/extensions_p1.pb.dart": "447242bd2e44a036902a01cda0a7a4814abc43e11308837e6b08884687564e26",
+    "space-app/client/lib/src/generated/space/v1/extensions_p1.pbenum.dart": "f460d3f2be67cac1a21bc6f5c66f0bd2a1d9566020870d50f99cf242c9d42f8a",
+    "space-app/client/lib/src/generated/space/v1/extensions_p1.pbjson.dart": "063c7ff0ce67fa8917fa9c425cad57d36c8925f64364e34b36561fec3df4b196",
+    "space-app/client/lib/src/generated/space/v1/extensions_p1.pbserver.dart": "296cb097b22f373ffe51c21c7f42efef9ee6abaddd3363b14903fd7d06bebd97",
+    "space-protocol/protocol/openapi/space/v1/extensions_p1.swagger.json": "b51074b42708a5012742dfda3295f1ac4c0168e7c15332e4ba43281c52eec98e"
+  },
+  "preliminary_results": {
+    "pass": 355,
+    "fail": 5
+  },
+  "client_results": {
+    "ui_tests": 7,
+    "cognitive_functions": 3646,
+    "max_cognitive": 14,
+    "limit": 15
+  }
+}
