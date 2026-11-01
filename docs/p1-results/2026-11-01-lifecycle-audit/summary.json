@@ -1,0 +1,112 @@
+{
+  "server_sha": "6091a8e9dde17dd77c7ac8c47c882cac6fe6c614",
+  "protocol_fixtures_sha": "a720dd0c0f4c00684d22f39b703b20f545ce85c7",
+  "run": "https://github.com/space-protocol-project/space-server/actions/runs/41319793316",
+  "results": {
+    "access-races": {
+      "pass": 65
+    },
+    "backup-validation": {
+      "pass": 39
+    },
+    "core": {
+      "pass": 651,
+      "skip": 16
+    },
+    "crash": {
+      "pass": 40
+    },
+    "history": {
+      "pass": 30
+    },
+    "isolated": {
+      "pass": 134
+    },
+    "lifecycle-coordinator": {
+      "pass": 1200
+    },
+    "lifecycle": {
+      "pass": 200,
+      "skip": 5
+    },
+    "locks": {
+      "pass": 110
+    },
+    "mutations": {
+      "pass": 39,
+      "skip": 2
+    },
+    "outbox": {
+      "pass": 60
+    },
+    "race": {
+      "pass": 651,
+      "skip": 16
+    },
+    "reconcile": {
+      "pass": 25
+    },
+    "retention": {
+      "pass": 15
+    },
+    "retry-lease": {
+      "pass": 20
+    },
+    "retry": {
+      "pass": 42
+    },
+    "worker-crash": {
+      "pass": 20
+    },
+    "database-faults": {
+      "pass": 25
+    }
+  },
+  "skipped_tests": {
+    "core": [
+      "TestBundledPostgresPreservesIdentityAndData",
+      "TestExtensionDatabaseFaults",
+      "TestExtensionP1BackupRoundTrip",
+      "TestExtensionP1LifecycleRealWASM",
+      "TestExtensionP1MutationRealWASM",
+      "TestExtensionP1MutationWorkerCrashRecovery",
+      "TestExtensionP1OldBackupRestore",
+      "TestExtensionP1RealIsolatedWASM",
+      "TestPluginBaseline",
+      "TestPortableRestoreFailureDoesNotPublish",
+      "TestPortableSpaceRoundTrip",
+      "TestPrivateInterfaceTURN",
+      "TestScheduledLiveBackupRestoresDatabase",
+      "TestStoppedDatabaseBackupAndRestore",
+      "TestWitnessNamespaceHelper",
+      "TestWitnessNetworkNamespaces"
+    ],
+    "lifecycle": [
+      "TestExtensionP1LifecycleRealWASM"
+    ],
+    "mutations": [
+      "TestExtensionP1MutationRealWASM",
+      "TestExtensionP1MutationWorkerCrashRecovery"
+    ],
+    "race": [
+      "TestBundledPostgresPreservesIdentityAndData",
+      "TestExtensionDatabaseFaults",
+      "TestExtensionP1BackupRoundTrip",
+      "TestExtensionP1LifecycleRealWASM",
+      "TestExtensionP1MutationRealWASM",
+      "TestExtensionP1MutationWorkerCrashRecovery",
+      "TestExtensionP1OldBackupRestore",
+      "TestExtensionP1RealIsolatedWASM",
+      "TestPluginBaseline",
+      "TestPortableRestoreFailureDoesNotPublish",
+      "TestPortableSpaceRoundTrip",
+      "TestPrivateInterfaceTURN",
+      "TestScheduledLiveBackupRestoresDatabase",
+      "TestStoppedDatabaseBackupAndRestore",
+      "TestWitnessNamespaceHelper",
+      "TestWitnessNetworkNamespaces"
+    ]
+  },
+  "dependency_files_match_git_bytes": true,
+  "cancelled_run": "https://github.com/space-protocol-project/space-server/actions/runs/41319350823"
+}

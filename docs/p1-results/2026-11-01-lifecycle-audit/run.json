@@ -1,0 +1,240 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-11-01T15:09:42Z",
+  "headSha": "6091a8e9dde17dd77c7ac8c47c882cac6fe6c614",
+  "jobs": [
+    {
+      "completedAt": "2026-11-01T15:10:54Z",
+      "conclusion": "success",
+      "databaseId": 124887357104,
+      "name": "database-faults",
+      "startedAt": "2026-11-01T15:09:46Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-01T15:09:48Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-01T15:09:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:03Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "startedAt": "2026-11-01T15:09:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:04Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-01T15:10:03Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:15Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 4,
+          "startedAt": "2026-11-01T15:10:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:49Z",
+          "conclusion": "success",
+          "name": "Обрыв COMMIT и аварийное восстановление отдельной PostgreSQL",
+          "number": 5,
+          "startedAt": "2026-11-01T15:10:15Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:49Z",
+          "conclusion": "success",
+          "name": "Журнал PostgreSQL",
+          "number": 6,
+          "startedAt": "2026-11-01T15:10:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:51Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 7,
+          "startedAt": "2026-11-01T15:10:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:51Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 12,
+          "startedAt": "2026-11-01T15:10:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:51Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 13,
+          "startedAt": "2026-11-01T15:10:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:51Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 14,
+          "startedAt": "2026-11-01T15:10:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:51Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 15,
+          "startedAt": "2026-11-01T15:10:51Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/41319793316/job/124887357104"
+    },
+    {
+      "completedAt": "2026-11-01T15:20:47Z",
+      "conclusion": "success",
+      "databaseId": 124887357315,
+      "name": "core",
+      "startedAt": "2026-11-01T15:09:46Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-01T15:09:50Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-01T15:09:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:03Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "startedAt": "2026-11-01T15:09:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:04Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-01T15:10:03Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:06Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 4,
+          "startedAt": "2026-11-01T15:10:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:06Z",
+          "conclusion": "success",
+          "name": "Shared retry contract",
+          "number": 5,
+          "startedAt": "2026-11-01T15:10:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:10:17Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 6,
+          "startedAt": "2026-11-01T15:10:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:19:31Z",
+          "conclusion": "success",
+          "name": "Зависимости, анализ и проверки ядра",
+          "number": 7,
+          "startedAt": "2026-11-01T15:10:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:19:48Z",
+          "conclusion": "success",
+          "name": "Сборка настоящего WASM и worker",
+          "number": 8,
+          "startedAt": "2026-11-01T15:19:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:20:41Z",
+          "conclusion": "success",
+          "name": "Настоящие сессии, ACL, RPC и изолированный WASM",
+          "number": 9,
+          "startedAt": "2026-11-01T15:19:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:20:43Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 10,
+          "startedAt": "2026-11-01T15:20:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:20:43Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 17,
+          "startedAt": "2026-11-01T15:20:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:20:43Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 18,
+          "startedAt": "2026-11-01T15:20:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:20:43Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 19,
+          "startedAt": "2026-11-01T15:20:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:20:43Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 20,
+          "startedAt": "2026-11-01T15:20:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-01T15:20:43Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "startedAt": "2026-11-01T15:20:43Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/41319793316/job/124887357315"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-11-01T15:20:48Z",
+  "url": "https://github.com/space-protocol-project/space-server/actions/runs/41319793316"
+}
