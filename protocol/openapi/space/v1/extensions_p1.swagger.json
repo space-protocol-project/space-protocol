@@ -17,6 +17,38 @@
     "application/json"
   ],
   "paths": {
+    "/space.v1.ExtensionP1Service/ChangeExtensionInstallation": {
+      "post": {
+        "operationId": "ExtensionP1Service_ChangeExtensionInstallation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ChangeExtensionInstallationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ChangeExtensionInstallationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ExtensionP1Service"
+        ]
+      }
+    },
     "/space.v1.ExtensionP1Service/ExecuteExtensionCommand": {
       "post": {
         "operationId": "ExtensionP1Service_ExecuteExtensionCommand",
@@ -41,6 +73,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1ExecuteExtensionCommandRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ExtensionP1Service"
+        ]
+      }
+    },
+    "/space.v1.ExtensionP1Service/GetExtensionInstallation": {
+      "post": {
+        "operationId": "ExtensionP1Service_GetExtensionInstallation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetExtensionInstallationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetExtensionInstallationRequest"
             }
           }
         ],
@@ -74,6 +138,70 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1GetExtensionMutationContextRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ExtensionP1Service"
+        ]
+      }
+    },
+    "/space.v1.ExtensionP1Service/ListExtensionInstallationAudit": {
+      "post": {
+        "operationId": "ExtensionP1Service_ListExtensionInstallationAudit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListExtensionInstallationAuditResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListExtensionInstallationAuditRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ExtensionP1Service"
+        ]
+      }
+    },
+    "/space.v1.ExtensionP1Service/ListExtensionInstallations": {
+      "post": {
+        "operationId": "ExtensionP1Service_ListExtensionInstallations",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListExtensionInstallationsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListExtensionInstallationsRequest"
             }
           }
         ],
@@ -177,6 +305,40 @@
         }
       }
     },
+    "v1ChangeExtensionInstallationRequest": {
+      "type": "object",
+      "properties": {
+        "installationId": {
+          "type": "string"
+        },
+        "generation": {
+          "type": "string"
+        },
+        "expectedRevision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "action": {
+          "type": "string",
+          "description": "Только enable, disable, remove."
+        }
+      }
+    },
+    "v1ChangeExtensionInstallationResponse": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "generation": {
+          "type": "string"
+        }
+      }
+    },
     "v1ExecuteExtensionCommandRequest": {
       "type": "object",
       "properties": {
@@ -249,6 +411,77 @@
       "default": "EXTENSION_COMMAND_OUTCOME_UNSPECIFIED",
       "description": " - EXTENSION_COMMAND_OUTCOME_UNKNOWN: Квитанция отсутствует; это НЕ доказательство отсутствия эффекта."
     },
+    "v1ExtensionInstallation": {
+      "type": "object",
+      "properties": {
+        "installationId": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "generation": {
+          "type": "string"
+        },
+        "bindingSha256": {
+          "type": "string",
+          "format": "byte"
+        }
+      },
+      "description": "Административный API P1: текущая сессия с space.manage, владелец и manage ACL\nвсех каналов установки. Не устанавливает пакеты и не принимает роль system."
+    },
+    "v1ExtensionInstallationAuditEntry": {
+      "type": "object",
+      "properties": {
+        "revision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "generation": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string",
+          "description": "checkpoint, owner, system; назначает только ядро."
+        },
+        "principalId": {
+          "type": "string"
+        },
+        "previousState": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "RFC3339Nano, UTC."
+        }
+      }
+    },
+    "v1GetExtensionInstallationRequest": {
+      "type": "object",
+      "properties": {
+        "installationId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetExtensionInstallationResponse": {
+      "type": "object",
+      "properties": {
+        "installation": {
+          "$ref": "#/definitions/v1ExtensionInstallation"
+        }
+      }
+    },
     "v1GetExtensionMutationContextRequest": {
       "type": "object",
       "properties": {
@@ -277,6 +510,91 @@
           "type": "string",
           "format": "uint64",
           "description": "30000 мс от выдачи; клиент отсчитывает от начала RPC монотонными часами."
+        }
+      }
+    },
+    "v1ListExtensionInstallationAuditRequest": {
+      "type": "object",
+      "properties": {
+        "installationId": {
+          "type": "string"
+        },
+        "generation": {
+          "type": "string",
+          "description": "Текущее поколение из GetExtensionInstallation."
+        },
+        "afterRevision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "throughRevision": {
+          "type": "string",
+          "format": "int64",
+          "description": "0 на первой странице; далее возвращённая верхняя граница."
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 означает 50; допустимо 1..100."
+        }
+      }
+    },
+    "v1ListExtensionInstallationAuditResponse": {
+      "type": "object",
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ExtensionInstallationAuditEntry"
+          }
+        },
+        "nextAfterRevision": {
+          "type": "string",
+          "format": "int64",
+          "description": "0 означает конец выбранного диапазона."
+        },
+        "throughRevision": {
+          "type": "string",
+          "format": "int64"
+        },
+        "generation": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ListExtensionInstallationsRequest": {
+      "type": "object",
+      "properties": {
+        "afterInstallationId": {
+          "type": "string"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "0 означает 50; допустимо 1..100."
+        },
+        "generation": {
+          "type": "string",
+          "description": "Обязательно при продолжении; смена требует нового чтения."
+        }
+      }
+    },
+    "v1ListExtensionInstallationsResponse": {
+      "type": "object",
+      "properties": {
+        "installations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ExtensionInstallation"
+          }
+        },
+        "nextAfterInstallationId": {
+          "type": "string"
+        },
+        "generation": {
+          "type": "string"
         }
       }
     },
