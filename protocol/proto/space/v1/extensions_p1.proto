@@ -8,6 +8,70 @@ service ExtensionP1Service {
   rpc ExecuteExtensionCommand(ExecuteExtensionCommandRequest) returns (ExecuteExtensionCommandResponse);
   rpc ReconcileExtensionCommand(ReconcileExtensionCommandRequest) returns (ReconcileExtensionCommandResponse);
   rpc GetExtensionMutationContext(GetExtensionMutationContextRequest) returns (GetExtensionMutationContextResponse);
+  rpc ListExtensionInstallations(ListExtensionInstallationsRequest) returns (ListExtensionInstallationsResponse);
+  rpc GetExtensionInstallation(GetExtensionInstallationRequest) returns (GetExtensionInstallationResponse);
+  rpc ChangeExtensionInstallation(ChangeExtensionInstallationRequest) returns (ChangeExtensionInstallationResponse);
+  rpc ListExtensionInstallationAudit(ListExtensionInstallationAuditRequest) returns (ListExtensionInstallationAuditResponse);
+}
+
+// Административный API P1: текущая сессия с space.manage, владелец и manage ACL
+// всех каналов установки. Не устанавливает пакеты и не принимает роль system.
+message ExtensionInstallation {
+  string installation_id = 1;
+  string state = 2;
+  int64 revision = 3;
+  string generation = 4;
+  bytes binding_sha256 = 5;
+}
+message ListExtensionInstallationsRequest {
+  string after_installation_id = 1;
+  int32 page_size = 2; // 0 означает 50; допустимо 1..100.
+  string generation = 3; // Обязательно при продолжении; смена требует нового чтения.
+}
+message ListExtensionInstallationsResponse {
+  repeated ExtensionInstallation installations = 1;
+  string next_after_installation_id = 2;
+  string generation = 3;
+}
+message GetExtensionInstallationRequest {
+  string installation_id = 1;
+}
+message GetExtensionInstallationResponse {
+  ExtensionInstallation installation = 1;
+}
+message ChangeExtensionInstallationRequest {
+  string installation_id = 1;
+  string generation = 2;
+  int64 expected_revision = 3;
+  string action = 4; // Только enable, disable, remove.
+}
+message ChangeExtensionInstallationResponse {
+  string state = 1;
+  int64 revision = 2;
+  string generation = 3;
+}
+message ExtensionInstallationAuditEntry {
+  int64 revision = 1;
+  string generation = 2;
+  string action = 3;
+  string actor = 4; // checkpoint, owner, system; назначает только ядро.
+  string principal_id = 5;
+  string previous_state = 6;
+  string state = 7;
+  string created_at = 8; // RFC3339Nano, UTC.
+}
+message ListExtensionInstallationAuditRequest {
+  string installation_id = 1;
+  string generation = 2; // Текущее поколение из GetExtensionInstallation.
+  int64 after_revision = 3;
+  int64 through_revision = 4; // 0 на первой странице; далее возвращённая верхняя граница.
+  int32 page_size = 5; // 0 означает 50; допустимо 1..100.
+}
+message ListExtensionInstallationAuditResponse {
+  repeated ExtensionInstallationAuditEntry entries = 1;
+  int64 next_after_revision = 2; // 0 означает конец выбранного диапазона.
+  int64 through_revision = 3;
+  string generation = 4;
 }
 
 // Доверенный контекст получают до первой отправки и сохраняют вместе с командой.
