@@ -1,0 +1,14 @@
+[
+  {
+    "path": ".github",
+    "blob_href": "https://github.com/space-protocol-project/space-server/blob/3f162beba043d4f12eb43aab91bd0c7b969c83d3/.github",
+    "start_line": 1,
+    "start_column": null,
+    "end_line": 1,
+    "end_column": null,
+    "annotation_level": "failure",
+    "title": "",
+    "message": "\"This job failed because of a scheduled macOS 14 runner image brownout. macOS 14 runner images will be retired on November 2, 2026. For migration options and the brownout schedule, see https://github.com/actions/runner-images/issues/13518\"",
+    "raw_details": ""
+  }
+]

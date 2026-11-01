@@ -1,0 +1,10 @@
+Фрагмент журнала задания Linux: https://github.com/space-protocol-project/space-server/actions/runs/41322122730
+2026-11-01T15:41:05.4451524Z --- FAIL: TestExtensionP1RegistryArchiveRoundTrip (11.90s)
+2026-11-01T15:41:05.4452510Z     --- FAIL: TestExtensionP1RegistryArchiveRoundTrip/portable_full (2.70s)
+2026-11-01T15:41:05.4454789Z         extensions_registry_archive_test.go:35: registry_states=5 audit_preserved=true generation_renewed=true pending_disable_completed=true
+2026-11-01T15:41:05.4457774Z         extensions_registry_archive_test.go:35: rpc error: code = Unauthenticated desc = Challenge, подпись или разрешение устройства недействительны
+2026-11-01T15:41:05.4459330Z     --- FAIL: TestExtensionP1RegistryArchiveRoundTrip/portable_retired (2.74s)
+2026-11-01T15:41:05.4461230Z         extensions_registry_archive_test.go:35: registry_states=5 audit_preserved=true generation_renewed=true pending_disable_completed=true
+2026-11-01T15:41:05.4463645Z         extensions_registry_archive_test.go:35: rpc error: code = Unauthenticated desc = Challenge, подпись или разрешение устройства недействительны
+2026-11-01T15:41:05.4464654Z FAIL
+2026-11-01T15:41:05.4465239Z FAIL	github.com/space-protocol-project/space-server/internal/home	51.930s

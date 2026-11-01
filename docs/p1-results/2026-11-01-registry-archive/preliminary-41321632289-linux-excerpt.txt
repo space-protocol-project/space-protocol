@@ -1,0 +1,21 @@
+Фрагмент журнала задания Linux: https://github.com/space-protocol-project/space-server/actions/runs/41321632289
+2026-11-01T15:35:15.9668628Z --- FAIL: TestExtensionP1RegistryArchiveRejectsInvalid (4.02s)
+2026-11-01T15:35:15.9669780Z     --- FAIL: TestExtensionP1RegistryArchiveRejectsInvalid/physical_gap (0.97s)
+2026-11-01T15:35:15.9673662Z         extensions_registry_archive_invalid_test.go:37: Владелец уже назначен; первичная настройка закрыта
+2026-11-01T15:35:15.9675047Z     --- FAIL: TestExtensionP1RegistryArchiveRejectsInvalid/physical_missing (0.97s)
+2026-11-01T15:35:15.9677184Z         extensions_registry_archive_invalid_test.go:37: Владелец уже назначен; первичная настройка закрыта
+2026-11-01T15:35:15.9678492Z     --- FAIL: TestExtensionP1RegistryArchiveRejectsInvalid/portable_gap (1.00s)
+2026-11-01T15:35:15.9680128Z         extensions_registry_archive_invalid_test.go:37: Владелец уже назначен; первичная настройка закрыта
+2026-11-01T15:35:15.9681602Z     --- FAIL: TestExtensionP1RegistryArchiveRejectsInvalid/portable_missing (1.07s)
+2026-11-01T15:35:15.9683279Z         extensions_registry_archive_invalid_test.go:37: Владелец уже назначен; первичная настройка закрыта
+2026-11-01T15:35:15.9684161Z --- FAIL: TestExtensionP1RegistryArchiveRoundTrip (3.90s)
+2026-11-01T15:35:15.9685118Z     --- FAIL: TestExtensionP1RegistryArchiveRoundTrip/physical_full (0.97s)
+2026-11-01T15:35:15.9686608Z         extensions_registry_archive_test.go:35: Владелец уже назначен; первичная настройка закрыта
+2026-11-01T15:35:15.9687794Z     --- FAIL: TestExtensionP1RegistryArchiveRoundTrip/physical_retired (0.98s)
+2026-11-01T15:35:15.9689266Z         extensions_registry_archive_test.go:35: Владелец уже назначен; первичная настройка закрыта
+2026-11-01T15:35:15.9690570Z     --- FAIL: TestExtensionP1RegistryArchiveRoundTrip/portable_full (0.97s)
+2026-11-01T15:35:15.9691994Z         extensions_registry_archive_test.go:35: Владелец уже назначен; первичная настройка закрыта
+2026-11-01T15:35:15.9693009Z     --- FAIL: TestExtensionP1RegistryArchiveRoundTrip/portable_retired (0.98s)
+2026-11-01T15:35:15.9694486Z         extensions_registry_archive_test.go:35: Владелец уже назначен; первичная настройка закрыта
+2026-11-01T15:35:15.9695195Z FAIL
+2026-11-01T15:35:15.9695803Z FAIL	github.com/space-protocol-project/space-server/internal/home	37.114s
