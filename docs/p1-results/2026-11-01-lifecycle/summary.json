@@ -1,0 +1,19 @@
+{
+  "server_sha": "ef2057d2dbadeb7b4e43d4066c55a755087872c5",
+  "contract_sha": "c141e2d95c84abce6470d37a30201322aa962d59",
+  "shared_cases": 41,
+  "repeat_count": 25,
+  "runs": {
+    "module": {
+      "pass": 112,
+      "skip": 16
+    },
+    "module-race": {
+      "pass": 112,
+      "skip": 16
+    },
+    "lifecycle": {
+      "pass": 1200
+    }
+  }
+}
