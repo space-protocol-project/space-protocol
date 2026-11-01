@@ -1,0 +1,1071 @@
+{
+  "version": "space.lifecycle.p1",
+  "cases": [
+    {
+      "name": "verify-staged",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "staged",
+        "action": "verify",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "verified",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "install-verified",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "verified",
+        "action": "install",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "installed",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "enable-installed",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "installed",
+        "action": "enable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "enabled",
+        "revision": 8,
+        "admission": true,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "enable-disabled",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabled",
+        "action": "enable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "enabled",
+        "revision": 8,
+        "admission": true,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "disable-enabled",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "enabled",
+        "action": "disable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "disabling",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "finish_disable-disabling",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabling",
+        "action": "finish_disable",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "disabled",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "begin_upgrade-disabled",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabled",
+        "action": "begin_upgrade",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "upgrading",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "finish_upgrade-upgrading",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "upgrading",
+        "action": "finish_upgrade",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "disabled",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "fail_upgrade-upgrading",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "upgrading",
+        "action": "fail_upgrade",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "failed",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "recover-failed",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "failed",
+        "action": "recover",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "disabled",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "recover-quarantined",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "quarantined",
+        "action": "recover",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "disabled",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "remove-disabled",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabled",
+        "action": "remove",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "removed",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "quarantine-staged",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "staged",
+        "action": "quarantine",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 1,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "quarantined",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "quarantine-verified",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "verified",
+        "action": "quarantine",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 1,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "quarantined",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "quarantine-installed",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "installed",
+        "action": "quarantine",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 1,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "quarantined",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "quarantine-enabled",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "enabled",
+        "action": "quarantine",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 1,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "quarantined",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "quarantine-disabling",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabling",
+        "action": "quarantine",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 1,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "quarantined",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "quarantine-disabled",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabled",
+        "action": "quarantine",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 1,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "quarantined",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "quarantine-upgrading",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "upgrading",
+        "action": "quarantine",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 1,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "quarantined",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "quarantine-failed",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "failed",
+        "action": "quarantine",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 1,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "quarantined",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "remove-installed",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "installed",
+        "action": "remove",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "removed",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "remove-failed",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "failed",
+        "action": "remove",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "removed",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "remove-quarantined",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "quarantined",
+        "action": "remove",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "removed",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "disable-active",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "enabled",
+        "action": "disable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 3,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "OK",
+        "state": "disabling",
+        "revision": 8,
+        "admission": false,
+        "cancel_active": true,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "unauthorized",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "enabled",
+        "action": "disable",
+        "actor": "owner",
+        "authorized": false,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "PermissionDenied",
+        "state": "enabled",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "owner-cannot-quarantine",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "enabled",
+        "action": "quarantine",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "PermissionDenied",
+        "state": "enabled",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "system-cannot-enable",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabled",
+        "action": "enable",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "PermissionDenied",
+        "state": "disabled",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "stale-revision",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "enabled",
+        "action": "disable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 6,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "Aborted",
+        "state": "enabled",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "authorization-before-conflict",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "enabled",
+        "action": "disable",
+        "actor": "owner",
+        "authorized": false,
+        "revision": 7,
+        "expected_revision": 6,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "PermissionDenied",
+        "state": "enabled",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "drain-not-finished",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabling",
+        "action": "finish_disable",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 1,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "disabling",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "upgrade-while-enabled",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "enabled",
+        "action": "begin_upgrade",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "enabled",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "upgrade-without-backup",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabled",
+        "action": "begin_upgrade",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": false,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "disabled",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "migration-incomplete",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "upgrading",
+        "action": "finish_upgrade",
+        "actor": "system",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": false
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "upgrading",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "recover-without-checkpoint",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "failed",
+        "action": "recover",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": false
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "failed",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "remove-active",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "quarantined",
+        "action": "remove",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 1,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "quarantined",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "enable-removed",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "removed",
+        "action": "enable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "removed",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "enable-quarantined",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "quarantined",
+        "action": "enable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "quarantined",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "revision-exhausted",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "enabled",
+        "action": "disable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 2147483646,
+        "expected_revision": 2147483646,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "enabled",
+        "revision": 2147483646,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "enable-without-package_verified",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabled",
+        "action": "enable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": false,
+        "compatible": true,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "disabled",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "enable-without-compatible",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabled",
+        "action": "enable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": false,
+        "grants_approved": true,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "disabled",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    },
+    {
+      "name": "enable-without-grants_approved",
+      "input": {
+        "version": "space.lifecycle.p1",
+        "state": "disabled",
+        "action": "enable",
+        "actor": "owner",
+        "authorized": true,
+        "revision": 7,
+        "expected_revision": 7,
+        "active": 0,
+        "package_verified": true,
+        "compatible": true,
+        "grants_approved": false,
+        "backup_ready": true,
+        "migration_ready": true
+      },
+      "expected": {
+        "code": "FailedPrecondition",
+        "state": "disabled",
+        "revision": 7,
+        "admission": false,
+        "cancel_active": false,
+        "preserve_data": true
+      }
+    }
+  ]
+}

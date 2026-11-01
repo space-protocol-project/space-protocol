@@ -1,0 +1,177 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "cases"
+  ],
+  "properties": {
+    "version": {
+      "const": "space.lifecycle.p1"
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "input",
+          "expected"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "version",
+              "state",
+              "action",
+              "actor",
+              "revision",
+              "expected_revision",
+              "active",
+              "authorized",
+              "package_verified",
+              "compatible",
+              "grants_approved",
+              "backup_ready",
+              "migration_ready"
+            ],
+            "properties": {
+              "version": {
+                "const": "space.lifecycle.p1"
+              },
+              "state": {
+                "enum": [
+                  "staged",
+                  "verified",
+                  "installed",
+                  "enabled",
+                  "disabling",
+                  "disabled",
+                  "upgrading",
+                  "failed",
+                  "quarantined",
+                  "removed"
+                ]
+              },
+              "action": {
+                "enum": [
+                  "verify",
+                  "install",
+                  "enable",
+                  "disable",
+                  "finish_disable",
+                  "begin_upgrade",
+                  "finish_upgrade",
+                  "fail_upgrade",
+                  "quarantine",
+                  "recover",
+                  "remove"
+                ]
+              },
+              "actor": {
+                "enum": [
+                  "owner",
+                  "system"
+                ]
+              },
+              "revision": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483646
+              },
+              "expected_revision": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483646
+              },
+              "active": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 128
+              },
+              "authorized": {
+                "type": "boolean"
+              },
+              "package_verified": {
+                "type": "boolean"
+              },
+              "compatible": {
+                "type": "boolean"
+              },
+              "grants_approved": {
+                "type": "boolean"
+              },
+              "backup_ready": {
+                "type": "boolean"
+              },
+              "migration_ready": {
+                "type": "boolean"
+              }
+            }
+          },
+          "expected": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "code",
+              "state",
+              "revision",
+              "admission",
+              "cancel_active",
+              "preserve_data"
+            ],
+            "properties": {
+              "code": {
+                "enum": [
+                  "OK",
+                  "InvalidArgument",
+                  "PermissionDenied",
+                  "Aborted",
+                  "FailedPrecondition"
+                ]
+              },
+              "state": {
+                "enum": [
+                  "staged",
+                  "verified",
+                  "installed",
+                  "enabled",
+                  "disabling",
+                  "disabled",
+                  "upgrading",
+                  "failed",
+                  "quarantined",
+                  "removed"
+                ]
+              },
+              "revision": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483646
+              },
+              "admission": {
+                "type": "boolean"
+              },
+              "cancel_active": {
+                "type": "boolean"
+              },
+              "preserve_data": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
