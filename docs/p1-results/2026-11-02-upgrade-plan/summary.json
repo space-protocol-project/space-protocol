@@ -1,0 +1,145 @@
+{
+  "server_sha": "ef962368bb3d6c7c4d49e8423afa69d29f3fd794",
+  "protocol_sha": "93c8e212c2e7944f26cffdc0dab088a66cb6adf8",
+  "platforms": {
+    "ubuntu-24.04": {
+      "module-race": {
+        "counts": {
+          "pass": 176,
+          "skip": 16
+        },
+        "skips": [
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationCompileAndRecover",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationIdentityAndEnvironment",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationKernelAggregateLimit",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationKernelWorkerLimit",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/child",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/cpu",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/crash",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/hang",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/memory",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/output",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationRecoveryScope",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationRejectBeforeLaunch",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationSharedQuota",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationSupervisorHelper",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationSupervisorRecovery",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestServiceHelper"
+        ]
+      },
+      "module": {
+        "counts": {
+          "pass": 176,
+          "skip": 16
+        },
+        "skips": [
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationCompileAndRecover",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationIdentityAndEnvironment",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationKernelAggregateLimit",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationKernelWorkerLimit",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/child",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/cpu",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/crash",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/hang",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/memory",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationPressure/output",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationRecoveryScope",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationRejectBeforeLaunch",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationSharedQuota",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationSupervisorHelper",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestIsolationSupervisorRecovery",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestServiceHelper"
+        ]
+      },
+      "upgrade": {
+        "counts": {
+          "pass": 1600
+        },
+        "skips": []
+      },
+      "leaf_results": 1500
+    },
+    "windows-2025": {
+      "module-race": {
+        "counts": {
+          "skip": 16,
+          "pass": 176
+        },
+        "skips": [
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationAggregateMemory",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationAssignmentFailure",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationDeathHelper",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationEnvironment",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationInvalidChildJob",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationLimits",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationNativeMemory",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/child",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/cpu",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/crash",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/hang",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/memory",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/output",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationSharedQuota",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationSupervisorDeath",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationWASM"
+        ]
+      },
+      "module": {
+        "counts": {
+          "skip": 16,
+          "pass": 176
+        },
+        "skips": [
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationAggregateMemory",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationAssignmentFailure",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationDeathHelper",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationEnvironment",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationInvalidChildJob",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationLimits",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationNativeMemory",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/child",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/cpu",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/crash",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/hang",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/memory",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationPressure/output",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationSharedQuota",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationSupervisorDeath",
+          "github.com/space-protocol-project/space-server/experiments/extensions/TestWindowsIsolationWASM"
+        ]
+      },
+      "upgrade": {
+        "counts": {
+          "pass": 1600
+        },
+        "skips": []
+      },
+      "leaf_results": 1500
+    },
+    "macos-15": {
+      "module-race": {
+        "counts": {
+          "pass": 176
+        },
+        "skips": []
+      },
+      "module": {
+        "counts": {
+          "pass": 176
+        },
+        "skips": []
+      },
+      "upgrade": {
+        "counts": {
+          "pass": 1600
+        },
+        "skips": []
+      },
+      "leaf_results": 1500
+    }
+  },
+  "run": "https://github.com/space-protocol-project/space-server/actions/runs/41376079551",
+  "preliminary-run": "https://github.com/space-protocol-project/space-server/actions/runs/41375795633",
+  "total_target_results": 4800,
+  "total_leaf_results": 4500
+}

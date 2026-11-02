@@ -1,0 +1,21 @@
+[
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t﻿2026-11-02T02:06:40.2473825Z ##[group]Run export SPACE_P1_UPGRADE_PLAN=\"${GITHUB_WORKSPACE}/.local/protocol/docs/extensions/p1/upgrade-plan.json\"",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2474374Z ^[[36;1mexport SPACE_P1_UPGRADE_PLAN=\"${GITHUB_WORKSPACE}/.local/protocol/docs/extensions/p1/upgrade-plan.json\"^[[0m",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2474784Z ^[[36;1mexport SPACE_P1_LIFECYCLE_CASES=\"${GITHUB_WORKSPACE}/.local/protocol/docs/extensions/p1/lifecycle.json\"^[[0m",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2475077Z ^[[36;1mtest -z \"$(gofmt -l upgrade)\"^[[0m",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2475241Z ^[[36;1mgo mod verify^[[0m",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2475366Z ^[[36;1mgo vet ./...^[[0m",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2475612Z ^[[36;1mgo test -race -json ./upgrade -count=25 -timeout=120s > ../../.local/upgrade/upgrade.jsonl^[[0m",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2475950Z ^[[36;1mgo test -json ./... -count=1 -timeout=180s > ../../.local/upgrade/module.jsonl^[[0m",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2476263Z ^[[36;1mgo test -race -json ./... -count=1 -timeout=180s > ../../.local/upgrade/module-race.jsonl^[[0m",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2476620Z ^[[36;1mgo run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./... > ../../.local/upgrade/vulnerabilities.txt^[[0m",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2485828Z shell: C:\\Program Files\\Git\\bin\\bash.EXE --noprofile --norc -e -o pipefail {0}",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2486051Z env:",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2486215Z   pythonLocation: C:\\hostedtoolcache\\windows\\Python\\3.12.10\\x64",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2486471Z   PKG_CONFIG_PATH: C:\\hostedtoolcache\\windows\\Python\\3.12.10\\x64/lib/pkgconfig",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2487018Z   Python_ROOT_DIR: C:\\hostedtoolcache\\windows\\Python\\3.12.10\\x64",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2487247Z   Python2_ROOT_DIR: C:\\hostedtoolcache\\windows\\Python\\3.12.10\\x64",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2487638Z   Python3_ROOT_DIR: C:\\hostedtoolcache\\windows\\Python\\3.12.10\\x64",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.2487821Z ##[endgroup]",
+  "upgrade (windows-2025)\tПривязка плана и регрессия\t2026-11-02T02:06:40.3129659Z ##[error]Process completed with exit code 1."
+]
