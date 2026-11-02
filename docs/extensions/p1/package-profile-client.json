@@ -1,0 +1,30 @@
+{
+  "format": "space.package-profile.p1",
+  "plugin_id": "org.example.games",
+  "version": "0.1.0",
+  "profile": "client",
+  "modules": {
+    "client": {
+      "entrypoint": "client.wasm",
+      "host_api": "space.client.p1",
+      "wasm_abi": "space_client_p1",
+      "data_schema": 1,
+      "permissions": [
+        "storage.instance",
+        "device.catalog.read",
+        "ui.contribute"
+      ],
+      "platforms": [
+        "windows"
+      ]
+    }
+  },
+  "contributions": [
+    {
+      "id": "client.main",
+      "owner": "client",
+      "surface": "app.navigation",
+      "ui_api": "space.ui.p1"
+    }
+  ]
+}

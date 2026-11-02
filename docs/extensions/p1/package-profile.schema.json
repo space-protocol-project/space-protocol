@@ -1,0 +1,373 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "format": {
+      "const": "space.package-profile.p1"
+    },
+    "plugin_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_-]*)+$",
+      "maxLength": 128
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "maxLength": 32
+    },
+    "profile": {
+      "enum": [
+        "server",
+        "client",
+        "hybrid"
+      ]
+    },
+    "modules": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "server": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "entrypoint": {
+              "const": "server.wasm"
+            },
+            "host_api": {
+              "const": "space.plugin.p1"
+            },
+            "wasm_abi": {
+              "const": "space_plugin_p1"
+            },
+            "data_schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 65535
+            },
+            "permissions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "storage.own",
+                  "events.own"
+                ]
+              },
+              "uniqueItems": true,
+              "maxItems": 2
+            },
+            "platforms": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "server"
+                ]
+              },
+              "uniqueItems": true,
+              "maxItems": 1,
+              "minItems": 1
+            }
+          },
+          "required": [
+            "entrypoint",
+            "host_api",
+            "wasm_abi",
+            "data_schema",
+            "permissions",
+            "platforms"
+          ]
+        },
+        "client": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "entrypoint": {
+              "const": "client.wasm"
+            },
+            "host_api": {
+              "const": "space.client.p1"
+            },
+            "wasm_abi": {
+              "const": "space_client_p1"
+            },
+            "data_schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 65535
+            },
+            "permissions": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "storage.instance",
+                  "device.catalog.read",
+                  "ui.contribute"
+                ]
+              },
+              "uniqueItems": true,
+              "maxItems": 3
+            },
+            "platforms": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "windows",
+                  "linux",
+                  "macos"
+                ]
+              },
+              "uniqueItems": true,
+              "maxItems": 3,
+              "minItems": 1
+            }
+          },
+          "required": [
+            "entrypoint",
+            "host_api",
+            "wasm_abi",
+            "data_schema",
+            "permissions",
+            "platforms"
+          ]
+        }
+      }
+    },
+    "contributions": {
+      "type": "array",
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]{0,63}$",
+            "maxLength": 64
+          },
+          "owner": {
+            "enum": [
+              "server",
+              "client"
+            ]
+          },
+          "surface": {
+            "enum": [
+              "app.navigation",
+              "app.home",
+              "space.navigation",
+              "space.overview"
+            ]
+          },
+          "ui_api": {
+            "const": "space.ui.p1"
+          }
+        },
+        "required": [
+          "id",
+          "owner",
+          "surface",
+          "ui_api"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "owner": {
+                  "const": "client"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "surface": {
+                  "enum": [
+                    "app.navigation",
+                    "app.home"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "owner": {
+                  "const": "server"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "surface": {
+                  "enum": [
+                    "space.navigation",
+                    "space.overview"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "exchange_api": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.-]{0,63}$",
+          "maxLength": 64
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535
+        }
+      },
+      "required": [
+        "exchange_api",
+        "revision"
+      ]
+    }
+  },
+  "required": [
+    "format",
+    "plugin_id",
+    "version",
+    "profile",
+    "modules",
+    "contributions"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "profile": {
+            "const": "server"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "modules": {
+            "required": [
+              "server"
+            ],
+            "minProperties": 1,
+            "maxProperties": 1
+          }
+        },
+        "not": {
+          "required": [
+            "compatibility"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "profile": {
+            "const": "client"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "modules": {
+            "required": [
+              "client"
+            ],
+            "minProperties": 1,
+            "maxProperties": 1
+          }
+        },
+        "not": {
+          "required": [
+            "compatibility"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "profile": {
+            "const": "hybrid"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "modules": {
+            "required": [
+              "server",
+              "client"
+            ],
+            "minProperties": 2,
+            "maxProperties": 2
+          }
+        },
+        "required": [
+          "compatibility"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "contributions": {
+            "contains": {
+              "properties": {
+                "owner": {
+                  "const": "client"
+                }
+              },
+              "required": [
+                "owner"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "modules": {
+            "required": [
+              "client"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "contributions": {
+            "contains": {
+              "properties": {
+                "owner": {
+                  "const": "server"
+                }
+              },
+              "required": [
+                "owner"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "modules": {
+            "required": [
+              "server"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
