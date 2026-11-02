@@ -1,0 +1,20 @@
+{
+  "format": "space.client.lifecycle.p1",
+  "device": "device_a",
+  "local_profile": "profile_a",
+  "installation": "games",
+  "instance": "library",
+  "state": "absent",
+  "generation": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "revision": 1,
+  "package_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "schema": 1,
+  "data_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "data_revision": 0,
+  "grant_epoch": 1,
+  "plan": null,
+  "step": 0,
+  "staged_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "history": [],
+  "data_present": true
+}

@@ -1,0 +1,11 @@
+{
+  "format": "space.client.lifecycle-command.p1",
+  "device": "device_a",
+  "local_profile": "profile_a",
+  "installation": "games",
+  "instance": "library",
+  "generation": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "expected_revision": 1,
+  "action": "install",
+  "plan": null
+}
