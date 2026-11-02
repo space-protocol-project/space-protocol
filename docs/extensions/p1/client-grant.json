@@ -1,0 +1,16 @@
+{
+  "format": "space.client.grant.p1",
+  "device": "device_a",
+  "local_profile": "profile_a",
+  "installation": "games",
+  "instance": "library",
+  "package_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "generation": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "grant_id": "cccccccccccccccccccccccccccccccc",
+  "grant_revision": 1,
+  "capability": "device.catalog.read",
+  "root_id": "dddddddddddddddddddddddddddddddd",
+  "state": "active",
+  "access": "read",
+  "origin": "local_user"
+}

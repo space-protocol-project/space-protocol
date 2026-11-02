@@ -1,0 +1,15 @@
+{
+  "format": "space.client.installation.p1",
+  "device": "device_a",
+  "local_profile": "profile_a",
+  "installation": "games",
+  "instance": "library",
+  "package_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "generation": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "revision": 1,
+  "state": "enabled",
+  "profile": "client",
+  "requested": [
+    "device.catalog.read"
+  ]
+}

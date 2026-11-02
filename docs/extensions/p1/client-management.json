@@ -1,0 +1,11 @@
+{
+  "format": "space.client.management.p1",
+  "device": "device_a",
+  "local_profile": "profile_a",
+  "installation": "games",
+  "instance": "library",
+  "package_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "generation": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "action": "grant",
+  "expected_revision": 1
+}
