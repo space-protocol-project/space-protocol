@@ -1,0 +1,25 @@
+{
+  "format": "space.client.catalog-event.p1",
+  "device": "device_a",
+  "local_profile": "profile_a",
+  "installation": "games",
+  "instance": "library",
+  "package_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "generation": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "grant_id": "cccccccccccccccccccccccccccccccc",
+  "grant_revision": 1,
+  "root_id": "dddddddddddddddddddddddddddddddd",
+  "request_id": "11111111111111111111111111111111",
+  "sequence": 1,
+  "kind": "page",
+  "snapshot": "22222222222222222222222222222222",
+  "entries": [
+    {
+      "handle": "33333333333333333333333333333333",
+      "name": "Game",
+      "type": "directory"
+    }
+  ],
+  "next_cursor": "44444444444444444444444444444444",
+  "more": true
+}

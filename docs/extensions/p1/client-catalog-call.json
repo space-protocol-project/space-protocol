@@ -1,0 +1,21 @@
+{
+  "format": "space.client.catalog-call.p1",
+  "request_id": "11111111111111111111111111111111",
+  "request": {
+    "format": "space.client.catalog.p1",
+    "device": "device_a",
+    "local_profile": "profile_a",
+    "installation": "games",
+    "instance": "library",
+    "package_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "generation": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "grant_id": "cccccccccccccccccccccccccccccccc",
+    "grant_revision": 1,
+    "root_id": "dddddddddddddddddddddddddddddddd",
+    "operation": "list",
+    "handle": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "cursor": "",
+    "offset": 0,
+    "limit": 128
+  }
+}
