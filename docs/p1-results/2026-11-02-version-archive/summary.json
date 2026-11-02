@@ -1,0 +1,229 @@
+{
+  "server_sha": "e02a142261e6faecf5d60de804bb054bf408d390",
+  "runs": {
+    "archive": "https://github.com/space-protocol-project/space-server/actions/runs/41506902084",
+    "regression": "https://github.com/space-protocol-project/space-server/actions/runs/41506908576"
+  },
+  "suites": {
+    "accepted/version-export-results-darwin/export.jsonl": {
+      "counts": {
+        "pass": 17
+      },
+      "leaf_results": 12,
+      "unique_leaf_scenarios": 12,
+      "skips": []
+    },
+    "accepted/version-export-results-linux/export.jsonl": {
+      "counts": {
+        "pass": 17
+      },
+      "leaf_results": 12,
+      "unique_leaf_scenarios": 12,
+      "skips": []
+    },
+    "accepted/version-export-results-windows/export.jsonl": {
+      "counts": {
+        "pass": 17
+      },
+      "leaf_results": 12,
+      "unique_leaf_scenarios": 12,
+      "skips": []
+    },
+    "accepted/version-import-results-darwin/import.jsonl": {
+      "counts": {
+        "pass": 21
+      },
+      "leaf_results": 18,
+      "unique_leaf_scenarios": 6,
+      "skips": []
+    },
+    "accepted/version-import-results-linux/import.jsonl": {
+      "counts": {
+        "pass": 21
+      },
+      "leaf_results": 18,
+      "unique_leaf_scenarios": 6,
+      "skips": []
+    },
+    "accepted/version-import-results-linux/resume.jsonl": {
+      "counts": {
+        "pass": 21
+      },
+      "leaf_results": 18,
+      "unique_leaf_scenarios": 6,
+      "skips": []
+    },
+    "accepted/version-import-results-windows/import.jsonl": {
+      "counts": {
+        "pass": 21
+      },
+      "leaf_results": 18,
+      "unique_leaf_scenarios": 6,
+      "skips": []
+    },
+    "accepted/version-seed-results/seed.jsonl": {
+      "counts": {
+        "pass": 4
+      },
+      "leaf_results": 3,
+      "unique_leaf_scenarios": 3,
+      "skips": []
+    },
+    "regression/publish.jsonl": {
+      "counts": {
+        "pass": 66
+      },
+      "leaf_results": 51,
+      "unique_leaf_scenarios": 17,
+      "skips": []
+    },
+    "regression/recovery.jsonl": {
+      "counts": {
+        "pass": 87
+      },
+      "leaf_results": 69,
+      "unique_leaf_scenarios": 23,
+      "skips": []
+    },
+    "regression/server-race.jsonl": {
+      "counts": {
+        "pass": 762,
+        "skip": 56
+      },
+      "leaf_results": 703,
+      "unique_leaf_scenarios": 703,
+      "skips": [
+        "github.com/space-protocol-project/space-server/internal/home/TestBundledPostgresPreservesIdentityAndData",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1BackupRoundTrip",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1OldBackupRestore",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1RegistryArchiveRejectsInvalid",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1RegistryArchiveRoundTrip",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1RegistryTransferExport",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1RegistryTransferImport",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1VersionArchiveExport",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1VersionArchiveImport",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1VersionArchiveInvalid",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1VersionArchiveResume",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1VersionArchiveSeed",
+        "github.com/space-protocol-project/space-server/internal/home/TestPortableRestoreFailureDoesNotPublish",
+        "github.com/space-protocol-project/space-server/internal/home/TestPortableSpaceRoundTrip",
+        "github.com/space-protocol-project/space-server/internal/home/TestScheduledLiveBackupRestoresDatabase",
+        "github.com/space-protocol-project/space-server/internal/home/TestStoppedDatabaseBackupAndRestore",
+        "github.com/space-protocol-project/space-server/internal/home/TestWitnessNamespaceHelper",
+        "github.com/space-protocol-project/space-server/internal/home/TestWitnessNetworkNamespaces",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionDatabaseFaults",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1LifecycleRealWASM",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1MutationRealWASM",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1MutationWorkerCrashRecovery",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishCommitRecovery/publish_after_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishCommitRecovery/publish_before_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishConcurrent",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishProcessRecovery/after_publish",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishProcessRecovery/before_publish",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/changed_data",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/go_step",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/member",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/module_hash",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/revoked",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/target_hash",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASM",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASMFailures/invalid",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASMFailures/loop",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASMFailures/memory",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASMFailures/schema",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASMFailures/trap",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1RealIsolatedWASM",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsBackfill",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCommitRecovery/publish_after_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCommitRecovery/publish_before_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCorruption/DELETE_FROM_extension_p1_versions",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCorruption/DELETE_FROM_extension_p1_versions_WHERE_sequence=1",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCorruption/DROP_TABLE_extension_p1_versions",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCorruption/UPDATE_extension_p1_versions_SET_record_hash=repeat('0',64)_WHERE_sequence=1",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCorruption/UPDATE_extension_p1_versions_SET_source=repeat('0',64)_WHERE_sequence=2",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsPermissionsAndSource",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsPrepareRecovery/versions_prepare_after_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsPrepareRecovery/versions_prepare_before_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsProcessRecovery/after_publish",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsProcessRecovery/before_publish",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsSequential",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestPluginBaseline",
+        "github.com/space-protocol-project/space-server/internal/voice/TestPrivateInterfaceTURN"
+      ]
+    },
+    "regression/server.jsonl": {
+      "counts": {
+        "pass": 762,
+        "skip": 56
+      },
+      "leaf_results": 703,
+      "unique_leaf_scenarios": 703,
+      "skips": [
+        "github.com/space-protocol-project/space-server/internal/home/TestBundledPostgresPreservesIdentityAndData",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1BackupRoundTrip",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1OldBackupRestore",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1RegistryArchiveRejectsInvalid",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1RegistryArchiveRoundTrip",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1RegistryTransferExport",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1RegistryTransferImport",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1VersionArchiveExport",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1VersionArchiveImport",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1VersionArchiveInvalid",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1VersionArchiveResume",
+        "github.com/space-protocol-project/space-server/internal/home/TestExtensionP1VersionArchiveSeed",
+        "github.com/space-protocol-project/space-server/internal/home/TestPortableRestoreFailureDoesNotPublish",
+        "github.com/space-protocol-project/space-server/internal/home/TestPortableSpaceRoundTrip",
+        "github.com/space-protocol-project/space-server/internal/home/TestScheduledLiveBackupRestoresDatabase",
+        "github.com/space-protocol-project/space-server/internal/home/TestStoppedDatabaseBackupAndRestore",
+        "github.com/space-protocol-project/space-server/internal/home/TestWitnessNamespaceHelper",
+        "github.com/space-protocol-project/space-server/internal/home/TestWitnessNetworkNamespaces",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionDatabaseFaults",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1LifecycleRealWASM",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1MutationRealWASM",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1MutationWorkerCrashRecovery",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishCommitRecovery/publish_after_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishCommitRecovery/publish_before_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishConcurrent",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishProcessRecovery/after_publish",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishProcessRecovery/before_publish",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/changed_data",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/go_step",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/member",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/module_hash",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/revoked",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishRejectsUntrusted/target_hash",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASM",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASMFailures/invalid",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASMFailures/loop",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASMFailures/memory",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASMFailures/schema",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1PublishWASMFailures/trap",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1RealIsolatedWASM",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsBackfill",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCommitRecovery/publish_after_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCommitRecovery/publish_before_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCorruption/DELETE_FROM_extension_p1_versions",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCorruption/DELETE_FROM_extension_p1_versions_WHERE_sequence=1",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCorruption/DROP_TABLE_extension_p1_versions",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCorruption/UPDATE_extension_p1_versions_SET_record_hash=repeat('0',64)_WHERE_sequence=1",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsCorruption/UPDATE_extension_p1_versions_SET_source=repeat('0',64)_WHERE_sequence=2",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsPermissionsAndSource",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsPrepareRecovery/versions_prepare_after_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsPrepareRecovery/versions_prepare_before_commit",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsProcessRecovery/after_publish",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsProcessRecovery/before_publish",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestExtensionP1VersionsSequential",
+        "github.com/space-protocol-project/space-server/internal/postgres/TestPluginBaseline",
+        "github.com/space-protocol-project/space-server/internal/voice/TestPrivateInterfaceTURN"
+      ]
+    },
+    "regression/versions.jsonl": {
+      "counts": {
+        "pass": 54
+      },
+      "leaf_results": 42,
+      "unique_leaf_scenarios": 14,
+      "skips": []
+    }
+  }
+}

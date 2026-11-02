@@ -1,0 +1,174 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-11-02T19:06:58Z",
+  "databaseId": 41506908576,
+  "headSha": "e02a142261e6faecf5d60de804bb054bf408d390",
+  "jobs": [
+    {
+      "completedAt": "2026-11-02T19:18:24Z",
+      "conclusion": "success",
+      "databaseId": 125488433535,
+      "name": "publish",
+      "startedAt": "2026-11-02T19:07:02Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-02T19:07:04Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-02T19:07:03Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:07:17Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "startedAt": "2026-11-02T19:07:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:07:18Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-02T19:07:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:07:21Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 4,
+          "startedAt": "2026-11-02T19:07:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:07:34Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 5,
+          "startedAt": "2026-11-02T19:07:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:07:34Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 6,
+          "startedAt": "2026-11-02T19:07:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:07:36Z",
+          "conclusion": "success",
+          "name": "Общий контракт данных миграции",
+          "number": 7,
+          "startedAt": "2026-11-02T19:07:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:07:49Z",
+          "conclusion": "success",
+          "name": "Анализ и зависимости",
+          "number": 8,
+          "startedAt": "2026-11-02T19:07:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:07:58Z",
+          "conclusion": "success",
+          "name": "WASM-модули и изолированный worker",
+          "number": 9,
+          "startedAt": "2026-11-02T19:07:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:09:35Z",
+          "conclusion": "success",
+          "name": "Изолированные миграции и сбои публикации",
+          "number": 10,
+          "startedAt": "2026-11-02T19:07:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:10:16Z",
+          "conclusion": "success",
+          "name": "Регрессия постоянного журнала",
+          "number": 11,
+          "startedAt": "2026-11-02T19:09:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:18:19Z",
+          "conclusion": "success",
+          "name": "Регрессия сервера",
+          "number": 12,
+          "startedAt": "2026-11-02T19:10:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:18:20Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 13,
+          "startedAt": "2026-11-02T19:18:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:18:20Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 22,
+          "startedAt": "2026-11-02T19:18:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:18:20Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 23,
+          "startedAt": "2026-11-02T19:18:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:18:21Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 24,
+          "startedAt": "2026-11-02T19:18:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:18:21Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 25,
+          "startedAt": "2026-11-02T19:18:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:18:21Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 26,
+          "startedAt": "2026-11-02T19:18:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T19:18:21Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 27,
+          "startedAt": "2026-11-02T19:18:21Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/41506908576/job/125488433535"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-11-02T19:18:24Z",
+  "url": "https://github.com/space-protocol-project/space-server/actions/runs/41506908576"
+}
