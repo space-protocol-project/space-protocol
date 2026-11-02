@@ -1,0 +1,1 @@
+{"result": "success", "schema_checks": 135, "semantic_checks": 77, "suite": "client-catalog-stream.p1"}

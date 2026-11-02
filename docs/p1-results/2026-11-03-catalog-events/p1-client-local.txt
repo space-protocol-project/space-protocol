@@ -1,0 +1,1 @@
+{"result": "success", "schema_checks": 129, "semantic_checks": 42, "suite": "client-local.p1"}
