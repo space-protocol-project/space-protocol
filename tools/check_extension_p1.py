@@ -5,7 +5,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 root = Path(__file__).resolve().parents[1] / 'docs/extensions/p1'
-for name in ('manifest','ui','request','error','retry','lifecycle','upgrade-plan'):
+for name in ('manifest','ui','request','error','retry','lifecycle','upgrade-plan','migration-data'):
     schema=json.loads((root/f'{name}.schema.json').read_text(encoding='utf-8'))
     Draft202012Validator.check_schema(schema)
     validator=Draft202012Validator(schema)
@@ -67,3 +67,10 @@ canonical['steps']=[{key:step[key] for key in ('id','from','to','digest')} for s
 digest=hashlib.sha256(b'space.upgrade.p1\0'+json.dumps(canonical,separators=(',',':')).encode()).hexdigest()
 assert digest==(root/'upgrade-plan.sha256').read_text(encoding='ascii').strip()
 print('upgrade-plan: required fields, nulls, nested fields and shared digest checked')
+
+data=json.loads((root/'migration-data.json').read_text(encoding='utf-8'))
+validator=Draft202012Validator(json.loads((root/'migration-data.schema.json').read_text(encoding='utf-8')))
+for key,value in [('schema',0),('schema',65536),('schema',1.5),('values',None),('values',{'../escape':1}),('values',{f'key{i}':i for i in range(33)})]:
+    invalid=copy.deepcopy(data);invalid[key]=value
+    assert not validator.is_valid(invalid),(key,value)
+print('migration-data: schema bounds, value keys and item quota checked')

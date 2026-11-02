@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Space P1 migration data",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "schema", "values"],
+  "properties": {
+    "version": {"const": "space.migration.data.p1"},
+    "schema": {"type": "integer", "minimum": 1, "maximum": 65535},
+    "values": {
+      "type": "object",
+      "maxProperties": 32,
+      "propertyNames": {"pattern": "^[a-z][a-z0-9_-]{0,63}$"},
+      "additionalProperties": true
+    }
+  }
+}
