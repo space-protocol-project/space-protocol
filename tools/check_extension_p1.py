@@ -5,7 +5,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 root = Path(__file__).resolve().parents[1] / 'docs/extensions/p1'
-for name in ('manifest','ui','request','error','retry','lifecycle'):
+for name in ('manifest','ui','request','error','retry','lifecycle','upgrade-plan'):
     schema=json.loads((root/f'{name}.schema.json').read_text(encoding='utf-8'))
     Draft202012Validator.check_schema(schema)
     validator=Draft202012Validator(schema)
@@ -48,3 +48,22 @@ for part in ('input','expected'):
 invalid=copy.deepcopy(lifecycle);invalid['cases'][0]['expected']['preserve_data']=False
 assert not validator.is_valid(invalid)
 print(f"lifecycle: {len(lifecycle['cases'])} shared scenarios; nested required fields, types, limits and data preservation checked")
+
+plan=json.loads((root/'upgrade-plan.json').read_text(encoding='utf-8'))
+schema=json.loads((root/'upgrade-plan.schema.json').read_text(encoding='utf-8'))
+validator=Draft202012Validator(schema)
+for key in schema['required']:
+    invalid=copy.deepcopy(plan);invalid[key]=None
+    assert not validator.is_valid(invalid),key
+for key in schema['properties']['steps']['items']['required']:
+    invalid=copy.deepcopy(plan);del invalid['steps'][0][key]
+    assert not validator.is_valid(invalid),key
+invalid=copy.deepcopy(plan);invalid['steps'][0]['extra']=True
+assert not validator.is_valid(invalid)
+import hashlib
+keys=['version','space','installation','generation','revision','data_revision','source','target','grants','checkpoint','schema_from','schema_to','steps']
+canonical={key:plan[key] for key in keys}
+canonical['steps']=[{key:step[key] for key in ('id','from','to','digest')} for step in plan['steps']]
+digest=hashlib.sha256(b'space.upgrade.p1\0'+json.dumps(canonical,separators=(',',':')).encode()).hexdigest()
+assert digest==(root/'upgrade-plan.sha256').read_text(encoding='ascii').strip()
+print('upgrade-plan: required fields, nulls, nested fields and shared digest checked')
