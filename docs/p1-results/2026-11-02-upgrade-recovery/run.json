@@ -1,0 +1,116 @@
+{
+  "conclusion": "success",
+  "databaseId": 41377727470,
+  "headSha": "04f7d2429376e7567aca53fcf92a6309fa0eaa64",
+  "jobs": [
+    {
+      "completedAt": "2026-11-02T02:37:02Z",
+      "conclusion": "success",
+      "databaseId": 125061552627,
+      "name": "recovery",
+      "startedAt": "2026-11-02T02:26:20Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-02T02:26:22Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-02T02:26:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:26:34Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "startedAt": "2026-11-02T02:26:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:26:35Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-02T02:26:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:26:48Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 4,
+          "startedAt": "2026-11-02T02:26:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:27:00Z",
+          "conclusion": "success",
+          "name": "Анализ и зависимости",
+          "number": 5,
+          "startedAt": "2026-11-02T02:26:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:28:30Z",
+          "conclusion": "success",
+          "name": "Постоянный журнал и аварийные перезапуски",
+          "number": 6,
+          "startedAt": "2026-11-02T02:27:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:36:58Z",
+          "conclusion": "success",
+          "name": "Регрессия сервера",
+          "number": 7,
+          "startedAt": "2026-11-02T02:28:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:36:59Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 8,
+          "startedAt": "2026-11-02T02:36:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:36:59Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 14,
+          "startedAt": "2026-11-02T02:36:59Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:37:00Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 15,
+          "startedAt": "2026-11-02T02:36:59Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:37:00Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 16,
+          "startedAt": "2026-11-02T02:37:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-02T02:37:00Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-11-02T02:37:00Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/41377727470/job/125061552627"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/space-protocol-project/space-server/actions/runs/41377727470"
+}
