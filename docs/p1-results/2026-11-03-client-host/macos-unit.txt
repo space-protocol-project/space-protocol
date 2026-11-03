@@ -1,0 +1,124 @@
+Resolving dependencies...
+Downloading packages...
+  _fe_analyzer_shared 110.0.0 (111.0.0 available)
+  analyzer 14.6.0 (14.7.0 available)
+  archive 4.5.2 (4.6.0 available)
+  built_collection 5.1.2 (6.0.0 available)
+  camera 0.12.1 (0.12.2 available)
+! camera_android_camerax 0.7.6 from path vendor/camera_android_camerax (overridden)
+! camera_avfoundation 0.10.3+1 from path vendor/camera_avfoundation (overridden)
+! camera_platform_interface 2.15.0 from path vendor/camera_platform_interface (overridden)
+  camera_web 0.3.5+6 (0.3.5+7 available)
+  cnativeapi 0.5.2 (0.5.7 available)
+! cross_file 0.4.0 (overridden)
+  crypto 3.0.7 (3.0.8 available)
+! file_selector_android 0.5.2+11 from path vendor/file_selector_android (overridden)
+! file_selector_ios 0.5.3+7 from path vendor/file_selector_ios (overridden)
+! file_selector_linux 0.9.4+1 from path vendor/file_selector_linux (overridden)
+! file_selector_macos 0.9.5+2 from path vendor/file_selector_macos (overridden)
+! file_selector_platform_interface 2.7.0 from path vendor/file_selector_platform_interface (overridden)
+! file_selector_web 0.9.5 from path vendor/file_selector_web (overridden)
+! file_selector_windows 0.9.3+6 from path vendor/file_selector_windows (overridden)
+! flutter_secure_storage_windows 4.2.2 from path vendor/flutter_secure_storage_windows (overridden)
+  flutter_svg 2.3.0 (2.3.2 available)
+! flutter_webrtc 1.6.2+hotfix.4 from path vendor/flutter_webrtc (overridden)
+! flutter_zxing 3.1.0 from path vendor/flutter_zxing (overridden)
+  http2 2.3.1 (3.1.0 available)
+! image_picker_android 0.8.13+25 from path vendor/image_picker_android (overridden)
+! image_picker_for_web 3.1.1 from path vendor/image_picker_for_web (overridden)
+! image_picker_ios 0.8.13+13 from path vendor/image_picker_ios (overridden)
+! image_picker_linux 0.2.2 from path vendor/image_picker_linux (overridden)
+! image_picker_macos 0.2.2+1 from path vendor/image_picker_macos (overridden)
+! image_picker_platform_interface 2.11.2 from path vendor/image_picker_platform_interface (overridden)
+! image_picker_windows 0.2.2 from path vendor/image_picker_windows (overridden)
+  jni 1.1.0 (1.1.1 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  nativeapi 0.5.2 (0.5.7 available)
+  nativeapi_flutter 0.5.2 (0.5.7 available)
+  posix 6.5.3 (6.5.4 available)
+  qr 4.0.0 (4.0.1 available)
+! screen_retriever 0.3.0 (overridden) (0.3.1 available)
+  shared_preferences_android 2.5.3 (2.5.4 available)
+  shared_preferences_foundation 2.6.0 (2.6.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_graphics 1.2.4 (1.2.6 available)
+  vector_graphics_compiler 1.3.2 (1.3.4 available)
+  vector_math 2.4.3 (2.4.4 available)
+! window_manager 0.5.2 from path vendor/window_manager (overridden)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+24 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart
+00:00 +0: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: полный цикл, разрешение, активный вызов и восстановление
+00:00 +1: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: abort, quarantine, recover, reopen и обновление только кода
+00:00 +2: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: отзыв во время чтения и повторное согласие не оживляют старый ответ
+00:00 +3: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: чужая сессия и блокировка отзывают допуск и сохраняются
+00:00 +4: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: блокировка во время проверки запрещает поздний COMMIT
+00:00 +5: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: конкурентные команды фиксируют только одну ревизию
+00:00 +6: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: проверки пакета, согласия, плана и миграции не меняют снимок
+00:00 +7: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: restore проверяет владельца и не восстанавливает активный grant
+00:00 +8: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: разрешение привязано к выбранному корню, блокировка отзывает все корни
+00:00 +9: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: незаявленная возможность и отказ согласия не создают grant
+00:00 +10: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: невозможный переход и чужая установка не меняют запись
+00:00 +11: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: отказ согласия на каталог и неверный checkpoint не фиксируются
+00:00 +12: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: ошибка before закрывает допуск, восстановление сохраняет атомарность
+00:00 +13: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: ошибка partial закрывает допуск, восстановление сохраняет атомарность
+00:00 +14: /Users/runner/work/space-app/space-app/client/test/local_lifecycle_test.dart: ошибка after закрывает допуск, восстановление сохраняет атомарность
+00:00 +15: loading /Users/runner/work/space-app/space-app/client/test/local_registry_test.dart
+00:01 +15: /Users/runner/work/space-app/space-app/client/test/local_registry_test.dart: снимок, ревизия, блокировка и поколение
+00:01 +16: /Users/runner/work/space-app/space-app/client/test/local_registry_test.dart: повреждение полного кадра не принимается
+00:01 +17: /Users/runner/work/space-app/space-app/client/test/local_registry_test.dart: повторное открытие закрывает активные состояния и старое поколение
+00:01 +18: /Users/runner/work/space-app/space-app/client/test/local_registry_test.dart: ошибка после COMMIT закрывает оболочку до повторного открытия
+00:01 +19: loading /Users/runner/work/space-app/space-app/client/test/extensions_p1_test.dart
+00:02 +19: /Users/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Строгий JSON не теряет дубликаты, хвост и бюджет
+00:02 +20: /Users/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Версии, неизвестные поля и команды отклоняются
+00:02 +21: /Users/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Необязательный неизвестный компонент имеет проверяемый fallback
+00:02 +22: /Users/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Лимит узлов и семантика Unicode текста
+00:02 +23: /Users/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Локализация, источник, семантика и клавиатура
+00:03 +24: /Users/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Масштаб 3x и узкий экран сохраняют действие
+00:03 +25: /Users/runner/work/space-app/space-app/client/test/extensions_p1_test.dart: Двойное действие, отказ и закрытие Cubit
+00:03 +26: loading /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart
+00:04 +26: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: Версия и полнота общего набора
+00:04 +27: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: confirmed
+00:04 +28: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: confirmed_after_unknown
+00:04 +29: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: confirmed_after_cancel
+00:04 +30: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: ambiguous_Unknown
+00:04 +31: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: ambiguous_Internal
+00:04 +32: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: ambiguous_Unavailable
+00:04 +33: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: ambiguous_DeadlineExceeded
+00:04 +34: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: ambiguous_TransportLost
+00:04 +35: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_InvalidArgument
+00:04 +36: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_NotFound
+00:04 +37: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_AlreadyExists
+00:04 +38: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_PermissionDenied
+00:04 +39: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_ResourceExhausted
+00:04 +40: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_FailedPrecondition
+00:04 +41: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_Aborted
+00:04 +42: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_OutOfRange
+00:04 +43: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_Unimplemented
+00:04 +44: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: terminal_DataLoss
+00:04 +45: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: auth
+00:04 +46: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: auth_after_unknown
+00:04 +47: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: denied_after_unknown
+00:04 +48: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: cancel_rpc
+00:04 +49: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: cancel_local
+00:04 +50: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: cancel_auth
+00:04 +51: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: missing_window
+00:04 +52: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: changed_request
+00:04 +53: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: mismatched_success
+00:04 +54: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: second_attempt
+00:04 +55: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: third_attempt
+00:04 +56: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: last_attempt
+00:04 +57: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: budget_boundary
+00:04 +58: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: budget_exceeded
+00:04 +59: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: window_boundary
+00:04 +60: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: window_exhausted
+00:04 +61: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: future_code
+00:04 +62: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: attempt_zero
+00:04 +63: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: attempt_overflow
+00:04 +64: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: negative_elapsed
+00:04 +65: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: negative_remaining
+00:04 +66: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: large_elapsed
+00:04 +67: /Users/runner/work/space-app/space-app/client/test/extensions_p1_retry_test.dart: Отказ доступа после потери ответа не доказывает откат
+00:04 +68: All tests passed!
