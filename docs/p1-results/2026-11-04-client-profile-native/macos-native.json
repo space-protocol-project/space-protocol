@@ -1,0 +1,89 @@
+{
+  "result": "success",
+  "platform": "darwin",
+  "independent_processes": 11,
+  "forced_terminations": 6,
+  "checks": [
+    {
+      "pid": 28925,
+      "role": "create",
+      "identity_digest": "ba63a2e22a647116e0d27f03541004acbc1f85759cf001544e3169013dfef515",
+      "failures": 0,
+      "unlocked": true,
+      "native_storage": true
+    },
+    {
+      "pid": 29185,
+      "role": "login",
+      "identity_digest": "ba63a2e22a647116e0d27f03541004acbc1f85759cf001544e3169013dfef515",
+      "failures": 0,
+      "unlocked": true,
+      "native_storage": true
+    },
+    {
+      "pid": 29454,
+      "role": "wrong",
+      "identity_digest": "ba63a2e22a647116e0d27f03541004acbc1f85759cf001544e3169013dfef515",
+      "failures": 1,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 29507,
+      "role": "wrong",
+      "identity_digest": "ba63a2e22a647116e0d27f03541004acbc1f85759cf001544e3169013dfef515",
+      "failures": 2,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 29757,
+      "role": "wrong",
+      "identity_digest": "ba63a2e22a647116e0d27f03541004acbc1f85759cf001544e3169013dfef515",
+      "failures": 3,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 29777,
+      "role": "wrong",
+      "identity_digest": "ba63a2e22a647116e0d27f03541004acbc1f85759cf001544e3169013dfef515",
+      "failures": 4,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 30035,
+      "role": "wrong",
+      "identity_digest": "ba63a2e22a647116e0d27f03541004acbc1f85759cf001544e3169013dfef515",
+      "failures": 5,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 30057,
+      "role": "blocked",
+      "identity_digest": "ba63a2e22a647116e0d27f03541004acbc1f85759cf001544e3169013dfef515",
+      "failures": 5,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 31116,
+      "role": "login",
+      "identity_digest": "ba63a2e22a647116e0d27f03541004acbc1f85759cf001544e3169013dfef515",
+      "failures": 0,
+      "unlocked": true,
+      "native_storage": true
+    },
+    {
+      "role": "corrupt",
+      "pid": 31674
+    },
+    {
+      "role": "cleanup",
+      "pid": 31779
+    }
+  ],
+  "backend": "macOS login Keychain"
+}

@@ -1,0 +1,77 @@
+Resolving dependencies...
+Downloading packages...
+  _fe_analyzer_shared 110.0.0 (111.0.0 available)
+  analyzer 14.6.0 (14.7.0 available)
+  archive 4.5.2 (4.6.0 available)
+  built_collection 5.1.2 (6.0.0 available)
+  camera 0.12.1 (0.12.2 available)
+! camera_android_camerax 0.7.6 from path vendor/camera_android_camerax (overridden)
+! camera_avfoundation 0.10.3+1 from path vendor/camera_avfoundation (overridden)
+! camera_platform_interface 2.15.0 from path vendor/camera_platform_interface (overridden)
+  camera_web 0.3.5+6 (0.3.5+7 available)
+  cnativeapi 0.5.2 (0.5.8 available)
+! cross_file 0.4.0 (overridden)
+  crypto 3.0.7 (3.0.8 available)
+! file_selector_android 0.5.2+11 from path vendor/file_selector_android (overridden)
+! file_selector_ios 0.5.3+7 from path vendor/file_selector_ios (overridden)
+! file_selector_linux 0.9.4+1 from path vendor/file_selector_linux (overridden)
+! file_selector_macos 0.9.5+2 from path vendor/file_selector_macos (overridden)
+! file_selector_platform_interface 2.7.0 from path vendor/file_selector_platform_interface (overridden)
+! file_selector_web 0.9.5 from path vendor/file_selector_web (overridden)
+! file_selector_windows 0.9.3+6 from path vendor/file_selector_windows (overridden)
+! flutter_secure_storage_windows 4.2.2 from path vendor/flutter_secure_storage_windows (overridden)
+  flutter_svg 2.3.0 (2.3.2 available)
+! flutter_webrtc 1.6.2+hotfix.4 from path vendor/flutter_webrtc (overridden)
+! flutter_zxing 3.1.0 from path vendor/flutter_zxing (overridden)
+  http2 2.3.1 (3.1.0 available)
+! image_picker_android 0.8.13+25 from path vendor/image_picker_android (overridden)
+! image_picker_for_web 3.1.1 from path vendor/image_picker_for_web (overridden)
+! image_picker_ios 0.8.13+13 from path vendor/image_picker_ios (overridden)
+! image_picker_linux 0.2.2 from path vendor/image_picker_linux (overridden)
+! image_picker_macos 0.2.2+1 from path vendor/image_picker_macos (overridden)
+! image_picker_platform_interface 2.11.2 from path vendor/image_picker_platform_interface (overridden)
+! image_picker_windows 0.2.2 from path vendor/image_picker_windows (overridden)
+  jni 1.1.0 (1.1.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  nativeapi 0.5.2 (0.5.8 available)
+  nativeapi_flutter 0.5.2 (0.5.8 available)
+  objective_c 9.6.2 (9.6.3 available)
+  posix 6.5.3 (6.5.4 available)
+  qr 4.0.0 (4.0.1 available)
+! screen_retriever 0.3.0 (overridden) (0.3.1 available)
+  shared_preferences_android 2.5.3 (2.5.4 available)
+  shared_preferences_foundation 2.6.0 (2.6.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_graphics 1.2.4 (1.2.6 available)
+  vector_graphics_compiler 1.3.2 (1.3.4 available)
+  vector_math 2.4.3 (2.4.4 available)
+! window_manager 0.5.2 from path vendor/window_manager (overridden)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+25 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /Users/runner/work/space-app/space-app/client/test/local_profile_test.dart
+00:00 +0: /Users/runner/work/space-app/space-app/client/test/local_profile_test.dart: настоящий KDF, стабильный профиль, неверный пароль не выдаёт сессию
+00:09 +1: /Users/runner/work/space-app/space-app/client/test/local_profile_test.dart: пять попыток сохраняются, новый сервис соблюдает задержку
+00:34 +2: /Users/runner/work/space-app/space-app/client/test/local_profile_test.dart: повреждение и неподтверждённая запись закрывают доступ
+00:37 +3: /Users/runner/work/space-app/space-app/client/test/local_profile_test.dart: ошибка записи попытки запрещает выдачу сессии
+00:44 +4: /Users/runner/work/space-app/space-app/client/test/local_profile_test.dart: отмена при записи и конкурирующий сервис не выдают профиль
+00:51 +5: /Users/runner/work/space-app/space-app/client/test/local_profile_test.dart: границы пароля и отмена до создания не меняют хранилище
+00:51 +6: loading /Users/runner/work/space-app/space-app/client/test/local_profile_widget_test.dart
+00:54 +6: /Users/runner/work/space-app/space-app/client/test/local_profile_widget_test.dart: настройка требует совпадения и передаёт профиль в настоящую сессию
+00:57 +7: /Users/runner/work/space-app/space-app/client/test/local_profile_widget_test.dart: неверный пароль оставляет форму открытой и очищает ввод
+00:57 +8: /Users/runner/work/space-app/space-app/client/test/local_profile_widget_test.dart: фон во время проверки закрывает форму и отклоняет поздний ответ
+00:57 +9: /Users/runner/work/space-app/space-app/client/test/local_profile_widget_test.dart: ошибка хранилища не предлагает пересоздание профиля
+00:57 +10: loading /Users/runner/work/space-app/space-app/client/test/local_session_scope_test.dart
+00:59 +10: /Users/runner/work/space-app/space-app/client/test/local_session_scope_test.dart: без службы аутентификации доступ закрыт
+00:59 +11: /Users/runner/work/space-app/space-app/client/test/local_session_scope_test.dart: один запрос, поздний ответ после блокировки не разблокирует
+00:59 +12: /Users/runner/work/space-app/space-app/client/test/local_session_scope_test.dart: ошибка, отмена и неверный профиль не дают сессию
+00:59 +13: /Users/runner/work/space-app/space-app/client/test/local_session_scope_test.dart: завершение и закрытие запрещают позднюю разблокировку
+00:59 +14: /Users/runner/work/space-app/space-app/client/test/local_session_scope_test.dart: уход в фон отзывает настоящую сессию и чтение реестра
+00:59 +15: /Users/runner/work/space-app/space-app/client/test/local_session_scope_test.dart: завершение блокирует сессию до prepare, даже при ошибке остановки
+00:59 +16: /Users/runner/work/space-app/space-app/client/test/local_session_scope_test.dart: замена области отзывает старый контекст
+00:59 +17: loading /Users/runner/work/space-app/space-app/client/test/secure_storage_macos_test.dart
+01:00 +17: /Users/runner/work/space-app/space-app/client/test/secure_storage_macos_test.dart: macOS сохраняет имя записи и использует системный login Keychain
+01:00 +18: /Users/runner/work/space-app/space-app/client/test/secure_storage_macos_test.dart: Отказ Keychain не превращается в отсутствие ключа или сброс
+01:00 +19: /Users/runner/work/space-app/space-app/client/test/secure_storage_macos_test.dart: Отсутствие записи не вызывает миграцию или создание ключа
+01:00 +20: All tests passed!

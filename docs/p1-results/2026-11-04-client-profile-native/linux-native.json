@@ -1,0 +1,89 @@
+{
+  "result": "success",
+  "platform": "linux",
+  "independent_processes": 11,
+  "forced_terminations": 6,
+  "checks": [
+    {
+      "pid": 14245,
+      "role": "create",
+      "identity_digest": "1da84159316a414d55d1facf0da4e9a1f6bbc5ab9056c4e243136f12fa532077",
+      "failures": 0,
+      "unlocked": true,
+      "native_storage": true
+    },
+    {
+      "pid": 14305,
+      "role": "login",
+      "identity_digest": "1da84159316a414d55d1facf0da4e9a1f6bbc5ab9056c4e243136f12fa532077",
+      "failures": 0,
+      "unlocked": true,
+      "native_storage": true
+    },
+    {
+      "pid": 14366,
+      "role": "wrong",
+      "identity_digest": "1da84159316a414d55d1facf0da4e9a1f6bbc5ab9056c4e243136f12fa532077",
+      "failures": 1,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 14426,
+      "role": "wrong",
+      "identity_digest": "1da84159316a414d55d1facf0da4e9a1f6bbc5ab9056c4e243136f12fa532077",
+      "failures": 2,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 14486,
+      "role": "wrong",
+      "identity_digest": "1da84159316a414d55d1facf0da4e9a1f6bbc5ab9056c4e243136f12fa532077",
+      "failures": 3,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 14549,
+      "role": "wrong",
+      "identity_digest": "1da84159316a414d55d1facf0da4e9a1f6bbc5ab9056c4e243136f12fa532077",
+      "failures": 4,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 14608,
+      "role": "wrong",
+      "identity_digest": "1da84159316a414d55d1facf0da4e9a1f6bbc5ab9056c4e243136f12fa532077",
+      "failures": 5,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 14669,
+      "role": "blocked",
+      "identity_digest": "1da84159316a414d55d1facf0da4e9a1f6bbc5ab9056c4e243136f12fa532077",
+      "failures": 5,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 14727,
+      "role": "login",
+      "identity_digest": "1da84159316a414d55d1facf0da4e9a1f6bbc5ab9056c4e243136f12fa532077",
+      "failures": 0,
+      "unlocked": true,
+      "native_storage": true
+    },
+    {
+      "role": "corrupt",
+      "pid": 14787
+    },
+    {
+      "role": "cleanup",
+      "pid": 14837
+    }
+  ],
+  "backend": "GNOME Keyring"
+}

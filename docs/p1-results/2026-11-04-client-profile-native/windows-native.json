@@ -1,0 +1,89 @@
+{
+  "result": "success",
+  "platform": "win32",
+  "independent_processes": 11,
+  "forced_terminations": 6,
+  "checks": [
+    {
+      "pid": 8432,
+      "role": "create",
+      "identity_digest": "f3d5a9d4e21c6e3754d1c155c84a3f74695904b590e51ffb7c5a4ae304080418",
+      "failures": 0,
+      "unlocked": true,
+      "native_storage": true
+    },
+    {
+      "pid": 2948,
+      "role": "login",
+      "identity_digest": "f3d5a9d4e21c6e3754d1c155c84a3f74695904b590e51ffb7c5a4ae304080418",
+      "failures": 0,
+      "unlocked": true,
+      "native_storage": true
+    },
+    {
+      "pid": 4464,
+      "role": "wrong",
+      "identity_digest": "f3d5a9d4e21c6e3754d1c155c84a3f74695904b590e51ffb7c5a4ae304080418",
+      "failures": 1,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 8504,
+      "role": "wrong",
+      "identity_digest": "f3d5a9d4e21c6e3754d1c155c84a3f74695904b590e51ffb7c5a4ae304080418",
+      "failures": 2,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 7092,
+      "role": "wrong",
+      "identity_digest": "f3d5a9d4e21c6e3754d1c155c84a3f74695904b590e51ffb7c5a4ae304080418",
+      "failures": 3,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 5980,
+      "role": "wrong",
+      "identity_digest": "f3d5a9d4e21c6e3754d1c155c84a3f74695904b590e51ffb7c5a4ae304080418",
+      "failures": 4,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 952,
+      "role": "wrong",
+      "identity_digest": "f3d5a9d4e21c6e3754d1c155c84a3f74695904b590e51ffb7c5a4ae304080418",
+      "failures": 5,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 8792,
+      "role": "blocked",
+      "identity_digest": "f3d5a9d4e21c6e3754d1c155c84a3f74695904b590e51ffb7c5a4ae304080418",
+      "failures": 5,
+      "unlocked": false,
+      "native_storage": true
+    },
+    {
+      "pid": 8496,
+      "role": "login",
+      "identity_digest": "f3d5a9d4e21c6e3754d1c155c84a3f74695904b590e51ffb7c5a4ae304080418",
+      "failures": 0,
+      "unlocked": true,
+      "native_storage": true
+    },
+    {
+      "role": "corrupt",
+      "pid": 6964
+    },
+    {
+      "role": "cleanup",
+      "pid": 8068
+    }
+  ],
+  "backend": "Windows DPAPI"
+}
