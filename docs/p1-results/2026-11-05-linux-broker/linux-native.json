@@ -1,0 +1,37 @@
+{
+  "platform": "linux",
+  "phases": [
+    {
+      "role": "install",
+      "pid": 25253,
+      "helper": "/home/runner/work/_temp/tmpid3sreef/Installed Space/space-catalog",
+      "wasm_helper": "/home/runner/work/_temp/tmpid3sreef/Installed Space/space-client-wasm",
+      "wasm_sha256": "81df34ef1395026421b212c564f69e3407dfb37ff587b5b500505927d0ff7f87",
+      "sha256": "a3ce6646ef0e0442addaf0081919a37803c64605b4b742e7f2aa431a23e3075c",
+      "passed": true
+    },
+    {
+      "role": "reopen",
+      "pid": 25312,
+      "helper": "/home/runner/work/_temp/tmpid3sreef/Installed Space/space-catalog",
+      "wasm_helper": "/home/runner/work/_temp/tmpid3sreef/Installed Space/space-client-wasm",
+      "wasm_sha256": "81df34ef1395026421b212c564f69e3407dfb37ff587b5b500505927d0ff7f87",
+      "sha256": "a3ce6646ef0e0442addaf0081919a37803c64605b4b742e7f2aa431a23e3075c",
+      "passed": true
+    },
+    {
+      "role": "corrupt",
+      "pid": 25369,
+      "helper": "/home/runner/work/_temp/tmpid3sreef/Installed Space/space-catalog",
+      "wasm_helper": "/home/runner/work/_temp/tmpid3sreef/Installed Space/space-client-wasm",
+      "wasm_sha256": "81df34ef1395026421b212c564f69e3407dfb37ff587b5b500505927d0ff7f87",
+      "sha256": "a3ce6646ef0e0442addaf0081919a37803c64605b4b742e7f2aa431a23e3075c",
+      "passed": true
+    }
+  ],
+  "package_transport": "run extract",
+  "authentication": "fixture",
+  "directory_selection": "fixture",
+  "storage": "native",
+  "catalog_process": "installed bundle"
+}

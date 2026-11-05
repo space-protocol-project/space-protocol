@@ -1,0 +1,13 @@
+=== RUN   TestProtectedWorker
+=== RUN   TestProtectedWorker/catalog
+=== RUN   TestProtectedWorker/loop
+=== RUN   TestProtectedWorker/trap
+--- PASS: TestProtectedWorker (0.12s)
+    --- PASS: TestProtectedWorker/catalog (0.01s)
+    --- PASS: TestProtectedWorker/loop (0.11s)
+    --- PASS: TestProtectedWorker/trap (0.01s)
+=== RUN   TestLinuxMemoryEnforced
+    quota_linux_test.go:66: kernel OOM and released reservation: {Active:0 ReservedBytes:0 CurrentBytes:876544 PeakBytes:268451840 OOMKills:2 CPUUsec:126360 Throttled:0 OSProcesses:0}
+--- PASS: TestLinuxMemoryEnforced (0.13s)
+PASS
+ok  	space.local/clientwasm	0.250s
