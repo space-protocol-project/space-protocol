@@ -1,0 +1,31 @@
+{
+  "platform": "linux",
+  "phases": [
+    {
+      "role": "install",
+      "pid": 16939,
+      "helper": "/home/runner/work/_temp/tmp8ncc1634/Installed Space/space-catalog",
+      "sha256": "5a9f9e9514b1552659bc6912217c74c4b5e383be1d717a6d7174470abf9f4ef5",
+      "passed": true
+    },
+    {
+      "role": "reopen",
+      "pid": 16996,
+      "helper": "/home/runner/work/_temp/tmp8ncc1634/Installed Space/space-catalog",
+      "sha256": "5a9f9e9514b1552659bc6912217c74c4b5e383be1d717a6d7174470abf9f4ef5",
+      "passed": true
+    },
+    {
+      "role": "corrupt",
+      "pid": 17052,
+      "helper": "/home/runner/work/_temp/tmp8ncc1634/Installed Space/space-catalog",
+      "sha256": "5a9f9e9514b1552659bc6912217c74c4b5e383be1d717a6d7174470abf9f4ef5",
+      "passed": true
+    }
+  ],
+  "package_transport": "run extract",
+  "authentication": "fixture",
+  "directory_selection": "fixture",
+  "storage": "native",
+  "catalog_process": "installed bundle"
+}

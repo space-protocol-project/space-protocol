@@ -1,0 +1,31 @@
+{
+  "platform": "win32",
+  "phases": [
+    {
+      "role": "install",
+      "pid": 5636,
+      "helper": "D:\\a\\_temp\\tmp2jpg5dv1\\Installed Space\\space-catalog.exe",
+      "sha256": "e28e371f9b8c6a2f00a86bf682da79c984beb81c7f080384d78933cbc52b7755",
+      "passed": true
+    },
+    {
+      "role": "reopen",
+      "pid": 2032,
+      "helper": "D:\\a\\_temp\\tmp2jpg5dv1\\Installed Space\\space-catalog.exe",
+      "sha256": "e28e371f9b8c6a2f00a86bf682da79c984beb81c7f080384d78933cbc52b7755",
+      "passed": true
+    },
+    {
+      "role": "corrupt",
+      "pid": 2492,
+      "helper": "D:\\a\\_temp\\tmp2jpg5dv1\\Installed Space\\space-catalog.exe",
+      "sha256": "e28e371f9b8c6a2f00a86bf682da79c984beb81c7f080384d78933cbc52b7755",
+      "passed": true
+    }
+  ],
+  "package_transport": "Inno Setup",
+  "authentication": "fixture",
+  "directory_selection": "fixture",
+  "storage": "native",
+  "catalog_process": "installed bundle"
+}
