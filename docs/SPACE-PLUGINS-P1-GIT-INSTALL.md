@@ -86,3 +86,5 @@ Unit/widget-сценарии проверяют согласие, неизмен
 Этот результат не закрывает P1 целиком и не означает доступность функции в опубликованном выпуске приложения.
 
 Основание транспорта: официальные [Git trees](https://docs.github.com/en/rest/git/trees) и [Git blobs](https://docs.github.com/en/rest/git/blobs). Пользовательский [HttpClient.connectionFactory](https://api.flutter.dev/flutter/dart-io/HttpClient/connectionFactory.html) требует явного создания TLS-сокета; в реализации используется `SecureSocket.secure` с именем исходного хоста.
+
+Продолжение: [внутреннее исполнение установленного WASM с API каталогов](SPACE-PLUGINS-P1-CLIENT-WASM.md). Оно отдельно фиксирует границы платформ и проверку отзыва доступа; результаты этого отчёта по установке не подменяют приёмку исполнения.
