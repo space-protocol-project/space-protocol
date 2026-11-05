@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "enabled_sigkill",
+      "automatic_dependency": true,
+      "repeat_passed": true
+    },
+    {
+      "case": "disabled_sigkill",
+      "queued_socket_blocked": true
+    },
+    {
+      "case": "corrupt_snapshot",
+      "closed_before_writes": true,
+      "retry_passed": true
+    },
+    {
+      "case": "corrupt_format",
+      "closed_before_writes": true,
+      "retry_passed": true
+    },
+    {
+      "case": "committed",
+      "not_rolled_back": true
+    },
+    {
+      "case": "first_install_sigkill",
+      "partial_install_removed": true
+    }
+  ],
+  "mode": "systemd dependency restart",
+  "recovery_enabled": true
+}

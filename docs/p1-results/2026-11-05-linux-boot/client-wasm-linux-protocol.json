@@ -1,0 +1,32 @@
+{
+  "client_uid": 1001,
+  "protocol_version": 1,
+  "incompatible_servers": [
+    {
+      "kind": "legacy",
+      "received_bytes": 0,
+      "rejected": true
+    },
+    {
+      "kind": "future",
+      "received_bytes": 0,
+      "rejected": true
+    },
+    {
+      "kind": "oversized",
+      "received_bytes": 0,
+      "rejected": true
+    },
+    {
+      "kind": "truncated",
+      "received_bytes": 0,
+      "rejected": true
+    }
+  ],
+  "legacy_client_rejected": true,
+  "future_client_rejected": true,
+  "bad_update_preserved_service": true,
+  "reinstall_reconnected": true,
+  "old_connection_closed": true,
+  "passed": true
+}

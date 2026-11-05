@@ -1,0 +1,4 @@
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+Created symlink /etc/systemd/system/sockets.target.wants/space-client-wasm.socket -> /etc/systemd/system/space-client-wasm.socket.
+WASM boot recovery restored previous installation
+Finished space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.

@@ -1,0 +1,3 @@
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+WASM boot recovery restored previous installation
+Finished space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.

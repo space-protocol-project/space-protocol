@@ -1,0 +1,8 @@
+GNOME_KEYRING_CONTROL=/home/runner/work/_temp/tmp9t_ih0q8/profile/runtime/keyring
+
+(org.spaceprotocol.space_client:37003): dbind-WARNING **: 16:14:54.930: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(org.spaceprotocol.space_client:37003): Atk-CRITICAL **: 16:14:54.980: atk_socket_embed: assertion 'plug_id != NULL' failed
+[IMPORTANT:flutter/shell/platform/embedder/embedder_surface_gl_impeller.cc(126)] Using the Impeller rendering backend (OpenGLESSDF).
+
+(org.spaceprotocol.space_client:37003): GLib-GObject-CRITICAL **: 16:14:55.073: ../../../gobject/gsignal.c:2427: signal 'pre-engine-restart' is invalid for instance '0x55eb89637ef0' of type 'FlEngine'

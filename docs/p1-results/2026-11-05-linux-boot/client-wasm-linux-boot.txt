@@ -1,0 +1,48 @@
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+Finished space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+space-client-wasm-recovery.service: Deactivated successfully.
+Stopped space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+Created symlink /etc/systemd/system/sockets.target.wants/space-client-wasm.socket -> /etc/systemd/system/space-client-wasm.socket.
+WASM boot recovery restored previous installation
+Finished space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+space-client-wasm-recovery.service: Deactivated successfully.
+Stopped space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+Finished space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+space-client-wasm-recovery.service: Deactivated successfully.
+Stopped space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+WASM boot recovery restored previous installation
+Finished space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+space-client-wasm-recovery.service: Deactivated successfully.
+Stopped space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+WASM recovery failed; journal preserved: /var/lib/space-client-wasm-updater/pending
+space-client-wasm-recovery.service: Main process exited, code=exited, status=1/FAILURE
+space-client-wasm-recovery.service: Failed with result 'exit-code'.
+Failed to start space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+Created symlink /etc/systemd/system/sockets.target.wants/space-client-wasm.socket -> /etc/systemd/system/space-client-wasm.socket.
+WASM boot recovery restored previous installation
+Finished space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+space-client-wasm-recovery.service: Deactivated successfully.
+Stopped space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+WASM recovery failed; journal preserved: /var/lib/space-client-wasm-updater/pending
+space-client-wasm-recovery.service: Main process exited, code=exited, status=1/FAILURE
+space-client-wasm-recovery.service: Failed with result 'exit-code'.
+Failed to start space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+Created symlink /etc/systemd/system/sockets.target.wants/space-client-wasm.socket -> /etc/systemd/system/space-client-wasm.socket.
+WASM boot recovery restored previous installation
+Finished space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+space-client-wasm-recovery.service: Deactivated successfully.
+Stopped space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+Finished space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+space-client-wasm-recovery.service: Deactivated successfully.
+Stopped space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.
+Starting space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation...
+WASM boot recovery restored previous installation
+Finished space-client-wasm-recovery.service - Recover interrupted Space WASM service update before socket activation.

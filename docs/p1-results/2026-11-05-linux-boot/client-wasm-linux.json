@@ -1,0 +1,23 @@
+{
+  "client_uid": 1001,
+  "isolation": {
+    "worker_uid": 65534,
+    "capabilities": 0,
+    "no_new_privileges": true,
+    "private_network": true,
+    "hidden_home": true,
+    "limits": {
+      "memory.max": "268435456",
+      "memory.swap.max": "0",
+      "pids.max": "64",
+      "cpu.max": "100000 100000"
+    },
+    "shared_memory": 536870912,
+    "service_memory": 671088640
+  },
+  "connections_limit": 4,
+  "unknown_command_rejected": true,
+  "eof_cancellation": true,
+  "restart_after_kill": true,
+  "passed": true
+}

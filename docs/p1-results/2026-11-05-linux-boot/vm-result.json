@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "enabled",
+      "files_restored": true,
+      "socket_enabled": true,
+      "wasm_available": true,
+      "no_installer_after_boot": true
+    },
+    {
+      "case": "disabled",
+      "files_restored": true,
+      "socket_enabled": false,
+      "wasm_available": false,
+      "no_installer_after_boot": true
+    }
+  ],
+  "boot_ids": [
+    "e1d5d19d-0f4e-4ad9-9707-4323a58e6764",
+    "f14e7d8b-6b07-4a6d-8ca6-4a344b227d0f",
+    "12aea0e5-712a-4673-bd47-26a6299ffcdc"
+  ],
+  "acceleration": "kvm",
+  "image_url": "https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img",
+  "image_sha256": "04e8f2461a16a44e78a370284471f29616cdd9baf1893df25807b71f985b6c94",
+  "shutdown": "QEMU process SIGKILL after installer SIGKILL and guest sync"
+}

@@ -1,0 +1,37 @@
+{
+  "platform": "darwin",
+  "phases": [
+    {
+      "role": "install",
+      "pid": 60593,
+      "helper": "/Users/runner/work/_temp/tmp5cmz6l1s/Installed Space/Space.app/Contents/MacOS/space-catalog",
+      "wasm_helper": "/Users/runner/work/_temp/tmp5cmz6l1s/Installed Space/Space.app/Contents/MacOS/space-client-wasm",
+      "wasm_sha256": "1a0077569388b8dba585e4c5e8586155ebeb43d4ba32e57a535d2b5610340251",
+      "sha256": "208f922cddeeb02e99c4a180e75e5687c96de52f22f862c9810bf04ef6b6192b",
+      "passed": true
+    },
+    {
+      "role": "reopen",
+      "pid": 60709,
+      "helper": "/Users/runner/work/_temp/tmp5cmz6l1s/Installed Space/Space.app/Contents/MacOS/space-catalog",
+      "wasm_helper": "/Users/runner/work/_temp/tmp5cmz6l1s/Installed Space/Space.app/Contents/MacOS/space-client-wasm",
+      "wasm_sha256": "1a0077569388b8dba585e4c5e8586155ebeb43d4ba32e57a535d2b5610340251",
+      "sha256": "208f922cddeeb02e99c4a180e75e5687c96de52f22f862c9810bf04ef6b6192b",
+      "passed": true
+    },
+    {
+      "role": "corrupt",
+      "pid": 60789,
+      "helper": "/Users/runner/work/_temp/tmp5cmz6l1s/Installed Space/Space.app/Contents/MacOS/space-catalog",
+      "wasm_helper": "/Users/runner/work/_temp/tmp5cmz6l1s/Installed Space/Space.app/Contents/MacOS/space-client-wasm",
+      "wasm_sha256": "1a0077569388b8dba585e4c5e8586155ebeb43d4ba32e57a535d2b5610340251",
+      "sha256": "208f922cddeeb02e99c4a180e75e5687c96de52f22f862c9810bf04ef6b6192b",
+      "passed": true
+    }
+  ],
+  "package_transport": "DMG copy",
+  "authentication": "fixture",
+  "directory_selection": "fixture",
+  "storage": "native",
+  "catalog_process": "installed bundle"
+}
