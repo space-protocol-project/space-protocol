@@ -1,0 +1,58 @@
+{
+  "wizard": [
+    "Next",
+    "Next",
+    "Next",
+    "Install",
+    "Finish"
+  ],
+  "installer": {
+    "pid": 6884,
+    "state": "locked",
+    "lifecycle": "resumed",
+    "focus": [
+      "resumed"
+    ],
+    "pending_targets": 0
+  },
+  "warm_click": {
+    "process": "shellexperiencehost.exe",
+    "title": "Space launch d956f6a0c7af47b19f4047905dcc1b9c"
+  },
+  "warm": {
+    "pid": 6884,
+    "state": "locked",
+    "lifecycle": "resumed",
+    "focus": [
+      "resumed",
+      "inactive",
+      "resumed"
+    ],
+    "pending_targets": 0
+  },
+  "cold_click": {
+    "process": "shellexperiencehost.exe",
+    "title": "Space launch a147428fb62645d2aea126abd042c51b"
+  },
+  "cold": {
+    "pid": 6964,
+    "state": "locked",
+    "lifecycle": "resumed",
+    "focus": [
+      "resumed"
+    ],
+    "pending_targets": 0
+  },
+  "maximized_preserved": true,
+  "relaunch": {
+    "pid": 6260,
+    "state": "locked",
+    "lifecycle": "resumed",
+    "focus": [
+      "resumed"
+    ],
+    "pending_targets": 0
+  },
+  "explicit_unlocks": 4,
+  "wrong_password_rejected": true
+}
