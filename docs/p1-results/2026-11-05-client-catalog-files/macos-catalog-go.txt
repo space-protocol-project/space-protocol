@@ -1,0 +1,12 @@
+=== RUN   TestBoundsAndReplacement
+--- PASS: TestBoundsAndReplacement (0.00s)
+=== RUN   TestExternalLink
+--- PASS: TestExternalLink (0.00s)
+=== RUN   TestSnapshotBudget
+--- PASS: TestSnapshotBudget (0.01s)
+=== RUN   TestReplaceIssuedEntry
+--- PASS: TestReplaceIssuedEntry (0.00s)
+=== RUN   TestRootIsPinned
+--- PASS: TestRootIsPinned (0.00s)
+PASS
+ok  	space.local/catalog	0.019s
