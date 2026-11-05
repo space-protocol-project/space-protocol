@@ -1,0 +1,37 @@
+{
+  "platform": "linux",
+  "phases": [
+    {
+      "role": "install",
+      "pid": 24978,
+      "helper": "/home/runner/work/_temp/tmp02rpdiwz/Installed Space/space-catalog",
+      "wasm_helper": "/home/runner/work/_temp/tmp02rpdiwz/Installed Space/space-client-wasm",
+      "wasm_sha256": "323a2d08fbdea9f00efb0fd6f7e3be4711547ed5ce219af6c3cf97eae0ca7877",
+      "sha256": "c7c453902ff96c4ae677571b866bd595f0795bd80befb9054937558416c82485",
+      "passed": true
+    },
+    {
+      "role": "reopen",
+      "pid": 25036,
+      "helper": "/home/runner/work/_temp/tmp02rpdiwz/Installed Space/space-catalog",
+      "wasm_helper": "/home/runner/work/_temp/tmp02rpdiwz/Installed Space/space-client-wasm",
+      "wasm_sha256": "323a2d08fbdea9f00efb0fd6f7e3be4711547ed5ce219af6c3cf97eae0ca7877",
+      "sha256": "c7c453902ff96c4ae677571b866bd595f0795bd80befb9054937558416c82485",
+      "passed": true
+    },
+    {
+      "role": "corrupt",
+      "pid": 25094,
+      "helper": "/home/runner/work/_temp/tmp02rpdiwz/Installed Space/space-catalog",
+      "wasm_helper": "/home/runner/work/_temp/tmp02rpdiwz/Installed Space/space-client-wasm",
+      "wasm_sha256": "323a2d08fbdea9f00efb0fd6f7e3be4711547ed5ce219af6c3cf97eae0ca7877",
+      "sha256": "c7c453902ff96c4ae677571b866bd595f0795bd80befb9054937558416c82485",
+      "passed": true
+    }
+  ],
+  "package_transport": "run extract",
+  "authentication": "fixture",
+  "directory_selection": "fixture",
+  "storage": "native",
+  "catalog_process": "installed bundle"
+}
