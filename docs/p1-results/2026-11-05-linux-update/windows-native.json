@@ -1,0 +1,37 @@
+{
+  "platform": "win32",
+  "phases": [
+    {
+      "role": "install",
+      "pid": 1432,
+      "helper": "D:\\a\\_temp\\tmped379wum\\Installed Space\\space-catalog.exe",
+      "wasm_helper": "D:\\a\\_temp\\tmped379wum\\Installed Space\\space-client-wasm.exe",
+      "wasm_sha256": "ef380d333efbdd3e48459043dd8b105a9dc9ac63452e9ffa358f98547e5b4521",
+      "sha256": "c0c4135f47c13ca70415354e74e3ae3f6701534561bf72dad8cfd75397cfe59f",
+      "passed": true
+    },
+    {
+      "role": "reopen",
+      "pid": 4488,
+      "helper": "D:\\a\\_temp\\tmped379wum\\Installed Space\\space-catalog.exe",
+      "wasm_helper": "D:\\a\\_temp\\tmped379wum\\Installed Space\\space-client-wasm.exe",
+      "wasm_sha256": "ef380d333efbdd3e48459043dd8b105a9dc9ac63452e9ffa358f98547e5b4521",
+      "sha256": "c0c4135f47c13ca70415354e74e3ae3f6701534561bf72dad8cfd75397cfe59f",
+      "passed": true
+    },
+    {
+      "role": "corrupt",
+      "pid": 7200,
+      "helper": "D:\\a\\_temp\\tmped379wum\\Installed Space\\space-catalog.exe",
+      "wasm_helper": "D:\\a\\_temp\\tmped379wum\\Installed Space\\space-client-wasm.exe",
+      "wasm_sha256": "ef380d333efbdd3e48459043dd8b105a9dc9ac63452e9ffa358f98547e5b4521",
+      "sha256": "c0c4135f47c13ca70415354e74e3ae3f6701534561bf72dad8cfd75397cfe59f",
+      "passed": true
+    }
+  ],
+  "package_transport": "Inno Setup",
+  "authentication": "fixture",
+  "directory_selection": "fixture",
+  "storage": "native",
+  "catalog_process": "installed bundle"
+}

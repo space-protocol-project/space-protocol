@@ -1,0 +1,35 @@
+=== RUN   TestBrokerHello
+=== RUN   TestBrokerHello/long
+=== RUN   TestBrokerHello/truncated
+=== RUN   TestBrokerHello/old
+=== RUN   TestBrokerHello/empty
+=== RUN   TestBrokerHello/future
+=== RUN   TestBrokerHello/duplicate
+=== RUN   TestBrokerHello/extra
+--- PASS: TestBrokerHello (0.00s)
+    --- PASS: TestBrokerHello/long (0.00s)
+    --- PASS: TestBrokerHello/truncated (0.00s)
+    --- PASS: TestBrokerHello/old (0.00s)
+    --- PASS: TestBrokerHello/empty (0.00s)
+    --- PASS: TestBrokerHello/future (0.00s)
+    --- PASS: TestBrokerHello/duplicate (0.00s)
+    --- PASS: TestBrokerHello/extra (0.00s)
+=== RUN   TestBrokerHandshake
+--- PASS: TestBrokerHandshake (0.00s)
+=== RUN   TestBrokerBufferedPayload
+--- PASS: TestBrokerBufferedPayload (0.00s)
+=== RUN   TestBrokerFragmentedHello
+--- PASS: TestBrokerFragmentedHello (0.00s)
+=== RUN   TestProtectedWorker
+=== RUN   TestProtectedWorker/catalog
+=== RUN   TestProtectedWorker/loop
+=== RUN   TestProtectedWorker/trap
+--- PASS: TestProtectedWorker (0.12s)
+    --- PASS: TestProtectedWorker/catalog (0.01s)
+    --- PASS: TestProtectedWorker/loop (0.11s)
+    --- PASS: TestProtectedWorker/trap (0.01s)
+=== RUN   TestLinuxMemoryEnforced
+    quota_linux_test.go:66: kernel OOM and released reservation: {Active:0 ReservedBytes:0 CurrentBytes:974848 PeakBytes:268697600 OOMKills:2 CPUUsec:130025 Throttled:0 OSProcesses:0}
+--- PASS: TestLinuxMemoryEnforced (0.13s)
+PASS
+ok  	space.local/clientwasm	0.254s

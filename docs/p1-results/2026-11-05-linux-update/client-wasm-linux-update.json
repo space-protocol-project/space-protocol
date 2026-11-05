@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "client_uid": 1001,
+  "cases": [
+    {
+      "case": "successful_update",
+      "changed_package_hash": true,
+      "previous_bytes_retained": true
+    },
+    {
+      "case": "invalid_executable",
+      "files_restored": true,
+      "wasm_after_rollback": true
+    },
+    {
+      "case": "service_start_failure",
+      "files_restored": true,
+      "wasm_after_rollback": true
+    },
+    {
+      "case": "worker_isolation_failure",
+      "files_restored": true,
+      "wasm_after_rollback": true
+    },
+    {
+      "case": "health_timeout",
+      "files_restored": true,
+      "wasm_after_rollback": true
+    },
+    {
+      "case": "SIGTERM",
+      "concurrent_rejected": true,
+      "files_restored": true,
+      "recovered_on_next_invocation": false
+    },
+    {
+      "case": "SIGKILL",
+      "concurrent_rejected": true,
+      "files_restored": true,
+      "recovered_on_next_invocation": true
+    },
+    {
+      "case": "first_install_failure",
+      "no_partial_installation": true
+    },
+    {
+      "case": "disabled_rollback",
+      "disabled_inactive_preserved": true
+    },
+    {
+      "case": "runtime_enabled_refused",
+      "unchanged_before_stop": true
+    }
+  ],
+  "healthy_install": true,
+  "private_journal": true,
+  "previous_snapshot_retained": true
+}
