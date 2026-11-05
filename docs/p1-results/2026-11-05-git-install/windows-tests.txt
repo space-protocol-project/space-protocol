@@ -1,0 +1,136 @@
+Resolving dependencies...
+Downloading packages...
+  _fe_analyzer_shared 110.0.0 (111.0.0 available)
+  analyzer 14.6.0 (14.7.0 available)
+  archive 4.5.2 (4.6.0 available)
+  built_collection 5.1.2 (6.0.0 available)
+  camera 0.12.1 (0.12.2 available)
+! camera_android_camerax 0.7.6 from path vendor\camera_android_camerax (overridden)
+! camera_avfoundation 0.10.3+1 from path vendor\camera_avfoundation (overridden)
+! camera_platform_interface 2.15.0 from path vendor\camera_platform_interface (overridden)
+  camera_web 0.3.5+6 (0.3.5+7 available)
+  cnativeapi 0.5.2 (0.5.9 available)
+! cross_file 0.4.0 (overridden)
+  crypto 3.0.7 (3.0.8 available)
+! file_selector_android 0.5.2+11 from path vendor\file_selector_android (overridden)
+! file_selector_ios 0.5.3+7 from path vendor\file_selector_ios (overridden)
+! file_selector_linux 0.9.4+1 from path vendor\file_selector_linux (overridden)
+! file_selector_macos 0.9.5+2 from path vendor\file_selector_macos (overridden)
+! file_selector_platform_interface 2.7.0 from path vendor\file_selector_platform_interface (overridden)
+! file_selector_web 0.9.5 from path vendor\file_selector_web (overridden)
+! file_selector_windows 0.9.3+6 from path vendor\file_selector_windows (overridden)
+! flutter_secure_storage_windows 4.2.2 from path vendor\flutter_secure_storage_windows (overridden)
+  flutter_svg 2.3.0 (2.3.2 available)
+! flutter_webrtc 1.6.2+hotfix.4 from path vendor\flutter_webrtc (overridden)
+! flutter_zxing 3.1.0 from path vendor\flutter_zxing (overridden)
+  http2 2.3.1 (3.1.0 available)
+! image_picker_android 0.8.13+25 from path vendor\image_picker_android (overridden)
+! image_picker_for_web 3.1.1 from path vendor\image_picker_for_web (overridden)
+! image_picker_ios 0.8.13+13 from path vendor\image_picker_ios (overridden)
+! image_picker_linux 0.2.2 from path vendor\image_picker_linux (overridden)
+! image_picker_macos 0.2.2+1 from path vendor\image_picker_macos (overridden)
+! image_picker_platform_interface 2.11.2 from path vendor\image_picker_platform_interface (overridden)
+! image_picker_windows 0.2.2 from path vendor\image_picker_windows (overridden)
+  jni 1.1.0 (1.1.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  nativeapi 0.5.2 (0.5.9 available)
+  nativeapi_flutter 0.5.2 (0.5.9 available)
+  objective_c 9.6.2 (9.6.3 available)
+  posix 6.5.3 (6.5.4 available)
+  qr 4.0.0 (4.0.1 available)
+! screen_retriever 0.3.0 (overridden) (0.3.1 available)
+  shared_preferences_android 2.5.3 (2.5.4 available)
+  shared_preferences_foundation 2.6.0 (2.6.1 available)
+  synchronized 3.5.0 (3.6.0 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_graphics 1.2.4 (1.2.6 available)
+  vector_graphics_compiler 1.3.2 (1.3.4 available)
+  vector_math 2.4.3 (2.4.4 available)
+! window_manager 0.5.2 from path vendor\window_manager (overridden)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+26 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading D:/a/space-app/space-app/client/test/git_install_test.dart
+00:00 +0: D:/a/space-app/space-app/client/test/git_install_test.dart: подписи, commit и digest связывают пакет; согласие требуется явно
+00:00 +1: D:/a/space-app/space-app/client/test/git_install_test.dart: источник отклоняется до сети: http://github.com/o/r
+00:00 +2: D:/a/space-app/space-app/client/test/git_install_test.dart: источник отклоняется до сети: https://user:secret@github.com/o/r
+00:00 +3: D:/a/space-app/space-app/client/test/git_install_test.dart: источник отклоняется до сети: https://127.0.0.1/o/r
+00:00 +4: D:/a/space-app/space-app/client/test/git_install_test.dart: источник отклоняется до сети: https://github.com/o/r?token=x
+00:00 +5: D:/a/space-app/space-app/client/test/git_install_test.dart: источник отклоняется до сети: https://github.com:443/o/r
+00:00 +6: D:/a/space-app/space-app/client/test/git_install_test.dart: источник отклоняется до сети: https://github.com.evil.test/o/r
+00:00 +7: D:/a/space-app/space-app/client/test/git_install_test.dart: полные refs, нормализация URL и запрет обхода пути
+00:00 +8: D:/a/space-app/space-app/client/test/git_install_test.dart: DNS-адреса внутренней сети и IPv6 не допускаются
+00:00 +9: D:/a/space-app/space-app/client/test/git_install_test.dart: ссылка или submodule не принимаются: 120000
+00:00 +10: D:/a/space-app/space-app/client/test/git_install_test.dart: ссылка или submodule не принимаются: 160000
+00:00 +11: D:/a/space-app/space-app/client/test/git_install_test.dart: усечённое дерево и подмена Git blob отклоняются
+00:00 +12: D:/a/space-app/space-app/client/test/git_install_test.dart: подмена index.sig не создаёт установку и доверие
+00:00 +13: D:/a/space-app/space-app/client/test/git_install_test.dart: подмена client.wasm не создаёт установку и доверие
+00:00 +14: D:/a/space-app/space-app/client/test/git_install_test.dart: подмена provenance.json не создаёт установку и доверие
+00:00 +15: D:/a/space-app/space-app/client/test/git_install_test.dart: подписанный документ с чужим источником отклоняется
+00:01 +16: D:/a/space-app/space-app/client/test/git_install_test.dart: новый подписывающий ключ не наследует сохранённое доверие
+00:01 +17: D:/a/space-app/space-app/client/test/git_install_test.dart: другой профиль не наследует доверие
+00:01 +18: D:/a/space-app/space-app/client/test/git_install_test.dart: блокировка во время загрузки отклоняет поздний ответ
+00:01 +19: D:/a/space-app/space-app/client/test/git_install_test.dart: отмена при записи доверия не публикует установку
+00:01 +20: D:/a/space-app/space-app/client/test/git_install_test.dart: блокировка при записи принятия не публикует установку
+00:01 +21: D:/a/space-app/space-app/client/test/git_install_test.dart: изменение реестра между проверкой и согласием требует повторения
+00:01 +22: D:/a/space-app/space-app/client/test/git_install_test.dart: незаявленный ABI, лишние и повторные поля манифеста отвергаются
+00:01 +23: D:/a/space-app/space-app/client/test/git_install_test.dart: неподдерживаемые импорты, start и повреждённые секции WASM отвергаются
+00:01 +24: D:/a/space-app/space-app/client/test/git_install_test.dart: экран связывает отдельное доверие и подтверждение с кандидатом
+00:02 +25: D:/a/space-app/space-app/client/test/git_install_test.dart: изменение источника после просмотра не меняет принятые байты
+00:02 +26: D:/a/space-app/space-app/client/test/git_install_test.dart: отозванное после просмотра доверие требует нового согласия
+00:02 +27: D:/a/space-app/space-app/client/test/git_install_test.dart: лишний файл или коллизия имён запрещены: extra.txt
+00:02 +28: D:/a/space-app/space-app/client/test/git_install_test.dart: лишний файл или коллизия имён запрещены: MANIFEST.JSON
+00:02 +29: D:/a/space-app/space-app/client/test/git_install_test.dart: лишний файл или коллизия имён запрещены: .gitmodules
+00:02 +30: D:/a/space-app/space-app/client/test/git_install_test.dart: подписанный неверный digest происхождения отклоняется
+00:02 +31: D:/a/space-app/space-app/client/test/git_install_test.dart: разблокировка экрана после блокировки и внешнего повторного входа
+00:06 +32: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: принятая установка подключается и восстанавливается после открытия
+00:06 +33: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: блокировка сохраняет хост для выбора, смена профиля закрывает его
+00:06 +34: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: подмена пакета не подключает хост после перезапуска
+00:07 +35: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: файл без защищённой записи и прямое согласие не разрешены
+00:07 +36: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: ошибка хеша не публикует установку
+00:07 +37: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: блокировка после записи принятия не публикует установку
+00:07 +38: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: потеря записи принятия закрывает доступ к прежней установке
+00:07 +39: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: поздняя подготовка после блокировки не подключает хост
+00:07 +40: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: выход ждёт освобождения ресурсов до prepare
+00:07 +41: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: поставляемый процесс не ищется в PATH и повторно проверяет хеш
+00:07 +42: D:/a/space-app/space-app/client/test/installed_extensions_test.dart: SpaceApp предоставляет владельца установок через Bloc
+00:10 +43: D:/a/space-app/space-app/client/test/catalog_grant_screen_test.dart: маршрут SpaceApp требует повторной разблокировки и явного согласия
+00:11 +44: D:/a/space-app/space-app/client/test/catalog_grant_screen_test.dart: смена автора закрывает выбранный корень
+00:11 +45: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: полный цикл, разрешение, активный вызов и восстановление
+00:11 +46: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: полный цикл, разрешение, активный вызов и восстановление
+00:12 +47: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: полный цикл, разрешение, активный вызов и восстановление
+00:12 +48: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: полный цикл, разрешение, активный вызов и восстановление
+00:12 +49: D:/a/space-app/space-app/client/test/catalog_grant_screen_test.dart: блокировка до COMMIT отклоняет позднее согласие
+00:12 +50: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: abort, quarantine, recover, reopen и обновление только кода
+00:12 +51: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: отзыв во время чтения и повторное согласие не оживляют старый ответ
+00:12 +52: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: чужая сессия и блокировка отзывают допуск и сохраняются
+00:12 +53: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: блокировка во время проверки запрещает поздний COMMIT
+00:12 +54: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: конкурентные команды фиксируют только одну ревизию
+00:12 +55: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: проверки пакета, согласия, плана и миграции не меняют снимок
+00:12 +56: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: restore проверяет владельца и не восстанавливает активный grant
+00:12 +57: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: разрешение привязано к выбранному корню, блокировка отзывает все корни
+00:12 +58: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: незаявленная возможность и отказ согласия не создают grant
+00:12 +59: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: невозможный переход и чужая установка не меняют запись
+00:12 +60: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: отказ согласия на каталог и неверный checkpoint не фиксируются
+00:12 +61: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: ошибка before закрывает допуск, восстановление сохраняет атомарность
+00:12 +62: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: ошибка partial закрывает допуск, восстановление сохраняет атомарность
+00:12 +63: D:/a/space-app/space-app/client/test/local_lifecycle_test.dart: ошибка after закрывает допуск, восстановление сохраняет атомарность
+00:13 +64: D:/a/space-app/space-app/client/test/local_registry_test.dart: снимок, ревизия, блокировка и поколение
+00:13 +65: D:/a/space-app/space-app/client/test/local_registry_test.dart: повреждение полного кадра не принимается
+00:13 +66: D:/a/space-app/space-app/client/test/local_registry_test.dart: повторное открытие закрывает активные состояния и старое поколение
+00:13 +67: D:/a/space-app/space-app/client/test/local_registry_test.dart: ошибка после COMMIT закрывает оболочку до повторного открытия
+00:14 +68: D:/a/space-app/space-app/client/test/local_session_scope_test.dart: первый вход требует активного окна и явного действия
+00:14 +69: D:/a/space-app/space-app/client/test/local_session_scope_test.dart: без службы аутентификации доступ закрыт
+00:14 +70: D:/a/space-app/space-app/client/test/local_session_scope_test.dart: один запрос, поздний ответ после блокировки не разблокирует
+00:14 +71: D:/a/space-app/space-app/client/test/local_session_scope_test.dart: ошибка, отмена и неверный профиль не дают сессию
+00:14 +72: D:/a/space-app/space-app/client/test/local_session_scope_test.dart: завершение и закрытие запрещают позднюю разблокировку
+00:14 +73: D:/a/space-app/space-app/client/test/local_session_scope_test.dart: уход в фон отзывает настоящую сессию и чтение реестра
+00:14 +74: D:/a/space-app/space-app/client/test/local_session_scope_test.dart: завершение блокирует сессию до prepare, даже при ошибке остановки
+00:14 +75: D:/a/space-app/space-app/client/test/local_session_scope_test.dart: замена области отзывает старый контекст
+00:14 +76: D:/a/space-app/space-app/client/test/app_shutdown_test.dart: Запрос выхода ОС проходит через общий контроллер и может быть отменён
+00:18 +77: D:/a/space-app/space-app/client/test/app_test.dart: Подключение обязательно; интерфейс помещается в широкое и узкое окно
+00:18 +78: D:/a/space-app/space-app/client/test/app_test.dart: Подключение обязательно; интерфейс помещается в широкое и узкое окно
+00:18 +79: D:/a/space-app/space-app/client/test/app_test.dart: Подключение обязательно; интерфейс помещается в широкое и узкое окно
+00:18 +80: D:/a/space-app/space-app/client/test/app_test.dart: Подключение обязательно; интерфейс помещается в широкое и узкое окно
+00:20 +81: All tests passed!

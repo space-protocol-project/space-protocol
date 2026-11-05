@@ -1,0 +1,31 @@
+{
+  "platform": "darwin",
+  "phases": [
+    {
+      "role": "install",
+      "pid": 35743,
+      "helper": "/Users/runner/work/_temp/tmpowx9c6zf/Installed Space/Space.app/Contents/MacOS/space-catalog",
+      "sha256": "1e8085a74d3994f8b93f79bdd5e3a4b5956e601e9707badac1f7e175d687b26a",
+      "passed": true
+    },
+    {
+      "role": "reopen",
+      "pid": 35761,
+      "helper": "/Users/runner/work/_temp/tmpowx9c6zf/Installed Space/Space.app/Contents/MacOS/space-catalog",
+      "sha256": "1e8085a74d3994f8b93f79bdd5e3a4b5956e601e9707badac1f7e175d687b26a",
+      "passed": true
+    },
+    {
+      "role": "corrupt",
+      "pid": 35767,
+      "helper": "/Users/runner/work/_temp/tmpowx9c6zf/Installed Space/Space.app/Contents/MacOS/space-catalog",
+      "sha256": "1e8085a74d3994f8b93f79bdd5e3a4b5956e601e9707badac1f7e175d687b26a",
+      "passed": true
+    }
+  ],
+  "package_transport": "DMG copy",
+  "authentication": "fixture",
+  "directory_selection": "fixture",
+  "storage": "native",
+  "catalog_process": "installed bundle"
+}
