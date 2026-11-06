@@ -1,0 +1,33 @@
+{
+  "manifest_sha256": "baf3224b05fe2411a20ea52270e7e595ad0ea41f0d081e986ed39aeb99cf2f56",
+  "arch": "amd64",
+  "public_key": "c2f446324c88cd26113df8c07b5bfed64ef7859eeba5463623c35d2ad0aeaed8",
+  "key_source": "independent CI job output; ephemeral fixture, not production publisher",
+  "valid_image_accepted": true,
+  "cases": [
+    {
+      "name": "tampered-vmlinuz",
+      "rejected_before_launch": true
+    },
+    {
+      "name": "tampered-initramfs.gz",
+      "rejected_before_launch": true
+    },
+    {
+      "name": "tampered-image.json",
+      "rejected_before_launch": true
+    },
+    {
+      "name": "tampered-image.sig",
+      "rejected_before_launch": true
+    },
+    {
+      "name": "unknown-key",
+      "rejected_before_launch": true
+    },
+    {
+      "name": "missing-signature",
+      "rejected_before_launch": true
+    }
+  ]
+}

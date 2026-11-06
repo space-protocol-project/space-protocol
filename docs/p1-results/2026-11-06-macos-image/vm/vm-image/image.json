@@ -1,0 +1,1 @@
+{"format":"space.vm.image.p1","arch":"amd64","abi":"space_plugin_p1","revision":"e2775a61dc4740216b2b8af034ba243812a5a868","assets":[{"name":"vmlinuz","size":15108488,"sha256":"9e9bb539fbf5e25c3fa737180e3586dacd0922257cdffe319daf8e5ceecaeaf0"},{"name":"initramfs.gz","size":14221431,"sha256":"ce3d605f3c35e47f924d2287090930f4c50498003c75cc5f93e04431eb381787"}]}
