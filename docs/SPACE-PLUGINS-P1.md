@@ -132,3 +132,5 @@ P2 подключает внутренние адаптеры и навигац�
 Продолжение E03: [доверенный ключ, подписанный manifest и проверенные копии kernel/initrd перед запуском macOS VM](SPACE-PLUGINS-P1-MACOS-IMAGE.md). Общий бюджет памяти VM и ARM64-стенд остаются открытыми.
 
 Продолжение E03: [Windows LPAC, отдельный профиль прав нативного worker](SPACE-PLUGINS-P1-WINDOWS-LPAC.md).
+
+Продолжение E03: [восстановление профилей Windows LPAC после аварии supervisor](SPACE-PLUGINS-P1-WINDOWS-RECOVERY.md).
