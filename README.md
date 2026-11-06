@@ -1652,3 +1652,5 @@ GitHub CI выпускает Windows Setup, macOS DMG, Linux RUN и подпис
 Продолжение E03: [наследование handles и файловые границы двух Windows LPAC-профилей](docs/SPACE-PLUGINS-P1-WINDOWS-HANDLES.md). Полная матрица успешна; обнаруженный сбой аварийного сценария разобран следующим срезом.
 
 Уточнение E03: [25 аварийных циклов настоящего LPAC worker и диагностика отказа child spawn](docs/SPACE-PLUGINS-P1-WINDOWS-RECOVERY.md). Исправлены тестовые предположения о NUL, conhost и готовности systemd; прежний вывод о проверенном LPAC-потомке отозван.
+
+Продолжение E03: [межпрофильный доступ к событиям и именованным каналам Windows LPAC](docs/SPACE-PLUGINS-P1-WINDOWS-IPC.md). Проверены свои и чужие объекты, удаление и новый профиль; рабочий broker пока не подключён.
