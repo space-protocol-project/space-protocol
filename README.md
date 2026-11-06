@@ -1672,3 +1672,5 @@ GitHub CI выпускает Windows Setup, macOS DMG, Linux RUN и подпис
 Проверка транспорта P1: [гонки отзыва доступа при Connect-отправке по TLS и HTTP/2](docs/SPACE-PLUGINS-P1-DELIVERY-TLS.md). Рабочее подключение и прежний gRPC-мост остаются отдельными этапами.
 
 Продолжение транспорта P1: [отмена HTTP/2-потока, обрыв записи и освобождение SQL-блокировок](docs/SPACE-PLUGINS-P1-DELIVERY-FAILURES.md).
+
+Проверка транспорта P1: [медленный HTTP/2-получатель, окно потока и независимые параллельные запросы](docs/SPACE-PLUGINS-P1-DELIVERY-FLOW.md).
