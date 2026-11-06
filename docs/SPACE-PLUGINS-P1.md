@@ -134,3 +134,5 @@ P2 подключает внутренние адаптеры и навигац�
 Продолжение E03: [Windows LPAC, отдельный профиль прав нативного worker](SPACE-PLUGINS-P1-WINDOWS-LPAC.md).
 
 Продолжение E03: [восстановление профилей Windows LPAC после аварии supervisor](SPACE-PLUGINS-P1-WINDOWS-RECOVERY.md).
+
+Продолжение E03: [Windows LPAC — реестр, IPC, операции с процессом supervisor и TCP/UDP IPv4/IPv6](SPACE-PLUGINS-P1-WINDOWS-RESOURCES.md).

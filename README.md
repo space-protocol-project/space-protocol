@@ -1646,3 +1646,5 @@ GitHub CI выпускает Windows Setup, macOS DMG, Linux RUN и подпис
 Продолжение E03: [отдельный прототип Windows LPAC без capabilities](docs/SPACE-PLUGINS-P1-WINDOWS-LPAC.md). Рабочее приложение пока не переключено на этот профиль; расширенная проверка прав остаётся открытой.
 
 Продолжение E03: [журнал и восстановление Windows LPAC после аварии supervisor](docs/SPACE-PLUGINS-P1-WINDOWS-RECOVERY.md); очистка профиля и временного executable перед повторным запуском, отказ повреждённому состоянию.
+
+Продолжение E03: [проверки реестра, IPC и сетевых операций Windows LPAC](docs/SPACE-PLUGINS-P1-WINDOWS-RESOURCES.md). Отказ Winsock отделён от ещё не принятой проверки сетевого фильтра.
