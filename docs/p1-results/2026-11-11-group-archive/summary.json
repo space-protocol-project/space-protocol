@@ -1,0 +1,355 @@
+{
+  "group": {
+    "group/version-export-results-darwin/export.jsonl": {
+      "pass": 20,
+      "terminal_pass": 14,
+      "skip": []
+    },
+    "group/version-export-results-linux/export.jsonl": {
+      "pass": 20,
+      "terminal_pass": 14,
+      "skip": []
+    },
+    "group/version-export-results-windows/export.jsonl": {
+      "pass": 20,
+      "terminal_pass": 14,
+      "skip": []
+    },
+    "group/version-import-results-darwin/import.jsonl": {
+      "pass": 27,
+      "terminal_pass": 24,
+      "skip": []
+    },
+    "group/version-import-results-linux/import.jsonl": {
+      "pass": 27,
+      "terminal_pass": 24,
+      "skip": []
+    },
+    "group/version-import-results-linux/resume.jsonl": {
+      "pass": 27,
+      "terminal_pass": 24,
+      "skip": []
+    },
+    "group/version-import-results-windows/import.jsonl": {
+      "pass": 27,
+      "terminal_pass": 24,
+      "skip": []
+    },
+    "group/version-seed-results/seed.jsonl": {
+      "pass": 5,
+      "terminal_pass": 4,
+      "skip": []
+    }
+  },
+  "single": {
+    "single/version-export-results-darwin/export.jsonl": {
+      "pass": 17,
+      "terminal_pass": 12,
+      "skip": []
+    },
+    "single/version-export-results-linux/export.jsonl": {
+      "pass": 17,
+      "terminal_pass": 12,
+      "skip": []
+    },
+    "single/version-export-results-windows/export.jsonl": {
+      "pass": 17,
+      "terminal_pass": 12,
+      "skip": []
+    },
+    "single/version-import-results-darwin/import.jsonl": {
+      "pass": 21,
+      "terminal_pass": 18,
+      "skip": []
+    },
+    "single/version-import-results-linux/import.jsonl": {
+      "pass": 21,
+      "terminal_pass": 18,
+      "skip": []
+    },
+    "single/version-import-results-linux/resume.jsonl": {
+      "pass": 21,
+      "terminal_pass": 18,
+      "skip": []
+    },
+    "single/version-import-results-windows/import.jsonl": {
+      "pass": 21,
+      "terminal_pass": 18,
+      "skip": []
+    },
+    "single/version-seed-results/seed.jsonl": {
+      "pass": 4,
+      "terminal_pass": 3,
+      "skip": []
+    }
+  },
+  "core": {
+    "core/p1-core/.local/p1-core/access-races.jsonl": {
+      "pass": 65,
+      "terminal_pass": 50,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/backup-validation.jsonl": {
+      "pass": 39,
+      "terminal_pass": 36,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/core.jsonl": {
+      "pass": 808,
+      "terminal_pass": 742,
+      "skip": [
+        "TestStoppedDatabaseBackupAndRestore",
+        "TestExtensionP1BackupRoundTrip",
+        "TestExtensionP1OldBackupRestore",
+        "TestExtensionP1RegistryArchiveRejectsInvalid",
+        "TestExtensionP1RegistryArchiveRoundTrip",
+        "TestExtensionP1RegistryTransferExport",
+        "TestExtensionP1RegistryTransferImport",
+        "TestExtensionP1VersionArchiveInvalid",
+        "TestExtensionP1VersionArchiveExport",
+        "TestExtensionP1VersionArchiveImport",
+        "TestExtensionP1VersionArchiveSeed",
+        "TestExtensionP1VersionArchiveResume",
+        "TestWitnessNetworkNamespaces",
+        "TestWitnessNamespaceHelper",
+        "TestPortableSpaceRoundTrip",
+        "TestPortableRestoreFailureDoesNotPublish",
+        "TestBundledPostgresPreservesIdentityAndData",
+        "TestScheduledLiveBackupRestoresDatabase",
+        "TestPrivateInterfaceTURN",
+        "TestExtensionDatabaseFaults",
+        "TestExtensionP1GroupCommitRecovery/prepare_before_commit",
+        "TestExtensionP1GroupCommitRecovery/prepare_after_commit",
+        "TestExtensionP1GroupCommitRecovery/step_before_commit",
+        "TestExtensionP1GroupCommitRecovery/step_after_commit",
+        "TestExtensionP1GroupCommitRecovery/publish_before_commit",
+        "TestExtensionP1GroupCommitRecovery/publish_after_commit",
+        "TestExtensionP1GroupProcessRecovery/between_instances",
+        "TestExtensionP1GroupProcessRecovery/before_publish",
+        "TestExtensionP1GroupProcessRecovery/after_publish",
+        "TestExtensionP1GroupCorruption/UPDATE_extension_p1_group_jobs",
+        "TestExtensionP1GroupCorruption/UPDATE_extension_p1_group_versions",
+        "TestExtensionP1GroupCorruption/DELETE_FROM",
+        "TestExtensionP1GroupCorruption/DELETE_FROM#01",
+        "TestExtensionP1GroupCorruption/UPDATE_extension_p1_group_versions#01",
+        "TestExtensionP1GroupCorruption/DROP_TABLE",
+        "TestExtensionP1GroupCorruption/UPDATE_extension_p1_instances",
+        "TestExtensionP1GroupAtomicFailure",
+        "TestExtensionP1GroupSequential",
+        "TestExtensionP1GroupRejects",
+        "TestExtensionP1GroupFailure",
+        "TestExtensionP1GroupActiveCalls",
+        "TestExtensionP1GroupRestoreGeneration",
+        "TestExtensionP1LifecycleRealWASM",
+        "TestExtensionP1MutationRealWASM",
+        "TestExtensionP1PublishCommitRecovery/publish_before_commit",
+        "TestExtensionP1PublishCommitRecovery/publish_after_commit",
+        "TestExtensionP1PublishProcessRecovery/before_publish",
+        "TestExtensionP1PublishProcessRecovery/after_publish",
+        "TestExtensionP1PublishWASM",
+        "TestExtensionP1PublishWASMFailures/trap",
+        "TestExtensionP1PublishWASMFailures/loop",
+        "TestExtensionP1PublishWASMFailures/invalid",
+        "TestExtensionP1PublishWASMFailures/schema",
+        "TestExtensionP1PublishWASMFailures/memory",
+        "TestExtensionP1PublishConcurrent",
+        "TestExtensionP1PublishRejectsUntrusted/module_hash",
+        "TestExtensionP1PublishRejectsUntrusted/target_hash",
+        "TestExtensionP1PublishRejectsUntrusted/changed_data",
+        "TestExtensionP1PublishRejectsUntrusted/go_step",
+        "TestExtensionP1PublishRejectsUntrusted/revoked",
+        "TestExtensionP1PublishRejectsUntrusted/member",
+        "TestExtensionP1RealIsolatedWASM",
+        "TestExtensionP1VersionsPrepareRecovery/versions_prepare_before_commit",
+        "TestExtensionP1VersionsPrepareRecovery/versions_prepare_after_commit",
+        "TestExtensionP1VersionsCommitRecovery/publish_before_commit",
+        "TestExtensionP1VersionsCommitRecovery/publish_after_commit",
+        "TestExtensionP1VersionsProcessRecovery/before_publish",
+        "TestExtensionP1VersionsProcessRecovery/after_publish",
+        "TestExtensionP1VersionsSequential",
+        "TestExtensionP1VersionsPermissionsAndSource",
+        "TestExtensionP1VersionsBackfill",
+        "TestExtensionP1VersionsCorruption/UPDATE_extension_p1_versions_SET_record_hash=repeat('0',64)_WHERE_sequence=1",
+        "TestExtensionP1VersionsCorruption/UPDATE_extension_p1_versions_SET_source=repeat('0',64)_WHERE_sequence=2",
+        "TestExtensionP1VersionsCorruption/DELETE_FROM_extension_p1_versions_WHERE_sequence=1",
+        "TestExtensionP1VersionsCorruption/DELETE_FROM_extension_p1_versions",
+        "TestExtensionP1VersionsCorruption/DROP_TABLE_extension_p1_versions",
+        "TestExtensionP1MutationWorkerCrashRecovery",
+        "TestPluginBaseline"
+      ]
+    },
+    "core/p1-core/.local/p1-core/crash.jsonl": {
+      "pass": 40,
+      "terminal_pass": 30,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/delivery.jsonl": {
+      "pass": 210,
+      "terminal_pass": 160,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/history.jsonl": {
+      "pass": 30,
+      "terminal_pass": 25,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/isolated.jsonl": {
+      "pass": 277,
+      "terminal_pass": 234,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/lifecycle-coordinator.jsonl": {
+      "pass": 1200,
+      "terminal_pass": 1175,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/lifecycle.jsonl": {
+      "pass": 200,
+      "terminal_pass": 175,
+      "skip": [
+        "TestExtensionP1LifecycleRealWASM",
+        "TestExtensionP1LifecycleRealWASM",
+        "TestExtensionP1LifecycleRealWASM",
+        "TestExtensionP1LifecycleRealWASM",
+        "TestExtensionP1LifecycleRealWASM"
+      ]
+    },
+    "core/p1-core/.local/p1-core/locks.jsonl": {
+      "pass": 110,
+      "terminal_pass": 90,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/mutations.jsonl": {
+      "pass": 39,
+      "terminal_pass": 32,
+      "skip": [
+        "TestExtensionP1MutationRealWASM",
+        "TestExtensionP1MutationWorkerCrashRecovery"
+      ]
+    },
+    "core/p1-core/.local/p1-core/outbox.jsonl": {
+      "pass": 60,
+      "terminal_pass": 60,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/race.jsonl": {
+      "pass": 808,
+      "terminal_pass": 742,
+      "skip": [
+        "TestStoppedDatabaseBackupAndRestore",
+        "TestExtensionP1BackupRoundTrip",
+        "TestExtensionP1OldBackupRestore",
+        "TestExtensionP1RegistryArchiveRejectsInvalid",
+        "TestExtensionP1RegistryArchiveRoundTrip",
+        "TestExtensionP1RegistryTransferExport",
+        "TestExtensionP1RegistryTransferImport",
+        "TestExtensionP1VersionArchiveInvalid",
+        "TestExtensionP1VersionArchiveExport",
+        "TestExtensionP1VersionArchiveImport",
+        "TestExtensionP1VersionArchiveSeed",
+        "TestExtensionP1VersionArchiveResume",
+        "TestWitnessNetworkNamespaces",
+        "TestWitnessNamespaceHelper",
+        "TestPortableSpaceRoundTrip",
+        "TestPortableRestoreFailureDoesNotPublish",
+        "TestBundledPostgresPreservesIdentityAndData",
+        "TestScheduledLiveBackupRestoresDatabase",
+        "TestPrivateInterfaceTURN",
+        "TestExtensionDatabaseFaults",
+        "TestExtensionP1GroupCommitRecovery/prepare_before_commit",
+        "TestExtensionP1GroupCommitRecovery/prepare_after_commit",
+        "TestExtensionP1GroupCommitRecovery/step_before_commit",
+        "TestExtensionP1GroupCommitRecovery/step_after_commit",
+        "TestExtensionP1GroupCommitRecovery/publish_before_commit",
+        "TestExtensionP1GroupCommitRecovery/publish_after_commit",
+        "TestExtensionP1GroupProcessRecovery/between_instances",
+        "TestExtensionP1GroupProcessRecovery/before_publish",
+        "TestExtensionP1GroupProcessRecovery/after_publish",
+        "TestExtensionP1GroupCorruption/UPDATE_extension_p1_group_jobs",
+        "TestExtensionP1GroupCorruption/UPDATE_extension_p1_group_versions",
+        "TestExtensionP1GroupCorruption/DELETE_FROM",
+        "TestExtensionP1GroupCorruption/DELETE_FROM#01",
+        "TestExtensionP1GroupCorruption/UPDATE_extension_p1_group_versions#01",
+        "TestExtensionP1GroupCorruption/DROP_TABLE",
+        "TestExtensionP1GroupCorruption/UPDATE_extension_p1_instances",
+        "TestExtensionP1GroupAtomicFailure",
+        "TestExtensionP1GroupSequential",
+        "TestExtensionP1GroupRejects",
+        "TestExtensionP1GroupFailure",
+        "TestExtensionP1GroupActiveCalls",
+        "TestExtensionP1GroupRestoreGeneration",
+        "TestExtensionP1LifecycleRealWASM",
+        "TestExtensionP1MutationRealWASM",
+        "TestExtensionP1PublishCommitRecovery/publish_before_commit",
+        "TestExtensionP1PublishCommitRecovery/publish_after_commit",
+        "TestExtensionP1PublishProcessRecovery/before_publish",
+        "TestExtensionP1PublishProcessRecovery/after_publish",
+        "TestExtensionP1PublishWASM",
+        "TestExtensionP1PublishWASMFailures/trap",
+        "TestExtensionP1PublishWASMFailures/loop",
+        "TestExtensionP1PublishWASMFailures/invalid",
+        "TestExtensionP1PublishWASMFailures/schema",
+        "TestExtensionP1PublishWASMFailures/memory",
+        "TestExtensionP1PublishConcurrent",
+        "TestExtensionP1PublishRejectsUntrusted/module_hash",
+        "TestExtensionP1PublishRejectsUntrusted/target_hash",
+        "TestExtensionP1PublishRejectsUntrusted/changed_data",
+        "TestExtensionP1PublishRejectsUntrusted/go_step",
+        "TestExtensionP1PublishRejectsUntrusted/revoked",
+        "TestExtensionP1PublishRejectsUntrusted/member",
+        "TestExtensionP1RealIsolatedWASM",
+        "TestExtensionP1VersionsPrepareRecovery/versions_prepare_before_commit",
+        "TestExtensionP1VersionsPrepareRecovery/versions_prepare_after_commit",
+        "TestExtensionP1VersionsCommitRecovery/publish_before_commit",
+        "TestExtensionP1VersionsCommitRecovery/publish_after_commit",
+        "TestExtensionP1VersionsProcessRecovery/before_publish",
+        "TestExtensionP1VersionsProcessRecovery/after_publish",
+        "TestExtensionP1VersionsSequential",
+        "TestExtensionP1VersionsPermissionsAndSource",
+        "TestExtensionP1VersionsBackfill",
+        "TestExtensionP1VersionsCorruption/UPDATE_extension_p1_versions_SET_record_hash=repeat('0',64)_WHERE_sequence=1",
+        "TestExtensionP1VersionsCorruption/UPDATE_extension_p1_versions_SET_source=repeat('0',64)_WHERE_sequence=2",
+        "TestExtensionP1VersionsCorruption/DELETE_FROM_extension_p1_versions_WHERE_sequence=1",
+        "TestExtensionP1VersionsCorruption/DELETE_FROM_extension_p1_versions",
+        "TestExtensionP1VersionsCorruption/DROP_TABLE_extension_p1_versions",
+        "TestExtensionP1MutationWorkerCrashRecovery",
+        "TestPluginBaseline"
+      ]
+    },
+    "core/p1-core/.local/p1-core/reconcile.jsonl": {
+      "pass": 25,
+      "terminal_pass": 25,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/registry-api.jsonl": {
+      "pass": 360,
+      "terminal_pass": 300,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/retention.jsonl": {
+      "pass": 15,
+      "terminal_pass": 15,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/retry-lease.jsonl": {
+      "pass": 20,
+      "terminal_pass": 20,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/retry.jsonl": {
+      "pass": 42,
+      "terminal_pass": 41,
+      "skip": []
+    },
+    "core/p1-core/.local/p1-core/worker-crash.jsonl": {
+      "pass": 20,
+      "terminal_pass": 15,
+      "skip": []
+    },
+    "core/p1-database/faults.jsonl": {
+      "pass": 25,
+      "terminal_pass": 20,
+      "skip": []
+    }
+  }
+}
