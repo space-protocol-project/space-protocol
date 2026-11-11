@@ -146,6 +146,39 @@
         ]
       }
     },
+    "/space.v1.ExtensionP1Service/ListExtensionContributions": {
+      "post": {
+        "operationId": "ExtensionP1Service_ListExtensionContributions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListExtensionContributionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Чтение конкретного экземпляра: сессия, read ACL и enabled lifecycle.\nПустой instance_id не означает перечисление всего пространства.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ListExtensionContributionsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ExtensionP1Service"
+        ]
+      }
+    },
     "/space.v1.ExtensionP1Service/ListExtensionInstallationAudit": {
       "post": {
         "operationId": "ExtensionP1Service_ListExtensionInstallationAudit",
@@ -411,6 +444,38 @@
       "default": "EXTENSION_COMMAND_OUTCOME_UNSPECIFIED",
       "description": " - EXTENSION_COMMAND_OUTCOME_UNKNOWN: Квитанция отсутствует; это НЕ доказательство отсутствия эффекта."
     },
+    "v1ExtensionContribution": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/v1ExtensionContributionKind"
+        },
+        "title": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "До 8 языков, en обязателен, до 120 символов."
+        },
+        "query": {
+          "type": "string",
+          "description": "Объявленный запрос для QueryExtension с тем же instance_id."
+        }
+      }
+    },
+    "v1ExtensionContributionKind": {
+      "type": "string",
+      "enum": [
+        "EXTENSION_CONTRIBUTION_KIND_UNSPECIFIED",
+        "EXTENSION_CONTRIBUTION_KIND_OVERVIEW",
+        "EXTENSION_CONTRIBUTION_KIND_SECTION"
+      ],
+      "default": "EXTENSION_CONTRIBUTION_KIND_UNSPECIFIED",
+      "description": "Тип элемента, а не разрешение на доступ к данным или нативному UI."
+    },
     "v1ExtensionInstallation": {
       "type": "object",
       "properties": {
@@ -510,6 +575,37 @@
           "type": "string",
           "format": "uint64",
           "description": "30000 мс от выдачи; клиент отсчитывает от начала RPC монотонными часами."
+        }
+      }
+    },
+    "v1ListExtensionContributionsRequest": {
+      "type": "object",
+      "properties": {
+        "instanceId": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/v1ExtensionContributionKind",
+          "description": "UNSPECIFIED возвращает оба вида."
+        }
+      },
+      "description": "Чтение конкретного экземпляра: сессия, read ACL и enabled lifecycle.\nПустой instance_id не означает перечисление всего пространства."
+    },
+    "v1ListExtensionContributionsResponse": {
+      "type": "object",
+      "properties": {
+        "contributions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ExtensionContribution"
+          },
+          "description": "До 32, порядок по id."
+        },
+        "registrySha256": {
+          "type": "string",
+          "format": "byte",
+          "description": "Идентичность регистрации, не допуск и не квитанция."
         }
       }
     },
