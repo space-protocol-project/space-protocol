@@ -1,0 +1,360 @@
+﻿2026-11-11T19:03:12.8261949Z Current runner version: '2.338.2'
+2026-11-11T19:03:12.8277768Z ##[group]Runner Image Provisioner
+2026-11-11T19:03:12.8278436Z Hosted Compute Agent
+2026-11-11T19:03:12.8278818Z Version: 20261028.624
+2026-11-11T19:03:12.8279249Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-11T19:03:12.8279787Z Build Date: 2026-10-28T21:51:42Z
+2026-11-11T19:03:12.8280220Z Worker ID: {fa69ef23-2108-4c1c-be2b-c2ba244cb4f6}
+2026-11-11T19:03:12.8280688Z Region: westus3
+2026-11-11T19:03:12.8281255Z Cloud: Azure
+2026-11-11T19:03:12.8281639Z ##[endgroup]
+2026-11-11T19:03:12.8282693Z ##[group]Operating System
+2026-11-11T19:03:12.8283255Z Ubuntu
+2026-11-11T19:03:12.8283821Z 24.04.5
+2026-11-11T19:03:12.8284306Z LTS
+2026-11-11T19:03:12.8284817Z ##[endgroup]
+2026-11-11T19:03:12.8285393Z ##[group]Runner Image
+2026-11-11T19:03:12.8285945Z Image: ubuntu-24.04
+2026-11-11T19:03:12.8286464Z Version: 20261101.360.1
+2026-11-11T19:03:12.8287755Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-11T19:03:12.8289353Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-11T19:03:12.8290269Z ##[endgroup]
+2026-11-11T19:03:12.8291582Z ##[group]GITHUB_TOKEN Permissions
+2026-11-11T19:03:12.8293189Z Contents: read
+2026-11-11T19:03:12.8293719Z Metadata: read
+2026-11-11T19:03:12.8294323Z ##[endgroup]
+2026-11-11T19:03:12.8296485Z Secret source: Actions
+2026-11-11T19:03:12.8297808Z Cache mode: write
+2026-11-11T19:03:12.8298506Z Prepare workflow directory
+2026-11-11T19:03:12.8508555Z Prepare all required actions
+2026-11-11T19:03:12.8540066Z Getting action download info
+2026-11-11T19:03:13.1642070Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-11T19:03:13.2777815Z Download action repository 'subosito/flutter-action@v2' (SHA:1a449444c387b1966244ae4d4f8c696479add0b2)
+2026-11-11T19:03:13.7371208Z Getting action download info
+2026-11-11T19:03:13.8542033Z Download action repository 'actions/cache@v5' (SHA:caa296126883cff596d87d8935842f9db880ef25)
+2026-11-11T19:03:14.0362095Z Complete job name: client (ubuntu-24.04)
+2026-11-11T19:03:14.0900935Z ##[group]Run actions/checkout@v4
+2026-11-11T19:03:14.0901398Z with:
+2026-11-11T19:03:14.0901686Z   repository: space-protocol-project/space-app
+2026-11-11T19:03:14.0903992Z   token: ***
+2026-11-11T19:03:14.0904238Z   ssh-strict: true
+2026-11-11T19:03:14.0904489Z   ssh-user: git
+2026-11-11T19:03:14.0904748Z   persist-credentials: true
+2026-11-11T19:03:14.0905026Z   clean: true
+2026-11-11T19:03:14.0905287Z   sparse-checkout-cone-mode: true
+2026-11-11T19:03:14.0905584Z   fetch-depth: 1
+2026-11-11T19:03:14.0905831Z   fetch-tags: false
+2026-11-11T19:03:14.0906086Z   show-progress: true
+2026-11-11T19:03:14.0906350Z   lfs: false
+2026-11-11T19:03:14.0906599Z   submodules: false
+2026-11-11T19:03:14.0906864Z   set-safe-directory: true
+2026-11-11T19:03:14.0907154Z   allow-unsafe-pr-checkout: false
+2026-11-11T19:03:14.0907523Z ##[endgroup]
+2026-11-11T19:03:14.2768335Z Syncing repository: space-protocol-project/space-app
+2026-11-11T19:03:14.2770000Z ##[group]Getting Git version info
+2026-11-11T19:03:14.2770715Z Working directory is '/home/runner/work/space-app/space-app'
+2026-11-11T19:03:14.2771767Z [command]/usr/bin/git version
+2026-11-11T19:03:14.2827864Z git version 2.56.0
+2026-11-11T19:03:14.2845736Z ##[endgroup]
+2026-11-11T19:03:14.2849826Z Temporarily overriding HOME='/home/runner/work/_temp/90380ddd-2538-4b28-a901-b4c3ff8bdfa0' before making global git config changes
+2026-11-11T19:03:14.2851355Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-11T19:03:14.2853580Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/space-app/space-app
+2026-11-11T19:03:14.2895013Z Deleting the contents of '/home/runner/work/space-app/space-app'
+2026-11-11T19:03:14.2897508Z ##[group]Initializing the repository
+2026-11-11T19:03:14.2900409Z [command]/usr/bin/git init /home/runner/work/space-app/space-app
+2026-11-11T19:03:14.2994740Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-11T19:03:14.2995847Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-11T19:03:14.2996801Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-11T19:03:14.2997555Z hint: call:
+2026-11-11T19:03:14.2997973Z hint:
+2026-11-11T19:03:14.2998532Z hint: 	git config --global init.defaultBranch <name>
+2026-11-11T19:03:14.2999176Z hint:
+2026-11-11T19:03:14.2999775Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-11T19:03:14.3000703Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-11T19:03:14.3001557Z hint:
+2026-11-11T19:03:14.3001989Z hint: 	git branch -m <name>
+2026-11-11T19:03:14.3002469Z hint:
+2026-11-11T19:03:14.3003149Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-11T19:03:14.3004132Z Initialized empty Git repository in /home/runner/work/space-app/space-app/.git/
+2026-11-11T19:03:14.3012639Z [command]/usr/bin/git remote add origin https://github.com/space-protocol-project/space-app
+2026-11-11T19:03:14.3053450Z ##[endgroup]
+2026-11-11T19:03:14.3056018Z ##[group]Disabling automatic garbage collection
+2026-11-11T19:03:14.3056638Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-11T19:03:14.3084246Z ##[endgroup]
+2026-11-11T19:03:14.3084944Z ##[group]Setting up auth
+2026-11-11T19:03:14.3089545Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-11T19:03:14.3119339Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-11T19:03:14.3438918Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-11T19:03:14.3479706Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-11T19:03:14.3682139Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-11T19:03:14.3719066Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-11T19:03:14.3916269Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-11T19:03:14.3958381Z ##[endgroup]
+2026-11-11T19:03:14.3958960Z ##[group]Fetching the repository
+2026-11-11T19:03:14.3967304Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a9cda1ebf5a67a72caff4f84694bbe21be00e93d:refs/remotes/origin/main
+2026-11-11T19:03:16.2743308Z From https://github.com/space-protocol-project/space-app
+2026-11-11T19:03:16.2743807Z  * [new ref]         a9cda1ebf5a67a72caff4f84694bbe21be00e93d -> origin/main
+2026-11-11T19:03:16.2747944Z ##[endgroup]
+2026-11-11T19:03:16.2748222Z ##[group]Determining the checkout info
+2026-11-11T19:03:16.2749805Z ##[endgroup]
+2026-11-11T19:03:16.2754587Z [command]/usr/bin/git sparse-checkout disable
+2026-11-11T19:03:16.2804646Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-11T19:03:16.2839909Z ##[group]Checking out the ref
+2026-11-11T19:03:16.2842974Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-11T19:03:16.6016825Z Switched to a new branch 'main'
+2026-11-11T19:03:16.6019004Z branch 'main' set up to track 'origin/main'.
+2026-11-11T19:03:16.6037936Z ##[endgroup]
+2026-11-11T19:03:16.6089200Z [command]/usr/bin/git log -1 --format=%H
+2026-11-11T19:03:16.6121130Z a9cda1ebf5a67a72caff4f84694bbe21be00e93d
+2026-11-11T19:03:16.6448660Z ##[group]Run subosito/flutter-action@v2
+2026-11-11T19:03:16.6448857Z with:
+2026-11-11T19:03:16.6448984Z   flutter-version: 3.47.8
+2026-11-11T19:03:16.6449121Z   channel: stable
+2026-11-11T19:03:16.6449373Z   cache: true
+2026-11-11T19:03:16.6449499Z   architecture: X64
+2026-11-11T19:03:16.6449629Z   pub-cache-path: default
+2026-11-11T19:03:16.6449763Z   dry-run: false
+2026-11-11T19:03:16.6449922Z   git-source: https://github.com/flutter/flutter.git
+2026-11-11T19:03:16.6450108Z ##[endgroup]
+2026-11-11T19:03:16.6488297Z ##[start-action display=Make yq tool available on Windows runners;id=__subosito_flutter-action.__run]
+2026-11-11T19:03:16.6501297Z ##[end-action id=__subosito_flutter-action.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-11T19:03:16.6502689Z ##[start-action display=Make setup script executable;id=__subosito_flutter-action.__run_2]
+2026-11-11T19:03:16.6528435Z ##[group]Run chmod +x "$GITHUB_ACTION_PATH/setup.sh"
+2026-11-11T19:03:16.6528734Z [36;1mchmod +x "$GITHUB_ACTION_PATH/setup.sh"[0m
+2026-11-11T19:03:16.6547920Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-11T19:03:16.6548158Z ##[endgroup]
+2026-11-11T19:03:16.6611871Z ##[end-action id=__subosito_flutter-action.__run_2;outcome=success;conclusion=success;duration_ms=10]
+2026-11-11T19:03:16.6613324Z ##[start-action display=Set action inputs;id=__subosito_flutter-action.flutter-action]
+2026-11-11T19:03:16.6639859Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -p \
+2026-11-11T19:03:16.6640087Z [36;1m$GITHUB_ACTION_PATH/setup.sh -p \[0m
+2026-11-11T19:03:16.6640261Z [36;1m  -n '3.47.8' \[0m
+2026-11-11T19:03:16.6640398Z [36;1m  -f '' \[0m
+2026-11-11T19:03:16.6640520Z [36;1m  -a 'X64' \[0m
+2026-11-11T19:03:16.6640646Z [36;1m  -k '' \[0m
+2026-11-11T19:03:16.6640997Z [36;1m  -c '' \[0m
+2026-11-11T19:03:16.6641135Z [36;1m  -l '' \[0m
+2026-11-11T19:03:16.6641260Z [36;1m  -d 'default' \[0m
+2026-11-11T19:03:16.6641468Z [36;1m  -g 'https://github.com/flutter/flutter.git' \[0m
+2026-11-11T19:03:16.6641678Z [36;1m  stable[0m
+2026-11-11T19:03:16.6656670Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-11T19:03:16.6656868Z ##[endgroup]
+2026-11-11T19:03:16.8473835Z ##[end-action id=__subosito_flutter-action.flutter-action;outcome=success;conclusion=success;duration_ms=185]
+2026-11-11T19:03:16.8477287Z ##[start-action display=Cache Flutter;id=__subosito_flutter-action.cache-flutter]
+2026-11-11T19:03:16.8508786Z ##[group]Run actions/cache@v5
+2026-11-11T19:03:16.8508938Z with:
+2026-11-11T19:03:16.8509093Z   path: /opt/hostedtoolcache/flutter/stable-3.47.8-x64
+2026-11-11T19:03:16.8509364Z   key: flutter-linux-stable-3.47.8-x64-737ba8f885dc774b53b442759999a312c9461e4e
+2026-11-11T19:03:16.8509614Z   enableCrossOsArchive: false
+2026-11-11T19:03:16.8509764Z   fail-on-cache-miss: false
+2026-11-11T19:03:16.8509909Z   lookup-only: false
+2026-11-11T19:03:16.8510037Z   save-always: false
+2026-11-11T19:03:16.8510166Z ##[endgroup]
+2026-11-11T19:03:17.1391026Z Cache hit for: flutter-linux-stable-3.47.8-x64-737ba8f885dc774b53b442759999a312c9461e4e
+2026-11-11T19:03:18.3788931Z Received 79691776 of 1726128896 (4.6%), 76.0 MBs/sec
+2026-11-11T19:03:19.3787411Z Received 201326592 of 1726128896 (11.7%), 96.0 MBs/sec
+2026-11-11T19:03:20.3792343Z Received 360710144 of 1726128896 (20.9%), 114.6 MBs/sec
+2026-11-11T19:03:21.3806105Z Received 532676608 of 1726128896 (30.9%), 126.9 MBs/sec
+2026-11-11T19:03:22.3851628Z Received 671088640 of 1726128896 (38.9%), 127.9 MBs/sec
+2026-11-11T19:03:23.3806441Z Received 826277888 of 1726128896 (47.9%), 131.3 MBs/sec
+2026-11-11T19:03:24.3841904Z Received 977272832 of 1726128896 (56.6%), 133.1 MBs/sec
+2026-11-11T19:03:25.3815218Z Received 1107296256 of 1726128896 (64.1%), 132.0 MBs/sec
+2026-11-11T19:03:26.3821362Z Received 1241513984 of 1726128896 (71.9%), 131.5 MBs/sec
+2026-11-11T19:03:27.3818764Z Received 1375731712 of 1726128896 (79.7%), 131.2 MBs/sec
+2026-11-11T19:03:28.3816889Z Received 1501560832 of 1726128896 (87.0%), 130.1 MBs/sec
+2026-11-11T19:03:29.3817774Z Received 1610612736 of 1726128896 (93.3%), 128.0 MBs/sec
+2026-11-11T19:03:30.1770322Z Received 1726128896 of 1726128896 (100.0%), 128.6 MBs/sec
+2026-11-11T19:03:30.1771800Z Cache Size: ~1646 MB (1726128896 B)
+2026-11-11T19:03:30.1855405Z [command]/usr/bin/tar -xf /home/runner/work/_temp/81a8c56f-15eb-45f3-ac5b-55c03b42b5a8/cache.tzst -P -C /home/runner/work/space-app/space-app --use-compress-program unzstd
+2026-11-11T19:03:39.1973463Z Cache restored successfully
+2026-11-11T19:03:39.2931254Z Cache restored from key: flutter-linux-stable-3.47.8-x64-737ba8f885dc774b53b442759999a312c9461e4e
+2026-11-11T19:03:39.3064468Z ##[end-action id=__subosito_flutter-action.cache-flutter;outcome=success;conclusion=success;duration_ms=22458]
+2026-11-11T19:03:39.3066495Z ##[start-action display=Cache pub dependencies;id=__subosito_flutter-action.cache-pub]
+2026-11-11T19:03:39.5271043Z ##[group]Run actions/cache@v5
+2026-11-11T19:03:39.5271284Z with:
+2026-11-11T19:03:39.5271481Z   path: /home/runner/.pub-cache
+2026-11-11T19:03:39.5272139Z   key: flutter-pub-linux-stable-3.47.8-x64-737ba8f885dc774b53b442759999a312c9461e4e-cd037c2b9170f1b0341d65babe7a8b16874ed2cee19cf068d5fccd88558ec186
+2026-11-11T19:03:39.5272812Z   enableCrossOsArchive: false
+2026-11-11T19:03:39.5273041Z   fail-on-cache-miss: false
+2026-11-11T19:03:39.5273260Z   lookup-only: false
+2026-11-11T19:03:39.5273452Z   save-always: false
+2026-11-11T19:03:39.5273646Z ##[endgroup]
+2026-11-11T19:03:39.8178391Z Cache hit for: flutter-pub-linux-stable-3.47.8-x64-737ba8f885dc774b53b442759999a312c9461e4e-cd037c2b9170f1b0341d65babe7a8b16874ed2cee19cf068d5fccd88558ec186
+2026-11-11T19:03:41.0584477Z Received 62914560 of 74226662 (84.8%), 59.9 MBs/sec
+2026-11-11T19:03:41.1754875Z Received 74226662 of 74226662 (100.0%), 63.3 MBs/sec
+2026-11-11T19:03:41.1755772Z Cache Size: ~71 MB (74226662 B)
+2026-11-11T19:03:41.1780264Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d0a9a85a-e5e1-4f6d-9c71-da28eddc5c35/cache.tzst -P -C /home/runner/work/space-app/space-app --use-compress-program unzstd
+2026-11-11T19:03:42.1561751Z Cache restored successfully
+2026-11-11T19:03:42.1646727Z Cache restored from key: flutter-pub-linux-stable-3.47.8-x64-737ba8f885dc774b53b442759999a312c9461e4e-cd037c2b9170f1b0341d65babe7a8b16874ed2cee19cf068d5fccd88558ec186
+2026-11-11T19:03:42.1785619Z ##[end-action id=__subosito_flutter-action.cache-pub;outcome=success;conclusion=success;duration_ms=2871]
+2026-11-11T19:03:42.1788378Z ##[start-action display=Run setup script;id=__subosito_flutter-action.__run_3]
+2026-11-11T19:03:42.2050479Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh \
+2026-11-11T19:03:42.2050955Z [36;1m$GITHUB_ACTION_PATH/setup.sh \[0m
+2026-11-11T19:03:42.2051214Z [36;1m  -n '3.47.8' \[0m
+2026-11-11T19:03:42.2051433Z [36;1m  -a 'x64' \[0m
+2026-11-11T19:03:42.2051728Z [36;1m  -c '/opt/hostedtoolcache/flutter/stable-3.47.8-x64' \[0m
+2026-11-11T19:03:42.2052059Z [36;1m  -d '/home/runner/.pub-cache' \[0m
+2026-11-11T19:03:42.2052304Z [36;1m  stable[0m
+2026-11-11T19:03:42.2092130Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-11T19:03:42.2092347Z ##[endgroup]
+2026-11-11T19:03:42.4774334Z ##[end-action id=__subosito_flutter-action.__run_3;outcome=success;conclusion=success;duration_ms=298]
+2026-11-11T19:03:42.5563587Z ##[group]Run rustup toolchain install 1.99.1 --profile minimal
+2026-11-11T19:03:42.5563867Z [36;1mrustup toolchain install 1.99.1 --profile minimal[0m
+2026-11-11T19:03:42.5582114Z shell: /usr/bin/bash -e {0}
+2026-11-11T19:03:42.5582306Z env:
+2026-11-11T19:03:42.5582491Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.47.8-x64/flutter
+2026-11-11T19:03:42.5582716Z   PUB_CACHE: /home/runner/.pub-cache
+2026-11-11T19:03:42.5582874Z ##[endgroup]
+2026-11-11T19:03:42.7105481Z info: syncing channel updates for 1.99.1-x86_64-unknown-linux-gnu
+2026-11-11T19:03:43.2109858Z info: latest update on 2026-10-15 for version 1.99.1 (58cf8f9c3 2026-10-13)
+2026-11-11T19:03:43.2111625Z info: downloading 3 components
+2026-11-11T19:03:50.2929515Z 
+2026-11-11T19:03:50.2989340Z   1.99.1-x86_64-unknown-linux-gnu installed - rustc 1.99.1 (58cf8f9c3 2026-10-13)
+2026-11-11T19:03:50.3124330Z 
+2026-11-11T19:03:50.3147743Z ##[group]Run flutter pub get
+2026-11-11T19:03:50.3147940Z [36;1mflutter pub get[0m
+2026-11-11T19:03:50.3164816Z shell: /usr/bin/bash -e {0}
+2026-11-11T19:03:50.3164973Z env:
+2026-11-11T19:03:50.3165159Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.47.8-x64/flutter
+2026-11-11T19:03:50.3165390Z   PUB_CACHE: /home/runner/.pub-cache
+2026-11-11T19:03:50.3165548Z ##[endgroup]
+2026-11-11T19:03:50.6285729Z Resolving dependencies...
+2026-11-11T19:03:51.1545502Z Downloading packages...
+2026-11-11T19:03:51.1600649Z   _fe_analyzer_shared 110.0.0 (111.0.0 available)
+2026-11-11T19:03:51.1601062Z   analyzer 14.6.0 (14.7.0 available)
+2026-11-11T19:03:51.1601322Z   archive 4.5.2 (4.6.0 available)
+2026-11-11T19:03:51.1601604Z   built_collection 5.1.2 (6.0.0 available)
+2026-11-11T19:03:51.1601861Z   camera 0.12.1 (0.12.2 available)
+2026-11-11T19:03:51.1602217Z ! camera_android_camerax 0.7.6 from path vendor/camera_android_camerax (overridden)
+2026-11-11T19:03:51.1602823Z ! camera_avfoundation 0.10.3+1 from path vendor/camera_avfoundation (overridden)
+2026-11-11T19:03:51.1603346Z ! camera_platform_interface 2.15.0 from path vendor/camera_platform_interface (overridden)
+2026-11-11T19:03:51.1603734Z   camera_web 0.3.5+6 (0.3.6 available)
+2026-11-11T19:03:51.1603995Z   cnativeapi 0.5.2 (0.5.10 available)
+2026-11-11T19:03:51.1604247Z   code_assets 2.1.0 (2.2.0 available)
+2026-11-11T19:03:51.1604499Z ! cross_file 0.4.0 (overridden)
+2026-11-11T19:03:51.1604747Z   cross_file_web 1.0.0 (1.1.0 available)
+2026-11-11T19:03:51.1605040Z   crypto 3.0.7 (3.0.8 available)
+2026-11-11T19:03:51.1605400Z ! file_selector_android 0.5.2+11 from path vendor/file_selector_android (overridden)
+2026-11-11T19:03:51.1605872Z ! file_selector_ios 0.5.3+7 from path vendor/file_selector_ios (overridden)
+2026-11-11T19:03:51.1606329Z ! file_selector_linux 0.9.4+1 from path vendor/file_selector_linux (overridden)
+2026-11-11T19:03:51.1606788Z ! file_selector_macos 0.9.5+2 from path vendor/file_selector_macos (overridden)
+2026-11-11T19:03:51.1607223Z ! file_selector_platform_interface 2.7.0 from path vendor/file_selector_platform_interface (overridden)
+2026-11-11T19:03:51.1607556Z ! file_selector_web 0.9.5 from path vendor/file_selector_web (overridden)
+2026-11-11T19:03:51.1607845Z ! file_selector_windows 0.9.3+6 from path vendor/file_selector_windows (overridden)
+2026-11-11T19:03:51.1608179Z ! flutter_secure_storage_windows 4.2.2 from path vendor/flutter_secure_storage_windows (overridden)
+2026-11-11T19:03:51.1608476Z   flutter_svg 2.3.0 (2.3.3 available)
+2026-11-11T19:03:51.1608811Z ! flutter_webrtc 1.6.2+hotfix.4 from path vendor/flutter_webrtc (overridden)
+2026-11-11T19:03:51.1609235Z ! flutter_zxing 3.1.0 from path vendor/flutter_zxing (overridden)
+2026-11-11T19:03:51.1609570Z   googleapis_auth 2.3.5 (2.3.7 available)
+2026-11-11T19:03:51.1609751Z   http2 2.3.1 (3.1.0 available)
+2026-11-11T19:03:51.1609988Z ! image_picker_android 0.8.13+25 from path vendor/image_picker_android (overridden)
+2026-11-11T19:03:51.1610295Z ! image_picker_for_web 3.1.1 from path vendor/image_picker_for_web (overridden)
+2026-11-11T19:03:51.1610582Z ! image_picker_ios 0.8.13+13 from path vendor/image_picker_ios (overridden)
+2026-11-11T19:03:51.1611028Z ! image_picker_linux 0.2.2 from path vendor/image_picker_linux (overridden)
+2026-11-11T19:03:51.1611315Z ! image_picker_macos 0.2.2+1 from path vendor/image_picker_macos (overridden)
+2026-11-11T19:03:51.1611645Z ! image_picker_platform_interface 2.11.2 from path vendor/image_picker_platform_interface (overridden)
+2026-11-11T19:03:51.1611978Z ! image_picker_windows 0.2.2 from path vendor/image_picker_windows (overridden)
+2026-11-11T19:03:51.1612213Z   jni 1.1.0 (1.1.2 available)
+2026-11-11T19:03:51.1612387Z   material_color_utilities 0.13.0 (0.13.1 available)
+2026-11-11T19:03:51.1612582Z   native_toolchain_c 0.19.5 (0.19.6 available)
+2026-11-11T19:03:51.1612757Z   nativeapi 0.5.2 (0.5.10 available)
+2026-11-11T19:03:51.1612927Z   nativeapi_flutter 0.5.2 (0.5.10 available)
+2026-11-11T19:03:51.1613354Z   objective_c 9.6.2 (9.6.4 available)
+2026-11-11T19:03:51.1613516Z   posix 6.5.3 (6.5.4 available)
+2026-11-11T19:03:51.1613800Z   qr 4.0.0 (4.0.1 available)
+2026-11-11T19:03:51.1613978Z ! screen_retriever 0.3.0 (overridden) (0.3.1 available)
+2026-11-11T19:03:51.1614186Z   shared_preferences_android 2.5.3 (2.5.5 available)
+2026-11-11T19:03:51.1614392Z   shared_preferences_foundation 2.6.0 (2.6.2 available)
+2026-11-11T19:03:51.1614580Z   synchronized 3.5.0 (3.6.1+1 available)
+2026-11-11T19:03:51.1614742Z   test_api 0.7.12 (0.7.15 available)
+2026-11-11T19:03:51.1614905Z   vector_graphics 1.2.4 (1.3.0 available)
+2026-11-11T19:03:51.1615099Z   vector_graphics_codec 1.1.13 (1.2.0 available)
+2026-11-11T19:03:51.1615292Z   vector_graphics_compiler 1.3.2 (1.3.6 available)
+2026-11-11T19:03:51.1615471Z   vector_math 2.4.3 (2.4.4 available)
+2026-11-11T19:03:51.1615676Z ! window_manager 0.5.2 from path vendor/window_manager (overridden)
+2026-11-11T19:03:51.1615889Z   xml 7.0.1 (7.1.0 available)
+2026-11-11T19:03:51.1616045Z Got dependencies!
+2026-11-11T19:03:51.1616248Z 31 packages have newer versions incompatible with dependency constraints.
+2026-11-11T19:03:51.1616498Z Try `flutter pub outdated` for more information.
+2026-11-11T19:03:51.6333879Z ##[group]Run flutter analyze --no-pub
+2026-11-11T19:03:51.6334115Z [36;1mflutter analyze --no-pub[0m
+2026-11-11T19:03:51.6351347Z shell: /usr/bin/bash -e {0}
+2026-11-11T19:03:51.6351500Z env:
+2026-11-11T19:03:51.6351686Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.47.8-x64/flutter
+2026-11-11T19:03:51.6351919Z   PUB_CACHE: /home/runner/.pub-cache
+2026-11-11T19:03:51.6352076Z ##[endgroup]
+2026-11-11T19:04:10.4521506Z Analyzing client...                                             
+2026-11-11T19:04:10.4541966Z No issues found! (ran in 18.5s)
+2026-11-11T19:04:10.4654857Z ##[group]Run flutter test --no-pub test/builtin_test.dart
+2026-11-11T19:04:10.4655124Z [36;1mflutter test --no-pub test/builtin_test.dart[0m
+2026-11-11T19:04:10.4671829Z shell: /usr/bin/bash -e {0}
+2026-11-11T19:04:10.4671979Z env:
+2026-11-11T19:04:10.4672160Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.47.8-x64/flutter
+2026-11-11T19:04:10.4672400Z   PUB_CACHE: /home/runner/.pub-cache
+2026-11-11T19:04:10.4672563Z ##[endgroup]
+2026-11-11T19:04:12.0711659Z Unhandled exception:
+2026-11-11T19:04:12.0712229Z Bad state: pkg-config --cflags gtk+-3.0 x11 xi failed; install the GTK 3, X11 and Xi development packages.
+2026-11-11T19:04:12.0712737Z Package gtk+-3.0 was not found in the pkg-config search path.
+2026-11-11T19:04:12.0713123Z Perhaps you should add the directory containing `gtk+-3.0.pc'
+2026-11-11T19:04:12.0713458Z to the PKG_CONFIG_PATH environment variable
+2026-11-11T19:04:12.0713776Z Package 'gtk+-3.0', required by 'virtual:world', not found
+2026-11-11T19:04:12.0714172Z Package 'x11', required by 'virtual:world', not found
+2026-11-11T19:04:12.0714488Z Package 'xi', required by 'virtual:world', not found
+2026-11-11T19:04:12.0714715Z 
+2026-11-11T19:04:12.0715017Z #0      _pkgConfig (file:///home/runner/.pub-cache/hosted/pub.dev/cnativeapi-0.5.2/hook/build.dart:169:5)
+2026-11-11T19:04:12.0715456Z <asynchronous suspension>
+2026-11-11T19:04:12.0716064Z #1      main.<anonymous closure> (file:///home/runner/.pub-cache/hosted/pub.dev/cnativeapi-0.5.2/hook/build.dart:74:22)
+2026-11-11T19:04:12.0716552Z <asynchronous suspension>
+2026-11-11T19:04:12.0716836Z #2      build (package:hooks/src/api/build_and_link.dart:250:5)
+2026-11-11T19:04:12.0717147Z <asynchronous suspension>
+2026-11-11T19:04:12.0717525Z #3      main (file:///home/runner/.pub-cache/hosted/pub.dev/cnativeapi-0.5.2/hook/build.dart:16:3)
+2026-11-11T19:04:12.0717920Z <asynchronous suspension>
+2026-11-11T19:04:12.0718057Z 
+2026-11-11T19:04:12.0859713Z   Building assets for package:cnativeapi failed.
+2026-11-11T19:04:12.0860000Z   build.dart returned with exit code: 255.
+2026-11-11T19:04:12.0860175Z   To reproduce run:
+2026-11-11T19:04:12.0861338Z   (cd /home/runner/.pub-cache/hosted/pub.dev/cnativeapi-0.5.2/; /opt/hostedtoolcache/flutter/stable-3.47.8-x64/flutter/bin/cache/dart-sdk/bin/dart --packages=/home/runner/work/space-app/space-app/client/.dart_tool/package_config.json /home/runner/work/space-app/space-app/client/.dart_tool/hooks_runner/cnativeapi/6b4ebf10e7/hook.dill --config=/home/runner/work/space-app/space-app/client/.dart_tool/hooks_runner/cnativeapi/6b4ebf10e7/input.json )
+2026-11-11T19:04:12.0862627Z   stderr:
+2026-11-11T19:04:12.0862758Z   Unhandled exception:
+2026-11-11T19:04:12.0863024Z Bad state: pkg-config --cflags gtk+-3.0 x11 xi failed; install the GTK 3, X11 and Xi development packages.
+2026-11-11T19:04:12.0863347Z Package gtk+-3.0 was not found in the pkg-config search path.
+2026-11-11T19:04:12.0863653Z Perhaps you should add the directory containing `gtk+-3.0.pc'
+2026-11-11T19:04:12.0863928Z to the PKG_CONFIG_PATH environment variable
+2026-11-11T19:04:12.0864138Z Package 'gtk+-3.0', required by 'virtual:world', not found
+2026-11-11T19:04:12.0864434Z Package 'x11', required by 'virtual:world', not found
+2026-11-11T19:04:12.0864670Z Package 'xi', required by 'virtual:world', not found
+2026-11-11T19:04:12.0864860Z 
+2026-11-11T19:04:12.0865067Z #0      _pkgConfig (file:///home/runner/.pub-cache/hosted/pub.dev/cnativeapi-0.5.2/hook/build.dart:169:5)
+2026-11-11T19:04:12.0865346Z <asynchronous suspension>
+2026-11-11T19:04:12.0865632Z #1      main.<anonymous closure> (file:///home/runner/.pub-cache/hosted/pub.dev/cnativeapi-0.5.2/hook/build.dart:74:22)
+2026-11-11T19:04:12.0865927Z <asynchronous suspension>
+2026-11-11T19:04:12.0866113Z #2      build (package:hooks/src/api/build_and_link.dart:250:5)
+2026-11-11T19:04:12.0866311Z <asynchronous suspension>
+2026-11-11T19:04:12.0866546Z #3      main (file:///home/runner/.pub-cache/hosted/pub.dev/cnativeapi-0.5.2/hook/build.dart:16:3)
+2026-11-11T19:04:12.0866999Z <asynchronous suspension>
+2026-11-11T19:04:12.0867088Z 
+2026-11-11T19:04:12.0867138Z   stdout:
+2026-11-11T19:04:12.0867205Z 
+2026-11-11T19:04:12.0867208Z 
+2026-11-11T19:04:12.0897041Z Building native assets failed. See the logs for more details.
+2026-11-11T19:04:12.0962519Z ##[error]Process completed with exit code 1.
+2026-11-11T19:04:12.1099324Z Post job cleanup.
+2026-11-11T19:04:12.1102424Z ##[start-action display=Cache pub dependencies;id=__9b7c1d08-24ac-4f8c-b278-22c5eb6a537f.cache-pub]
+2026-11-11T19:04:12.1104027Z ##[end-action id=__9b7c1d08-24ac-4f8c-b278-22c5eb6a537f.cache-pub;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-11T19:04:12.1105751Z ##[start-action display=Cache Flutter;id=__9b7c1d08-24ac-4f8c-b278-22c5eb6a537f.cache-flutter]
+2026-11-11T19:04:12.1155790Z ##[end-action id=__9b7c1d08-24ac-4f8c-b278-22c5eb6a537f.cache-flutter;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-11T19:04:12.1197990Z Post job cleanup.
+2026-11-11T19:04:12.1783943Z [command]/usr/bin/git version
+2026-11-11T19:04:12.1817587Z git version 2.56.0
+2026-11-11T19:04:12.1840612Z Temporarily overriding HOME='/home/runner/work/_temp/28b324ab-4949-4fa1-a318-3571fb096b74' before making global git config changes
+2026-11-11T19:04:12.1841769Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-11T19:04:12.1844071Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/space-app/space-app
+2026-11-11T19:04:12.1877865Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-11T19:04:12.1906987Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-11T19:04:12.2130671Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-11T19:04:12.2155501Z http.https://github.com/.extraheader
+2026-11-11T19:04:12.2164480Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-11T19:04:12.2199538Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-11T19:04:12.2416891Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-11T19:04:12.2454125Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-11T19:04:12.2786582Z Cleaning up orphan processes
+2026-11-11T19:04:12.3046043Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,10 @@
+{"protocolVersion":"0.1.1","runnerVersion":null,"pid":24826,"type":"start","time":0}
+{"suite":{"id":0,"platform":"vm","path":"/home/runner/work/space-app/space-app/client/test/builtin_client_ci_test.dart"},"type":"suite","time":0}
+{"test":{"id":1,"name":"loading /home/runner/work/space-app/space-app/client/test/builtin_client_ci_test.dart","suiteID":0,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":0}
+{"count":1,"time":4,"type":"allSuites"}
+{"testID":1,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1874}
+{"group":{"id":2,"suiteID":0,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":null},"type":"group","time":1876}
+{"test":{"id":3,"name":"P2 настоящий Connect: навигация, ACL, отзыв сессии и потерянная квитанция","suiteID":0,"groupIDs":[2],"metadata":{"skip":false,"skipReason":null},"line":25,"column":3,"url":"file:///home/runner/work/space-app/space-app/client/test/builtin_client_ci_test.dart"},"type":"testStart","time":1876}
+{"testID":3,"error":"gRPC Error (code: 7, codeName: PERMISSION_DENIED, message: rpc error: code = PermissionDenied desc = Нет доступа к пространству или действию, details: null, rawResponse: null, trailers: {})","stackTrace":"package:space_client/src/rpc_connection.dart 137:7  RpcConnection.unary\n","isFailure":false,"type":"error","time":2070}
+{"testID":3,"result":"error","skipped":false,"hidden":false,"type":"testDone","time":2074}
+{"success":false,"type":"done","time":2091}
