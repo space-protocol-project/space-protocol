@@ -1,0 +1,1 @@
+{"form_submit_twice_after_restart": "passed", "hot_reload": "passed", "hot_restart": "passed", "transport": "HTTP to isolated WASM", "platform": "nt"}

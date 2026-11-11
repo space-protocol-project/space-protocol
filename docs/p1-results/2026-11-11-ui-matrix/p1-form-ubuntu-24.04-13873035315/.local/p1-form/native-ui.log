@@ -1,0 +1,67 @@
+[{"event":"daemon.connected","params":{"version":"0.6.1","pid":10795}}]
+[{"event":"app.start","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","deviceId":"linux","directory":"/home/runner/work/space-app/space-app/client","supportsRestart":true,"launchMode":"run","mode":"debug"}}]
+Launching test/probes/extension_demo_probe.dart on Linux in debug mode...
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"0","progressId":null,"message":"Building Linux application...","finished":false}}]
+download: https://github.com/webrtc-sdk/libwebrtc/releases/download/libwebrtc.m150.7871.04/libwebrtc-linux-x64-release.zip
+CMake Warning at flutter/ephemeral/.plugin_symlinks/flutter_webrtc/linux/CMakeLists.txt:88 (message):
+  flutter_webrtc: libpulse NOT found -- Linux system-audio loopback capture
+  disabled (getDisplayMedia({audio:true}) yields no audio track).  Install
+  the libpulse dev package to enable it.
+
+
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"0","progressId":null,"finished":true}}]
+✓ Built build/linux/x64/debug/bundle/space_client
+
+(org.spaceprotocol.space_client:14337): dbind-WARNING **: 16:23:12.981: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+
+(org.spaceprotocol.space_client:14337): Atk-CRITICAL **: 16:23:13.323: atk_socket_embed: assertion 'plug_id != NULL' failed
+
+(org.spaceprotocol.space_client:14337): GLib-GObject-CRITICAL **: 16:23:13.675: ../../../gobject/gsignal.c:2427: signal 'pre-engine-restart' is invalid for instance '0x55da1e81be10' of type 'FlEngine'
+[{"event":"app.debugPort","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","port":45017,"wsUri":"ws://127.0.0.1:45017/_AHwPR7N0as=/ws","baseUri":"file:///tmp/clientPNQYEB/client/"}}]
+[{"event":"app.devTools","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","uri":"http://127.0.0.1:45017/_AHwPR7N0as=/devtools/?uri=ws://127.0.0.1:45017/_AHwPR7N0as=/ws"}}]
+[{"event":"app.dtd","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","uri":"ws://127.0.0.1:45635/eWVO2-uwgVs="}}]
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"1","progressId":"devFS.update","message":"Syncing files to device Linux...","finished":false}}]
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"1","progressId":"devFS.update","finished":true}}]
+[{"event":"app.started","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1"}}]
+COMMUNITY_UI_READY
+[{"id":1,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":2,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":3,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":4,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":5,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":6,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":7,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":8,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":9,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":10,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":11,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"2","progressId":"hot.reload","message":"Performing hot reload...","finished":false}}]
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"3","progressId":"devFS.update","message":"Syncing files to device Linux...","finished":false}}]
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"3","progressId":"devFS.update","finished":true}}]
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"2","progressId":"hot.reload","finished":true}}]
+Reloaded 0 libraries in 436ms (compile: 21 ms, reload: 0 ms, reassemble: 46 ms).
+[{"id":12,"result":{"code":0,"message":"Reloaded 0 libraries"}}]
+[{"id":13,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"4","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"5","progressId":"devFS.update","message":"Syncing files to device Linux...","finished":false}}]
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"5","progressId":"devFS.update","finished":true}}]
+[{"event":"app.progress","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1","id":"4","progressId":"hot.restart","finished":true}}]
+Restarted application in 501ms.
+[{"id":14,"result":{"code":0,"message":""}}]
+COMMUNITY_UI_READY
+[{"id":15,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":16,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":17,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":18,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":19,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":20,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":21,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":22,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":23,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":24,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+[{"id":25,"result":{"isError":false,"response":{},"type":"_extensionType","method":"ext.flutter.driver"}}]
+Application finished.
+[{"event":"app.stop","params":{"appId":"cec45695-6a8d-49ad-ac7f-1bf1b07128c1"}}]
+[{"id":26,"result":true}]
