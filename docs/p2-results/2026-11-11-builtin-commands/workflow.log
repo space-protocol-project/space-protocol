@@ -1,0 +1,1215 @@
+postgres (registry)	Set up job	﻿2026-11-11T18:39:21.0871612Z Current runner version: '2.338.2'
+postgres (registry)	Set up job	2026-11-11T18:39:21.0894686Z ##[group]Runner Image Provisioner
+postgres (registry)	Set up job	2026-11-11T18:39:21.0895454Z Hosted Compute Agent
+postgres (registry)	Set up job	2026-11-11T18:39:21.0896203Z Version: 20261028.624
+postgres (registry)	Set up job	2026-11-11T18:39:21.0896780Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+postgres (registry)	Set up job	2026-11-11T18:39:21.0897489Z Build Date: 2026-10-28T21:51:42Z
+postgres (registry)	Set up job	2026-11-11T18:39:21.0898113Z Worker ID: {8f533cd6-f822-4309-8cb0-d0e4d28684be}
+postgres (registry)	Set up job	2026-11-11T18:39:21.0898740Z Region: westus2
+postgres (registry)	Set up job	2026-11-11T18:39:21.0899261Z Cloud: Azure
+postgres (registry)	Set up job	2026-11-11T18:39:21.0899770Z ##[endgroup]
+postgres (registry)	Set up job	2026-11-11T18:39:21.0900922Z ##[group]Operating System
+postgres (registry)	Set up job	2026-11-11T18:39:21.0901591Z Ubuntu
+postgres (registry)	Set up job	2026-11-11T18:39:21.0902058Z 24.04.5
+postgres (registry)	Set up job	2026-11-11T18:39:21.0902528Z LTS
+postgres (registry)	Set up job	2026-11-11T18:39:21.0903027Z ##[endgroup]
+postgres (registry)	Set up job	2026-11-11T18:39:21.0903515Z ##[group]Runner Image
+postgres (registry)	Set up job	2026-11-11T18:39:21.0904447Z Image: ubuntu-24.04
+postgres (registry)	Set up job	2026-11-11T18:39:21.0904948Z Version: 20261101.360.1
+postgres (registry)	Set up job	2026-11-11T18:39:21.0905857Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+postgres (registry)	Set up job	2026-11-11T18:39:21.0907541Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+postgres (registry)	Set up job	2026-11-11T18:39:21.0908412Z ##[endgroup]
+postgres (registry)	Set up job	2026-11-11T18:39:21.0909354Z ##[group]GITHUB_TOKEN Permissions
+postgres (registry)	Set up job	2026-11-11T18:39:21.0911270Z Contents: read
+postgres (registry)	Set up job	2026-11-11T18:39:21.0911801Z Metadata: read
+postgres (registry)	Set up job	2026-11-11T18:39:21.0912335Z ##[endgroup]
+postgres (registry)	Set up job	2026-11-11T18:39:21.0914152Z Secret source: Actions
+postgres (registry)	Set up job	2026-11-11T18:39:21.0915023Z Cache mode: write
+postgres (registry)	Set up job	2026-11-11T18:39:21.0915853Z Prepare workflow directory
+postgres (registry)	Set up job	2026-11-11T18:39:21.1295599Z Prepare all required actions
+postgres (registry)	Set up job	2026-11-11T18:39:21.1348592Z Getting action download info
+postgres (registry)	Set up job	2026-11-11T18:39:21.4731443Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+postgres (registry)	Set up job	2026-11-11T18:39:21.6540368Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+postgres (registry)	Set up job	2026-11-11T18:39:21.9485101Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+postgres (registry)	Set up job	2026-11-11T18:39:22.2189170Z Complete job name: postgres (registry)
+postgres (registry)	Initialize containers	﻿2026-11-11T18:39:22.2751473Z ##[group]Checking docker version
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.2763650Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.3971303Z '1.48'
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.3984782Z Docker daemon API version: '1.48'
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.3985472Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.4151817Z '1.48'
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.4166875Z Docker client API version: '1.48'
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.4171993Z ##[endgroup]
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.4174032Z ##[group]Clean up resources from previous jobs
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.4179259Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=fcc084"
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.4332811Z ##[command]/usr/bin/docker network prune --force --filter "label=fcc084"
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.4473708Z ##[endgroup]
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.4474198Z ##[group]Create local container network
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.4483466Z ##[command]/usr/bin/docker network create --label fcc084 github_network_6414a3e005d54161a8a56e9683a97f73
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.5022037Z d8164a52dc42daa720094fbd0fa0ead9f8842f0e686242e635510d9ad7d76e48
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.5039529Z ##[endgroup]
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.5062171Z ##[group]Starting postgres service container
+postgres (registry)	Initialize containers	2026-11-11T18:39:22.5080468Z ##[command]/usr/bin/docker pull postgres:17.11
+postgres (registry)	Initialize containers	2026-11-11T18:39:23.7092747Z 17.11: Pulling from library/postgres
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0825369Z 37fb86c2a767: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0826456Z 56c5b61c6d2b: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0827125Z c2f4b34f5119: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0827850Z d717e9509665: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0828490Z 046371a447cc: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0829089Z c97a680633a2: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0829722Z f0f18338e0da: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0830303Z 0eab0a63b06d: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0830818Z 9de238338a9a: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0831588Z 275aa943d416: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0832914Z 5760334e16b5: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0833533Z d35c08e535dc: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0834195Z 4f0fb6572de8: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0834826Z ceeafc939069: Pulling fs layer
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0835474Z c97a680633a2: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0836130Z f0f18338e0da: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0836647Z 0eab0a63b06d: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0837239Z 9de238338a9a: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0837854Z 275aa943d416: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0838575Z 5760334e16b5: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0839322Z d35c08e535dc: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0840042Z 4f0fb6572de8: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0840785Z ceeafc939069: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0841510Z d717e9509665: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.0842279Z 046371a447cc: Waiting
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.3113469Z 56c5b61c6d2b: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.3117717Z 56c5b61c6d2b: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.4139976Z c2f4b34f5119: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.6189853Z 37fb86c2a767: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.6195428Z 37fb86c2a767: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.6333912Z d717e9509665: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.6335036Z d717e9509665: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.8455535Z 046371a447cc: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.8474310Z 046371a447cc: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.8634677Z f0f18338e0da: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.8635261Z f0f18338e0da: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.8943194Z c97a680633a2: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:24.8943755Z c97a680633a2: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.1319343Z 275aa943d416: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.1320033Z 275aa943d416: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.3799539Z 0eab0a63b06d: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.3800000Z 0eab0a63b06d: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.4256649Z 37fb86c2a767: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.4311834Z 5760334e16b5: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.4312449Z 5760334e16b5: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.5468469Z 9de238338a9a: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.5469002Z 9de238338a9a: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.6122698Z d35c08e535dc: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.6123100Z d35c08e535dc: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.6986386Z 4f0fb6572de8: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.6986979Z 4f0fb6572de8: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.7926702Z ceeafc939069: Verifying Checksum
+postgres (registry)	Initialize containers	2026-11-11T18:39:25.7927179Z ceeafc939069: Download complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:27.6019844Z 56c5b61c6d2b: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:27.8498308Z c2f4b34f5119: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:27.9050362Z d717e9509665: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:28.3099225Z 046371a447cc: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:28.3791360Z c97a680633a2: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:28.3880282Z f0f18338e0da: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:28.3986737Z 0eab0a63b06d: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.1335003Z 9de238338a9a: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.1694019Z 275aa943d416: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.1775362Z 5760334e16b5: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.1908141Z d35c08e535dc: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.2615355Z 4f0fb6572de8: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.2698920Z ceeafc939069: Pull complete
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.2730835Z Digest: sha256:ff87138949ad9a46f32ff23bd6852b52ce024a13dffe9b4087be98292cdd3b4f
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.2743964Z Status: Downloaded newer image for postgres:17.11
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.2751669Z docker.io/library/postgres:17.11
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.2808919Z ##[command]/usr/bin/docker create --name 5e97529f5f4a46c79249e1f29a9ec478_postgres1711_d62bb6 --label fcc084 --network github_network_6414a3e005d54161a8a56e9683a97f73 --network-alias postgres -p 5432:5432 --health-cmd "pg_isready -U space -d space_test" --health-interval 3s --health-timeout 3s --health-retries 20 -e "POSTGRES_DB=space_test" -e "POSTGRES_USER=space" -e "POSTGRES_PASSWORD=ci-only-password" -e GITHUB_ACTIONS=true -e CI=true postgres:17.11
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.3065444Z 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.3092069Z ##[command]/usr/bin/docker start 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5020121Z 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5048105Z ##[command]/usr/bin/docker ps --all --filter id=8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5188248Z 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a Up Less than a second (health: starting)
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5215297Z ##[command]/usr/bin/docker port 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5352558Z 5432/tcp -> 0.0.0.0:5432
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5353026Z 5432/tcp -> [::]:5432
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5399298Z ##[endgroup]
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5407651Z ##[group]Waiting for all services to be ready
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5418598Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5560810Z starting
+postgres (registry)	Initialize containers	2026-11-11T18:39:32.5584147Z postgres service is starting, waiting 2 seconds before checking again.
+postgres (registry)	Initialize containers	2026-11-11T18:39:34.5580850Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a
+postgres (registry)	Initialize containers	2026-11-11T18:39:34.5714616Z starting
+postgres (registry)	Initialize containers	2026-11-11T18:39:34.5729889Z postgres service is starting, waiting 4 seconds before checking again.
+postgres (registry)	Initialize containers	2026-11-11T18:39:38.6320811Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a
+postgres (registry)	Initialize containers	2026-11-11T18:39:38.6454598Z healthy
+postgres (registry)	Initialize containers	2026-11-11T18:39:38.6474825Z postgres service is healthy.
+postgres (registry)	Initialize containers	2026-11-11T18:39:38.6475806Z ##[endgroup]
+postgres (registry)	Run actions/checkout@v4	﻿2026-11-11T18:39:38.6784687Z ##[group]Run actions/checkout@v4
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6785120Z with:
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6785375Z   repository: space-protocol-project/space-server
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6787863Z   token: ***
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6788043Z   ssh-strict: true
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6788219Z   ssh-user: git
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6788397Z   persist-credentials: true
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6788602Z   clean: true
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6788786Z   sparse-checkout-cone-mode: true
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6789005Z   fetch-depth: 1
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6789170Z   fetch-tags: false
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6789344Z   show-progress: true
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6789511Z   lfs: false
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6789667Z   submodules: false
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6789838Z   set-safe-directory: true
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6790038Z   allow-unsafe-pr-checkout: false
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6790384Z env:
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6790829Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.6791111Z ##[endgroup]
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9051099Z Syncing repository: space-protocol-project/space-server
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9052584Z ##[group]Getting Git version info
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9052940Z Working directory is '/home/runner/work/space-server/space-server'
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9053413Z [command]/usr/bin/git version
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9138031Z git version 2.56.0
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9160970Z ##[endgroup]
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9171695Z Temporarily overriding HOME='/home/runner/work/_temp/c8a0e0bb-160f-4214-beb3-2924a3f21704' before making global git config changes
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9172712Z Adding repository directory to the temporary git global config as a safe directory
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9176979Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/space-server/space-server
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9226770Z Deleting the contents of '/home/runner/work/space-server/space-server'
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9231392Z ##[group]Initializing the repository
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9235550Z [command]/usr/bin/git init /home/runner/work/space-server/space-server
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9313795Z hint: Using 'master' as the name for the initial branch. This default branch name
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9314841Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9315473Z hint: to use in all of your new repositories, which will suppress this warning,
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9316077Z hint: call:
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9316308Z hint:
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9316674Z hint: 	git config --global init.defaultBranch <name>
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9316964Z hint:
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9317204Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9317600Z hint: 'development'. The just-created branch can be renamed via this command:
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9317890Z hint:
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9318072Z hint: 	git branch -m <name>
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9318259Z hint:
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9318513Z hint: Disable this message with "git config set advice.defaultBranchName false"
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9320489Z Initialized empty Git repository in /home/runner/work/space-server/space-server/.git/
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9332442Z [command]/usr/bin/git remote add origin https://github.com/space-protocol-project/space-server
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9376352Z ##[endgroup]
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9376879Z ##[group]Disabling automatic garbage collection
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9380587Z [command]/usr/bin/git config --local gc.auto 0
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9411939Z ##[endgroup]
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9412475Z ##[group]Setting up auth
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9419151Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9452071Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9843543Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:38.9881231Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.0093001Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.0132299Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.0347575Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.0409402Z ##[endgroup]
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.0419606Z ##[group]Fetching the repository
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.0420809Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +eaddd90f0bccfed80c366b3a8aa092a7a06f0a17:refs/remotes/origin/main
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.5741410Z From https://github.com/space-protocol-project/space-server
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.5741915Z  * [new ref]         eaddd90f0bccfed80c366b3a8aa092a7a06f0a17 -> origin/main
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.5745229Z ##[endgroup]
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.5745553Z ##[group]Determining the checkout info
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.5748100Z ##[endgroup]
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.5753154Z [command]/usr/bin/git sparse-checkout disable
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.5808170Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.5846399Z ##[group]Checking out the ref
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.5850254Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.6253176Z Switched to a new branch 'main'
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.6256467Z branch 'main' set up to track 'origin/main'.
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.6264367Z ##[endgroup]
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.6311472Z [command]/usr/bin/git log -1 --format=%H
+postgres (registry)	Run actions/checkout@v4	2026-11-11T18:39:39.6342412Z eaddd90f0bccfed80c366b3a8aa092a7a06f0a17
+postgres (registry)	Run actions/setup-go@v5	﻿2026-11-11T18:39:39.6565048Z ##[group]Run actions/setup-go@v5
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.6565287Z with:
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.6565459Z   go-version-file: go.mod
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.6565664Z   check-latest: false
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.6568074Z   token: ***
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.6568422Z   cache: true
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.6568583Z env:
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.6568965Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.6569255Z ##[endgroup]
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.7691041Z Setup go version spec 1.27.4
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.7702982Z Attempting to download 1.27.4...
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.7827982Z (node:2624) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:39.7828827Z (Use `node --trace-deprecation ...` to show where the warning was created)
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:40.3194615Z matching 1.27.4...
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:40.3214295Z Acquiring 1.27.4 from https://github.com/actions/go-versions/releases/download/1.27.4-42945153609/go-1.27.4-linux-x64.tar.gz
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:40.7356095Z Extracting Go...
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:40.7463281Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/a8eda346-d0d2-403e-83e5-bc14df218457 -f /home/runner/work/_temp/873dc767-07f8-4392-9170-19aabbcaddfb
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:42.2086200Z Successfully extracted go to /home/runner/work/_temp/a8eda346-d0d2-403e-83e5-bc14df218457
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:42.2086833Z Adding to the cache ...
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:46.9747145Z Successfully cached go to /opt/hostedtoolcache/go/1.27.4/x64
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:46.9749139Z Added go to the path
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:46.9751391Z Successfully set up Go version 1.27.4
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:46.9986340Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOMODCACHE
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:47.0033240Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOCACHE
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:47.0081637Z /home/runner/go/pkg/mod
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:47.0101476Z /home/runner/.cache/go-build
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:47.2437467Z Cache hit for: setup-go-Linux-x64-ubuntu24-go-1.27.4-1a116d22aef14251be0840f878f4f96eed012ea7b596eb4a9da3ac564f83b740
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:47.2532359Z (node:2624) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:48.5130784Z Received 33554432 of 158556587 (21.2%), 32.0 MBs/sec
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:49.5130348Z Received 125829120 of 158556587 (79.4%), 60.0 MBs/sec
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:50.5134798Z Received 154362283 of 158556587 (97.4%), 49.0 MBs/sec
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:50.5633544Z Received 158556587 of 158556587 (100.0%), 49.5 MBs/sec
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:50.5634050Z Cache Size: ~151 MB (158556587 B)
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:50.5736972Z [command]/usr/bin/tar -xf /home/runner/work/_temp/1715684e-c0c6-4c9b-9859-599516b98b09/cache.tzst -P -C /home/runner/work/space-server/space-server --use-compress-program unzstd
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0243563Z Cache restored successfully
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0315226Z Cache restored from key: setup-go-Linux-x64-ubuntu24-go-1.27.4-1a116d22aef14251be0840f878f4f96eed012ea7b596eb4a9da3ac564f83b740
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0336274Z go version go1.27.4 linux/amd64
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0336465Z 
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0336731Z ##[group]go env
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0644602Z AR='ar'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0644913Z CC='gcc'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0645187Z CGO_CFLAGS='-O2 -g'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0645471Z CGO_CPPFLAGS=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0645751Z CGO_CXXFLAGS='-O2 -g'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0646175Z CGO_ENABLED='1'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0646453Z CGO_FFLAGS='-O2 -g'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0646721Z CGO_LDFLAGS='-O2 -g'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0646977Z CXX='g++'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0647213Z GCCGO='gccgo'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0647445Z GO111MODULE=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0647725Z GOAMD64='v1'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0647973Z GOARCH='amd64'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0648203Z GOAUTH='netrc'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0648447Z GOBIN='/home/runner/go/bin'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0648774Z GOCACHE='/home/runner/.cache/go-build'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0649097Z GOCACHEPROG=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0649700Z GODEBUG=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0649984Z GOENV='/home/runner/.config/go/env'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0650296Z GOEXE=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0650524Z GOEXPERIMENT=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0650763Z GOFIPS140='off'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0651177Z GOFLAGS=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0651946Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build1545915551=/tmp/go-build -gno-record-gcc-switches'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0652729Z GOHOSTARCH='amd64'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0652979Z GOHOSTOS='linux'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0653225Z GOINSECURE=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0653562Z GOMOD='/home/runner/work/space-server/space-server/go.mod'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0653983Z GOMODCACHE='/home/runner/go/pkg/mod'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0654292Z GONOPROXY=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0654532Z GONOSUMDB=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0654750Z GOOS='linux'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0654991Z GOPACKAGESDRIVER=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0655253Z GOPATH='/home/runner/go'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0655516Z GOPRIVATE=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0655836Z GOPROXY='https://proxy.golang.org,direct'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0656373Z GOROOT='/opt/hostedtoolcache/go/1.27.4/x64'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0656732Z GOSUMDB='sum.golang.org'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0657043Z GOTELEMETRY='local'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0657358Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0657743Z GOTMPDIR=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0657984Z GOTOOLCHAIN='auto'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0658369Z GOTOOLDIR='/opt/hostedtoolcache/go/1.27.4/x64/pkg/tool/linux_amd64'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0658781Z GOVCS=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0659024Z GOVERSION='go1.27.4'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0659278Z GOWORK=''
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0659519Z PKG_CONFIG='pkg-config'
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0659687Z 
+postgres (registry)	Run actions/setup-go@v5	2026-11-11T18:39:52.0660075Z ##[endgroup]
+postgres (registry)	Run mkdir -p .local/p2-registry	﻿2026-11-11T18:39:52.0852438Z ##[group]Run mkdir -p .local/p2-registry
+postgres (registry)	Run mkdir -p .local/p2-registry	2026-11-11T18:39:52.0852781Z ^[[36;1mmkdir -p .local/p2-registry^[[0m
+postgres (registry)	Run mkdir -p .local/p2-registry	2026-11-11T18:39:52.0875614Z shell: /usr/bin/bash -e {0}
+postgres (registry)	Run mkdir -p .local/p2-registry	2026-11-11T18:39:52.0875851Z env:
+postgres (registry)	Run mkdir -p .local/p2-registry	2026-11-11T18:39:52.0876609Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (registry)	Run mkdir -p .local/p2-registry	2026-11-11T18:39:52.0876921Z ##[endgroup]
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	﻿2026-11-11T18:39:52.0976515Z ##[group]Run go test -race -json ./internal/postgres -run '^TestBuiltinRegistry' -count=5 -timeout=10m > .local/p2-registry/registry.jsonl
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0977369Z ^[[36;1mgo test -race -json ./internal/postgres -run '^TestBuiltinRegistry' -count=5 -timeout=10m > .local/p2-registry/registry.jsonl^[[0m
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0977940Z ^[[36;1mpython3 - <<'PY'^[[0m
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0978140Z ^[[36;1mimport json^[[0m
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0978339Z ^[[36;1mfrom pathlib import Path^[[0m
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0978720Z ^[[36;1mrows=[json.loads(s) for s in Path('.local/p2-registry/registry.jsonl').read_text().splitlines()]^[[0m
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0979182Z ^[[36;1massert not any(r['Action'] in ('skip','fail') for r in rows)^[[0m
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0979748Z ^[[36;1mfor name in ('Adapters','Authority','Transaction','Upgrade','Visibility','ViewChange','MLS','CommandsRPC','CommandsCommunity','CommandsVoice'):^[[0m
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0980375Z ^[[36;1m    assert sum(r['Action']=='pass' and r.get('Test')=='TestBuiltinRegistry'+name for r in rows)==5,name^[[0m
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0980763Z ^[[36;1mPY^[[0m
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0997450Z shell: /usr/bin/bash -e {0}
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0997670Z env:
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0998137Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (registry)	Реестр, адаптеры, ACL, транзакции и миграция	2026-11-11T18:39:52.0998441Z ##[endgroup]
+postgres (registry)	Ревизия стенда	﻿2026-11-11T18:40:39.6570219Z ##[group]Run git rev-parse HEAD > .local/p2-registry/server-sha.txt
+postgres (registry)	Ревизия стенда	2026-11-11T18:40:39.6570636Z ^[[36;1mgit rev-parse HEAD > .local/p2-registry/server-sha.txt^[[0m
+postgres (registry)	Ревизия стенда	2026-11-11T18:40:39.6570958Z ^[[36;1mgo version > .local/p2-registry/go-version.txt^[[0m
+postgres (registry)	Ревизия стенда	2026-11-11T18:40:39.6589915Z shell: /usr/bin/bash -e {0}
+postgres (registry)	Ревизия стенда	2026-11-11T18:40:39.6590137Z env:
+postgres (registry)	Ревизия стенда	2026-11-11T18:40:39.6590621Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (registry)	Ревизия стенда	2026-11-11T18:40:39.6590925Z ##[endgroup]
+postgres (registry)	Run actions/upload-artifact@v4	﻿2026-11-11T18:40:39.6735554Z ##[group]Run actions/upload-artifact@v4
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6735806Z with:
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6736359Z   name: p2-registry
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6736546Z   path: .local/p2-registry
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6736754Z   include-hidden-files: true
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6736958Z   retention-days: 7
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6737341Z   if-no-files-found: warn
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6737538Z   compression-level: 6
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6737721Z   overwrite: false
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6737890Z env:
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6738374Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.6738678Z ##[endgroup]
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.8266641Z (node:3521) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.8267332Z (Use `node --trace-deprecation ...` to show where the warning was created)
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.8338848Z With the provided path, there will be 3 files uploaded
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.8339864Z Artifact name is valid!
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:39.8340563Z Root directory input is valid!
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:40.2249898Z Beginning upload of artifact content to blob storage
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:40.2434854Z (node:3521) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:40.5312310Z Uploaded bytes 3732
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:40.6098379Z Finished uploading artifact content to blob storage!
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:40.6099437Z SHA256 digest of uploaded artifact zip is 1a2443e3eeba4841be42740023269e5f8a9e7b81edc95855d9432102751d2304
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:40.6100185Z Finalizing artifact upload
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:41.0485862Z Artifact p2-registry.zip successfully finalized. Artifact ID 13884165826
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:41.0487120Z Artifact p2-registry has been successfully uploaded! Final size is 3732 bytes. Artifact ID is 13884165826
+postgres (registry)	Run actions/upload-artifact@v4	2026-11-11T18:40:41.0492492Z Artifact download URL: https://github.com/space-protocol-project/space-server/actions/runs/43079815187/artifacts/13884165826
+postgres (registry)	Post Run actions/setup-go@v5	﻿2026-11-11T18:40:41.0664372Z Post job cleanup.
+postgres (registry)	Post Run actions/setup-go@v5	2026-11-11T18:40:41.1676414Z (node:3554) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+postgres (registry)	Post Run actions/setup-go@v5	2026-11-11T18:40:41.1677411Z (Use `node --trace-deprecation ...` to show where the warning was created)
+postgres (registry)	Post Run actions/setup-go@v5	2026-11-11T18:40:41.1730954Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOMODCACHE
+postgres (registry)	Post Run actions/setup-go@v5	2026-11-11T18:40:41.1768584Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOCACHE
+postgres (registry)	Post Run actions/setup-go@v5	2026-11-11T18:40:41.1827196Z /home/runner/go/pkg/mod
+postgres (registry)	Post Run actions/setup-go@v5	2026-11-11T18:40:41.1836532Z /home/runner/.cache/go-build
+postgres (registry)	Post Run actions/setup-go@v5	2026-11-11T18:40:41.1843031Z Cache hit occurred on the primary key setup-go-Linux-x64-ubuntu24-go-1.27.4-1a116d22aef14251be0840f878f4f96eed012ea7b596eb4a9da3ac564f83b740, not saving cache.
+postgres (registry)	Post Run actions/checkout@v4	﻿2026-11-11T18:40:41.2029525Z Post job cleanup.
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.2806681Z [command]/usr/bin/git version
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.2852643Z git version 2.56.0
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.2896926Z Temporarily overriding HOME='/home/runner/work/_temp/ca505757-3bb4-4b3d-a1d4-454599087b43' before making global git config changes
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.2913718Z Adding repository directory to the temporary git global config as a safe directory
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.2914873Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/space-server/space-server
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.2966774Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.3008023Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.3279551Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.3305840Z http.https://github.com/.extraheader
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.3316852Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.3353176Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.3617790Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+postgres (registry)	Post Run actions/checkout@v4	2026-11-11T18:40:41.3657849Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+postgres (registry)	Stop containers	﻿2026-11-11T18:40:41.3974977Z Print service container logs: 5e97529f5f4a46c79249e1f29a9ec478_postgres1711_d62bb6
+postgres (registry)	Stop containers	2026-11-11T18:40:41.3979412Z ##[command]/usr/bin/docker logs --details 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4108357Z  initdb: warning: enabling "trust" authentication for local connections
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4109086Z  The files belonging to this database system will be owned by user "postgres".
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4109990Z  initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4111132Z  2026-11-11 18:39:33.772 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4112133Z  2026-11-11 18:39:33.772 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4112888Z  2026-11-11 18:39:33.772 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4113613Z  2026-11-11 18:39:33.773 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4114324Z  2026-11-11 18:39:33.828 UTC [64] LOG:  database system was shut down at 2026-11-11 18:39:33 UTC
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4114736Z  2026-11-11 18:39:33.832 UTC [1] LOG:  database system is ready to accept connections
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4115406Z  2026-11-11 18:40:17.496 UTC [196] ERROR:  insert or update on table "builtin_extension_instances" violates foreign key constraint "builtin_extension_instances_installation_id_view_id_fkey"
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4116551Z  2026-11-11 18:40:17.496 UTC [196] DETAIL:  Key (installation_id, view_id)=(builtin:feed, chat) is not present in table "builtin_extension_installations".
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4117631Z  2026-11-11 18:40:17.496 UTC [196] STATEMENT:  UPDATE builtin_extension_instances SET installation_id='builtin:feed' WHERE id=$1
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4118855Z  2026-11-11 18:40:22.212 UTC [251] ERROR:  insert or update on table "builtin_extension_instances" violates foreign key constraint "builtin_extension_instances_installation_id_view_id_fkey"
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4120166Z  2026-11-11 18:40:22.212 UTC [251] DETAIL:  Key (installation_id, view_id)=(builtin:feed, chat) is not present in table "builtin_extension_installations".
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4120932Z  2026-11-11 18:40:22.212 UTC [251] STATEMENT:  UPDATE builtin_extension_instances SET installation_id='builtin:feed' WHERE id=$1
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4121713Z  2026-11-11 18:40:26.854 UTC [299] ERROR:  insert or update on table "builtin_extension_instances" violates foreign key constraint "builtin_extension_instances_installation_id_view_id_fkey"
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4122518Z  2026-11-11 18:40:26.854 UTC [299] DETAIL:  Key (installation_id, view_id)=(builtin:feed, chat) is not present in table "builtin_extension_installations".
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4123207Z  2026-11-11 18:40:26.854 UTC [299] STATEMENT:  UPDATE builtin_extension_instances SET installation_id='builtin:feed' WHERE id=$1
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4123642Z  This user must also own the server process.
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4123880Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4124134Z  The database cluster will be initialized with locale "en_US.utf8".
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4124609Z  The default database encoding has accordingly been set to "UTF8".
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4125190Z  The default text search configuration will be set to "english".
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4125681Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4126101Z  Data page checksums are disabled.
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4126530Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4126894Z  fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4127406Z  creating subdirectories ... ok
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4127817Z  selecting dynamic shared memory implementation ... posix
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4128632Z  selecting default "max_connections" ... 100
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4129412Z  selecting default "shared_buffers" ... 128MB
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4130029Z  selecting default time zone ... Etc/UTC
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4130521Z  creating configuration files ... ok
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4131316Z  running bootstrap script ... ok
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4144456Z  performing post-bootstrap initialization ... ok
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4144918Z  syncing data to disk ... ok
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4145254Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4145471Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4145762Z  Success. You can now start the database server using:
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4146232Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4146453Z      pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4146735Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4147240Z  waiting for server to start....2026-11-11 18:39:33.368 UTC [48] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4147969Z  2026-11-11 18:39:33.368 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4148412Z  2026-11-11 18:39:33.371 UTC [51] LOG:  database system was shut down at 2026-11-11 18:39:32 UTC
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4148821Z  2026-11-11 18:39:33.374 UTC [48] LOG:  database system is ready to accept connections
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4149132Z   done
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4149305Z  server started
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4149483Z  CREATE DATABASE
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4149653Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4149817Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4150084Z  /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4150411Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4150717Z  waiting for server to shut down...2026-11-11 18:39:33.552 UTC [48] LOG:  received fast shutdown request
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4151141Z  .2026-11-11 18:39:33.552 UTC [48] LOG:  aborting any active transactions
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4151590Z  2026-11-11 18:39:33.554 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4152046Z  2026-11-11 18:39:33.554 UTC [49] LOG:  shutting down
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4152375Z  2026-11-11 18:39:33.554 UTC [49] LOG:  checkpoint starting: shutdown immediate
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4153221Z  2026-11-11 18:39:33.669 UTC [49] LOG:  checkpoint complete: wrote 925 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.088 s, sync=0.027 s, total=0.116 s; sync files=301, longest=0.022 s, average=0.001 s; distance=4256 kB, estimate=4256 kB; lsn=0/19179A8, redo lsn=0/19179A8
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4154015Z  2026-11-11 18:39:33.676 UTC [48] LOG:  database system is shut down
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4154287Z   done
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4154450Z  server stopped
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4154622Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4154831Z  PostgreSQL init process complete; ready for start up.
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4155078Z  
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4155599Z  2026-11-11 18:40:32.141 UTC [353] ERROR:  insert or update on table "builtin_extension_instances" violates foreign key constraint "builtin_extension_instances_installation_id_view_id_fkey"
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4156541Z  2026-11-11 18:40:32.141 UTC [353] DETAIL:  Key (installation_id, view_id)=(builtin:feed, chat) is not present in table "builtin_extension_installations".
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4157199Z  2026-11-11 18:40:32.141 UTC [353] STATEMENT:  UPDATE builtin_extension_instances SET installation_id='builtin:feed' WHERE id=$1
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4157932Z  2026-11-11 18:40:36.410 UTC [400] ERROR:  insert or update on table "builtin_extension_instances" violates foreign key constraint "builtin_extension_instances_installation_id_view_id_fkey"
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4158687Z  2026-11-11 18:40:36.410 UTC [400] DETAIL:  Key (installation_id, view_id)=(builtin:feed, chat) is not present in table "builtin_extension_installations".
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4159305Z  2026-11-11 18:40:36.410 UTC [400] STATEMENT:  UPDATE builtin_extension_instances SET installation_id='builtin:feed' WHERE id=$1
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4163500Z Stop and remove container: 5e97529f5f4a46c79249e1f29a9ec478_postgres1711_d62bb6
+postgres (registry)	Stop containers	2026-11-11T18:40:41.4167479Z ##[command]/usr/bin/docker rm --force 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a
+postgres (registry)	Stop containers	2026-11-11T18:40:41.9382034Z 8692d0285bf27e3b2710662f70ec01e35b07a632335b3fe01bcf2a2a0cc7f31a
+postgres (registry)	Stop containers	2026-11-11T18:40:41.9413007Z Remove container network: github_network_6414a3e005d54161a8a56e9683a97f73
+postgres (registry)	Stop containers	2026-11-11T18:40:41.9416882Z ##[command]/usr/bin/docker network rm github_network_6414a3e005d54161a8a56e9683a97f73
+postgres (registry)	Stop containers	2026-11-11T18:40:42.0348401Z github_network_6414a3e005d54161a8a56e9683a97f73
+postgres (registry)	Complete job	﻿2026-11-11T18:40:42.0418796Z Cleaning up orphan processes
+postgres (registry)	Complete job	2026-11-11T18:40:42.0758709Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-go@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+postgres (regression)	Set up job	﻿2026-11-11T18:39:21.1747144Z Current runner version: '2.338.2'
+postgres (regression)	Set up job	2026-11-11T18:39:21.1771775Z ##[group]Runner Image Provisioner
+postgres (regression)	Set up job	2026-11-11T18:39:21.1772655Z Hosted Compute Agent
+postgres (regression)	Set up job	2026-11-11T18:39:21.1773295Z Version: 20261028.624
+postgres (regression)	Set up job	2026-11-11T18:39:21.1773901Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+postgres (regression)	Set up job	2026-11-11T18:39:21.1774520Z Build Date: 2026-10-28T21:51:42Z
+postgres (regression)	Set up job	2026-11-11T18:39:21.1775118Z Worker ID: {c246418f-d557-40b6-8189-d47dd2c1fc07}
+postgres (regression)	Set up job	2026-11-11T18:39:21.1775735Z Region: centralus
+postgres (regression)	Set up job	2026-11-11T18:39:21.1776253Z Cloud: Azure
+postgres (regression)	Set up job	2026-11-11T18:39:21.1776755Z ##[endgroup]
+postgres (regression)	Set up job	2026-11-11T18:39:21.1777999Z ##[group]Operating System
+postgres (regression)	Set up job	2026-11-11T18:39:21.1778582Z Ubuntu
+postgres (regression)	Set up job	2026-11-11T18:39:21.1779082Z 24.04.5
+postgres (regression)	Set up job	2026-11-11T18:39:21.1779534Z LTS
+postgres (regression)	Set up job	2026-11-11T18:39:21.1780026Z ##[endgroup]
+postgres (regression)	Set up job	2026-11-11T18:39:21.1780511Z ##[group]Runner Image
+postgres (regression)	Set up job	2026-11-11T18:39:21.1781362Z Image: ubuntu-24.04
+postgres (regression)	Set up job	2026-11-11T18:39:21.1781956Z Version: 20261101.360.1
+postgres (regression)	Set up job	2026-11-11T18:39:21.1782838Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+postgres (regression)	Set up job	2026-11-11T18:39:21.1784545Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+postgres (regression)	Set up job	2026-11-11T18:39:21.1785327Z ##[endgroup]
+postgres (regression)	Set up job	2026-11-11T18:39:21.1786448Z ##[group]GITHUB_TOKEN Permissions
+postgres (regression)	Set up job	2026-11-11T18:39:21.1788415Z Contents: read
+postgres (regression)	Set up job	2026-11-11T18:39:21.1789027Z Metadata: read
+postgres (regression)	Set up job	2026-11-11T18:39:21.1789511Z ##[endgroup]
+postgres (regression)	Set up job	2026-11-11T18:39:21.1791545Z Secret source: Actions
+postgres (regression)	Set up job	2026-11-11T18:39:21.1792355Z Cache mode: write
+postgres (regression)	Set up job	2026-11-11T18:39:21.1793301Z Prepare workflow directory
+postgres (regression)	Set up job	2026-11-11T18:39:21.2176457Z Prepare all required actions
+postgres (regression)	Set up job	2026-11-11T18:39:21.2218750Z Getting action download info
+postgres (regression)	Set up job	2026-11-11T18:39:21.4879016Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+postgres (regression)	Set up job	2026-11-11T18:39:21.5810828Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+postgres (regression)	Set up job	2026-11-11T18:39:22.1435357Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+postgres (regression)	Set up job	2026-11-11T18:39:22.6217979Z Complete job name: postgres (regression)
+postgres (regression)	Initialize containers	﻿2026-11-11T18:39:22.6795027Z ##[group]Checking docker version
+postgres (regression)	Initialize containers	2026-11-11T18:39:22.6806886Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1036498Z '1.48'
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1045330Z Docker daemon API version: '1.48'
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1045811Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1225845Z '1.48'
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1240634Z Docker client API version: '1.48'
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1246614Z ##[endgroup]
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1248595Z ##[group]Clean up resources from previous jobs
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1253885Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=cb3f15"
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1408748Z ##[command]/usr/bin/docker network prune --force --filter "label=cb3f15"
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1559649Z ##[endgroup]
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1560135Z ##[group]Create local container network
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.1568276Z ##[command]/usr/bin/docker network create --label cb3f15 github_network_342f43392a9042f7ae3b1b071fe5acf6
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.3127988Z 2f7184344ce89cd5fc3a55deb7caebf1299456078b720c6d1bf3854159817879
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.3148923Z ##[endgroup]
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.3172006Z ##[group]Starting postgres service container
+postgres (regression)	Initialize containers	2026-11-11T18:39:23.3192865Z ##[command]/usr/bin/docker pull postgres:17.11
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.2801169Z 17.11: Pulling from library/postgres
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5257444Z 37fb86c2a767: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5258321Z 56c5b61c6d2b: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5258962Z c2f4b34f5119: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5259347Z d717e9509665: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5259666Z 046371a447cc: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5259963Z c97a680633a2: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5260271Z f0f18338e0da: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5260594Z 0eab0a63b06d: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5260922Z 9de238338a9a: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5261264Z 275aa943d416: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5262032Z 5760334e16b5: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5262331Z 046371a447cc: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5262611Z d35c08e535dc: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5263076Z 4f0fb6572de8: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5263421Z ceeafc939069: Pulling fs layer
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5263709Z c97a680633a2: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5263960Z f0f18338e0da: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5264224Z 0eab0a63b06d: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5264479Z 9de238338a9a: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5264735Z 275aa943d416: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5264990Z 5760334e16b5: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5265246Z d35c08e535dc: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5265499Z 4f0fb6572de8: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5265809Z ceeafc939069: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.5266068Z d717e9509665: Waiting
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.6667299Z 56c5b61c6d2b: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.6667828Z 56c5b61c6d2b: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.7675428Z c2f4b34f5119: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.7676069Z c2f4b34f5119: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.8197545Z 37fb86c2a767: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.8198268Z 37fb86c2a767: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.8579268Z d717e9509665: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.8579742Z d717e9509665: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.9989485Z 046371a447cc: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:24.9990286Z 046371a447cc: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.0080652Z f0f18338e0da: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.0447990Z c97a680633a2: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.0448985Z c97a680633a2: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.2155749Z 275aa943d416: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.2157532Z 275aa943d416: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.3154061Z 5760334e16b5: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.3162132Z 5760334e16b5: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.3712459Z d35c08e535dc: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.3714668Z d35c08e535dc: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.4784820Z 4f0fb6572de8: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.4785629Z 4f0fb6572de8: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.4950598Z ceeafc939069: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.5412225Z ceeafc939069: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.5412719Z 9de238338a9a: Verifying Checksum
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.5413330Z 9de238338a9a: Download complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:25.7952766Z 37fb86c2a767: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:27.7627973Z 56c5b61c6d2b: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:27.9721836Z c2f4b34f5119: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:28.0126290Z d717e9509665: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:28.4014990Z 046371a447cc: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:28.4608292Z c97a680633a2: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:28.4671347Z f0f18338e0da: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:28.4756830Z 0eab0a63b06d: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.2732662Z 9de238338a9a: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.2863438Z 275aa943d416: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.2942476Z 5760334e16b5: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.3046940Z d35c08e535dc: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.3118863Z 4f0fb6572de8: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.3356623Z ceeafc939069: Pull complete
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.3394592Z Digest: sha256:ff87138949ad9a46f32ff23bd6852b52ce024a13dffe9b4087be98292cdd3b4f
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.3410109Z Status: Downloaded newer image for postgres:17.11
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.3419150Z docker.io/library/postgres:17.11
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.3481162Z ##[command]/usr/bin/docker create --name eb3aaa87b43e4bf6bd023d5ccda127d7_postgres1711_c24dc6 --label cb3f15 --network github_network_342f43392a9042f7ae3b1b071fe5acf6 --network-alias postgres -p 5432:5432 --health-cmd "pg_isready -U space -d space_test" --health-interval 3s --health-timeout 3s --health-retries 20 -e "POSTGRES_DB=space_test" -e "POSTGRES_USER=space" -e "POSTGRES_PASSWORD=ci-only-password" -e GITHUB_ACTIONS=true -e CI=true postgres:17.11
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.3728672Z 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.3752660Z ##[command]/usr/bin/docker start 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.5910462Z 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.5929866Z ##[command]/usr/bin/docker ps --all --filter id=898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.6074491Z 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495 Up Less than a second (health: starting)
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.6101774Z ##[command]/usr/bin/docker port 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.6255481Z 5432/tcp -> 0.0.0.0:5432
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.6255915Z 5432/tcp -> [::]:5432
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.6309401Z ##[endgroup]
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.6318791Z ##[group]Waiting for all services to be ready
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.6332508Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.6476319Z starting
+postgres (regression)	Initialize containers	2026-11-11T18:39:32.6501327Z postgres service is starting, waiting 2 seconds before checking again.
+postgres (regression)	Initialize containers	2026-11-11T18:39:34.6497179Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495
+postgres (regression)	Initialize containers	2026-11-11T18:39:34.6627606Z starting
+postgres (regression)	Initialize containers	2026-11-11T18:39:34.6644308Z postgres service is starting, waiting 3 seconds before checking again.
+postgres (regression)	Initialize containers	2026-11-11T18:39:38.6402215Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495
+postgres (regression)	Initialize containers	2026-11-11T18:39:38.6543970Z healthy
+postgres (regression)	Initialize containers	2026-11-11T18:39:38.6570516Z postgres service is healthy.
+postgres (regression)	Initialize containers	2026-11-11T18:39:38.6571240Z ##[endgroup]
+postgres (regression)	Run actions/checkout@v4	﻿2026-11-11T18:39:38.6915070Z ##[group]Run actions/checkout@v4
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6915485Z with:
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6915722Z   repository: space-protocol-project/space-server
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6917744Z   token: ***
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6917939Z   ssh-strict: true
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6918114Z   ssh-user: git
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6918289Z   persist-credentials: true
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6918481Z   clean: true
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6918658Z   sparse-checkout-cone-mode: true
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6918863Z   fetch-depth: 1
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6919026Z   fetch-tags: false
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6919196Z   show-progress: true
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6919363Z   lfs: false
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6919518Z   submodules: false
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6919695Z   set-safe-directory: true
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6919903Z   allow-unsafe-pr-checkout: false
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6920231Z env:
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6920641Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.6920923Z ##[endgroup]
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9440659Z Syncing repository: space-protocol-project/space-server
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9442071Z ##[group]Getting Git version info
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9442413Z Working directory is '/home/runner/work/space-server/space-server'
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9443104Z [command]/usr/bin/git version
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9546552Z git version 2.56.0
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9563587Z ##[endgroup]
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9576008Z Temporarily overriding HOME='/home/runner/work/_temp/98a47fc6-0fba-46ed-a51a-e481a61066e2' before making global git config changes
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9577110Z Adding repository directory to the temporary git global config as a safe directory
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9580573Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/space-server/space-server
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9654120Z Deleting the contents of '/home/runner/work/space-server/space-server'
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9655467Z ##[group]Initializing the repository
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9655889Z [command]/usr/bin/git init /home/runner/work/space-server/space-server
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9818713Z hint: Using 'master' as the name for the initial branch. This default branch name
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9819370Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9820044Z hint: to use in all of your new repositories, which will suppress this warning,
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9820369Z hint: call:
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9820545Z hint:
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9820787Z hint: 	git config --global init.defaultBranch <name>
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9821069Z hint:
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9821314Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9821709Z hint: 'development'. The just-created branch can be renamed via this command:
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9822002Z hint:
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9822185Z hint: 	git branch -m <name>
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9822375Z hint:
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9822633Z hint: Disable this message with "git config set advice.defaultBranchName false"
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9833913Z Initialized empty Git repository in /home/runner/work/space-server/space-server/.git/
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9838261Z [command]/usr/bin/git remote add origin https://github.com/space-protocol-project/space-server
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9910397Z ##[endgroup]
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9910924Z ##[group]Disabling automatic garbage collection
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9913933Z [command]/usr/bin/git config --local gc.auto 0
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9950753Z ##[endgroup]
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9951103Z ##[group]Setting up auth
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:38.9958599Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.0002991Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.0353253Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.0394448Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.0609014Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.0650238Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.0866005Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.0912113Z ##[endgroup]
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.0912632Z ##[group]Fetching the repository
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.0923628Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +eaddd90f0bccfed80c366b3a8aa092a7a06f0a17:refs/remotes/origin/main
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.7677841Z From https://github.com/space-protocol-project/space-server
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.7678378Z  * [new ref]         eaddd90f0bccfed80c366b3a8aa092a7a06f0a17 -> origin/main
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.7684130Z ##[endgroup]
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.7684481Z ##[group]Determining the checkout info
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.7684807Z ##[endgroup]
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.7690960Z [command]/usr/bin/git sparse-checkout disable
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.7751870Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.7793049Z ##[group]Checking out the ref
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.7797258Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.8293991Z Switched to a new branch 'main'
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.8297748Z branch 'main' set up to track 'origin/main'.
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.8305002Z ##[endgroup]
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.8354887Z [command]/usr/bin/git log -1 --format=%H
+postgres (regression)	Run actions/checkout@v4	2026-11-11T18:39:39.8388616Z eaddd90f0bccfed80c366b3a8aa092a7a06f0a17
+postgres (regression)	Run actions/setup-go@v5	﻿2026-11-11T18:39:39.8613253Z ##[group]Run actions/setup-go@v5
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.8613517Z with:
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.8613697Z   go-version-file: go.mod
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.8613899Z   check-latest: false
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.8615652Z   token: ***
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.8615814Z   cache: true
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.8615974Z env:
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.8616359Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.8616819Z ##[endgroup]
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.9756401Z Setup go version spec 1.27.4
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.9769969Z Attempting to download 1.27.4...
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.9908193Z (node:2627) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:39.9909085Z (Use `node --trace-deprecation ...` to show where the warning was created)
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:40.7325315Z matching 1.27.4...
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:40.7344883Z Acquiring 1.27.4 from https://github.com/actions/go-versions/releases/download/1.27.4-42945153609/go-1.27.4-linux-x64.tar.gz
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:41.2677585Z Extracting Go...
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:41.2790653Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/15399c71-2cd8-493c-9322-20798a0b6943 -f /home/runner/work/_temp/8668cbbf-ddc6-413f-9ce2-c1bc4f4de0c9
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:42.8216304Z Successfully extracted go to /home/runner/work/_temp/15399c71-2cd8-493c-9322-20798a0b6943
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:42.8216973Z Adding to the cache ...
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:47.0985799Z Successfully cached go to /opt/hostedtoolcache/go/1.27.4/x64
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:47.0988512Z Added go to the path
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:47.0990754Z Successfully set up Go version 1.27.4
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:47.1279859Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOMODCACHE
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:47.1340448Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOCACHE
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:47.1397169Z /home/runner/go/pkg/mod
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:47.1422349Z /home/runner/.cache/go-build
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:47.2885357Z Cache hit for: setup-go-Linux-x64-ubuntu24-go-1.27.4-1a116d22aef14251be0840f878f4f96eed012ea7b596eb4a9da3ac564f83b740
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:47.2984966Z (node:2627) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:48.4303639Z Received 130023424 of 158556587 (82.0%), 123.9 MBs/sec
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:48.6498404Z Received 158556587 of 158556587 (100.0%), 123.6 MBs/sec
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:48.6499228Z Cache Size: ~151 MB (158556587 B)
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:48.6629483Z [command]/usr/bin/tar -xf /home/runner/work/_temp/37c9ade3-f442-4d79-9363-e94fa2bf7eb8/cache.tzst -P -C /home/runner/work/space-server/space-server --use-compress-program unzstd
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3208135Z Cache restored successfully
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3279663Z Cache restored from key: setup-go-Linux-x64-ubuntu24-go-1.27.4-1a116d22aef14251be0840f878f4f96eed012ea7b596eb4a9da3ac564f83b740
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3299467Z go version go1.27.4 linux/amd64
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3299682Z 
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3299944Z ##[group]go env
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3450911Z AR='ar'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3451242Z CC='gcc'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3451518Z CGO_CFLAGS='-O2 -g'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3451802Z CGO_CPPFLAGS=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3451991Z CGO_CXXFLAGS='-O2 -g'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3452259Z CGO_ENABLED='1'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3452563Z CGO_FFLAGS='-O2 -g'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3452813Z CGO_LDFLAGS='-O2 -g'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3453221Z CXX='g++'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3453444Z GCCGO='gccgo'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3453715Z GO111MODULE=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3453970Z GOAMD64='v1'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3454242Z GOARCH='amd64'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3454509Z GOAUTH='netrc'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3454791Z GOBIN='/home/runner/go/bin'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3455132Z GOCACHE='/home/runner/.cache/go-build'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3455475Z GOCACHEPROG=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3455723Z GODEBUG=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3456019Z GOENV='/home/runner/.config/go/env'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3456343Z GOEXE=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3456929Z GOEXPERIMENT=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3457188Z GOFIPS140='off'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3457431Z GOFLAGS=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3458255Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build2720812063=/tmp/go-build -gno-record-gcc-switches'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3459039Z GOHOSTARCH='amd64'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3459490Z GOHOSTOS='linux'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3459746Z GOINSECURE=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3460101Z GOMOD='/home/runner/work/space-server/space-server/go.mod'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3460531Z GOMODCACHE='/home/runner/go/pkg/mod'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3460853Z GONOPROXY=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3461095Z GONOSUMDB=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3461344Z GOOS='linux'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3461528Z GOPACKAGESDRIVER=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3461716Z GOPATH='/home/runner/go'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3461902Z GOPRIVATE=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3462118Z GOPROXY='https://proxy.golang.org,direct'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3462389Z GOROOT='/opt/hostedtoolcache/go/1.27.4/x64'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3462636Z GOSUMDB='sum.golang.org'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3462826Z GOTELEMETRY='local'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3463238Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3463495Z GOTMPDIR=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3463664Z GOTOOLCHAIN='auto'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3463915Z GOTOOLDIR='/opt/hostedtoolcache/go/1.27.4/x64/pkg/tool/linux_amd64'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3464198Z GOVCS=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3464369Z GOVERSION='go1.27.4'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3464543Z GOWORK=''
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3464718Z PKG_CONFIG='pkg-config'
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3464840Z 
+postgres (regression)	Run actions/setup-go@v5	2026-11-11T18:39:50.3465175Z ##[endgroup]
+postgres (regression)	Run mkdir -p .local/p2-registry	﻿2026-11-11T18:39:50.3663838Z ##[group]Run mkdir -p .local/p2-registry
+postgres (regression)	Run mkdir -p .local/p2-registry	2026-11-11T18:39:50.3664211Z ^[[36;1mmkdir -p .local/p2-registry^[[0m
+postgres (regression)	Run mkdir -p .local/p2-registry	2026-11-11T18:39:50.3687073Z shell: /usr/bin/bash -e {0}
+postgres (regression)	Run mkdir -p .local/p2-registry	2026-11-11T18:39:50.3687321Z env:
+postgres (regression)	Run mkdir -p .local/p2-registry	2026-11-11T18:39:50.3687847Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (regression)	Run mkdir -p .local/p2-registry	2026-11-11T18:39:50.3688154Z ##[endgroup]
+postgres (regression)	Полное ядро и анализ	﻿2026-11-11T18:39:50.3797402Z ##[group]Run go test -json ./... > .local/p2-registry/core.jsonl
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:39:50.3797826Z ^[[36;1mgo test -json ./... > .local/p2-registry/core.jsonl^[[0m
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:39:50.3798184Z ^[[36;1mgo test -race -json ./... > .local/p2-registry/core-race.jsonl^[[0m
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:39:50.3798468Z ^[[36;1mgo vet ./...^[[0m
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:39:50.3798661Z ^[[36;1mgo mod verify^[[0m
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:39:50.3798924Z ^[[36;1mgo run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...^[[0m
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:39:50.3816869Z shell: /usr/bin/bash -e {0}
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:39:50.3817118Z env:
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:39:50.3817634Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:39:50.3817931Z ##[endgroup]
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:10.5483948Z all modules verified
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:10.6336197Z go: downloading golang.org/x/vuln v1.9.0
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:11.1073523Z go: downloading golang.org/x/telemetry v0.0.0-20261010193011-f71dc92da45e
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:11.1124495Z go: downloading golang.org/x/mod v0.42.0
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:11.1129777Z go: downloading golang.org/x/tools v0.52.0
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:18.4911939Z === Symbol Results ===
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:18.4914553Z 
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:18.4914875Z No vulnerabilities found.
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:18.4915136Z 
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:18.4915401Z Your code is affected by 0 vulnerabilities.
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:18.4915863Z This scan also found 0 vulnerabilities in packages you import and 3
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:18.4916416Z vulnerabilities in modules you require, but your code doesn't appear to call
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:18.4916849Z these vulnerabilities.
+postgres (regression)	Полное ядро и анализ	2026-11-11T18:50:18.4917173Z Use '-show verbose' for more details.
+postgres (regression)	Ревизия стенда	﻿2026-11-11T18:50:18.6307466Z ##[group]Run git rev-parse HEAD > .local/p2-registry/server-sha.txt
+postgres (regression)	Ревизия стенда	2026-11-11T18:50:18.6307890Z ^[[36;1mgit rev-parse HEAD > .local/p2-registry/server-sha.txt^[[0m
+postgres (regression)	Ревизия стенда	2026-11-11T18:50:18.6308206Z ^[[36;1mgo version > .local/p2-registry/go-version.txt^[[0m
+postgres (regression)	Ревизия стенда	2026-11-11T18:50:18.6326596Z shell: /usr/bin/bash -e {0}
+postgres (regression)	Ревизия стенда	2026-11-11T18:50:18.6326808Z env:
+postgres (regression)	Ревизия стенда	2026-11-11T18:50:18.6327417Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (regression)	Ревизия стенда	2026-11-11T18:50:18.6327728Z ##[endgroup]
+postgres (regression)	Run actions/upload-artifact@v4	﻿2026-11-11T18:50:18.6470383Z ##[group]Run actions/upload-artifact@v4
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6470643Z with:
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6470813Z   name: p2-regression
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6471005Z   path: .local/p2-registry
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6471213Z   include-hidden-files: true
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6471583Z   retention-days: 7
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6471762Z   if-no-files-found: warn
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6471955Z   compression-level: 6
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6472142Z   overwrite: false
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6472307Z env:
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6472783Z   SPACE_TEST_DATABASE_URL: ***127.0.0.1:5432/space_test?sslmode=disable
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.6473365Z ##[endgroup]
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.7853031Z (node:21492) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.7854110Z (Use `node --trace-deprecation ...` to show where the warning was created)
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.7919589Z With the provided path, there will be 4 files uploaded
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.7921000Z Artifact name is valid!
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:18.7922750Z Root directory input is valid!
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:19.0898901Z Beginning upload of artifact content to blob storage
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:19.1287017Z (node:21492) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:19.3649856Z Uploaded bytes 142768
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:19.4507640Z Finished uploading artifact content to blob storage!
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:19.4508456Z SHA256 digest of uploaded artifact zip is 38cf4fa2811fc8be9c49f4be880b8cc51533ccfb5bffc2cc6c58c6f0cf0baf8d
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:19.4510544Z Finalizing artifact upload
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:19.8400694Z Artifact p2-regression.zip successfully finalized. Artifact ID 13883599208
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:19.8401567Z Artifact p2-regression has been successfully uploaded! Final size is 142768 bytes. Artifact ID is 13883599208
+postgres (regression)	Run actions/upload-artifact@v4	2026-11-11T18:50:19.8406704Z Artifact download URL: https://github.com/space-protocol-project/space-server/actions/runs/43079815187/artifacts/13883599208
+postgres (regression)	Post Run actions/setup-go@v5	﻿2026-11-11T18:50:19.8571585Z Post job cleanup.
+postgres (regression)	Post Run actions/setup-go@v5	2026-11-11T18:50:19.9558011Z (node:21525) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+postgres (regression)	Post Run actions/setup-go@v5	2026-11-11T18:50:19.9558774Z (Use `node --trace-deprecation ...` to show where the warning was created)
+postgres (regression)	Post Run actions/setup-go@v5	2026-11-11T18:50:19.9625516Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOCACHE
+postgres (regression)	Post Run actions/setup-go@v5	2026-11-11T18:50:19.9699343Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOMODCACHE
+postgres (regression)	Post Run actions/setup-go@v5	2026-11-11T18:50:19.9726433Z /home/runner/.cache/go-build
+postgres (regression)	Post Run actions/setup-go@v5	2026-11-11T18:50:19.9749128Z /home/runner/go/pkg/mod
+postgres (regression)	Post Run actions/setup-go@v5	2026-11-11T18:50:19.9755757Z Cache hit occurred on the primary key setup-go-Linux-x64-ubuntu24-go-1.27.4-1a116d22aef14251be0840f878f4f96eed012ea7b596eb4a9da3ac564f83b740, not saving cache.
+postgres (regression)	Post Run actions/checkout@v4	﻿2026-11-11T18:50:19.9998078Z Post job cleanup.
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.0757843Z [command]/usr/bin/git version
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.0796124Z git version 2.56.0
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.0830466Z Temporarily overriding HOME='/home/runner/work/_temp/a4324a04-7058-45de-94c3-0e2aab83a910' before making global git config changes
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.0831480Z Adding repository directory to the temporary git global config as a safe directory
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.0835845Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/space-server/space-server
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.0874185Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.0908948Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.1135995Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.1161724Z http.https://github.com/.extraheader
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.1171927Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.1209444Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.1447468Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+postgres (regression)	Post Run actions/checkout@v4	2026-11-11T18:50:20.1486971Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+postgres (regression)	Stop containers	﻿2026-11-11T18:50:20.1852517Z Print service container logs: eb3aaa87b43e4bf6bd023d5ccda127d7_postgres1711_c24dc6
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1856656Z ##[command]/usr/bin/docker logs --details 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1988240Z  The files belonging to this database system will be owned by user "postgres".
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1989031Z  This user must also own the server process.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1991333Z  initdb: warning: enabling "trust" authentication for local connections
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1992022Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1993235Z  initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1994635Z  The database cluster will be initialized with locale "en_US.utf8".
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1995870Z  2026-11-11 18:39:33.860 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1997310Z  The default database encoding has accordingly been set to "UTF8".
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1998229Z  2026-11-11 18:39:33.860 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres (regression)	Stop containers	2026-11-11T18:50:20.1999094Z  The default text search configuration will be set to "english".
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2000243Z  2026-11-11 18:39:33.860 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2003663Z  2026-11-11 18:39:33.862 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2004206Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2004760Z  2026-11-11 18:39:33.864 UTC [64] LOG:  database system was shut down at 2026-11-11 18:39:33 UTC
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2005299Z  Data page checksums are disabled.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2005907Z  2026-11-11 18:39:33.868 UTC [1] LOG:  database system is ready to accept connections
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2006370Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2006991Z  2026-11-11 18:40:42.896 UTC [299] ERROR:  new row for relation "events" violates check constraint "test_failure"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2007721Z  fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2008555Z  2026-11-11 18:40:42.896 UTC [299] DETAIL:  Failing row contains (general, 2, event-2, content.created, 2).
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2009126Z  creating subdirectories ... ok
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2010365Z  2026-11-11 18:40:42.896 UTC [299] STATEMENT:  INSERT INTO events(channel_id,sequence,content_sequence,cursor,type) SELECT id,next_event_sequence,$2,'event-' || next_event_sequence,'content.created' FROM channels WHERE id=$1
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2011509Z  selecting dynamic shared memory implementation ... posix
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2012701Z  2026-11-11 18:40:47.593 UTC [332] ERROR:  insert or update on table "builtin_extension_instances" violates foreign key constraint "builtin_extension_instances_installation_id_view_id_fkey"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2013792Z  selecting default "max_connections" ... 100
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2014666Z  2026-11-11 18:40:47.593 UTC [332] DETAIL:  Key (installation_id, view_id)=(builtin:feed, chat) is not present in table "builtin_extension_installations".
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2015388Z  selecting default "shared_buffers" ... 128MB
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2015855Z  selecting default time zone ... Etc/UTC
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2016237Z  creating configuration files ... ok
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2016609Z  running bootstrap script ... ok
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2017003Z  performing post-bootstrap initialization ... ok
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2017417Z  syncing data to disk ... ok
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2017710Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2017933Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2018219Z  Success. You can now start the database server using:
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2018594Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2019116Z      pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2019489Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2020252Z  waiting for server to start....2026-11-11 18:39:33.461 UTC [48] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2021758Z  2026-11-11 18:40:47.593 UTC [332] STATEMENT:  UPDATE builtin_extension_instances SET installation_id='builtin:feed' WHERE id=$1
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2022540Z  2026-11-11 18:41:22.899 UTC [682] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2023270Z  2026-11-11 18:41:23.272 UTC [688] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2023666Z  2026-11-11 18:41:23.713 UTC [694] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2024052Z  2026-11-11 18:41:24.538 UTC [707] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2024434Z  2026-11-11 18:41:25.370 UTC [714] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2024804Z  2026-11-11 18:41:26.199 UTC [720] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2025179Z  2026-11-11 18:41:27.120 UTC [726] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2025571Z  2026-11-11 18:41:28.872 UTC [756] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2025951Z  2026-11-11 18:41:29.214 UTC [762] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2026312Z  2026-11-11 18:41:29.611 UTC [768] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2026680Z  2026-11-11 18:41:30.043 UTC [774] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2027092Z  2026-11-11 18:41:43.468 UTC [951] LOG:  unexpected EOF on client connection with an open transaction
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2027520Z  2026-11-11 18:41:43.546 UTC [950] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2027870Z  2026-11-11 18:42:09.904 UTC [62] LOG:  checkpoint starting: wal
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2028163Z  2026-11-11 18:42:10.900 UTC [1209] ERROR:  fixture
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2028514Z  2026-11-11 18:42:10.900 UTC [1209] CONTEXT:  PL/pgSQL function reject_journal() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2029154Z  2026-11-11 18:42:10.900 UTC [1209] STATEMENT:  INSERT INTO extension_p1_lifecycle_audit(installation,revision,generation,action,actor,principal,previous_state,state)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2029812Z  	 SELECT installation,$2,$3,$4,$5,NULLIF($6,''),state,$7 FROM extension_p1_lifecycle_audit
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2030165Z  	 WHERE installation=$1 AND revision=$8
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2030418Z  2026-11-11 18:42:11.295 UTC [1212] ERROR:  fixture
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2030759Z  2026-11-11 18:42:11.295 UTC [1212] CONTEXT:  PL/pgSQL function reject_journal() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2031481Z  2026-11-11 18:42:11.295 UTC [1212] STATEMENT:  INSERT INTO extension_p1_lifecycle_audit(installation,revision,generation,action,actor,principal,previous_state,state)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2032115Z  	 SELECT installation,$2,$3,$4,$5,NULLIF($6,''),state,$7 FROM extension_p1_lifecycle_audit
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2032461Z  	 WHERE installation=$1 AND revision=$8
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2032706Z  2026-11-11 18:42:11.677 UTC [1215] ERROR:  fixture
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2033244Z  2026-11-11 18:42:11.677 UTC [1215] CONTEXT:  PL/pgSQL function reject_quarantine() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2033884Z  2026-11-11 18:42:11.677 UTC [1215] STATEMENT:  INSERT INTO extension_p1_lifecycle_audit(installation,revision,generation,action,actor,principal,previous_state,state)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2034510Z  	 SELECT installation,$2,$3,$4,$5,NULLIF($6,''),state,$7 FROM extension_p1_lifecycle_audit
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2034838Z  	 WHERE installation=$1 AND revision=$8
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2035155Z  2026-11-11 18:42:17.026 UTC [1285] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2035478Z  2026-11-11 18:42:17.340 UTC [1291] ERROR:  fixture
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2035971Z  2026-11-11 18:42:17.340 UTC [1291] CONTEXT:  PL/pgSQL function reject_lifecycle() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2036472Z  2026-11-11 18:42:17.340 UTC [1291] STATEMENT:  INSERT INTO admin_audit(principal_id,action,revision) VALUES($1,$2,$3)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2036908Z  2026-11-11 18:42:21.796 UTC [1348] ERROR:  CI injected outbox failure
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2037416Z  2026-11-11 18:42:21.796 UTC [1348] CONTEXT:  PL/pgSQL function extension_p1_reject_event() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2037895Z  2026-11-11 18:42:21.796 UTC [1348] STATEMENT:  INSERT INTO extension_p1_outbox VALUES($1,$2,$3,$4,$5,$6,$7)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2038324Z  2026-11-11 18:42:23.254 UTC [1372] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2038705Z  2026-11-11 18:42:39.468 UTC [1612] ERROR:  canceling statement due to user request
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2039311Z  2026-11-11 18:42:39.468 UTC [1612] STATEMENT:  -- Только явно включаемый прототип, не миграция рабочих пространств.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2039744Z  	CREATE TABLE IF NOT EXISTS extension_p1_meta (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2040120Z  	 singleton boolean PRIMARY KEY CHECK(singleton), version integer NOT NULL CHECK(version=3),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2040526Z  	 history_id text NOT NULL CHECK(history_id ~ '^[0-9a-f]{32}$')
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2040805Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2041267Z  	INSERT INTO extension_p1_meta(singleton,version,history_id) SELECT true,3,replace(gen_random_uuid()::text,'-','') WHERE NOT EXISTS(SELECT 1 FROM extension_p1_meta);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2041847Z  	CREATE TABLE IF NOT EXISTS extension_p1_instances (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2042195Z  	 installation text NOT NULL, instance text NOT NULL, channel text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2042581Z  	 package_hash bytea NOT NULL CHECK(octet_length(package_hash)=32),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2043057Z  	 revision bigint NOT NULL DEFAULT 0 CHECK(revision>=0),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2043396Z  	 PRIMARY KEY(installation,instance)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2043613Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2043819Z  	CREATE TABLE IF NOT EXISTS extension_p1_data (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2044136Z  	 installation text NOT NULL, instance text NOT NULL, key text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2044475Z  	 value bytea NOT NULL CHECK(octet_length(value)<=16384),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2044760Z  	 PRIMARY KEY(installation,instance,key),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2045128Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2045471Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2045659Z  	CREATE TABLE IF NOT EXISTS extension_p1_receipts (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2045998Z  	 installation text NOT NULL, instance text NOT NULL, principal text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2046455Z  	 command text NOT NULL, key text NOT NULL, digest bytea NOT NULL CHECK(octet_length(digest)=32),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2046913Z  	 response bytea NOT NULL, created_at timestamptz NOT NULL DEFAULT clock_timestamp(),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2047256Z  	 retired boolean NOT NULL DEFAULT false,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2047551Z  	 PRIMARY KEY(installation,instance,principal,command,key),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2047971Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2048309Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2048496Z  	CREATE TABLE IF NOT EXISTS extension_p1_outbox (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2048851Z  	 installation text NOT NULL, instance text NOT NULL, revision bigint NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2049306Z  	 ordinal integer NOT NULL, event_id text NOT NULL UNIQUE, type text NOT NULL, payload bytea NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2049719Z  	 PRIMARY KEY(installation,instance,revision,ordinal),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2050089Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2050417Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2050565Z  	
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2050793Z  	-- Версия дополнительного реестра независима от формата квитанций v3.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2051284Z  	ALTER TABLE extension_p1_meta ADD COLUMN IF NOT EXISTS lifecycle_version integer NOT NULL DEFAULT 0 CHECK(lifecycle_version IN (0,1));
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2051880Z  	
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2052136Z  2026-11-11 18:42:39.487 UTC [1608] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2052623Z  2026-11-11 18:42:43.111 UTC [1667] ERROR:  column "history_id" of relation "extension_p1_meta" does not exist at character 323
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2053425Z  2026-11-11 18:42:43.111 UTC [1667] STATEMENT:  -- Только явно включаемый прототип, не миграция рабочих пространств.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2053824Z  	CREATE TABLE IF NOT EXISTS extension_p1_meta (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2054221Z  	 singleton boolean PRIMARY KEY CHECK(singleton), version integer NOT NULL CHECK(version=3),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2054622Z  	 history_id text NOT NULL CHECK(history_id ~ '^[0-9a-f]{32}$')
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2054897Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2055355Z  	INSERT INTO extension_p1_meta(singleton,version,history_id) SELECT true,3,replace(gen_random_uuid()::text,'-','') WHERE NOT EXISTS(SELECT 1 FROM extension_p1_meta);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2055933Z  	CREATE TABLE IF NOT EXISTS extension_p1_instances (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2056268Z  	 installation text NOT NULL, instance text NOT NULL, channel text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2056650Z  	 package_hash bytea NOT NULL CHECK(octet_length(package_hash)=32),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2056978Z  	 revision bigint NOT NULL DEFAULT 0 CHECK(revision>=0),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2057263Z  	 PRIMARY KEY(installation,instance)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2057483Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2057678Z  	CREATE TABLE IF NOT EXISTS extension_p1_data (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2057989Z  	 installation text NOT NULL, instance text NOT NULL, key text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2058323Z  	 value bytea NOT NULL CHECK(octet_length(value)<=16384),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2058609Z  	 PRIMARY KEY(installation,instance,key),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2058954Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2059291Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2059480Z  	CREATE TABLE IF NOT EXISTS extension_p1_receipts (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2059822Z  	 installation text NOT NULL, instance text NOT NULL, principal text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2060258Z  	 command text NOT NULL, key text NOT NULL, digest bytea NOT NULL CHECK(octet_length(digest)=32),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2060710Z  	 response bytea NOT NULL, created_at timestamptz NOT NULL DEFAULT clock_timestamp(),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2061071Z  	 retired boolean NOT NULL DEFAULT false,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2061374Z  	 PRIMARY KEY(installation,instance,principal,command,key),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2061775Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2062150Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2062349Z  	CREATE TABLE IF NOT EXISTS extension_p1_outbox (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2062690Z  	 installation text NOT NULL, instance text NOT NULL, revision bigint NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2063418Z  	 ordinal integer NOT NULL, event_id text NOT NULL UNIQUE, type text NOT NULL, payload bytea NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2063843Z  	 PRIMARY KEY(installation,instance,revision,ordinal),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2064231Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2064564Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2064723Z  	
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2064933Z  	-- Версия дополнительного реестра независима от формата квитанций v3.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2065437Z  	ALTER TABLE extension_p1_meta ADD COLUMN IF NOT EXISTS lifecycle_version integer NOT NULL DEFAULT 0 CHECK(lifecycle_version IN (0,1));
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2065874Z  	
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2066238Z  2026-11-11 18:42:43.185 UTC [1667] ERROR:  null value in column "history_id" of relation "extension_p1_meta" violates not-null constraint
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2066749Z  2026-11-11 18:42:43.185 UTC [1667] DETAIL:  Failing row contains (t, 1, 0, null).
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2067197Z  2026-11-11 18:42:43.185 UTC [1667] STATEMENT:  INSERT INTO extension_p1_meta VALUES(true,1) ON CONFLICT DO NOTHING
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2067621Z  2026-11-11 18:42:44.878 UTC [1686] ERROR:  test failure
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2068100Z  2026-11-11 18:42:44.878 UTC [1686] CONTEXT:  PL/pgSQL function reject_retirement() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2068772Z  2026-11-11 18:42:44.878 UTC [1686] STATEMENT:  UPDATE extension_p1_receipts SET response=$6,retired=true WHERE installation=$1 AND instance=$2 AND principal=$3 AND command=$4 AND key=$5
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2069534Z  2026-11-11 18:42:48.676 UTC [1731] LOG:  unexpected EOF on client connection with an open transaction
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2069999Z  2026-11-11 18:42:49.448 UTC [1749] LOG:  unexpected EOF on client connection with an open transaction
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2070514Z  2026-11-11 18:42:51.637 UTC [1776] ERROR:  new row for relation "extension_p1_upgrade_steps" violates check constraint "fail_step"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2071677Z  2026-11-11 18:42:51.637 UTC [1776] DETAIL:  Failing row contains (install, 0, 4444444444444444444444444444444444444444444444444444444444444444, 67d6291b301412df4a6ca7808aeafac9d0587b06ece3c68e72bab0157cd9d52c, \x7b22736368656d61223a327d, a0c864a785115a93f36f77693d98a755, u_286dc008d7cc5128a964a3d92852967f69bce7609c9acaaf3c0c770cb3a7f4..., f).
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2073197Z  2026-11-11 18:42:51.637 UTC [1776] STATEMENT:  INSERT INTO extension_p1_upgrade_steps(installation,ordinal,step_digest,input_digest,output,generation,principal,wasm) VALUES($1,$2,$3,$4,$5,$6,$7,$8)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2073971Z  2026-11-11 18:42:53.935 UTC [1803] ERROR:  duplicate key value violates unique constraint "extension_p1_upgrade_jobs_pkey"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2074462Z  2026-11-11 18:42:53.935 UTC [1803] DETAIL:  Key (installation)=(install) already exists.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2075110Z  2026-11-11 18:42:53.935 UTC [1803] STATEMENT:  INSERT INTO extension_p1_upgrade_jobs(installation,instance,digest,plan,seed,document,next_step,principal) VALUES($1,$2,$3,$4,$5,$5,0,$6)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2075813Z  2026-11-11 18:42:56.968 UTC [1850] ERROR:  relation "extension_p1_upgrade_steps" does not exist at character 87
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2076486Z  2026-11-11 18:42:56.968 UTC [1850] STATEMENT:  SELECT installation,ordinal,step_digest,input_digest,output,generation,principal FROM extension_p1_upgrade_steps LIMIT 0
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2077056Z  2026-11-11 18:43:02.026 UTC [1916] ERROR:  audit unavailable
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2077420Z  2026-11-11 18:43:02.026 UTC [1916] CONTEXT:  PL/pgSQL function fail_feed_audit() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2077998Z  2026-11-11 18:43:02.026 UTC [1916] STATEMENT:  INSERT INTO feed_moderation(post_id,comment_id,action,reason,actor_id,revision) VALUES($1,$2,$3,$4,$5,$6)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2078634Z  2026-11-11 18:43:03.807 UTC [1939] ERROR:  new row for relation "forum_moderation" violates check constraint "test_reject_hide"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2079476Z  2026-11-11 18:43:03.807 UTC [1939] DETAIL:  Failing row contains (1, topic_AeMvQO_qI_tefWZnClsMskfmjnqGEUxZURGHyfZI11k, , hide, Правила, u_0cea08ea73df4f4dbacfe93ab0c3b7d2b39f37d7d90f8c8d319e6af21ef314..., 2, 1794422584, 0).
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2080375Z  2026-11-11 18:43:03.807 UTC [1939] STATEMENT:  INSERT INTO forum_moderation(thread_id,reply_id,action,reason,actor_id,revision) VALUES($1,$2,$3,$4,$5,$6)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2081039Z  2026-11-11 18:43:06.107 UTC [1976] ERROR:  new row for relation "forum_moderation" violates check constraint "reject_report_decision"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2082047Z  2026-11-11 18:43:06.107 UTC [1976] DETAIL:  Failing row contains (2, topic_5c37S2R524MkJXX3VjRkutDQlVcMhTVFBL0PT85W17I, reply_GZ5-gELw4GNxyZmlybuzLlMDVhtqR_ePLtbG44gw7XA, report_hide, Причина, u_f17a0eb8f5ba40feb5fa30f795c15fe5fde4f02811483a74dfa7297ea59ee0..., 3, 1794422586, 1).
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2083299Z  2026-11-11 18:43:06.107 UTC [1976] STATEMENT:  INSERT INTO forum_moderation(thread_id,reply_id,action,reason,actor_id,revision,report_id) VALUES($1,$2,$3,$4,$5,$6,$7)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2084358Z  2026-11-11 18:43:11.713 UTC [62] LOG:  checkpoint complete: wrote 5438 buffers (33.2%); 0 WAL file(s) added, 0 removed, 33 recycled; write=59.400 s, sync=1.298 s, total=61.810 s; sync files=121127, longest=0.148 s, average=0.001 s; distance=531729 kB, estimate=531729 kB; lsn=0/4019EA00, redo lsn=0/2205C188
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2085311Z  2026-11-11 18:43:16.415 UTC [62] LOG:  checkpoint starting: wal
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2085665Z  2026-11-11 18:44:13.620 UTC [2406] ERROR:  canceling statement due to lock timeout
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2086167Z  2026-11-11 18:44:13.620 UTC [2406] CONTEXT:  while updating tuple (0,4) in relation "channels"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2086612Z  2026-11-11 18:44:13.620 UTC [2406] STATEMENT:  UPDATE channels SET revision=revision+1 WHERE id=$1
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2087098Z  2026-11-11 18:45:09.911 UTC [2681] ERROR:  new row for relation "events" violates check constraint "test_failure"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2087593Z  2026-11-11 18:45:09.911 UTC [2681] DETAIL:  Failing row contains (general, 2, event-2, content.created, 2).
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2088379Z  2026-11-11 18:45:09.911 UTC [2681] STATEMENT:  INSERT INTO events(channel_id,sequence,content_sequence,cursor,type) SELECT id,next_event_sequence,$2,'event-' || next_event_sequence,'content.created' FROM channels WHERE id=$1
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2089355Z  2026-11-11 18:45:12.094 UTC [2710] ERROR:  insert or update on table "builtin_extension_instances" violates foreign key constraint "builtin_extension_instances_installation_id_view_id_fkey"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2090148Z  2026-11-11 18:45:12.094 UTC [2710] DETAIL:  Key (installation_id, view_id)=(builtin:feed, chat) is not present in table "builtin_extension_installations".
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2090792Z  2026-11-11 18:45:12.094 UTC [2710] STATEMENT:  UPDATE builtin_extension_instances SET installation_id='builtin:feed' WHERE id=$1
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2091743Z  2026-11-11 18:45:30.378 UTC [62] LOG:  checkpoint complete: wrote 5174 buffers (31.6%); 0 WAL file(s) added, 0 removed, 33 recycled; write=132.271 s, sync=0.510 s, total=133.963 s; sync files=42338, longest=0.056 s, average=0.001 s; distance=542187 kB, estimate=542187 kB; lsn=0/610BEA70, redo lsn=0/431D6D98
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2092551Z  2026-11-11 18:45:36.792 UTC [62] LOG:  checkpoint starting: wal
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2093033Z  2026-11-11 18:45:58.208 UTC [3092] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2093439Z  2026-11-11 18:45:58.612 UTC [3098] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2093818Z  2026-11-11 18:45:59.014 UTC [3104] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2094194Z  2026-11-11 18:45:59.940 UTC [3110] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2094566Z  2026-11-11 18:46:00.945 UTC [3124] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2094944Z  2026-11-11 18:46:01.892 UTC [3130] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2095334Z  2026-11-11 18:46:02.852 UTC [3136] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2095708Z  2026-11-11 18:46:06.317 UTC [3175] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2096083Z  2026-11-11 18:46:06.761 UTC [3181] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2096470Z  2026-11-11 18:46:07.228 UTC [3187] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2096861Z  2026-11-11 18:46:07.664 UTC [3193] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2097281Z  2026-11-11 18:46:24.787 UTC [3379] LOG:  unexpected EOF on client connection with an open transaction
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2097712Z  2026-11-11 18:46:25.033 UTC [3378] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2098032Z  2026-11-11 18:46:59.495 UTC [3653] ERROR:  fixture
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2098381Z  2026-11-11 18:46:59.495 UTC [3653] CONTEXT:  PL/pgSQL function reject_journal() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2099023Z  2026-11-11 18:46:59.495 UTC [3653] STATEMENT:  INSERT INTO extension_p1_lifecycle_audit(installation,revision,generation,action,actor,principal,previous_state,state)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2099781Z  	 SELECT installation,$2,$3,$4,$5,NULLIF($6,''),state,$7 FROM extension_p1_lifecycle_audit
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2100125Z  	 WHERE installation=$1 AND revision=$8
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2100378Z  2026-11-11 18:46:59.821 UTC [3656] ERROR:  fixture
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2100720Z  2026-11-11 18:46:59.821 UTC [3656] CONTEXT:  PL/pgSQL function reject_journal() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2101455Z  2026-11-11 18:46:59.821 UTC [3656] STATEMENT:  INSERT INTO extension_p1_lifecycle_audit(installation,revision,generation,action,actor,principal,previous_state,state)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2102084Z  	 SELECT installation,$2,$3,$4,$5,NULLIF($6,''),state,$7 FROM extension_p1_lifecycle_audit
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2102426Z  	 WHERE installation=$1 AND revision=$8
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2102674Z  2026-11-11 18:47:00.388 UTC [3659] ERROR:  fixture
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2103238Z  2026-11-11 18:47:00.388 UTC [3659] CONTEXT:  PL/pgSQL function reject_quarantine() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2103884Z  2026-11-11 18:47:00.388 UTC [3659] STATEMENT:  INSERT INTO extension_p1_lifecycle_audit(installation,revision,generation,action,actor,principal,previous_state,state)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2104513Z  	 SELECT installation,$2,$3,$4,$5,NULLIF($6,''),state,$7 FROM extension_p1_lifecycle_audit
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2104853Z  	 WHERE installation=$1 AND revision=$8
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2105170Z  2026-11-11 18:47:07.577 UTC [3738] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2105498Z  2026-11-11 18:47:07.899 UTC [3744] ERROR:  fixture
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2105848Z  2026-11-11 18:47:07.899 UTC [3744] CONTEXT:  PL/pgSQL function reject_lifecycle() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2106338Z  2026-11-11 18:47:07.899 UTC [3744] STATEMENT:  INSERT INTO admin_audit(principal_id,action,revision) VALUES($1,$2,$3)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2106770Z  2026-11-11 18:47:13.333 UTC [3809] ERROR:  CI injected outbox failure
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2107180Z  2026-11-11 18:47:13.333 UTC [3809] CONTEXT:  PL/pgSQL function extension_p1_reject_event() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2107660Z  2026-11-11 18:47:13.333 UTC [3809] STATEMENT:  INSERT INTO extension_p1_outbox VALUES($1,$2,$3,$4,$5,$6,$7)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2108095Z  2026-11-11 18:47:14.918 UTC [3825] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2108948Z  2026-11-11 18:47:17.953 UTC [62] LOG:  checkpoint complete: wrote 7015 buffers (42.8%); 0 WAL file(s) added, 0 removed, 33 recycled; write=100.039 s, sync=0.485 s, total=101.161 s; sync files=61775, longest=0.070 s, average=0.001 s; distance=538824 kB, estimate=541850 kB; lsn=0/81EC9098, redo lsn=0/64008EA8
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2109755Z  2026-11-11 18:47:23.866 UTC [62] LOG:  checkpoint starting: wal
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2110098Z  2026-11-11 18:47:34.473 UTC [4081] ERROR:  canceling statement due to user request
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2110529Z  2026-11-11 18:47:34.473 UTC [4081] STATEMENT:  -- Только явно включаемый прототип, не миграция рабочих пространств.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2110915Z  	CREATE TABLE IF NOT EXISTS extension_p1_meta (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2111296Z  	 singleton boolean PRIMARY KEY CHECK(singleton), version integer NOT NULL CHECK(version=3),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2111702Z  	 history_id text NOT NULL CHECK(history_id ~ '^[0-9a-f]{32}$')
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2111977Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2112445Z  	INSERT INTO extension_p1_meta(singleton,version,history_id) SELECT true,3,replace(gen_random_uuid()::text,'-','') WHERE NOT EXISTS(SELECT 1 FROM extension_p1_meta);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2113100Z  	CREATE TABLE IF NOT EXISTS extension_p1_instances (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2113448Z  	 installation text NOT NULL, instance text NOT NULL, channel text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2113833Z  	 package_hash bytea NOT NULL CHECK(octet_length(package_hash)=32),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2114163Z  	 revision bigint NOT NULL DEFAULT 0 CHECK(revision>=0),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2114447Z  	 PRIMARY KEY(installation,instance)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2114662Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2114848Z  	CREATE TABLE IF NOT EXISTS extension_p1_data (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2115316Z  	 installation text NOT NULL, instance text NOT NULL, key text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2115659Z  	 value bytea NOT NULL CHECK(octet_length(value)<=16384),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2115956Z  	 PRIMARY KEY(installation,instance,key),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2116308Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2116743Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2116941Z  	CREATE TABLE IF NOT EXISTS extension_p1_receipts (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2117286Z  	 installation text NOT NULL, instance text NOT NULL, principal text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2117723Z  	 command text NOT NULL, key text NOT NULL, digest bytea NOT NULL CHECK(octet_length(digest)=32),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2118182Z  	 response bytea NOT NULL, created_at timestamptz NOT NULL DEFAULT clock_timestamp(),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2118528Z  	 retired boolean NOT NULL DEFAULT false,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2118833Z  	 PRIMARY KEY(installation,instance,principal,command,key),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2119234Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2119559Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2119754Z  	CREATE TABLE IF NOT EXISTS extension_p1_outbox (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2120086Z  	 installation text NOT NULL, instance text NOT NULL, revision bigint NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2120544Z  	 ordinal integer NOT NULL, event_id text NOT NULL UNIQUE, type text NOT NULL, payload bytea NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2120952Z  	 PRIMARY KEY(installation,instance,revision,ordinal),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2121333Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2121658Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2121813Z  	
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2122021Z  	-- Версия дополнительного реестра независима от формата квитанций v3.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2122523Z  	ALTER TABLE extension_p1_meta ADD COLUMN IF NOT EXISTS lifecycle_version integer NOT NULL DEFAULT 0 CHECK(lifecycle_version IN (0,1));
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2123068Z  	
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2123323Z  2026-11-11 18:47:34.555 UTC [4069] WARNING:  you don't own a lock of type ExclusiveLock
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2123829Z  2026-11-11 18:47:39.779 UTC [4136] ERROR:  column "history_id" of relation "extension_p1_meta" does not exist at character 323
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2124367Z  2026-11-11 18:47:39.779 UTC [4136] STATEMENT:  -- Только явно включаемый прототип, не миграция рабочих пространств.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2124745Z  	CREATE TABLE IF NOT EXISTS extension_p1_meta (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2125112Z  	 singleton boolean PRIMARY KEY CHECK(singleton), version integer NOT NULL CHECK(version=3),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2125531Z  	 history_id text NOT NULL CHECK(history_id ~ '^[0-9a-f]{32}$')
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2125791Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2126246Z  	INSERT INTO extension_p1_meta(singleton,version,history_id) SELECT true,3,replace(gen_random_uuid()::text,'-','') WHERE NOT EXISTS(SELECT 1 FROM extension_p1_meta);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2126788Z  	CREATE TABLE IF NOT EXISTS extension_p1_instances (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2127140Z  	 installation text NOT NULL, instance text NOT NULL, channel text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2127514Z  	 package_hash bytea NOT NULL CHECK(octet_length(package_hash)=32),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2127851Z  	 revision bigint NOT NULL DEFAULT 0 CHECK(revision>=0),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2128135Z  	 PRIMARY KEY(installation,instance)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2128357Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2128536Z  	CREATE TABLE IF NOT EXISTS extension_p1_data (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2128848Z  	 installation text NOT NULL, instance text NOT NULL, key text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2129191Z  	 value bytea NOT NULL CHECK(octet_length(value)<=16384),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2129466Z  	 PRIMARY KEY(installation,instance,key),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2129813Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2130144Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2130342Z  	CREATE TABLE IF NOT EXISTS extension_p1_receipts (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2130791Z  	 installation text NOT NULL, instance text NOT NULL, principal text NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2131236Z  	 command text NOT NULL, key text NOT NULL, digest bytea NOT NULL CHECK(octet_length(digest)=32),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2131690Z  	 response bytea NOT NULL, created_at timestamptz NOT NULL DEFAULT clock_timestamp(),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2132125Z  	 retired boolean NOT NULL DEFAULT false,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2132418Z  	 PRIMARY KEY(installation,instance,principal,command,key),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2132811Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2133267Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2133456Z  	CREATE TABLE IF NOT EXISTS extension_p1_outbox (
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2133799Z  	 installation text NOT NULL, instance text NOT NULL, revision bigint NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2134250Z  	 ordinal integer NOT NULL, event_id text NOT NULL UNIQUE, type text NOT NULL, payload bytea NOT NULL,
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2134666Z  	 PRIMARY KEY(installation,instance,revision,ordinal),
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2135048Z  	 FOREIGN KEY(installation,instance) REFERENCES extension_p1_instances ON DELETE CASCADE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2135386Z  	);
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2135540Z  	
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2135744Z  	-- Версия дополнительного реестра независима от формата квитанций v3.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2136254Z  	ALTER TABLE extension_p1_meta ADD COLUMN IF NOT EXISTS lifecycle_version integer NOT NULL DEFAULT 0 CHECK(lifecycle_version IN (0,1));
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2136691Z  	
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2137062Z  2026-11-11 18:47:40.035 UTC [4136] ERROR:  null value in column "history_id" of relation "extension_p1_meta" violates not-null constraint
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2137563Z  2026-11-11 18:47:40.035 UTC [4136] DETAIL:  Failing row contains (t, 1, 0, null).
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2138014Z  2026-11-11 18:47:40.035 UTC [4136] STATEMENT:  INSERT INTO extension_p1_meta VALUES(true,1) ON CONFLICT DO NOTHING
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2138419Z  2026-11-11 18:47:43.368 UTC [4162] ERROR:  test failure
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2138793Z  2026-11-11 18:47:43.368 UTC [4162] CONTEXT:  PL/pgSQL function reject_retirement() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2139452Z  2026-11-11 18:47:43.368 UTC [4162] STATEMENT:  UPDATE extension_p1_receipts SET response=$6,retired=true WHERE installation=$1 AND instance=$2 AND principal=$3 AND command=$4 AND key=$5
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2140124Z  2026-11-11 18:47:48.568 UTC [4208] LOG:  unexpected EOF on client connection with an open transaction
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2140580Z  2026-11-11 18:47:49.884 UTC [4226] LOG:  unexpected EOF on client connection with an open transaction
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2141103Z  2026-11-11 18:47:53.923 UTC [4261] ERROR:  new row for relation "extension_p1_upgrade_steps" violates check constraint "fail_step"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2142262Z  2026-11-11 18:47:53.923 UTC [4261] DETAIL:  Failing row contains (install, 0, 4444444444444444444444444444444444444444444444444444444444444444, 67d6291b301412df4a6ca7808aeafac9d0587b06ece3c68e72bab0157cd9d52c, \x7b22736368656d61223a327d, 4ae3cb4c858055338b9ae46f73e84f52, u_7f60315e3206a2e80cfeff97520bce1a2b92299f3ca50db62f25000cb06f76..., f).
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2143724Z  2026-11-11 18:47:53.923 UTC [4261] STATEMENT:  INSERT INTO extension_p1_upgrade_steps(installation,ordinal,step_digest,input_digest,output,generation,principal,wasm) VALUES($1,$2,$3,$4,$5,$6,$7,$8)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2144503Z  2026-11-11 18:47:57.004 UTC [4288] ERROR:  duplicate key value violates unique constraint "extension_p1_upgrade_jobs_pkey"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2144985Z  2026-11-11 18:47:57.004 UTC [4288] DETAIL:  Key (installation)=(install) already exists.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2145637Z  2026-11-11 18:47:57.004 UTC [4288] STATEMENT:  INSERT INTO extension_p1_upgrade_jobs(installation,instance,digest,plan,seed,document,next_step,principal) VALUES($1,$2,$3,$4,$5,$5,0,$6)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2146337Z  2026-11-11 18:48:02.169 UTC [4342] ERROR:  relation "extension_p1_upgrade_steps" does not exist at character 87
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2147008Z  2026-11-11 18:48:02.169 UTC [4342] STATEMENT:  SELECT installation,ordinal,step_digest,input_digest,output,generation,principal FROM extension_p1_upgrade_steps LIMIT 0
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2147726Z  2026-11-11 18:48:09.157 UTC [4409] ERROR:  audit unavailable
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2148093Z  2026-11-11 18:48:09.157 UTC [4409] CONTEXT:  PL/pgSQL function fail_feed_audit() line 1 at RAISE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2148758Z  2026-11-11 18:48:09.157 UTC [4409] STATEMENT:  INSERT INTO feed_moderation(post_id,comment_id,action,reason,actor_id,revision) VALUES($1,$2,$3,$4,$5,$6)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2149401Z  2026-11-11 18:48:11.465 UTC [4440] ERROR:  new row for relation "forum_moderation" violates check constraint "test_reject_hide"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2150232Z  2026-11-11 18:48:11.465 UTC [4440] DETAIL:  Failing row contains (1, topic_cfAtJDQqmNZsPE5LWY4OpraNPOzQdXDRocEI8w_lmPI, , hide, Правила, u_14601ef7ba9311284ab98c5a691164d7d0fce6b9d1b76291b042b7e50bb2fe..., 2, 1794422891, 0).
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2151128Z  2026-11-11 18:48:11.465 UTC [4440] STATEMENT:  INSERT INTO forum_moderation(thread_id,reply_id,action,reason,actor_id,revision) VALUES($1,$2,$3,$4,$5,$6)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2151782Z  2026-11-11 18:48:15.159 UTC [4476] ERROR:  new row for relation "forum_moderation" violates check constraint "reject_report_decision"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2152798Z  2026-11-11 18:48:15.159 UTC [4476] DETAIL:  Failing row contains (2, topic_9zpqmCb5JjVcUvDCUO53rVxycWk_4AwAYa2oH6vhCd8, reply_qIfWkrt_AIs3O1w0eBxq9o3YmPZFY3yC-F95BUOYZTk, report_hide, Причина, u_7beb0c50cdaf3a5639e88af1044f3c15ed8bf4fddbfa61ba74429e0db2f35b..., 3, 1794422895, 1).
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2153985Z  2026-11-11 18:48:15.159 UTC [4476] STATEMENT:  INSERT INTO forum_moderation(thread_id,reply_id,action,reason,actor_id,revision,report_id) VALUES($1,$2,$3,$4,$5,$6,$7)
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2155029Z  2026-11-11 18:48:55.792 UTC [62] LOG:  checkpoint complete: wrote 7288 buffers (44.5%); 0 WAL file(s) added, 3 removed, 30 recycled; write=89.501 s, sync=1.147 s, total=91.927 s; sync files=62470, longest=0.472 s, average=0.001 s; distance=540981 kB, estimate=541763 kB; lsn=0/A4400168, redo lsn=0/85056398
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2155826Z  2026-11-11 18:48:55.796 UTC [62] LOG:  checkpoint starting: wal
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2156196Z  2026-11-11 18:49:10.133 UTC [4841] LOG:  skipping vacuum of "contents" --- lock not available
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2156594Z  2026-11-11 18:49:40.705 UTC [4957] ERROR:  canceling statement due to lock timeout
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2157005Z  2026-11-11 18:49:40.705 UTC [4957] CONTEXT:  while updating tuple (0,4) in relation "channels"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2157444Z  2026-11-11 18:49:40.705 UTC [4957] STATEMENT:  UPDATE channels SET revision=revision+1 WHERE id=$1
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2157894Z  2026-11-11 18:39:33.462 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2158316Z  2026-11-11 18:39:33.464 UTC [51] LOG:  database system was shut down at 2026-11-11 18:39:33 UTC
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2158714Z  2026-11-11 18:39:33.468 UTC [48] LOG:  database system is ready to accept connections
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2159011Z   done
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2159185Z  server started
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2159364Z  CREATE DATABASE
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2159539Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2159691Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2159953Z  /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2160274Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2160559Z  waiting for server to shut down...2026-11-11 18:39:33.632 UTC [48] LOG:  received fast shutdown request
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2160972Z  .2026-11-11 18:39:33.632 UTC [48] LOG:  aborting any active transactions
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2161416Z  2026-11-11 18:39:33.634 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2161831Z  2026-11-11 18:39:33.634 UTC [49] LOG:  shutting down
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2162173Z  2026-11-11 18:39:33.634 UTC [49] LOG:  checkpoint starting: shutdown immediate
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2163052Z  2026-11-11 18:39:33.742 UTC [49] LOG:  checkpoint complete: wrote 925 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.076 s, sync=0.032 s, total=0.108 s; sync files=301, longest=0.030 s, average=0.001 s; distance=4256 kB, estimate=4256 kB; lsn=0/19179A8, redo lsn=0/19179A8
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2163920Z  2026-11-11 18:39:33.749 UTC [48] LOG:  database system is shut down
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2164277Z   done
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2164438Z  server stopped
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2164613Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2164815Z  PostgreSQL init process complete; ready for start up.
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2165061Z  
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2169919Z Stop and remove container: eb3aaa87b43e4bf6bd023d5ccda127d7_postgres1711_c24dc6
+postgres (regression)	Stop containers	2026-11-11T18:50:20.2173871Z ##[command]/usr/bin/docker rm --force 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495
+postgres (regression)	Stop containers	2026-11-11T18:50:21.0765914Z 898897bb4bf0a5539d15b76da652572f56797a1fe84a436d51551b55c09e0495
+postgres (regression)	Stop containers	2026-11-11T18:50:21.0780768Z Remove container network: github_network_342f43392a9042f7ae3b1b071fe5acf6
+postgres (regression)	Stop containers	2026-11-11T18:50:21.0784819Z ##[command]/usr/bin/docker network rm github_network_342f43392a9042f7ae3b1b071fe5acf6
+postgres (regression)	Stop containers	2026-11-11T18:50:21.1844476Z github_network_342f43392a9042f7ae3b1b071fe5acf6
+postgres (regression)	Complete job	﻿2026-11-11T18:50:21.1910232Z Cleaning up orphan processes
+postgres (regression)	Complete job	2026-11-11T18:50:21.2224339Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-go@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

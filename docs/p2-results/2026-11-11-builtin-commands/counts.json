@@ -1,0 +1,13 @@
+{
+  "artifacts/p2-registry/registry.jsonl": {
+    "pass": 60
+  },
+  "artifacts/p2-regression/core-race.jsonl": {
+    "pass": 860,
+    "skip": 84
+  },
+  "artifacts/p2-regression/core.jsonl": {
+    "pass": 860,
+    "skip": 84
+  }
+}

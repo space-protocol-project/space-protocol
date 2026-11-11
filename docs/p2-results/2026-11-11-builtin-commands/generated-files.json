@@ -1,0 +1,7 @@
+{
+  "..\\space-protocol\\protocol\\proto\\space\\v1\\builtin.proto": "65d3ab47a644b4ee3a3c5cc7dd572d266927b9ad09bc867392f24493dc6e05bb",
+  "..\\space-protocol\\protocol\\openapi\\space\\v1\\builtin.swagger.json": "b4954da10b49e2d31f78c1ac7f7dbd567ab935ea03228d9d19f227b89eaa84bf",
+  "gen\\space\\v1\\builtin.pb.go": "53fd0338d0c90e36134f7801f3268b8bc3c0971b7b7fbb2606c38259faa5bb66",
+  "gen\\space\\v1\\builtin_grpc.pb.go": "a40585e631cff82d0267e3ad7e4216709ad1390765534f43a99b7cfc836e447f",
+  "gen\\space\\v1\\spacev1connect\\builtin.connect.go": "88aa9229f828bc6ee23f504dee6d4f936b1cc0a63f78172c9e223974a892c21a"
+}

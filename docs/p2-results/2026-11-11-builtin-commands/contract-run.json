@@ -1,0 +1,59 @@
+{
+  "conclusion": "success",
+  "headSha": "92a17cb05acad9439b86b5c92b79668561a08a07",
+  "jobs": [
+    {
+      "completedAt": "2026-11-11T18:39:54Z",
+      "conclusion": "success",
+      "databaseId": 130729343919,
+      "name": "contract",
+      "startedAt": "2026-11-11T18:39:47Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T18:39:48Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T18:39:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T18:39:51Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-11T18:39:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T18:39:51Z",
+          "conclusion": "success",
+          "name": "JSON \u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 OpenAPI",
+          "number": 3,
+          "startedAt": "2026-11-11T18:39:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T18:39:52Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 6,
+          "startedAt": "2026-11-11T18:39:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T18:39:52Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 7,
+          "startedAt": "2026-11-11T18:39:52Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-protocol/actions/runs/43079882977/job/130729343919"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/space-protocol-project/space-protocol/actions/runs/43079882977"
+}
