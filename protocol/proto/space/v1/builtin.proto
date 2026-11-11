@@ -1,0 +1,36 @@
+syntax = "proto3";
+package space.v1;
+option go_package = "github.com/space-protocol-project/space-server/gen/space/v1;spacev1";
+
+import "google/protobuf/any.proto";
+import "space/v1/space.proto";
+
+// Рабочий профиль P2 для встроенных адаптеров. Не предоставляет установку WASM.
+service BuiltinExtensionService {
+  rpc ListBuiltinSections(ListBuiltinSectionsRequest) returns (ListBuiltinSectionsResponse);
+  rpc OpenBuiltinSection(OpenBuiltinSectionRequest) returns (OpenBuiltinSectionResponse);
+  rpc ExecuteBuiltinCommand(ExecuteBuiltinCommandRequest) returns (ExecuteBuiltinCommandResponse);
+}
+message BuiltinSection {
+  string instance_id = 1;
+  string installation_id = 2;
+  string plugin_id = 3;
+  string version = 4;
+  string view_id = 5;
+  Channel channel = 6;
+}
+message ListBuiltinSectionsRequest {}
+message ListBuiltinSectionsResponse { repeated BuiltinSection sections = 1; }
+message OpenBuiltinSectionRequest { string instance_id = 1; }
+message OpenBuiltinSectionResponse {
+  BuiltinSection section = 1;
+  google.protobuf.Any content = 2;
+}
+message ExecuteBuiltinCommandRequest {
+  string instance_id = 1;
+  // Только типы из фиксированного списка встроенных команд. channel_id должен
+  // точно совпадать с каналом экземпляра. Ключи повторов передаются без изменения.
+  // Произвольный URL, метод или внешний пакет выполнить невозможно.
+  google.protobuf.Any command = 2;
+}
+message ExecuteBuiltinCommandResponse { google.protobuf.Any result = 1; }
