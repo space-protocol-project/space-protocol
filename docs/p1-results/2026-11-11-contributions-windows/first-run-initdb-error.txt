@@ -1,0 +1,1 @@
+2026-11-11T13:56:50.4703573Z initdb: error: could not open file "D:\a\space-app\space-app\.local\p1-contributions-client\private\postgres-password" for reading: Permission denied

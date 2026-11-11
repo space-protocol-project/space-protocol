@@ -1,0 +1,8 @@
+2026-11-11T14:16:27.1271339Z   Could not resolve 'archive.ubuntu.com'
+2026-11-11T14:16:33.7998903Z   Could not resolve 'archive.ubuntu.com'
+2026-11-11T14:16:39.1365269Z   Could not resolve 'archive.ubuntu.com'
+2026-11-11T14:16:49.1423922Z   Could not resolve 'archive.ubuntu.com'
+2026-11-11T14:16:53.6216253Z W: Failed to fetch mirror+file:/etc/apt/apt-mirrors.txt/dists/noble/InRelease  Could not resolve 'archive.ubuntu.com'
+2026-11-11T14:16:53.6218486Z W: Failed to fetch mirror+file:/etc/apt/apt-mirrors.txt/dists/noble-updates/InRelease  Could not resolve 'archive.ubuntu.com'
+2026-11-11T14:16:53.6220425Z W: Failed to fetch mirror+file:/etc/apt/apt-mirrors.txt/dists/noble-backports/InRelease  Could not resolve 'archive.ubuntu.com'
+2026-11-11T14:16:53.6222174Z W: Failed to fetch mirror+file:/etc/apt/apt-mirrors.txt/dists/noble-security/InRelease  Could not resolve 'archive.ubuntu.com'
