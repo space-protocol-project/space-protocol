@@ -1,0 +1,275 @@
+modules (windows-2025)	Set up job	﻿2026-11-11T17:06:39.6945121Z Current runner version: '2.338.2'
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6987366Z ##[group]Runner Image Provisioner
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6988049Z Hosted Compute Agent
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6988481Z Version: 20261103.629
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6988943Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6989515Z Build Date: 2026-11-03T17:26:59Z
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6990049Z Worker ID: {b573323d-7d81-4d95-b55e-25c5cab753c9}
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6990600Z Region: westus2
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6990992Z Cloud: Azure
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6991360Z ##[endgroup]
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6992324Z ##[group]Operating System
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6992788Z Microsoft Windows Server 2025
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6993281Z 10.0.26100
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6993903Z Datacenter
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6994283Z ##[endgroup]
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6994680Z ##[group]Runner Image
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6995151Z Image: windows-2025-vs2026
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6995586Z Version: 20261103.298.1
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6996452Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261103.298/images/windows/Windows2025-VS2026-Readme.md
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6998041Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261103.298
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6998785Z ##[endgroup]
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.6999598Z ##[group]GITHUB_TOKEN Permissions
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.7001140Z Contents: read
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.7001628Z Metadata: read
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.7002146Z ##[endgroup]
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.7003826Z Secret source: Actions
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.7004588Z Cache mode: write
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.7005131Z Prepare workflow directory
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.7403272Z Prepare all required actions
+modules (windows-2025)	Set up job	2026-11-11T17:06:39.7455005Z Getting action download info
+modules (windows-2025)	Set up job	2026-11-11T17:06:40.1255595Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+modules (windows-2025)	Set up job	2026-11-11T17:06:40.2439821Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+modules (windows-2025)	Set up job	2026-11-11T17:06:40.5560276Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+modules (windows-2025)	Set up job	2026-11-11T17:06:40.8419967Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+modules (windows-2025)	Set up job	2026-11-11T17:06:41.1067277Z Complete job name: modules (windows-2025)
+modules (windows-2025)	Run actions/checkout@v4	﻿2026-11-11T17:06:41.2411698Z ##[group]Run actions/checkout@v4
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2412748Z with:
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2413283Z   repository: space-protocol-project/space-server
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2416705Z   token: ***
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2417123Z   ssh-strict: true
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2417557Z   ssh-user: git
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2417979Z   persist-credentials: true
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2418422Z   clean: true
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2418895Z   sparse-checkout-cone-mode: true
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2419376Z   fetch-depth: 1
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2419850Z   fetch-tags: false
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2420287Z   show-progress: true
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2420702Z   lfs: false
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2421156Z   submodules: false
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2421690Z   set-safe-directory: true
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2422163Z   allow-unsafe-pr-checkout: false
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.2422832Z ##[endgroup]
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.3690752Z Syncing repository: space-protocol-project/space-server
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.3692706Z ##[group]Getting Git version info
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.3693514Z Working directory is 'D:\a\space-server\space-server'
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.4483179Z [command]"C:\Program Files\Git\bin\git.exe" version
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.7715637Z git version 2.56.0.windows.4
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.7721347Z ##[endgroup]
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.7726801Z Temporarily overriding HOME='D:\a\_temp\76f7670f-d6ea-4f7c-8151-e470f424112d' before making global git config changes
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.7728929Z Adding repository directory to the temporary git global config as a safe directory
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.8252641Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\space-server\space-server
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.8259538Z Deleting the contents of 'D:\a\space-server\space-server'
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.8264673Z ##[group]Initializing the repository
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.8271857Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\space-server\space-server
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.9028265Z Initialized empty Git repository in D:/a/space-server/space-server/.git/
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.9068346Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/space-protocol-project/space-server
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.9670683Z ##[endgroup]
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.9671705Z ##[group]Disabling automatic garbage collection
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.9678463Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.9973981Z ##[endgroup]
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.9974859Z ##[group]Setting up auth
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:41.9983428Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:42.0277258Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:43.2853293Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:43.3144839Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:43.7701869Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:43.8005952Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:44.2629765Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:44.2928482Z ##[endgroup]
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:44.2928938Z ##[group]Fetching the repository
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:44.2937630Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8df4daa2605c7559ecb699aef5770465b5d01de3:refs/remotes/origin/main
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.4116270Z From https://github.com/space-protocol-project/space-server
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.4117174Z  * [new ref]         8df4daa2605c7559ecb699aef5770465b5d01de3 -> origin/main
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.4150989Z ##[endgroup]
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.4151346Z ##[group]Determining the checkout info
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.4153663Z ##[endgroup]
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.4164753Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.4613073Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.4911327Z ##[group]Checking out the ref
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.4918494Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.6850174Z Switched to a new branch 'main'
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.6946153Z branch 'main' set up to track 'origin/main'.
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.6994581Z ##[endgroup]
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.7410660Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+modules (windows-2025)	Run actions/checkout@v4	2026-11-11T17:06:45.7677922Z 8df4daa2605c7559ecb699aef5770465b5d01de3
+modules (windows-2025)	Run actions/download-artifact@v4	﻿2026-11-11T17:06:45.8033805Z ##[group]Run actions/download-artifact@v4
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:45.8034126Z with:
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:45.8034291Z   name: boundary-fixtures
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:45.8034491Z   path: experiments/extensions/testdata
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:45.8034718Z   merge-multiple: false
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:45.8034932Z   repository: space-protocol-project/space-server
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:45.8035160Z   run-id: 43064828374
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:45.8035335Z ##[endgroup]
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:45.9460579Z Downloading single artifact
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:45.9647514Z (node:5804) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:45.9649782Z (Use `node --trace-deprecation ...` to show where the warning was created)
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:46.2267008Z Preparing to download the following artifacts:
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:46.2267646Z - boundary-fixtures (ID: 13874503756, Size: 8730, Expected Digest: sha256:0c8af498890f30b4239341a1bf3922aba7063092fa0435787fc5fadf5fbabf33)
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:46.4796439Z Redirecting to blob download url: https://productionresultssa9.blob.core.windows.net/actions-results/e912c7c1-c3e4-481d-ae83-4e99a51f03c5/workflow-job-run-24cffca0-aed5-53c7-a8d7-dc3debcc1df6/artifacts/ef32fa93409a530fa8072e6e57c7fd8fd131306831013f7a07471f09a2a65561.zip
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:46.4797708Z Starting download of artifact to: D:\a\space-server\space-server\experiments\extensions\testdata
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:46.7635350Z (node:5804) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:46.7819939Z SHA256 digest of downloaded artifact is 0c8af498890f30b4239341a1bf3922aba7063092fa0435787fc5fadf5fbabf33
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:46.7820614Z Artifact download completed successfully.
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:46.7820955Z Total of 1 artifact(s) downloaded
+modules (windows-2025)	Run actions/download-artifact@v4	2026-11-11T17:06:46.7827197Z Download artifact has finished successfully
+modules (windows-2025)	Run actions/setup-go@v5	﻿2026-11-11T17:06:46.8132823Z ##[group]Run actions/setup-go@v5
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.8133095Z with:
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.8133280Z   go-version-file: experiments/extensions/go.mod
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.8133562Z   cache-dependency-path: experiments/extensions/go.sum
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.8133817Z   check-latest: false
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.8135659Z   token: ***
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.8135805Z   cache: true
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.8135952Z ##[endgroup]
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.9514462Z Setup go version spec 1.27.4
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.9523756Z Attempting to download 1.27.4...
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.9666463Z (node:10176) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:46.9667019Z (Use `node --trace-deprecation ...` to show where the warning was created)
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:47.7637606Z matching 1.27.4...
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:47.7656729Z Acquiring 1.27.4 from https://github.com/actions/go-versions/releases/download/1.27.4-42945153609/go-1.27.4-win32-x64.zip
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:48.3961193Z Extracting Go...
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:48.4652187Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command "$ErrorActionPreference = 'Stop' ; try { Add-Type -AssemblyName System.IO.Compression.ZipFile } catch { } ; try { [System.IO.Compression.ZipFile]::ExtractToDirectory('D:\a\_temp\go-1.27.4-win32-x64.zip', 'D:\a\_temp\c8573afd-7818-4243-92e3-9d7d35abb0f0', $true) } catch { if (($_.Exception.GetType().FullName -eq 'System.Management.Automation.MethodException') -or ($_.Exception.GetType().FullName -eq 'System.Management.Automation.RuntimeException') ){ Expand-Archive -LiteralPath 'D:\a\_temp\go-1.27.4-win32-x64.zip' -DestinationPath 'D:\a\_temp\c8573afd-7818-4243-92e3-9d7d35abb0f0' -Force } else { throw $_ } } ;"
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:53.3985553Z Successfully extracted go to D:\a\_temp\c8573afd-7818-4243-92e3-9d7d35abb0f0
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:06:53.3986090Z Adding to the cache ...
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:02.5288881Z Created link C:\hostedtoolcache\windows\go\1.27.4\x64 => D:\hostedtoolcache\windows\go\1.27.4\x64
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:02.5291854Z Created link C:\hostedtoolcache\windows\go\1.27.4\x64.complete => D:\hostedtoolcache\windows\go\1.27.4\x64.complete
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:02.5293054Z Successfully cached go to C:\hostedtoolcache\windows\go\1.27.4\x64
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:02.5297434Z Added go to the path
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:02.5299485Z Successfully set up Go version 1.27.4
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:02.7486105Z [command]C:\hostedtoolcache\windows\go\1.27.4\x64\bin\go.exe env GOMODCACHE
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:02.7537859Z [command]C:\hostedtoolcache\windows\go\1.27.4\x64\bin\go.exe env GOCACHE
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:02.7772830Z C:\Users\runneradmin\go\pkg\mod
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:02.7780277Z C:\Users\runneradmin\AppData\Local\go-build
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:03.1265545Z Cache hit for: setup-go-Windows-x64-go-1.27.4-39b0121719285ae2f3774aa65faf6642d6de2b5d9259671d4f200de9725e575a
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:03.1356276Z (node:10176) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:04.4218136Z Received 33554432 of 115234957 (29.1%), 32.0 MBs/sec
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:05.1779289Z Received 115234957 of 115234957 (100.0%), 62.6 MBs/sec
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:05.1781438Z Cache Size: ~110 MB (115234957 B)
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:05.1877142Z [command]"C:\Program Files\Git\usr\bin\tar.exe" -xf D:/a/_temp/6050c38c-d242-4633-ab65-6dcdcb3d4014/cache.tzst -P -C D:/a/space-server/space-server --force-local --use-compress-program "zstd -d"
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:26.7214162Z Cache restored successfully
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:26.7286276Z Cache restored from key: setup-go-Windows-x64-go-1.27.4-39b0121719285ae2f3774aa65faf6642d6de2b5d9259671d4f200de9725e575a
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:26.7306181Z go version go1.27.4 windows/amd64
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:26.7311883Z 
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:26.7312286Z ##[group]go env
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6469203Z set AR=ar
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6469557Z set CC=gcc
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6471733Z set CGO_CFLAGS=-O2 -g
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6471991Z set CGO_CPPFLAGS=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6472212Z set CGO_CXXFLAGS=-O2 -g
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6472664Z set CGO_ENABLED=1
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6472894Z set CGO_FFLAGS=-O2 -g
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6473138Z set CGO_LDFLAGS=-O2 -g
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6473389Z set CXX=g++
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6473587Z set GCCGO=gccgo
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6473827Z set GO111MODULE=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6474060Z set GOAMD64=v1
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6474296Z set GOARCH=amd64
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6474553Z set GOAUTH=netrc
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6474827Z set GOBIN=C:\Users\runneradmin\go\bin
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6475264Z set GOCACHE=C:\Users\runneradmin\AppData\Local\go-build
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6475655Z set GOCACHEPROG=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6475891Z set GODEBUG=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6476195Z set GOENV=C:\Users\runneradmin\AppData\Roaming\go\env
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6476550Z set GOEXE=.exe
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6476774Z set GOEXPERIMENT=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6477067Z set GOFIPS140=off
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6477282Z set GOFLAGS=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6478180Z set GOGCCFLAGS=-m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=C:\Users\RUNNER~1\AppData\Local\Temp\go-build1294434328=/tmp/go-build -gno-record-gcc-switches
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6479124Z set GOHOSTARCH=amd64
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6479383Z set GOHOSTOS=windows
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6479623Z set GOINSECURE=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6479912Z set GOMOD=D:\a\space-server\space-server\go.mod
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6480352Z set GOMODCACHE=C:\Users\runneradmin\go\pkg\mod
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6480713Z set GONOPROXY=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6480941Z set GONOSUMDB=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6481166Z set GOOS=windows
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6481411Z set GOPACKAGESDRIVER=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6481818Z set GOPATH=C:\Users\runneradmin\go
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6482174Z set GOPRIVATE=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6482489Z set GOPROXY=https://proxy.golang.org,direct
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6482929Z set GOROOT=C:\hostedtoolcache\windows\go\1.27.4\x64
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6483231Z set GOSUMDB=sum.golang.org
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6483416Z set GOTELEMETRY=local
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6483671Z set GOTELEMETRYDIR=C:\Users\runneradmin\AppData\Roaming\go\telemetry
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6483941Z set GOTMPDIR=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6484097Z set GOTOOLCHAIN=auto
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6484363Z set GOTOOLDIR=C:\hostedtoolcache\windows\go\1.27.4\x64\pkg\tool\windows_amd64
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6484644Z set GOVCS=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6484793Z set GOVERSION=go1.27.4
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6484958Z set GOWORK=
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6485344Z set PKG_CONFIG=pkg-config
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6485456Z 
+modules (windows-2025)	Run actions/setup-go@v5	2026-11-11T17:07:27.6485750Z ##[endgroup]
+modules (windows-2025)	Run go mod verify	﻿2026-11-11T17:07:27.6728419Z ##[group]Run go mod verify
+modules (windows-2025)	Run go mod verify	2026-11-11T17:07:27.6728867Z ^[[36;1mgo mod verify^[[0m
+modules (windows-2025)	Run go mod verify	2026-11-11T17:07:27.6744547Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+modules (windows-2025)	Run go mod verify	2026-11-11T17:07:27.6744875Z ##[endgroup]
+modules (windows-2025)	Run go mod verify	2026-11-11T17:07:28.9473967Z all modules verified
+modules (windows-2025)	Run go vet ./...	﻿2026-11-11T17:07:28.9681961Z ##[group]Run go vet ./...
+modules (windows-2025)	Run go vet ./...	2026-11-11T17:07:28.9682237Z ^[[36;1mgo vet ./...^[[0m
+modules (windows-2025)	Run go vet ./...	2026-11-11T17:07:28.9692818Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+modules (windows-2025)	Run go vet ./...	2026-11-11T17:07:28.9693133Z ##[endgroup]
+modules (windows-2025)	Run go test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl	﻿2026-11-11T17:07:30.5157911Z ##[group]Run go test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl
+modules (windows-2025)	Run go test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl	2026-11-11T17:07:30.5158429Z ^[[36;1mgo test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl^[[0m
+modules (windows-2025)	Run go test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl	2026-11-11T17:07:30.5168871Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+modules (windows-2025)	Run go test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl	2026-11-11T17:07:30.5169202Z ##[endgroup]
+modules (windows-2025)	Run go test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl	﻿2026-11-11T17:07:33.7572518Z ##[group]Run go test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl
+modules (windows-2025)	Run go test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl	2026-11-11T17:07:33.7573058Z ^[[36;1mgo test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl^[[0m
+modules (windows-2025)	Run go test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl	2026-11-11T17:07:33.7585043Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+modules (windows-2025)	Run go test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl	2026-11-11T17:07:33.7585368Z ##[endgroup]
+modules (windows-2025)	Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...	﻿2026-11-11T17:07:45.4924592Z ##[group]Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...
+modules (windows-2025)	Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...	2026-11-11T17:07:45.4925064Z ^[[36;1mgo run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...^[[0m
+modules (windows-2025)	Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...	2026-11-11T17:07:45.4935609Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+modules (windows-2025)	Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...	2026-11-11T17:07:45.4935930Z ##[endgroup]
+modules (windows-2025)	Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...	2026-11-11T17:07:48.5589921Z No vulnerabilities found.
+modules (windows-2025)	Run actions/upload-artifact@v4	﻿2026-11-11T17:07:48.6332415Z ##[group]Run actions/upload-artifact@v4
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.6332734Z with:
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.6332910Z   name: boundary-modules-windows-2025
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.6333347Z   path: experiments/extensions/boundary-tests.jsonl
+modules (windows-2025)	Run actions/upload-artifact@v4	experiments/extensions/boundary-race.jsonl
+modules (windows-2025)	Run actions/upload-artifact@v4	
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.6333734Z   if-no-files-found: warn
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.6333921Z   compression-level: 6
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.6334105Z   overwrite: false
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.6334277Z   include-hidden-files: false
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.6334472Z ##[endgroup]
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.7842251Z (node:4724) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.7842858Z (Use `node --trace-deprecation ...` to show where the warning was created)
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.7888631Z Multiple search paths detected. Calculating the least common ancestor of all paths
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.7891778Z The least common ancestor is D:\a\space-server\space-server\experiments\extensions. This will be the root directory of the artifact
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.7892448Z With the provided path, there will be 2 files uploaded
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.7895954Z Artifact name is valid!
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:48.7897000Z Root directory input is valid!
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:49.1797261Z Beginning upload of artifact content to blob storage
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:49.2029956Z (node:4724) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:49.5558692Z Uploaded bytes 33446
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:49.6336832Z Finished uploading artifact content to blob storage!
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:49.6337510Z SHA256 digest of uploaded artifact zip is d938e431d6ae54014c9da1ecafc267a48471ddcfcde8e68e2a7e75e8699d53dd
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:49.6339675Z Finalizing artifact upload
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:50.0735911Z Artifact boundary-modules-windows-2025.zip successfully finalized. Artifact ID 13875706405
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:50.0737297Z Artifact boundary-modules-windows-2025 has been successfully uploaded! Final size is 33446 bytes. Artifact ID is 13875706405
+modules (windows-2025)	Run actions/upload-artifact@v4	2026-11-11T17:07:50.0745659Z Artifact download URL: https://github.com/space-protocol-project/space-server/actions/runs/43064828374/artifacts/13875706405
+modules (windows-2025)	Post Run actions/setup-go@v5	﻿2026-11-11T17:07:50.1039976Z Post job cleanup.
+modules (windows-2025)	Post Run actions/setup-go@v5	2026-11-11T17:07:50.2202310Z (node:5204) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+modules (windows-2025)	Post Run actions/setup-go@v5	2026-11-11T17:07:50.2202942Z (Use `node --trace-deprecation ...` to show where the warning was created)
+modules (windows-2025)	Post Run actions/setup-go@v5	2026-11-11T17:07:50.2755864Z [command]C:\hostedtoolcache\windows\go\1.27.4\x64\bin\go.exe env GOCACHE
+modules (windows-2025)	Post Run actions/setup-go@v5	2026-11-11T17:07:50.2814511Z [command]C:\hostedtoolcache\windows\go\1.27.4\x64\bin\go.exe env GOMODCACHE
+modules (windows-2025)	Post Run actions/setup-go@v5	2026-11-11T17:07:50.3004568Z C:\Users\runneradmin\AppData\Local\go-build
+modules (windows-2025)	Post Run actions/setup-go@v5	2026-11-11T17:07:50.3034088Z C:\Users\runneradmin\go\pkg\mod
+modules (windows-2025)	Post Run actions/setup-go@v5	2026-11-11T17:07:50.3053205Z Cache hit occurred on the primary key setup-go-Windows-x64-go-1.27.4-39b0121719285ae2f3774aa65faf6642d6de2b5d9259671d4f200de9725e575a, not saving cache.
+modules (windows-2025)	Post Run actions/checkout@v4	﻿2026-11-11T17:07:50.3322142Z Post job cleanup.
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:50.4744148Z [command]"C:\Program Files\Git\bin\git.exe" version
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:50.5023723Z git version 2.56.0.windows.4
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:50.5075768Z Temporarily overriding HOME='D:\a\_temp\42f7c19a-d7d2-477b-8f15-ecb8350f5472' before making global git config changes
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:50.5076554Z Adding repository directory to the temporary git global config as a safe directory
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:50.5084664Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\space-server\space-server
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:50.5385610Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:50.5683803Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:51.0403449Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:51.0678490Z http.https://github.com/.extraheader
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:51.0720963Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:51.1019351Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:51.5756471Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+modules (windows-2025)	Post Run actions/checkout@v4	2026-11-11T17:07:51.6047859Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+modules (windows-2025)	Complete job	﻿2026-11-11T17:07:52.0831772Z Cleaning up orphan processes
+modules (windows-2025)	Complete job	2026-11-11T17:07:52.1377039Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-go@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,286 @@
+modules (ubuntu-24.04)	Set up job	﻿2026-11-11T17:06:39.3922766Z Current runner version: '2.338.2'
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3949312Z ##[group]Runner Image Provisioner
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3950292Z Hosted Compute Agent
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3950955Z Version: 20261028.624
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3951731Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3952492Z Build Date: 2026-10-28T21:51:42Z
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3953353Z Worker ID: {c1b9a631-72bb-43eb-97d6-10c75d2f7e7d}
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3954225Z Region: westus3
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3954743Z Cloud: Azure
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3955343Z ##[endgroup]
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3957517Z ##[group]Operating System
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3958177Z Ubuntu
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3958761Z 24.04.5
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3959349Z LTS
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3959897Z ##[endgroup]
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3960411Z ##[group]Runner Image
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3961025Z Image: ubuntu-24.04
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3961740Z Version: 20261101.360.1
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3962838Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3965096Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3966074Z ##[endgroup]
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3967417Z ##[group]GITHUB_TOKEN Permissions
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3969671Z Contents: read
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3970689Z Metadata: read
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3971201Z ##[endgroup]
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3973618Z Secret source: Actions
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3974550Z Cache mode: write
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.3975402Z Prepare workflow directory
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.4378880Z Prepare all required actions
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.4426941Z Getting action download info
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.7558941Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:39.8279207Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:40.5206002Z Download action repository 'actions/setup-go@v5' (SHA:40f1582b2485089dde7abd97c1529aa768e1baff)
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:41.1372919Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+modules (ubuntu-24.04)	Set up job	2026-11-11T17:06:41.3451275Z Complete job name: modules (ubuntu-24.04)
+modules (ubuntu-24.04)	Run actions/checkout@v4	﻿2026-11-11T17:06:41.4568255Z ##[group]Run actions/checkout@v4
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4569588Z with:
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4570519Z   repository: space-protocol-project/space-server
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4579676Z   token: ***
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4580466Z   ssh-strict: true
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4581268Z   ssh-user: git
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4582081Z   persist-credentials: true
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4582968Z   clean: true
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4583865Z   sparse-checkout-cone-mode: true
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4584820Z   fetch-depth: 1
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4585611Z   fetch-tags: false
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4586421Z   show-progress: true
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4587255Z   lfs: false
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4588067Z   submodules: false
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4588896Z   set-safe-directory: true
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4589844Z   allow-unsafe-pr-checkout: false
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.4591117Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7067881Z Syncing repository: space-protocol-project/space-server
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7072359Z ##[group]Getting Git version info
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7074707Z Working directory is '/home/runner/work/space-server/space-server'
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7078193Z [command]/usr/bin/git version
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7136270Z git version 2.56.0
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7162326Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7179279Z Temporarily overriding HOME='/home/runner/work/_temp/1e59654e-503a-4c57-9eed-76a37fc709ba' before making global git config changes
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7182558Z Adding repository directory to the temporary git global config as a safe directory
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7185963Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/space-server/space-server
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7236922Z Deleting the contents of '/home/runner/work/space-server/space-server'
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7243560Z ##[group]Initializing the repository
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7249495Z [command]/usr/bin/git init /home/runner/work/space-server/space-server
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7371881Z hint: Using 'master' as the name for the initial branch. This default branch name
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7374313Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7376201Z hint: to use in all of your new repositories, which will suppress this warning,
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7378381Z hint: call:
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7379609Z hint:
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7380784Z hint: 	git config --global init.defaultBranch <name>
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7382027Z hint:
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7383980Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7386198Z hint: 'development'. The just-created branch can be renamed via this command:
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7387568Z hint:
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7388340Z hint: 	git branch -m <name>
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7389191Z hint:
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7390322Z hint: Disable this message with "git config set advice.defaultBranchName false"
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7392956Z Initialized empty Git repository in /home/runner/work/space-server/space-server/.git/
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7404125Z [command]/usr/bin/git remote add origin https://github.com/space-protocol-project/space-server
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7439614Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7442248Z ##[group]Disabling automatic garbage collection
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7444780Z [command]/usr/bin/git config --local gc.auto 0
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7476544Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7479058Z ##[group]Setting up auth
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7484761Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7520422Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7871316Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.7904947Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.8105721Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.8139567Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.8323861Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.8361216Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.8362767Z ##[group]Fetching the repository
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:41.8373769Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8df4daa2605c7559ecb699aef5770465b5d01de3:refs/remotes/origin/main
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.6776896Z From https://github.com/space-protocol-project/space-server
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.6777602Z  * [new ref]         8df4daa2605c7559ecb699aef5770465b5d01de3 -> origin/main
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.6779690Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.6780378Z ##[group]Determining the checkout info
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.6782639Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.6788716Z [command]/usr/bin/git sparse-checkout disable
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.6833826Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.6869274Z ##[group]Checking out the ref
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.6872918Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.7271741Z Switched to a new branch 'main'
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.7276599Z branch 'main' set up to track 'origin/main'.
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.7283700Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.7329445Z [command]/usr/bin/git log -1 --format=%H
+modules (ubuntu-24.04)	Run actions/checkout@v4	2026-11-11T17:06:42.7352012Z 8df4daa2605c7559ecb699aef5770465b5d01de3
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	﻿2026-11-11T17:06:42.7567027Z ##[group]Run actions/download-artifact@v4
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:42.7567519Z with:
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:42.7567727Z   name: boundary-fixtures
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:42.7567986Z   path: experiments/extensions/testdata
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:42.7568273Z   merge-multiple: false
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:42.7568872Z   repository: space-protocol-project/space-server
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:42.7569188Z   run-id: 43064828374
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:42.7569399Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:42.9133655Z Downloading single artifact
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:42.9322765Z (node:2267) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:42.9324288Z (Use `node --trace-deprecation ...` to show where the warning was created)
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:43.1576151Z Preparing to download the following artifacts:
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:43.1577658Z - boundary-fixtures (ID: 13874503756, Size: 8730, Expected Digest: sha256:0c8af498890f30b4239341a1bf3922aba7063092fa0435787fc5fadf5fbabf33)
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:43.3853408Z Redirecting to blob download url: https://productionresultssa9.blob.core.windows.net/actions-results/e912c7c1-c3e4-481d-ae83-4e99a51f03c5/workflow-job-run-24cffca0-aed5-53c7-a8d7-dc3debcc1df6/artifacts/ef32fa93409a530fa8072e6e57c7fd8fd131306831013f7a07471f09a2a65561.zip
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:43.3856160Z Starting download of artifact to: /home/runner/work/space-server/space-server/experiments/extensions/testdata
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:43.5935770Z (node:2267) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:43.6167962Z SHA256 digest of downloaded artifact is 0c8af498890f30b4239341a1bf3922aba7063092fa0435787fc5fadf5fbabf33
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:43.6168731Z Artifact download completed successfully.
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:43.6169037Z Total of 1 artifact(s) downloaded
+modules (ubuntu-24.04)	Run actions/download-artifact@v4	2026-11-11T17:06:43.6172531Z Download artifact has finished successfully
+modules (ubuntu-24.04)	Run actions/setup-go@v5	﻿2026-11-11T17:06:43.6324277Z ##[group]Run actions/setup-go@v5
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.6324624Z with:
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.6324895Z   go-version-file: experiments/extensions/go.mod
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.6325255Z   cache-dependency-path: experiments/extensions/go.sum
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.6325570Z   check-latest: false
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.6328146Z   token: ***
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.6328354Z   cache: true
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.6328561Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.7627478Z Setup go version spec 1.27.4
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.7644453Z Attempting to download 1.27.4...
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.7763416Z (node:2280) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:43.7764214Z (Use `node --trace-deprecation ...` to show where the warning was created)
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:44.8131471Z matching 1.27.4...
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:44.8158102Z Acquiring 1.27.4 from https://github.com/actions/go-versions/releases/download/1.27.4-42945153609/go-1.27.4-linux-x64.tar.gz
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:45.3960763Z Extracting Go...
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:45.4067553Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/e5e58cc7-c319-46ca-bdb0-97d87b4b1926 -f /home/runner/work/_temp/e4427c9d-38da-49d9-b71f-31cded934279
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:46.9557052Z Successfully extracted go to /home/runner/work/_temp/e5e58cc7-c319-46ca-bdb0-97d87b4b1926
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:46.9558321Z Adding to the cache ...
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:50.5354588Z Successfully cached go to /opt/hostedtoolcache/go/1.27.4/x64
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:50.5357967Z Added go to the path
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:50.5360397Z Successfully set up Go version 1.27.4
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:50.5568298Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOMODCACHE
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:50.5601441Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOCACHE
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:50.5648371Z /home/runner/go/pkg/mod
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:50.5660916Z /home/runner/.cache/go-build
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:50.7762650Z Cache hit for: setup-go-Linux-x64-ubuntu24-go-1.27.4-ef4c532f62baf6fc6db4e37d0e8da21d0817ca4e4fa5d3a698f3fda5317fc990
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:50.7888638Z (node:2280) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:51.9910712Z Received 67108864 of 109332059 (61.4%), 64.0 MBs/sec
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:52.3471431Z Received 109332059 of 109332059 (100.0%), 76.9 MBs/sec
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:52.3472044Z Cache Size: ~104 MB (109332059 B)
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:52.3550488Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c48a1b0b-d00a-4ab8-96ed-acbc734876f9/cache.tzst -P -C /home/runner/work/space-server/space-server --use-compress-program unzstd
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2321935Z Cache restored successfully
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2368259Z Cache restored from key: setup-go-Linux-x64-ubuntu24-go-1.27.4-ef4c532f62baf6fc6db4e37d0e8da21d0817ca4e4fa5d3a698f3fda5317fc990
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2390309Z go version go1.27.4 linux/amd64
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2390538Z 
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2390876Z ##[group]go env
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2507178Z AR='ar'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2507582Z CC='gcc'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2507900Z CGO_CFLAGS='-O2 -g'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2508135Z CGO_CPPFLAGS=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2508361Z CGO_CXXFLAGS='-O2 -g'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2508595Z CGO_ENABLED='1'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2508804Z CGO_FFLAGS='-O2 -g'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2509026Z CGO_LDFLAGS='-O2 -g'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2509254Z CXX='g++'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2509447Z GCCGO='gccgo'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2509654Z GO111MODULE=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2509852Z GOAMD64='v1'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2510047Z GOARCH='amd64'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2510248Z GOAUTH='netrc'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2510458Z GOBIN='/home/runner/go/bin'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2510732Z GOCACHE='/home/runner/.cache/go-build'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2511016Z GOCACHEPROG=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2511223Z GODEBUG=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2511464Z GOENV='/home/runner/.config/go/env'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2511715Z GOEXE=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2511912Z GOEXPERIMENT=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2512371Z GOFIPS140='off'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2512573Z GOFLAGS=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2513415Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build1642895502=/tmp/go-build -gno-record-gcc-switches'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2514094Z GOHOSTARCH='amd64'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2514314Z GOHOSTOS='linux'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2514555Z GOINSECURE=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2514843Z GOMOD='/home/runner/work/space-server/space-server/go.mod'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2515187Z GOMODCACHE='/home/runner/go/pkg/mod'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2515458Z GONOPROXY=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2515661Z GONOSUMDB=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2515857Z GOOS='linux'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2516066Z GOPACKAGESDRIVER=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2516297Z GOPATH='/home/runner/go'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2516541Z GOPRIVATE=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2516831Z GOPROXY='https://proxy.golang.org,direct'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2517148Z GOROOT='/opt/hostedtoolcache/go/1.27.4/x64'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2517450Z GOSUMDB='sum.golang.org'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2517697Z GOTELEMETRY='local'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2517977Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2518281Z GOTMPDIR=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2518481Z GOTOOLCHAIN='auto'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2518807Z GOTOOLDIR='/opt/hostedtoolcache/go/1.27.4/x64/pkg/tool/linux_amd64'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2519147Z GOVCS=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2519346Z GOVERSION='go1.27.4'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2519564Z GOWORK=''
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2519768Z PKG_CONFIG='pkg-config'
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2519916Z 
+modules (ubuntu-24.04)	Run actions/setup-go@v5	2026-11-11T17:06:53.2520230Z ##[endgroup]
+modules (ubuntu-24.04)	Run go mod verify	﻿2026-11-11T17:06:53.2660391Z ##[group]Run go mod verify
+modules (ubuntu-24.04)	Run go mod verify	2026-11-11T17:06:53.2660762Z ^[[36;1mgo mod verify^[[0m
+modules (ubuntu-24.04)	Run go mod verify	2026-11-11T17:06:53.2679512Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+modules (ubuntu-24.04)	Run go mod verify	2026-11-11T17:06:53.2679873Z ##[endgroup]
+modules (ubuntu-24.04)	Run go mod verify	2026-11-11T17:06:53.7660128Z all modules verified
+modules (ubuntu-24.04)	Run go vet ./...	﻿2026-11-11T17:06:53.7705307Z ##[group]Run go vet ./...
+modules (ubuntu-24.04)	Run go vet ./...	2026-11-11T17:06:53.7705749Z ^[[36;1mgo vet ./...^[[0m
+modules (ubuntu-24.04)	Run go vet ./...	2026-11-11T17:06:53.7718096Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+modules (ubuntu-24.04)	Run go vet ./...	2026-11-11T17:06:53.7718539Z ##[endgroup]
+modules (ubuntu-24.04)	Run go test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl	﻿2026-11-11T17:06:54.2120479Z ##[group]Run go test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl
+modules (ubuntu-24.04)	Run go test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl	2026-11-11T17:06:54.2121140Z ^[[36;1mgo test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl^[[0m
+modules (ubuntu-24.04)	Run go test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl	2026-11-11T17:06:54.2134419Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+modules (ubuntu-24.04)	Run go test -count=1 -timeout=180s -json ./... > boundary-tests.jsonl	2026-11-11T17:06:54.2134933Z ##[endgroup]
+modules (ubuntu-24.04)	Run go test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl	﻿2026-11-11T17:06:55.8119281Z ##[group]Run go test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl
+modules (ubuntu-24.04)	Run go test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl	2026-11-11T17:06:55.8120277Z ^[[36;1mgo test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl^[[0m
+modules (ubuntu-24.04)	Run go test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl	2026-11-11T17:06:55.8133988Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+modules (ubuntu-24.04)	Run go test -race -count=1 -timeout=180s -json ./... > boundary-race.jsonl	2026-11-11T17:06:55.8134339Z ##[endgroup]
+modules (ubuntu-24.04)	Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...	﻿2026-11-11T17:07:00.9386206Z ##[group]Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...
+modules (ubuntu-24.04)	Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...	2026-11-11T17:07:00.9386725Z ^[[36;1mgo run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...^[[0m
+modules (ubuntu-24.04)	Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...	2026-11-11T17:07:00.9399780Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+modules (ubuntu-24.04)	Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...	2026-11-11T17:07:00.9400143Z ##[endgroup]
+modules (ubuntu-24.04)	Run go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...	2026-11-11T17:07:03.0846205Z No vulnerabilities found.
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	﻿2026-11-11T17:07:03.1274501Z ##[group]Run actions/upload-artifact@v4
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.1274814Z with:
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.1275042Z   name: boundary-modules-ubuntu-24.04
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.1275515Z   path: experiments/extensions/boundary-tests.jsonl
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	experiments/extensions/boundary-race.jsonl
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.1275983Z   if-no-files-found: warn
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.1276226Z   compression-level: 6
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.1276459Z   overwrite: false
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.1276680Z   include-hidden-files: false
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.1276927Z ##[endgroup]
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.2920281Z (node:3154) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.2921018Z (Use `node --trace-deprecation ...` to show where the warning was created)
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.2990098Z Multiple search paths detected. Calculating the least common ancestor of all paths
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.2993028Z The least common ancestor is /home/runner/work/space-server/space-server/experiments/extensions. This will be the root directory of the artifact
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.2994837Z With the provided path, there will be 2 files uploaded
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.2999483Z Artifact name is valid!
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.3000549Z Root directory input is valid!
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.6504262Z Beginning upload of artifact content to blob storage
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.6808491Z (node:3154) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.9346453Z Uploaded bytes 41395
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.9935696Z Finished uploading artifact content to blob storage!
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.9936763Z SHA256 digest of uploaded artifact zip is 4ad9c207ee9bc4aa78383a3a50098ee6fd4b1b1587646f23273536827f407a71
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:03.9938840Z Finalizing artifact upload
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:04.4447733Z Artifact boundary-modules-ubuntu-24.04.zip successfully finalized. Artifact ID 13875970945
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:04.4449318Z Artifact boundary-modules-ubuntu-24.04 has been successfully uploaded! Final size is 41395 bytes. Artifact ID is 13875970945
+modules (ubuntu-24.04)	Run actions/upload-artifact@v4	2026-11-11T17:07:04.4455982Z Artifact download URL: https://github.com/space-protocol-project/space-server/actions/runs/43064828374/artifacts/13875970945
+modules (ubuntu-24.04)	Post Run actions/setup-go@v5	﻿2026-11-11T17:07:04.4618163Z Post job cleanup.
+modules (ubuntu-24.04)	Post Run actions/setup-go@v5	2026-11-11T17:07:04.5868603Z (node:3166) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+modules (ubuntu-24.04)	Post Run actions/setup-go@v5	2026-11-11T17:07:04.5869483Z (Use `node --trace-deprecation ...` to show where the warning was created)
+modules (ubuntu-24.04)	Post Run actions/setup-go@v5	2026-11-11T17:07:04.5952885Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOMODCACHE
+modules (ubuntu-24.04)	Post Run actions/setup-go@v5	2026-11-11T17:07:04.6008591Z [command]/opt/hostedtoolcache/go/1.27.4/x64/bin/go env GOCACHE
+modules (ubuntu-24.04)	Post Run actions/setup-go@v5	2026-11-11T17:07:04.6030863Z /home/runner/go/pkg/mod
+modules (ubuntu-24.04)	Post Run actions/setup-go@v5	2026-11-11T17:07:04.6058609Z /home/runner/.cache/go-build
+modules (ubuntu-24.04)	Post Run actions/setup-go@v5	2026-11-11T17:07:04.6065957Z Cache hit occurred on the primary key setup-go-Linux-x64-ubuntu24-go-1.27.4-ef4c532f62baf6fc6db4e37d0e8da21d0817ca4e4fa5d3a698f3fda5317fc990, not saving cache.
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	﻿2026-11-11T17:07:04.6231704Z Post job cleanup.
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7254078Z [command]/usr/bin/git version
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7326961Z git version 2.56.0
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7371352Z Temporarily overriding HOME='/home/runner/work/_temp/3b9d1d38-9ac9-4b10-a28b-9728d50eb6b4' before making global git config changes
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7373040Z Adding repository directory to the temporary git global config as a safe directory
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7377193Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/space-server/space-server
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7422321Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7459524Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7670811Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7697232Z http.https://github.com/.extraheader
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7709409Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7750792Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.7979322Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+modules (ubuntu-24.04)	Post Run actions/checkout@v4	2026-11-11T17:07:04.8013671Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+modules (ubuntu-24.04)	Complete job	﻿2026-11-11T17:07:04.8357693Z Cleaning up orphan processes
+modules (ubuntu-24.04)	Complete job	2026-11-11T17:07:04.8661800Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-go@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
