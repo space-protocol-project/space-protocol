@@ -28,6 +28,19 @@ for entrypoint in ('../server.wasm','/server.wasm','https://example.com/server.w
     assert not validator.is_valid(manifest)
 print('unknown mandatory component and unsafe entrypoints rejected')
 
+contributions=json.loads((root/'manifest-contributions.json').read_text(encoding='utf-8'))
+validator.validate(contributions)
+assert len({c['id'] for c in contributions['contributions']})==len(contributions['contributions'])
+assert all(c['query'] in contributions['queries'] for c in contributions['contributions'])
+for key,value in [('kind','webview'),('title',{'ru':'Без fallback'}),('query','../query'),('id',''),('extra',True)]:
+    invalid=copy.deepcopy(contributions);invalid['contributions'][0][key]=value
+    assert not validator.is_valid(invalid),(key,value)
+invalid=copy.deepcopy(contributions);invalid['contributions']=None
+assert not validator.is_valid(invalid)
+invalid=copy.deepcopy(contributions);invalid['contributions']*=17
+assert not validator.is_valid(invalid)
+print('contributions: structural bounds and linked fixture checked; Go checks duplicate IDs and query references')
+
 form=json.loads((root/'ui-form.json').read_text(encoding='utf-8'))
 validator=Draft202012Validator(json.loads((root/'ui.schema.json').read_text(encoding='utf-8')))
 validator.validate(form)

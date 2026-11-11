@@ -4,6 +4,7 @@ option go_package = "github.com/space-protocol-project/space-server/gen/space/v1
 
 // Эксперимент P1. Отдельная регистрация, без публичной capability v1.
 service ExtensionP1Service {
+  rpc ListExtensionContributions(ListExtensionContributionsRequest) returns (ListExtensionContributionsResponse);
   rpc QueryExtension(QueryExtensionRequest) returns (QueryExtensionResponse);
   rpc ExecuteExtensionCommand(ExecuteExtensionCommandRequest) returns (ExecuteExtensionCommandResponse);
   rpc ReconcileExtensionCommand(ReconcileExtensionCommandRequest) returns (ReconcileExtensionCommandResponse);
@@ -12,6 +13,31 @@ service ExtensionP1Service {
   rpc GetExtensionInstallation(GetExtensionInstallationRequest) returns (GetExtensionInstallationResponse);
   rpc ChangeExtensionInstallation(ChangeExtensionInstallationRequest) returns (ChangeExtensionInstallationResponse);
   rpc ListExtensionInstallationAudit(ListExtensionInstallationAuditRequest) returns (ListExtensionInstallationAuditResponse);
+}
+
+// Тип элемента, а не разрешение на доступ к данным или нативному UI.
+enum ExtensionContributionKind {
+  EXTENSION_CONTRIBUTION_KIND_UNSPECIFIED = 0;
+  EXTENSION_CONTRIBUTION_KIND_OVERVIEW = 1;
+  EXTENSION_CONTRIBUTION_KIND_SECTION = 2;
+}
+
+message ExtensionContribution {
+  string id = 1;
+  ExtensionContributionKind kind = 2;
+  map<string, string> title = 3; // До 8 языков, en обязателен, до 120 символов.
+  string query = 4; // Объявленный запрос для QueryExtension с тем же instance_id.
+}
+
+// Чтение конкретного экземпляра: сессия, read ACL и enabled lifecycle.
+// Пустой instance_id не означает перечисление всего пространства.
+message ListExtensionContributionsRequest {
+  string instance_id = 1;
+  ExtensionContributionKind kind = 2; // UNSPECIFIED возвращает оба вида.
+}
+message ListExtensionContributionsResponse {
+  repeated ExtensionContribution contributions = 1; // До 32, порядок по id.
+  bytes registry_sha256 = 2; // Идентичность регистрации, не допуск и не квитанция.
 }
 
 // Административный API P1: текущая сессия с space.manage, владелец и manage ACL
