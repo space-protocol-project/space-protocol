@@ -1,0 +1,102 @@
+{
+  "contributions-native-linux-13878935992\\native-result.json": {
+    "overview_and_section_twice": "passed",
+    "hot_reload": "passed",
+    "hot_restart": "passed",
+    "acl_revoke_before_open": "passed",
+    "restore_and_retry": "passed",
+    "logout_before_list": "passed",
+    "transport": "Connect / PostgreSQL / isolated WASM",
+    "platform": "linux"
+  },
+  "contributions-native-windows-13878542323\\native-result.json": {
+    "overview_and_section_twice": "passed",
+    "hot_reload": "passed",
+    "hot_restart": "passed",
+    "acl_revoke_before_open": "passed",
+    "restore_and_retry": "passed",
+    "logout_before_list": "passed",
+    "transport": "Connect / PostgreSQL / isolated WASM",
+    "platform": "windows"
+  },
+  "contributions-ubuntu-24.04-13877886893\\contributions-tests.txt": 31,
+  "contributions-windows-2025-13877463174\\contributions-tests.txt": 31,
+  "Dart-cognitive-complexity-13877915749\\report.json": {
+    "maximum_cognitive": 14
+  },
+  "Dart-cognitive-complexity-13878185489\\report.json": {
+    "maximum_cognitive": 14
+  },
+  "ui-matrix-linux-13877362978\\ui-matrix-native.txt": 34,
+  "ui-matrix-linux-13877362978\\ui-matrix-widget.txt": 34,
+  "ui-matrix-windows-13877129503\\ui-matrix-native.txt": 34,
+  "ui-matrix-windows-13877129503\\ui-matrix-widget.txt": 34,
+  "p1-form-windows-2025-13879110516\\client\\form-tests.txt": 13,
+  "p1-form-windows-2025-13879110516\\.local\\p1-form\\http-results.json": [
+    {
+      "case": "missing-fields",
+      "status": 400
+    },
+    {
+      "case": "spoofed-context",
+      "status": 400
+    },
+    {
+      "case": "wrong-type",
+      "status": 400
+    },
+    {
+      "case": "reader-denied",
+      "status": 403
+    },
+    {
+      "case": "unknown-session",
+      "status": 403
+    },
+    {
+      "case": "valid",
+      "status": 200
+    }
+  ],
+  "p1-form-windows-2025-13879110516\\.local\\p1-form\\native-result.json": {
+    "form_submit_twice_after_restart": "passed",
+    "hot_reload": "passed",
+    "hot_restart": "passed",
+    "transport": "HTTP to isolated WASM",
+    "platform": "nt"
+  },
+  "p1-form-ubuntu-24.04-13878796619\\client\\form-tests.txt": 13,
+  "p1-form-ubuntu-24.04-13878796619\\.local\\p1-form\\http-results.json": [
+    {
+      "case": "missing-fields",
+      "status": 400
+    },
+    {
+      "case": "spoofed-context",
+      "status": 400
+    },
+    {
+      "case": "wrong-type",
+      "status": 400
+    },
+    {
+      "case": "reader-denied",
+      "status": 403
+    },
+    {
+      "case": "unknown-session",
+      "status": 403
+    },
+    {
+      "case": "valid",
+      "status": 200
+    }
+  ],
+  "p1-form-ubuntu-24.04-13878796619\\.local\\p1-form\\native-result.json": {
+    "form_submit_twice_after_restart": "passed",
+    "hot_reload": "passed",
+    "hot_restart": "passed",
+    "transport": "HTTP to isolated WASM",
+    "platform": "posix"
+  }
+}

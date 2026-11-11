@@ -1,0 +1,25 @@
+{
+  "p1-groups\\groups.jsonl": {
+    "pass": 81
+  },
+  "p1-groups\\history-budget.jsonl": {
+    "pass": 30
+  },
+  "p1-groups\\publish.jsonl": {
+    "pass": 66
+  },
+  "p1-groups\\recovery.jsonl": {
+    "pass": 87
+  },
+  "p1-groups\\server-race.jsonl": {
+    "pass": 848,
+    "skip": 84
+  },
+  "p1-groups\\server.jsonl": {
+    "pass": 848,
+    "skip": 84
+  },
+  "p1-groups\\versions.jsonl": {
+    "pass": 57
+  }
+}

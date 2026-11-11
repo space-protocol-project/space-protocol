@@ -1,0 +1,301 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-11-11T17:23:03Z",
+  "databaseId": 43067628941,
+  "headSha": "0ceae688e620cf9966d24fac30c8b59c2b998d48",
+  "jobs": [
+    {
+      "completedAt": "2026-11-11T17:24:01Z",
+      "conclusion": "success",
+      "databaseId": 130686714936,
+      "name": "package (ubuntu-24.04)",
+      "startedAt": "2026-11-11T17:23:07Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T17:23:09Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T17:23:08Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:10Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-11T17:23:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:12Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-11T17:23:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:22Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 4,
+          "startedAt": "2026-11-11T17:23:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:51Z",
+          "conclusion": "success",
+          "name": "\u041e\u0431\u0449\u0438\u0439 manifest \u0438 \u043e\u0442\u0440\u0438\u0446\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u0438",
+          "number": 5,
+          "startedAt": "2026-11-11T17:23:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:52Z",
+          "conclusion": "success",
+          "name": "\u0412\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u043c\u0430\u044f \u0441\u0431\u043e\u0440\u043a\u0430 \u0438 \u043f\u043e\u0434\u043f\u0438\u0441\u044c",
+          "number": 6,
+          "startedAt": "2026-11-11T17:23:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:54Z",
+          "conclusion": "success",
+          "name": "\u0418\u0437\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u043a\u0430\u0440\u043a\u0430\u0441\u0430 Linux",
+          "number": 7,
+          "startedAt": "2026-11-11T17:23:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:57Z",
+          "conclusion": "success",
+          "name": "\u0418\u0437\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u0430\u044f \u043e\u0442\u0440\u0438\u0446\u0430\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u0430\u0442\u0440\u0438\u0446\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u043f\u0430\u043a\u0435\u0442\u0430",
+          "number": 8,
+          "startedAt": "2026-11-11T17:23:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:57Z",
+          "conclusion": "success",
+          "name": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b",
+          "number": 9,
+          "startedAt": "2026-11-11T17:23:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:58Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 10,
+          "startedAt": "2026-11-11T17:23:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:58Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 18,
+          "startedAt": "2026-11-11T17:23:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:58Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 19,
+          "startedAt": "2026-11-11T17:23:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:58Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 20,
+          "startedAt": "2026-11-11T17:23:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:58Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "startedAt": "2026-11-11T17:23:58Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/43067628941/job/130686714936"
+    },
+    {
+      "completedAt": "2026-11-11T17:25:32Z",
+      "conclusion": "success",
+      "databaseId": 130686715376,
+      "name": "package (windows-2025)",
+      "startedAt": "2026-11-11T17:23:11Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T17:23:13Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T17:23:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:18Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-11T17:23:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:23Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-11T17:23:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:24:17Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 4,
+          "startedAt": "2026-11-11T17:23:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:20Z",
+          "conclusion": "success",
+          "name": "\u041e\u0431\u0449\u0438\u0439 manifest \u0438 \u043e\u0442\u0440\u0438\u0446\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u0438",
+          "number": 5,
+          "startedAt": "2026-11-11T17:24:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:23Z",
+          "conclusion": "success",
+          "name": "\u0412\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u043c\u0430\u044f \u0441\u0431\u043e\u0440\u043a\u0430 \u0438 \u043f\u043e\u0434\u043f\u0438\u0441\u044c",
+          "number": 6,
+          "startedAt": "2026-11-11T17:25:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:23Z",
+          "conclusion": "skipped",
+          "name": "\u0418\u0437\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u043a\u0430\u0440\u043a\u0430\u0441\u0430 Linux",
+          "number": 7,
+          "startedAt": "2026-11-11T17:25:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:23Z",
+          "conclusion": "skipped",
+          "name": "\u0418\u0437\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u0430\u044f \u043e\u0442\u0440\u0438\u0446\u0430\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u0430\u0442\u0440\u0438\u0446\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u043f\u0430\u043a\u0435\u0442\u0430",
+          "number": 8,
+          "startedAt": "2026-11-11T17:25:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:24Z",
+          "conclusion": "success",
+          "name": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b",
+          "number": 9,
+          "startedAt": "2026-11-11T17:25:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:25Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 10,
+          "startedAt": "2026-11-11T17:25:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:25Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 18,
+          "startedAt": "2026-11-11T17:25:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:28Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 19,
+          "startedAt": "2026-11-11T17:25:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:30Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 20,
+          "startedAt": "2026-11-11T17:25:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:30Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "startedAt": "2026-11-11T17:25:30Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/43067628941/job/130686715376"
+    },
+    {
+      "completedAt": "2026-11-11T17:25:39Z",
+      "conclusion": "success",
+      "databaseId": 130688132037,
+      "name": "reproducible",
+      "startedAt": "2026-11-11T17:25:34Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T17:25:36Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T17:25:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:37Z",
+          "conclusion": "success",
+          "name": "Run actions/download-artifact@v4",
+          "number": 2,
+          "startedAt": "2026-11-11T17:25:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:37Z",
+          "conclusion": "success",
+          "name": "\u041e\u0434\u0438\u043d\u0430\u043a\u043e\u0432\u044b\u0435 \u0431\u0430\u0439\u0442\u044b \u043d\u0430 Linux \u0438 Windows",
+          "number": 3,
+          "startedAt": "2026-11-11T17:25:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:25:37Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 4,
+          "startedAt": "2026-11-11T17:25:37Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/43067628941/job/130688132037"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-11-11T17:25:40Z",
+  "url": "https://github.com/space-protocol-project/space-server/actions/runs/43067628941",
+  "workflowName": "P1 \u043a\u043e\u043d\u0442\u0440\u0430\u043a\u0442 \u043f\u0430\u043a\u0435\u0442\u0430 \u0438 SDK"
+}

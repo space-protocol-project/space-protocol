@@ -1,0 +1,183 @@
+{
+  "contracts": {},
+  "manifest": {
+    "manifest-core\\contracts.jsonl": {
+      "pass": 27
+    },
+    "manifest-core\\core-race.jsonl": {
+      "pass": 848,
+      "skip": 84
+    },
+    "manifest-core\\core.jsonl": {
+      "pass": 848,
+      "skip": 84
+    },
+    "manifest-ubuntu-24.04\\contracts.jsonl": {
+      "pass": 387
+    },
+    "manifest-ubuntu-24.04\\module-race.jsonl": {
+      "pass": 298,
+      "skip": 20
+    },
+    "manifest-ubuntu-24.04\\module.jsonl": {
+      "pass": 298,
+      "skip": 20
+    },
+    "manifest-windows-2025\\contracts.jsonl": {
+      "pass": 387
+    },
+    "manifest-windows-2025\\module-race.jsonl": {
+      "pass": 301,
+      "skip": 52
+    },
+    "manifest-windows-2025\\module.jsonl": {
+      "skip": 52,
+      "pass": 301
+    }
+  },
+  "windows": {
+    "boundary-modules-ubuntu-24.04\\boundary-race.jsonl": {
+      "pass": 298,
+      "skip": 20
+    },
+    "boundary-modules-ubuntu-24.04\\boundary-tests.jsonl": {
+      "pass": 298,
+      "skip": 20
+    },
+    "boundary-modules-windows-2025\\boundary-race.jsonl": {
+      "skip": 52,
+      "pass": 301
+    },
+    "boundary-modules-windows-2025\\boundary-tests.jsonl": {
+      "skip": 52,
+      "pass": 301
+    },
+    "windows-boundary\\windows-boundary.jsonl": {
+      "pass": 36
+    },
+    "windows-boundary\\windows-regression.jsonl": {
+      "pass": 107,
+      "skip": 3
+    }
+  },
+  "ui": {},
+  "load": {
+    "p1-load-1\\tests.jsonl": {
+      "pass": 2
+    },
+    "p1-load-2\\tests.jsonl": {
+      "pass": 2
+    },
+    "p1-load-3\\tests.jsonl": {
+      "pass": 2
+    }
+  },
+  "package": {
+    "package-ubuntu-24.04\\isolated.jsonl": {
+      "pass": 3
+    },
+    "package-ubuntu-24.04\\package-isolated.jsonl": {
+      "pass": 96
+    },
+    "package-ubuntu-24.04\\tests.jsonl": {
+      "pass": 384
+    },
+    "package-windows-2025\\tests.jsonl": {
+      "pass": 384
+    }
+  },
+  "core": {
+    "p1-database\\faults.jsonl": {
+      "pass": 25
+    },
+    "p1-core\\.local\\p1-core\\access-races.jsonl": {
+      "pass": 65
+    },
+    "p1-core\\.local\\p1-core\\backup-validation.jsonl": {
+      "pass": 39
+    },
+    "p1-core\\.local\\p1-core\\core.jsonl": {
+      "pass": 848,
+      "skip": 84
+    },
+    "p1-core\\.local\\p1-core\\crash.jsonl": {
+      "pass": 40
+    },
+    "p1-core\\.local\\p1-core\\delivery.jsonl": {
+      "pass": 210
+    },
+    "p1-core\\.local\\p1-core\\form-contracts.jsonl": {
+      "pass": 9
+    },
+    "p1-core\\.local\\p1-core\\history.jsonl": {
+      "pass": 80
+    },
+    "p1-core\\.local\\p1-core\\isolated.jsonl": {
+      "pass": 319
+    },
+    "p1-core\\.local\\p1-core\\lifecycle-coordinator.jsonl": {
+      "pass": 1200
+    },
+    "p1-core\\.local\\p1-core\\lifecycle.jsonl": {
+      "pass": 200,
+      "skip": 5
+    },
+    "p1-core\\.local\\p1-core\\locks.jsonl": {
+      "pass": 110
+    },
+    "p1-core\\.local\\p1-core\\mutations.jsonl": {
+      "pass": 39,
+      "skip": 2
+    },
+    "p1-core\\.local\\p1-core\\outbox.jsonl": {
+      "pass": 60
+    },
+    "p1-core\\.local\\p1-core\\race.jsonl": {
+      "pass": 848,
+      "skip": 84
+    },
+    "p1-core\\.local\\p1-core\\reconcile.jsonl": {
+      "pass": 25
+    },
+    "p1-core\\.local\\p1-core\\registry-api.jsonl": {
+      "pass": 360
+    },
+    "p1-core\\.local\\p1-core\\retention.jsonl": {
+      "pass": 15
+    },
+    "p1-core\\.local\\p1-core\\retry-lease.jsonl": {
+      "pass": 20
+    },
+    "p1-core\\.local\\p1-core\\retry.jsonl": {
+      "pass": 42
+    },
+    "p1-core\\.local\\p1-core\\worker-crash.jsonl": {
+      "pass": 20
+    }
+  },
+  "groups": {
+    "p1-groups\\groups.jsonl": {
+      "pass": 81
+    },
+    "p1-groups\\history-budget.jsonl": {
+      "pass": 30
+    },
+    "p1-groups\\publish.jsonl": {
+      "pass": 66
+    },
+    "p1-groups\\recovery.jsonl": {
+      "pass": 87
+    },
+    "p1-groups\\server-race.jsonl": {
+      "pass": 848,
+      "skip": 84
+    },
+    "p1-groups\\server.jsonl": {
+      "pass": 848,
+      "skip": 84
+    },
+    "p1-groups\\versions.jsonl": {
+      "pass": 57
+    }
+  }
+}

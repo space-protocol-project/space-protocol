@@ -1,0 +1,69 @@
+{
+  "p1-database\\faults.jsonl": {
+    "pass": 25
+  },
+  "p1-core\\.local\\p1-core\\access-races.jsonl": {
+    "pass": 65
+  },
+  "p1-core\\.local\\p1-core\\backup-validation.jsonl": {
+    "pass": 39
+  },
+  "p1-core\\.local\\p1-core\\core.jsonl": {
+    "pass": 848,
+    "skip": 84
+  },
+  "p1-core\\.local\\p1-core\\crash.jsonl": {
+    "pass": 40
+  },
+  "p1-core\\.local\\p1-core\\delivery.jsonl": {
+    "pass": 210
+  },
+  "p1-core\\.local\\p1-core\\form-contracts.jsonl": {
+    "pass": 9
+  },
+  "p1-core\\.local\\p1-core\\history.jsonl": {
+    "pass": 80
+  },
+  "p1-core\\.local\\p1-core\\isolated.jsonl": {
+    "pass": 319
+  },
+  "p1-core\\.local\\p1-core\\lifecycle-coordinator.jsonl": {
+    "pass": 1200
+  },
+  "p1-core\\.local\\p1-core\\lifecycle.jsonl": {
+    "pass": 200,
+    "skip": 5
+  },
+  "p1-core\\.local\\p1-core\\locks.jsonl": {
+    "pass": 110
+  },
+  "p1-core\\.local\\p1-core\\mutations.jsonl": {
+    "pass": 39,
+    "skip": 2
+  },
+  "p1-core\\.local\\p1-core\\outbox.jsonl": {
+    "pass": 60
+  },
+  "p1-core\\.local\\p1-core\\race.jsonl": {
+    "pass": 848,
+    "skip": 84
+  },
+  "p1-core\\.local\\p1-core\\reconcile.jsonl": {
+    "pass": 25
+  },
+  "p1-core\\.local\\p1-core\\registry-api.jsonl": {
+    "pass": 360
+  },
+  "p1-core\\.local\\p1-core\\retention.jsonl": {
+    "pass": 15
+  },
+  "p1-core\\.local\\p1-core\\retry-lease.jsonl": {
+    "pass": 20
+  },
+  "p1-core\\.local\\p1-core\\retry.jsonl": {
+    "pass": 42
+  },
+  "p1-core\\.local\\p1-core\\worker-crash.jsonl": {
+    "pass": 20
+  }
+}

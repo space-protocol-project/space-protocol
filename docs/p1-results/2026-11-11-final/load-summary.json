@@ -1,0 +1,32 @@
+[
+  {
+    "run": "p1-load-1",
+    "requests_including_warmup": 122146,
+    "committed": 165,
+    "server_peak_kib": 220524,
+    "host_peak_bytes": 5898240,
+    "final_active": 0,
+    "final_reserved": 0,
+    "final_processes": 0
+  },
+  {
+    "run": "p1-load-2",
+    "requests_including_warmup": 129197,
+    "committed": 165,
+    "server_peak_kib": 217828,
+    "host_peak_bytes": 5812224,
+    "final_active": 0,
+    "final_reserved": 0,
+    "final_processes": 0
+  },
+  {
+    "run": "p1-load-3",
+    "requests_including_warmup": 122767,
+    "committed": 165,
+    "server_peak_kib": 219300,
+    "host_peak_bytes": 6201344,
+    "final_active": 0,
+    "final_reserved": 0,
+    "final_processes": 0
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "name": "app-ui",
+    "repository": "space-app",
+    "base": "f9afad666363dd4ce600ae57014282095bcdd79f",
+    "head": "d9451c02da0cc46db5b1fd762d188afe97f16252",
+    "paths": [
+      "client",
+      "packages"
+    ],
+    "changed_files": []
+  },
+  {
+    "name": "client-recovery",
+    "repository": "space-app",
+    "base": "59ab3c35b6266a67e0717ef91d22ca9796e3500a",
+    "head": "d9451c02da0cc46db5b1fd762d188afe97f16252",
+    "paths": [
+      "client/lib/src/extensions_p1/retry.dart",
+      "client/lib/src/extensions_p1/command_cubit.dart",
+      "client/lib/src/extensions_p1/command_snapshot.dart",
+      "client/lib/src/extensions_p1/command_transport.dart"
+    ],
+    "changed_files": []
+  },
+  {
+    "name": "protocol-contracts",
+    "repository": "space-protocol",
+    "base": "b30eb8c2c17b73051adc714120d2cf5aa19f3dd7",
+    "head": "01132931e1efde193130eb9d4702a816b8417475",
+    "paths": [
+      "protocol",
+      "docs/extensions"
+    ],
+    "changed_files": []
+  },
+  {
+    "name": "server-load",
+    "repository": "space-server",
+    "base": "31b626d8078541d941acb6e82aa1aca7cb3cdb98",
+    "head": "0ceae688e620cf9966d24fac30c8b59c2b998d48",
+    "paths": [
+      "internal/postgres/extensions_p1_load_test.go",
+      "docs/P1-LOAD-PROFILE.md"
+    ],
+    "changed_files": []
+  },
+  {
+    "name": "server-after-manifest",
+    "repository": "space-server",
+    "base": "681868587df81d07a9d3bf3cd3faf349a2c9fef5",
+    "head": "0ceae688e620cf9966d24fac30c8b59c2b998d48",
+    "paths": [
+      "internal",
+      "gen"
+    ],
+    "changed_files": []
+  },
+  {
+    "name": "archive-after-budget",
+    "repository": "space-server",
+    "base": "3da116bd31eedf81a977609ce24384bb6af7eef9",
+    "head": "0ceae688e620cf9966d24fac30c8b59c2b998d48",
+    "paths": [
+      "internal/postgres/backup*",
+      "internal/postgres/extensions_p1_group_backup*",
+      "internal/postgres/extensions_p1_registry_backup*"
+    ],
+    "changed_files": []
+  }
+]

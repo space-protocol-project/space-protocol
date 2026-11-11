@@ -1,0 +1,6 @@
+{
+  "url": "https://get.enterprisedb.com/postgresql/postgresql-17.11-1-windows-x64-binaries.zip",
+  "version": "pg_ctl (PostgreSQL) 17.11",
+  "sha256": "6eabdf00d2893713b75db4336a23c3fdf505f056e217ec6e2e95d901750cfea3",
+  "verification": "HTTPS and version; digest records downloaded bytes"
+}

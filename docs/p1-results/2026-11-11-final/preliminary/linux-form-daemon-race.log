@@ -1,0 +1,23 @@
+[{"event":"daemon.connected","params":{"version":"0.6.1","pid":10488}}]
+[{"event":"app.start","params":{"appId":"979cb3eb-fb91-4ae1-8cf9-8967c52dd2d6","deviceId":"linux","directory":"/home/runner/work/space-app/space-app/client","supportsRestart":true,"launchMode":"run","mode":"debug"}}]
+Launching test/probes/extension_demo_probe.dart on Linux in debug mode...
+[{"event":"app.progress","params":{"appId":"979cb3eb-fb91-4ae1-8cf9-8967c52dd2d6","id":"0","progressId":null,"message":"Building Linux application...","finished":false}}]
+download: https://github.com/webrtc-sdk/libwebrtc/releases/download/libwebrtc.m150.7871.04/libwebrtc-linux-x64-release.zip
+CMake Warning at flutter/ephemeral/.plugin_symlinks/flutter_webrtc/linux/CMakeLists.txt:88 (message):
+  flutter_webrtc: libpulse NOT found -- Linux system-audio loopback capture
+  disabled (getDisplayMedia({audio:true}) yields no audio track).  Install
+  the libpulse dev package to enable it.
+
+
+[{"event":"app.progress","params":{"appId":"979cb3eb-fb91-4ae1-8cf9-8967c52dd2d6","id":"0","progressId":null,"finished":true}}]
+✓ Built build/linux/x64/debug/bundle/space_client
+
+(org.spaceprotocol.space_client:13990): dbind-WARNING **: 17:32:27.902: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+
+(org.spaceprotocol.space_client:13990): Atk-CRITICAL **: 17:32:30.879: atk_socket_embed: assertion 'plug_id != NULL' failed
+
+(org.spaceprotocol.space_client:13990): GLib-GObject-CRITICAL **: 17:32:31.314: ../../../gobject/gsignal.c:2427: signal 'pre-engine-restart' is invalid for instance '0x55bcef658a50' of type 'FlEngine'
+COMMUNITY_UI_READY
+[{"id":1,"error":"Null check operator used on a null value","trace":"#0      AppDomain.callServiceExtension (package:flutter_tools/src/commands/daemon.dart:937:59)\n#1      Domain.handleCommand.<anonymous closure> (package:flutter_tools/src/commands/daemon.dart:317:35)\n#2      new Future.sync (dart:async/future.dart:325:27)\n#3      Domain.handleCommand (package:flutter_tools/src/commands/daemon.dart:315:5)\n#4      Daemon._handleRequest (package:flutter_tools/src/commands/daemon.dart:258:27)\n#5      _rootRunUnary (dart:async/zone_root.dart:48:47)\n#6      _CustomZone.runUnary (dart:async/zone.dart:816:35)\n#7      _CustomZone.runUnaryGuarded (dart:async/zone.dart:710:7)\n#8      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:381:11)\n#9      _DelayedData.perform (dart:async/stream_impl.dart:573:14)\n#10     _PendingEvents.handleNext (dart:async/stream_impl.dart:678:11)\n#11     _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:649:7)\n#12     _rootRun (dart:async/zone_root.dart:27:47)\n#13     _CustomZone.run (dart:async/zone.dart:810:35)\n#14     _CustomZone.runGuarded (dart:async/zone.dart:702:7)\n#15     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:743:23)\n#16     _rootRun (dart:async/zone_root.dart:35:13)\n#17     _CustomZone.run (dart:async/zone.dart:810:35)\n#18     _CustomZone.runGuarded (dart:async/zone.dart:702:7)\n#19     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:743:23)\n#20     _microtaskLoop (dart:async/schedule_microtask.dart:40:35)\n#21     _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)\n#22     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:127:13)\n#23     _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:193:5)\n"}]

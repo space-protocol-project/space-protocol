@@ -1,0 +1,33 @@
+00:00 +0: loading D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart
+00:00 +0: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Неизменяемые метаданные, сортировка и fallback
+00:00 +1: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Отклоняется digest
+00:00 +2: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Отклоняется duplicate
+00:00 +3: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Отклоняется limit
+00:00 +4: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Отклоняется kind
+00:00 +5: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Отклоняется query
+00:00 +6: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Отклоняется fallback
+00:00 +7: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Отклоняется blank
+00:00 +8: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Отклоняется control
+00:00 +9: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Отклоняется long
+00:00 +10: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Поздний ответ не заменяет новый выбранный элемент
+00:00 +11: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Поздний ответ после invalidate не возвращает документ
+00:00 +12: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Поздний ответ после close не возвращает документ
+00:00 +13: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Поздний ответ после back не возвращает документ
+00:00 +14: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Отказ query очищает список и документ; повтор требует новый список
+00:00 +15: D:/a/space-app/space-app/client/test/extensions_p1_contributions_test.dart: Список, открытие, возврат, пустое состояние и повтор
+00:00 +16: D:/a/space-app/space-app/client/test/extensions_p1_contributions_rpc_test.dart: Connect передаёт сессию, instance, выбранный query и NONE; проверяет UI API
+00:00 +17: D:/a/space-app/space-app/client/test/extensions_p1_contributions_rpc_test.dart: Отмена настоящего HTTP-запроса завершает ожидание
+00:01 +18: D:/a/space-app/space-app/client/test/extensions_p1_test.dart: Строгий JSON не теряет дубликаты, хвост и бюджет
+00:01 +19: D:/a/space-app/space-app/client/test/extensions_p1_test.dart: Версии, неизвестные поля и команды отклоняются
+00:01 +20: D:/a/space-app/space-app/client/test/extensions_p1_test.dart: Необязательный неизвестный компонент имеет проверяемый fallback
+00:01 +21: D:/a/space-app/space-app/client/test/extensions_p1_test.dart: Лимит узлов и семантика Unicode текста
+00:01 +22: D:/a/space-app/space-app/client/test/extensions_p1_test.dart: Локализация, источник, семантика и клавиатура
+00:02 +23: D:/a/space-app/space-app/client/test/extensions_p1_test.dart: Масштаб 3x и узкий экран сохраняют действие
+00:02 +24: D:/a/space-app/space-app/client/test/extensions_p1_test.dart: Двойное действие, отказ и закрытие Cubit
+00:02 +25: D:/a/space-app/space-app/client/test/extensions_p1_form_test.dart: Форма отклоняет неизвестные поля, команды и вложенные формы
+00:02 +26: D:/a/space-app/space-app/client/test/extensions_p1_form_test.dart: Недопустимые значения не вызывают команду, Unicode считается по кодовым точкам
+00:02 +27: D:/a/space-app/space-app/client/test/extensions_p1_form_test.dart: Снимок отправки, повтор, отказ и закрытие Cubit
+00:02 +28: D:/a/space-app/space-app/client/test/extensions_p1_form_test.dart: Закрытие во время отправки не создаёт поздних событий
+00:02 +29: D:/a/space-app/space-app/client/test/extensions_p1_form_test.dart: Ввод, выбор и переключатель передают проверенный снимок
+00:03 +30: D:/a/space-app/space-app/client/test/extensions_p1_form_test.dart: Узкий экран, крупный текст и английский fallback
+00:03 +31: All tests passed!

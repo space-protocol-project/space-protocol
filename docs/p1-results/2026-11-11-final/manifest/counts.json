@@ -1,0 +1,35 @@
+{
+  "manifest-core\\contracts.jsonl": {
+    "pass": 27
+  },
+  "manifest-core\\core-race.jsonl": {
+    "pass": 848,
+    "skip": 84
+  },
+  "manifest-core\\core.jsonl": {
+    "pass": 848,
+    "skip": 84
+  },
+  "manifest-ubuntu-24.04\\contracts.jsonl": {
+    "pass": 387
+  },
+  "manifest-ubuntu-24.04\\module-race.jsonl": {
+    "pass": 298,
+    "skip": 20
+  },
+  "manifest-ubuntu-24.04\\module.jsonl": {
+    "pass": 298,
+    "skip": 20
+  },
+  "manifest-windows-2025\\contracts.jsonl": {
+    "pass": 387
+  },
+  "manifest-windows-2025\\module-race.jsonl": {
+    "pass": 301,
+    "skip": 52
+  },
+  "manifest-windows-2025\\module.jsonl": {
+    "skip": 52,
+    "pass": 301
+  }
+}

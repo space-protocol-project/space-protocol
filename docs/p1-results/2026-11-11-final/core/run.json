@@ -1,0 +1,242 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-11-11T17:23:11Z",
+  "databaseId": 43067650440,
+  "headSha": "0ceae688e620cf9966d24fac30c8b59c2b998d48",
+  "jobs": [
+    {
+      "completedAt": "2026-11-11T17:47:25Z",
+      "conclusion": "success",
+      "databaseId": 130686788291,
+      "name": "core",
+      "startedAt": "2026-11-11T17:23:19Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T17:23:21Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T17:23:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:34Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "startedAt": "2026-11-11T17:23:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:35Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-11T17:23:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:36Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 4,
+          "startedAt": "2026-11-11T17:23:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:36Z",
+          "conclusion": "success",
+          "name": "Shared retry contract",
+          "number": 5,
+          "startedAt": "2026-11-11T17:23:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:47Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 6,
+          "startedAt": "2026-11-11T17:23:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:44:29Z",
+          "conclusion": "success",
+          "name": "\u0417\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0441\u0442\u0438, \u0430\u043d\u0430\u043b\u0438\u0437 \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u044f\u0434\u0440\u0430",
+          "number": 7,
+          "startedAt": "2026-11-11T17:23:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:44:49Z",
+          "conclusion": "success",
+          "name": "\u0421\u0431\u043e\u0440\u043a\u0430 \u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0435\u0433\u043e WASM \u0438 worker",
+          "number": 8,
+          "startedAt": "2026-11-11T17:44:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:47:20Z",
+          "conclusion": "success",
+          "name": "\u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0435 \u0441\u0435\u0441\u0441\u0438\u0438, ACL, RPC \u0438 \u0438\u0437\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 WASM",
+          "number": 9,
+          "startedAt": "2026-11-11T17:44:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:47:21Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 10,
+          "startedAt": "2026-11-11T17:47:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:47:22Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 17,
+          "startedAt": "2026-11-11T17:47:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:47:22Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 18,
+          "startedAt": "2026-11-11T17:47:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:47:22Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 19,
+          "startedAt": "2026-11-11T17:47:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:47:23Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 20,
+          "startedAt": "2026-11-11T17:47:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:47:23Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "startedAt": "2026-11-11T17:47:23Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/43067650440/job/130686788291"
+    },
+    {
+      "completedAt": "2026-11-11T17:24:55Z",
+      "conclusion": "success",
+      "databaseId": 130686788601,
+      "name": "database-faults",
+      "startedAt": "2026-11-11T17:23:28Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T17:23:30Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T17:23:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:45Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "startedAt": "2026-11-11T17:23:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:23:47Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-11T17:23:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:24:01Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 4,
+          "startedAt": "2026-11-11T17:23:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:24:50Z",
+          "conclusion": "success",
+          "name": "\u041e\u0431\u0440\u044b\u0432 COMMIT \u0438 \u0430\u0432\u0430\u0440\u0438\u0439\u043d\u043e\u0435 \u0432\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u043e\u0439 PostgreSQL",
+          "number": 5,
+          "startedAt": "2026-11-11T17:24:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:24:50Z",
+          "conclusion": "success",
+          "name": "\u0416\u0443\u0440\u043d\u0430\u043b PostgreSQL",
+          "number": 6,
+          "startedAt": "2026-11-11T17:24:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:24:51Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 7,
+          "startedAt": "2026-11-11T17:24:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:24:51Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 12,
+          "startedAt": "2026-11-11T17:24:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:24:52Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 13,
+          "startedAt": "2026-11-11T17:24:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:24:52Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 14,
+          "startedAt": "2026-11-11T17:24:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T17:24:52Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 15,
+          "startedAt": "2026-11-11T17:24:52Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/43067650440/job/130686788601"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-11-11T17:47:25Z",
+  "url": "https://github.com/space-protocol-project/space-server/actions/runs/43067650440",
+  "workflowName": "P1 dispatcher \u0441 \u0441\u0435\u0441\u0441\u0438\u044f\u043c\u0438 \u0438 ACL \u044f\u0434\u0440\u0430"
+}

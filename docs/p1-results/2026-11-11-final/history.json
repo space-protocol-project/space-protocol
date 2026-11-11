@@ -1,0 +1,40 @@
+{
+  "verified_sha256_files": {
+    "2026-11-11-candidate": 230,
+    "2026-11-11-group-archive": 42,
+    "2026-11-01-client-database": 6,
+    "2026-11-11-manifest-v2": 20,
+    "2026-11-11-ui-matrix": 30,
+    "2026-11-11-windows-boundary": 12
+  },
+  "extension_repositories": [
+    {
+      "repo": "space-protocol-project/space-extension-chat",
+      "conclusion": "success",
+      "headSha": "4714102d8a3570ca1b6cc932574fda4e5d8cd6bf",
+      "status": "completed",
+      "url": "https://github.com/space-protocol-project/space-extension-chat/actions/runs/42989591064"
+    },
+    {
+      "repo": "space-protocol-project/space-extension-discussions",
+      "conclusion": "success",
+      "headSha": "a58b09b68919b118f35753ca07ba7e565211fb9a",
+      "status": "completed",
+      "url": "https://github.com/space-protocol-project/space-extension-discussions/actions/runs/42989625024"
+    },
+    {
+      "repo": "space-protocol-project/space-extension-feed",
+      "conclusion": "success",
+      "headSha": "a05bc63294fcfe3d16309a1f1042e93be1dfdfc1",
+      "status": "completed",
+      "url": "https://github.com/space-protocol-project/space-extension-feed/actions/runs/42989643405"
+    },
+    {
+      "repo": "space-protocol-project/space-extension-rooms",
+      "conclusion": "success",
+      "headSha": "e61f85f17982f90d587e6639f698a0980316b119",
+      "status": "completed",
+      "url": "https://github.com/space-protocol-project/space-extension-rooms/actions/runs/42989608294"
+    }
+  ]
+}
