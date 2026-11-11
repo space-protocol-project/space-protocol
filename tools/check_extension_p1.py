@@ -28,6 +28,22 @@ for entrypoint in ('../server.wasm','/server.wasm','https://example.com/server.w
     assert not validator.is_valid(manifest)
 print('unknown mandatory component and unsafe entrypoints rejected')
 
+form=json.loads((root/'ui-form.json').read_text(encoding='utf-8'))
+validator=Draft202012Validator(json.loads((root/'ui.schema.json').read_text(encoding='utf-8')))
+validator.validate(form)
+for component in ('section.v1','form.v1','webview.v1'):
+    invalid=copy.deepcopy(form);invalid['body'][0]['children'][0]['component']=component
+    assert not validator.is_valid(invalid),component
+invalid=copy.deepcopy(form);invalid['body']=[invalid['body'][0]['children'][0]]
+assert not validator.is_valid(invalid)
+validator=Draft202012Validator(json.loads((root/'form-payload.schema.json').read_text(encoding='utf-8')))
+payload=json.loads((root/'form-payload.json').read_text(encoding='utf-8'))
+validator.validate(payload)
+for key,value in [('message',''),('message','x'*65),('kind','c'),('enabled','true'),('principal_id','admin')]:
+    invalid=copy.deepcopy(payload);invalid[key]=value
+    assert not validator.is_valid(invalid),(key,value)
+print('forms: bounded fields, nesting, payload types and undeclared context rejected')
+
 retry=json.loads((root/'retry.json').read_text(encoding='utf-8'))
 assert len({case['name'] for case in retry['cases']})==len(retry['cases'])
 print(f"retry: {len(retry['cases'])} uniquely named shared scenarios")

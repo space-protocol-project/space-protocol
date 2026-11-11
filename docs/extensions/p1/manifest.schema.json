@@ -51,7 +51,11 @@
         "enum": [
           "section.v1",
           "text.v1",
-          "button.v1"
+          "button.v1",
+          "form.v1",
+          "input.v1",
+          "toggle.v1",
+          "choice.v1"
         ]
       }
     },
