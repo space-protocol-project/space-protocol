@@ -1,0 +1,52 @@
+[
+  {
+    "repository": "space-app",
+    "path": "client/lib/src/generated/space/v1/extensions_p1.connect.client.dart",
+    "sha256": "5112b5f2c10870cd393d5326efbccd6987a626e6786901f6181a35970591c613"
+  },
+  {
+    "repository": "space-app",
+    "path": "client/lib/src/generated/space/v1/extensions_p1.connect.spec.dart",
+    "sha256": "714a35a39fed24e701591e7bf3b35dbd8c3efba9a058e9431fce812249a47ac7"
+  },
+  {
+    "repository": "space-app",
+    "path": "client/lib/src/generated/space/v1/extensions_p1.pb.dart",
+    "sha256": "94c2abd6e8fb01a4e806c7cde31529ebca8f5aeec82b03347498f07b0c10b099"
+  },
+  {
+    "repository": "space-app",
+    "path": "client/lib/src/generated/space/v1/extensions_p1.pbenum.dart",
+    "sha256": "f576049bb3ab7b5ef27594ae28eee28725f44b05661fd2c2bec67281491c6568"
+  },
+  {
+    "repository": "space-app",
+    "path": "client/lib/src/generated/space/v1/extensions_p1.pbjson.dart",
+    "sha256": "ec60902b7f6d4f8f9683d59057e3be3331e26f9a48145ef539d7b48efdd410b7"
+  },
+  {
+    "repository": "space-app",
+    "path": "client/lib/src/generated/space/v1/extensions_p1.pbserver.dart",
+    "sha256": "6e929219dd6688272ae0bfd6c3472fd895f53985fdb2bf4ca198a13cc107c999"
+  },
+  {
+    "repository": "space-protocol",
+    "path": "protocol/openapi/space/v1/extensions_p1.swagger.json",
+    "sha256": "02bfb2ef035ec90a299bf54e5281f223c5aa1d6ef5877792b9bf1c12a6d246ba"
+  },
+  {
+    "repository": "space-server",
+    "path": "gen/space/v1/extensions_p1.pb.go",
+    "sha256": "480664b23528a935f238fb7ebfb865a698f3e38ba77df09e0af1e14603f38f02"
+  },
+  {
+    "repository": "space-server",
+    "path": "gen/space/v1/extensions_p1_grpc.pb.go",
+    "sha256": "ff924c45ac3b881af44af1c251688a6530058ea02b0880a58a353e9fa596be4d"
+  },
+  {
+    "repository": "space-server",
+    "path": "gen/space/v1/spacev1connect/extensions_p1.connect.go",
+    "sha256": "c240291b9351cecb6e4bc7dcfacc1a7f6c5c9f47f73a6433eff101463b860efb"
+  }
+]

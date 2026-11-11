@@ -1,0 +1,26 @@
+[
+  {
+    "case": "missing-fields",
+    "status": 400
+  },
+  {
+    "case": "spoofed-context",
+    "status": 400
+  },
+  {
+    "case": "wrong-type",
+    "status": 400
+  },
+  {
+    "case": "reader-denied",
+    "status": 403
+  },
+  {
+    "case": "unknown-session",
+    "status": 403
+  },
+  {
+    "case": "valid",
+    "status": 200
+  }
+]

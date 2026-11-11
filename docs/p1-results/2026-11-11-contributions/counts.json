@@ -1,0 +1,132 @@
+{
+  "registry/p1-contributions/registry.jsonl": {
+    "pass": 57,
+    "fail": 0,
+    "skip": 0
+  },
+  "packages/package-ubuntu-24.04/isolated.jsonl": {
+    "pass": 3,
+    "fail": 0,
+    "skip": 0
+  },
+  "packages/package-ubuntu-24.04/package-isolated.jsonl": {
+    "pass": 78,
+    "fail": 0,
+    "skip": 0
+  },
+  "packages/package-ubuntu-24.04/tests.jsonl": {
+    "pass": 327,
+    "fail": 0,
+    "skip": 0
+  },
+  "packages/package-windows-2025/tests.jsonl": {
+    "pass": 327,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-database/faults.jsonl": {
+    "pass": 25,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/access-races.jsonl": {
+    "pass": 65,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/backup-validation.jsonl": {
+    "pass": 39,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/core.jsonl": {
+    "pass": 840,
+    "fail": 0,
+    "skip": 82
+  },
+  "core/p1-core/.local/p1-core/crash.jsonl": {
+    "pass": 40,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/delivery.jsonl": {
+    "pass": 210,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/form-contracts.jsonl": {
+    "pass": 9,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/history.jsonl": {
+    "pass": 80,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/isolated.jsonl": {
+    "pass": 310,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/lifecycle-coordinator.jsonl": {
+    "pass": 1200,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/lifecycle.jsonl": {
+    "pass": 200,
+    "fail": 0,
+    "skip": 5
+  },
+  "core/p1-core/.local/p1-core/locks.jsonl": {
+    "pass": 110,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/mutations.jsonl": {
+    "pass": 39,
+    "fail": 0,
+    "skip": 2
+  },
+  "core/p1-core/.local/p1-core/outbox.jsonl": {
+    "pass": 60,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/race.jsonl": {
+    "pass": 840,
+    "fail": 0,
+    "skip": 82
+  },
+  "core/p1-core/.local/p1-core/reconcile.jsonl": {
+    "pass": 25,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/registry-api.jsonl": {
+    "pass": 360,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/retention.jsonl": {
+    "pass": 15,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/retry-lease.jsonl": {
+    "pass": 20,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/retry.jsonl": {
+    "pass": 42,
+    "fail": 0,
+    "skip": 0
+  },
+  "core/p1-core/.local/p1-core/worker-crash.jsonl": {
+    "pass": 20,
+    "fail": 0,
+    "skip": 0
+  }
+}
