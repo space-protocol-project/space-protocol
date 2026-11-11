@@ -6,12 +6,12 @@
 
 | Область | Канонический источник | Реализация / проверка | Граница |
 | --- | --- | --- | --- |
-| Поля server manifest | `docs/extensions/p1/manifest.schema.json` и `manifest.json` | Go `manifest.Decode`, обязательность всех 12 полей, типы, версии, пути, дубликаты, неизвестные значения; общий fixture сверяется в CI | Проверка manifest полнее адаптера: поддержаны объявленные имена query/command и contributions, но только schema=1, stateless, без permissions |
+| Поля server manifest | `manifest.schema.json` (v1), `manifest-v2.schema.json` и общие примеры | Go `manifest.Decode`, обязательные поля и contracts v2, типы, версии, пути, дубликаты, неизвестные значения; общие байты сверяются в CI | [Manifest v2](SPACE-PLUGINS-P1-MANIFEST-V2.md) связан с dispatcher, одобренными capabilities и мутациями. v1 сохраняет stateless-ограничения; подпись не выдаёт права |
 | Профили server/client/hybrid | `package-profile.schema.json`, три примера | `check_extension_profiles.py`, клиентский Git manifest/parser | Профили различаются; server ZIP и client bundle нельзя выдавать друг за друга |
 | Владение памятью и ABI | [исходный ABI](SPACE-PLUGINS-P1.md), [worker](SPACE-PLUGINS-P1-WORKER.md) | WASM memory/alloc/free/handle, ограничения JSON/module/output; SDK исполняется настоящим worker | Изменение ABI требует новой версии; нет передачи сырых указателей между процессами |
 | Схема команды формы | `form-payload.schema.json` | Go `payloadschema`, `demo.FromManifest`, Flutter parser/Cubit; общие bytes, негативные значения до WASM | Плоские string/boolean/enum; произвольный JSON Schema не поддерживается |
 | Query/command и доверенный context | `protocol/proto/space/v1/extensions_p1.proto`, [API ядра](SPACE-PLUGINS-P1-CORE.md) | `internal/extensionp1`, gRPC/Connect, сессии/ACL, отрицательные роли и истечение/отзыв | HTTP формы использует тестовые роли; настоящая авторизация проверяется отдельным RPC-стендом |
-| Мутация, результат и события | [план мутации](SPACE-PLUGINS-P1-MUTATIONS.md), protobuf | Валидация плана, атомарные данные/квитанция/outbox; тесты ядра | Старый доверенный binding отдельного прототипа не становится автоматически разрешением для нового подписанного manifest |
+| Мутация, результат и события | [план мутации](SPACE-PLUGINS-P1-MUTATIONS.md), protobuf | Валидация плана, атомарные данные/квитанция/outbox; тесты ядра | [Новый manifest](SPACE-PLUGINS-P1-MANIFEST-V2.md) задаёт эффект, результат и события каждой команды; схемы проверяются до COMMIT, права отдельно одобряет ядро |
 | Lifecycle, реестр и аудит | `lifecycle.schema.json`, [API реестра](SPACE-PLUGINS-P1-REGISTRY-API.md) | Координатор Go, транзакции PostgreSQL, поколения, активные вызовы, постоянный аудит | Рабочая регистрация сервисов и административная навигация ещё не включены |
 | План, миграции, история | `upgrade-plan.schema.json`, `migration-data.schema.json` | Постоянные шаги, WASM-миграция, атомарная публикация, несколько экземпляров, ZIP/физические копии | [Бюджет истории](SPACE-PLUGINS-P1-HISTORY-BUDGET.md) принят; автоматической очистки цепочки нет |
 | Клиентские установки/разрешения/каталоги | `client-*.schema.json`, `client-catalog*.schema.json` | Общие фикстуры, локальный реестр и lifecycle, сессии профиля, поколения разрешений, отмена/отзыв | Рабочий интерфейс библиотеки игр и произвольные плагины ещё не реализованы |
@@ -19,7 +19,7 @@
 
 Go/gRPC/Connect, Dart/Connect и OpenAPI существующего protobuf API генерируются совместно; [отчёт реестра](SPACE-PLUGINS-P1-REGISTRY-API.md) содержит сверку сгенерированных байтов. Добавление JSON-форм не меняло protobuf-сообщения: payload остаётся проверяемыми JSON-байтами. [CI протокола 42992493553](https://github.com/space-protocol-project/space-protocol/actions/runs/42992493553) проверил OpenAPI текущей ревизии, [42992495350](https://github.com/space-protocol-project/space-protocol/actions/runs/42992495350) — схемы и общие примеры. Проверка OpenAPI не заменяет генерацию при следующем изменении protobuf.
 
-E01 остаётся открытым: contributions и именованные stateless-операции подключены к общему API; ещё нужны связывание capability/мутаций и явные схемы результатов/событий полного manifest. Нельзя закрыть эту строку только потому, что проверяются все 12 полей нынешнего ограниченного manifest.
+Контрактный пробел E01 закрыт [manifest v2](SPACE-PLUGINS-P1-MANIFEST-V2.md): capabilities, эффекты, результаты и события связаны с исполнением и проверены в CI. Итоговая сверка всех доказательств E01–E07 остаётся частью общей приёмки P1.
 
 ## E02: ошибки и сохранность данных
 
@@ -45,7 +45,7 @@ E01 остаётся открытым: contributions и именованные s
 
 Нативная форма не является новой проверкой изоляции прав Windows: она использует ProcessHost и его ресурсный Job-профиль. Полный LPAC и рабочий broker остаются отдельной границей. Сквозной renderer и управление каталогом устройства — разные сценарии.
 
-После принятия реестра/API следующим блоком остаются **контракты полного manifest и итоговая UI-матрица**, затем недоказанные границы Windows. macOS не возвращается в текущую очередь без нового решения пользователя. Итоговую отметку P1 нельзя поставить до устранения оставшихся обязательств и итоговой сверки матрицы. Результаты ограниченной нагрузки уже сохранены.
+После принятия реестра/API следующим блоком остаются **итоговая UI-матрица**, затем недоказанные границы Windows. macOS не возвращается в текущую очередь без нового решения пользователя. Итоговую отметку P1 нельзя поставить до устранения оставшихся обязательств и итоговой сверки матрицы. Результаты ограниченной нагрузки уже сохранены.
 
 Для следующего сетевого исследования Windows требуется сначала успешный `WSAStartup`, затем отдельные положительный и отрицательный контроли connect/bind для TCP/UDP IPv4/IPv6. [Документация Microsoft](https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-wsastartup) требует успешной инициализации до дальнейших операций Winsock. Сравнительный диагностический профиль с именованными capability возможен через [DeriveCapabilitySidsFromName](https://learn.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname); [пример Microsoft](https://github.com/microsoft/SandboxSecurityTools/blob/main/LaunchAppContainer/README.md) показывает `registryRead`/`lpacCom`. Это только направление исследования: такие capability не добавлены в рабочий host, их безопасность и достаточность для Winsock не доказаны. Отсутствие сетевой capability и недоступность стека — разные наблюдения.
 

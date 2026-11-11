@@ -1,0 +1,1 @@
+{"crash_checks": 26, "result": "success", "schema_checks": 48, "suite": "client-lifecycle.p1", "transition_checks": 131}

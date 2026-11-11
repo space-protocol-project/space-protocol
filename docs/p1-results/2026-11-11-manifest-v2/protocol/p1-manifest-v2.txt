@@ -1,0 +1,1 @@
+manifest v2: required fields, operation links, capabilities, result and event schemas passed
