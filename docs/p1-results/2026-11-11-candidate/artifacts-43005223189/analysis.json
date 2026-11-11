@@ -1,0 +1,239 @@
+[
+  {
+    "run": "p1-load-1",
+    "elapsed": 904.37,
+    "committed": 165,
+    "phases": [
+      {
+        "phase": 0,
+        "clients": 1,
+        "requests": 9457,
+        "success": 4731,
+        "all_rps": 39.4,
+        "ok_rps": 19.71,
+        "codes": {
+          "Aborted": 1182,
+          "AlreadyExists": 1180,
+          "Canceled": 1182,
+          "InvalidArgument": 1182,
+          "OK": 4731
+        },
+        "p50_ok_ms": 6.096,
+        "p95_ok_ms": 11,
+        "p99_ok_ms": 11.932
+      },
+      {
+        "phase": 1,
+        "clients": 2,
+        "requests": 18253,
+        "success": 9128,
+        "all_rps": 76.05,
+        "ok_rps": 38.03,
+        "codes": {
+          "Aborted": 2282,
+          "AlreadyExists": 2282,
+          "Canceled": 2280,
+          "InvalidArgument": 2281,
+          "OK": 9128
+        },
+        "p50_ok_ms": 7.009,
+        "p95_ok_ms": 12.466,
+        "p99_ok_ms": 13.514
+      },
+      {
+        "phase": 2,
+        "clients": 8,
+        "requests": 74905,
+        "success": 31448,
+        "all_rps": 312.1,
+        "ok_rps": 131.03,
+        "codes": {
+          "Aborted": 7519,
+          "AlreadyExists": 7212,
+          "Canceled": 9362,
+          "InvalidArgument": 9362,
+          "OK": 31448,
+          "ResourceExhausted": 10002
+        },
+        "p50_ok_ms": 8.397,
+        "p95_ok_ms": 15.402,
+        "p99_ok_ms": 19.208
+      }
+    ],
+    "host_peak_bytes": 6647808,
+    "server_max_rss_kib": 198524,
+    "max_sql_lock_waiters": 2,
+    "max_pool_total": 8,
+    "max_active": 1,
+    "max_observed_processes": 1,
+    "max_reserved_bytes": 268435456,
+    "final_host": {
+      "Active": 0,
+      "ReservedBytes": 0,
+      "CurrentBytes": 118784,
+      "PeakBytes": 6647808,
+      "OOMKills": 0,
+      "CPUUsec": 62716249,
+      "Throttled": 0,
+      "OSProcesses": 0
+    }
+  },
+  {
+    "run": "p1-load-2",
+    "elapsed": 901.82,
+    "committed": 165,
+    "phases": [
+      {
+        "phase": 0,
+        "clients": 1,
+        "requests": 9681,
+        "success": 4843,
+        "all_rps": 40.34,
+        "ok_rps": 20.18,
+        "codes": {
+          "Aborted": 1210,
+          "AlreadyExists": 1208,
+          "Canceled": 1210,
+          "InvalidArgument": 1210,
+          "OK": 4843
+        },
+        "p50_ok_ms": 5.206,
+        "p95_ok_ms": 10.208,
+        "p99_ok_ms": 17.893
+      },
+      {
+        "phase": 1,
+        "clients": 2,
+        "requests": 19007,
+        "success": 9508,
+        "all_rps": 79.2,
+        "ok_rps": 39.62,
+        "codes": {
+          "Aborted": 2376,
+          "AlreadyExists": 2372,
+          "Canceled": 2375,
+          "InvalidArgument": 2376,
+          "OK": 9508
+        },
+        "p50_ok_ms": 5.855,
+        "p95_ok_ms": 10.451,
+        "p99_ok_ms": 12.311
+      },
+      {
+        "phase": 2,
+        "clients": 8,
+        "requests": 76792,
+        "success": 32358,
+        "all_rps": 319.97,
+        "ok_rps": 134.82,
+        "codes": {
+          "Aborted": 7507,
+          "AlreadyExists": 7492,
+          "Canceled": 9598,
+          "InvalidArgument": 9598,
+          "OK": 32358,
+          "ResourceExhausted": 10239
+        },
+        "p50_ok_ms": 6.913,
+        "p95_ok_ms": 14.245,
+        "p99_ok_ms": 19.999
+      }
+    ],
+    "host_peak_bytes": 6451200,
+    "server_max_rss_kib": 215032,
+    "max_sql_lock_waiters": 1,
+    "max_pool_total": 8,
+    "max_active": 2,
+    "max_observed_processes": 2,
+    "max_reserved_bytes": 536870912,
+    "final_host": {
+      "Active": 0,
+      "ReservedBytes": 0,
+      "CurrentBytes": 196608,
+      "PeakBytes": 6451200,
+      "OOMKills": 0,
+      "CPUUsec": 68943954,
+      "Throttled": 0,
+      "OSProcesses": 0
+    }
+  },
+  {
+    "run": "p1-load-3",
+    "elapsed": 902.81,
+    "committed": 165,
+    "phases": [
+      {
+        "phase": 0,
+        "clients": 1,
+        "requests": 9183,
+        "success": 4592,
+        "all_rps": 38.26,
+        "ok_rps": 19.13,
+        "codes": {
+          "Aborted": 1148,
+          "AlreadyExists": 1147,
+          "Canceled": 1148,
+          "InvalidArgument": 1148,
+          "OK": 4592
+        },
+        "p50_ok_ms": 7.032,
+        "p95_ok_ms": 12.53,
+        "p99_ok_ms": 14.122
+      },
+      {
+        "phase": 1,
+        "clients": 2,
+        "requests": 17764,
+        "success": 8885,
+        "all_rps": 74.02,
+        "ok_rps": 37.02,
+        "codes": {
+          "Aborted": 2220,
+          "AlreadyExists": 2219,
+          "Canceled": 2220,
+          "InvalidArgument": 2220,
+          "OK": 8885
+        },
+        "p50_ok_ms": 7.711,
+        "p95_ok_ms": 14.195,
+        "p99_ok_ms": 15.652
+      },
+      {
+        "phase": 2,
+        "clients": 8,
+        "requests": 71430,
+        "success": 28268,
+        "all_rps": 297.62,
+        "ok_rps": 117.78,
+        "codes": {
+          "Aborted": 6371,
+          "AlreadyExists": 6526,
+          "Canceled": 8928,
+          "InvalidArgument": 8929,
+          "OK": 28268,
+          "ResourceExhausted": 12408
+        },
+        "p50_ok_ms": 10.523,
+        "p95_ok_ms": 19.694,
+        "p99_ok_ms": 24.157
+      }
+    ],
+    "host_peak_bytes": 6107136,
+    "server_max_rss_kib": 208972,
+    "max_sql_lock_waiters": 2,
+    "max_pool_total": 8,
+    "max_active": 2,
+    "max_observed_processes": 2,
+    "max_reserved_bytes": 536870912,
+    "final_host": {
+      "Active": 0,
+      "ReservedBytes": 0,
+      "CurrentBytes": 184320,
+      "PeakBytes": 6107136,
+      "OOMKills": 0,
+      "CPUUsec": 83827824,
+      "Throttled": 0,
+      "OSProcesses": 0
+    }
+  }
+]

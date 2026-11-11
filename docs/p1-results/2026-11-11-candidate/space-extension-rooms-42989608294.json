@@ -1,0 +1,99 @@
+{
+  "conclusion": "success",
+  "headSha": "e61f85f17982f90d587e6639f698a0980316b119",
+  "jobs": [
+    {
+      "completedAt": "2026-11-11T08:46:28Z",
+      "conclusion": "success",
+      "databaseId": 130418964917,
+      "name": "package",
+      "startedAt": "2026-11-11T08:45:54Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T08:45:56Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T08:45:55Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T08:45:57Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-11T08:45:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T08:45:58Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-11T08:45:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T08:46:05Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 4,
+          "startedAt": "2026-11-11T08:45:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T08:46:22Z",
+          "conclusion": "success",
+          "name": "SDK и проверка подписи",
+          "number": 5,
+          "startedAt": "2026-11-11T08:46:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T08:46:23Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 6,
+          "startedAt": "2026-11-11T08:46:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T08:46:25Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 10,
+          "startedAt": "2026-11-11T08:46:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T08:46:26Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 11,
+          "startedAt": "2026-11-11T08:46:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T08:46:26Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 12,
+          "startedAt": "2026-11-11T08:46:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T08:46:26Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 13,
+          "startedAt": "2026-11-11T08:46:26Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-extension-rooms/actions/runs/42989608294/job/130418964917"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/space-protocol-project/space-extension-rooms/actions/runs/42989608294"
+}

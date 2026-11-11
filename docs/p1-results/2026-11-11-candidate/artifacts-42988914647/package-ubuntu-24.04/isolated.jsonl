@@ -1,0 +1,16 @@
+{"Time":"2026-11-11T08:41:22.253614181Z","Action":"start","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk"}
+{"Time":"2026-11-11T08:41:22.263470553Z","Action":"run","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated"}
+{"Time":"2026-11-11T08:41:22.263545121Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated","Output":"=== RUN   TestStarterIsolated\n","OutputType":"frame"}
+{"Time":"2026-11-11T08:41:22.268557382Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated","Output":"--- PASS: TestStarterIsolated (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-11T08:41:22.268580861Z","Action":"pass","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated","Elapsed":0.01}
+{"Time":"2026-11-11T08:41:22.268602662Z","Action":"run","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated"}
+{"Time":"2026-11-11T08:41:22.268605571Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated","Output":"=== RUN   TestStarterIsolated\n","OutputType":"frame"}
+{"Time":"2026-11-11T08:41:22.272939328Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated","Output":"--- PASS: TestStarterIsolated (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-11T08:41:22.2729696Z","Action":"pass","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated","Elapsed":0}
+{"Time":"2026-11-11T08:41:22.273039952Z","Action":"run","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated"}
+{"Time":"2026-11-11T08:41:22.273044602Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated","Output":"=== RUN   TestStarterIsolated\n","OutputType":"frame"}
+{"Time":"2026-11-11T08:41:22.277696106Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated","Output":"--- PASS: TestStarterIsolated (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-11T08:41:22.27771648Z","Action":"pass","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Test":"TestStarterIsolated","Elapsed":0}
+{"Time":"2026-11-11T08:41:22.277720977Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-11T08:41:23.279293462Z","Action":"output","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Output":"ok  \tgithub.com/space-protocol-project/space-server/experiments/extensions/sdk\t1.025s\n"}
+{"Time":"2026-11-11T08:41:23.279356353Z","Action":"pass","Package":"github.com/space-protocol-project/space-server/experiments/extensions/sdk","Elapsed":1.026}

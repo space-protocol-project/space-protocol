@@ -1,0 +1,243 @@
+{"Action":"start","Package":"packagep1"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageReproducible"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageReproducible","Output":"=== RUN   TestPackageReproducible\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageReproducible","Output":"--- PASS: TestPackageReproducible (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageReproducible"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust","Output":"=== RUN   TestPackageTrust\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/unknown"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/unknown","Output":"=== RUN   TestPackageTrust/unknown\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/revoked"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/revoked","Output":"=== RUN   TestPackageTrust/revoked\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/subject"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/subject","Output":"=== RUN   TestPackageTrust/subject\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved","Output":"=== RUN   TestPackageTrust/rotation_unapproved\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/rotation_approved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_approved","Output":"=== RUN   TestPackageTrust/rotation_approved\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked","Output":"=== RUN   TestPackageTrust/rotation_old_revoked\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust","Output":"--- PASS: TestPackageTrust (0.00s)\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/unknown","Output":"    --- PASS: TestPackageTrust/unknown (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/unknown"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/revoked","Output":"    --- PASS: TestPackageTrust/revoked (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/revoked"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/subject","Output":"    --- PASS: TestPackageTrust/subject (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/subject"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved","Output":"    --- PASS: TestPackageTrust/rotation_unapproved (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_approved","Output":"    --- PASS: TestPackageTrust/rotation_approved (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/rotation_approved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked","Output":"    --- PASS: TestPackageTrust/rotation_old_revoked (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects","Output":"=== RUN   TestPackageArchiveRejects\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper","Output":"=== RUN   TestPackageArchiveRejects/tamper\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/signature"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/signature","Output":"=== RUN   TestPackageArchiveRejects/signature\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/index"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/index","Output":"=== RUN   TestPackageArchiveRejects/index\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/path"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/path","Output":"=== RUN   TestPackageArchiveRejects/path\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute","Output":"=== RUN   TestPackageArchiveRejects/absolute\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate","Output":"=== RUN   TestPackageArchiveRejects/duplicate\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink","Output":"=== RUN   TestPackageArchiveRejects/symlink\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit","Output":"=== RUN   TestPackageArchiveRejects/module_limit\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit","Output":"=== RUN   TestPackageArchiveRejects/json_limit\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit","Output":"=== RUN   TestPackageArchiveRejects/compressed_limit\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects","Output":"--- PASS: TestPackageArchiveRejects (0.00s)\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper","Output":"    --- PASS: TestPackageArchiveRejects/tamper (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/signature","Output":"    --- PASS: TestPackageArchiveRejects/signature (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/signature"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/index","Output":"    --- PASS: TestPackageArchiveRejects/index (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/index"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/path","Output":"    --- PASS: TestPackageArchiveRejects/path (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/path"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute","Output":"    --- PASS: TestPackageArchiveRejects/absolute (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate","Output":"    --- PASS: TestPackageArchiveRejects/duplicate (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink","Output":"    --- PASS: TestPackageArchiveRejects/symlink (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit","Output":"    --- PASS: TestPackageArchiveRejects/module_limit (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit","Output":"    --- PASS: TestPackageArchiveRejects/json_limit (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit","Output":"    --- PASS: TestPackageArchiveRejects/compressed_limit (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageSignedInvalidManifest"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageSignedInvalidManifest","Output":"=== RUN   TestPackageSignedInvalidManifest\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageSignedInvalidManifest","Output":"--- PASS: TestPackageSignedInvalidManifest (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageSignedInvalidManifest"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageReproducible"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageReproducible","Output":"=== RUN   TestPackageReproducible\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageReproducible","Output":"--- PASS: TestPackageReproducible (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageReproducible"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust","Output":"=== RUN   TestPackageTrust\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/unknown"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/unknown","Output":"=== RUN   TestPackageTrust/unknown\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/revoked"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/revoked","Output":"=== RUN   TestPackageTrust/revoked\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/subject"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/subject","Output":"=== RUN   TestPackageTrust/subject\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved","Output":"=== RUN   TestPackageTrust/rotation_unapproved\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/rotation_approved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_approved","Output":"=== RUN   TestPackageTrust/rotation_approved\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked","Output":"=== RUN   TestPackageTrust/rotation_old_revoked\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust","Output":"--- PASS: TestPackageTrust (0.00s)\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/unknown","Output":"    --- PASS: TestPackageTrust/unknown (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/unknown"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/revoked","Output":"    --- PASS: TestPackageTrust/revoked (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/revoked"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/subject","Output":"    --- PASS: TestPackageTrust/subject (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/subject"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved","Output":"    --- PASS: TestPackageTrust/rotation_unapproved (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_approved","Output":"    --- PASS: TestPackageTrust/rotation_approved (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/rotation_approved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked","Output":"    --- PASS: TestPackageTrust/rotation_old_revoked (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects","Output":"=== RUN   TestPackageArchiveRejects\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper","Output":"=== RUN   TestPackageArchiveRejects/tamper\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/signature"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/signature","Output":"=== RUN   TestPackageArchiveRejects/signature\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/index"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/index","Output":"=== RUN   TestPackageArchiveRejects/index\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/path"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/path","Output":"=== RUN   TestPackageArchiveRejects/path\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute","Output":"=== RUN   TestPackageArchiveRejects/absolute\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate","Output":"=== RUN   TestPackageArchiveRejects/duplicate\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink","Output":"=== RUN   TestPackageArchiveRejects/symlink\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit","Output":"=== RUN   TestPackageArchiveRejects/module_limit\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit","Output":"=== RUN   TestPackageArchiveRejects/json_limit\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit","Output":"=== RUN   TestPackageArchiveRejects/compressed_limit\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects","Output":"--- PASS: TestPackageArchiveRejects (0.01s)\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper","Output":"    --- PASS: TestPackageArchiveRejects/tamper (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/signature","Output":"    --- PASS: TestPackageArchiveRejects/signature (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/signature"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/index","Output":"    --- PASS: TestPackageArchiveRejects/index (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/index"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/path","Output":"    --- PASS: TestPackageArchiveRejects/path (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/path"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute","Output":"    --- PASS: TestPackageArchiveRejects/absolute (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate","Output":"    --- PASS: TestPackageArchiveRejects/duplicate (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink","Output":"    --- PASS: TestPackageArchiveRejects/symlink (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit","Output":"    --- PASS: TestPackageArchiveRejects/module_limit (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit","Output":"    --- PASS: TestPackageArchiveRejects/json_limit (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit","Output":"    --- PASS: TestPackageArchiveRejects/compressed_limit (0.01s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageSignedInvalidManifest"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageSignedInvalidManifest","Output":"=== RUN   TestPackageSignedInvalidManifest\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageSignedInvalidManifest","Output":"--- PASS: TestPackageSignedInvalidManifest (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageSignedInvalidManifest"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageReproducible"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageReproducible","Output":"=== RUN   TestPackageReproducible\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageReproducible","Output":"--- PASS: TestPackageReproducible (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageReproducible"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust","Output":"=== RUN   TestPackageTrust\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/unknown"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/unknown","Output":"=== RUN   TestPackageTrust/unknown\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/revoked"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/revoked","Output":"=== RUN   TestPackageTrust/revoked\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/subject"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/subject","Output":"=== RUN   TestPackageTrust/subject\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved","Output":"=== RUN   TestPackageTrust/rotation_unapproved\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/rotation_approved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_approved","Output":"=== RUN   TestPackageTrust/rotation_approved\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked","Output":"=== RUN   TestPackageTrust/rotation_old_revoked\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust","Output":"--- PASS: TestPackageTrust (0.00s)\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/unknown","Output":"    --- PASS: TestPackageTrust/unknown (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/unknown"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/revoked","Output":"    --- PASS: TestPackageTrust/revoked (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/revoked"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/subject","Output":"    --- PASS: TestPackageTrust/subject (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/subject"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved","Output":"    --- PASS: TestPackageTrust/rotation_unapproved (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/rotation_unapproved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_approved","Output":"    --- PASS: TestPackageTrust/rotation_approved (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/rotation_approved"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked","Output":"    --- PASS: TestPackageTrust/rotation_old_revoked (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust/rotation_old_revoked"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageTrust"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects","Output":"=== RUN   TestPackageArchiveRejects\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper","Output":"=== RUN   TestPackageArchiveRejects/tamper\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/signature"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/signature","Output":"=== RUN   TestPackageArchiveRejects/signature\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/index"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/index","Output":"=== RUN   TestPackageArchiveRejects/index\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/path"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/path","Output":"=== RUN   TestPackageArchiveRejects/path\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute","Output":"=== RUN   TestPackageArchiveRejects/absolute\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate","Output":"=== RUN   TestPackageArchiveRejects/duplicate\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink","Output":"=== RUN   TestPackageArchiveRejects/symlink\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit","Output":"=== RUN   TestPackageArchiveRejects/module_limit\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit","Output":"=== RUN   TestPackageArchiveRejects/json_limit\n","OutputType":"frame"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit","Output":"=== RUN   TestPackageArchiveRejects/compressed_limit\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects","Output":"--- PASS: TestPackageArchiveRejects (0.01s)\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper","Output":"    --- PASS: TestPackageArchiveRejects/tamper (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/tamper"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/signature","Output":"    --- PASS: TestPackageArchiveRejects/signature (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/signature"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/index","Output":"    --- PASS: TestPackageArchiveRejects/index (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/index"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/path","Output":"    --- PASS: TestPackageArchiveRejects/path (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/path"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute","Output":"    --- PASS: TestPackageArchiveRejects/absolute (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/absolute"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate","Output":"    --- PASS: TestPackageArchiveRejects/duplicate (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/duplicate"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink","Output":"    --- PASS: TestPackageArchiveRejects/symlink (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/symlink"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit","Output":"    --- PASS: TestPackageArchiveRejects/module_limit (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/module_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit","Output":"    --- PASS: TestPackageArchiveRejects/json_limit (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/json_limit"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit","Output":"    --- PASS: TestPackageArchiveRejects/compressed_limit (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects/compressed_limit"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageArchiveRejects"}
+{"Action":"run","Package":"packagep1","Test":"TestPackageSignedInvalidManifest"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageSignedInvalidManifest","Output":"=== RUN   TestPackageSignedInvalidManifest\n","OutputType":"frame"}
+{"Action":"output","Package":"packagep1","Test":"TestPackageSignedInvalidManifest","Output":"--- PASS: TestPackageSignedInvalidManifest (0.00s)\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1","Test":"TestPackageSignedInvalidManifest"}
+{"Action":"output","Package":"packagep1","Output":"PASS\n","OutputType":"frame"}
+{"Action":"pass","Package":"packagep1"}

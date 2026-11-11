@@ -1,0 +1,5 @@
+Result=success
+MemoryPeak=[not set]
+CPUQuotaPerSecUSec=infinity
+MemoryMax=infinity
+TasksMax=17436

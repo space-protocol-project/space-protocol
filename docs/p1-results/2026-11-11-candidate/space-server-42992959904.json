@@ -1,0 +1,297 @@
+{
+  "conclusion": "success",
+  "headSha": "31a9ee557467b5c493e532ff94102611f6df757d",
+  "jobs": [
+    {
+      "completedAt": "2026-11-11T09:13:05Z",
+      "conclusion": "success",
+      "databaseId": 130430023625,
+      "name": "package (windows-2025)",
+      "startedAt": "2026-11-11T09:10:45Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T09:10:47Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T09:10:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:10:52Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-11T09:10:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:10:56Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-11T09:10:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:49Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 4,
+          "startedAt": "2026-11-11T09:10:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:12:54Z",
+          "conclusion": "success",
+          "name": "Общий manifest и отрицательные сценарии",
+          "number": 5,
+          "startedAt": "2026-11-11T09:11:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:12:56Z",
+          "conclusion": "success",
+          "name": "Воспроизводимая сборка и подпись",
+          "number": 6,
+          "startedAt": "2026-11-11T09:12:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:12:56Z",
+          "conclusion": "skipped",
+          "name": "Изолированное исполнение каркаса Linux",
+          "number": 7,
+          "startedAt": "2026-11-11T09:12:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:12:56Z",
+          "conclusion": "skipped",
+          "name": "Изолированная отрицательная матрица проверки пакета",
+          "number": 8,
+          "startedAt": "2026-11-11T09:12:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:12:57Z",
+          "conclusion": "success",
+          "name": "Обязательные результаты",
+          "number": 9,
+          "startedAt": "2026-11-11T09:12:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:12:58Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 10,
+          "startedAt": "2026-11-11T09:12:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:12:58Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 18,
+          "startedAt": "2026-11-11T09:12:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:13:00Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 19,
+          "startedAt": "2026-11-11T09:12:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:13:02Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 20,
+          "startedAt": "2026-11-11T09:13:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:13:02Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "startedAt": "2026-11-11T09:13:02Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/42992959904/job/130430023625"
+    },
+    {
+      "completedAt": "2026-11-11T09:11:52Z",
+      "conclusion": "success",
+      "databaseId": 130430024106,
+      "name": "package (ubuntu-24.04)",
+      "startedAt": "2026-11-11T09:10:46Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T09:10:48Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T09:10:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:10:49Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-11T09:10:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:10:51Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-11-11T09:10:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:03Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@v5",
+          "number": 4,
+          "startedAt": "2026-11-11T09:10:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:41Z",
+          "conclusion": "success",
+          "name": "Общий manifest и отрицательные сценарии",
+          "number": 5,
+          "startedAt": "2026-11-11T09:11:03Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:41Z",
+          "conclusion": "success",
+          "name": "Воспроизводимая сборка и подпись",
+          "number": 6,
+          "startedAt": "2026-11-11T09:11:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:43Z",
+          "conclusion": "success",
+          "name": "Изолированное исполнение каркаса Linux",
+          "number": 7,
+          "startedAt": "2026-11-11T09:11:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:46Z",
+          "conclusion": "success",
+          "name": "Изолированная отрицательная матрица проверки пакета",
+          "number": 8,
+          "startedAt": "2026-11-11T09:11:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:47Z",
+          "conclusion": "success",
+          "name": "Обязательные результаты",
+          "number": 9,
+          "startedAt": "2026-11-11T09:11:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:48Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 10,
+          "startedAt": "2026-11-11T09:11:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:48Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@v5",
+          "number": 18,
+          "startedAt": "2026-11-11T09:11:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:48Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 19,
+          "startedAt": "2026-11-11T09:11:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:49Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 20,
+          "startedAt": "2026-11-11T09:11:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:11:49Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "startedAt": "2026-11-11T09:11:49Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/42992959904/job/130430024106"
+    },
+    {
+      "completedAt": "2026-11-11T09:13:11Z",
+      "conclusion": "success",
+      "databaseId": 130431130959,
+      "name": "reproducible",
+      "startedAt": "2026-11-11T09:13:08Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T09:13:09Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T09:13:08Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:13:10Z",
+          "conclusion": "success",
+          "name": "Run actions/download-artifact@v4",
+          "number": 2,
+          "startedAt": "2026-11-11T09:13:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:13:10Z",
+          "conclusion": "success",
+          "name": "Одинаковые байты на Linux и Windows",
+          "number": 3,
+          "startedAt": "2026-11-11T09:13:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T09:13:10Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 4,
+          "startedAt": "2026-11-11T09:13:10Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/space-protocol-project/space-server/actions/runs/42992959904/job/130431130959"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/space-protocol-project/space-server/actions/runs/42992959904"
+}
